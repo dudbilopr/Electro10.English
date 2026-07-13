@@ -34,7 +34,7 @@
         <div class="space-y-6">
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                    <span>⚙️</span> Configuration
+                    <span><span class="inline-flex items-center text-slate-400 mr-1"><i data-lucide="settings" class="w-4 h-4 inline"></i></span></span> Configuration
                 </h2>
                 <div class="space-y-4">
                     <div>
@@ -68,7 +68,7 @@
             </div>
 
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h2 class="text-lg font-semibold mb-2 italic">🔭 Vista Local (D.C.L.)</h2>
+                <h2 class="text-lg font-semibold mb-2 italic"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Vista Local (D.C.L.)</h2>
                 <div class="relative flex justify-center bg-slate-900 rounded-lg overflow-hidden border">
                     <canvas id="dclCanvas" width="400" height="400"></canvas>
                 </div>
@@ -83,7 +83,7 @@
         <div class="lg:col-span-2 space-y-6">
             <div class="exercise-box p-6 rounded-xl shadow-sm border border-orange-100">
                 <h3 class="text-orange-700 font-bold mb-2 flex items-center gap-2">
-                    <span>📝</span> Enunciado del Problema Physical
+                    <span><span class="inline-flex items-center text-blue-300 mr-1"><i data-lucide="file-text" class="w-4 h-4 inline"></i></span></span> Enunciado del Problema Physical
                 </h3>
                 <div id="exerciseText" class="text-slate-700 leading-relaxed">Agregue Charges para start la generación del problema.</div>
             </div>
@@ -97,7 +97,7 @@
 
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 overflow-x-auto">
                 <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                    <span>📍</span> Coordenadas del Sistema
+                    <span><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></span> Coordenadas del Sistema
                 </h3>
                 <table class="w-full text-left border-collapse">
                     <thead>
@@ -121,7 +121,7 @@
             <!-- Theory EXPANDIDA -->
             <div class="bg-indigo-950 p-8 rounded-xl border border-indigo-900 space-y-6 text-white">
                 <div>
-                    <h3 class="text-xl font-bold text-indigo-300 mb-2">⚡ La Coulomb\'s Law</h3>
+                    <h3 class="text-xl font-bold text-indigo-300 mb-2"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> La Coulomb\'s Law</h3>
                     <p class="text-indigo-100 leading-relaxed opacity-90 text-sm">
                         La magnitudeeeee de la Force electrostática entre dos Charges puntuales ($q_1$ y $q_2$) es directamente proporcional al producto de las magnitudeeeeees de las Charges e inversamente proporcional al cuadrado de la Distance ($r$) que las separa.
                     </p>
@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="border-t border-indigo-800 pt-4">
-                    <h3 class="text-xl font-bold text-indigo-300 mb-2">📚 Superposition Principle</h3>
+                    <h3 class="text-xl font-bold text-indigo-300 mb-2"><span class="inline-flex items-center text-indigo-400 mr-1"><i data-lucide="book-open" class="w-4 h-4 inline"></i></span> Superposition Principle</h3>
                     <p class="text-indigo-100 leading-relaxed opacity-90 text-sm">
                         Cuando una carga interactúa con múltiples Charges a la vez, la Net Force es la <b>suma vectorial</b> de las Forces ejercidas por cada carga de forma individual, ignorando la presencia de las demás durante el cálculo de cada par.
                     </p>
@@ -398,7 +398,7 @@ function updateTable() {
             <td class="py-2 px-4 text-slate-700 font-medium">${(c.q * 1e6).toFixed(2)}</td>
             <td class="py-2 px-4 text-center"><input type="number" value="${Math.round(c.x)}" onchange="updateCoord(${i}, 'x', this.value)" class="w-16 border rounded text-center text-xs p-1"></td>
             <td class="py-2 px-4 text-center"><input type="number" value="${Math.round(c.y)}" onchange="updateCoord(${i}, 'y', this.value)" class="w-16 border rounded text-center text-xs p-1"></td>
-            <td class="py-2 px-4 text-right"><button onclick="removeCharge(${i})" class="text-slate-300 hover:text-red-500 transition-colors">✕</button></td>
+            <td class="py-2 px-4 text-right"><button onclick="removeCharge(${i})" class="text-slate-300 hover:text-red-500 transition-colors"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button></td>
         `;
         tbody.appendChild(row);
     });

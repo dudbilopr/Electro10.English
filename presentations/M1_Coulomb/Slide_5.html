@@ -117,8 +117,8 @@
                         <p class="mb-1 flex items-start">
                             <span><strong>1. Forma Vectorial:</strong> La Force eléctrica está dirigida a lo largo de la línea que une las Charges. El vector unitario $\hat{r}$ le da el carácter direccional a la Force:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 magnitudeeeee Q:</strong> Ahora puedes hacer clic en cualquier carga y modificar su magnitudeeeee. Observa cómo una mayor magnitudeeeee alarga los vectores de Force proporcionalmente al producto $q_1 q_2$.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> magnitudeeeee Q:</strong> Ahora puedes hacer clic en cualquier carga y modificar su magnitudeeeee. Observa cómo una mayor magnitudeeeee alarga los vectores de Force proporcionalmente al producto $q_1 q_2$.</span>
                             </span>
                         </p>
                         <div class="math-display"> $$\vec{F}_{12} = k \frac{q_1 q_2}{r^2} \hat{r} = k \frac{q_1 q_2}{|\vec{r}_{12}|^2} \left(\frac{\vec{r}_2 - \vec{r}_1}{|\vec{r}_{12}|}\right) = k \frac{q_1 q_2}{|\vec{r}_{12}|^3} (\vec{r}_2 - \vec{r}_1) $$</div>
@@ -129,8 +129,8 @@
                         <p class="font-bold text-indigo-800 flex items-center">
                             2. Diagrama de Cuerpo Libre (DCL) y Proyecciones
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Componentes:</strong> Cualquier Force diagonal se puede dividir en partes independientes (X e Y) usando las funciones trigonométricas fundamentales.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Componentes:</strong> Cualquier Force diagonal se puede dividir en partes independientes (X e Y) usando las funciones trigonométricas fundamentales.</span>
                             </span>
                         </p>
                         <p class="mt-1 text-sm">Para analizar el movimiento, descomponemos el vector Force $\vec{F}$ en sus componentes ortogonales usando el Angle $\theta$ formado con el eje horizontal:</p>
@@ -148,8 +148,8 @@
                         <p class="font-bold text-amber-800 flex items-center">
                             3. Dinámica de Partículas
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">⚠️</span>
-                                <span class="tip-content"><strong>⚠️ Antioscilación:</strong> Matemáticamente $1/r^2 \to \infty$ si $r \to 0$. Para evitar una oscilación infinita y caótica al acercarse, el Simulator amortigua el movimiento cuando las Charges están en contacto inelástico.</span>
+                                <span class="tip-btn"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</span>
+                                <span class="tip-content"><strong><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Antioscilación:</strong> Matemáticamente $1/r^2 \to \infty$ si $r \to 0$. Para evitar una oscilación infinita y caótica al acercarse, el Simulator amortigua el movimiento cuando las Charges están en contacto inelástico.</span>
                             </span>
                         </p>
                         <p class="mt-1 text-sm">Al liberar las Charges, obedecen la 2da Ley de Newton ($\vec{a} = \vec{F}_{neta}/m$). Observa que las Charges más pesadas o de menor carga acelerarán más lentamente.</p>
@@ -160,8 +160,8 @@
                         <p class="font-bold text-emerald-800 flex items-center">
                             4. SuperPosition (Múltiples Forces)
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 DCL Real:</strong> En la vista 3D verás flechas naranjas representando cada empuje/tirón individual. La suma geométrica (punta con cola) de estas flechas naranjas resulta en la flecha de la Net Force.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> DCL Real:</strong> En la vista 3D verás flechas naranjas representando cada empuje/tirón individual. La suma geométrica (punta con cola) de estas flechas naranjas resulta en la flecha de la Net Force.</span>
                             </span>
                         </p>
                         <p class="text-sm mt-1">
@@ -201,7 +201,7 @@
                         </div>
 
                         <div class="control-group border-r border-slate-300 pr-3 gap-1">
-                            <button class="btn-action btn-play" id="btn-play">▶ Simular</button>
+                            <button class="btn-action btn-play" id="btn-play"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Simular</button>
                         </div>
 
                         <div class="control-group flex-1 justify-end gap-2 text-[10px] md:text-sm font-semibold text-slate-700">
@@ -217,7 +217,7 @@
                         
                         <!-- 3D Canvas -->
                         <div class="w-[60%] h-full canvas-wrapper" id="canvas-3d">
-                            <div class="hint-overlay">⟲ Rotar | ⚲ Zoom | 🖱️ <strong>Click para editar magnitudeeeee. Arrastra para mover.</strong></div>
+                            <div class="hint-overlay">⟲ Rotar | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Zoom | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ <strong>Click para editar magnitudeeeee. Arrastra para mover.</strong></div>
                             <div id="lbl-angle" class="angle-label"></div>
                             <div id="selection-ring" class="selected-ring w-12 h-12"></div>
                         </div>
@@ -815,10 +815,10 @@
         btnPlay.addEventListener('click', () => {
             params.playing = !params.playing;
             if (params.playing) {
-                btnPlay.textContent = "⏸ Pause";
+                btnPlay.textContent = "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Pause";
                 btnPlay.classList.replace('btn-play', 'btn-pos');
             } else {
-                btnPlay.textContent = "▶ Simular";
+                btnPlay.textContent = "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Simular";
                 btnPlay.classList.replace('btn-pos', 'btn-play');
             }
         });

@@ -67,9 +67,9 @@
             <button onclick="toggleAllRotations()" class="toolbar-btn bg-amber-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md hover:bg-amber-600">Pause Vista 3D</button>
         </div>
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
-            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz">✏️</button>
-            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador">🧽</button>
-            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo">🗑️</button>
+            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
+            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
+            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
         </div>
     </nav>
@@ -115,7 +115,7 @@
                 <input type="range" min="10" max="100" value="48" oninput="document.getElementById('val-ej1').innerText = this.value + ' cm'; document.getElementById('lbl-ej1-top').innerText = this.value + ' cm'; document.getElementById('lbl-ej1-left').innerText = this.value + ' cm';">
             </div>
 
-            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
             <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                 <strong>Superposition Principle:</strong> Calcula las Forces vectoriales que \(q_1\), \(q_3\) y \(q_4\) ejercen sobre \(q_2\) por separado usando \( \vec{F} = k_e \frac{q_1 q_2}{r^2} \hat{r} \). La Distance de \(q_4\) a \(q_2\) es la mitad de la diagonal del cuadrado (\(a\sqrt{2}/2\)). Recuerda convertir los centímetros a metros.
             </div>
@@ -149,7 +149,7 @@
                 <input type="range" min="0" max="360" value="0" oninput="document.getElementById('svg-ej2').style.transform = `rotate(${this.value}deg)`">
             </div>
 
-            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
             <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                 <strong>Pista de Simetría:</strong> Las Forces que ejercen \(q_2\) y \(q_4\) sobre \(q_1\) tienen componentes en el eje Y que son iguales y opuestas, por lo que se cancelan. Solo necesitas sumar sus componentes en el eje X (que apuntan hacia la derecha/afuera) junto con la Force que ejerce \(q_3\).
             </div>
@@ -185,7 +185,7 @@
                 </svg>
             </div>
 
-            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
             <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                 <strong>Coordenadas:</strong> Define las posiciones de cada carga: <br>
                 \(Q\) en (0, 0) | \(2Q\) en (3.0, 0)<br>
@@ -230,7 +230,7 @@
                 </svg>
             </div>
 
-            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
             <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                 <strong>Diagrama de Cuerpo Libre:</strong><br>
                 - \(q_3\) (negativa) atrae a \(q_1\) (Force hacia la derecha en el eje \(+x\)).<br>
@@ -268,7 +268,7 @@
                 </svg>
             </div>
 
-            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
             <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                 <strong>Geometría del triAngle:</strong> Todos los Angles internos miden \(60^\circ\).<br>
                 - La carga de \(8\ \mu\text{C}\) ejerce una Force de repulsión (empuja hacia abajo/izquierda).<br>
@@ -304,7 +304,7 @@
                 </svg>
             </div>
 
-            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+            <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
             <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                 <strong>Análisis Analítico:</strong> Calcula la Distance \(r = \sqrt{x^2 + y^2}\) desde el origen para cada carga foránea. Los componentes de Force se pueden hallar multiplicando la magnitudeeeee total por los cosenos directores: \(\cos(\theta) = \frac{x}{r}\) y \(\sin(\theta) = \frac{y}{r}\). No olvides pasar de cm a m.
             </div>
@@ -347,7 +347,7 @@
                             <text x="245" y="90" font-family="serif" font-size="14" font-weight="bold">q₂</text>
                         </svg>
                     </div>
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 mt-auto no-print">💡 Pista Ej 7</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 mt-auto no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Pista Ej 7</button>
                     <div class="hint-content p-2 bg-amber-50 rounded border border-amber-100 text-xs text-slate-700">
                         La suma de Forces tangenciales al alambre debe ser cero. Analiza la componente del peso (\(mg \sin \theta\)), la tensión de la cuerda y la Force eléctrica de Coulomb a lo largo de los ejes inclinados.
                     </div>
@@ -372,7 +372,7 @@
                             <circle cx="175" cy="180" r="10" class="charge-neg" /> 
                         </svg>
                     </div>
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 mt-auto no-print">💡 Pista Ej 8</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 mt-auto no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Pista Ej 8</button>
                     <div class="hint-content p-2 bg-amber-50 rounded border border-amber-100 text-xs text-slate-700">
                         Equilibrio: Las esferas experimentan su peso (\(mg\)) hacia abajo, tensión (\(T\)) diagonal y Force eléctrica (\(F_e\)) horizontal de atracción. Plantea \(\sum F_x = 0\) y \(\sum F_y = 0\).
                     </div>

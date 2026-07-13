@@ -113,8 +113,8 @@
                         <p class="flex items-start">
                             <span>El <strong>Electric Flux</strong> mide la cantidad de campo $\vec{E}$ que atraviesa una superficie plana S. Matemáticamente, es el producto escalar entre el vector campo y el vector superficie:</span>
                             <span class="relative tip-wrapper inline-block">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Tip mental:</strong> Imagina una red de pescar en un río. El flujo es el agua que pasa a través de ella. Depende de la Velocity del agua ($\vec{E}$), el área de la red ($S$), y el Angle con el que la sostienes ($\theta$).</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip mental:</strong> Imagina una red de pescar en un río. El flujo es el agua que pasa a través de ella. Depende de la Velocity del agua ($\vec{E}$), el área de la red ($S$), y el Angle con el que la sostienes ($\theta$).</span>
                             </span>
                         </p>
                         <div class="math-display">$$\Phi = \vec{E} \cdot \vec{S} = E \cdot S \cdot \cos(\theta)$$</div>
@@ -124,8 +124,8 @@
                         <p class="mb-[0.5vmin] flex items-start">
                             <span>El vector superficie $\vec{S}$ (o $d\vec{S}$) tiene por Module el área local, y su dirección siempre es rigurosamente <strong>perpendicular (normal)</strong> al parche que lo origina.</span>
                             <span class="relative tip-wrapper inline-block z-40">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Visualización:</strong> Si la superficie es tu mano abierta, el vector normal es como un lápiz pegado verticalmente en tu palma, apuntando hacia afuera.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Visualización:</strong> Si la superficie es tu mano abierta, el vector normal es como un lápiz pegado verticalmente en tu palma, apuntando hacia afuera.</span>
                             </span>
                         </p>
                         <div class="bg-red-50 text-red-900 p-[1vmin] rounded border border-red-200 font-semibold italic text-center">
@@ -137,8 +137,8 @@
                         <p class="flex items-start">
                             <span>En campos no uniformes o superficies curvas, la geometría cambia punto a punto. Por ello, debemos integrar (sumar) el flujo a través de cada elemento infinitesimal $d\vec{S}$ para hallar el flujo total:</span>
                             <span class="relative tip-wrapper inline-block z-30">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Integración:</strong> Dividimos la superficie en "escamas" diminutas ($d\vec{S}$), calculamos el flujo exacto en cada escama, y sumamos todos esos pedacitos ($\int$).</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Integración:</strong> Dividimos la superficie en "escamas" diminutas ($d\vec{S}$), calculamos el flujo exacto en cada escama, y sumamos todos esos pedacitos ($\int$).</span>
                             </span>
                         </p>
                         <div class="math-display">$$\Phi = \int_S \vec{E} \cdot d\vec{S}$$</div>
@@ -148,8 +148,8 @@
                         <p class="flex items-start">
                             <span>La monumental <strong>Gauss\'s Law</strong> afirma que el flujo neto a través de <em>cualquier</em> superficie cerrada depende única y exclusivamente de la carga neta encerrada en su interior:</span>
                             <span class="relative tip-wrapper inline-block z-20">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Gauss\'s Law:</strong> ¡No importa la forma del contenedor (esfera o caja deformada)! Si encierran la misma carga, el número neto de Field Lines que escapan es idéntico.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Gauss\'s Law:</strong> ¡No importa la forma del contenedor (esfera o caja deformada)! Si encierran la misma carga, el número neto de Field Lines que escapan es idéntico.</span>
                             </span>
                         </p>
                         <div class="math-display bg-white py-[0.5vmin] rounded border border-blue-200 mt-[0.5vmin]">
@@ -183,7 +183,7 @@
                             <span class="italic text-slate-500">Ex=</span><input type="text" id="eq-x" value="x" class="eq-input">
                             <span class="italic text-slate-500">Ey=</span><input type="text" id="eq-y" value="y" class="eq-input">
                             <span class="italic text-slate-500">Ez=</span><input type="text" id="eq-z" value="0" class="eq-input">
-                            <button id="btn-apply-eq" class="bg-blue-600 text-white px-2 rounded hover:bg-blue-700 font-bold">✓</button>
+                            <button id="btn-apply-eq" class="bg-blue-600 text-white px-2 rounded hover:bg-blue-700 font-bold"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
                         </div>
 
                         <div class="control-group border-l border-slate-300 pl-3 flex-1">
@@ -220,7 +220,7 @@
                         </div>
                         <div class="flex-1 flex gap-[1vmin] min-h-0">
                             <div class="w-3/4 h-full canvas-wrapper" id="canvas-open">
-                                <div class="hint-overlay">⟲ Rotar | ⚲ Zoom</div>
+                                <div class="hint-overlay">⟲ Rotar | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Zoom</div>
                                 <div id="lbl-angle-1" class="angle-label">0°</div>
                             </div>
                             <div class="w-1/4 h-full flex flex-col justify-center items-center bg-slate-50 border border-slate-200 rounded p-[1vmin] text-center">
@@ -250,7 +250,7 @@
                         </div>
                         <div class="flex-1 flex gap-[1vmin] min-h-0">
                             <div class="w-3/4 h-full canvas-wrapper" id="canvas-closed">
-                                <div class="hint-overlay">⟲ Rotar | ⚲ Zoom</div>
+                                <div class="hint-overlay">⟲ Rotar | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Zoom</div>
                                 <div id="lbl-angle-2" class="angle-label">0°</div>
                             </div>
                             <div class="w-1/4 h-full flex flex-col justify-center items-center bg-slate-50 border border-slate-200 rounded p-[1vmin] text-center">

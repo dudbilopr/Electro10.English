@@ -60,9 +60,9 @@
             <button onclick="toggleAllRotations()" class="toolbar-btn bg-amber-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md hover:bg-amber-600">Pause Vistas 3D</button>
         </div>
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
-            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz">✏️</button>
-            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador">🧽</button>
-            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo">🗑️</button>
+            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
+            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
+            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
         </div>
     </nav>
@@ -85,14 +85,14 @@
         <section class="problem-card bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col gap-3">
             <div class="flex justify-between items-start">
                 <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-[10px] font-bold tracking-wider">EJ 01 & 02</span>
-                <span class="text-slate-400 text-[10px] uppercase font-semibold flex items-center gap-1">🖱️ Vista Dinámica</span>
+                <span class="text-slate-400 text-[10px] uppercase font-semibold flex items-center gap-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Vista Dinámica</span>
             </div>
             <div class="problem-text compact-text">
                 <strong>1.</strong> Considere la superficie mostrada en la figura, que está inmersa en una región donde hay un Electric Field uniforme \( E=600 \, N/C \). Determine el Electric Flux para cada una de las 5 superficies.<br><br>
                 <strong>2.</strong> Considere la figura del exercise Previous con los mismos datos y halle el flujo neto \( \Phi_{neto} \) total para la superficie entera de la caja.
                 
                 <button onclick="toggleHint(this)" class="mt-2 text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
-                    💡 Ver Pista Didáctica
+                    <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                 </button>
                 <div class="hint-content mt-2 p-3 bg-blue-50 rounded text-xs text-slate-700 border border-blue-100">
                     <strong>Estrategia:</strong> El Electric Flux se define como \( \Phi_E = \vec{E} \cdot \vec{A} = EA \cos(\theta) \). Analiza el Angle \( \theta \) entre el vector de área (normal exterior) y las Field Lines para cada cara. Si es una superficie cerrada sin carga en su interior, recuerda el Result teórico del flujo neto.
@@ -134,7 +134,7 @@
                 <strong>10.</strong> Un Electric Field uniforme \( a\hat{i} + b\hat{j} \) intersecta a una superficie de área A. ¿Cuál es el flujo de ésta área si la superficie se ubica a) en el plano yz, b) en el plano xz, c) en el plano xy?
                 
                 <button onclick="toggleHint(this)" class="mt-2 text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
-                    💡 Ver Pista Didáctica
+                    <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                 </button>
                 <div class="hint-content mt-2 p-3 bg-blue-50 rounded text-xs text-slate-700 border border-blue-100">
                     <strong>Estrategia:</strong> Usa el producto punto de vectores: \( \Phi_E = \vec{E} \cdot \vec{A} = (E_x\hat{i} + E_y\hat{j} + E_z\hat{k}) \cdot (A_x\hat{i} + A_y\hat{j} + A_z\hat{k}) \). Identifica el vector normal para cada plano (Ej: para el plano yz, la normal es \( \hat{i} \)).
@@ -170,7 +170,7 @@
                 <strong>5.</strong> Un cono de radio r= 5m en la base y altura h=12m está sobre una mesa horizontal, y un Electric Field uniforme horizontal \( 3.5 \times 10^3 N/C \) penetra el cono, como se muestra en la figura. Calcule el Electric Flux que entra al cono.
                 
                 <button onclick="toggleHint(this)" class="mt-2 text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
-                    💡 Ver Pista Didáctica
+                    <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                 </button>
                 <div class="hint-content mt-2 p-3 bg-blue-50 rounded text-xs text-slate-700 border border-blue-100">
                     <strong>Estrategia:</strong> El flujo a través de superficies inclinadas complejas es igual en magnitudeeeee al flujo que atraviesa su <em>proyección perpendicular</em> al campo. Para la pirámide, considera el flujo de la base. Para el cono (campo horizontal), proyecta su sección transversal (un triAngle).
@@ -213,7 +213,7 @@
                 <strong>8.</strong> Considere la figura del exercise Previous y calcule: a) ¿Cuál es el flujo a través del disco si éste se orienta de modo que su normal sea perpendicular a E? b) ¿Cuál es el flujo a través del disco si su normal es paralela a E?
                 
                 <button onclick="toggleHint(this)" class="mt-2 text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
-                    💡 Ver Pista Didáctica
+                    <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                 </button>
                 <div class="hint-content mt-2 p-3 bg-blue-50 rounded text-xs text-slate-700 border border-blue-100">
                     <strong>Equation de apoyo:</strong> \( \Phi_E = E \cdot (\pi r^2) \cdot \cos(\theta) \). Juega con el deslizador inferior para ver cómo cambia el flujo máximo y mínimo cuando los vectores son perpendiculares (\(90^\circ\)) o paralelos (\(0^\circ\)).
@@ -255,7 +255,7 @@
             </div>
             
             <button onclick="toggleHint(this)" class="mt-1 text-[10px] font-bold text-emerald-600 hover:text-emerald-800 flex items-center gap-1 no-print">
-                💡 Ver Pista Didáctica
+                <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
             </button>
             <div class="hint-content mt-1 p-3 bg-emerald-50 rounded text-xs text-slate-700 border border-emerald-100">
                 <strong>Clave de Gauss:</strong> La ley establece que \( \Phi_{neto} = \frac{Q_{enc}}{\epsilon_0} \). El radio, la forma de la superficie o el flujo por una sola cara no alteran el flujo <strong>total</strong> neto (que solo depende de la carga interior). Suma algebraicamente las Charges en el Ej. 12.
@@ -297,7 +297,7 @@
             </div>
             
             <button onclick="toggleHint(this)" class="mt-1 text-[10px] font-bold text-purple-600 hover:text-purple-800 flex items-center gap-1 no-print">
-                💡 Ver Pista Didáctica
+                <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
             </button>
             <div class="hint-content mt-1 p-3 bg-purple-50 rounded text-xs text-slate-700 border border-purple-100">
                 <strong>Análisis conceptual:</strong> En un conductor en equilibrio electrostático, el campo interno es cero. Por Gauss, la carga neta en una superficie que rodee solo la cavidad debe ser cero, forzando una carga inducida \( q_1 = -q_{interna} \). La carga total se conserva.
@@ -338,7 +338,7 @@
                 
                 <div class="flex flex-col gap-2">
                     <button onclick="toggleHint(this)" class="text-[10px] font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 no-print">
-                        💡 Ver Pista Didáctica
+                        <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                     </button>
                     <div class="hint-content p-3 bg-amber-50 rounded text-xs text-slate-700 border border-amber-100 mb-2">
                         <strong>Relaciones fundamentales:</strong> <br>

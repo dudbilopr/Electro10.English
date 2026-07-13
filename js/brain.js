@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function evaluarConGeminiVision(base64Image, feedbackBox) {
     const apiKey = localStorage.getItem('electro10_gemini_key');
     if (!apiKey) {
-        feedbackBox.innerHTML = `<span style="color:var(--danger)">⚠️ Error: No se encontró la API Key. Configúrala en el Asistente IA primero.</span>`;
+        feedbackBox.innerHTML = `<span style="color:var(--danger)">[*]️ Error: No se encontró la API Key. Configúrala en el Asistente IA primero.</span>`;
         return;
     }
 
@@ -386,7 +386,7 @@ Estructura tu Answer con un saludo, un análisis paso a paso y una Conclusion/pi
 
     } catch (e) {
         console.error(e);
-        feedbackBox.innerHTML = `<span style="color:var(--danger)">⚠️ Error al analizar la imagen: ${e.message}</span>`;
+        feedbackBox.innerHTML = `<span style="color:var(--danger)">[*]️ Error al analizar la imagen: ${e.message}</span>`;
     }
 }
 
@@ -486,7 +486,7 @@ function checkMatch() {
             feedback.style.color = '#10b981';
             
             if (gameScore === 100) {
-                feedback.innerText = '¡Reto Completado Magistralmente! 🎉';
+                feedback.innerText = '¡Reto Completado Magistralmente! [SUCCESS]';
                 feedback.style.color = 'var(--accent)';
                 if (window.Swal) window.Swal.fire('¡Felicidades!', 'Has demostrado un excelente dominio conceptual.', 'success');
             }

@@ -213,7 +213,7 @@
 <body>
 
 <header>
-    <div><h2>🧲 Electric Field IA</h2></div>
+    <div><h2><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="magnet" class="w-4 h-4 inline"></i></span> Electric Field IA</h2></div>
     <div class="version">v1.3.0 (Pizarra Libre + Texto)</div>
 </header>
 
@@ -222,12 +222,12 @@
         <div>
             <div class="section-title">Tools</div>
             <div class="toolbar">
-                <button class="btn-tool active" onclick="setTool('draw', this)" title="Dibuja Charges (+/-), puntos y vectores de campo">🤖 Lápiz IA (Objetos)</button>
-                <button class="btn-tool" onclick="setTool('draw_free', this)" title="Dibuja explicaciones sin afectar los cálculos">🖌️ Marcador (Libre)</button>
-                <button class="btn-tool" onclick="setTool('text', this)" title="Haz clic en el lienzo para escribir texto">🔤 Escribir Texto</button>
-                <button class="btn-tool" onclick="setTool('move', this)">✋ Mover / Editar</button>
+                <button class="btn-tool active" onclick="setTool('draw', this)" title="Dibuja Charges (+/-), puntos y vectores de campo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Lápiz IA (Objetos)</button>
+                <button class="btn-tool" onclick="setTool('draw_free', this)" title="Dibuja explicaciones sin afectar los cálculos"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Marcador (Libre)</button>
+                <button class="btn-tool" onclick="setTool('text', this)" title="Haz clic en el lienzo para escribir texto"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Escribir Texto</button>
+                <button class="btn-tool" onclick="setTool('move', this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Mover / Editar</button>
                 <button class="btn-tool" onclick="undo()">↩️ Deshacer</button>
-                <button class="btn-tool btn-danger" onclick="ClearTodo()">🗑️ Clear Todo</button>
+                <button class="btn-tool btn-danger" onclick="ClearTodo()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Clear Todo</button>
             </div>
             
             <div class="color-picker-container">
@@ -238,7 +238,7 @@
             <hr style="border:0; border-top:1px solid var(--border-color); margin: 15px 0;">
             <div class="section-title">Visualización</div>
             <div class="toolbar">
-                <button id="btn-equipotentials" class="btn-tool btn-toggle" onclick="toggleEquipotentials()">👁️ Ver Líneas Equipotentials</button>
+                <button id="btn-equipotentials" class="btn-tool btn-toggle" onclick="toggleEquipotentials()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Ver Líneas Equipotentials</button>
             </div>
         </div>
         <hr style="border:0; border-top:1px solid var(--border-color); margin: 5px 0;">
@@ -277,12 +277,12 @@
             <div id="charges-container"></div>
         </div>
         
-        <button class="btn-tool btn-action" style="margin-top:15px;" onclick="analizarFisica()">🔍 RECalculate</button>
+        <button class="btn-tool btn-action" style="margin-top:15px;" onclick="analizarFisica()"><span class="inline-flex items-center text-sky-300 mr-1"><i data-lucide="search" class="w-4 h-4 inline"></i></span> RECalculate</button>
     </div>
 
     <div class="canvas-area" id="canvas-wrapper">
         <canvas id="main-canvas"></canvas>
-        <button id="float-delete" onclick="deleteSelected()">🗑️ Remove</button>
+        <button id="float-delete" onclick="deleteSelected()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Remove</button>
         <input type="text" id="text-input-overlay" placeholder="Escribe aquí y presiona Enter...">
         <div id="labels-overlay"></div>
         <div id="coords-indicator">x: 0, y: 0</div>
@@ -307,7 +307,7 @@
             <div class="feedback-card" id="validation-box">...</div>
             
             <div class="tip-card" id="static-tip">
-                <strong>💡 Tip de Campo ($E$):</strong><br>
+                <strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip de Campo ($E$):</strong><br>
                 El vector $E$ siempre se <b>ALEJA</b> de las Charges positivas y se <b>ACERCA</b> a las Charges negativas.
             </div>
         </div>
@@ -884,7 +884,7 @@
             const originPoint = testPoints.find(p => Math.hypot(p.x - vec.start.x, p.y - vec.start.y) < 40);
             if(!originPoint) { 
                 vec.validation='warn'; vec.label='?'; 
-                vBox.innerHTML += `<div class="result-item result-warn">⚠️ Vector no anclado a un Punto P</div>`;
+                vBox.innerHTML += `<div class="result-item result-warn"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Vector no anclado a un Punto P</div>`;
                 return; 
             }
             
@@ -901,10 +901,10 @@
 
             if(best && minD < 0.6) {
                 vec.validation = 'correct'; vec.label = best.lbl;
-                vBox.innerHTML += `<div class="result-item result-correct">✅ $${best.lbl}$ Correcta en $P_${originPoint.id}$</div>`;
+                vBox.innerHTML += `<div class="result-item result-correct"><span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> $${best.lbl}$ Correcta en $P_${originPoint.id}$</div>`;
             } else {
                 vec.validation = 'error'; vec.label = '?';
-                vBox.innerHTML += `<div class="result-item result-error">❌ Dirección Errada en $P_${originPoint.id}$</div>`;
+                vBox.innerHTML += `<div class="result-item result-error"><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Dirección Errada en $P_${originPoint.id}$</div>`;
             }
         });
         

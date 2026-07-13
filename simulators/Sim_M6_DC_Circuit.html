@@ -33,6 +33,12 @@
         .battery-plus { fill: #ef4444; }
         .battery-minus { fill: #3b82f6; }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
 </head>
 <body class="h-screen flex flex-col">
 

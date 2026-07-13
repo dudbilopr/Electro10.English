@@ -130,7 +130,7 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
 <header class="glass">
     <div style="display:flex;align-items:center;gap:15px">
         <h2 style="color:var(--accent);font-size:1.3rem;margin:0"><i class="ph ph-magnet"></i> LorentzLab10.easy</h2>
-        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 10px;border-radius:20px; border:1px solid var(--glass-border)">🌐 Sala Local</span>
+        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 10px;border-radius:20px; border:1px solid var(--glass-border)"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala Local</span>
     </div>
     <div style="display:flex;align-items:center;gap:15px">
         <button class="btn" onclick="toggleTheme()" title="Modo Día/Noche"><i class="ph ph-moon" id="theme-icon"></i></button>
@@ -592,9 +592,9 @@ function prepararPasosLatex() {
     const el5 = document.getElementById('step5'); katex.render(step5Tex, el5, {displayMode: true});
 
     // Add tips pedagógicos visuales a los pasos
-    if(!el2.querySelector('.pedagogy-tip')) el2.innerHTML += `<div class="pedagogy-tip">💡 Tip: Para hallar $\hat{i}$, ignoramos los valores en X (fila 1, columna 1) y cruzamos Y con Z.</div>`;
-    if(!el3.querySelector('.pedagogy-tip')) el3.innerHTML += `<div class="pedagogy-tip">⚠️ Cuidado: La regla de signos para el determinante de orden 3 es $(+,-,+)$. Por eso la componente $\hat{j}$ lleva un menos delante.</div>`;
-    if(!el5.querySelector('.pedagogy-tip')) el5.innerHTML += `<div class="pedagogy-tip">💡 Tip: Al multiplicar por $q$, si la carga es negativa, <b>todos</b> los componentes de la Force invertirán su signo.</div>`;
+    if(!el2.querySelector('.pedagogy-tip')) el2.innerHTML += `<div class="pedagogy-tip"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip: Para hallar $\hat{i}$, ignoramos los valores en X (fila 1, columna 1) y cruzamos Y con Z.</div>`;
+    if(!el3.querySelector('.pedagogy-tip')) el3.innerHTML += `<div class="pedagogy-tip"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Cuidado: La regla de signos para el determinante de orden 3 es $(+,-,+)$. Por eso la componente $\hat{j}$ lleva un menos delante.</div>`;
+    if(!el5.querySelector('.pedagogy-tip')) el5.innerHTML += `<div class="pedagogy-tip"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip: Al multiplicar por $q$, si la carga es negativa, <b>todos</b> los componentes de la Force invertirán su signo.</div>`;
 
     const list = document.getElementById('analysis-list'); list.innerHTML = "";
     if (s.q < 0) list.innerHTML += `<li><b style="color:var(--danger)">Negative Charge:</b> Notarás en el "Paso 5" que multiplicar por un negativo invirtió el vector. La Force apunta en sentido contrario a la regla de la mano derecha.</li>`;
@@ -699,23 +699,23 @@ onAuthStateChanged(auth, async u => {
         document.getElementById('auth-modal').style.display='none';
         try {
             const s = await getDoc(doc(db, `artifacts/${APP_ID}/users/${u.uid}/profile/data`));
-            if(s.exists()){ const pd = s.data(); uiInfo.innerHTML = `👤 ${pd.nombre || pd.alias || u.email.split('@')[0]}`; document.getElementById('prof-name').value = pd.nombre || ''; }
-            else { uiInfo.innerHTML = u.isAnonymous ? "👤 Usuario Anónimo" : `👤 ${u.email ? u.email.split('@')[0] : u.uid.substring(0,6)}`; }
-        } catch(e) { uiInfo.innerHTML = u.isAnonymous ? "👤 Usuario Anónimo" : `👤 Conectado`; }
+            if(s.exists()){ const pd = s.data(); uiInfo.innerHTML = `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${pd.nombre || pd.alias || u.email.split('@')[0]}`; document.getElementById('prof-name').value = pd.nombre || ''; }
+            else { uiInfo.innerHTML = u.isAnonymous ? "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Usuario Anónimo" : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${u.email ? u.email.split('@')[0] : u.uid.substring(0,6)}`; }
+        } catch(e) { uiInfo.innerHTML = u.isAnonymous ? "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Usuario Anónimo" : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Conectado`; }
         document.getElementById('btn-rooms').style.display='inline-flex';
     } else { uiInfo.innerHTML = "<i class='ph ph-warning'></i> Desconectado"; }
 });
 
 window.saveProfile = async () => {
     if(!auth.currentUser) return; const n = document.getElementById('prof-name').value;
-    try { await setDoc(doc(db,`artifacts/${APP_ID}/users/${auth.currentUser.uid}/profile/data`), {nombre: n}, {merge: true}); document.getElementById('user-info').innerHTML = `👤 ${n}`; hideModal('profile-setup-modal'); }
+    try { await setDoc(doc(db,`artifacts/${APP_ID}/users/${auth.currentUser.uid}/profile/data`), {nombre: n}, {merge: true}); document.getElementById('user-info').innerHTML = `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${n}`; hideModal('profile-setup-modal'); }
     catch(e) { alert("Error guardando: " + e.message); }
 }
 
 window.crearUnirseSala = async () => { const n = document.getElementById('new-room-name').value.trim(); if(!n) return alert("Ingresa el nombre de la sala"); joinRoom(n); };
 
 window.joinRoom = (id) => {
-    hideModal('rooms-modal'); document.getElementById('room-info').innerHTML = `🌐 Sala: <b>${id}</b>`;
+    hideModal('rooms-modal'); document.getElementById('room-info').innerHTML = `<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: <b>${id}</b>`;
     if (unsubRoom) unsubRoom();
     
     curRoomRef = ref(rtdb, `salas/${APP_ID}/${id}/state`);

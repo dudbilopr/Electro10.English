@@ -512,7 +512,7 @@
                         timestamp: new Date().toISOString()
                     };
                     await setDoc(doc(db, "escenas", "determinantes-3x3"), sceneData);
-                    alert("✅ Escena guardada en la nube con éxito.");
+                    alert("<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> Escena guardada en la nube con éxito.");
                 } catch (error) { console.error("Error guardando:", error); }
             }
         };
@@ -595,7 +595,7 @@
                 checkThreeJSReady();
                 updateStepUI();
                 initTeleprompterEvents();
-                console.log("✅ Motor Studio10.easy Fases 1-8 inicializado.");
+                console.log("<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> Motor Studio10.easy Fases 1-8 inicializado.");
                 
                 // Eventos visuales Fase 8
                 document.getElementById('canvas').addEventListener('scroll', updateConnectors);

@@ -432,7 +432,7 @@
             <div className="mt-6">
               <button onClick={toggleTip} className={`flex items-center gap-2 text-sm font-bold px-5 py-3 rounded-xl transition-colors shadow-sm ${isOpen ? 'bg-amber-100 text-amber-800 border-2 border-amber-300' : 'bg-white border-2 border-amber-200 text-amber-600 hover:bg-amber-50 hover:border-amber-400'}`}>
                 <Lightbulb size={18} className={isOpen ? 'text-amber-500' : 'text-amber-400'}/> 
-                {isOpen ? 'Hide Asistencia Cognitiva' : `💡 Asistencia Cognitiva (-${penalty} pts)`}
+                {isOpen ? 'Hide Asistencia Cognitiva' : `<span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Asistencia Cognitiva (-${penalty} pts)`}
               </button>
               {isOpen && (
                 <div className="mt-3 p-5 bg-amber-50 border-2 border-amber-200 rounded-xl text-amber-900 text-sm leading-relaxed animate-in slide-in-from-top-2 shadow-inner">

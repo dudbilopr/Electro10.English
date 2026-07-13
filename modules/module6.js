@@ -1,5 +1,5 @@
 // modules/module6.js — Circuitos Resistivos DC
-// 📓 NOTEBOOKLM: Reemplaza "#" en llmLink con tu link real
+// [*] NOTEBOOKLM: Reemplaza "#" en llmLink con tu link real
 export const module6 = {
     "titulo": "Module 6: Circuitos Resistivos DC",
     "color": "#059669",
@@ -15,7 +15,7 @@ export const module6 = {
             { "id":"m6-s2","tipo":"Simulator","recurso":"simulators/Sim_M6_DC_Circuit.html","titulo":"3.2 Campo en Conductors","descripcion":"Electric Field que impulsa la Current en un conductor.","xp":20 }
           ]
         },
-        { "id":"m6-j1","tipo":"Game","recurso":"games/Game_6.html","titulo":"4. Physics Quest — Circuitos DC","descripcion":"Diseña circuitos para cumplir especificaciones de Voltage y Current. ¡5 retos de ingeniería!","xp":25,"logro":{"id":"logro_m6","nombre":"Arquitecto de Redes","icono":"🔌"} },
+        { "id":"m6-j1","tipo":"Game","recurso":"games/Game_6.html","titulo":"4. Physics Quest — Circuitos DC","descripcion":"Diseña circuitos para cumplir especificaciones de Voltage y Current. ¡5 retos de ingeniería!","xp":25,"logro":{"id":"logro_m6","nombre":"Arquitecto de Redes","icono":"[*]"} },
         { "id":"m6-t","tipo":"grupo","titulo":"5. Workshops Prácticos",
           "sublecciones":[
             { "id":"m6-t1","tipo":"exercise","recurso":"workshops/Workshop_6_1_Circuit_Reduction.html","titulo":"5.1 Workshop — Reducción de Circuitos","descripcion":"Simplificación de redes resistivas: serie, paralelo y delta-estrella.","xp":25 },
@@ -24,20 +24,20 @@ export const module6 = {
         },
         { "id":"m6-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_6.html","titulo":"6. Quiz Adaptativo — Module 6","descripcion":"Desde Ley de Ohm hasta análisis de redes complejas con Kirchhoff.","xp":40 },
         { "id":"m6-nb1","tipo":"notebooklm",
-          // 📓 NOTEBOOKLM Module 6: Reemplaza "#" con tu link
+          // [*] NOTEBOOKLM Module 6: Reemplaza "#" con tu link
           "llmLink": "#",
           "titulo":"7. NotebookLLM — Circuitos DC","descripcion":"IA especializada en circuitos DC. Ayuda a resolver por mallas, nodos y teoremas de Thevenin/Norton.","xp":10 },
         { "id":"m6-e1","tipo":"referencias","titulo":"8. Referencias BiblioCharts","descripcion":"Libros, tutoriales y Simulatores para circuitos resistivos DC.","xp":10,
           "secciones":[
-            { "tituloSeccion":"📘 Libros de texto","links":[
+            { "tituloSeccion":"[*] Libros de texto","links":[
                 { "url":"https://openstax.org/books/university-physics-volume-2/pages/10-1-electromotive-force","titulo":"OpenStax: Circuitos DC — Cap. 10","descripcion":"FEM, Resistance interna, Kirchhoff y circuitos RC." },
                 { "url":"https://www.amazon.com/dp/0073380679","titulo":"Hayt — Engineering Circuit Analysis","descripcion":"Análisis de circuitos con métodos de mallas y nodos." }
             ]},
-            { "tituloSeccion":"🌐 Resources web","links":[
+            { "tituloSeccion":"[WEB] Resources web","links":[
                 { "url":"https://www.allaboutcircuits.com/textbook/direct-current/","titulo":"All About Circuits: DC","descripcion":"Guía completa de circuitos DC con Simulatores online." },
                 { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-circuits-topic","titulo":"Khan Academy: Circuitos Eléctricos","descripcion":"Videos paso a paso de Kirchhoff y circuitos." }
             ]},
-            { "tituloSeccion":"🔬 Simulatores externos","links":[
+            { "tituloSeccion":"[SCIENCE] Simulatores externos","links":[
                 { "url":"https://phet.colorado.edu/es/simulations/circuit-construction-kit-dc","titulo":"PhET: Construcción de Circuitos DC","descripcion":"Construye y mide circuitos completos online." },
                 { "url":"https://www.falstad.com/circuit/","titulo":"Falstad Circuit Simulator","descripcion":"Simulator profesional de circuitos en el navegador." }
             ]}

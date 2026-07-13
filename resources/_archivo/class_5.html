@@ -26,6 +26,12 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
 </head>
 <body class="text-white">
     <div class="fixed top-0 left-0 w-full h-1 bg-slate-800 z-[100]"><div id="progress-bar" class="h-full bg-blue-500 transition-all duration-500 ease-out" style="width: 0%;"></div></div>

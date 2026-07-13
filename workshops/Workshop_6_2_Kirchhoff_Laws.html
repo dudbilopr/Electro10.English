@@ -115,9 +115,9 @@
             <button id="btnFlowToggle" onclick="window.toggleFlowType()" class="toolbar-btn bg-rose-100 text-rose-800 border border-rose-300 px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-rose-200"><span id="flowText">Vectors (+ a -)</span></button>
         </div>
         <div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700 mt-2 md:mt-0">
-            <button id="penBtn" onclick="window.setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Lápiz">✏️</button>
-            <button id="eraserBtn" onclick="window.setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Borrador">🧽</button>
-            <button onclick="window.clearCanvas()" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Clear todo">🗑️</button>
+            <button id="penBtn" onclick="window.setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
+            <button id="eraserBtn" onclick="window.setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
+            <button onclick="window.clearCanvas()" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="toggleDrawBtn" onclick="window.toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
         </div>
     </nav>
@@ -218,7 +218,7 @@
                     <div class="flex justify-between items-start">
                         <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-[10px] font-bold tracking-wider">CIRCUITO ${(i < 10 ? '0' : '') + i}</span>
                         <button onclick="window.toggleHint(this)" class="text-slate-400 text-[10px] uppercase font-semibold hover:text-blue-500 transition-colors flex items-center gap-1">
-                            💡 Pista
+                            <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Pista
                         </button>
                         <div class="hint-content w-full absolute left-0 mt-8 z-20 shadow-lg dark:bg-slate-700 dark:border-slate-600 dark:text-blue-200" style="position:relative;">${window.tips[i]}</div>
                     </div>
@@ -229,10 +229,10 @@
 
                     <div class="flex flex-wrap gap-2 justify-between items-center bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-100 dark:border-slate-700">
                         <button onclick="window.toggleValuesPanel(${i})" class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 px-3 py-1.5 rounded-md text-[10px] uppercase font-bold hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-sm">
-                            ⚙️ Variables
+                            <span class="inline-flex items-center text-slate-400 mr-1"><i data-lucide="settings" class="w-4 h-4 inline"></i></span> Variables
                         </button>
                         <button onclick="window.toggleEquations(${i})" class="flex items-center gap-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700 px-3 py-1.5 rounded-md text-[10px] uppercase font-bold hover:bg-indigo-100 dark:hover:bg-indigo-800 transition-colors shadow-sm">
-                            📝 Equations
+                            <span class="inline-flex items-center text-blue-300 mr-1"><i data-lucide="file-text" class="w-4 h-4 inline"></i></span> Equations
                         </button>
                     </div>
 
@@ -252,9 +252,9 @@
                             <div id="labels-${i}" class="labels-overlay"></div>
                         </div>
                         <div class="canvas-controls no-print">
-                            <button onclick="window.zoomCanvas(${i}, 1.2)" title="Acercar">➕</button>
-                            <button onclick="window.zoomCanvas(${i}, 0.8)" title="Alejar">➖</button>
-                            <button onclick="window.resetZoom(${i})" title="Restaurar Vista">🔄</button>
+                            <button onclick="window.zoomCanvas(${i}, 1.2)" title="Acercar"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
+                            <button onclick="window.zoomCanvas(${i}, 0.8)" title="Alejar"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
+                            <button onclick="window.resetZoom(${i})" title="Restaurar Vista"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
                         </div>
                     </div>
 
@@ -1017,10 +1017,10 @@
                 checkField('v', correct.v); checkField('i', correct.i); checkField('p', correct.v * correct.i);
             });
             const feedback = document.getElementById(`feedback-${id}`); feedback.style.display = 'block';
-            if (filledFields === 0) { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-red-50 text-red-700 border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-200"; feedback.innerHTML = "⚠️ Ingresa al menos un valor."; } 
-            else if (allCorrect && filledFields === totalFields) { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-green-50 text-green-700 border-green-200 dark:bg-green-900/30 dark:border-green-800 dark:text-green-200"; feedback.innerHTML = "🎉 ¡Perfecto! Calculations exactos."; } 
-            else if (allCorrect) { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-200"; feedback.innerHTML = "👍 Vas bien, continúa."; } 
-            else { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-red-50 text-red-700 border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-200"; feedback.innerHTML = "❌ Hay errores. Revisa tu redondeo."; }
+            if (filledFields === 0) { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-red-50 text-red-700 border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-200"; feedback.innerHTML = "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Ingresa al menos un valor."; } 
+            else if (allCorrect && filledFields === totalFields) { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-green-50 text-green-700 border-green-200 dark:bg-green-900/30 dark:border-green-800 dark:text-green-200"; feedback.innerHTML = "<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="party-popper" class="w-4 h-4 inline"></i></span> ¡Perfecto! Calculations exactos."; } 
+            else if (allCorrect) { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-200"; feedback.innerHTML = "<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="thumbs-up" class="w-4 h-4 inline"></i></span> Vas bien, continúa."; } 
+            else { feedback.className = "mt-3 p-2 rounded-md text-xs font-semibold text-center border bg-red-50 text-red-700 border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-200"; feedback.innerHTML = "<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Hay errores. Revisa tu redondeo."; }
         };
 
         window.toggleFlowType = function() {

@@ -69,9 +69,9 @@
             <button onclick="toggleAllRotations()" class="toolbar-btn bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md hover:bg-emerald-600">Pause Vista 3D</button>
         </div>
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
-            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz">✏️</button>
-            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador">🧽</button>
-            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo">🗑️</button>
+            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
+            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
+            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
         </div>
     </nav>
@@ -231,7 +231,7 @@
             </div>
             
             <div class="mt-4">
-                <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+                <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
                 <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                     Utilice el <strong>Superposition Principle</strong>. Calcule el vector de campo para cada carga individualmente mediante \( \vec{E} = k \frac{q}{r^2} \hat{r} \) y sume vectorialmente. Tenga en cuenta los signos y la geometría para descomponer en componentes \(x\) e \(y\). Analice si hay simetrías evidentes (como en los casos a y c) que anulen alguna componente.
                 </div>
@@ -271,7 +271,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         Determine la Distance desde el centro a cualquier esquina usando Pitágoras. La Distance es la mitad de la diagonal del rectAngle: \(r = \frac{1}{2}\sqrt{3^2 + 4^2}\).
                     </div>
@@ -304,7 +304,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         Defina las coordenadas cartesianas de cada punto para Calculate los vectores de Position. Use \( \vec{F} = q \vec{E} \) para resolver la parte (b).
                     </div>
@@ -340,7 +340,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         La carga \(q_3\) está directamente debajo de P. Para las demás Charges, calcule la Distance hipotenusa y descomponga los vectores de campo en los ejes X e Y usando las proporciones geométricas (3-4-5).
                     </div>
@@ -373,7 +373,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         Note la simetría: Las Charges \(q_1\) y \(q_3\) están en ejes opuestos a la misma Distance del centro y tienen la misma magnitudeeeee y signo. ¿Qué le ocurre a sus campos vectoriales en el origen?
                     </div>
@@ -392,7 +392,7 @@
                         <p class="font-bold text-primary mt-2">Calcule la Distance desde \(q_1\) hasta el punto donde el Electric Field es nulo.</p>
                     </div>
                     <div class="mt-4">
-                        <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                        <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                         <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                             <strong>Tip Matemático:</strong> Iguale las magnitudeeeeees de los campos individuales: \( \frac{k |q_1|}{x^2} = \frac{k |q_2|}{(d-x)^2} \). Simplifique sacando raíz cuadrada a ambos lados antes de expandir el binomio.
                         </div>

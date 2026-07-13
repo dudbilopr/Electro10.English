@@ -662,8 +662,8 @@
                     if (!currentUser || currentUser.isAnonymous) return alert("Debes iniciar sesión como Admin para save.");
                     const docRef = window.FirebaseAPI.doc(db, 'artifacts', MAIN_APP_ID, 'users', currentUser.uid, 'projects', 'main');
                     await window.FirebaseAPI.setDoc(docRef, { elements, arrows, strokes, teleprompterData, theme, format, timestamp: Date.now() });
-                    alert("✅ Guardado exitoso en el Laboratorio de Coulomb");
-                } catch (e) { console.error(e); alert("❌ Error al save. Verifica permisos o config."); }
+                    alert("<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> Guardado exitoso en el Laboratorio de Coulomb");
+                } catch (e) { console.error(e); alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al save. Verifica permisos o config."); }
             };
 
             const handleCloudLoad = async () => {
@@ -682,9 +682,9 @@
                         if (data.theme) setTheme(data.theme);
                         if (data.format) setFormat(data.format);
                         saveStateToHistory(); 
-                        alert("☁️ Proyecto loaded desde la Nube.");
+                        alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Proyecto loaded desde la Nube.");
                     } else { alert("ℹ️ No hay proyectos guardados en tu cuenta."); }
-                } catch (e) { console.error(e); alert("❌ Error al cargar."); }
+                } catch (e) { console.error(e); alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al cargar."); }
             };
 
             useEffect(() => {
@@ -870,12 +870,12 @@
                                         )}
                                         {teleprompterData.find(t => t.step === currentStep)?.tag && (
                                             <span className="bg-purple-500/20 text-purple-400 border border-purple-500/30 px-2 py-1 rounded-lg uppercase tracking-wider text-[10px] sm:text-xs">
-                                                🔥 {teleprompterData.find(t => t.step === currentStep).tag}
+                                                <span class="inline-flex items-center text-orange-400 mr-1"><i data-lucide="flame" class="w-4 h-4 inline"></i></span> {teleprompterData.find(t => t.step === currentStep).tag}
                                             </span>
                                         )}
                                         {teleprompterData.find(t => t.step === currentStep)?.action && (
                                             <span className="bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-1 rounded-lg text-[10px] sm:text-xs italic">
-                                                🎭 {teleprompterData.find(t => t.step === currentStep).action}
+                                                <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> {teleprompterData.find(t => t.step === currentStep).action}
                                             </span>
                                         )}
                                     </div>

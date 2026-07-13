@@ -114,7 +114,7 @@
                 <div class="flex justify-between items-center">
                     <div>
                         <h1 class="font-bold tracking-wide flex items-center gap-3" style="font-size: clamp(20px, 1.8vw, 32px);">
-                            📐 Integrales de Línea Avanzadas y Parametrización
+                            <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Integrales de Línea Avanzadas y Parametrización
                         </h1>
                         <p class="text-emerald-300 font-light" style="font-size: clamp(13px, 1vw, 16px);">
                             solution paso a paso, Diferenciales de Trajectory y Topología del Work Eléctrico
@@ -148,7 +148,7 @@
                                 <p class="text-[13px] text-slate-700 mb-2">Evaluemos un campo electrostático uniforme definido en el plano bidimensional como $\vec{E} = E_0 \hat{i} + E_0 \hat{j}$ sobre una Trajectory cerrada compuesta por tres desplazamientos rectilíneos.</p>
                                 
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Tramo 1: Desplazamiento Horizontal</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Tramo 1: Desplazamiento Horizontal</h3>
                                     <p class="text-[13px] text-slate-700">Para el primer tramo parametrizamos la recta horizontal en función del parámetro escalar $t \in [0,1]$ asumiendo $x(t) = 4t$ e $y(t) = 0$. Derivando estas posiciones obtenemos instantáneamente el vector diferencial de línea $d\vec{l} = 4\hat{i} \, dt$, el cual al ser multiplicado escalarmente por el vector campo nos entrega el valor exacto de la integral para el Work mecánico realizado:</p>
                                     <div class="math-display">
                                         $$W_1 = \int_0^1 (E_0 \hat{i} + E_0 \hat{j}) \cdot (4\hat{i}) \, dt = 4E_0$$
@@ -156,7 +156,7 @@
                                 </div>
 
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Tramo 2: Ascenso Vertical</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Tramo 2: Ascenso Vertical</h3>
                                     <p class="text-[13px] text-slate-700">Durante el ascenso vertical la coordenada horizontal permanece inmutable por lo que parametrizamos la Trajectory como $x(t) = 4$ e $y(t) = 3t$, dando como Result un vector diferencial de desplazamiento $d\vec{l} = 3\hat{j} \, dt$. Al aplicar el producto escalar entre el Electric Field total y nuestro nuevo vector de avance, se anula matemáticamente la componente horizontal dejando únicamente la contribución vertical de la Force:</p>
                                     <div class="math-display">
                                         $$W_2 = \int_0^1 (E_0 \hat{i} + E_0 \hat{j}) \cdot (3\hat{j}) \, dt = 3E_0$$
@@ -164,7 +164,7 @@
                                 </div>
 
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Tramo 3: Regreso Diagonal</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Tramo 3: Regreso Diagonal</h3>
                                     <p class="text-[13px] text-slate-700">Para Close el ciclo geométrico regresando al origen de coordenadas formulamos la parametrización simultánea $x(t) = 4 - 4t$ e $y(t) = 3 - 3t$, de lo cual se desprende un vector diferencial compuesto $d\vec{l} = -4\hat{i} \, dt - 3\hat{j} \, dt$. La integral de línea correspondiente evalúa ambas dimensiones en conjunto sumando algebraicamente el efecto resistivo del campo:</p>
                                     <div class="math-display">
                                         \begin{aligned}
@@ -184,7 +184,7 @@
                                 <p class="text-[13px] text-slate-700 mb-2">Analizamos la Physics topológica de un campo originado por una carga monopolar puntual estática ubicada en el origen cuyo vector característico es $\vec{E} = \frac{kQ}{r^2} \hat{r}$.</p>
                                 
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Integración Vectorial en Coordenadas Polares</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Integración Vectorial en Coordenadas Polares</h3>
                                     <p class="text-[13px] text-slate-700">Expresando el diferencial analítico de línea en base polar geométrica como $d\vec{l} = dr \hat{r} + r d\theta \hat{\theta}$, se observa directamente que al efectuar el producto escalar con el vector fundamental del campo, la componente angular transversal se anula por estricta ortogonalidad matemática dado que $\hat{r} \cdot \hat{\theta} = 0$. Este filtro natural reduce la integral de Work a un diferencial exacto que depende exclusivamente de una única variable paramétrica, simplificando radicalmente su Development algebraico hasta alcanzar la diferencia de Powers inversas clásica:</p>
                                     <div class="math-display">
                                         \begin{aligned}
@@ -203,7 +203,7 @@
                                     $$V(x,y) = kQ \left[ \frac{1}{\sqrt{(x-d)^2 + y^2}} - \frac{1}{\sqrt{(x+d)^2 + y^2}} \right]$$
                                 </div>
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Análisis Topológico del Plano Ecuatorial Analítico</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Análisis Topológico del Plano Ecuatorial Analítico</h3>
                                     <p class="text-[13px] text-slate-700">Al restringir nuestra Assessment espacial exclusivamente al bisector perpendicular o plano ecuatorial forzando $x=0$, verificamos algebraicamente que la Distance medida desde cualquier punto de tránsito hasta ambas fuentes generadoras se iguala de manera perfecta asumiendo el valor $\sqrt{d^2+y^2}$. Reemplazando esta reducción simétrica directamente en la Formula base del campo observamos una cancelación total de los términos energéticos resultando en una superficie equiPowerl absoluta libre de Work mecánico acumulado:</p>
                                     <div class="math-display">
                                         $$V(0,y) = kQ \left[ \frac{1}{\sqrt{d^2+y^2}} - \frac{1}{\sqrt{d^2+y^2}} \right] = 0$$
@@ -218,7 +218,7 @@
                                     $$V_{cuad}(r) \approx \frac{kQ \cdot d^2}{r^3} f(\theta)$$
                                 </div>
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Topología Continua de Inversión Espacial Rápida</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Topología Continua de Inversión Espacial Rápida</h3>
                                     <p class="text-[13px] text-slate-700">El gradiente del Powerl cuadrupolar muestra un decaimiento volumétrico notablemente veloz y agresivo dependiente del factor de atenuación inversamente proporcional al cubo radial $\sim 1/r^3$. Aquellas Trajectorys dinámicas que se atrevan a transitar cerca del vértice de simetría experimentan inversiones paramétricas súbitas provocando que el Angle de interacción vectorial $\theta$ fluctúe violentamente en los márgenes de discontinuidad cambiando la naturaleza de la Force electromotriz de un estado altamente repulsivo a uno de franca atracción en cuestión de milisegundos de avance diferencial.</p>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
                                     $$V(x,y) = kQ \left[ \frac{1}{\sqrt{(x-d)^2 + y^2}} + \frac{1}{\sqrt{(x+d)^2 + y^2}} \right]$$
                                 </div>
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Cinética de Barreras y Transición Inestable</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Cinética de Barreras y Transición Inestable</h3>
                                     <p class="text-[13px] text-slate-700">Situado matemáticamente en el núcleo geométrico de intersección se consolida un foco de equilibrio inestable de alto orden. Al someter a la partícula de prueba a un avance frontal a través del eje transversal y en contra del gradiente de repulsión natural, el integrador numérico advierte inicialmente una fuerte inyección de Work negativo evidenciando la Resistance intrínseca del sistema a la penetración, seguida súbitamente de un escenario de fuga y franca Acceleration inducida una vez sobrepasada la cresta del pico matricial.</p>
                                 </div>
                             </div>
@@ -239,7 +239,7 @@
                             <div id="math-equiPowerl" class="math-demo-container">
                                 <p class="text-[13px] text-slate-700 mb-2">Se plantea el estudio exhaustivo de un movimiento rotacional forzado de una carga puntual obligada a deslizarse ininterrumpidamente sobre el surco trazado por una superficie perimetral isoPowerl, descrita geométricamente como un disco paramétrico perfecto de radio constante $R$ sumergido en un campo monopolar puramente divergente.</p>
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Demostración Vectorial de Condición de Ortogonalidad</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Demostración Vectorial de Condición de Ortogonalidad</h3>
                                     <p class="text-[13px] text-slate-700">Modelando las Equations constitutivas de la Trajectory curva como un oscilador temporal en cuadratura mediante las funciones $x(t) = R\cos(2\pi t)$ e $y(t) = R\sin(2\pi t)$, se deduce de forma inmediata que el diferencial primario de línea asume un carácter tangencial perpetuo frente al frente de onda del Electric Field que mantiene su naturaleza radial inquebrantable. Esta peculiar y afortunada característica arquitectónica de ortogonalidad continua se traduce sin apelación en la nulidad incondicional de cualquier Work Physical asociado a este desplazamiento cerrado:</p>
                                     <div class="math-display">
                                         $$W = \oint \vec{E} \cdot d\vec{l} = \int |\vec{E}| |d\vec{l}| \cos(90^\circ) = 0$$
@@ -255,7 +255,7 @@
                                     $$\nabla \times \vec{E} = \left( \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y} \right) \hat{k} = -2\hat{k} \neq 0$$
                                 </div>
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Desintegración Cíclica del Balance Energético</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Desintegración Cíclica del Balance Energético</h3>
                                     <p class="text-[13px] text-slate-700">Llevando a cabo la Assessment seccional meticulosa de la integral de línea en sentido horario a través del perímetro triangular estándar se advierten asimetrías críticas derivadas de esta anomalía. En el segmento inferior rasante al eje de las abscisas se logra una anulación transitoria registrando una contribución parcial equivalente a cero unidades. Posteriormente durante el cruce vertical sobre la frontera $x=4$ la integral de ascenso arroja una sangría energética equivalente a $\int_0^4 -4 \, dy = -16$ Joules. Culminando la demostración durante la hipotenusa de regreso diagonal al nodo central el producto diferencial vuelve a sufrir un proceso de inhibición cancelativa mutua rindiendo la cifra estática de cero Joules.</p>
                                 </div>
                                 <div class="mt-2 bg-red-50 border-l-4 border-red-500 p-3 text-[13px] text-red-900 shadow-sm">
@@ -268,7 +268,7 @@
                                 <p class="text-[13px] text-slate-700 mb-2">Desplegamos un análisis exhaustivo enfocado en ponderar las implicaciones cinemáticas subyacentes derivadas del uso de familias paramétricas polinomiales como método de interpolación vectorial para forzar el tránsito efectivo de partículas subatómicas entre coordenadas de origen y destino dispares localizadas en la red de simulación algorítmica.</p>
                                 
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Morfología y Acceleration Tensorial de Rutas Matemáticas</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Morfología y Acceleration Tensorial de Rutas Matemáticas</h3>
                                     <p class="text-[13px] text-slate-700">La implementación rudimentaria de una función de enlace basada en una <strong>Trajectory Lineal</strong> simple se caracteriza primordialmente por exhibir tasas de variación de Position inmutables en el espectro del tiempo lo cual en la praxis Physics se materializa como un vuelo crucero desprovisto de Acceleration tangencial. Al incrementar la complejidad inyectando un componente de segundo orden para conformar un <strong>Arc Parabólico</strong> dictado por la relación $y(t) = at^2 + bt + c$, sometemos al vector diferencial primario a una alteración progresiva pero constante de su rumbo obligando al sistema a aplicar correcciones de navegación. En el límite operacional se ofrece el enrutamiento mediante funciones de <strong>Base Cúbica</strong> que introducen zonas complejas con severos puntos de inflexión paramétrica, las cuales demandan inherentemente ráfagas intermitentes de Acceleration extrema en las fases de aproximación o alejamiento.</p>
                                 </div>
                                 
@@ -281,7 +281,7 @@
                             <div id="math-custom" class="math-demo-container">
                                 <p class="text-[13px] text-slate-700 mb-2">Has desbloqueado exitosamente las restricciones operativas del front-end de Assessment accediendo en tiempo real al modo <strong>Laboratorio Abierto</strong> el cual transfiere el control absoluto de las rutinas generadoras de topología a merced de la imaginación del analista de sistemas permitiendo compilar en memoria Equations crudas sin validación de sanidad geométrica previa.</p>
                                 <div class="mt-2 bg-white p-3 rounded border border-indigo-100 shadow-sm">
-                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1">▶ Método de Integración Heurística Vía Sumas de Riemann Multivariables</h3>
+                                    <h3 class="font-bold text-indigo-700 text-sm border-b border-indigo-100 pb-1 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Método de Integración Heurística Vía Sumas de Riemann Multivariables</h3>
                                     <p class="text-[13px] text-slate-700">Renunciando voluntariamente al confort y garantía que otorgan las simplificaciones algebraicas de libro de texto y las primitivas exactas cerradas, el motor iterativo principal de este esquema computacional procede mecánicamente a seccionar el flujo temporal en diferenciales minúsculos e inyectar el valor instantáneo del cruce vectorial directo entre los tensores de Position y los vectores resultantes para aproximar un valor numérico pseudo-continuo:</p>
                                     <div class="math-display">
                                         $$W \approx \sum_{k=0}^{N} \left[ E_x(x_k, y_k) \Delta x_k + E_y(x_k, y_k) \Delta y_k \right]$$
@@ -360,7 +360,7 @@
                                     <option value="mismosigno">Charges Mismo Signo (+Q, +Q)</option>
                                     <option value="equiPowerl">EquiPowerl Circular</option>
                                     <option value="noconservativo">Campo Inducido No Conservativo</option>
-                                    <option value="custom" class="bg-yellow-100">🛠️ Equation de Campo Arbitraria</option>
+                                    <option value="custom" class="bg-yellow-100"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Equation de Campo Arbitraria</option>
                                 </select>
                             </div>
 
@@ -371,7 +371,7 @@
                                     <option value="lineal">Polinomios: Lineal (Recta)</option>
                                     <option value="cuadratica">Polinomios: Cuadrática (Parábola)</option>
                                     <option value="cubica">Polinomios: Cúbica</option>
-                                    <option value="custom">🛠️ Equations Paramétricas Manuales</option>
+                                    <option value="custom"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Equations Paramétricas Manuales</option>
                                 </select>
                             </div>
 
@@ -414,11 +414,11 @@
                             <button id="btn-t1" class="btn-ui bg-white text-indigo-700 border-indigo-300 hover:bg-indigo-50 text-xs px-3 py-1 font-bold">Tramo 1</button>
                             <button id="btn-t2" class="btn-ui bg-white text-indigo-700 border-indigo-300 hover:bg-indigo-50 text-xs px-3 py-1 font-bold">Tramo 2</button>
                             <button id="btn-t3" class="btn-ui bg-white text-indigo-700 border-indigo-300 hover:bg-indigo-50 text-xs px-3 py-1 font-bold">Tramo 3</button>
-                            <button id="btn-tall" class="btn-ui bg-indigo-600 text-white border-indigo-700 hover:bg-indigo-700 shadow-sm ml-1 text-xs px-3 py-1">▶ Ciclo Continuo</button>
+                            <button id="btn-tall" class="btn-ui bg-indigo-600 text-white border-indigo-700 hover:bg-indigo-700 shadow-sm ml-1 text-xs px-3 py-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Ciclo Continuo</button>
                             
                             <div class="flex-1 text-right">
                                 <button id="btn-reset-view" class="btn-ui bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-300 text-[10px] px-2 py-1 mr-1">Centrar Zoom</button>
-                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-600 hover:bg-red-200 border border-red-300 text-[10px] px-2 py-1 font-bold">⏹ Reset Integral</button>
+                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-600 hover:bg-red-200 border border-red-300 text-[10px] px-2 py-1 font-bold"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Reset Integral</button>
                             </div>
                         </div>
                     </div>
@@ -426,7 +426,7 @@
                     <!-- LIENZOS 2D y 3D (ZONA Chart INTERACTIVA) -->
                     <div class="flex-1 canvas-wrapper shadow-inner" id="main-canvas-container">
                         <div class="hint-overlay shadow-md flex flex-col gap-1 backdrop-blur-sm bg-white/95 border-b border-r border-slate-200">
-                            <span id="hint-text" class="text-slate-800"><strong>Simulator Vectorial 2D:</strong> <br>👆 Arrastra el fondo para hacer Pan | 🖱️ Rueda del ratón para Zoom In/Out. <br>🟢 Verde: Vector $d\vec{l}$ (Desplazamiento) | 🔴 Rojo: Vector $\vec{E}$ (Campo Local)</span>
+                            <span id="hint-text" class="text-slate-800"><strong>Simulator Vectorial 2D:</strong> <br><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Arrastra el fondo para hacer Pan | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Rueda del ratón para Zoom In/Out. <br>🟢 Verde: Vector $d\vec{l}$ (Desplazamiento) | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Rojo: Vector $\vec{E}$ (Campo Local)</span>
                         </div>
                         
                         <!-- Lienzo 2D -->
@@ -1119,7 +1119,7 @@
                 c2.style.display = 'block'; c3.style.display = 'none';
                 e.target.textContent = "Ver Superficie 3D (Plotly)";
                 e.target.className = "btn-ui bg-slate-200 text-slate-800 hover:bg-slate-300 border border-slate-400 text-xs shadow-sm font-bold";
-                hint.innerHTML = "<strong>Simulator Vectorial 2D:</strong> <br>👆 Arrastra el fondo para hacer Pan | 🖱️ Rueda del ratón para Zoom In/Out. <br>🟢 Verde: Vector $d\\vec{l}$ (Desplazamiento) | 🔴 Rojo: Vector $\\vec{E}$ (Campo Local)";
+                hint.innerHTML = "<strong>Simulator Vectorial 2D:</strong> <br><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Arrastra el fondo para hacer Pan | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Rueda del ratón para Zoom In/Out. <br>🟢 Verde: Vector $d\\vec{l}$ (Desplazamiento) | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Rojo: Vector $\\vec{E}$ (Campo Local)";
                 resize2D();
             } else {
                 c2.style.display = 'none'; c3.style.display = 'block';

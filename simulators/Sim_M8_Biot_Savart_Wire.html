@@ -28,6 +28,12 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
         input[type="range"] { accent-color: #a855f7; }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
 </head>
 <body class="h-screen flex flex-col">
 

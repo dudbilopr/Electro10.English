@@ -104,8 +104,8 @@
                         <p class="mb-1 flex items-start">
                             <span><strong>Coulomb\'s Law:</strong> Describe la interacción electrostática entre partículas loadeds. La Force es inversamente proporcional al cuadrado de la Distance:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Signos:</strong> Charges del mismo signo se repelen ($F > 0$), signos opuestos se atraen ($F < 0$). La constante $k_e$ depende del medio.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Signos:</strong> Charges del mismo signo se repelen ($F > 0$), signos opuestos se atraen ($F < 0$). La constante $k_e$ depende del medio.</span>
                             </span>
                         </p>
                         <div class="math-display">$$\vec{F}_e = k_e \frac{q_1 q_2}{r^2} \hat{r}$$</div>
@@ -117,8 +117,8 @@
                         <p class="mb-1 flex items-start">
                             <span><strong>Ley de Gravitación Universal:</strong> Describe la atracción entre partículas con masa. Es estrictamente atractiva y posee idéntica estructura geométrica:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Geometría 3D:</strong> El término $1/r^2$ en ambas leyes surge porque el "flujo" de la Force se esparce sobre el área de una esfera ($4\pi r^2$).</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Geometría 3D:</strong> El término $1/r^2$ en ambas leyes surge porque el "flujo" de la Force se esparce sobre el área de una esfera ($4\pi r^2$).</span>
                             </span>
                         </p>
                         <div class="math-display">$$\vec{F}_g = -G \frac{m_1 m_2}{r^2} \hat{r}$$</div>
@@ -163,7 +163,7 @@
 
                     <!-- BLOQUE 4: ADVERTENCIA Y Conclusion -->
                     <div class="bg-amber-50 p-[1.5vmin] border border-amber-300 shadow-sm rounded-lg relative">
-                        <p class="font-bold text-amber-800 mb-1">⚠️ Paradoja Cósmica</p>
+                        <p class="font-bold text-amber-800 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Paradoja Cósmica</p>
                         <p class="text-sm text-slate-700">La repulsión eléctrica entre dos protones es $\sim 10^{36}$ veces mayor que su atracción gravitatoria. ¿Por qué la gravedad rige el universo macroscópico? Porque la materia a gran escala es eléctricamente neutra (se cancela), mientras que la masa siempre se suma y se acumula.</p>
                     </div>
 
@@ -204,7 +204,7 @@
                         <div class="control-group flex-1 justify-end gap-2 text-[10px] md:text-sm font-semibold text-slate-700">
                             <label><input type="checkbox" id="toggle-field"> Líneas Campo</label>
                             <label><input type="checkbox" id="toggle-force" checked> Vectors $\vec{F}$</label>
-                            <button id="btn-animate" class="bg-blue-600 text-white px-2 py-1 rounded shadow hover:bg-blue-700 transition">▶ Soltar Partículas</button>
+                            <button id="btn-animate" class="bg-blue-600 text-white px-2 py-1 rounded shadow hover:bg-blue-700 transition"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Soltar Partículas</button>
                         </div>
                     </div>
 
@@ -213,7 +213,7 @@
                         
                         <!-- 3D Canvas -->
                         <div class="w-[60%] h-full canvas-wrapper" id="canvas-3d">
-                            <div class="hint-overlay" id="hint-text">⟲ Rotar | ⚲ Zoom | Coulomb: Rojo(+), Azul(-)</div>
+                            <div class="hint-overlay" id="hint-text">⟲ Rotar | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Zoom | Coulomb: Rojo(+), Azul(-)</div>
                         </div>
 
                         <!-- 2D Graph & Stats -->
@@ -497,7 +497,7 @@
         function stopAnimation() {
             params.animating = false;
             const btn = document.getElementById('btn-animate');
-            btn.textContent = "▶ Soltar Partículas";
+            btn.textContent = "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Soltar Partículas";
             btn.classList.replace('bg-red-600', 'bg-blue-600');
             btn.classList.replace('hover:bg-red-700', 'hover:bg-blue-700');
         }
@@ -513,7 +513,7 @@
             const isGrav = params.mode === 'gravity';
             document.getElementById('lbl-val1').innerHTML = isGrav ? '$m_1$:' : '$q_1$:';
             document.getElementById('lbl-val2').innerHTML = isGrav ? '$m_2$:' : '$q_2$:';
-            document.getElementById('hint-text').innerText = isGrav ? '⟲ Rotar | ⚲ Zoom | Gravedad: Las masas siempre se atraen' : '⟲ Rotar | ⚲ Zoom | Coulomb: Rojo(+), Azul(-)';
+            document.getElementById('hint-text').innerText = isGrav ? '⟲ Rotar | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Zoom | Gravedad: Las masas siempre se atraen' : '⟲ Rotar | <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Zoom | Coulomb: Rojo(+), Azul(-)';
 
             const s1 = document.getElementById('slider-val1');
             const s2 = document.getElementById('slider-val2');
@@ -575,7 +575,7 @@
             } else {
                 params.animating = true;
                 clock.getDelta(); // Clear el reloj para no dar un salto abrupto inicial
-                e.target.textContent = "⏹ Pause";
+                e.target.textContent = "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Pause";
                 e.target.classList.replace('bg-blue-600', 'bg-red-600');
                 e.target.classList.replace('hover:bg-blue-700', 'hover:bg-red-700');
             }

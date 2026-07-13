@@ -17,6 +17,12 @@
         .step-card { transition: all 0.3s ease; opacity: 0; transform: translateY(10px); }
         .step-card.visible { opacity: 1; transform: translateY(0); }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
 </head>
 <body class="min-h-screen flex flex-col items-center p-4">
 

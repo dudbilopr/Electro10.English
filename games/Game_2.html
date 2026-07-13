@@ -107,20 +107,20 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   <!-- START SCREEN -->
   <div id="start-screen" class="start-screen">
     <div class="game-header">
-      <div class="game-logo">⚡ Physics Quest</div>
+      <div class="game-logo"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Physics Quest</div>
       <div class="game-title" id="main-title">Coulomb\'s Law</div>
     </div>
     <div class="start-desc" id="main-desc">Pon a prueba tu conocimiento sobre la Force entre Electric Charges. 5 rondas · 3 vidas · XP y logros.</div>
     <div class="rules">
       <ul style="list-style:none">
-        <li>⚡ <span>5 rondas de dificultad creciente</span></li>
-        <li>❤️ <span>3 vidas — cada error cuesta una</span></li>
-        <li>⏱️ <span>20 segundos por Question</span></li>
-        <li>🎯 <span>Responder rápido da más XP</span></li>
-        <li>🏆 <span>Desbloquea logros con 100% de aciertos</span></li>
+        <li><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> <span>5 rondas de dificultad creciente</span></li>
+        <li><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="heart" class="w-4 h-4 inline"></i></span> <span>3 vidas — cada error cuesta una</span></li>
+        <li> <span>20 segundos por Question</span></li>
+        <li><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="target" class="w-4 h-4 inline"></i></span> <span>Responder rápido da más XP</span></li>
+        <li><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> <span>Desbloquea logros con 100% de aciertos</span></li>
       </ul>
     </div>
-    <button class="start-btn" onclick="startGame()">⚡ INICIAR Game</button>
+    <button class="start-btn" onclick="startGame()"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> INICIAR Game</button>
   </div>
 
   <!-- GAME SCREEN (hidden) -->
@@ -146,7 +146,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="hud-lbl">Ronda</div>
       </div>
       <div class="hud-card">
-        <div class="lives-display" id="lives-display">❤️❤️❤️</div>
+        <div class="lives-display" id="lives-display"><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="heart" class="w-4 h-4 inline"></i></span><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="heart" class="w-4 h-4 inline"></i></span><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="heart" class="w-4 h-4 inline"></i></span></div>
         <div class="hud-lbl">Vidas</div>
       </div>
     </div>
@@ -156,7 +156,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 
     <!-- Question card -->
     <div class="question-card" id="question-card">
-      <div class="round-badge">⚡ <span id="round-label">Ronda 1 — Calentamiento</span></div>
+      <div class="round-badge"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> <span id="round-label">Ronda 1 — Calentamiento</span></div>
       <div class="q-category" id="q-cat">Physics ELECTROSTÁTICA</div>
       <div class="q-text" id="q-text">loading...</div>
       <div class="q-formula" id="q-formula" style="display:none"></div>
@@ -168,7 +168,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 
   <!-- RESULTS (hidden) -->
   <div class="results" id="results-screen">
-    <span class="result-trophy" id="result-trophy">🏆</span>
+    <span class="result-trophy" id="result-trophy"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span></span>
     <div class="result-title" id="result-title">¡Misión Completada!</div>
     <div style="color:var(--mid);font-size:0.9rem;margin-top:4px" id="result-sub">Has completado el Physics Quest</div>
     <div class="result-xp" id="result-xp">+0 XP</div>
@@ -178,15 +178,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="stat"><div class="stat-n" id="stat-best">0s</div><div class="stat-l">Mejor tiempo</div></div>
     </div>
     <div class="achievement" id="achievement-box" style="display:none">
-      <div class="achievement-icon" id="ach-icon">⭐</div>
+      <div class="achievement-icon" id="ach-icon"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span></div>
       <div>
         <div class="achievement-name" id="ach-name">Logro desbloqueado</div>
         <div class="achievement-desc" id="ach-desc">Descripción del logro</div>
       </div>
     </div>
     <div style="margin-top:16px">
-      <button class="btn-restart" onclick="restartGame()">🔄 Reintentar</button>
-      <button class="btn-save" onclick="saveResult()">✅ save progreso</button>
+      <button class="btn-restart" onclick="restartGame()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Reintentar</button>
+      <button class="btn-save" onclick="saveResult()"><span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> save progreso</button>
     </div>
   </div>
 </div>
@@ -199,7 +199,7 @@ const GAME_CONFIG = {
   color: "#7c3aed",
   moduloId: "m2-j1",
   xpGanado: 25,
-  logro: {icono:"🗺️",nombre:"Cartógrafo de Campos",desc:"Completaste el Physics Quest de Electric Field sin errores"},
+  logro: {icono:"<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️",nombre:"Cartógrafo de Campos",desc:"Completaste el Physics Quest de Electric Field sin errores"},
   rondas: [
     {
       titulo:"Ronda 1",categoria:"CONCEPTOS",
@@ -329,7 +329,7 @@ function timeExpired(){
   // Show correct answer
   const r = GAME_CONFIG.rondas[currentRound];
   document.getElementById(`opt-${r.correcta}`).classList.add('correct');
-  showFeedback(false, `⏱️ ¡Tiempo! La Answer correcta era la opción ${['A','B','C','D'][r.correcta]}. ${r.feedback_bad}`);
+  showFeedback(false, ` ¡Tiempo! La Answer correcta era la opción ${['A','B','C','D'][r.correcta]}. ${r.feedback_bad}`);
   document.getElementById('next-btn').className='next-btn show';
 }
 
@@ -373,14 +373,14 @@ function loseLife(){
 
 function updateLives(){
   let html='';
-  for(let i=0;i<3;i++) html+=`<span class="heart${i>=lives?' lost':''}">❤️</span>`;
+  for(let i=0;i<3;i++) html+=`<span class="heart${i>=lives?' lost':''}"><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="heart" class="w-4 h-4 inline"></i></span></span>`;
   document.getElementById('lives-display').innerHTML=html;
 }
 
 function showFeedback(ok, msg){
   const fb=document.getElementById('feedback-box');
   fb.className='feedback show '+(ok?'ok':'bad');
-  fb.innerHTML=`<strong>${ok?'✅':'❌'}</strong> ${msg}`;
+  fb.innerHTML=`<strong>${ok?'<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span>':'<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span>'}</strong> ${msg}`;
 }
 
 function showXP(text){
@@ -413,7 +413,7 @@ function showResults(){
 
   const pct=Math.round((totalCorrect/GAME_CONFIG.rondas.length)*100);
   const xp=Math.round(GAME_CONFIG.xpGanado*(pct/100));
-  const trophies=['💀','😰','😐','👍','⭐','🏆'];
+  const trophies=['<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="thumbs-up" class="w-4 h-4 inline"></i></span>','<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span>','<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span>'];
   const ti=Math.floor(pct/20);
 
   document.getElementById('result-trophy').textContent=trophies[Math.min(ti,5)];

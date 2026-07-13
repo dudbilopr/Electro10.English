@@ -194,7 +194,7 @@
 
         } catch (error) {
             document.getElementById(loadingId).remove();
-            appendMessage('bot', `⚠️ Error: ${error.message}. Si cambiaste tu llave, borra tu localStorage ('electro10_gemini_key') e intenta de nuevo.`);
+            appendMessage('bot', `[*]️ Error: ${error.message}. Si cambiaste tu llave, borra tu localStorage ('electro10_gemini_key') e intenta de nuevo.`);
             if (error.message.includes("API Key")) {
                 localStorage.removeItem('electro10_gemini_key');
                 apiKey = null;

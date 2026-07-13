@@ -176,15 +176,15 @@
 <body>
 
 <header>
-    <div><h2>⚡ Potential y Work Eléctrico PRO</h2></div>
+    <div><h2><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Potential y Work Eléctrico PRO</h2></div>
     <div class="version">
         <span id="user-info" style="color: #a29bfe; font-weight: bold;">Autenticando...</span>
-        <span id="user-stats" style="color: #f1c40f; font-weight: bold; margin-left: 10px; display: none; cursor: pointer; background: #2b2b3b; padding: 2px 8px; border-radius: 4px; border: 1px solid #444;" onclick="OpenModalPerfil()" title="Ver Misiones y Logros">🏆 Lvl 1 | 0 pts</span>
+        <span id="user-stats" style="color: #f1c40f; font-weight: bold; margin-left: 10px; display: none; cursor: pointer; background: #2b2b3b; padding: 2px 8px; border-radius: 4px; border: 1px solid #444;" onclick="OpenModalPerfil()" title="Ver Misiones y Logros"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Lvl 1 | 0 pts</span>
         <button id="btn-logout" class="btn-tool" style="padding: 4px 8px; display: none;" onclick="CloseSesion()">Salir</button>
         <div class="room-control">
-            <span id="room-info">🌐 Sala: Ninguna</span>
+            <span id="room-info"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: Ninguna</span>
             <button class="btn-tool" style="padding: 4px 8px;" onclick="OpenModalSala()">Unirse a Sala</button>
-            <button id="btn-share-room" class="btn-tool" style="padding: 4px 8px; display: none; background: #9b59b6; color: white;" onclick="copiarInfoSala()" title="Copiar enlace de acceso">🔗 Compartir</button>
+            <button id="btn-share-room" class="btn-tool" style="padding: 4px 8px; display: none; background: #9b59b6; color: white;" onclick="copiarInfoSala()" title="Copiar enlace de acceso"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Compartir</button>
         </div>
     </div>
 </header>
@@ -199,7 +199,7 @@
                     <!-- Dinámico -->
                 </div>
                 <div class="board-actions">
-                    <button class="btn-tool" style="flex:1; padding: 5px; font-size: 0.75rem; justify-content: center;" onclick="addNewBoard()">➕ Nueva</button>
+                    <button class="btn-tool" style="flex:1; padding: 5px; font-size: 0.75rem; justify-content: center;" onclick="addNewBoard()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Nueva</button>
                     <button class="btn-tool" style="flex:1; padding: 5px; font-size: 0.75rem; justify-content: center;" onclick="duplicateActiveBoard()">⎘ Duplicar</button>
                 </div>
             </div>
@@ -208,17 +208,17 @@
         <div>
             <div class="section-title">Tools</div>
             <div class="toolbar">
-                <button class="btn-tool active" onclick="setTool('draw', this)" title="Dibuja Charges, Puntos y Trajectorys">🤖 Lápiz IA (Objetos)</button>
-                <button class="btn-tool" onclick="setTool('draw_free', this)" title="Dibuja explicaciones libres">🖌️ Marcador (Libre)</button>
-                <button id="btn-highlighter" class="btn-tool" onclick="setTool('highlighter', this)" title="Resalta áreas importantes con transparencia">🖍️ Resaltador</button>
-                <button class="btn-tool" onclick="setTool('line', this)" title="Dibuja una línea recta">📏 Línea Recta</button>
-                <button class="btn-tool" onclick="setTool('text', this)" title="Escribe texto en el lienzo">🔤 Escribir Texto</button>
-                <button class="btn-tool" onclick="setTool('eraser', this)" title="Haz clic o arrastra para borrar objetos y trazos">🧽 Borrador</button>
-                <button class="btn-tool" onclick="setTool('move', this)" title="Mueve o selecciona objetos. Arrastra el fondo para scroll.">✋ Mover / Navegar</button>
+                <button class="btn-tool active" onclick="setTool('draw', this)" title="Dibuja Charges, Puntos y Trajectorys"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Lápiz IA (Objetos)</button>
+                <button class="btn-tool" onclick="setTool('draw_free', this)" title="Dibuja explicaciones libres"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Marcador (Libre)</button>
+                <button id="btn-highlighter" class="btn-tool" onclick="setTool('highlighter', this)" title="Resalta áreas importantes con transparencia"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Resaltador</button>
+                <button class="btn-tool" onclick="setTool('line', this)" title="Dibuja una línea recta"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Línea Recta</button>
+                <button class="btn-tool" onclick="setTool('text', this)" title="Escribe texto en el lienzo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Escribir Texto</button>
+                <button class="btn-tool" onclick="setTool('eraser', this)" title="Haz clic o arrastra para borrar objetos y trazos"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Borrador</button>
+                <button class="btn-tool" onclick="setTool('move', this)" title="Mueve o selecciona objetos. Arrastra el fondo para scroll."><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Mover / Navegar</button>
                 <button class="btn-tool" onclick="undo()">↩️ Deshacer</button>
-                <button id="btn-hide-show" class="btn-tool btn-toggle" onclick="toggleVisibility()" title="Oculta temporalmente los trazos y objetos">👻 Hide / Show</button>
-                <button class="btn-tool btn-danger" onclick="ClearTodo()">🗑️ Clear Todo</button>
-                <button class="btn-tool" style="background: #e67e22; color: white;" onclick="exportarImagen()" title="Descargar imagen del lienzo con tus Results">📸 Exportar Imagen</button>
+                <button id="btn-hide-show" class="btn-tool btn-toggle" onclick="toggleVisibility()" title="Oculta temporalmente los trazos y objetos"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Hide / Show</button>
+                <button class="btn-tool btn-danger" onclick="ClearTodo()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Clear Todo</button>
+                <button class="btn-tool" style="background: #e67e22; color: white;" onclick="exportarImagen()" title="Descargar imagen del lienzo con tus Results"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Exportar Imagen</button>
             </div>
             
             <div class="color-picker-container">
@@ -249,8 +249,8 @@
             <hr style="border:0; border-top:1px solid var(--border-color); margin: 10px 0;">
             <div class="section-title">Visualización</div>
             <div class="toolbar">
-                <button id="btn-equipotentials" class="btn-tool btn-toggle on" onclick="toggleEquipotentials()">👁️ Equipotentials (Puntuales)</button>
-                <button id="btn-vector-field" class="btn-tool btn-toggle" onclick="toggleVectorField()">🏹 Vector Field (Total)</button>
+                <button id="btn-equipotentials" class="btn-tool btn-toggle on" onclick="toggleEquipotentials()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Equipotentials (Puntuales)</button>
+                <button id="btn-vector-field" class="btn-tool btn-toggle" onclick="toggleVectorField()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Vector Field (Total)</button>
             </div>
         </div>
         <hr style="border:0; border-top:1px solid var(--border-color); margin: 5px 0;">
@@ -301,20 +301,20 @@
             <div id="objects-container"></div>
         </div>
         
-        <button class="btn-tool btn-action" style="margin-top:15px;" onclick="analizarFisica()">🔍 Calculate</button>
+        <button class="btn-tool btn-action" style="margin-top:15px;" onclick="analizarFisica()"><span class="inline-flex items-center text-sky-300 mr-1"><i data-lucide="search" class="w-4 h-4 inline"></i></span> Calculate</button>
     </div>
 
     <div class="panel-toggle" id="toggle-left" onclick="toggleLeft()" title="Hide/Show Tools">◀</div>
 
     <div class="canvas-area" id="canvas-wrapper">
         <canvas id="main-canvas"></canvas>
-        <button id="float-delete" onclick="deleteSelected()">🗑️ Remove</button>
+        <button id="float-delete" onclick="deleteSelected()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Remove</button>
         <input type="text" id="text-input-overlay" placeholder="Escribe aquí y presiona Enter...">
         <div id="labels-overlay"></div>
         <div id="coords-indicator">x: 0 m, y: 0 m | V: 0 V</div>
     </div>
 
-    <div class="panel-toggle" id="toggle-right" onclick="toggleRight()" title="Hide/Show Results">▶</div>
+    <div class="panel-toggle" id="toggle-right" onclick="toggleRight()" title="Hide/Show Results"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div>
 
     <div class="panel panel-right" id="panel-right">
         <div>
@@ -336,13 +336,13 @@
             <div class="latex-box" id="latex-result">$$\text{---}$$</div>
             
             <div class="tip-card" id="static-tip">
-                <strong>💡 Tip de Simulation:</strong><br>
+                <strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip de Simulation:</strong><br>
                 Enciende la capa <b>"Vector Field"</b> para visualizar la dirección de la Force resultante en todo el espacio mediante flechas dinámicas.
             </div>
         </div>
 
         <div id="chat-section" style="display: none;">
-            <div class="section-title" style="margin-top: 15px;">💬 Chat de Grupo</div>
+            <div class="section-title" style="margin-top: 15px;"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="message-square" class="w-4 h-4 inline"></i></span> Chat de Grupo</div>
             <div id="chat-box" style="background: #1a1a24; height: 180px; overflow-y: auto; padding: 10px; border-radius: 6px; border-left: 3px solid #3498db; margin-bottom: 10px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
                 <i style="color: #666;">Únete a un cuarto para chatear...</i>
             </div>
@@ -357,7 +357,7 @@
 <!-- Modales -->
 <div class="modal" id="auth-modal" style="display: flex;">
     <div class="modal-content" style="text-align: center;">
-        <h3 style="margin-top:0; color: #4ecca3;">🔐 Acceso al Laboratorio</h3>
+        <h3 style="margin-top:0; color: #4ecca3;"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Acceso al Laboratorio</h3>
         <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 20px;">Inicia sesión para jugar en grupo o entra como invitado para modo individual.</p>
         
         <div id="auth-error" style="color: #ff6b6b; font-size: 0.85rem; margin-bottom: 10px; padding: 10px; border-radius: 4px;"></div>
@@ -383,7 +383,7 @@
 <div class="modal" id="room-modal">
     <div class="modal-content">
         <span class="close-btn" onclick="CloseModalSala()">&times;</span>
-        <h3 style="margin-top:0; color: #a29bfe;">🌐 Unirse a un Cuarto</h3>
+        <h3 style="margin-top:0; color: #a29bfe;"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Unirse a un Cuarto</h3>
         <p style="font-size: 0.9rem; color: #ccc;">Ingresa el nombre del cuarto para colaborar.</p>
         <label>Nombre del Cuarto:</label><input type="text" id="room-name" class="auth-input" placeholder="Ej: equipo_alpha">
         <label>Contraseña del Cuarto:</label><input type="password" id="room-pass" class="auth-input" placeholder="Contraseña de acceso">
@@ -394,7 +394,7 @@
 <div class="modal" id="profile-modal">
     <div class="modal-content">
         <span class="close-btn" onclick="CloseModalPerfil()">&times;</span>
-        <h3 style="margin-top:0; color: #f1c40f;">🏆 Mi Perfil Académico</h3>
+        <h3 style="margin-top:0; color: #f1c40f;"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Mi Perfil Académico</h3>
         <div style="display: flex; justify-content: space-between; background: #1a1a24; padding: 10px; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid #f1c40f;">
             <div><strong>Level:</strong> <span id="ui-Level" style="color: #4ecca3; font-size: 1.2rem;">1</span></div>
             <div><strong>Puntos:</strong> <span id="ui-puntos" style="color: #4ecca3; font-size: 1.2rem;">0</span></div>
@@ -428,7 +428,7 @@
     function OpenModalSala() { 
         if (!window.appAuth || !window.appAuth.currentUser) {
             document.getElementById('auth-modal').style.display = 'flex';
-            alert("⚠️ Debes iniciar sesión (o entrar como Invitado) primero para poder unirte a una sala.");
+            alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Debes iniciar sesión (o entrar como Invitado) primero para poder unirte a una sala.");
             return;
         }
         document.getElementById('room-modal').style.display = 'flex'; 
@@ -443,12 +443,12 @@
         document.getElementById('ui-puntos').innerText = actual;
         let Level = Math.floor(actual / 50) + 1;
         document.getElementById('ui-Level').innerText = Level;
-        document.getElementById('user-stats').innerHTML = `🏆 Lvl ${Level} | ${actual} pts`;
+        document.getElementById('user-stats').innerHTML = `<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Lvl ${Level} | ${actual} pts`;
     };
 
     let leftOpen = true; let rightOpen = true;
-    function toggleLeft() { leftOpen = !leftOpen; rootStyles.setProperty('--left-w', leftOpen ? '260px' : '0px'); document.getElementById('toggle-left').innerText = leftOpen ? '◀' : '▶'; document.getElementById('panel-left').style.opacity = leftOpen ? '1' : '0'; setTimeout(resizeCanvas, 300); }
-    function toggleRight() { rightOpen = !rightOpen; rootStyles.setProperty('--right-w', rightOpen ? '420px' : '0px'); document.getElementById('toggle-right').innerText = rightOpen ? '▶' : '◀'; document.getElementById('panel-right').style.opacity = rightOpen ? '1' : '0'; setTimeout(resizeCanvas, 300); }
+    function toggleLeft() { leftOpen = !leftOpen; rootStyles.setProperty('--left-w', leftOpen ? '260px' : '0px'); document.getElementById('toggle-left').innerText = leftOpen ? '◀' : '<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>'; document.getElementById('panel-left').style.opacity = leftOpen ? '1' : '0'; setTimeout(resizeCanvas, 300); }
+    function toggleRight() { rightOpen = !rightOpen; rootStyles.setProperty('--right-w', rightOpen ? '420px' : '0px'); document.getElementById('toggle-right').innerText = rightOpen ? '<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>' : '◀'; document.getElementById('panel-right').style.opacity = rightOpen ? '1' : '0'; setTimeout(resizeCanvas, 300); }
 
     let state = {
         tool: 'draw', currentColor: '#000000', lineWidth: 3, 
@@ -489,9 +489,9 @@
         state.boards.forEach((board, index) => {
             const div = document.createElement('div');
             div.className = `board-item ${index === state.activeBoardIndex ? 'active' : ''}`;
-            div.innerHTML = `<span>📖 ${board.name}</span>`;
+            div.innerHTML = `<span><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="book" class="w-4 h-4 inline"></i></span> ${board.name}</span>`;
             if (state.boards.length > 1) {
-                const del = document.createElement('span'); del.innerText = " ✕"; del.style.marginLeft = "auto";
+                const del = document.createElement('span'); del.innerText = " <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>"; del.style.marginLeft = "auto";
                 del.onclick = (e) => { e.stopPropagation(); deleteBoard(index); };
                 div.appendChild(del);
             }
@@ -1208,7 +1208,7 @@
     onAuthStateChanged(auth, (user) => {
         if (user) {
             document.getElementById('auth-modal').style.display = 'none';
-            document.getElementById('user-info').innerText = user.isAnonymous ? `👤 Invitado-${user.uid.slice(0,4)}` : `👤 ${user.displayName || user.email || 'Usuario'}`;
+            document.getElementById('user-info').innerText = user.isAnonymous ? `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Invitado-${user.uid.slice(0,4)}` : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${user.displayName || user.email || 'Usuario'}`;
             document.getElementById('btn-logout').style.display = 'inline-block';
             document.getElementById('user-stats').style.display = 'inline-flex';
             
@@ -1221,7 +1221,7 @@
             document.getElementById('user-info').innerText = 'No conectado';
             document.getElementById('user-stats').style.display = 'none';
             document.getElementById('btn-logout').style.display = 'none';
-            document.getElementById('room-info').innerText = '🌐 Sala: Ninguna';
+            document.getElementById('room-info').innerText = '<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: Ninguna';
             document.getElementById('btn-share-room').style.display = 'none';
             document.getElementById('chat-section').style.display = 'none';
             
@@ -1303,43 +1303,43 @@
     function actualizarUIPerfil() {
         const d = window.userGameData; if (!d || !d.perfil) return;
         const p = d.perfil;
-        document.getElementById('user-stats').innerText = `🏆 Lvl ${p.Level} | ${p.puntos} pts`;
+        document.getElementById('user-stats').innerText = `<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Lvl ${p.Level} | ${p.puntos} pts`;
         document.getElementById('ui-Level').innerText = p.Level; document.getElementById('ui-puntos').innerText = p.puntos; document.getElementById('ui-tiempo').innerText = p.tiempo_sesion;
 
         const tareasDiv = document.getElementById('ui-tareas');
         if(d.tareas) {
             if (p.Level === 1) {
                 tareasDiv.innerHTML = `
-                    <div class="task-item ${d.tareas.tarea_1 ? 'done' : ''}"><div class="task-check">✓</div><span>Coloca 1 carga en el lienzo</span></div>
-                    <div class="task-item ${d.tareas.tarea_2 ? 'done' : ''}"><div class="task-check">✓</div><span>Coloca 1 punto de análisis</span></div>
-                    <div class="task-item ${d.tareas.tarea_3 ? 'done' : ''}"><div class="task-check">✓</div><span>Haz 5 interacciones (Mover/Dibujar)</span></div>
+                    <div class="task-item ${d.tareas.tarea_1 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 1 carga en el lienzo</span></div>
+                    <div class="task-item ${d.tareas.tarea_2 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 1 punto de análisis</span></div>
+                    <div class="task-item ${d.tareas.tarea_3 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Haz 5 interacciones (Mover/Dibujar)</span></div>
                 `;
             } else if (p.Level === 2) {
                 tareasDiv.innerHTML = `
-                    <div class="task-item ${d.tareas.tarea_4 ? 'done' : ''}"><div class="task-check">✓</div><span>Coloca 2 Charges en el lienzo</span></div>
-                    <div class="task-item ${d.tareas.tarea_5 ? 'done' : ''}"><div class="task-check">✓</div><span>Coloca 2 puntos de análisis</span></div>
-                    <div class="task-item ${d.tareas.tarea_6 ? 'done' : ''}"><div class="task-check">✓</div><span>Haz 20 interacciones totales</span></div>
+                    <div class="task-item ${d.tareas.tarea_4 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 2 Charges en el lienzo</span></div>
+                    <div class="task-item ${d.tareas.tarea_5 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 2 puntos de análisis</span></div>
+                    <div class="task-item ${d.tareas.tarea_6 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Haz 20 interacciones totales</span></div>
                 `;
             } else if (p.Level === 3) {
                 tareasDiv.innerHTML = `
-                    <div class="task-item ${d.tareas.tarea_7 ? 'done' : ''}"><div class="task-check">✓</div><span>Coloca 3 Charges en el lienzo</span></div>
-                    <div class="task-item ${d.tareas.tarea_8 ? 'done' : ''}"><div class="task-check">✓</div><span>Dibuja 1 Trajectory entre puntos</span></div>
-                    <div class="task-item ${d.tareas.tarea_9 ? 'done' : ''}"><div class="task-check">✓</div><span>Haz 50 interacciones totales</span></div>
+                    <div class="task-item ${d.tareas.tarea_7 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 3 Charges en el lienzo</span></div>
+                    <div class="task-item ${d.tareas.tarea_8 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Dibuja 1 Trajectory entre puntos</span></div>
+                    <div class="task-item ${d.tareas.tarea_9 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Haz 50 interacciones totales</span></div>
                 `;
             } else if (p.Level === 4) {
                 tareasDiv.innerHTML = `
-                    <div class="task-item ${d.tareas.tarea_10 ? 'done' : ''}"><div class="task-check">✓</div><span>Coloca 4 Charges en el lienzo</span></div>
-                    <div class="task-item ${d.tareas.tarea_11 ? 'done' : ''}"><div class="task-check">✓</div><span>Dibuja 2 Trajectorys</span></div>
-                    <div class="task-item ${d.tareas.tarea_12 ? 'done' : ''}"><div class="task-check">✓</div><span>Haz 100 interacciones totales</span></div>
+                    <div class="task-item ${d.tareas.tarea_10 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 4 Charges en el lienzo</span></div>
+                    <div class="task-item ${d.tareas.tarea_11 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Dibuja 2 Trajectorys</span></div>
+                    <div class="task-item ${d.tareas.tarea_12 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Haz 100 interacciones totales</span></div>
                 `;
             } else {
-                tareasDiv.innerHTML = `<div class="task-item done"><div class="task-check">✓</div><span>¡Has completado todas las misiones del Simulator!</span></div>`;
+                tareasDiv.innerHTML = `<div class="task-item done"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>¡Has completado todas las misiones del Simulator!</span></div>`;
             }
         }
 
         const container = document.getElementById('ui-logros'); container.innerHTML = '';
         if(d.logros) {
-            const dictLogros = { "Home_sesion": "🎓 welcome", "fisico_experto": "⚡ Physical Experto", "Level_2_alcanzado": "🌟 Graduado Level 1", "Level_3_alcanzado": "🚀 Investigador Level 2", "Level_4_alcanzado": "🧠 Científico Level 3", "Level_5_alcanzado": "👑 Nobel de Physics" };
+            const dictLogros = { "Home_sesion": "<span class="inline-flex items-center text-indigo-300 mr-1"><i data-lucide="graduation-cap" class="w-4 h-4 inline"></i></span> welcome", "fisico_experto": "<span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Physical Experto", "Level_2_alcanzado": "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Graduado Level 1", "Level_3_alcanzado": "<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="rocket" class="w-4 h-4 inline"></i></span> Investigador Level 2", "Level_4_alcanzado": "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Científico Level 3", "Level_5_alcanzado": "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Nobel de Physics" };
             Object.keys(d.logros).forEach(key => { if(d.logros[key] && dictLogros[key]) container.innerHTML += `<span style="background: #e67e22; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">${dictLogros[key]}</span>`; });
         }
     }
@@ -1386,13 +1386,13 @@
             if(!window.userGameData || !window.userGameData.tareas) return;
             const t = window.userGameData.tareas; const lvl = window.userGameData.perfil?.Level || 1;
             if (lvl === 1 && t.tarea_1 && t.tarea_2 && t.tarea_3) {
-                window.userGameData.perfil.Level = 2; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 2, puntos: increment(200) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_2_alcanzado: true }); alert("🌟 ¡FELICITACIONES! Has completado el Level 1. ¡Subiste al Level 2 y ganaste 200 pts!"); actualizarUIPerfil();
+                window.userGameData.perfil.Level = 2; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 2, puntos: increment(200) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_2_alcanzado: true }); alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ¡FELICITACIONES! Has completado el Level 1. ¡Subiste al Level 2 y ganaste 200 pts!"); actualizarUIPerfil();
             } else if (lvl === 2 && t.tarea_4 && t.tarea_5 && t.tarea_6) {
-                window.userGameData.perfil.Level = 3; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 3, puntos: increment(400) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_3_alcanzado: true }); alert("🚀 ¡IMPRESIONANTE! Completaste el Level 2. ¡Subiste al Level 3 y ganaste 400 pts!"); actualizarUIPerfil();
+                window.userGameData.perfil.Level = 3; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 3, puntos: increment(400) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_3_alcanzado: true }); alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="rocket" class="w-4 h-4 inline"></i></span> ¡IMPRESIONANTE! Completaste el Level 2. ¡Subiste al Level 3 y ganaste 400 pts!"); actualizarUIPerfil();
             } else if (lvl === 3 && t.tarea_7 && t.tarea_8 && t.tarea_9) {
-                window.userGameData.perfil.Level = 4; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 4, puntos: increment(800) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_4_alcanzado: true }); alert("🧠 ¡ERES UN GENIO! Completaste el Level 3. ¡Subiste al Level 4 y ganaste 800 pts!"); actualizarUIPerfil();
+                window.userGameData.perfil.Level = 4; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 4, puntos: increment(800) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_4_alcanzado: true }); alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ¡ERES UN GENIO! Completaste el Level 3. ¡Subiste al Level 4 y ganaste 800 pts!"); actualizarUIPerfil();
             } else if (lvl === 4 && t.tarea_10 && t.tarea_11 && t.tarea_12) {
-                window.userGameData.perfil.Level = 5; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 5, puntos: increment(1500) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_5_alcanzado: true }); alert("👑 ¡LEYENDA! Has completado el Laboratorio. ¡Alcanzaste el Level MÁXIMO (5)!"); actualizarUIPerfil();
+                window.userGameData.perfil.Level = 5; update(ref(db, 'usuarios_Powerl/' + uid + '/perfil'), { Level: 5, puntos: increment(1500) }); update(ref(db, 'usuarios_Powerl/' + uid + '/logros'), { Level_5_alcanzado: true }); alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ¡LEYENDA! Has completado el Laboratorio. ¡Alcanzaste el Level MÁXIMO (5)!"); actualizarUIPerfil();
             }
         }, 1000);
     };
@@ -1402,7 +1402,7 @@
         if (!auth.currentUser) {
             document.getElementById('room-modal').style.display = 'none';
             document.getElementById('auth-modal').style.display = 'flex';
-            return alert('⚠️ Debes iniciar sesión primero para unirte a un cuarto.');
+            return alert('<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Debes iniciar sesión primero para unirte a un cuarto.');
         }
 
         const salaId = document.getElementById('room-name').value.trim();
@@ -1410,21 +1410,21 @@
         
         if (!salaId || !salaPass) return alert('Debes ingresar el nombre del cuarto y su contraseña.');
         
-        if (/[.#$\[\]]/.test(salaId)) return alert('❌ El nombre del cuarto no puede contener puntos ni caracteres especiales como # o $.');
+        if (/[.#$\[\]]/.test(salaId)) return alert('<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> El nombre del cuarto no puede contener puntos ni caracteres especiales como # o $.');
 
         const passRef = ref(db, 'salas_Powerl/' + salaId + '/password');
         
         try {
             const snapshot = await get(passRef);
             if (snapshot.exists()) {
-                if (snapshot.val() !== salaPass) return alert('❌ Contraseña incorrecta para el cuarto: ' + salaId);
+                if (snapshot.val() !== salaPass) return alert('<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Contraseña incorrecta para el cuarto: ' + salaId);
             } else {
                 await set(passRef, salaPass); 
-                alert('✅ Nuevo cuarto creado: ' + salaId);
+                alert('<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> Nuevo cuarto creado: ' + salaId);
             }
             
             document.getElementById('room-modal').style.display = 'none';
-            document.getElementById('room-info').innerText = '🌐 Sala: ' + salaId;
+            document.getElementById('room-info').innerText = '<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: ' + salaId;
             document.getElementById('btn-share-room').style.display = 'inline-block';
             document.getElementById('chat-section').style.display = 'block';
             

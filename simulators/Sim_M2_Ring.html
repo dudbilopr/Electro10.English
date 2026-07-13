@@ -56,6 +56,12 @@
             background-color: var(--accent-color); border: none;
         }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
 </head>
 <body class="min-h-screen p-4 flex items-center justify-center">
 

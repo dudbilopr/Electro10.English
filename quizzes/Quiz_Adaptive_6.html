@@ -112,7 +112,7 @@
 
   <!-- Results (hidden initially) -->
   <div class="results-screen hidden" id="results-screen">
-    <span class="result-icon" id="result-emoji">⭐</span>
+    <span class="result-icon" id="result-emoji"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span></span>
     <div class="result-title" id="result-title">¡Assessment Completada!</div>
     <div style="color:var(--text-mid);font-size:0.95rem;margin-bottom:8px" id="result-level-text">Level máximo alcanzado</div>
     <div class="result-xp" id="result-xp">+40 XP</div>
@@ -266,7 +266,7 @@ function renderQuestion() {
           </button>`).join('')}
       </div>
       <div class="hint-box" id="hint-box">
-        <strong>💡 Pista:</strong> ${q.pista}
+        <strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Pista:</strong> ${q.pista}
       </div>
       <div class="feedback-box" id="feedback-box"></div>
       <div class="action-row">
@@ -298,7 +298,7 @@ function selectOption(idx, el, isCorrect) {
 
   const fb = document.getElementById('feedback-box');
   fb.className = 'feedback-box show ' + (isCorrect ? 'ok' : 'bad');
-  fb.innerHTML = `<strong>${isCorrect ? '✅ ¡Correct!' : '❌ Incorrect.'}</strong> ${isCorrect ? q.feedback_ok : q.feedback_bad}`;
+  fb.innerHTML = `<strong>${isCorrect ? '<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> ¡Correct!' : '<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Incorrect.'}</strong> ${isCorrect ? q.feedback_ok : q.feedback_bad}`;
 
   document.getElementById('btn-next').classList.remove('hidden');
 
@@ -357,7 +357,7 @@ function showResults() {
   const pct = Math.round((results.correct / results.total) * 100) || 0;
   const xp = Math.round(QUIZ_CONFIG.xpBase * (pct/100) * (results.maxLevel / 3) * (hintsUsed === 0 ? 1.2 : 1));
 
-  const emojis = ['😔','😐','🙂','😊','⭐','🌟','🏆'][Math.floor(pct/15)] || '🏆';
+  const emojis = ['<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span>','<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>','<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span>'][Math.floor(pct/15)] || '<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span>';
   const titulo = pct >= 80 ? '¡Desempeño Sobresaliente!' : pct >= 60 ? '¡Buen Work!' : 'Sigue practicando';
 
   const feedbacks = {
@@ -369,7 +369,7 @@ function showResults() {
   if(feedbacks.conceptos > 0) feedbackText += '• Repasa los conceptos básicos de la Coulomb\'s Law y las propiedades de las Charges.<br>';
   if(feedbacks.calculo > 0) feedbackText += '• Practica el cálculo numérico con conversión de unidades (μC → C).<br>';
   if(feedbacks.aplicacion > 0) feedbackText += '• Los problemas de aplicación requieren integrar superPosition y análisis vectorial.<br>';
-  if(!feedbackText) feedbackText = '🎉 Dominio completo del Module. ¡Estás listo para el Next tema!';
+  if(!feedbackText) feedbackText = '<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="party-popper" class="w-4 h-4 inline"></i></span> Dominio completo del Module. ¡Estás listo para el Next tema!';
 
   document.getElementById('results-screen').classList.remove('hidden');
   document.getElementById('result-emoji').textContent = emojis;

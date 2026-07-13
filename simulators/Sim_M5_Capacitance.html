@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- ✅ solution PERFECTA CSP: Autoriza explícitamente a Google Auth y Firebase a usar Assessment interna, eliminando el bloqueo -->
+<!-- <span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> solution PERFECTA CSP: Autoriza explícitamente a Google Auth y Firebase a usar Assessment interna, eliminando el bloqueo -->
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://www.gstatic.com https://apis.google.com;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Capacitance10.easy - Laboratorio Avanzado</title>
@@ -387,7 +387,7 @@ const rtdb = getDatabase(app);
 const auth = getAuth(app);
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'capacitance10';
 
-// ✅ EVALUAR REDIRECCIONES AL CARGAR (Captura el login de Google)
+// <span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> EVALUAR REDIRECCIONES AL CARGAR (Captura el login de Google)
 getRedirectResult(auth).then(result => {
     if (result) toast("Autenticación con Google completada exitosamente.");
 }).catch(error => {
@@ -496,7 +496,7 @@ $('btn-add-tab').onclick = () => {
 
 onAuthStateChanged(auth, async u => {
     st.user = u;
-    // 🔒 REGLA ESTRICTA: Solo si hay usuario y tiene correo electrónico
+    // <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> REGLA ESTRICTA: Solo si hay usuario y tiene correo electrónico
     if(u && u.email) {
         modal('modal-auth', false);
         const userRef = doc(db, 'artifacts', appId, 'public', 'data', 'directory', u.uid);
@@ -522,7 +522,7 @@ onAuthStateChanged(auth, async u => {
                 await setDoc(userRef, st.profile);
             } else {
                 let data = d.data();
-                // 🛡️ AUTO-SANADOR DE BASE DE DATOS: Limpia valores 'undefined' corruptos
+                // <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ AUTO-SANADOR DE BASE DE DATOS: Limpia valores 'undefined' corruptos
                 st.profile = {
                     nombre: (data.nombre && data.nombre !== 'undefined') ? data.nombre : defaultProfile.nombre,
                     alias: (data.alias && data.alias !== 'undefined') ? data.alias : defaultProfile.alias,
@@ -558,7 +558,7 @@ $('btn-login-email').onclick = async () => {
     try { await signInWithEmailAndPassword(auth, e, p); } catch(err) { if(err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential') { try { await createUserWithEmailAndPassword(auth, e, p); } catch(ex) { toast(ex.message); } } else toast(err.message); }
 };
 
-// ✅ solution PERFECTA GOOGLE SSO: Redirección pura con selección forzada de cuenta
+// <span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> solution PERFECTA GOOGLE SSO: Redirección pura con selección forzada de cuenta
 $('btn-login-google').onclick = () => { 
     const provider = new GoogleAuthProvider();
     // Obliga a Google a Show la pantalla de elegir cuenta siempre
@@ -582,7 +582,7 @@ $('btn-theme').onclick = () => {
 // Profile Update (Visualización Segura)
 $('btn-profile').onclick = () => {
     if(!st.user || !st.profile) return toast('Inicia sesión');
-    // 🛡️ Fallbacks visuales para asegurar que NUNCA diga 'undefined' en pantalla
+    // <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Fallbacks visuales para asegurar que NUNCA diga 'undefined' en pantalla
     $('prof-name').innerText = st.profile.nombre || 'Investigador'; 
     $('prof-role').innerText = st.profile.rol || 'Student'; 
     $('prof-level').innerText = st.profile.Level || 1; 
@@ -819,7 +819,7 @@ const drawComp = (c) => {
     if(c.isEq) { strokeCol = c.stepColor || 'var(--accent)'; }
     ctx.strokeStyle = strokeCol; ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.fillStyle = 'var(--text)';
 
-    if(c.exploded) { ctx.fillStyle='red'; ctx.font='20px Arial'; ctx.fillText('💥', -10, 5); ctx.restore(); return; }
+    if(c.exploded) { ctx.fillStyle='red'; ctx.font='20px Arial'; ctx.fillText('<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>', -10, 5); ctx.restore(); return; }
 
     if(c.type !== 'cap_electro') {
         ctx.beginPath(); ctx.moveTo(-20,0); ctx.lineTo(-10,0); ctx.moveTo(20,0); ctx.lineTo(10,0); ctx.stroke();
@@ -1261,8 +1261,8 @@ $('btn-solve').onclick = () => {
         let isReverse = distFromPos[cRef.n2] < distFromPos[cRef.n1];
         if(cRef.polar && isReverse) { vCap = -Math.abs(vCap||1); } // Forzar negativo si está al revés
 
-        if(cRef.polar && vCap < 0) { cRef.exploded = true; allOk = false; triggerExplosion(cRef.x, cRef.y); html += `<tr style="${bgStr} color:var(--danger); font-weight:bold;"><td>${e.id.substring(0,4)} 💥 Polar Inv</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>`; } 
-        else if (cRef.maxV && Math.abs(vCap) > cRef.maxV) { cRef.exploded = true; allOk = false; triggerExplosion(cRef.x, cRef.y); html += `<tr style="${bgStr} color:var(--danger); font-weight:bold;"><td>${e.id.substring(0,4)} ⚡ Ruptura</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>`; } 
+        if(cRef.polar && vCap < 0) { cRef.exploded = true; allOk = false; triggerExplosion(cRef.x, cRef.y); html += `<tr style="${bgStr} color:var(--danger); font-weight:bold;"><td>${e.id.substring(0,4)} <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Polar Inv</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>`; } 
+        else if (cRef.maxV && Math.abs(vCap) > cRef.maxV) { cRef.exploded = true; allOk = false; triggerExplosion(cRef.x, cRef.y); html += `<tr style="${bgStr} color:var(--danger); font-weight:bold;"><td>${e.id.substring(0,4)} <span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Ruptura</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>`; } 
         else { html += `<tr style="${bgStr}"><td><b>${e.id.substring(0,4)}</b></td><td>${e.val.toFixed(2)}</td><td>${vCap.toFixed(2)}</td><td>${qCap.toFixed(2)}</td><td>${uCap.toFixed(2)}</td></tr>`; }
     });
     
@@ -1327,7 +1327,7 @@ $('btn-admin').onclick = async () => {
             });
         }
         $('dash-tot-rtg').innerText = totalRtg; 
-        $('dash-avg-star').innerText = totalRtg > 0 ? (sumStars/totalRtg).toFixed(1) + ' ★' : 'N/A';
+        $('dash-avg-star').innerText = totalRtg > 0 ? (sumStars/totalRtg).toFixed(1) + ' <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>' : 'N/A';
 
     } catch (error) {
         console.error("Fallo de Permisos en Firestore (Admin):", error);

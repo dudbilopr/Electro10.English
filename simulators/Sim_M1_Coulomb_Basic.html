@@ -53,7 +53,7 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
 <header class="glass">
     <div style="display:flex;align-items:center;gap:15px">
         <h2 style="color:var(--accent);font-size:1.2rem;margin:0"><i class="ph ph-lightning"></i> CoulombLab10.easy</h2>
-        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 8px;border-radius:4px">🌐 Caso Local</span>
+        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 8px;border-radius:4px"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Caso Local</span>
     </div>
     <div style="display:flex;align-items:center;gap:15px">
         <button class="btn" onclick="toggleTheme()" title="Modo Día/Noche"><i class="ph ph-moon"></i></button>
@@ -167,9 +167,9 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
 
 <div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> Mi Perfil</h3><p style="font-size:.85rem;color:var(--text);margin-bottom:10px">Elige un avatar y actualiza tus datos.</p>
 <div style="display:flex;justify-content:space-around;background:rgba(78,204,163,0.1);padding:10px;border-radius:8px;margin-bottom:15px;border:1px solid var(--accent)"><div style="text-align:center"><b>Level</b><br><span id="prof-Level-disp" style="font-size:1.5rem;color:var(--accent)">1</span></div><div style="text-align:center"><b>Puntos</b><br><span id="prof-puntos-disp" style="font-size:1.5rem;color:#f1c40f">0</span></div></div>
-<div id="prof-avatars" style="display:flex;justify-content:center;gap:15px;font-size:2rem;margin-bottom:15px;cursor:pointer"><span class="avt" onclick="selAvt(this)" style="border-color:var(--accent);transform:scale(1.2)">👨‍🔬</span><span class="avt" onclick="selAvt(this)">👩‍🔬</span><span class="avt" onclick="selAvt(this)">🤖</span><span class="avt" onclick="selAvt(this)">👽</span><span class="avt" onclick="selAvt(this)">🦸</span></div><input type="text" id="prof-name" placeholder="Nombre completo" style="margin-bottom:10px"><input type="text" id="prof-alias" placeholder="Alias (Ej: ElectroMaster)" style="margin-bottom:10px"><input type="number" id="prof-age" placeholder="Edad" style="margin-bottom:10px"><select id="prof-gender" style="margin-bottom:10px"><option value="">Género...</option><option value="M">Masculino</option><option value="F">Femenino</option><option value="O">Otro</option></select><input type="text" id="prof-major" placeholder="Carrera / Institución" style="margin-bottom:15px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="saveProfile()">save Perfil</button></div></div>
+<div id="prof-avatars" style="display:flex;justify-content:center;gap:15px;font-size:2rem;margin-bottom:15px;cursor:pointer"><span class="avt" onclick="selAvt(this)" style="border-color:var(--accent);transform:scale(1.2)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>‍<span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>‍<span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></span></div><input type="text" id="prof-name" placeholder="Nombre completo" style="margin-bottom:10px"><input type="text" id="prof-alias" placeholder="Alias (Ej: ElectroMaster)" style="margin-bottom:10px"><input type="number" id="prof-age" placeholder="Edad" style="margin-bottom:10px"><select id="prof-gender" style="margin-bottom:10px"><option value="">Género...</option><option value="M">Masculino</option><option value="F">Femenino</option><option value="O">Otro</option></select><input type="text" id="prof-major" placeholder="Carrera / Institución" style="margin-bottom:15px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="saveProfile()">save Perfil</button></div></div>
 
-<div class="modal" id="admin-modal"><div class="modal-content glass" style="max-width:900px;width:95%"><span class="close-btn" onclick="hideModal('admin-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-shield-star"></i> Control General (Admin)</h3><div id="admin-stats" style="display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap"><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Usuarios</h4><div id="adm-users-count" style="font-size:24px;color:var(--accent);font-weight:bold">0</div></div><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Rating Gral.</h4><div id="adm-rating-avg" style="font-size:24px;color:#f1c40f;font-weight:bold">0.0 ⭐</div></div></div><div class="section-title">Gestión de Usuarios, Roles y Grupos</div><div style="overflow-x:auto;max-height:400px;background:var(--card-bg);border-radius:6px;padding:5px"><table style="width:100%;min-width:700px"><thead><tr><th>Usuario</th><th>Nombre</th><th>Rol (Permiso)</th><th>Asignar Grupo</th><th>Acción</th></tr></thead><tbody id="adm-users-list"></tbody></table></div></div></div>
+<div class="modal" id="admin-modal"><div class="modal-content glass" style="max-width:900px;width:95%"><span class="close-btn" onclick="hideModal('admin-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-shield-star"></i> Control General (Admin)</h3><div id="admin-stats" style="display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap"><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Usuarios</h4><div id="adm-users-count" style="font-size:24px;color:var(--accent);font-weight:bold">0</div></div><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Rating Gral.</h4><div id="adm-rating-avg" style="font-size:24px;color:#f1c40f;font-weight:bold">0.0 <span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span></div></div></div><div class="section-title">Gestión de Usuarios, Roles y Grupos</div><div style="overflow-x:auto;max-height:400px;background:var(--card-bg);border-radius:6px;padding:5px"><table style="width:100%;min-width:700px"><thead><tr><th>Usuario</th><th>Nombre</th><th>Rol (Permiso)</th><th>Asignar Grupo</th><th>Acción</th></tr></thead><tbody id="adm-users-list"></tbody></table></div></div></div>
 
 <div class="modal" id="rooms-modal"><div class="modal-content glass" style="max-width:800px; width:95%;"><span class="close-btn" onclick="hideModal('rooms-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-users"></i> Comunidad y Salas</h3><p style="font-size:0.85rem;color:var(--text);margin-bottom:10px">Interactúa con otros Students. Únete a sesiones conjuntas o envía regalos.</p>
 <div style="display:flex; flex-wrap:wrap; gap:20px;">
@@ -337,7 +337,7 @@ function analizarFisica(){
     chs.forEach(t=>{chs.forEach(s=>{if(t.id===s.id)return;const dx=s.physX-t.physX,dy=s.physY-t.physY;let ang=Math.atan2(dy,dx);if(t.q*s.q>0)ang+=Math.PI;ang=(ang+4*Math.PI)%(2*Math.PI);const r=Math.hypot(dx,dy)/sc*dU,mag=r>0?(Ke*Math.abs(t.q*qU*s.q*qU))/(r*r):0;ints.push({target:t.id,source:s.id,label:`F_{${s.id}${t.id}}`,mag:mag,angleDeg:(ang*180/Math.PI)%360,Fx:mag*Math.cos(ang),Fy:mag*Math.sin(ang),r:r,t:t,s:s,ang:ang,isAttract:(t.q*s.q<0)});});});
     state.calculatedForces=ints; const vb=document.getElementById('validation-box'); vb.innerHTML='';
     if(!vs.length)vb.innerHTML='<i>Dibuja vectores sobre las Charges.</i>';
-    vs.forEach(v=>{const o=chs.find(c=>Math.hypot(c.x-v.start.x,c.y-v.start.y)<60);if(!o){v.validation='warn';v.label='?';v.isAttract=!1;vb.innerHTML+=`<div style="color:var(--danger)">⚠️ Vector suelto</div>`;return;}o.hasVectors=!0;const vA=(Math.atan2(getPhysY(v.end.y)-getPhysY(v.start.y),v.end.x-v.start.x)+4*Math.PI)%(2*Math.PI);let b=null,mD=100;ints.filter(i=>i.t.id===o.id).forEach(c=>{let d=Math.abs(c.ang-vA);if(d>Math.PI)d=2*Math.PI-d;if(d<mD){mD=d;b=c;}});if(b&&mD<0.6){v.validation='correct';v.label=b.label;v.isAttract=b.isAttract;vb.innerHTML+=`<div style="color:var(--accent)">✅ $${b.label}$ en $${o.label}$</div>`;}else{v.validation='error';v.label='?';v.isAttract=!1;vb.innerHTML+=`<div style="color:var(--danger)">❌ Dir. Errada en $${o.label}$</div>`;}});
+    vs.forEach(v=>{const o=chs.find(c=>Math.hypot(c.x-v.start.x,c.y-v.start.y)<60);if(!o){v.validation='warn';v.label='?';v.isAttract=!1;vb.innerHTML+=`<div style="color:var(--danger)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Vector suelto</div>`;return;}o.hasVectors=!0;const vA=(Math.atan2(getPhysY(v.end.y)-getPhysY(v.start.y),v.end.x-v.start.x)+4*Math.PI)%(2*Math.PI);let b=null,mD=100;ints.filter(i=>i.t.id===o.id).forEach(c=>{let d=Math.abs(c.ang-vA);if(d>Math.PI)d=2*Math.PI-d;if(d<mD){mD=d;b=c;}});if(b&&mD<0.6){v.validation='correct';v.label=b.label;v.isAttract=b.isAttract;vb.innerHTML+=`<div style="color:var(--accent)"><span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> $${b.label}$ en $${o.label}$</div>`;}else{v.validation='error';v.label='?';v.isAttract=!1;vb.innerHTML+=`<div style="color:var(--danger)"><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Dir. Errada en $${o.label}$</div>`;}});
     
     updateStatement(chs, qU);
     renderLatex();
@@ -528,7 +528,7 @@ const cfg = {apiKey:"AIzaSyCI0c7KgnEAn-sV_CrHs0Er1LXL13CvQSA",authDomain:"labora
 const app=initializeApp(cfg), db=getFirestore(app), rtdb=getDatabase(app), auth=getAuth(app);
 const APP_ID = 'coulombLab10';
 
-let selAvatar='👨‍🔬', appRating=0, curRoomRef=null, unsubRoom=null, isRecv=!1, chatRef=null;
+let selAvatar='<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>‍<span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span>', appRating=0, curRoomRef=null, unsubRoom=null, isRecv=!1, chatRef=null;
 let localPoints = 0, localLevel = 1;
 
 window.selAvt = (el) => { document.querySelectorAll('.avt').forEach(a=>{a.style.transform='scale(1)';a.style.borderColor='transparent'}); el.style.transform='scale(1.2)'; el.style.borderColor='var(--accent)'; selAvatar=el.innerText; };
@@ -539,7 +539,7 @@ window.addPoints = async (pts) => {
     localPoints += pts;
     localLevel = Math.floor(localPoints / 100) + 1;
     
-    document.getElementById('user-stats').innerText = `🏆 Level ${localLevel} | ${localPoints} pts`;
+    document.getElementById('user-stats').innerText = `<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Level ${localLevel} | ${localPoints} pts`;
     document.getElementById('prof-Level-disp').innerText = localLevel;
     document.getElementById('prof-puntos-disp').innerText = localPoints;
 
@@ -554,7 +554,7 @@ window.resetLocalState = () => {
     localPoints = 0; localLevel = 1;
     document.getElementById('prof-Level-disp').innerText = '1';
     document.getElementById('prof-puntos-disp').innerText = '0';
-    document.getElementById('user-stats').innerText = `🏆 Level 1 | 0 pts`;
+    document.getElementById('user-stats').innerText = `<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Level 1 | 0 pts`;
 };
 
 onAuthStateChanged(auth, async u => {
@@ -568,15 +568,15 @@ onAuthStateChanged(auth, async u => {
             const s = await getDoc(doc(db,`artifacts/${APP_ID}/users/${u.uid}/profile/data`));
             if(!s.exists()) {
                 window.resetLocalState();
-                document.getElementById('user-info').innerText = `👤 ${u.email.split('@')[0]}`;
+                document.getElementById('user-info').innerText = `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${u.email.split('@')[0]}`;
                 showModal('profile-setup-modal'); 
             } else {
                 const pd = s.data();
                 localPoints = pd.puntos || 0;
                 localLevel = Math.floor(localPoints / 100) + 1;
                 
-                document.getElementById('user-info').innerText = `${pd.avatar||'👤'} ${pd.alias||pd.nombre||u.email.split('@')[0]} (${pd.rol||'Student'})`;
-                document.getElementById('user-stats').innerText = `🏆 Level ${localLevel} | ${localPoints} pts`;
+                document.getElementById('user-info').innerText = `${pd.avatar||'<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>'} ${pd.alias||pd.nombre||u.email.split('@')[0]} (${pd.rol||'Student'})`;
+                document.getElementById('user-stats').innerText = `<span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Level ${localLevel} | ${localPoints} pts`;
                 document.getElementById('prof-Level-disp').innerText = localLevel;
                 document.getElementById('prof-puntos-disp').innerText = localPoints;
                 
@@ -665,7 +665,7 @@ window.crearUnirseSala = async () => {
 
 window.joinRoom = (id) => {
     hideModal('rooms-modal');
-    document.getElementById('room-info').innerText = `🌐 Sala: ${id}`;
+    document.getElementById('room-info').innerText = `<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: ${id}`;
     if (unsubRoom) unsubRoom();
     
     curRoomRef = ref(rtdb, `salas/${id}/state`);
@@ -747,7 +747,7 @@ window.showAdminDashboard = async () => {
         let revC=0; rev.forEach(r=>{ totalStars += r.data().rating; revC++; });
         
         document.getElementById('adm-users-count').innerText=c;
-        document.getElementById('adm-rating-avg').innerText=revC>0 ? (totalStars/revC).toFixed(1)+" ⭐" : "0.0 ⭐";
+        document.getElementById('adm-rating-avg').innerText=revC>0 ? (totalStars/revC).toFixed(1)+" <span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span>" : "0.0 <span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span>";
         document.getElementById('adm-users-list').innerHTML=tr;
     } catch(e) { alert("Error Dashboard: "+e.message); }
 };
@@ -777,8 +777,8 @@ window.openRooms = async () => {
             rl.innerHTML += `<div class="card" style="display:flex;justify-content:space-between;align-items:center;padding:10px;margin-bottom:8px">
                 <div><b>${u.avatar||''} ${u.alias||u.nombre}</b><br><span style="font-size:0.75rem;color:#888">Grupo: ${u.grupo||'General'} | Rol: ${u.rol}</span></div> 
                 <div style="display:flex;gap:5px">
-                    <button class="btn" style="background:rgba(231,76,60,0.2);color:#e74c3c;padding:4px 8px" onclick="submitRegalo('${u.id}')" title="Submit Regalo">🎁 ${u.regalos||0}</button>
-                    <button class="btn" style="background:rgba(241,196,15,0.2);color:#f1c40f;padding:4px 8px" onclick="darEstrella('${u.id}')" title="Dar Estrella">⭐ ${u.estrellas||0}</button>
+                    <button class="btn" style="background:rgba(231,76,60,0.2);color:#e74c3c;padding:4px 8px" onclick="submitRegalo('${u.id}')" title="Submit Regalo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${u.regalos||0}</button>
+                    <button class="btn" style="background:rgba(241,196,15,0.2);color:#f1c40f;padding:4px 8px" onclick="darEstrella('${u.id}')" title="Dar Estrella"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span> ${u.estrellas||0}</button>
                 </div>
             </div>`;
         });
@@ -788,7 +788,7 @@ window.openRooms = async () => {
         arr.sort((a,b) => (b.puntos||0) - (a.puntos||0));
         const rk = document.getElementById('ranking-list'); rk.innerHTML = '';
         arr.slice(0, 10).forEach((u, i) => {
-            let badge = i===0 ? '🥇' : i===1 ? '🥈' : i===2 ? '🥉' : `#${i+1}`;
+            let badge = i===0 ? '<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>' : i===1 ? '<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>' : i===2 ? '<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>' : `#${i+1}`;
             rk.innerHTML += `<div style="display:flex; justify-content:space-between; padding:8px; background:var(--card-bg); border-radius:4px; font-size:0.85rem; border:1px solid rgba(128,128,128,0.2);">
                 <span><b>${badge}</b> ${u.avatar||''} ${u.alias||u.nombre}</span>
                 <span style="color:#f1c40f; font-weight:bold;">${u.puntos||0} pts</span>

@@ -1,6 +1,6 @@
 // ============================================================
 // modules/module1.js — Coulomb\'s Law
-// 📓 NotebookLLM: actualizar "llmLink" con tu link real
+// [*] NotebookLLM: actualizar "llmLink" con tu link real
 // ============================================================
 export const module1 = {
     "titulo": "Module 1: Coulomb\'s Law",
@@ -47,7 +47,7 @@ export const module1 = {
             "recurso": "games/Game_1.html",
             "titulo": "4. Physics Quest — Coulomb",
             "descripcion": "Desafío interactivo de 5 rondas. ¡Responde para ganar XP y desbloquear logros!",
-            "xp": 25, "logro": { "id": "logro_m1", "nombre": "Maestro Electrostático", "icono": "⚡" }
+            "xp": 25, "logro": { "id": "logro_m1", "nombre": "Maestro Electrostático", "icono": "[POWER]" }
         },
         {
             "id": "m1-l7", "tipo": "exercise",
@@ -64,7 +64,7 @@ export const module1 = {
             "xp": 40
         },
         {
-            // 📓 NOTEBOOKLM: Reemplaza el '#' con el link real de tu notebook
+            // [*] NOTEBOOKLM: Reemplaza el '#' con el link real de tu notebook
             // example: "llmLink": "https://notebooklm.google.com/notebook/TU-ID-AQUI"
             "id": "m1-nb1", "tipo": "notebooklm",
             "llmLink": "https://notebooklm.google.com/notebook/37622815-4b54-4808-b770-37464cb05719",
@@ -79,7 +79,7 @@ export const module1 = {
             "xp": 10,
             "secciones": [
                 {
-                    "tituloSeccion": "📘 Libros de texto principales",
+                    "tituloSeccion": "[*] Libros de texto principales",
                     "links": [
                         { "url": "https://openstax.org/books/university-physics-volume-2/pages/1-1-electric-charge", "titulo": "OpenStax: University Physics Vol. 2 — Cap. 1", "descripcion": "Development formal de la Coulomb\'s Law con examples resueltos (acceso libre)." },
                         { "url": "https://www.amazon.com/dp/0131496824", "titulo": "Serway & Jewett — Physics for Scientists and Engineers", "descripcion": "Capítulos 23–24: electrostática clásica." },
@@ -87,7 +87,7 @@ export const module1 = {
                     ]
                 },
                 {
-                    "tituloSeccion": "🌐 Resources web académicos",
+                    "tituloSeccion": "[WEB] Resources web académicos",
                     "links": [
                         { "url": "https://www.fisicalab.com/apartado/ley-de-coulomb", "titulo": "Fisicalab: Coulomb\'s Law", "descripcion": "Explanation didáctica con Charts y examples numéricos." },
                         { "url": "https://en.wikipedia.org/wiki/Coulomb%27s_law", "titulo": "Wikipedia: Coulomb's Law", "descripcion": "Contexto histórico, formulación matemática y aplicaciones." },
@@ -95,14 +95,14 @@ export const module1 = {
                     ]
                 },
                 {
-                    "tituloSeccion": "🔬 Simulatores externos",
+                    "tituloSeccion": "[SCIENCE] Simulatores externos",
                     "links": [
                         { "url": "https://phet.colorado.edu/es/simulations/coulombs-law", "titulo": "PhET: Coulomb\'s Law", "descripcion": "Simulator interactivo de la Universidad de Colorado." },
                         { "url": "https://www.educaplus.org/game/ley-de-coulomb", "titulo": "Educaplus: Simulator Coulomb", "descripcion": "Simulation web sin instalación." }
                     ]
                 },
                 {
-                    "tituloSeccion": "📄 Artículos y PDFs",
+                    "tituloSeccion": "[FILE] Artículos y PDFs",
                     "links": [
                         { "url": "https://www.unet.edu.ve/departamentos/fisica/electromagnetismo/coulomb.pdf", "titulo": "UNET: Apuntes Coulomb\'s Law", "descripcion": "Documento académico universitario." }
                     ]

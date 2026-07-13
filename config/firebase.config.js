@@ -2,7 +2,7 @@
 // ARCHIVO DE Configuration PRIVADA — NO SUBIR A GIT
 // Este archivo está en .gitignore
 //
-// ⚠️  SEGURIDAD: Aunque estas claves sean visibles para el
+// [*]️  SEGURIDAD: Aunque estas claves sean visibles para el
 // cliente web (es normal en Firebase), protege tu proyecto
 // configurando Firebase Security Rules en la consola:
 // https://console.firebase.google.com/project/laboratorio-de-coulomb/firestore/rules

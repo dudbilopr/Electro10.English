@@ -125,16 +125,198 @@ function renderTranscript() {
         // Highlight matching terms in text if filter applies
         Object.keys(highlightMap).forEach(key => {
             const regex = new RegExp(`\\b(${key})\\b`, 'gi');
-            text = text.replace(regex, `<mark class="px-1 py-0.5 rounded text-xs font-bold cursor-pointer transition-colors ${highlightMap[key].colorClass}" onclick="showVocabModal('${key}')">$1</mark>`);
+            text = text.replace(regex, `<mark class="px-1 py-0.5 rounded text-xs font-bold cursor-pointer transition-colors ${highlightMap[key].colorClass}" onclick="event.stopPropagation(); showVocabModal('${key}')">$1</mark>`);
         });
 
         return `
-            <div class="p-3 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-blue-50/50 dark:hover:bg-blue-950/20 transition-all flex gap-3 items-start cursor-pointer" onclick="jumpToVideo('${line.time}')">
-                <span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold shrink-0">${line.time}</span>
+            <div id="transcript-row-${idx}" class="p-3 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-blue-50/50 dark:hover:bg-blue-950/20 transition-all flex gap-3 items-start cursor-pointer opacity-85 hover:opacity-100" onclick="jumpToVideo('${line.time}')">
+                <span id="transcript-time-${idx}" class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold shrink-0">${line.time}</span>
                 <p class="text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">${text}</p>
             </div>
         `;
     }).join('');
+
+    updateTranscriptHighlighting();
+}
+
+// --- YOUTUBE & TRANSCRIPT REAL-TIME SYNC ENGINE ---
+let ytPlayer = null;
+let videoSyncInterval = null;
+let simulatedSyncInterval = null;
+let currentVideoSeconds = 0;
+let autoScrollEnabled = true;
+let isSimulatedPlaying = false;
+
+// Convert time string "1:15" to seconds (75)
+function parseTimeStringToSeconds(timeStr) {
+    if (!timeStr) return 0;
+    const parts = timeStr.split(":");
+    if (parts.length === 2) {
+        return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+    }
+    return 0;
+}
+
+// Convert seconds back to "M:SS"
+function formatSecondsToTimeString(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// YouTube API hook global callback
+function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player('youtube-player', {
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+        if (simulatedSyncInterval) {
+            clearInterval(simulatedSyncInterval);
+            simulatedSyncInterval = null;
+            isSimulatedPlaying = false;
+            updatePlayTickerButtonState();
+        }
+        startVideoSyncMonitor();
+    } else {
+        stopVideoSyncMonitor();
+    }
+}
+
+function startVideoSyncMonitor() {
+    if (videoSyncInterval) clearInterval(videoSyncInterval);
+    videoSyncInterval = setInterval(() => {
+        if (ytPlayer && ytPlayer.getCurrentTime && typeof ytPlayer.getCurrentTime === 'function') {
+            try {
+                const t = ytPlayer.getCurrentTime();
+                if (t >= 0) {
+                    currentVideoSeconds = t;
+                    updateTranscriptHighlighting();
+                }
+            } catch(e) {}
+        }
+    }, 200);
+}
+
+function stopVideoSyncMonitor() {
+    if (videoSyncInterval) {
+        clearInterval(videoSyncInterval);
+        videoSyncInterval = null;
+    }
+}
+
+function toggleSimulatedVideoSync() {
+    if (isSimulatedPlaying) {
+        if (simulatedSyncInterval) clearInterval(simulatedSyncInterval);
+        simulatedSyncInterval = null;
+        isSimulatedPlaying = false;
+        if (ytPlayer && ytPlayer.pauseVideo && typeof ytPlayer.pauseVideo === 'function') {
+            try { ytPlayer.pauseVideo(); } catch (e) {}
+        }
+    } else {
+        isSimulatedPlaying = true;
+        if (ytPlayer && ytPlayer.playVideo && typeof ytPlayer.playVideo === 'function') {
+            try { ytPlayer.playVideo(); } catch (e) {}
+        }
+        if (simulatedSyncInterval) clearInterval(simulatedSyncInterval);
+        simulatedSyncInterval = setInterval(() => {
+            currentVideoSeconds += 0.2;
+            if (currentVideoSeconds >= 110) { // 1:48 end
+                currentVideoSeconds = 0;
+            }
+            updateTranscriptHighlighting();
+        }, 200);
+    }
+    updatePlayTickerButtonState();
+}
+
+function updatePlayTickerButtonState() {
+    const btn = document.getElementById("btn-sync-play");
+    const label = document.getElementById("sync-play-label");
+    if (!btn || !label) return;
+    if (isSimulatedPlaying) {
+        btn.className = "px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all";
+        label.innerText = "Pause Ticker";
+        btn.querySelector("i").setAttribute("data-lucide", "pause");
+    } else {
+        btn.className = "px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all";
+        label.innerText = "Play Ticker";
+        btn.querySelector("i").setAttribute("data-lucide", "play");
+    }
+    if (window.lucide) lucide.createIcons();
+}
+
+function setAutoScrollState(enabled) {
+    autoScrollEnabled = enabled;
+}
+
+function resetTranscriptTimeline() {
+    currentVideoSeconds = 0;
+    if (isSimulatedPlaying) toggleSimulatedVideoSync();
+    if (ytPlayer && ytPlayer.seekTo && typeof ytPlayer.seekTo === 'function') {
+        try {
+            ytPlayer.seekTo(0, true);
+            ytPlayer.pauseVideo();
+        } catch(e) {}
+    }
+    updateTranscriptHighlighting();
+}
+
+function jumpToVideo(timeStr) {
+    const targetSeconds = parseTimeStringToSeconds(timeStr);
+    currentVideoSeconds = targetSeconds;
+    if (ytPlayer && ytPlayer.seekTo && typeof ytPlayer.seekTo === 'function') {
+        try {
+            ytPlayer.seekTo(targetSeconds, true);
+            ytPlayer.playVideo();
+        } catch(e) {}
+    } else if (!isSimulatedPlaying) {
+        toggleSimulatedVideoSync();
+    }
+    updateTranscriptHighlighting();
+}
+
+function updateTranscriptHighlighting() {
+    if (typeof MICROTEACHING_TRANSCRIPT === 'undefined') return;
+
+    // Update status badge
+    const badge = document.getElementById("sync-status-badge");
+    if (badge) {
+        badge.innerText = `TIME: ${formatSecondsToTimeString(currentVideoSeconds)}`;
+    }
+
+    // Find active line
+    let activeIdx = 0;
+    for (let i = 0; i < MICROTEACHING_TRANSCRIPT.length; i++) {
+        const lineSec = parseTimeStringToSeconds(MICROTEACHING_TRANSCRIPT[i].time);
+        if (currentVideoSeconds >= lineSec) {
+            activeIdx = i;
+        } else {
+            break;
+        }
+    }
+
+    // Highlight active line
+    MICROTEACHING_TRANSCRIPT.forEach((_, idx) => {
+        const row = document.getElementById(`transcript-row-${idx}`);
+        const badgeSpan = document.getElementById(`transcript-time-${idx}`);
+        if (!row) return;
+
+        if (idx === activeIdx) {
+            row.className = "p-3.5 rounded-xl border-2 border-blue-500 dark:border-blue-400 bg-blue-500/15 dark:bg-blue-500/20 shadow-md scale-[1.01] transition-all flex gap-3 items-start cursor-pointer";
+            if (badgeSpan) badgeSpan.className = "px-2 py-1 rounded bg-blue-600 text-white font-mono text-xs font-bold shrink-0 shadow-sm";
+            if (autoScrollEnabled) {
+                row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        } else {
+            row.className = "p-3 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-blue-50/50 dark:hover:bg-blue-950/20 transition-all flex gap-3 items-start cursor-pointer opacity-80 hover:opacity-100";
+            if (badgeSpan) badgeSpan.className = "px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold shrink-0";
+        }
+    });
 }
 
 function getCategoryBadgeClass(pos) {

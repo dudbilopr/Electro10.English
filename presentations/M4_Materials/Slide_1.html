@@ -92,7 +92,7 @@
             
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-blue-500">
                 <h1 class="font-bold tracking-wide flex items-center gap-3" style="font-size: clamp(20px, 2vw, 36px);">
-                    🔬 Laboratorio Interactivo: Distribuciones Lineales de Carga
+                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Distribuciones Lineales de Carga
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
                     Líneas finitas e infinitas, SuperPosition, Work Eléctrico y Trajectorys
@@ -109,8 +109,8 @@
                         <p class="mb-1 flex items-start">
                             <span>Para una distribución continua de carga unidimensional con densidad lineal $\lambda = dq/dy$, el <strong>Electric Field ($\vec{E}$)</strong> se obtiene mediante el principio de superPosition integrando las contribuciones de cada diferencial de carga $dq$.</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Densidad Lineal:</strong> Representa la cantidad de carga por unidad de longitud ($C/m$). Si $\lambda$ es constante, la carga total es $Q = \lambda L$.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Densidad Lineal:</strong> Representa la cantidad de carga por unidad de longitud ($C/m$). Si $\lambda$ es constante, la carga total es $Q = \lambda L$.</span>
                             </span>
                         </p>
                         <div class="math-display">$$d\vec{E} = \frac{1}{4\pi\epsilon_0} \frac{dq}{r^2} \hat{r} \quad \implies \quad \vec{E} = \int \frac{k \lambda \, dy}{r^2} \hat{r}$$</div>
@@ -128,7 +128,7 @@
                             E_y &= k\lambda \left[ \frac{1}{\sqrt{x^2+(y-L/2)^2}} - \frac{1}{\sqrt{x^2+(y+L/2)^2}} \right]
                             \end{aligned}
                         </div>
-                        <p class="font-bold text-sm text-indigo-900 mt-2">⚠️ Advertencia Physics</p>
+                        <p class="font-bold text-sm text-indigo-900 mt-2"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Advertencia Physics</p>
                         <p class="text-xs">Cerca de los extremos de la línea, el Electric Field se curva fuertemente ("efecto de borde"), generando una Force que empuja las partículas hacia el centro o hacia afuera dependiendo del signo.</p>
                     </div>
 
@@ -157,8 +157,8 @@
                         <p class="font-bold text-purple-800 flex items-center">
                             4. Dinámica y Work Eléctrico
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Potential vs Work:</strong> El Powerl $V$ es Energy por unidad de carga. El campo realiza Work a expensas de reducir esta Energy Powerl.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Potential vs Work:</strong> El Powerl $V$ es Energy por unidad de carga. El campo realiza Work a expensas de reducir esta Energy Powerl.</span>
                             </span>
                         </p>
                         <p class="text-sm mt-1">La Force sobre una partícula puntual es $\vec{F} = q\vec{E}$. El <strong>Work Eléctrico ($W$)</strong> realizado por el campo al mover la carga desde el punto $A$ al punto $B$ es independiente de la Trajectory:</p>
@@ -177,7 +177,7 @@
                             <li><strong>Sobre el eje de la línea ($x=0, z=0$):</strong> El campo es paralelo a la línea. $\vec{E} = E_y \hat{j}$.</li>
                         </ul>
                         <div class="math-display">$$E_{y(eje)} = k\lambda \left( \frac{1}{|y-L/2|} - \frac{1}{|y+L/2|} \right)$$</div>
-                        <p class="text-xs text-rose-700">⚠️ Advertencia: Si $y = \pm L/2$ (justo en la punta), el campo matemático diverge al infinito ($\to \infty$).</p>
+                        <p class="text-xs text-rose-700"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Advertencia: Si $y = \pm L/2$ (justo en la punta), el campo matemático diverge al infinito ($\to \infty$).</p>
                     </div>
 
                     <!-- NUEVO CASO 6: DENSIDAD VARIABLE E INTEGRACIÓN -->
@@ -185,8 +185,8 @@
                         <p class="font-bold text-fuchsia-800 flex items-center">
                             6. Densidad Variable e Integración Visual
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Diferencial:</strong> $dq = \lambda(y) dy$. Observa cómo la contribución $d\vec{E}$ cambia en magnitudeeeee y dirección al recorrer la línea.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Diferencial:</strong> $dq = \lambda(y) dy$. Observa cómo la contribución $d\vec{E}$ cambia en magnitudeeeee y dirección al recorrer la línea.</span>
                             </span>
                         </p>
                         <p class="text-sm mt-1">Cuando la densidad de carga no es constante ($\lambda = f(y)$), no podemos sacar $\lambda$ de la integral. El campo exacto se computa mediante la suma (integración) de infinitos elementos de carga $dq$:</p>
@@ -244,9 +244,9 @@
                             </div>
 
                             <div class="control-group flex-1 justify-end gap-1">
-                                <button id="btn-play" class="btn-ui bg-emerald-100 text-emerald-700 border-emerald-300" title="Start Integración Numérica">▶ Play</button>
-                                <button id="btn-pause" class="btn-ui bg-amber-100 text-amber-700 border-amber-300" title="Pause">⏸ Pause</button>
-                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-700 border-red-300" title="Reset Partícula">🔄 Reset</button>
+                                <button id="btn-play" class="btn-ui bg-emerald-100 text-emerald-700 border-emerald-300" title="Start Integración Numérica"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Play</button>
+                                <button id="btn-pause" class="btn-ui bg-amber-100 text-amber-700 border-amber-300" title="Pause"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Pause</button>
+                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-700 border-red-300" title="Reset Partícula"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Reset</button>
                             </div>
                         </div>
 
@@ -278,7 +278,7 @@
                                     <input type="checkbox" id="toggle-grid" checked class="mr-1"> Vector Field
                                 </label>
                                 <label class="flex items-center cursor-pointer text-indigo-700 border border-indigo-200 bg-indigo-50 px-1 rounded hover:bg-indigo-100">
-                                    <input type="checkbox" id="toggle-paint" class="mr-1"> ✏️
+                                    <input type="checkbox" id="toggle-paint" class="mr-1"> <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️
                                 </label>
                                 <button id="btn-clear-paint" class="btn-ui bg-red-100 text-red-700 border-red-300 hidden">Clear</button>
                             </div>
@@ -302,7 +302,7 @@
                                 <input type="number" id="in-vz" value="0" step="1" class="eq-input bg-white w-[50px]">
                             </div>
                             <div class="control-group flex-1 text-[10px] md:text-xs text-slate-500 italic text-right">
-                                🔄 Presiona Reset o ajusta para aplicar
+                                <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Presiona Reset o ajusta para aplicar
                             </div>
                         </div>
 
@@ -350,8 +350,8 @@
                         <!-- 3D Canvas / Paint Canvas -->
                         <div class="w-[60%] h-full canvas-wrapper relative" id="canvas-wrapper-3d">
                             <div class="hint-overlay shadow-md flex flex-col gap-1">
-                                <span>👆 <strong>Arrastra la partícula o el $dq$</strong> para reubicarlos e inspeccionar el sistema.</span>
-                                <span id="hint-3d" class="text-xs text-indigo-600 hidden">🔄 Arrastra el fondo para rotar en 3D</span>
+                                <span><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> <strong>Arrastra la partícula o el $dq$</strong> para reubicarlos e inspeccionar el sistema.</span>
+                                <span id="hint-3d" class="text-xs text-indigo-600 hidden"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Arrastra el fondo para rotar en 3D</span>
                             </div>
                             
                             <!-- Contenedor del Motor 3D -->

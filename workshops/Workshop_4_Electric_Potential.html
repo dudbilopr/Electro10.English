@@ -69,9 +69,9 @@
             <button onclick="toggleAllRotations()" class="toolbar-btn bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md hover:bg-emerald-600">Pause Vista 3D</button>
         </div>
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
-            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz">✏️</button>
-            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador">🧽</button>
-            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo">🗑️</button>
+            <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
+            <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
+            <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
         </div>
     </nav>
@@ -148,7 +148,7 @@
             </div>
             
             <div class="mt-4">
-                <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Didáctica</button>
+                <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica</button>
                 <div class="hint-content p-3 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                     A diferencia del Electric Field, <strong>el Electric Potential es una magnitudeeeee escalar</strong>. Se calcula simplemente como la suma algebraica \( V = \sum \frac{k \cdot q_i}{r_i} \). Presta especial atención a los signos de las Charges, ya que no hay descomPosition vectorial.
                 </div>
@@ -190,7 +190,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         Puesto que el punto P está en el centro, la Distance \(r\) a cada una de las cuatro Charges es idéntica. Calcule \(r\) (la mitad de la diagonal) y luego factorice: \(V_p = \frac{k}{r}(q_1 + q_2 + q_3 + q_4)\). Note cómo las Charges se anulan algebraicamente.
                     </div>
@@ -235,7 +235,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         El Work realizado por el Electric Field conservativo se define como \(W_{campo} = -\Delta U = -q_0(V_B - V_A)\). Al ser conservativo, la Trajectory (curva) es irrelevante; solo importan los radios inicial \(r_A\) y final \(r_B\).
                     </div>
@@ -272,7 +272,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         La Energy total del sistema es la suma de las Energys de interacción de todos los pares únicos posibles. Al haber 3 Charges, hay 3 interacciones: \(U = k \left( \frac{q_1 q_2}{a} + \frac{q_1 q_3}{a} + \frac{q_2 q_3}{a} \right)\). Puedes factorizar \(\frac{k}{a}\).
                     </div>
@@ -312,7 +312,7 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                         Aplica Conservación de la Energy: \(K_A + U_A = K_B + U_B\). <br>
                         Dado que se libera del reposo, \(K_A = 0\). La ecuación queda: \(0 + q_p V_A = \frac{1}{2}m_p v_B^2 + q_p V_B\). <br>
@@ -334,7 +334,7 @@
                         <p class="text-[10px] text-slate-400 mt-2">*A diferencia del Electric Field, los puntos de Powerl cero entre dos Charges de distinto signo suelen existir tanto dentro como fuera del segmento (formando una superficie esférica). Para este exercise analice solo el punto INTERNO entre las Charges.</p>
                     </div>
                     <div class="mt-4">
-                        <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">💡 Ver Pista Analítica</button>
+                        <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Analítica</button>
                         <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                             <strong>Planteamiento escalar:</strong> El Powerl total es la suma algebraica. Exige que \(V_1 + V_2 = 0\). Esto implica \(\frac{k \cdot 2\mu C}{x} + \frac{k \cdot (-6\mu C)}{20 - x} = 0\). Puedes cancelar \(k\) y \(\mu C\). Despeja \(x\) algebraicamente, es una simple ecuación lineal, ¡no cuadrática!
                         </div>

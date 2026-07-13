@@ -95,7 +95,7 @@
             
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-blue-500">
                 <h1 class="font-bold tracking-wide flex items-center gap-3" style="font-size: clamp(20px, 2vw, 36px);">
-                    🔬 Laboratorio: Work Eléctrico y Superficies Equipotentials
+                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio: Work Eléctrico y Superficies Equipotentials
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
                     Integración de Línea, Conservación de Energy e Independencia de la Trajectory
@@ -112,12 +112,12 @@
                         <p class="mb-1 flex items-start">
                             <span>El <strong>Work Eléctrico ($W$)</strong> realizado por un Electric Field $\vec{E}$ sobre una carga de prueba $q$ que se desplaza desde un punto $A$ a un punto $B$ se define mediante la integral de línea de la Force eléctrica:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Integración Numérica:</strong> En esta simulación, la partícula avanza en pasos infinitesimales $d\vec{r}$, acumulando el producto punto $\vec{F} \cdot d\vec{r}$ en tiempo real.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Integración Numérica:</strong> En esta simulación, la partícula avanza en pasos infinitesimales $d\vec{r}$, acumulando el producto punto $\vec{F} \cdot d\vec{r}$ en tiempo real.</span>
                             </span>
                         </p>
                         <div class="math-display">$$W_{A \to B} = \int_{A}^{B} \vec{F} \cdot d\vec{r} = q \int_{A}^{B} \vec{E} \cdot d\vec{r}$$</div>
-                        <p class="text-xs text-slate-600 italic">Modifica la Position de los Nodos (A, B y Control) para trazar distintas Trajectorys y presiona ▶ Play.</p>
+                        <p class="text-xs text-slate-600 italic">Modifica la Position de los Nodos (A, B y Control) para trazar distintas Trajectorys y presiona <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Play.</p>
                     </div>
 
                     <!-- CASO 1: Energy PowerL -->
@@ -125,8 +125,8 @@
                         <p class="font-bold text-emerald-800 flex items-center">
                             Campos Conservativos y Potential ($V$)
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Analogía TopoChart:</strong> El Powerl es como la "altura". Moverse perpendicular al campo no cuesta Work, moverse a favor del campo extrae Energy.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Analogía TopoChart:</strong> El Powerl es como la "altura". Moverse perpendicular al campo no cuesta Work, moverse a favor del campo extrae Energy.</span>
                             </span>
                         </p>
                         <p class="mt-1 text-sm">Dado que el campo electrostático es conservativo ($\nabla \times \vec{E} = 0$), el Work <strong>no depende de la Trajectory</strong>, sino solo de la diferencia de Powerl electrostático ($\Delta V$) entre los extremos:</p>
@@ -138,7 +138,7 @@
                         </div>
                         <hr class="border-emerald-200 my-2">
                         <p class="font-bold text-sm text-emerald-900 flex items-center">
-                            ⚠️ Work Externo vs. Campo
+                            <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Work Externo vs. Campo
                         </p>
                         <p class="text-xs">
                             Si desplazamos la carga lentamente (sin acelerarla), un agente externo debe ejercer una Force opuesta al campo. Por lo tanto, el Work del agente externo es el negativo del Work del campo: $W_{ext} = \Delta U = q(V_B - V_A)$.
@@ -240,9 +240,9 @@
                             </div>
 
                             <div class="control-group flex-1 justify-end gap-1">
-                                <button id="btn-play" class="btn-ui bg-emerald-100 text-emerald-700 border-emerald-300" title="Integrar Trajectory">▶ Calculate W</button>
-                                <button id="btn-pause" class="btn-ui bg-amber-100 text-amber-700 border-amber-300" title="Pause">⏸ Pause</button>
-                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-700 border-red-300" title="Reset a Nodo A">🔄 Reset</button>
+                                <button id="btn-play" class="btn-ui bg-emerald-100 text-emerald-700 border-emerald-300" title="Integrar Trajectory"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Calculate W</button>
+                                <button id="btn-pause" class="btn-ui bg-amber-100 text-amber-700 border-amber-300" title="Pause"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Pause</button>
+                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-700 border-red-300" title="Reset a Nodo A"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Reset</button>
                             </div>
                         </div>
 
@@ -274,7 +274,7 @@
                                     <input type="checkbox" id="toggle-grid" checked class="mr-1"> Vectors $\vec{E}$
                                 </label>
                                 <label class="flex items-center cursor-pointer text-indigo-700 border border-indigo-200 bg-indigo-50 px-1 rounded hover:bg-indigo-100">
-                                    <input type="checkbox" id="toggle-paint" class="mr-1"> ✏️
+                                    <input type="checkbox" id="toggle-paint" class="mr-1"> <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️
                                 </label>
                                 <button id="btn-clear-paint" class="btn-ui bg-red-100 text-red-700 border-red-300 hidden">Clear</button>
                             </div>
@@ -288,7 +288,7 @@
                             <div class="control-group border-r border-slate-300 pr-2">
                                 <label class="font-bold text-slate-600 text-xs">Tipo:</label>
                                 <select id="in-path" class="eq-input bg-white w-[100px] !text-left">
-                                    <option value="0">Recta (A ➔ B)</option>
+                                    <option value="0">Recta (A <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> B)</option>
                                     <option value="1" selected>Curvas de Bézier</option>
                                 </select>
                             </div>
@@ -308,7 +308,7 @@
                                 <input type="number" id="in-vy" value="5" step="1" class="eq-input bg-white w-[50px]">
                             </div>
                             <div class="control-group flex-1 text-[10px] md:text-xs text-slate-500 italic text-right">
-                                🔄 Arrastra todos los Nodos (A, B, C...) en el lienzo
+                                <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Arrastra todos los Nodos (A, B, C...) en el lienzo
                             </div>
                         </div>
 
@@ -320,8 +320,8 @@
                         <!-- 3D Canvas / Paint Canvas -->
                         <div class="w-[60%] h-full canvas-wrapper relative" id="canvas-wrapper-3d">
                             <div class="hint-overlay shadow-md flex flex-col gap-1">
-                                <span>👆 <strong>Arrastra los Nodos A, B o C_i</strong> para definir el camino general.</span>
-                                <span id="hint-3d" class="text-xs text-indigo-600 hidden">🔄 Arrastra el fondo para rotar el Relieve 3D</span>
+                                <span><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> <strong>Arrastra los Nodos A, B o C_i</strong> para definir el camino general.</span>
+                                <span id="hint-3d" class="text-xs text-indigo-600 hidden"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Arrastra el fondo para rotar el Relieve 3D</span>
                             </div>
                             
                             <!-- Contenedor del Motor 3D -->

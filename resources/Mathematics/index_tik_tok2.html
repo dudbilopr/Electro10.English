@@ -540,10 +540,10 @@
                     await window.FirebaseAPI.setDoc(window.FirebaseAPI.doc(db, 'artifacts', MAIN_APP_ID, 'users', auth.currentUser.uid, 'projects', 'main'), { 
                         elements, arrows, strokes, theme, format, timestamp: Date.now() 
                     });
-                    alert("✅ Guardado exitoso en Firebase");
+                    alert("<span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> Guardado exitoso en Firebase");
                 } catch (e) { 
                     console.error(e); 
-                    alert("❌ Error al save. Verifica permisos o login.");
+                    alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al save. Verifica permisos o login.");
                 }
             };
 
@@ -568,13 +568,13 @@
                         if (data.format) setFormat(data.format);
                         
                         saveStateToHistory(); 
-                        alert("☁️ Proyecto loaded.");
+                        alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Proyecto loaded.");
                     } else {
                         alert("ℹ️ No hay proyectos guardados en tu cuenta.");
                     }
                 } catch (e) { 
                     console.error(e);
-                    alert("❌ Error al cargar.");
+                    alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al cargar.");
                 }
             };
 
@@ -751,12 +751,12 @@
                                         {mode === 'record' && <div className="flex items-center gap-2 text-red-500 bg-red-500/10 px-3 py-1.5 rounded-lg border border-red-500/20"><div className="rec-dot"></div> REC</div>}
                                         {initialTeleprompter.find(t => t.step === currentStep)?.tag && (
                                             <span className="bg-purple-500/20 text-purple-400 border border-purple-500/30 px-2 py-1 rounded-lg uppercase tracking-wider text-[10px] sm:text-xs">
-                                                🔥 {initialTeleprompter.find(t => t.step === currentStep).tag}
+                                                <span class="inline-flex items-center text-orange-400 mr-1"><i data-lucide="flame" class="w-4 h-4 inline"></i></span> {initialTeleprompter.find(t => t.step === currentStep).tag}
                                             </span>
                                         )}
                                         {initialTeleprompter.find(t => t.step === currentStep)?.action && (
                                             <span className="bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-1 rounded-lg text-[10px] sm:text-xs italic">
-                                                🎭 {initialTeleprompter.find(t => t.step === currentStep).action}
+                                                <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> {initialTeleprompter.find(t => t.step === currentStep).action}
                                             </span>
                                         )}
                                     </div>

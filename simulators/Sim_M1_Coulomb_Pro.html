@@ -66,6 +66,12 @@
             transition: left 0.05s linear, top 0.05s linear; /* Suavizar movimiento */
         }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
 </head>
 <body class="h-screen flex flex-col overflow-hidden">
 

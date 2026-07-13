@@ -95,7 +95,7 @@
             
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-blue-500">
                 <h1 class="font-bold tracking-wide flex items-center gap-3" style="font-size: clamp(20px, 2vw, 36px);">
-                    🔬 Laboratorio Interactivo: Dinámica en Campos Eléctricos Arbitrarios
+                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Dinámica en Campos Eléctricos Arbitrarios
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
                     Integración Numérica, Experimento de Millikan, Funciones Vectoriales y Placas Paralelas
@@ -112,8 +112,8 @@
                         <p class="mb-1 flex items-start">
                             <span>La Net Force sobre una partícula loaded ($q$) en presencia de un <strong>Electric Field ($\vec{E}$)</strong> y un campo gravitacional ($\vec{g}$) determina su Trajectory mediante la Segunda Ley de Newton.</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Equation de Movimiento:</strong> A través de métodos numéricos (como Euler), podemos integrar esta Acceleration paso a paso para predecir cualquier Trajectory compleja.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Equation de Movimiento:</strong> A través de métodos numéricos (como Euler), podemos integrar esta Acceleration paso a paso para predecir cualquier Trajectory compleja.</span>
                             </span>
                         </p>
                         <div class="math-display">$$\vec{F}_{neta} = q\vec{E}(x,y,z) + m\vec{g} = m\frac{d^2\vec{r}}{dt^2}$$</div>
@@ -125,8 +125,8 @@
                         <p class="font-bold text-emerald-800 flex items-center">
                             Acceleration Dinámica y DCL
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
-                                <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 DescomPosition de Millikan:</strong> En el clásico experimento de Millikan, se busca el equilibrio exacto: $qE_y = mg$. Observa el DCL para lograrlo.</span>
+                                <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> DescomPosition de Millikan:</strong> En el clásico experimento de Millikan, se busca el equilibrio exacto: $qE_y = mg$. Observa el DCL para lograrlo.</span>
                             </span>
                         </p>
                         <p class="mt-1 text-sm">Separando por componentes vectoriales, la Acceleration se define como:</p>
@@ -138,7 +138,7 @@
                         </div>
                         <hr class="border-emerald-200 my-2">
                         <p class="font-bold text-sm text-emerald-900 flex items-center">
-                            ⚠️ Gravedad Interactiva
+                            <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Gravedad Interactiva
                         </p>
                         <p class="text-xs">
                             Activar la gravedad añade una Force constante descendente $\vec{W} = m\vec{g}$. Si el campo $\vec{E}$ empuja en sentido opuesto con la intensidad adecuada, la partícula flotará (Net Force nula).
@@ -165,7 +165,7 @@
                         <div id="teoria-custom" class="hidden flex-col gap-1">
                             <p class="font-bold text-indigo-800">4. Equation Libre</p>
                             <p class="text-sm mb-1">Has activado el modo matemático avanzado. El motor evalúa expresiones de JS (ej: <code class="bg-indigo-100 px-1 rounded">Math.sin(x)</code>, <code class="bg-indigo-100 px-1 rounded">y*x</code>) en tiempo real para cada Position.</p>
-                            <p class="text-xs text-indigo-600">⚠️ Advertencia: Equations discontinuas pueden provocar comportamientos asintóticos extremos en la partícula.</p>
+                            <p class="text-xs text-indigo-600"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Advertencia: Equations discontinuas pueden provocar comportamientos asintóticos extremos en la partícula.</p>
                         </div>
                         <!-- Theory Placas Paralelas -->
                         <div id="teoria-placas" class="hidden flex-col gap-1">
@@ -228,9 +228,9 @@
                             </div>
 
                             <div class="control-group flex-1 justify-end gap-1">
-                                <button id="btn-play" class="btn-ui bg-emerald-100 text-emerald-700 border-emerald-300" title="Start Integración Numérica">▶ Play</button>
-                                <button id="btn-pause" class="btn-ui bg-amber-100 text-amber-700 border-amber-300" title="Pause">⏸ Pause</button>
-                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-700 border-red-300" title="Reset Partícula">🔄 Reset</button>
+                                <button id="btn-play" class="btn-ui bg-emerald-100 text-emerald-700 border-emerald-300" title="Start Integración Numérica"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Play</button>
+                                <button id="btn-pause" class="btn-ui bg-amber-100 text-amber-700 border-amber-300" title="Pause"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Pause</button>
+                                <button id="btn-reset" class="btn-ui bg-red-100 text-red-700 border-red-300" title="Reset Partícula"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Reset</button>
                             </div>
                         </div>
 
@@ -262,7 +262,7 @@
                                     <input type="checkbox" id="toggle-grid" checked class="mr-1"> Vector Field
                                 </label>
                                 <label class="flex items-center cursor-pointer text-indigo-700 border border-indigo-200 bg-indigo-50 px-1 rounded hover:bg-indigo-100">
-                                    <input type="checkbox" id="toggle-paint" class="mr-1"> ✏️
+                                    <input type="checkbox" id="toggle-paint" class="mr-1"> <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️
                                 </label>
                                 <button id="btn-clear-paint" class="btn-ui bg-red-100 text-red-700 border-red-300 hidden">Clear</button>
                             </div>
@@ -286,7 +286,7 @@
                                 <input type="number" id="in-vz" value="0" step="1" class="eq-input bg-white w-[50px]">
                             </div>
                             <div class="control-group flex-1 text-[10px] md:text-xs text-slate-500 italic text-right">
-                                🔄 Presiona Reset o ajusta para aplicar
+                                <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Presiona Reset o ajusta para aplicar
                             </div>
                         </div>
 
@@ -298,8 +298,8 @@
                         <!-- 3D Canvas / Paint Canvas -->
                         <div class="w-[60%] h-full canvas-wrapper relative" id="canvas-wrapper-3d">
                             <div class="hint-overlay shadow-md flex flex-col gap-1">
-                                <span>👆 <strong>Arrastra la partícula</strong> para reposicionarla.</span>
-                                <span id="hint-3d" class="text-xs text-indigo-600 hidden">🔄 Arrastra el fondo para rotar en 3D</span>
+                                <span><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> <strong>Arrastra la partícula</strong> para reposicionarla.</span>
+                                <span id="hint-3d" class="text-xs text-indigo-600 hidden"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Arrastra el fondo para rotar en 3D</span>
                             </div>
                             
                             <!-- Contenedor del Motor 3D -->
