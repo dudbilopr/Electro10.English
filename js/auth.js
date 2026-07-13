@@ -27,7 +27,7 @@ export function iniciarSesion() {
         .catch(() => Swal.fire('Error', 'Credenciales inválidas. Verifica tu correo.', 'error'));
 }
 
-export function registrarUsuario() {
+export function registrarUser() {
     const email = document.getElementById('auth-email').value.trim();
     const pass  = document.getElementById('auth-pass').value;
     if (!email || pass.length < 6) return Swal.fire('Atención', 'Ingresa un correo válido y contraseña mayor a 6 caracteres.', 'warning');
@@ -116,7 +116,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
                 if (!localStorage.getItem(keyStorage) && !globalSettings.excludedWeeks.includes(String(globalSettings.currentWeek))) {
                     Swal.fire({
                         title: '¡welcome de nuevo!',
-                        text: 'Sigue explorando el Universo de Conocimiento a tu propio ritmo.',
+                        text: 'Sigue explorando el Knowledge Universe a tu propio ritmo.',
                         icon: 'info', confirmButtonText: 'Ver Mapa', confirmButtonColor: 'var(--accent)'
                     }).then(res => { if (res.isConfirmed) window.ShowCalendario(); });
                     localStorage.setItem(keyStorage, 'mostrada');

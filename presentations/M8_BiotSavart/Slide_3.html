@@ -175,7 +175,7 @@
 
                     <!-- Conclusion CINEMÁTICA -->
                     <div class="bg-slate-800 text-white p-[1.5vmin] shadow-sm rounded-lg border border-slate-600 mt-auto">
-                        <p class="font-bold text-sky-400 mb-1 text-center">Cinemática en Tiempo Real</p>
+                        <p class="font-bold text-sky-400 mb-1 text-center">Cinemática en Time Real</p>
                         <div class="grid grid-cols-2 gap-2 text-sm">
                             <div class="bg-slate-700 p-2 rounded">
                                 <span class="block text-slate-300 text-xs">Acceleration $|\vec{a}|$:</span>
@@ -262,7 +262,7 @@
                                 <label class="flex items-center cursor-pointer hover:text-blue-600">
                                     <input type="checkbox" id="toggle-grid" checked class="mr-1"> Grid $\vec{B}$
                                 </label>
-                                <label class="flex items-center cursor-pointer text-indigo-700 border border-indigo-200 bg-indigo-50 px-1 rounded hover:bg-indigo-100" title="Herramienta de Dibujo">
+                                <label class="flex items-center cursor-pointer text-indigo-700 border border-indigo-200 bg-indigo-50 px-1 rounded hover:bg-indigo-100" title="Herramienta de Free Draw">
                                     <input type="checkbox" id="toggle-paint" class="mr-1"> <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>
                                 </label>
                                 <button id="btn-clear-paint" class="btn-ui bg-red-100 text-red-700 border-red-300 hidden">Clear</button>
@@ -408,7 +408,7 @@
         particle.mesh = new THREE.Mesh(geoTest, matTest);
         scene.add(particle.mesh);
 
-        // Ring de Selección (Drag)
+        // Ring de Selesson (Drag)
         const ringGeoTest = new THREE.RingGeometry(0.5, 0.6, 32);
         const ringMatTest = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide, transparent: true, opacity: 0.8 });
         const selectionRingTest = new THREE.Mesh(ringGeoTest, ringMatTest);

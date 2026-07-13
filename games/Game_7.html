@@ -139,7 +139,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
           </svg>
           <div class="timer-val" id="timer-val">20</div>
         </div>
-        <div class="hud-lbl" style="margin-top:0">Tiempo</div>
+        <div class="hud-lbl" style="margin-top:0">Time</div>
       </div>
       <div class="hud-card">
         <div class="hud-val" id="hud-round">1/5</div>
@@ -329,7 +329,7 @@ function timeExpired(){
   // Show correct answer
   const r = GAME_CONFIG.rondas[currentRound];
   document.getElementById(`opt-${r.correcta}`).classList.add('correct');
-  showFeedback(false, ` ¡Tiempo! La Answer correcta era la opción ${['A','B','C','D'][r.correcta]}. ${r.feedback_bad}`);
+  showFeedback(false, ` ¡Time! La Answer correcta era la opción ${['A','B','C','D'][r.correcta]}. ${r.feedback_bad}`);
   document.getElementById('next-btn').className='next-btn show';
 }
 

@@ -18,7 +18,7 @@ export const firebaseConfig = {
     measurementId: "G-SZECJNG25E"
 };
 
-// ID de la aplicación en Firestore (colección raíz)
+// ID de la aplicación en Firestore (colesson raíz)
 export const APP_ID = 'electro10';
 
 // Email del administrador maestro

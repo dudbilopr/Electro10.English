@@ -481,7 +481,7 @@
             const forceArrow = new THREE.ArrowHelper(new THREE.Vector3(1,0,0), new THREE.Vector3(0,0,0), 0, 0xe11d48, 0.5, 0.3);
             forceArrow.line.material.linewidth = 3; forceArrow.position.z = 0.5; grp.add(forceArrow);
 
-            // Ring de selección
+            // Ring de selesson
             const ring = new THREE.Mesh(new THREE.RingGeometry(1.4, 1.6, 32), new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide, transparent:true, opacity:0.8 }));
             ring.visible = false; grp.add(ring);
 

@@ -5,7 +5,7 @@
      <script async src="https://www.googletagmanager.com/gtag/js?id=G-EXGD1GSLLB"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-EXGD1GSLLB'); </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio Virtual: Electric Field IA</title>
+    <title>Virtual Laboratory: Electric Field IA</title>
     <meta name="description" content="Simulator de Electric Field con pizarra interactiva libre.">
     
     <!-- Librerías -->
@@ -214,7 +214,7 @@
 
 <header>
     <div><h2><span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="magnet" class="w-4 h-4 inline"></i></span> Electric Field IA</h2></div>
-    <div class="version">v1.3.0 (Pizarra Libre + Texto)</div>
+    <div class="version">v1.3.0 (Pizarra Libre + Text)</div>
 </header>
 
 <div class="workspace">
@@ -224,15 +224,15 @@
             <div class="toolbar">
                 <button class="btn-tool active" onclick="setTool('draw', this)" title="Dibuja Charges (+/-), puntos y vectores de campo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Lápiz IA (Objetos)</button>
                 <button class="btn-tool" onclick="setTool('draw_free', this)" title="Dibuja explicaciones sin afectar los cálculos"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Marcador (Libre)</button>
-                <button class="btn-tool" onclick="setTool('text', this)" title="Haz clic en el lienzo para escribir texto"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Escribir Texto</button>
-                <button class="btn-tool" onclick="setTool('move', this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Mover / Editar</button>
-                <button class="btn-tool" onclick="undo()">↩️ Deshacer</button>
+                <button class="btn-tool" onclick="setTool('text', this)" title="Haz clic en el lienzo para escribir texto"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Escribir Text</button>
+                <button class="btn-tool" onclick="setTool('move', this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Move / Editar</button>
+                <button class="btn-tool" onclick="undo()">↩️ Undo</button>
                 <button class="btn-tool btn-danger" onclick="ClearTodo()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Clear Todo</button>
             </div>
             
             <div class="color-picker-container">
                 <input type="color" id="pencil-color" value="#000000" onchange="state.currentColor = this.value">
-                <label for="pencil-color" style="font-size: 0.85rem; color: #ccc;">Color (Marcador y Texto)</label>
+                <label for="pencil-color" style="font-size: 0.85rem; color: #ccc;">Color (Marcador y Text)</label>
             </div>
             
             <hr style="border:0; border-top:1px solid var(--border-color); margin: 15px 0;">
@@ -351,7 +351,7 @@
         rawStrokes: [],      
         currentStroke: [],   
         currentFreeStroke: null,
-        objects: [],         // Guarda Charges, Vectors, Trazos Libres ('free_stroke') y Texto ('text')
+        objects: [],         // Guarda Charges, Vectors, Trazos Libres ('free_stroke') y Text ('text')
         calculatedFields: []
     };
     
@@ -376,7 +376,7 @@
         return { x: clientX - r.left, y: clientY - r.top };
     }
 
-    // --- Manejo de la herramienta Texto Libre ---
+    // --- Manejo de la herramienta Text Libre ---
     function finalizeText() {
         if(textOverlay.style.display !== 'none' && textOverlay.value.trim() !== '') {
             state.objects.push({
@@ -644,7 +644,7 @@
     }
 
     function findObjectAt(c) {
-        // Textos
+        // Texts
         const textObj = state.objects.find(o => {
             if(o.type !== 'text') return false;
             ctx.font = '20px "Segoe UI", Arial';
@@ -714,7 +714,7 @@
         }
     }
 
-    // --- IA de Dibujo ---
+    // --- IA de Free Draw ---
     function detectAndConvert() {
         const groups = groupStrokes(state.rawStrokes);
         const newObjects = [];
@@ -1045,7 +1045,7 @@
         // Trazos Libres Activos
         if(state.currentFreeStroke) drawPath(state.currentFreeStroke.points, state.currentFreeStroke.color, 3);
 
-        // Objetos, Textos y Vectors
+        // Objetos, Texts y Vectors
         state.objects.forEach(obj => {
             const isSel = (state.selectedObject === obj);
             ctx.shadowBlur = isSel ? 10 : 0; ctx.shadowColor = '#00ff88';

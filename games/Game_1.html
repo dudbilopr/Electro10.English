@@ -139,7 +139,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
           </svg>
           <div class="timer-val" id="timer-val">20</div>
         </div>
-        <div class="hud-lbl" style="margin-top:0">Tiempo</div>
+        <div class="hud-lbl" style="margin-top:0">Time</div>
       </div>
       <div class="hud-card">
         <div class="hud-val" id="hud-round">1/5</div>
@@ -201,7 +201,7 @@ const GAME_CONFIG = {
   color: "#2563eb",
   moduloId: "m1-j1",
   xpGanado: 25,
-  logro: { icono: "<span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span>", nombre: "Maestro Electrostático", desc: "Completaste el Physics Quest de Coulomb con todas las Answers correctas" },
+  logro: { icono: "<span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span>", nombre: "Electrostatic Master", desc: "Completaste el Physics Quest de Coulomb con todas las Answers correctas" },
   rondas: [
     {
       titulo: "Ronda 1 — Calentamiento",
@@ -234,7 +234,7 @@ const GAME_CONFIG = {
       feedback_bad: "F ∝ 1/r². Si r → 3r entonces F_nueva/F_original = 1/(3)² = 1/9."
     },
     {
-      titulo: "Ronda 4 — SuperPosition",
+      titulo: "Ronda 4 — Superposition",
       categoria: "PRINCIPIO DE SUPERPosition",
       Question: "¿Cuántas Charges pueden participar en la aplicación del Superposition Principle de Coulomb?",
       Options: ["Solo 2 Charges", "Máximo 3 Charges", "Cualquier número de Charges", "Depende del medio"],
@@ -341,7 +341,7 @@ function timeExpired(){
   // Show correct answer
   const r = GAME_CONFIG.rondas[currentRound];
   document.getElementById(`opt-${r.correcta}`).classList.add('correct');
-  showFeedback(false, ` ¡Tiempo! La Answer correcta era la opción ${['A','B','C','D'][r.correcta]}. ${r.feedback_bad}`);
+  showFeedback(false, ` ¡Time! La Answer correcta era la opción ${['A','B','C','D'][r.correcta]}. ${r.feedback_bad}`);
   document.getElementById('next-btn').className='next-btn show';
 }
 

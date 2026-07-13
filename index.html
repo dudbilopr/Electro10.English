@@ -60,19 +60,19 @@
             <button class="icon-btn focus-btn" onclick="window.toggleFocusMode()" title="Focus Mode (Pomodoro)" style="color: #10b981;">
                 <span class="material-symbols-outlined">timer</span>
             </button>
-            <button class="icon-btn" title="Notificaciones" onclick="window.ShowNotificaciones()">
+            <button class="icon-btn" title="Notifications" onclick="window.ShowNotifications()">
                 <span class="material-symbols-outlined">notifications</span>
                 <span class="notification-dot" id="noti-dot"></span>
             </button>
-            <button class="icon-btn" title="Ayuda" onclick="Swal.fire('Soporte', 'Visita el foro interactivo en la pestaña de la lección o contacta al administrador.', 'question')"><span class="material-symbols-outlined">help</span></button>
+            <button class="icon-btn" title="Help" onclick="Swal.fire('Soporte', 'Visita el foro interactivo en la pestaña de la lesson o contacta al administrador.', 'question')"><span class="material-symbols-outlined">help</span></button>
 
             <!-- AUTH ZONE -->
-            <button id="btn-login-modal" onclick="window.OpenModalAuth()" class="btn-auth" style="display: none;"><span class="material-symbols-outlined text-[18px]">login</span> Ingresar</button>
+            <button id="btn-login-modal" onclick="window.OpenModalAuth()" class="btn-auth" style="display: none;"><span class="material-symbols-outlined text-[18px]">login</span> Login</button>
             
             <div class="user-profile" id="user-info-container" onclick="window.ShowPerfil()">
                 <div class="user-avatar" id="avatar-initial">U</div>
                 <div style="display: flex; flex-direction: column; margin-right: 8px;">
-                    <span class="user-name truncate" id="user-email-text" style="max-width: 100px; font-weight: 600;">Usuario</span>
+                    <span class="user-name truncate" id="user-email-text" style="max-width: 100px; font-weight: 600;">User</span>
                 </div>
                 <span class="material-symbols-outlined" style="font-size: 16px; color: var(--text-medium);">expand_more</span>
             </div>
@@ -99,7 +99,7 @@
     <div class="app-container">
         <!-- MENÚ LATERAL -->
         <aside class="sidebar" id="sidebar-menu">
-            <div class="nav-section-title" style="margin-top: 0;">PANEL ACADÉMICO</div>
+            <div class="nav-section-title" style="margin-top: 0;">ACADEMIC PANEL</div>
             
             <a onclick="window.ShowDashboardStudent()" class="nav-item active" id="nav-dashboard">
                 <span class="material-symbols-outlined">dashboard</span>
@@ -107,35 +107,35 @@
             </a>
             <a onclick="window.ShowCalendario()" class="nav-item" id="nav-calendario">
                 <span class="material-symbols-outlined">hub</span>
-                <span>Universo de Conocimiento</span>
+                <span>Knowledge Universe</span>
             </a>
             <a onclick="window.ShowPerfil()" class="nav-item" id="nav-perfil">
                 <span class="material-symbols-outlined">person</span>
-                <span>Mi Perfil</span>
+                <span>My Profile</span>
             </a>
             <a onclick="window.ShowLaboratorios()" class="nav-item" id="nav-labs">
                 <span class="material-symbols-outlined">science</span>
-                <span>Centro de Simulaciones</span>
+                <span>Simulation Center</span>
             </a>
             <a onclick="window.ShowCerebro()" class="nav-item" id="nav-brain" style="color: #a855f7;">
                 <span class="material-symbols-outlined">psychology</span>
-                <span>Cerebro de Conocimiento</span>
+                <span>Knowledge Brain</span>
             </a>
             <a id="nav-admin" onclick="window.OpenPanelAdmin()" class="nav-item" style="display: none; color: var(--admin);">
                 <span class="material-symbols-outlined icon-filled">admin_panel_settings</span>
-                <span>Panel Admin</span>
+                <span>Admin Panel</span>
             </a>
 
-            <div class="nav-section-title">CONTENIDO DEL CURSO</div>
+            <div class="nav-section-title">COURSE CONTENT</div>
             <div id="menu-content-area"></div>
             
             <div class="sidebar-footer">
                 <a href="#" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-medium); padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 500; margin-bottom: 15px; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border-color)'; this.style.color='var(--text-medium)'">
-                    <span class="material-symbols-outlined" style="font-size: 18px;">local_cafe</span> Apoya el proyecto
+                    <span class="material-symbols-outlined" style="font-size: 18px;">local_cafe</span> Support the Project
                 </a>
                 &copy; 2026 Electro10.easy<br>
-                Desarrollado con excelencia académica.<br>
-                Todos los derechos reservados.
+                Developed with academic excellence.<br>
+                All rights reserved.
             </div>
         </aside>
 
@@ -148,13 +148,13 @@
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                         <span class="truncate" style="max-width: 150px;" id="bread-modulo">Module</span>
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                        <span class="active truncate" style="max-width: 200px;" id="bread-leccion">Lección</span>
+                        <span class="active truncate" style="max-width: 200px;" id="bread-leccion">Lesson</span>
                     </div>
                     <h2 id="display-title">loading...</h2>
                 </div>
                 <div class="action-buttons" style="display: flex; gap: 10px;">
-                    <a id="btn-notebook" class="btn-primary" style="display: none; background: #6366f1;" href="#" target="_blank"><span class="material-symbols-outlined text-[18px]">auto_awesome</span> Asistente IA</a>
-                    <a id="btn-new-tab" class="btn-primary" style="background: var(--bg-surface); color: var(--text-high); border: 1px solid var(--border-color);" href="#" target="_blank"><span class="material-symbols-outlined text-[18px]">open_in_new</span> Expandir</a>
+                    <a id="btn-notebook" class="btn-primary" style="display: none; background: #6366f1;" href="#" target="_blank"><span class="material-symbols-outlined text-[18px]">auto_awesome</span> AI Assistant</a>
+                    <a id="btn-new-tab" class="btn-primary" style="background: var(--bg-surface); color: var(--text-high); border: 1px solid var(--border-color);" href="#" target="_blank"><span class="material-symbols-outlined text-[18px]">open_in_new</span> Expand</a>
                 </div>
             </div>
 
@@ -164,13 +164,13 @@
                 <div class="bento-card col-12 animate-fade-in" style="margin-bottom: 24px; padding: 20px;">
                     <div class="bento-header" style="margin-bottom: 15px; justify-content: space-between;">
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <h3 style="margin: 0; display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: var(--accent);">calendar_month</span> Ruta de Aprendizaje</h3>
-                            <span style="font-size: 0.75rem; color: var(--text-medium); background: var(--bg-surface-hover); padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border-color);">Progreso Flexible</span>
+                            <h3 style="margin: 0; display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: var(--accent);">calendar_month</span> Learning Path</h3>
+                            <span style="font-size: 0.75rem; color: var(--text-medium); background: var(--bg-surface-hover); padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border-color);">Flexible Progress</span>
                         </div>
                         <div style="display: flex; gap: 10px; align-items: center;">
                             <select id="pacing-mode" class="form-input" style="width: auto; padding: 5px 10px; font-size: 0.85rem;" onchange="window.updateTimelinePacing()">
-                                <option value="semanas">Semanas</option>
-                                <option value="dias">Días (Vacacional)</option>
+                                <option value="weeks">Weeks</option>
+                                <option value="days">Days (Intensive)</option>
                             </select>
                             <input type="number" id="pacing-length" class="form-input" style="width: 70px; padding: 5px; font-size: 0.85rem;" value="16" min="1" max="100" onchange="window.updateTimelinePacing()">
                         </div>
@@ -182,14 +182,14 @@
                 <script>
                     window.renderTimeline = function(mode, length) {
                         const container = document.getElementById('dynamic-timeline-container');
-                        if (!mode) mode = document.getElementById('pacing-mode')?.value || 'semanas';
+                        if (!mode) mode = document.getElementById('pacing-mode')?.value || 'weeks';
                         if (!length) length = document.getElementById('pacing-length')?.value || 16;
                         
                         document.getElementById('pacing-mode').value = mode;
                         document.getElementById('pacing-length').value = length;
 
-                        const isSessions = mode === 'dias';
-                        const label = isSessions ? 'Día' : 'Semana';
+                        const isSessions = mode === 'days';
+                        const label = isSessions ? 'Day' : 'Week';
                         const activeIndex = isSessions ? 2 : 3; // Simular el progreso visual (TODO: enlazar a progreso real)
                         
                         container.innerHTML = Array.from({length: parseInt(length)}, (_, i) => {
@@ -217,15 +217,15 @@
                     };
 
                     // Inicializar con 16 semanas por defecto
-                    setTimeout(() => window.renderTimeline('semanas', 16), 100);
+                    setTimeout(() => window.renderTimeline('weeks', 16), 100);
                 </script>
 
                 <div class="bento-grid">
                     
                     <div class="bento-card hero-card col-8 animate-fade-in">
-                        <div class="bento-label">welcome A TU VIAJE ACADÉMICO</div>
-                        <h2>¡Hola, <span id="student-name-hero" style="color: #fff; font-weight: 900;">Student</span>!</h2>
-                        <p>Te damos la welcome al maravilloso mundo del electromagnetismo. Prepárate para explorar las Forces que rigen el universo a través de simulaciones de vanguardia e IA integrada.</p>
+                        <div class="bento-label">WELCOME TO YOUR ACADEMIC JOURNEY</div>
+                        <h2>Hello, <span id="student-name-hero" style="color: #fff; font-weight: 900;">Student</span>!</h2>
+                        <p>Welcome to the wonderful world of electromagnetism. Get ready to explore the forces governing the universe through cutting-edge simulations and integrated AI.</p>
                         
                         <div id="next-lesson-container" style="margin-top: auto;">
                             <!-- Botón dinámico insertado aquí -->
@@ -234,7 +234,7 @@
 
                     <div class="bento-card col-4 animate-slide-up">
                         <div class="bento-header">
-                            <h3><span class="material-symbols-outlined text-accent">data_usage</span> Índice de Finalización</h3>
+                            <h3><span class="material-symbols-outlined text-accent">data_usage</span> Completion Rate</h3>
                         </div>
                         <div class="chart-container" id="container-donut">
                             <canvas id="studentDonutChart"></canvas>
@@ -250,7 +250,7 @@
 
                         <!-- Información del Autor -->
                         <div class="author-info">
-                            <span class="author-subtitle">Sobre el autor</span>
+                            <span class="author-subtitle">About the Author</span>
                             <h3 class="author-name">
                                 Dudbil Olvasada Pabón Riaño
                             </h3>
@@ -283,11 +283,11 @@
                             </div>
 
                             <p class="author-bio">
-                                Physical y docente universitario con enfoque en inteligencia artificial aplicada a la educación. Development estrategias y Tools basadas en modelos de lenguaje (LLM) para apoyar la enseñanza de la Physics, las matemáticas y la ciencia de datos.
+                                Physicist and university professor specializing in artificial intelligence applied to education. Developing strategies and tools based on Large Language Models (LLMs) to support physics, mathematics, and data science education.
                             </p>
 
                             <a href="mailto:dpabon180@unab.edu.co" class="contact-btn">
-                              <i class="fas fa-envelope"></i> Correo electrónico
+                              <i class="fas fa-envelope"></i> Email Contact
                             </a>
                         </div>
                     </div>
@@ -295,9 +295,9 @@
                     <!-- Fila de Charts Adicionales -->
                     <div class="bento-card col-4">
                         <div class="bento-header">
-                            <h3><span class="material-symbols-outlined text-accent">radar</span> Level Cognitivo</h3>
+                            <h3><span class="material-symbols-outlined text-accent">radar</span> Cognitive Level</h3>
                         </div>
-                        <p style="font-size: 0.75rem; color: var(--text-low); margin: 0 0 10px 0;">Autoevaluaciones por Module</p>
+                        <p style="font-size: 0.75rem; color: var(--text-low); margin: 0 0 10px 0;">Self-Assessments by Module</p>
                         <div class="chart-container" id="container-radar">
                             <canvas id="studentRadarChart"></canvas>
                         </div>
@@ -369,7 +369,7 @@
                 <div class="bento-header" style="margin-bottom: 40px; text-align: center; flex-direction: column; gap: 15px;">
                     <h2 style="font-size: 2.8rem; font-weight: 900; margin:0; color: var(--text-high); letter-spacing: -1px; display:flex; align-items:center; justify-content:center; gap: 10px;">
                         <span class="material-symbols-outlined icon-filled" style="font-size: 40px; color: var(--accent);">hub</span>
-                        Universo de Conocimiento
+                        Knowledge Universe
                     </h2>
                     <p style="color: var(--text-medium); font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
                         El aprendizaje profundo no es una línea recta. Explora libremente los nodos, descubre las interconexiones a tu propio ritmo y forja tu propia ruta a través del electromagnetismo.
@@ -664,7 +664,7 @@
                 <div class="bento-header" style="margin-bottom: 30px; text-align: center; flex-direction: column; gap: 15px;">
                     <h2 style="font-size: 2.8rem; font-weight: 900; margin:0; color: var(--text-high); letter-spacing: -1px; display:flex; align-items:center; justify-content:center; gap: 10px;">
                         <span class="material-symbols-outlined icon-filled" style="font-size: 40px; color: #a855f7;">psychology</span>
-                        Cerebro de Conocimiento
+                        Knowledge Brain
                     </h2>
                     <p style="color: var(--text-medium); font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
                         Tu segundo cerebro. Aquí se interconectan los conceptos que vas aprendiendo, Tools cognitivas y un tutor IA visual.
@@ -738,7 +738,7 @@
                         <!-- Panel del Game -->
                         <div class="bento-card col-12" id="game-panel" style="display: none; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color);">
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-                                <div style="font-size:1.2rem; font-weight:bold; color:var(--text-high);">Puntaje: <span id="game-score" style="color:var(--accent);">0</span></div>
+                                <div style="font-size:1.2rem; font-weight:bold; color:var(--text-high);">Score: <span id="game-score" style="color:var(--accent);">0</span></div>
                                 <div id="game-feedback" style="font-weight:bold; height:24px;"></div>
                             </div>
                             <div style="display:flex; gap:20px; justify-content:center;">
@@ -843,7 +843,7 @@
                                 <input type="date" id="admin-end-date" class="form-input">
                             </div>
                             <div class="input-group" style="margin-bottom:0;">
-                                <label>Semanas Excluidas (Receso):</label>
+                                <label>Weeks Excluidas (Receso):</label>
                                 <input type="text" id="admin-excluded-weeks" placeholder="Ej. 5, 8" class="form-input">
                             </div>
                         </div>
@@ -862,7 +862,7 @@
                     
                     <div class="bento-card col-8">
                         <div class="bento-header">
-                            <h3><span class="material-symbols-outlined" style="color: var(--admin);">scatter_plot</span> Tasa de Retención y Tiempo Activo</h3>
+                            <h3><span class="material-symbols-outlined" style="color: var(--admin);">scatter_plot</span> Tasa de Retención y Time Activo</h3>
                         </div>
                         <div class="chart-container" id="admin-container-scatter">
                             <canvas id="adminScatterChart"></canvas>
@@ -877,7 +877,7 @@
                             <table class="admin-table" id="admin-users-table">
                                 <thead>
                                     <tr>
-                                        <th>Student / Usuario</th>
+                                        <th>Student / User</th>
                                         <th>Institución</th>
                                         <th>Rol de Plataforma</th>
                                         <th>Estado de Progreso</th>
@@ -942,15 +942,15 @@
                     </div>
 
                     <div id="tab-detalles" class="tab-content active">
-                        <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">flag</span> objectives de la Lección</h3>
+                        <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">flag</span> objectives de la Lesson</h3>
                         <p id="tab-desc-text" style="color: var(--text-medium); margin-bottom: 15px;">Descripción general del recurso y el tema abordado.</p>
                     </div>
 
                     <div id="tab-eval" class="tab-content">
                         <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">psychology</span> AutoAssessment Cognitiva</h3>
-                        <p style="color: var(--text-medium); margin-bottom: 20px;">Sé honesto contigo mismo. Evalúa qué tan bien dominas el concepto de esta lección para alimentar tus métricas.</p>
+                        <p style="color: var(--text-medium); margin-bottom: 20px;">Sé honesto contigo mismo. Evalúa qué tan bien dominas el concepto de esta lesson para alimentar tus métricas.</p>
                         <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <button class="eval-btn" onclick="window.saveEval(1)" id="eval-1"><span class="material-symbols-outlined">sentiment_very_dissatisfied</span> Necesito Ayuda (25%)</button>
+                            <button class="eval-btn" onclick="window.saveEval(1)" id="eval-1"><span class="material-symbols-outlined">sentiment_very_dissatisfied</span> Necesito Help (25%)</button>
                             <button class="eval-btn" onclick="window.saveEval(2)" id="eval-2"><span class="material-symbols-outlined">sentiment_neutral</span> Regular (50%)</button>
                             <button class="eval-btn" onclick="window.saveEval(3)" id="eval-3"><span class="material-symbols-outlined">sentiment_satisfied</span> Lo Comprendo (75%)</button>
                             <button class="eval-btn" onclick="window.saveEval(4)" id="eval-4"><span class="material-symbols-outlined">sentiment_very_satisfied</span> Lo Domino (100%)</button>
@@ -993,7 +993,7 @@
             <input type="password" id="auth-pass" class="form-input" style="margin-bottom: 20px;" placeholder="Contraseña">
             
             <button class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 10px;" onclick="window.iniciarSesion()">Acceder</button>
-            <button class="btn-primary" style="width: 100%; justify-content: center; background: transparent; border: 1px solid var(--border-strong); color: var(--text-high);" onclick="window.registrarUsuario()">Crear cuenta gratis</button>
+            <button class="btn-primary" style="width: 100%; justify-content: center; background: transparent; border: 1px solid var(--border-strong); color: var(--text-high);" onclick="window.registrarUser()">Crear cuenta gratis</button>
             
             <div style="margin-top: 25px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px;">
                 <button class="btn-primary" style="width: 100%; justify-content: center; background: var(--bg-surface-light); color: var(--text-high); border: 1px solid var(--border-strong);" onclick="window.iniciarSesionConGoogle()">
@@ -1012,7 +1012,7 @@
             <p style="color: var(--text-medium); margin-bottom: 20px;" id="modal-u-inst">Institución</p>
             
             <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; padding: 15px; margin-bottom: 20px;">
-                <h4 style="margin:0 0 10px 0; color:var(--text-high); font-size: 0.9rem;">Perfil Sociodemográfico y Presaberes</h4>
+                <h4 style="margin:0 0 10px 0; color:var(--text-high); font-size: 0.9rem;">Perfil Sociodemográfico y Pre-Assessment</h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85rem; color: var(--text-medium);" id="modal-u-presaberes">
                     <!-- Se inyecta dinámicamente -->
                 </div>
@@ -1021,7 +1021,7 @@
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px;">
                 <div class="stat-box" style="padding: 10px;">
                     <div class="stat-value" style="font-size: 1.8rem;" id="modal-u-time">0m</div>
-                    <div class="stat-label">Tiempo Total</div>
+                    <div class="stat-label">Time Total</div>
                 </div>
                 <div class="stat-box" style="padding: 10px;">
                     <div class="stat-value" style="font-size: 1.8rem;" id="modal-u-prog">0%</div>
@@ -1128,7 +1128,7 @@
                         <span class="material-symbols-outlined" style="color: var(--text-medium);">flag</span>
                     </button>
 
-                    <!-- Ayuda Visual / Esquema -->
+                    <!-- Help Visual / Esquema -->
                     <div id="chaea-visual-aid" style="text-align: center; margin-bottom: 30px; display: none;">
                         <span class="material-symbols-outlined" style="font-size: 80px; color: var(--bg-surface-light); opacity: 0.5;" id="chaea-icon">menu_book</span>
                     </div>

@@ -56,7 +56,7 @@
 </head>
 <body class="p-4 md:p-8">
 
-    <!-- Capa de Dibujo Global -->
+    <!-- Capa de Free Draw Global -->
     <canvas id="globalDrawingCanvas" class="drawing-layer"></canvas>
 
     <!-- Toolbar Superior Fija -->
@@ -72,7 +72,7 @@
             <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
             <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
-            <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
+            <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Free Draw OFF</button>
         </div>
     </nav>
 
@@ -201,7 +201,7 @@
             <article class="problem-card bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col">
                 <div class="flex items-center gap-3 mb-4">
                     <span class="bg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm">3</span>
-                    <h3 class="text-lg font-bold">Work para Mover una Carga</h3>
+                    <h3 class="text-lg font-bold">Work para Move una Carga</h3>
                 </div>
                 <div class="problem-text compact-text mb-4">
                     <p>Una carga fija \(Q = +12.0\ \mu\text{C}\) genera un campo en el espacio. Una carga de prueba \(q_0 = -3.0\ \mu\text{C}\) se mueve desde el punto \(A\) hasta el punto \(B\) a lo largo de una Trajectory curva.</p>
@@ -580,7 +580,7 @@
             });
         }
 
-        // --- Lógica de Dibujo Global ---
+        // --- Lógica de Free Draw Global ---
         const canvas = document.getElementById('globalDrawingCanvas');
         const ctx = canvas.getContext('2d');
         let isDrawing = false;
@@ -595,11 +595,11 @@
             canvas.classList.toggle('active');
             const btn = document.getElementById('toggleDrawBtn');
             if (canvas.classList.contains('active')) {
-                btn.innerText = "Dibujo ON";
+                btn.innerText = "Free Draw ON";
                 btn.classList.add('text-blue-600', 'font-extrabold');
                 document.body.style.overflow = 'hidden'; 
             } else {
-                btn.innerText = "Dibujo OFF";
+                btn.innerText = "Free Draw OFF";
                 btn.classList.remove('text-blue-600', 'font-extrabold');
                 document.body.style.overflow = 'auto';
             }

@@ -158,7 +158,7 @@
                     <!-- BLOQUE 4: SUPERPosition Y DCL DETALLADO -->
                     <div class="bg-emerald-50 p-[1.5vmin] shadow-sm rounded-lg border border-emerald-200 flex-1 relative">
                         <p class="font-bold text-emerald-800 flex items-center">
-                            4. SuperPosition (Múltiples Forces)
+                            4. Superposition (Múltiples Forces)
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
                                 <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> DCL Real:</strong> En la vista 3D verás flechas naranjas representando cada empuje/tirón individual. La suma geométrica (punta con cola) de estas flechas naranjas resulta en la flecha de la Net Force.</span>
@@ -236,7 +236,7 @@
                             <!-- DCL y solution Analítica -->
                             <div class="flex-1 bg-white border border-slate-200 rounded-lg p-[1.5vmin] shadow-sm flex flex-col min-h-0">
                                 <div class="text-slate-700 font-bold border-b border-slate-200 pb-1 mb-2 text-center" style="font-size: clamp(12px, 1vw, 16px);">
-                                    Detalle Analítico DCL (Selección)
+                                    Detalle Analítico DCL (Selesson)
                                 </div>
                                 <div id="ui-dcl-math" class="font-mono text-slate-600 flex-1 overflow-y-auto custom-scroll pr-1" style="font-size: clamp(10px, 0.9vw, 14px);">
                                     <div class="text-center text-slate-400 mt-4 italic">Haz clic en una carga en el espacio 3D para ver su diagrama de Forces individuales y resultantes.</div>
@@ -424,7 +424,7 @@
             if(intersects.length > 0) {
                 ctrl.enabled = false;
                 draggedCharge = charges.find(c => c.mesh === intersects[0].object);
-                selectCharge(draggedCharge); // Actualizar selección al tocar
+                selectCharge(draggedCharge); // Actualizar selesson al tocar
                 
                 const camDir = new THREE.Vector3();
                 cam.getWorldDirection(camDir);
@@ -590,7 +590,7 @@
             const showTrails = document.getElementById('toggle-trails').checked;
             const scaleForce = 0.2;
 
-            // Ring de selección HTML sobre 3D
+            // Ring de selesson HTML sobre 3D
             const ring = document.getElementById('selection-ring');
             if (selectedCharge) {
                 const pos = selectedCharge.mesh.position.clone().project(cam);

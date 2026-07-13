@@ -56,7 +56,7 @@
             border: 1px solid rgba(56, 189, 248, 0.2); box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
-        /* Puntero Láser */
+        /* Puntero Laser */
         body.laser-cursor, body.laser-cursor * { cursor: none !important; }
         #laser-dot {
             position: fixed; pointer-events: none; width: 14px; height: 14px; border-radius: 50%;
@@ -142,7 +142,7 @@
                 if (distance < -minSwipeDistance && step > 0) setStep(s => s - 1);
             };
 
-            // Efecto Puntero Láser
+            // Efecto Puntero Laser
             useEffect(() => {
                 const dot = document.getElementById('laser-dot');
                 const moveLaser = (e) => { if (isLaser) { dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px'; } };
@@ -386,7 +386,7 @@
                         { t: "Current Convencional (Rojo)", d: "Modelo teórico: la Current viaja del polo Positive (+) al Negative (-)." },
                         { t: "Flujo de Electrones (Amarillo)", d: "Physics Real: los electrones viajan del polo Negative (-) hacia el Positive (+)." }
                     ],
-                    tip: "Activa el Puntero Láser y la Pantalla Completa en la barra superior. Toca el circuito visual para avanzar rápidamente."
+                    tip: "Activa el Puntero Laser y la Pantalla Completa en la barra superior. Toca el circuito visual para avanzar rápidamente."
                 },
                 {
                     title: "Topología Original",
@@ -509,7 +509,7 @@
                                     <button onClick={() => setFlowMode('conventional')} className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${flowMode === 'conventional' ? 'bg-slate-700 text-red-400' : 'text-slate-400'}`}>I (+)</button>
                                 </div>
 
-                                <button onClick={() => setIsLaser(!isLaser)} className={`hidden md:block p-1.5 md:p-2 rounded-lg border transition-colors ${isLaser ? 'bg-red-500/20 border-red-500 text-red-400' : 'bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700'}`} title="Puntero Láser">
+                                <button onClick={() => setIsLaser(!isLaser)} className={`hidden md:block p-1.5 md:p-2 rounded-lg border transition-colors ${isLaser ? 'bg-red-500/20 border-red-500 text-red-400' : 'bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700'}`} title="Puntero Laser">
                                     <i data-lucide="crosshair" className="w-4 h-4"></i>
                                 </button>
 

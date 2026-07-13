@@ -95,7 +95,7 @@
                     <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Distribuciones Lineales de Carga
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
-                    Líneas finitas e infinitas, SuperPosition, Work Eléctrico y Trajectorys
+                    Líneas finitas e infinitas, Superposition, Work Eléctrico y Trajectorys
                 </p>
             </header>
 
@@ -196,7 +196,7 @@
 
                     <!-- Conclusion -->
                     <div class="bg-slate-800 text-white p-[1.5vmin] shadow-sm rounded-lg border border-slate-600 mt-[1vmin]">
-                        <p class="font-bold text-amber-400 mb-1 text-center">Datos Cinemáticos y Energéticos (Tiempo Real)</p>
+                        <p class="font-bold text-amber-400 mb-1 text-center">Datos Cinemáticos y Energéticos (Time Real)</p>
                         <div class="grid grid-cols-2 gap-2 text-sm">
                             <div class="bg-slate-700 p-2 rounded">
                                 <span class="block text-slate-300 text-xs">Net Force $|\vec{F}_{neta}|$:</span>
@@ -381,7 +381,7 @@
                             <!-- Chart Perfil del Campo -->
                             <div class="h-[45%] graph-wrapper p-[1vmin] flex flex-col bg-slate-50">
                                 <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(12px, 1vw, 15px);">
-                                    Chart $X(t)$ vs Tiempo
+                                    Chart $X(t)$ vs Time
                                 </div>
                                 <div class="flex-1 relative w-full" id="graph-container">
                                     <canvas id="graph-2d" class="absolute top-0 left-0 w-full h-full"></canvas>
@@ -514,7 +514,7 @@
         particle.mesh = new THREE.Mesh(geoTest, matTest);
         scene.add(particle.mesh);
 
-        // Ring de Selección
+        // Ring de Selesson
         const ringGeoTest = new THREE.RingGeometry(0.45, 0.55, 32);
         const ringMatTest = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide, transparent: true, opacity: 0.8 });
         const selectionRingTest = new THREE.Mesh(ringGeoTest, ringMatTest);
@@ -815,7 +815,7 @@
                 dExArrow.visible = dEyArrow.visible = dEzArrow.visible = false;
             }
 
-            // Rastro de SuperPosition (Suma visual de la integral)
+            // Rastro de Superposition (Suma visual de la integral)
             if (params.is_integrating && vis_dE_len > 0.01) {
                 let ghostArrow = new THREE.ArrowHelper(dEArrow.dir, particle.pos, vis_dE_len, 0xec4899, vis_dE_len*0.3, vis_dE_len*0.2);
                 ghostArrow.line.material.transparent = true; ghostArrow.line.material.opacity = 0.15;

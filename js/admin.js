@@ -18,7 +18,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
             let filasHtml = '', iteraciones = 0, teachersCount = 0, studentsCount = 0, arrayScatter = [];
             
             let sumRetencion = 0;
-            let sumTiempoStudents = 0;
+            let sumTimeStudents = 0;
             let riskCount = 0;
             let sumRatings = 0, countRatings = 0;
             let methodCount = {};
@@ -67,9 +67,9 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                     
                     // Lógica Neuroeducativa Simulada
                     // 1. Retención: Promedio de notas + un factor de tiempo
-                    let retencionUsuario = promGrade || Math.min(100, completadas * 5);
-                    sumRetencion += retencionUsuario;
-                    sumTiempoStudents += tiempoUser;
+                    let retencionUser = promGrade || Math.min(100, completadas * 5);
+                    sumRetencion += retencionUser;
+                    sumTimeStudents += tiempoUser;
 
                     // 2. Churn (Riesgo de abandono): Si ha estado < 10 min y no ha completado nada, está en riesgo
                     if (tiempoUser < 10 && completadas < 2) {
@@ -78,7 +78,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                 }
 
                 const selectHtml = `
-                    <select onchange="window.cambiarRolUsuario('${uid}', this.value)" class="form-input btn-sm" style="width:auto;" ${uid === window.currentUserUid ? 'disabled' : ''}>
+                    <select onchange="window.cambiarRolUser('${uid}', this.value)" class="form-input btn-sm" style="width:auto;" ${uid === window.currentUserUid ? 'disabled' : ''}>
                         <option value="student" ${d.role !== 'teacher' ? 'selected' : ''}>Student</option>
                         <option value="teacher" ${d.role === 'teacher' ? 'selected' : ''}>Docente/Admin</option>
                     </select>`;
@@ -100,7 +100,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                     if (studentsCount > 0) {
                         const avgRetencion = Math.round(sumRetencion / studentsCount);
                         const churnPct = Math.round((riskCount / studentsCount) * 100);
-                        const avgCarga = Math.round(sumTiempoStudents / studentsCount);
+                        const avgCarga = Math.round(sumTimeStudents / studentsCount);
 
                         const elRet = document.getElementById('admin-metric-retencion');
                         const elChurn = document.getElementById('admin-metric-churn');
@@ -210,7 +210,7 @@ export async function verDetalleStudent(uid, nombre, curriculoData, totalLessons
     }
 }
 
-export async function cambiarRolUsuario(uid, nuevoRol) {
+export async function cambiarRolUser(uid, nuevoRol) {
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'public', 'data', 'directory', uid), { role: nuevoRol }, { merge: true });
         Swal.fire({ title: 'Permisos', text: 'El rol se modificó correctamente.', icon: 'success', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });

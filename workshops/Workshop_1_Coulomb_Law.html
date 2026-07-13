@@ -54,7 +54,7 @@
 </head>
 <body class="p-4 md:p-8">
 
-    <!-- Capa de Dibujo Global -->
+    <!-- Capa de Free Draw Global -->
     <canvas id="globalDrawingCanvas" class="drawing-layer"></canvas>
 
     <!-- Toolbar Superior Fija -->
@@ -70,7 +70,7 @@
             <button id="penBtn" onclick="setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="eraserBtn" onclick="setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
             <button onclick="clearCanvas()" class="p-1.5 rounded hover:bg-white transition-colors text-sm" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
-            <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
+            <button id="toggleDrawBtn" onclick="toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Free Draw OFF</button>
         </div>
     </nav>
 
@@ -608,7 +608,7 @@
             });
         }
 
-        // --- Lógica de Dibujo Global ---
+        // --- Lógica de Free Draw Global ---
         const canvas = document.getElementById('globalDrawingCanvas');
         const ctx = canvas.getContext('2d');
         let isDrawing = false;
@@ -623,11 +623,11 @@
             canvas.classList.toggle('active');
             const btn = document.getElementById('toggleDrawBtn');
             if (canvas.classList.contains('active')) {
-                btn.innerText = "Dibujo ON";
+                btn.innerText = "Free Draw ON";
                 btn.classList.add('text-blue-600', 'font-extrabold');
                 document.body.style.overflow = 'hidden'; 
             } else {
-                btn.innerText = "Dibujo OFF";
+                btn.innerText = "Free Draw OFF";
                 btn.classList.remove('text-blue-600', 'font-extrabold');
                 document.body.style.overflow = 'auto';
             }

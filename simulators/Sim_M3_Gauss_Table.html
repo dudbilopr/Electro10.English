@@ -785,7 +785,7 @@
                     <button onClick={() => { setRole('student'); setView('exam_intro'); }} className="flex flex-col items-center p-12 bg-white rounded-[2.5rem] border-2 border-slate-200 shadow-lg hover:shadow-2xl hover:border-emerald-500 hover:-translate-y-2 transition-all group">
                       <div className="p-6 bg-emerald-50 text-emerald-600 rounded-3xl mb-6 group-hover:scale-110 transition-transform shadow-inner"><GraduationCap size={56}/></div>
                       <h3 className="text-2xl font-black text-slate-800 uppercase tracking-wide mb-3">Modo Agente</h3>
-                      <p className="text-base text-slate-500 text-center leading-relaxed font-medium">Ingresar a la simulación y rendir la prueba con variables dinámicas.</p>
+                      <p className="text-base text-slate-500 text-center leading-relaxed font-medium">Login a la simulación y rendir la prueba con variables dinámicas.</p>
                     </button>
                     
                     <button onClick={() => { setRole('teacher'); setView('dashboard'); }} className="flex flex-col items-center p-12 bg-white rounded-[2.5rem] border-2 border-slate-200 shadow-lg hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all group">
@@ -807,7 +807,7 @@
                   <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">Estás a punto de iniciar una Assessment estructurada. Las variables topológicas y vectoriales han sido generadas exclusivamente para ti vinculadas a tu sesión autenticada. El sistema medirá tu tiempo y precisión.</p>
                   <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-base font-bold text-slate-600">
                     <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><Target size={20} className="text-emerald-500"/> 4.0 Puntos Totales</span>
-                    <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><Clock size={20} className="text-blue-500"/> Tiempo Libre</span>
+                    <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><Clock size={20} className="text-blue-500"/> Time Libre</span>
                     <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><Eye size={20} className="text-violet-500"/> 1 Intento</span>
                   </div>
                   <button onClick={startExam} className="bg-slate-900 hover:bg-blue-700 text-white px-12 py-5 rounded-2xl font-black text-xl tracking-widest shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-4 w-full border-b-8 border-slate-950 active:border-b-0 active:translate-y-2">
@@ -1459,12 +1459,12 @@
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
                 <div className="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-lg hover:-translate-y-1 transition-transform">
                   <Clock className="text-blue-400 mx-auto mb-3" size={32}/>
-                  <p className="text-sm text-slate-400 font-bold uppercase tracking-wider mb-1">Tiempo Total</p>
+                  <p className="text-sm text-slate-400 font-bold uppercase tracking-wider mb-1">Time Total</p>
                   <p className="text-2xl font-mono font-bold text-white">{formatTime(finalTime)}</p>
                 </div>
                 <div className="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-lg hover:-translate-y-1 transition-transform">
                   <Timer className="text-violet-400 mx-auto mb-3" size={32}/>
-                  <p className="text-sm text-slate-400 font-bold uppercase tracking-wider mb-1">Tiempo / Misión</p>
+                  <p className="text-sm text-slate-400 font-bold uppercase tracking-wider mb-1">Time / Misión</p>
                   <p className="text-2xl font-mono font-bold text-white">{Math.floor(finalTime / 5)}s</p>
                 </div>
                 <div className="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-lg hover:-translate-y-1 transition-transform">

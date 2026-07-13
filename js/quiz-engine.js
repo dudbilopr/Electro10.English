@@ -293,7 +293,7 @@
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Sí, evaluar',
-                cancelButtonText: 'Cancelar'
+                cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) processEvaluation();
                 else startTimer();
@@ -369,7 +369,7 @@
                 adaptiveHtml = `
                 <div style="margin-top: 15px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; border-radius: 8px;">
                     <h4 style="margin: 0 0 5px 0; color: #3b82f6;"><span class="material-symbols-outlined" style="vertical-align: middle;">lightbulb</span> Metodología Sugerida (Paso a Paso)</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-medium);">Te recomendamos revisar el Glossary en el "Cerebro de Conocimiento" y rehacer el experimento virtual anotando las variables una por una.</p>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-medium);">Te recomendamos revisar el Glossary en el "Knowledge Brain" y rehacer el experimento virtual anotando las variables una por una.</p>
                 </div>`;
             }
             // Inject after msg

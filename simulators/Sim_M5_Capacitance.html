@@ -86,7 +86,7 @@ input:focus, select:focus, textarea:focus { border-color:var(--accent); box-shad
 /* Panel Matematicas */
 #katex-container{background:rgba(0,0,0,0.2);padding:16px;border-radius:12px;overflow-x:auto;font-size:0.95rem;display:flex;flex-direction:column;gap:12px; border:1px solid rgba(255,255,255,0.05);}
 
-/* Chat de Sala Rediseñado */
+/* Chat de Room Rediseñado */
 .chat-container{flex:1;display:flex;flex-direction:column;gap:12px;overflow-y:auto;max-height:350px; padding-right:8px;}
 .chat-bubble-wrapper { display:flex; flex-direction:column; gap:4px; max-width:85%; }
 .chat-bubble-wrapper.mine { align-self:flex-end; align-items:flex-end; }
@@ -127,8 +127,8 @@ tr:hover td { background:rgba(255,255,255,0.05); }
     <div style="display:flex; gap:16px; align-items:center;">
         <span id="room-badge" style="font-size:0.85rem; font-weight:bold; padding:6px 12px; border-radius:20px; background:var(--accent); color:#fff; display:none; box-shadow:0 4px 10px rgba(14,165,233,0.3);"></span>
         <button class="tool-btn" id="btn-theme" title="Alternar Tema UI" style="width:44px;height:44px;border-radius:50%;"><i class="ph ph-moon"></i></button>
-        <button class="tool-btn" id="btn-rooms" title="Salas Colaborativas" style="width:44px;height:44px;border-radius:50%;"><i class="ph ph-users"></i></button>
-        <button class="tool-btn" id="btn-profile" title="Mi Perfil" style="width:44px;height:44px;border-radius:50%;"><i class="ph ph-user-circle"></i></button>
+        <button class="tool-btn" id="btn-rooms" title="Rooms Colaborativas" style="width:44px;height:44px;border-radius:50%;"><i class="ph ph-users"></i></button>
+        <button class="tool-btn" id="btn-profile" title="My Profile" style="width:44px;height:44px;border-radius:50%;"><i class="ph ph-user-circle"></i></button>
         <button class="tool-btn btn-outline" id="btn-admin" style="display:none; width:44px;height:44px;border-radius:50%;" title="Dashboard Admin"><i class="ph ph-shield-check"></i></button>
     </div>
 </header>
@@ -139,8 +139,8 @@ tr:hover td { background:rgba(255,255,255,0.05); }
 
 <main>
     <aside class="sidebar sidebar-left" id="toolbar">
-        <button class="tool-btn active" data-tool="select" title="select/Mover (Arrastra para Multi-selección)"><i class="ph ph-cursor"></i></button>
-        <button class="tool-btn" data-tool="pan" title="Mover Lienzo (Mano) - Atajo: Clic central ratón"><i class="ph ph-hand-palm"></i></button>
+        <button class="tool-btn active" data-tool="select" title="select/Move (Arrastra para Multi-selesson)"><i class="ph ph-cursor"></i></button>
+        <button class="tool-btn" data-tool="pan" title="Move Lienzo (Mano) - Atajo: Clic central ratón"><i class="ph ph-hand-palm"></i></button>
         <button class="tool-btn" data-tool="wire" title="Conectar Cables (Snapping magnético a pines)"><i class="ph ph-line-segment"></i></button>
         <button class="tool-btn" data-tool="battery" title="Fuente DC (Batería)"><i class="ph ph-battery-full"></i></button>
         <button class="tool-btn" data-tool="cap_ceramic" title="Capacitor Placas Paralelas"><i class="ph ph-pause" style="transform: rotate(90deg);"></i></button>
@@ -228,7 +228,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
     <div>&copy; 2026 Capacitance10.easy - Simulator Physical IEEE</div>
     <div class="footer-links">
         <button class="btn btn-outline" onclick="$('math-window').style.display='flex'; $('math-window').classList.remove('minimized');" style="padding:6px 12px; font-size:0.8rem; border-radius:20px;"><i class="ph ph-calculator"></i> Open Panel Análisis</button>
-        <a id="btn-rate"><i class="ph ph-star" style="font-size:1.2rem;"></i> Calificar App</a>
+        <a id="btn-rate"><i class="ph ph-star" style="font-size:1.2rem;"></i> Grade App</a>
         <a href="https://wa.me/1234567890" target="_blank"><i class="ph ph-whatsapp-logo" style="font-size:1.2rem;"></i> Soporte Técnico</a>
         <a href="https://paypal.me/" target="_blank"><i class="ph ph-coffee" style="font-size:1.2rem;"></i> Invítame un café</a>
     </div>
@@ -256,7 +256,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
                 <label>Contraseña Maestra</label>
                 <input type="password" id="auth-pass" placeholder="••••••••">
             </div>
-            <button class="btn" id="btn-login-email" style="padding: 14px; font-size: 1.05rem; border-radius:14px;">Ingresar / Registrarse</button>
+            <button class="btn" id="btn-login-email" style="padding: 14px; font-size: 1.05rem; border-radius:14px;">Login / Registrarse</button>
             
             <div style="display: flex; align-items: center; text-align: center; margin: 24px 0; opacity: 0.4;">
                 <hr style="flex: 1; border: none; border-top: 1px solid var(--text);">
@@ -291,9 +291,9 @@ tr:hover td { background:rgba(255,255,255,0.05); }
             <div class="input-group" style="flex:1;"><label>Edad</label><input type="number" id="prof-edad-input"></div>
             <div class="input-group" style="flex:2;"><label>Programa Académico</label><input type="text" id="prof-carrera-input"></div>
         </div>
-        <div class="input-group"><label>Selección de Avatar UI</label>
+        <div class="input-group"><label>Selesson de Avatar UI</label>
             <select id="prof-avatar-select">
-                <option value="ph-user-circle">Estándar (Usuario)</option>
+                <option value="ph-user-circle">Estándar (User)</option>
                 <option value="ph-student">Student Académico</option>
                 <option value="ph-chalkboard-teacher">Docente / Investigador</option>
                 <option value="ph-alien">Extraterrestre</option>
@@ -311,9 +311,9 @@ tr:hover td { background:rgba(255,255,255,0.05); }
     <div class="modal" style="width:450px;">
         <div class="modal-header"><span style="display:flex; align-items:center; gap:8px;"><i class="ph ph-users"></i> Entorno Colaborativo</span> <button class="close-btn"><i class="ph ph-x"></i></button></div>
         <p style="font-size:0.9rem; opacity:0.8; margin-bottom:8px;">Conéctate a una sesión de laboratorio en tiempo real para diseñar circuitos con tu equipo.</p>
-        <div class="input-group"><label>Identificador de Sala (ID)</label><input type="text" id="room-id" placeholder="ej. lab-fisica-101" style="font-size:1.1rem; font-weight:bold; letter-spacing:1px; text-align:center;"></div>
+        <div class="input-group"><label>Identificador de Room (ID)</label><input type="text" id="room-id" placeholder="ej. lab-fisica-101" style="font-size:1.1rem; font-weight:bold; letter-spacing:1px; text-align:center;"></div>
         <div style="display:flex; gap:12px; margin-top:16px;">
-            <button class="btn" id="btn-join-room" style="flex:1; font-size:1.05rem;">Conectar a la Sala</button>
+            <button class="btn" id="btn-join-room" style="flex:1; font-size:1.05rem;">Conectar a la Room</button>
             <button class="btn btn-outline" id="btn-leave-room" style="display:none;"><i class="ph ph-sign-out"></i> Abandonar</button>
         </div>
     </div>
@@ -323,8 +323,8 @@ tr:hover td { background:rgba(255,255,255,0.05); }
     <div class="modal" style="width:1000px; max-width:95%;">
         <div class="modal-header"><span style="display:flex; align-items:center; gap:8px;"><i class="ph ph-chart-bar"></i> Centro de Control (Insights)</span> <button class="close-btn"><i class="ph ph-x"></i></button></div>
         <div style="display:flex; gap:16px; margin-bottom:20px; flex-wrap:wrap;">
-            <div class="metric-card"><div style="font-size:0.8rem; font-weight:bold; opacity:0.8; text-transform:uppercase;">Usuarios Registrados</div><div class="metric-val" id="dash-tot-usr">0</div></div>
-            <div class="metric-card"><div style="font-size:0.8rem; font-weight:bold; opacity:0.8; text-transform:uppercase;">Puntaje Promedio</div><div class="metric-val" id="dash-avg-pts">0</div></div>
+            <div class="metric-card"><div style="font-size:0.8rem; font-weight:bold; opacity:0.8; text-transform:uppercase;">Users Registrados</div><div class="metric-val" id="dash-tot-usr">0</div></div>
+            <div class="metric-card"><div style="font-size:0.8rem; font-weight:bold; opacity:0.8; text-transform:uppercase;">Score Promedio</div><div class="metric-val" id="dash-avg-pts">0</div></div>
             <div class="metric-card"><div style="font-size:0.8rem; font-weight:bold; opacity:0.8; text-transform:uppercase;">Total Evaluaciones</div><div class="metric-val" id="dash-tot-rtg">0</div></div>
             <div class="metric-card"><div style="font-size:0.8rem; font-weight:bold; opacity:0.8; text-transform:uppercase;">Calificación Global</div><div class="metric-val" id="dash-avg-star">0.0</div></div>
         </div>
@@ -558,7 +558,7 @@ $('btn-login-email').onclick = async () => {
     try { await signInWithEmailAndPassword(auth, e, p); } catch(err) { if(err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential') { try { await createUserWithEmailAndPassword(auth, e, p); } catch(ex) { toast(ex.message); } } else toast(err.message); }
 };
 
-// <span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> solution PERFECTA GOOGLE SSO: Redirección pura con selección forzada de cuenta
+// <span class="inline-flex items-center text-emerald-400 mr-1"><i data-lucide="check-circle-2" class="w-4 h-4 inline"></i></span> solution PERFECTA GOOGLE SSO: Redirección pura con selesson forzada de cuenta
 $('btn-login-google').onclick = () => { 
     const provider = new GoogleAuthProvider();
     // Obliga a Google a Show la pantalla de elegir cuenta siempre
@@ -646,7 +646,7 @@ $('btn-join-room').onclick = async () => {
         chatBox.scrollTop = chatBox.scrollHeight;
     });
 
-    $('room-badge').innerText = `Sala: ${id}`; $('room-badge').style.display='block'; $('chat-sidebar').style.display='flex'; $('btn-leave-room').style.display='block'; modal('modal-rooms', false); toast('Unido a la sesión colaborativa');
+    $('room-badge').innerText = `Room: ${id}`; $('room-badge').style.display='block'; $('chat-sidebar').style.display='flex'; $('btn-leave-room').style.display='block'; modal('modal-rooms', false); toast('Unido a la sesión colaborativa');
 };
 const leaveRoom = () => { st.room=null; st.rtdbRef=null; $('room-badge').style.display='none'; $('chat-sidebar').style.display='none'; $('btn-leave-room').style.display='none'; modal('modal-rooms',false); toast('Sesión abandonada');};
 $('btn-leave-room').onclick = leaveRoom;
@@ -1333,7 +1333,7 @@ $('btn-admin').onclick = async () => {
         console.error("Fallo de Permisos en Firestore (Admin):", error);
         toast('Fallo de permisos. Revisa las reglas de Firestore de tu proyecto.');
         $('admin-table').querySelector('tbody').innerHTML = `<tr><td colspan="6" style="text-align:center; color:var(--danger); padding:20px;">
-            <b>Error de Base de Datos:</b> No tienes permisos para leer la colección.<br>
+            <b>Error de Base de Datos:</b> No tienes permisos para leer la colesson.<br>
             <span style="font-size:0.8rem; opacity:0.8;">Configura las Security Rules de Firestore.</span>
         </td></tr>`;
     }

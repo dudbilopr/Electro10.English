@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function evaluarConGeminiVision(base64Image, feedbackBox) {
     const apiKey = localStorage.getItem('electro10_gemini_key');
     if (!apiKey) {
-        feedbackBox.innerHTML = `<span style="color:var(--danger)">[*]️ Error: No se encontró la API Key. Configúrala en el Asistente IA primero.</span>`;
+        feedbackBox.innerHTML = `<span style="color:var(--danger)">[*]️ Error: No se encontró la API Key. Configúrala en el AI Assistant primero.</span>`;
         return;
     }
 

@@ -81,7 +81,7 @@
         body.dark-theme .canvas-controls button { color: #cbd5e1; }
         .canvas-controls button:hover { background: #e2e8f0; color: #0f172a; }
 
-        /* Capa de Dibujo Global */
+        /* Capa de Free Draw Global */
         .drawing-layer { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 50; width: 100vw; height: 100vh; }
         .drawing-layer.active { pointer-events: auto; cursor: crosshair; }
 
@@ -118,7 +118,7 @@
             <button id="penBtn" onclick="window.setDrawingMode('pen')" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Lápiz"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
             <button id="eraserBtn" onclick="window.setDrawingMode('eraser')" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Borrador"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
             <button onclick="window.clearCanvas()" class="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="Clear todo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️</button>
-            <button id="toggleDrawBtn" onclick="window.toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Dibujo OFF</button>
+            <button id="toggleDrawBtn" onclick="window.toggleDrawing()" class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1">Free Draw OFF</button>
         </div>
     </nav>
 
@@ -1036,8 +1036,8 @@
         window.toggleDrawing = function() {
             if(!window.globalCanvas) return;
             window.globalCanvas.classList.toggle('active'); const btn = document.getElementById('toggleDrawBtn');
-            if (window.globalCanvas.classList.contains('active')) { btn.innerText = "Dibujo ON"; btn.classList.add('text-blue-600', 'font-extrabold'); document.body.style.overflow = 'hidden'; } 
-            else { btn.innerText = "Dibujo OFF"; btn.classList.remove('text-blue-600', 'font-extrabold'); document.body.style.overflow = 'auto'; }
+            if (window.globalCanvas.classList.contains('active')) { btn.innerText = "Free Draw ON"; btn.classList.add('text-blue-600', 'font-extrabold'); document.body.style.overflow = 'hidden'; } 
+            else { btn.innerText = "Free Draw OFF"; btn.classList.remove('text-blue-600', 'font-extrabold'); document.body.style.overflow = 'auto'; }
             window.resizeGlobalCanvas();
         };
         window.setDrawingMode = function(mode) { window.drawMode = mode; document.getElementById('penBtn').classList.toggle('bg-white', mode === 'pen'); document.getElementById('eraserBtn').classList.toggle('bg-white', mode === 'eraser'); };

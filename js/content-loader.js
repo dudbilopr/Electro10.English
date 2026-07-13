@@ -1,7 +1,7 @@
 // ============================================================
 // js/content-loader.js
 // Carga contenido en el visor principal según el tipo de
-// lección: video, multivideo, Simulator, quiz, enlaces, etc.
+// lesson: video, multivideo, Simulator, quiz, enlaces, etc.
 // Gestiona la playlist lateral y el marcado de progreso.
 // ============================================================
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -88,7 +88,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
 
     // Aplicar Color Temático (Stitch Design System)
     let newAccent = '#0284c7'; // default
-    if (modulo && modulo.titulo) {
+    if (module && modulo.titulo) {
         const titleLower = modulo.titulo.toLowerCase();
         if (titleLower.includes('eléctric') || titleLower.includes('electricidad') || titleLower.includes('coulomb')) {
             newAccent = 'var(--theme-electric)';
@@ -107,7 +107,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     // Construir detalles con los nuevos insights
     let detailsHtml = `<p style="color: var(--text-medium); margin-bottom: 15px;">${leccion.descripcion || "Explora el recurso analítico."}</p>`;
     
-    if (modulo && modulo.conceptosClave) {
+    if (module && modulo.conceptosClave) {
         detailsHtml += `
         <div style="margin-top: 20px; background: rgba(139, 92, 246, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.2);">
             <h4 style="margin: 0 0 10px 0; color: var(--accent);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">key</span> Key Concepts</h4>
@@ -117,7 +117,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         </div>`;
     }
 
-    if (modulo && modulo.Equations) {
+    if (module && modulo.Equations) {
         detailsHtml += `
         <div style="margin-top: 15px; background: var(--bg-surface-hover); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
             <h4 style="margin: 0 0 10px 0; color: var(--text-high);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px; color: #10b981;">functions</span> Equations Principales</h4>
@@ -127,7 +127,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         </div>`;
     }
 
-    if (modulo && modulo.historia) {
+    if (module && modulo.historia) {
         detailsHtml += `
         <div style="margin-top: 15px; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.2);">
             <h4 style="margin: 0 0 10px 0; color: #3b82f6;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">history_edu</span> Contexto Histórico: ${modulo.historia.experimentoClave}</h4>
@@ -135,7 +135,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         </div>`;
     }
 
-    if (modulo && modulo.bibliografia) {
+    if (module && modulo.bibliografia) {
         detailsHtml += `
         <div style="margin-top: 15px;">
             <h4 style="margin: 0 0 5px 0; color: var(--text-high); font-size: 0.9rem;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 16px;">menu_book</span> Bibliografía Recomendada</h4>
@@ -313,7 +313,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
                         if (window.Swal) {
                             window.Swal.fire({
                                 title: '¡Dedicación Recompensada!',
-                                text: 'Has dominado esta lección. (+Progreso)',
+                                text: 'Has dominado esta lesson. (+Progreso)',
                                 icon: 'success',
                                 toast: true,
                                 position: 'top-end',

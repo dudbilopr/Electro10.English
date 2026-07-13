@@ -376,7 +376,7 @@
         testCharge.mesh = new THREE.Mesh(geoTest, matTest);
         scene.add(testCharge.mesh);
 
-        // Rings de Selección
+        // Rings de Selesson
         const ringGeoTest = new THREE.RingGeometry(0.45, 0.5, 32);
         const ringMatTest = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide, transparent: true, opacity: 0.8 });
         const selectionRingTest = new THREE.Mesh(ringGeoTest, ringMatTest);
@@ -1021,7 +1021,7 @@
                 selectedSource.q = val;
                 updateSourceVisuals(selectedSource);
                 
-                // Actualiza visualmente el anillo de selección
+                // Actualiza visualmente el anillo de selesson
                 let currentScale = selectedSource.mesh.scale.x;
                 selectionRingSource.scale.set(currentScale, currentScale, currentScale);
 

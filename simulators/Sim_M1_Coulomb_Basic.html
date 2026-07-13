@@ -53,42 +53,42 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
 <header class="glass">
     <div style="display:flex;align-items:center;gap:15px">
         <h2 style="color:var(--accent);font-size:1.2rem;margin:0"><i class="ph ph-lightning"></i> CoulombLab10.easy</h2>
-        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 8px;border-radius:4px"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Caso Local</span>
+        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 8px;border-radius:4px"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Local Workspace</span>
     </div>
     <div style="display:flex;align-items:center;gap:15px">
-        <button class="btn" onclick="toggleTheme()" title="Modo Día/Noche"><i class="ph ph-moon"></i></button>
-        <button id="btn-chat" class="btn" style="display:none;background:#3498db;color:#fff" onclick="document.getElementById('room-chat-panel').style.display='flex'"><i class="ph ph-chat-centered-dots"></i> Chat Sala</button>
-        <button id="btn-admin" class="btn" style="display:none;background:#ffbd2e;color:#000;font-weight:bold" onclick="showAdminDashboard()"><i class="ph ph-shield-star"></i> Panel Admin</button>
+        <button class="btn" onclick="toggleTheme()" title="Toggle Theme (Light/Dark)"><i class="ph ph-moon"></i></button>
+        <button id="btn-chat" class="btn" style="display:none;background:#3498db;color:#fff" onclick="document.getElementById('room-chat-panel').style.display='flex'"><i class="ph ph-chat-centered-dots"></i> Room Chat</button>
+        <button id="btn-admin" class="btn" style="display:none;background:#ffbd2e;color:#000;font-weight:bold" onclick="showAdminDashboard()"><i class="ph ph-shield-star"></i> Admin Panel</button>
         <span id="user-stats" class="btn" style="display:none;border-color:#f1c40f;color:#f1c40f" onclick="showModal('profile-setup-modal')"><i class="ph ph-trophy"></i> Level 1 | 0 pts</span>
         <button id="user-info" class="btn" style="font-weight:bold;border:1px solid var(--accent)" onclick="editProfile()">loading...</button>
-        <button id="btn-rooms" class="btn" style="display:none" onclick="openRooms()"><i class="ph ph-users-three"></i> Salas</button>
-        <button id="btn-logout" class="btn btn-danger" style="display:none" onclick="CloseSesion()"><i class="ph ph-sign-out"></i> Salir</button>
+        <button id="btn-rooms" class="btn" style="display:none" onclick="openRooms()"><i class="ph ph-users-three"></i> Rooms</button>
+        <button id="btn-logout" class="btn btn-danger" style="display:none" onclick="CloseSesion()"><i class="ph ph-sign-out"></i> Logout</button>
     </div>
 </header>
 <div class="h-menu glass">
-    <button class="btn active" onclick="setTool('draw',this)"><i class="ph ph-pencil-simple"></i> IA (Charges)</button>
-    <button class="btn" onclick="setTool('draw_free',this)"><i class="ph ph-highlighter"></i> Dibujo</button>
+    <button class="btn active" onclick="setTool('draw',this)"><i class="ph ph-pencil-simple"></i> AI (Charges)</button>
+    <button class="btn" onclick="setTool('draw_free',this)"><i class="ph ph-highlighter"></i> Free Draw</button>
     <button class="btn" onclick="setTool('rect',this)"><i class="ph ph-rectangle"></i> Rect</button>
-    <button class="btn" onclick="setTool('circle',this)"><i class="ph ph-circle"></i> Círculo</button>
+    <button class="btn" onclick="setTool('circle',this)"><i class="ph ph-circle"></i> Circle</button>
     <button class="btn" onclick="setTool('line',this)"><i class="ph ph-line-segment"></i> Vector</button>
-    <button class="btn" onclick="setTool('laser',this)"><i class="ph ph-magic-wand"></i> Láser</button>
-    <button class="btn" onclick="setTool('text',this)"><i class="ph ph-text-t"></i> Texto</button>
-    <button class="btn" onclick="setTool('move',this)"><i class="ph ph-hand-grabbing"></i> Mover</button>
+    <button class="btn" onclick="setTool('laser',this)"><i class="ph ph-magic-wand"></i> Laser</button>
+    <button class="btn" onclick="setTool('text',this)"><i class="ph ph-text-t"></i> Text</button>
+    <button class="btn" onclick="setTool('move',this)"><i class="ph ph-hand-grabbing"></i> Move</button>
     <div style="width:1px;background:var(--glass-border);margin:0 5px;height:20px"></div>
     <input type="color" id="pencil-color" value="#3498db" style="width:30px;height:30px;padding:0;border:none;background:transparent;cursor:pointer" onchange="state.currentColor=this.value" title="Color">
-    <button class="btn" onclick="undo()" title="Deshacer"><i class="ph ph-arrow-u-up-left"></i></button>
+    <button class="btn" onclick="undo()" title="Undo"><i class="ph ph-arrow-u-up-left"></i></button>
     <button class="btn" onclick="ClearTodo()" title="Clear"><i class="ph ph-trash"></i></button>
-    <button class="btn btn-primary" onclick="analizarFisica()"><i class="ph ph-calculator"></i> Validar & Resolver</button>
+    <button class="btn btn-primary" onclick="analizarFisica()"><i class="ph ph-calculator"></i> Validate & Solve</button>
 </div>
 <div class="workspace" id="main-workspace">
     <div class="case-tabs">
-        <div class="case-tab active" id="tab-1" onclick="switchCase(1)">Caso 1 (Principal)</div>
-        <div class="case-tab" id="tab-2" onclick="switchCase(2)">Caso 2 (Comparación)</div>
+        <div class="case-tab active" id="tab-1" onclick="switchCase(1)">Case 1 (Main)</div>
+        <div class="case-tab" id="tab-2" onclick="switchCase(2)">Case 2 (Comparison)</div>
     </div>
     <div class="canvas-area" id="canvas-wrapper">
         <canvas id="main-canvas"></canvas>
         <button id="float-delete" class="btn btn-danger" style="position:absolute;display:none;z-index:10;box-shadow:0 4px 10px rgba(0,0,0,0.3);transform:translate(-50%,-100%);margin-top:-10px" onclick="deleteSelected()"><i class="ph ph-trash"></i> Remove</button>
-        <input type="text" id="text-input-overlay" style="position:absolute;display:none;z-index:100;background:rgba(0,0,0,0.8);border:1px dashed var(--accent);color:white;font-size:18px;padding:4px;transform:translateY(-50%)" placeholder="Escribe y presiona Enter...">
+        <input type="text" id="text-input-overlay" style="position:absolute;display:none;z-index:100;background:rgba(0,0,0,0.8);border:1px dashed var(--accent);color:white;font-size:18px;padding:4px;transform:translateY(-50%)" placeholder="Type and press Enter...">
         <div id="labels-overlay"></div>
         <div id="coords-indicator" class="glass" style="position:absolute;bottom:10px;right:10px;padding:4px 8px;border-radius:4px;font-family:monospace;font-size:.8rem;color:var(--accent);pointer-events:none;z-index:5;font-weight:bold">X:0 Y:0</div>
         
@@ -114,10 +114,10 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
             </div>
         </div>
 
-        <!-- Chat de Sala -->
+        <!-- Chat de Room -->
         <div id="room-chat-panel" class="glass card" style="display:none; position:absolute; bottom:20px; right:20px; width:300px; height:350px; z-index:200; flex-direction:column;">
             <div class="section-title" style="margin-top:0; display:flex; justify-content:space-between; align-items:center;">
-                <span><i class="ph ph-chats"></i> Chat de Sala</span>
+                <span><i class="ph ph-chats"></i> Chat de Room</span>
                 <i class="ph ph-x" style="cursor:pointer; font-size:16px;" onclick="document.getElementById('room-chat-panel').style.display='none'"></i>
             </div>
             <div id="chat-messages" style="flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:8px; margin-bottom:10px; padding-right:5px; font-size:0.85rem;"></div>
@@ -163,18 +163,18 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
 </footer>
 
 <!-- Modals -->
-<div class="modal" id="auth-modal"><div class="modal-content glass"><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-lock-key"></i> Acceso Seguro</h3><p style="font-size:.85rem;color:#888;margin-bottom:15px">Inicia sesión para save progreso, submit regalos y participar.</p><input type="email" id="auth-email" placeholder="Correo electrónico" style="margin-bottom:10px"><input type="password" id="auth-pass" placeholder="Contraseña" style="margin-bottom:15px"><div style="display:flex;gap:10px"><button class="btn btn-primary" style="flex:1;justify-content:center" onclick="iniciarSesion()">Entrar</button><button class="btn" style="flex:1;justify-content:center;background:var(--card-bg)" onclick="registrarUsuario()">Registro</button></div><button class="btn" style="width:100%;justify-content:center;margin-top:10px;background:#fff;color:#000;font-weight:bold" onclick="iniciarSesionConGoogle()"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" style="width:18px"> Google</button></div></div>
+<div class="modal" id="auth-modal"><div class="modal-content glass"><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-lock-key"></i> Acceso Seguro</h3><p style="font-size:.85rem;color:#888;margin-bottom:15px">Inicia sesión para save progreso, submit regalos y participar.</p><input type="email" id="auth-email" placeholder="Email Contact" style="margin-bottom:10px"><input type="password" id="auth-pass" placeholder="Contraseña" style="margin-bottom:15px"><div style="display:flex;gap:10px"><button class="btn btn-primary" style="flex:1;justify-content:center" onclick="iniciarSesion()">Entrar</button><button class="btn" style="flex:1;justify-content:center;background:var(--card-bg)" onclick="registrarUser()">Registro</button></div><button class="btn" style="width:100%;justify-content:center;margin-top:10px;background:#fff;color:#000;font-weight:bold" onclick="iniciarSesionConGoogle()"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" style="width:18px"> Google</button></div></div>
 
-<div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> Mi Perfil</h3><p style="font-size:.85rem;color:var(--text);margin-bottom:10px">Elige un avatar y actualiza tus datos.</p>
+<div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> My Profile</h3><p style="font-size:.85rem;color:var(--text);margin-bottom:10px">Elige un avatar y actualiza tus datos.</p>
 <div style="display:flex;justify-content:space-around;background:rgba(78,204,163,0.1);padding:10px;border-radius:8px;margin-bottom:15px;border:1px solid var(--accent)"><div style="text-align:center"><b>Level</b><br><span id="prof-Level-disp" style="font-size:1.5rem;color:var(--accent)">1</span></div><div style="text-align:center"><b>Puntos</b><br><span id="prof-puntos-disp" style="font-size:1.5rem;color:#f1c40f">0</span></div></div>
 <div id="prof-avatars" style="display:flex;justify-content:center;gap:15px;font-size:2rem;margin-bottom:15px;cursor:pointer"><span class="avt" onclick="selAvt(this)" style="border-color:var(--accent);transform:scale(1.2)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>‍<span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>‍<span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></span><span class="avt" onclick="selAvt(this)"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></span></div><input type="text" id="prof-name" placeholder="Nombre completo" style="margin-bottom:10px"><input type="text" id="prof-alias" placeholder="Alias (Ej: ElectroMaster)" style="margin-bottom:10px"><input type="number" id="prof-age" placeholder="Edad" style="margin-bottom:10px"><select id="prof-gender" style="margin-bottom:10px"><option value="">Género...</option><option value="M">Masculino</option><option value="F">Femenino</option><option value="O">Otro</option></select><input type="text" id="prof-major" placeholder="Carrera / Institución" style="margin-bottom:15px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="saveProfile()">save Perfil</button></div></div>
 
-<div class="modal" id="admin-modal"><div class="modal-content glass" style="max-width:900px;width:95%"><span class="close-btn" onclick="hideModal('admin-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-shield-star"></i> Control General (Admin)</h3><div id="admin-stats" style="display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap"><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Usuarios</h4><div id="adm-users-count" style="font-size:24px;color:var(--accent);font-weight:bold">0</div></div><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Rating Gral.</h4><div id="adm-rating-avg" style="font-size:24px;color:#f1c40f;font-weight:bold">0.0 <span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span></div></div></div><div class="section-title">Gestión de Usuarios, Roles y Grupos</div><div style="overflow-x:auto;max-height:400px;background:var(--card-bg);border-radius:6px;padding:5px"><table style="width:100%;min-width:700px"><thead><tr><th>Usuario</th><th>Nombre</th><th>Rol (Permiso)</th><th>Asignar Grupo</th><th>Acción</th></tr></thead><tbody id="adm-users-list"></tbody></table></div></div></div>
+<div class="modal" id="admin-modal"><div class="modal-content glass" style="max-width:900px;width:95%"><span class="close-btn" onclick="hideModal('admin-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-shield-star"></i> Control General (Admin)</h3><div id="admin-stats" style="display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap"><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Users</h4><div id="adm-users-count" style="font-size:24px;color:var(--accent);font-weight:bold">0</div></div><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Rating Gral.</h4><div id="adm-rating-avg" style="font-size:24px;color:#f1c40f;font-weight:bold">0.0 <span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="star" class="w-4 h-4 inline"></i></span></div></div></div><div class="section-title">Gestión de Users, Roles y Grupos</div><div style="overflow-x:auto;max-height:400px;background:var(--card-bg);border-radius:6px;padding:5px"><table style="width:100%;min-width:700px"><thead><tr><th>User</th><th>Nombre</th><th>Rol (Permiso)</th><th>Asignar Grupo</th><th>Acción</th></tr></thead><tbody id="adm-users-list"></tbody></table></div></div></div>
 
-<div class="modal" id="rooms-modal"><div class="modal-content glass" style="max-width:800px; width:95%;"><span class="close-btn" onclick="hideModal('rooms-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-users"></i> Comunidad y Salas</h3><p style="font-size:0.85rem;color:var(--text);margin-bottom:10px">Interactúa con otros Students. Únete a sesiones conjuntas o envía regalos.</p>
+<div class="modal" id="rooms-modal"><div class="modal-content glass" style="max-width:800px; width:95%;"><span class="close-btn" onclick="hideModal('rooms-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-users"></i> Comunidad y Rooms</h3><p style="font-size:0.85rem;color:var(--text);margin-bottom:10px">Interactúa con otros Students. Únete a sesiones conjuntas o envía regalos.</p>
 <div style="display:flex; flex-wrap:wrap; gap:20px;">
     <div style="flex:1; min-width:250px;">
-        <div style="background:var(--card-bg);padding:12px;border-radius:8px;margin-bottom:15px;border:1px solid var(--accent)"><h4 style="font-size:0.9rem;margin-bottom:8px;color:var(--accent)"><i class="ph ph-door-open"></i> Unirse a Sala Compartida</h4><input type="text" id="new-room-name" placeholder="Nombre de la sala" style="margin-bottom:8px"><input type="password" id="new-room-pass" placeholder="Contraseña (opcional)" style="margin-bottom:8px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="crearUnirseSala()">Entrar / Crear Sala</button></div>
+        <div style="background:var(--card-bg);padding:12px;border-radius:8px;margin-bottom:15px;border:1px solid var(--accent)"><h4 style="font-size:0.9rem;margin-bottom:8px;color:var(--accent)"><i class="ph ph-door-open"></i> Unirse a Room Compartida</h4><input type="text" id="new-room-name" placeholder="Nombre de la sala" style="margin-bottom:8px"><input type="password" id="new-room-pass" placeholder="Contraseña (opcional)" style="margin-bottom:8px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="crearUnirseRoom()">Entrar / Crear Room</button></div>
         <div class="section-title">Directorio</div><div id="rooms-list" style="max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding-right:5px"></div>
     </div>
     <div style="flex:1; min-width:250px;">
@@ -184,9 +184,9 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
 </div>
 <hr style="border-color:var(--glass-border);margin:10px 0"><p style="font-size:0.8rem;color:#888;text-align:center">Respeta las normas de la comunidad.</p></div></div>
 
-<div class="modal" id="review-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('review-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-star"></i> Calificar Simulator</h3><div style="text-align:center;margin-bottom:15px"><div class="star-rating" id="app-rating-stars"><i class="ph ph-star" onclick="setAppRating(1)"></i><i class="ph ph-star" onclick="setAppRating(2)"></i><i class="ph ph-star" onclick="setAppRating(3)"></i><i class="ph ph-star" onclick="setAppRating(4)"></i><i class="ph ph-star" onclick="setAppRating(5)"></i></div></div><label style="font-size:0.85rem;display:block;margin-bottom:5px">¿Qué tan fácil fue usarlo?</label><select id="rev-q1" style="margin-bottom:10px"><option value="Muy Fácil">Muy Fácil</option><option value="Fácil">Fácil</option><option value="Regular">Regular</option><option value="Difícil">Difícil</option></select><label style="font-size:0.85rem;display:block;margin-bottom:5px">¿Te ayudó a comprender mejor?</label><select id="rev-q2" style="margin-bottom:15px"><option value="Sí, mucho">Sí, mucho</option><option value="Algo">Algo</option><option value="No mucho">No mucho</option></select><textarea id="rev-comment" rows="3" placeholder="Deja un comentario o sugerencia..." style="margin-bottom:15px;resize:none"></textarea><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitAppReview()">Submit Calificación</button></div></div>
+<div class="modal" id="review-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('review-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-star"></i> Grade Simulator</h3><div style="text-align:center;margin-bottom:15px"><div class="star-rating" id="app-rating-stars"><i class="ph ph-star" onclick="setAppRating(1)"></i><i class="ph ph-star" onclick="setAppRating(2)"></i><i class="ph ph-star" onclick="setAppRating(3)"></i><i class="ph ph-star" onclick="setAppRating(4)"></i><i class="ph ph-star" onclick="setAppRating(5)"></i></div></div><label style="font-size:0.85rem;display:block;margin-bottom:5px">¿Qué tan fácil fue usarlo?</label><select id="rev-q1" style="margin-bottom:10px"><option value="Muy Fácil">Muy Fácil</option><option value="Fácil">Fácil</option><option value="Regular">Regular</option><option value="Difícil">Difícil</option></select><label style="font-size:0.85rem;display:block;margin-bottom:5px">¿Te ayudó a comprender mejor?</label><select id="rev-q2" style="margin-bottom:15px"><option value="Sí, mucho">Sí, mucho</option><option value="Algo">Algo</option><option value="No mucho">No mucho</option></select><textarea id="rev-comment" rows="3" placeholder="Deja un comentario o sugerencia..." style="margin-bottom:15px;resize:none"></textarea><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitAppReview()">Submit Calificación</button></div></div>
 
-<div class="modal" id="tour-modal"><div class="modal-content glass" style="text-align:center"><h3 style="color:var(--accent);margin-bottom:10px">¡welcome a CoulombLab10!</h3><p style="font-size:.9rem;color:var(--text);margin-bottom:15px">1. <b>IA:</b> Dibuja círculos y el sistema los Backá Charges.<br>2. <b>Vectors:</b> Dibuja líneas desde las Charges.<br>3. <b>Propiedades:</b> Usa la herramienta Mover y haz clic en una carga para editar su magnitudeeeee y ver cómo cambia de tamaño.<br>4. <b>Copiar/Pegar:</b> Usa <kbd>Ctrl+C</kbd> y <kbd>Ctrl+V</kbd> para copiar objetos entre casos.</p><button class="btn btn-primary" onclick="hideModal('tour-modal');localStorage.setItem('tourDone','1')">¡Entendido!</button></div></div>
+<div class="modal" id="tour-modal"><div class="modal-content glass" style="text-align:center"><h3 style="color:var(--accent);margin-bottom:10px">¡welcome a CoulombLab10!</h3><p style="font-size:.9rem;color:var(--text);margin-bottom:15px">1. <b>IA:</b> Dibuja círculos y el sistema los Backá Charges.<br>2. <b>Vectors:</b> Dibuja líneas desde las Charges.<br>3. <b>Propiedades:</b> Usa la herramienta Move y haz clic en una carga para editar su magnitudeeeee y ver cómo cambia de tamaño.<br>4. <b>Copiar/Pegar:</b> Usa <kbd>Ctrl+C</kbd> y <kbd>Ctrl+V</kbd> para copiar objetos entre casos.</p><button class="btn btn-primary" onclick="hideModal('tour-modal');localStorage.setItem('tourDone','1')">¡Entendido!</button></div></div>
 
 <div class="modal" id="fbd-modal"><div class="modal-content glass" style="text-align:center;max-width:450px"><div class="window-controls"><button class="win-btn win-min" onclick="hideModal('fbd-modal')"></button><button class="win-btn win-max" onclick="document.getElementById('fbd-canvas').style.transform='scale(1.5)'"></button><button class="win-btn win-close" onclick="hideModal('fbd-modal')"></button></div><h3 style="margin-bottom:10px;color:var(--accent)"><i class="ph ph-crosshair"></i> Diagrama Cuerpo Libre</h3><div style="background:#fff;border-radius:8px;padding:10px;overflow:hidden"><canvas id="fbd-canvas" width="400" height="400" style="position:relative;background:#fff;max-width:100%;height:auto;transition:transform .3s"></canvas></div></div></div>
 
@@ -549,7 +549,7 @@ window.addPoints = async (pts) => {
     } catch(e) {}
 };
 
-// Limpieza Total al Salir
+// Limpieza Total al Logout
 window.resetLocalState = () => {
     localPoints = 0; localLevel = 1;
     document.getElementById('prof-Level-disp').innerText = '1';
@@ -593,7 +593,7 @@ onAuthStateChanged(auth, async u => {
 });
 
 window.iniciarSesion=()=>signInWithEmailAndPassword(auth,document.getElementById('auth-email').value,document.getElementById('auth-pass').value).catch(e=>alert(e.message));
-window.registrarUsuario=()=>createUserWithEmailAndPassword(auth,document.getElementById('auth-email').value,document.getElementById('auth-pass').value).catch(e=>alert(e.message));
+window.registrarUser=()=>createUserWithEmailAndPassword(auth,document.getElementById('auth-email').value,document.getElementById('auth-pass').value).catch(e=>alert(e.message));
 window.iniciarSesionConGoogle=async()=>{
     try { await signInWithPopup(auth, new GoogleAuthProvider()); } 
     catch(e) { alert("Tu navegador o red ha bloqueado el Home con Google (COOP Policy). Por favor, usa correo y contraseña en su lugar. Detalles: " + e.message); }
@@ -647,7 +647,7 @@ window.saveProfile = async () => {
 };
 
 // --- GESTIÓN DE SALAS EN RTDB (SYNC MULTI-TAB) ---
-window.crearUnirseSala = async () => {
+window.crearUnirseRoom = async () => {
     const n = document.getElementById('new-room-name').value.trim();
     const p = document.getElementById('new-room-pass')?.value || '';
     if(!n) return alert("Ingresa el nombre de la sala");
@@ -665,7 +665,7 @@ window.crearUnirseSala = async () => {
 
 window.joinRoom = (id) => {
     hideModal('rooms-modal');
-    document.getElementById('room-info').innerText = `<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: ${id}`;
+    document.getElementById('room-info').innerText = `<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Room: ${id}`;
     if (unsubRoom) unsubRoom();
     
     curRoomRef = ref(rtdb, `salas/${id}/state`);
@@ -758,7 +758,7 @@ window.adminUpdateUser = async (uid) => {
         const g = document.getElementById(`adm-group-${uid}`).value;
         await updateDoc(doc(db, `artifacts/${APP_ID}/public/data/directory/${uid}`), { rol: r, grupo: g });
         await updateDoc(doc(db, `artifacts/${APP_ID}/users/${uid}/profile/data`), { rol: r, grupo: g });
-        alert("Usuario actualizado correctamente.");
+        alert("User actualizado correctamente.");
     } catch(e) { alert("Error asignando roles: "+e.message); }
 };
 

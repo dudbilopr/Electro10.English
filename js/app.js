@@ -9,13 +9,13 @@ import { db }                                   from './firebase.js';
 import { APP_ID }                               from '../config/firebase.config.js';
 import { doc, setDoc, increment }               from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 import { auth }                                 from './firebase.js';
-import { iniciarSesion, registrarUsuario, iniciarSesionConGoogle, CloseSesion, inicializarAuthObserver } from './auth.js';
-import { toggleSidebar, toggleTheme, toggleChat, OpenModalAuth, ShowNotificaciones, cambiarTab, resetNav, ShowDashboardStudent, ShowCalendario, ShowPerfil, ShowLaboratorios, ShowCerebro, cambiarTabCerebro, OpenPanelAdmin, actualizarAvatarUI, aplicarTemaGuardado, injectUIState, toggleFocusMode } from './ui.js';
+import { iniciarSesion, registrarUser, iniciarSesionConGoogle, CloseSesion, inicializarAuthObserver } from './auth.js';
+import { toggleSidebar, toggleTheme, toggleChat, OpenModalAuth, ShowNotifications, cambiarTab, resetNav, ShowDashboardStudent, ShowCalendario, ShowPerfil, ShowLaboratorios, ShowCerebro, cambiarTabCerebro, OpenPanelAdmin, actualizarAvatarUI, aplicarTemaGuardado, injectUIState, toggleFocusMode } from './ui.js';
 import { inicializarEstructuraBase }            from './curriculum.js';
 import { loadContent, saveEval, saveNotas, saveProgresoNube, getIconForType } from './content-loader.js';
 import { actualizarGraficosStudent }         from './charts.js';
 import { savePerfil, cargarDatosPerfil, cambiarModoVistaAdmin, saveRitmo, saveEncuestaSemanal } from './profile.js';
-import { cargarDirectorioAdminFirebase, verDetalleStudent, cambiarRolUsuario, saveAjustesCalendario } from './admin.js';
+import { cargarDirectorioAdminFirebase, verDetalleStudent, cambiarRolUser, saveAjustesCalendario } from './admin.js';
 
 // ── Estado Global Compartido ─────────────────────────────────
 const progressData   = {};
@@ -115,7 +115,7 @@ window.toggleSidebar             = toggleSidebar;
 window.toggleTheme               = toggleTheme;
 window.toggleChat                = toggleChat;
 window.OpenModalAuth            = OpenModalAuth;
-window.ShowNotificaciones     = ShowNotificaciones;
+window.ShowNotifications     = ShowNotifications;
 window.cambiarTab                = cambiarTab;
 window.ShowDashboardStudent = ShowDashboardStudent;
 window.ShowCalendario         = () => { injectUIState({ progressData, curriculoData, totalLessons }); ShowCalendario(); };
@@ -127,7 +127,7 @@ window.toggleFocusMode           = toggleFocusMode;
 window.OpenPanelAdmin           = () => OpenPanelAdmin(globalSettings);
 window.CloseSesion              = CloseSesion;
 window.iniciarSesion             = iniciarSesion;
-window.registrarUsuario          = registrarUsuario;
+window.registrarUser          = registrarUser;
 window.iniciarSesionConGoogle    = iniciarSesionConGoogle;
 window.saveEval               = (Level) => saveEval(Level, evalData);
 window.saveNotas              = saveNotas;
@@ -155,20 +155,20 @@ window.actualizarAvatarUI        = actualizarAvatarUI;
 window.actualizarGraficosStudent = (c, t) => actualizarGraficosStudent(c, t, progressData, evalData, timeData, curriculoData);
 window.cargarDirectorioAdminFirebase = () => cargarDirectorioAdminFirebase(curriculoData, totalLessons);
 window.verDetalleStudent      = (uid, nombre) => verDetalleStudent(uid, nombre, curriculoData, totalLessons);
-window.cambiarRolUsuario         = cambiarRolUsuario;
+window.cambiarRolUser         = cambiarRolUser;
 window.saveAjustesCalendario  = () => saveAjustesCalendario(globalSettings);
 window.renderAdminCharts         = (t, s, sc) => renderAdminCharts(t, s, sc);
 
     // window.renderizarQuizDinamico y window.evaluarQuizDinamico han sido movidos al motor avanzado quiz-engine.js
 
 window._loadContent = (leccion, modTitulo) => {
-    // ── Lógica de Bloqueo por Presaberes ──
+    // ── Lógica de Bloqueo por Pre-Assessment ──
     const examId = 'm0_l1';
     const isAdmin = window.currentUserEmail === 'dudbilopr@gmail.com' || window.currentUserRole === 'admin';
     if (!isAdmin && leccion.id !== examId && (!evalData[examId] || evalData[examId] < 65)) {
         Swal.fire({
             title: 'Acceso Restringido',
-            html: 'Debes completar el <b>Examen Diagnóstico de Presaberes</b> (Module 0) con al menos 65% para desbloquear el resto del curso.',
+            html: 'Debes completar el <b>Diagnostic Pre-Assessment</b> (Module 0) con al menos 65% para desbloquear el resto del curso.',
             icon: 'warning',
             confirmButtonText: 'Ir al Diagnóstico',
             confirmButtonColor: 'var(--accent)'

@@ -110,13 +110,13 @@
                 <div class="relative dropdown h-10 flex items-center">
                     <button class="hover:text-white transition cursor-default px-2">Edición</button>
                     <div class="dropdown-menu top-10 left-0">
-                        <button onclick="window.undo()"><i data-lucide="undo" class="w-4 h-4 mr-2"></i>Deshacer (Ctrl+Z)</button>
+                        <button onclick="window.undo()"><i data-lucide="undo" class="w-4 h-4 mr-2"></i>Undo (Ctrl+Z)</button>
                         <button onclick="window.redo()"><i data-lucide="redo" class="w-4 h-4 mr-2"></i>Rehacer (Ctrl+Y)</button>
                         <div class="border-t border-[#4a4a4a] my-1"></div>
                         <button onclick="window.copySelected()"><i data-lucide="copy" class="w-4 h-4 mr-2 text-[#007fd4]"></i>Copiar (Ctrl+C)</button>
                         <button onclick="window.pasteSelected()"><i data-lucide="clipboard-paste" class="w-4 h-4 mr-2 text-[#007fd4]"></i>Pegar (Ctrl+V)</button>
                         <div class="border-t border-[#4a4a4a] my-1"></div>
-                        <button onclick="window.deleteSelected()"><i data-lucide="trash" class="w-4 h-4 mr-2 text-red-400"></i>Clear Selección (Supr)</button>
+                        <button onclick="window.deleteSelected()"><i data-lucide="trash" class="w-4 h-4 mr-2 text-red-400"></i>Clear Selesson (Supr)</button>
                         <button onclick="window.restoreOriginalImage()"><i data-lucide="image-minus" class="w-4 h-4 mr-2"></i>Clear Píxeles Originales</button>
                         <div class="border-t border-[#4a4a4a] my-1"></div>
                         <button onclick="window.group()"><i data-lucide="combine" class="w-4 h-4 mr-2 text-[#ff9900]"></i>Agrupar Vectors</button>
@@ -160,7 +160,7 @@
         <aside id="leftPanel" class="w-16 bg-[#333333] border-r border-[#1e1e1e] flex flex-col items-center py-4 space-y-3 shrink-0 z-30 overflow-y-auto block">
             
             <div class="text-[8px] text-[#888] font-bold uppercase tracking-widest mb-1 text-center">Vectors</div>
-            <button id="toolSelect" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group tool-active" title="Selección Vectorial (V)">
+            <button id="toolSelect" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group tool-active" title="Selesson Vectorial (V)">
                 <i data-lucide="mouse-pointer-2" class="w-5 h-5"></i>
             </button>
             <button id="toolNode" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group" title="Modificar Nodos Vectoriales (A)">
@@ -179,13 +179,13 @@
             <button id="toolRect" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group" title="Add RectAngle">
                 <i data-lucide="square" class="w-5 h-5"></i>
             </button>
-            <button id="toolCircle" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group" title="Add Círculo">
+            <button id="toolCircle" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group" title="Add Circle">
                 <i data-lucide="circle" class="w-5 h-5"></i>
             </button>
             <button id="toolTriangle" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group" title="Add TriAngle">
                 <i data-lucide="triangle" class="w-5 h-5"></i>
             </button>
-            <button id="toolText" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group" title="Add Texto">
+            <button id="toolText" class="tool-btn p-2 text-[#999999] hover:text-white rounded transition relative group" title="Add Text">
                 <i data-lucide="type" class="w-5 h-5"></i>
             </button>
 
@@ -226,10 +226,10 @@
                     </select>
                 </div>
                 <div class="flex items-center space-x-2">
-                    <span class="text-[10px] text-[#666] hidden md:block mr-2"><i data-lucide="mouse" class="w-3 h-3 inline"></i> Scroll: Zoom | Alt+Click: Mover</span>
+                    <span class="text-[10px] text-[#666] hidden md:block mr-2"><i data-lucide="mouse" class="w-3 h-3 inline"></i> Scroll: Zoom | Alt+Click: Move</span>
                     <button onclick="window.resetZoomAndPan()" class="px-2 text-[#999] hover:text-white" title="Restablecer Zoom y Position"><i data-lucide="focus" class="w-4 h-4"></i></button>
                     <div class="w-px h-4 bg-[#3e3e42] mx-1"></div>
-                    <button onclick="window.undo()" class="px-2 text-[#999] hover:text-white" title="Deshacer"><i data-lucide="undo" class="w-4 h-4"></i></button>
+                    <button onclick="window.undo()" class="px-2 text-[#999] hover:text-white" title="Undo"><i data-lucide="undo" class="w-4 h-4"></i></button>
                     <button onclick="window.redo()" class="px-2 text-[#999] hover:text-white" title="Rehacer"><i data-lucide="redo" class="w-4 h-4"></i></button>
                 </div>
             </div>
@@ -420,7 +420,7 @@
     <!-- Footer Profesional y Visible -->
     <footer class="bg-[#1a1a1a] border-t border-[#3e3e42] py-2 px-4 text-xs font-medium shrink-0 flex justify-between items-center text-[#999999] z-50">
         <div class="flex items-center space-x-2">
-            <span>&copy; 2026 Todos los derechos reservados. <strong class="text-white">softwaredeveloper10.easy</strong></span>
+            <span>&copy; 2026 All rights reserved. <strong class="text-white">softwaredeveloper10.easy</strong></span>
         </div>
         <div class="flex items-center space-x-4">
             <!-- VISITAS REALES usando un Badge externo -->
@@ -502,7 +502,7 @@
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Configuration Firebase del Usuario
+        // Configuration Firebase del User
         const firebaseConfig = {
           apiKey: "AIzaSyCI0c7KgnEAn-sV_CrHs0Er1LXL13CvQSA",
           authDomain: "laboratorio-de-coulomb.firebaseapp.com",
@@ -675,9 +675,9 @@
             }
             else if (mode === 'lasso') { canvas.isDrawingMode = true; canvas.freeDrawingBrush = new fabric.PencilBrush(canvas); canvas.freeDrawingBrush.color = 'rgba(0, 127, 212, 0.3)'; canvas.freeDrawingBrush.width = 1; canvas.freeDrawingBrush.decimate = 0;} 
             else if (mode === 'rect') { let shape = new fabric.Rect({ left: canvas.width/2-50, top: canvas.height/2-50, fill: document.getElementById('mainColorPicker').value, width: 100, height: 100, name: 'RectAngle' }); canvas.add(shape); canvas.setActiveObject(shape); saveState(); setMode('select'); } 
-            else if (mode === 'circle') { let shape = new fabric.Circle({ left: canvas.width/2-50, top: canvas.height/2-50, fill: document.getElementById('mainColorPicker').value, radius: 50, name: 'Círculo' }); canvas.add(shape); canvas.setActiveObject(shape); saveState(); setMode('select'); } 
+            else if (mode === 'circle') { let shape = new fabric.Circle({ left: canvas.width/2-50, top: canvas.height/2-50, fill: document.getElementById('mainColorPicker').value, radius: 50, name: 'Circle' }); canvas.add(shape); canvas.setActiveObject(shape); saveState(); setMode('select'); } 
             else if (mode === 'triangle') { let shape = new fabric.Triangle({ left: canvas.width/2-50, top: canvas.height/2-50, fill: document.getElementById('mainColorPicker').value, width: 100, height: 100, name: 'TriAngle' }); canvas.add(shape); canvas.setActiveObject(shape); saveState(); setMode('select'); } 
-            else if (mode === 'text') { let txt = new fabric.IText('Edita Aquí', { left: canvas.width/2-80, top: canvas.height/2, fontFamily: 'Segoe UI', fill: '#007fd4', name: 'Texto' }); canvas.add(txt); canvas.setActiveObject(txt); saveState(); setMode('select'); } 
+            else if (mode === 'text') { let txt = new fabric.IText('Edita Aquí', { left: canvas.width/2-80, top: canvas.height/2, fontFamily: 'Segoe UI', fill: '#007fd4', name: 'Text' }); canvas.add(txt); canvas.setActiveObject(txt); saveState(); setMode('select'); } 
             else if (mode === 'brush' || mode === 'eraser') { originalCanvas.style.cursor = 'crosshair'; }
         }
 

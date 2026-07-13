@@ -83,7 +83,7 @@ window.ShowQuestionChaea = function(index) {
     document.getElementById('chaea-current-num').innerText = q.id;
     document.getElementById('chaea-question-text').innerText = q.texto;
     
-    // Ayuda visual basada en palabras clave
+    // Help visual basada en palabras clave
     const iconEl = document.getElementById('chaea-icon');
     const visualEl = document.getElementById('chaea-visual-aid');
     visualEl.style.display = 'block';
@@ -288,7 +288,7 @@ window.CloseYsaveChaea = async function() {
     }
     
     // Verify si estamos en el Module cero
-    if (document.getElementById('content-header') && document.getElementById('content-header').innerText.includes('Presaberes')) {
+    if (document.getElementById('content-header') && document.getElementById('content-header').innerText.includes('Pre-Assessment')) {
         document.getElementById('btn-finalizar-modulo').disabled = false;
         document.getElementById('btn-finalizar-modulo').classList.remove('btn-locked');
     }

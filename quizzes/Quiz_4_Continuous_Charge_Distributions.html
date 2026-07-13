@@ -62,7 +62,7 @@
             <h3 class="text-xl font-bold text-slate-800 mb-2">¿Evaluar examen?</h3>
             <p class="text-slate-600 mb-6" id="confirm-message">Aún tienes Questions sin responder.</p>
             <div class="flex gap-3 justify-center">
-                <button id="btn-cancel-eval" class="px-5 py-2.5 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">Cancelar</button>
+                <button id="btn-cancel-eval" class="px-5 py-2.5 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">Cancel</button>
                 <button id="btn-confirm-eval" class="px-5 py-2.5 rounded-lg font-bold text-white bg-teal-600 hover:bg-teal-700 transition-colors">Sí, evaluar</button>
             </div>
         </div>
@@ -316,7 +316,7 @@
                 text: "Empareja la ecuación integral con su correspondiente significado Physical en el electromagnetismo:", 
                 pairs: [
                     { id: 'i1', question: "$\\vec{E} = \\int k \\frac{dq}{r^2} \\hat{r}$", answer: "Principio de superPosition vectorial para el Campo." },
-                    { id: 'i2', question: "$V = \\int k \\frac{dq}{r}$", answer: "SuperPosition escalar para el Electric Potential." },
+                    { id: 'i2', question: "$V = \\int k \\frac{dq}{r}$", answer: "Superposition escalar para el Electric Potential." },
                     { id: 'i3', question: "$W = \\int_A^B \\vec{F} \\cdot d\\vec{s}$", answer: "Definición general del Work a lo largo de un camino." }
                 ],
                 tip: "Observa los vectores (flechitas o negritas). El Powerl y el Work resultan en escalares, mientras que el campo es un vector direccional."
@@ -999,7 +999,7 @@
             
             const titleHTML = `<div id="pdf-header" class="mb-8 border-b-2 border-teal-200 pb-4">
                                   <h1 class="text-3xl font-black text-teal-900">Results: Distribuciones y Work</h1>
-                                  <p class="text-lg text-slate-600 font-bold mt-2">Puntaje obtenido: ${window.lastScore}%</p>
+                                  <p class="text-lg text-slate-600 font-bold mt-2">Score obtenido: ${window.lastScore}%</p>
                                </div>`;
             element.insertAdjacentHTML('afterbegin', titleHTML);
 

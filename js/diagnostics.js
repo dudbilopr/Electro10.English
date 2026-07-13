@@ -85,7 +85,7 @@ function startKolbTest() {
         width: '900px',
         showCancelButton: true,
         confirmButtonText: 'save y Continue',
-        cancelButtonText: 'Cancelar',
+        cancelButtonText: 'Cancel',
         background: 'var(--bg-surface)',
         color: 'var(--text-high)',
         preConfirm: () => {
@@ -187,7 +187,7 @@ function startMITest() {
         width: '800px',
         showCancelButton: true,
         confirmButtonText: 'Finalizar Diagnóstico',
-        cancelButtonText: 'Cancelar',
+        cancelButtonText: 'Cancel',
         background: 'var(--bg-surface)',
         color: 'var(--text-high)',
         preConfirm: () => {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio Virtual: Potential y Work Eléctrico</title>
+    <title>Virtual Laboratory: Potential y Work Eléctrico</title>
     <meta name="description" content="Simulator de Electric Potential (V) y Work (W) con sistema de referencia dinámico.">
     
     <!-- Librerías Originales -->
@@ -180,11 +180,11 @@
     <div class="version">
         <span id="user-info" style="color: #a29bfe; font-weight: bold;">Autenticando...</span>
         <span id="user-stats" style="color: #f1c40f; font-weight: bold; margin-left: 10px; display: none; cursor: pointer; background: #2b2b3b; padding: 2px 8px; border-radius: 4px; border: 1px solid #444;" onclick="OpenModalPerfil()" title="Ver Misiones y Logros"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Lvl 1 | 0 pts</span>
-        <button id="btn-logout" class="btn-tool" style="padding: 4px 8px; display: none;" onclick="CloseSesion()">Salir</button>
+        <button id="btn-logout" class="btn-tool" style="padding: 4px 8px; display: none;" onclick="CloseSesion()">Logout</button>
         <div class="room-control">
-            <span id="room-info"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: Ninguna</span>
-            <button class="btn-tool" style="padding: 4px 8px;" onclick="OpenModalSala()">Unirse a Sala</button>
-            <button id="btn-share-room" class="btn-tool" style="padding: 4px 8px; display: none; background: #9b59b6; color: white;" onclick="copiarInfoSala()" title="Copiar enlace de acceso"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Compartir</button>
+            <span id="room-info"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Room: Ninguna</span>
+            <button class="btn-tool" style="padding: 4px 8px;" onclick="OpenModalRoom()">Unirse a Room</button>
+            <button id="btn-share-room" class="btn-tool" style="padding: 4px 8px; display: none; background: #9b59b6; color: white;" onclick="copiarInfoRoom()" title="Copiar enlace de acceso"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Compartir</button>
         </div>
     </div>
 </header>
@@ -212,10 +212,10 @@
                 <button class="btn-tool" onclick="setTool('draw_free', this)" title="Dibuja explicaciones libres"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Marcador (Libre)</button>
                 <button id="btn-highlighter" class="btn-tool" onclick="setTool('highlighter', this)" title="Resalta áreas importantes con transparencia"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Resaltador</button>
                 <button class="btn-tool" onclick="setTool('line', this)" title="Dibuja una línea recta"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Línea Recta</button>
-                <button class="btn-tool" onclick="setTool('text', this)" title="Escribe texto en el lienzo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Escribir Texto</button>
+                <button class="btn-tool" onclick="setTool('text', this)" title="Escribe texto en el lienzo"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Escribir Text</button>
                 <button class="btn-tool" onclick="setTool('eraser', this)" title="Haz clic o arrastra para borrar objetos y trazos"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Borrador</button>
-                <button class="btn-tool" onclick="setTool('move', this)" title="Mueve o selecciona objetos. Arrastra el fondo para scroll."><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Mover / Navegar</button>
-                <button class="btn-tool" onclick="undo()">↩️ Deshacer</button>
+                <button class="btn-tool" onclick="setTool('move', this)" title="Mueve o selecciona objetos. Arrastra el fondo para scroll."><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Move / Navegar</button>
+                <button class="btn-tool" onclick="undo()">↩️ Undo</button>
                 <button id="btn-hide-show" class="btn-tool btn-toggle" onclick="toggleVisibility()" title="Oculta temporalmente los trazos y objetos"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Hide / Show</button>
                 <button class="btn-tool btn-danger" onclick="ClearTodo()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Clear Todo</button>
                 <button class="btn-tool" style="background: #e67e22; color: white;" onclick="exportarImagen()" title="Descargar imagen del lienzo con tus Results"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Exportar Imagen</button>
@@ -361,12 +361,12 @@
         <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 20px;">Inicia sesión para jugar en grupo o entra como invitado para modo individual.</p>
         
         <div id="auth-error" style="color: #ff6b6b; font-size: 0.85rem; margin-bottom: 10px; padding: 10px; border-radius: 4px;"></div>
-        <input type="email" id="auth-email" class="auth-input" placeholder="Correo electrónico" style="margin-bottom: 8px;">
+        <input type="email" id="auth-email" class="auth-input" placeholder="Email Contact" style="margin-bottom: 8px;">
         <input type="password" id="auth-password" class="auth-input" placeholder="Contraseña" style="margin-top: 0; margin-bottom: 15px;">
         
         <div class="auth-btn-group" style="flex-direction: column; gap: 10px;">
             <div style="display: flex; gap: 10px; width: 100%;">
-                <button class="btn-tool btn-action" id="btn-login-email" style="flex: 1; justify-content: center;">Ingresar</button>
+                <button class="btn-tool btn-action" id="btn-login-email" style="flex: 1; justify-content: center;">Login</button>
                 <button class="btn-tool" id="btn-register-email" style="flex: 1; justify-content: center; background: #5e35b1; color: white;">Crear Cuenta</button>
         </div>
         
@@ -374,7 +374,7 @@
         
         <button class="btn-tool btn-action" id="btn-login-google" style="background: white; color: #333; justify-content: center; width: 100%;">
             <svg style="width: 18px; height: 18px; margin-right: 8px;" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></svg>
-            Ingresar con Google
+            Login con Google
         </button>
         <button class="btn-tool" id="btn-login-guest" style="justify-content: center; width: 100%;">Continue como Invitado (Individual)</button>
     </div>
@@ -382,19 +382,19 @@
 
 <div class="modal" id="room-modal">
     <div class="modal-content">
-        <span class="close-btn" onclick="CloseModalSala()">&times;</span>
+        <span class="close-btn" onclick="CloseModalRoom()">&times;</span>
         <h3 style="margin-top:0; color: #a29bfe;"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Unirse a un Cuarto</h3>
         <p style="font-size: 0.9rem; color: #ccc;">Ingresa el nombre del cuarto para colaborar.</p>
         <label>Nombre del Cuarto:</label><input type="text" id="room-name" class="auth-input" placeholder="Ej: equipo_alpha">
         <label>Contraseña del Cuarto:</label><input type="password" id="room-pass" class="auth-input" placeholder="Contraseña de acceso">
-        <div class="auth-btn-group"><button class="btn-tool btn-action" onclick="intentarUnirseSala()">Entrar al Cuarto</button></div>
+        <div class="auth-btn-group"><button class="btn-tool btn-action" onclick="intentarUnirseRoom()">Entrar al Cuarto</button></div>
     </div>
 </div>
 
 <div class="modal" id="profile-modal">
     <div class="modal-content">
         <span class="close-btn" onclick="CloseModalPerfil()">&times;</span>
-        <h3 style="margin-top:0; color: #f1c40f;"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Mi Perfil Académico</h3>
+        <h3 style="margin-top:0; color: #f1c40f;"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> My Profile Académico</h3>
         <div style="display: flex; justify-content: space-between; background: #1a1a24; padding: 10px; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid #f1c40f;">
             <div><strong>Level:</strong> <span id="ui-Level" style="color: #4ecca3; font-size: 1.2rem;">1</span></div>
             <div><strong>Puntos:</strong> <span id="ui-puntos" style="color: #4ecca3; font-size: 1.2rem;">0</span></div>
@@ -425,7 +425,7 @@
     // Funciones de Modales y Gamificación
     function OpenModalPerfil() { document.getElementById('profile-modal').style.display = 'flex'; }
     function CloseModalPerfil() { document.getElementById('profile-modal').style.display = 'none'; }
-    function OpenModalSala() { 
+    function OpenModalRoom() { 
         if (!window.appAuth || !window.appAuth.currentUser) {
             document.getElementById('auth-modal').style.display = 'flex';
             alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Debes iniciar sesión (o entrar como Invitado) primero para poder unirte a una sala.");
@@ -433,8 +433,8 @@
         }
         document.getElementById('room-modal').style.display = 'flex'; 
     }
-    function CloseModalSala() { document.getElementById('room-modal').style.display = 'none'; }
-    function copiarInfoSala() { 
+    function CloseModalRoom() { document.getElementById('room-modal').style.display = 'none'; }
+    function copiarInfoRoom() { 
         navigator.clipboard.writeText(document.getElementById('room-info').innerText); 
     }
     window.sumarPuntos = function(pts) {
@@ -978,7 +978,7 @@
         const box = document.getElementById('problem-statement'); const cU = document.getElementById('charge-unit'); const cUnitTxt = cU.options[cU.selectedIndex].text;
         const hasEqui = works && works.some(w => w.isEqui), hasNormal = works && works.some(w => !w.isEqui);
         if (hasEqui && !hasNormal) { box.innerHTML = `<strong>¡EquiPowerl!</strong> $\\Delta V \\approx 0$. <strong>Work neto NULO</strong> ($W=0$).`; box.style.borderLeftColor = "#2ecc71"; } 
-        else if (hasNormal) { const lastWork = works[works.length-1]; if (!lastWork.isEqui) { box.innerHTML = `<strong>Problema:</strong> Mover $q_0$ desde ${lastWork.from} hasta ${lastWork.to}. <br> <strong>Work Total:</strong> $W = ${lastWork.W.toExponential(2)} \\text{ J}$`; box.style.borderLeftColor = "#9b59b6"; } } 
+        else if (hasNormal) { const lastWork = works[works.length-1]; if (!lastWork.isEqui) { box.innerHTML = `<strong>Problema:</strong> Move $q_0$ desde ${lastWork.from} hasta ${lastWork.to}. <br> <strong>Work Total:</strong> $W = ${lastWork.W.toExponential(2)} \\text{ J}$`; box.style.borderLeftColor = "#9b59b6"; } } 
         else { if (nQ === 0) { box.innerHTML = `Dibuja Charges fuente. Scale: ${cUnitTxt}`; return; } if (nP < 2) { box.innerHTML = "Coloca dos puntos (A y B)."; return; } if (nT === 0) { box.innerHTML = "Conecta los puntos con una Trajectory."; return; } }
         renderMathInElement(box, {delimiters: [{left: "$", right: "$", display: false}]});
     }
@@ -1208,20 +1208,20 @@
     onAuthStateChanged(auth, (user) => {
         if (user) {
             document.getElementById('auth-modal').style.display = 'none';
-            document.getElementById('user-info').innerText = user.isAnonymous ? `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Invitado-${user.uid.slice(0,4)}` : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${user.displayName || user.email || 'Usuario'}`;
+            document.getElementById('user-info').innerText = user.isAnonymous ? `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Invitado-${user.uid.slice(0,4)}` : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${user.displayName || user.email || 'User'}`;
             document.getElementById('btn-logout').style.display = 'inline-block';
             document.getElementById('user-stats').style.display = 'inline-flex';
             
             if (window.iniciarGamificacion) window.iniciarGamificacion(user.uid);
             
-            if (!currentRoomRef) window.OpenModalSala();
+            if (!currentRoomRef) window.OpenModalRoom();
         } else {
             document.getElementById('auth-modal').style.display = 'flex';
             document.getElementById('room-modal').style.display = 'none';
             document.getElementById('user-info').innerText = 'No conectado';
             document.getElementById('user-stats').style.display = 'none';
             document.getElementById('btn-logout').style.display = 'none';
-            document.getElementById('room-info').innerText = '<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: Ninguna';
+            document.getElementById('room-info').innerText = '<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Room: Ninguna';
             document.getElementById('btn-share-room').style.display = 'none';
             document.getElementById('chat-section').style.display = 'none';
             
@@ -1312,7 +1312,7 @@
                 tareasDiv.innerHTML = `
                     <div class="task-item ${d.tareas.tarea_1 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 1 carga en el lienzo</span></div>
                     <div class="task-item ${d.tareas.tarea_2 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 1 punto de análisis</span></div>
-                    <div class="task-item ${d.tareas.tarea_3 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Haz 5 interacciones (Mover/Dibujar)</span></div>
+                    <div class="task-item ${d.tareas.tarea_3 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Haz 5 interacciones (Move/Dibujar)</span></div>
                 `;
             } else if (p.Level === 2) {
                 tareasDiv.innerHTML = `
@@ -1398,7 +1398,7 @@
     };
 
     // --- SISTEMA DE SALAS Y CONTRASEÑAS (APUNTANDO A salas_Powerl) ---
-    window.intentarUnirseSala = async function() {
+    window.intentarUnirseRoom = async function() {
         if (!auth.currentUser) {
             document.getElementById('room-modal').style.display = 'none';
             document.getElementById('auth-modal').style.display = 'flex';
@@ -1424,18 +1424,18 @@
             }
             
             document.getElementById('room-modal').style.display = 'none';
-            document.getElementById('room-info').innerText = '<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: ' + salaId;
+            document.getElementById('room-info').innerText = '<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Room: ' + salaId;
             document.getElementById('btn-share-room').style.display = 'inline-block';
             document.getElementById('chat-section').style.display = 'block';
             
-            conectarASala(salaId);
+            conectarARoom(salaId);
         } catch (error) { 
             console.error("Error al conectarse a Firebase:", error); 
             alert('Error de conexión. Ocurrió un problema de permisos en Firebase. Revisa la consola para más detalles.'); 
         }
     };
 
-    function conectarASala(salaId) {
+    function conectarARoom(salaId) {
         if (unsubscribeRoom) unsubscribeRoom();
         if (unsubscribeChat) unsubscribeChat();
 

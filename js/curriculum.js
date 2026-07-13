@@ -11,7 +11,7 @@ export let totalLessons  = 0;
 // ── Carga el currículo desde modules/ ──────────────────────
 export async function inicializarEstructuraBase(progressData) {
     try {
-        const modulo = await import('../modules/curriculo.js');
+        const module = await import('../modules/curriculo.js');
         curriculoData = modulo.curriculoData;
     } catch (error) {
         console.warn('No se pudo importar el currículo externo. Usando respaldo mínimo.');

@@ -1,7 +1,7 @@
 export const modulo0_presaberes = {
     id: "m0",
-    titulo: "Module 0: Examen Diagnóstico de Presaberes",
-    descripcion: "Prueba obligatoria para evaluar tus bases matemáticas avanzadas antes de iniciar el curso. Puntaje mínimo: 65%.",
+    titulo: "Module 0: Diagnostic Pre-Assessment",
+    descripcion: "Prueba obligatoria para evaluar tus bases matemáticas avanzadas antes de iniciar el curso. Score mínimo: 65%.",
     lecciones: [
         {
             id: "m0_l0",

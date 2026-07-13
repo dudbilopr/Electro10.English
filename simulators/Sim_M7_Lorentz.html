@@ -130,13 +130,13 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
 <header class="glass">
     <div style="display:flex;align-items:center;gap:15px">
         <h2 style="color:var(--accent);font-size:1.3rem;margin:0"><i class="ph ph-magnet"></i> LorentzLab10.easy</h2>
-        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 10px;border-radius:20px; border:1px solid var(--glass-border)"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala Local</span>
+        <span id="room-info" style="font-size:.85rem;color:#888;background:var(--card-bg);padding:4px 10px;border-radius:20px; border:1px solid var(--glass-border)"><span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Room Local</span>
     </div>
     <div style="display:flex;align-items:center;gap:15px">
-        <button class="btn" onclick="toggleTheme()" title="Modo Día/Noche"><i class="ph ph-moon" id="theme-icon"></i></button>
+        <button class="btn" onclick="toggleTheme()" title="Toggle Theme (Light/Dark)"><i class="ph ph-moon" id="theme-icon"></i></button>
         <button id="user-info" class="btn" style="font-weight:bold;border:1px solid var(--accent)" onclick="showModal('profile-setup-modal')"><i class="ph ph-spinner-gap"></i> Conectando...</button>
-        <button id="btn-rooms" class="btn" style="display:none" onclick="openRooms()"><i class="ph ph-users-three"></i> Salas</button>
-        <button id="btn-logout" class="btn btn-danger" style="display:none" onclick="CloseSesion()"><i class="ph ph-sign-out"></i> Salir</button>
+        <button id="btn-rooms" class="btn" style="display:none" onclick="openRooms()"><i class="ph ph-users-three"></i> Rooms</button>
+        <button id="btn-logout" class="btn btn-danger" style="display:none" onclick="CloseSesion()"><i class="ph ph-sign-out"></i> Logout</button>
     </div>
 </header>
 
@@ -159,7 +159,7 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
         <div id="webgl-container"></div>
         
         <div style="position:absolute; top:20px; right:60px; text-align:right; color:#888; font-size:0.8rem; text-shadow:0 1px 2px var(--bg); pointer-events:none; z-index:10;">
-            Click Izq: Rotar 3D<br>Rueda: Zoom<br>Click Der: Mover 3D
+            Click Izq: Rotar 3D<br>Rueda: Zoom<br>Click Der: Move 3D
         </div>
 
         <div id="playback-controls">
@@ -265,9 +265,9 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
 </div>
 
 <!-- Modales Firebase/Auth -->
-<div class="modal" id="auth-modal"><div class="modal-content glass"><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-lock-key"></i> Autenticación Requerida</h3><input type="email" id="auth-email" placeholder="Correo electrónico" style="margin-bottom:10px; background:var(--bg)"><input type="password" id="auth-pass" placeholder="Contraseña" style="margin-bottom:15px; background:var(--bg)"><div style="display:flex;gap:10px"><button class="btn btn-primary" style="flex:1;justify-content:center" onclick="iniciarSesion()">Entrar</button><button class="btn" style="flex:1;justify-content:center;background:var(--card-bg)" onclick="registrarUsuario()">Registro</button></div></div></div>
-<div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> Mi Perfil</h3><input type="text" id="prof-name" placeholder="Nombre completo o Alias" style="margin-bottom:15px; background:var(--bg); padding:12px;"><button class="btn btn-primary" style="width:100%;justify-content:center; padding:12px;" onclick="saveProfile()">save Perfil</button></div></div>
-<div class="modal" id="rooms-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('rooms-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-users"></i> Conexión a Sala Multi-Usuario</h3><input type="text" id="new-room-name" placeholder="Ej: GrupoFisica101" style="margin-bottom:15px; background:var(--bg); padding:12px;"><button class="btn btn-primary" style="width:100%;justify-content:center; padding:12px;" onclick="crearUnirseSala()">Entrar / Crear Sala</button></div></div>
+<div class="modal" id="auth-modal"><div class="modal-content glass"><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-lock-key"></i> Autenticación Requerida</h3><input type="email" id="auth-email" placeholder="Email Contact" style="margin-bottom:10px; background:var(--bg)"><input type="password" id="auth-pass" placeholder="Contraseña" style="margin-bottom:15px; background:var(--bg)"><div style="display:flex;gap:10px"><button class="btn btn-primary" style="flex:1;justify-content:center" onclick="iniciarSesion()">Entrar</button><button class="btn" style="flex:1;justify-content:center;background:var(--card-bg)" onclick="registrarUser()">Registro</button></div></div></div>
+<div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> My Profile</h3><input type="text" id="prof-name" placeholder="Nombre completo o Alias" style="margin-bottom:15px; background:var(--bg); padding:12px;"><button class="btn btn-primary" style="width:100%;justify-content:center; padding:12px;" onclick="saveProfile()">save Perfil</button></div></div>
+<div class="modal" id="rooms-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('rooms-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-users"></i> Conexión a Room Multi-User</h3><input type="text" id="new-room-name" placeholder="Ej: GrupoFisica101" style="margin-bottom:15px; background:var(--bg); padding:12px;"><button class="btn btn-primary" style="width:100%;justify-content:center; padding:12px;" onclick="crearUnirseRoom()">Entrar / Crear Room</button></div></div>
 
 <script>
 // --- ESTADO Y TEMA ---
@@ -700,8 +700,8 @@ onAuthStateChanged(auth, async u => {
         try {
             const s = await getDoc(doc(db, `artifacts/${APP_ID}/users/${u.uid}/profile/data`));
             if(s.exists()){ const pd = s.data(); uiInfo.innerHTML = `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${pd.nombre || pd.alias || u.email.split('@')[0]}`; document.getElementById('prof-name').value = pd.nombre || ''; }
-            else { uiInfo.innerHTML = u.isAnonymous ? "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Usuario Anónimo" : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${u.email ? u.email.split('@')[0] : u.uid.substring(0,6)}`; }
-        } catch(e) { uiInfo.innerHTML = u.isAnonymous ? "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Usuario Anónimo" : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Conectado`; }
+            else { uiInfo.innerHTML = u.isAnonymous ? "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> User Anónimo" : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> ${u.email ? u.email.split('@')[0] : u.uid.substring(0,6)}`; }
+        } catch(e) { uiInfo.innerHTML = u.isAnonymous ? "<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> User Anónimo" : `<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Conectado`; }
         document.getElementById('btn-rooms').style.display='inline-flex';
     } else { uiInfo.innerHTML = "<i class='ph ph-warning'></i> Desconectado"; }
 });
@@ -712,10 +712,10 @@ window.saveProfile = async () => {
     catch(e) { alert("Error guardando: " + e.message); }
 }
 
-window.crearUnirseSala = async () => { const n = document.getElementById('new-room-name').value.trim(); if(!n) return alert("Ingresa el nombre de la sala"); joinRoom(n); };
+window.crearUnirseRoom = async () => { const n = document.getElementById('new-room-name').value.trim(); if(!n) return alert("Ingresa el nombre de la sala"); joinRoom(n); };
 
 window.joinRoom = (id) => {
-    hideModal('rooms-modal'); document.getElementById('room-info').innerHTML = `<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Sala: <b>${id}</b>`;
+    hideModal('rooms-modal'); document.getElementById('room-info').innerHTML = `<span class="inline-flex items-center text-blue-400 mr-1"><i data-lucide="globe" class="w-4 h-4 inline"></i></span> Room: <b>${id}</b>`;
     if (unsubRoom) unsubRoom();
     
     curRoomRef = ref(rtdb, `salas/${APP_ID}/${id}/state`);

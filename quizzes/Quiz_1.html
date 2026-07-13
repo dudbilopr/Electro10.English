@@ -995,7 +995,7 @@
 
           const formatTime = (sec) => sec != null ? `${Math.floor(sec / 60)}m ${(sec % 60).toString().padStart(2, '0')}s` : '0m 00s';
 
-          // Mensaje Psicológico de Tiempo e Índice de Duda
+          // Mensaje Psicológico de Time e Índice de Duda
           let timeMsg = "";
           if (finalTime > 0) {
               if (finalTime < 180) timeMsg = "Has respondido en tiempo récord (< 3 min). Tu impulsividad es alta. La ingeniería exige Pause y análisis metódico.";
@@ -1069,7 +1069,7 @@
                     
                     <button onClick={handleGoogleLogin} className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-3 mb-6 transition-colors shadow-md">
                         <svg className="w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-                        Ingresar con Google
+                        Login con Google
                     </button>
                     
                     <div className="relative flex items-center py-5">
@@ -1271,7 +1271,7 @@
                   
                   <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-base font-bold text-slate-600">
                     <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><Target size={20} className="text-emerald-500"/> {JSON.parse(examConfig).puntajeMaximo || 5.0} Pts Totales</span>
-                    <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><Clock size={20} className="text-blue-500"/> Tiempo Medido</span>
+                    <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><Clock size={20} className="text-blue-500"/> Time Medido</span>
                     <span className="flex items-center gap-2 bg-slate-50 px-5 py-3 rounded-2xl border border-slate-200"><ListChecks size={20} className="text-violet-500"/> 3 Hojas / 1 Intento</span>
                   </div>
                   <button onClick={startExam} className="bg-orange-600 hover:bg-orange-700 text-white px-12 py-5 rounded-2xl font-black text-xl tracking-widest shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-4 w-full border-b-8 border-orange-900 active:border-b-0 active:translate-y-2">
@@ -1341,7 +1341,7 @@
                               {/* NEW THEORY: Proportions and Graphs */}
                               <div className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-2xl mb-10 flex items-center justify-between">
                                 <div>
-                                    <p className="font-black text-orange-900 text-xl mb-2 flex items-center gap-2"><TrendingDown size={24}/> 1.2 Comportamiento Matemático y SuperPosition</p>
+                                    <p className="font-black text-orange-900 text-xl mb-2 flex items-center gap-2"><TrendingDown size={24}/> 1.2 Comportamiento Matemático y Superposition</p>
                                     <p className="text-orange-800 font-medium text-base">Analice el comportamiento de las Equations electrostáticas ante la variación de sus Parameters.</p>
                                 </div>
                               </div>
@@ -1485,7 +1485,7 @@
                                           </div>
 
                                           <div className={`p-4 rounded-xl border step-container ${answers.f_sumx ? 'step-active' : 'step-pending'}`}>
-                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 6-7: SuperPosition Vectorial</p>
+                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 6-7: Superposition Vectorial</p>
                                               <div className="grid grid-cols-2 gap-4">
                                                   <div><label className="text-sm font-bold text-slate-700 block mb-1"><Latex text={"$\\sum F_x$ (N)"} /></label>
                                                       <InlineSelect id="f_sumx" value={answers.f_sumx} onChange={handleInputChange} isSubmitted={isSubmitted} expected="-0.0080" width="w-full" options={optsSumX} />
@@ -1580,7 +1580,7 @@
                                           </div>
 
                                           <div className={`p-4 rounded-xl border step-container ${answers.c_sumx ? 'step-active' : 'step-pending'}`}>
-                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 6-7: SuperPosition Numérica (N/C)</p>
+                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 6-7: Superposition Numérica (N/C)</p>
                                               <div className="grid grid-cols-2 gap-4">
                                                   <div><label className="text-sm font-bold text-slate-700 block mb-1"><Latex text={"$\\sum E_x$"} /></label>
                                                     <InlineSelect id="c_sumx" value={answers.c_sumx} onChange={handleInputChange} isSubmitted={isSubmitted} expected="-11250" width="w-full" options={optsSumX3} />
@@ -1986,7 +1986,7 @@
       <footer className="mt-auto py-8 bg-slate-900 border-t border-slate-800 text-center relative z-50">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
               <div className="text-slate-400 font-medium text-sm">
-                  &copy; 2026 <span className="font-black text-white">physics10.easy</span> - Todos los derechos reservados.
+                  &copy; 2026 <span className="font-black text-white">physics10.easy</span> - All rights reserved.
               </div>
               
               <div className="flex items-center gap-6">

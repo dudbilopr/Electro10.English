@@ -10,7 +10,7 @@
 
         const html = `
             <!-- FAB -->
-            <button id="ai-chat-fab" class="chat-fab animate-pulse" title="Asistente IA">
+            <button id="ai-chat-fab" class="chat-fab animate-pulse" title="AI Assistant">
                 <span class="material-symbols-outlined">auto_awesome</span>
             </button>
 
@@ -38,7 +38,7 @@
                     </div>
 
                     <div id="ai-chat-area" style="display: none; flex-direction: row; gap: 8px;">
-                        <input type="text" id="input-chat-msg" placeholder="Hazme una Question sobre la lección..." style="flex: 1; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high); outline: none;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-color)'">
+                        <input type="text" id="input-chat-msg" placeholder="Hazme una Question sobre la lesson..." style="flex: 1; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high); outline: none;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-color)'">
                         <button id="btn-send-chat" class="btn-primary" style="width: 40px; height: 40px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center;"><span class="material-symbols-outlined">send</span></button>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
         } else {
             keyArea.style.display = 'none';
             chatArea.style.display = 'flex';
-            appendMessage('bot', '¡Conexión establecida! Estoy al tanto de la lección que estás viendo. ¿En qué te puedo ayudar hoy?');
+            appendMessage('bot', '¡Conexión establecida! Estoy al tanto de la lesson que estás viendo. ¿En qué te puedo ayudar hoy?');
         }
     }
 
@@ -160,7 +160,7 @@
         let context = "El usuario está en el Dashboard principal.";
         const titleEl = document.getElementById('display-title');
         if (titleEl && titleEl.innerText !== 'loading...') {
-            context = `El usuario está estudiando la lección titulada: "${titleEl.innerText}". Responde sus dudas orientando la Answer a esta temática específica de electromagnetismo o Physics.`;
+            context = `El usuario está estudiando la lesson titulada: "${titleEl.innerText}". Responde sus dudas orientando la Answer a esta temática específica de electromagnetismo o Physics.`;
         }
 
         const systemPrompt = `Eres un tutor experto en Physics y electromagnetismo de Level universitario. Actúas de manera pedagógica y alentadora. No des las Answers de los exámenes directamente, guía al Student para que las encuentre. Contexto actual: ${context}`;

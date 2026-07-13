@@ -155,8 +155,8 @@ export function OpenModalAuth() {
     document.getElementById('auth-modal').style.display = 'flex';
 }
 
-export function ShowNotificaciones() {
-    Swal.fire({ title: 'Notificaciones', text: 'Toda la red de conocimiento está abierta para ti. Explora libremente.', icon: 'info', confirmButtonColor: 'var(--accent)' });
+export function ShowNotifications() {
+    Swal.fire({ title: 'Notifications', text: 'Toda la red de conocimiento está abierta para ti. Explora libremente.', icon: 'info', confirmButtonColor: 'var(--accent)' });
     document.getElementById('noti-dot').style.display = 'none';
 }
 
@@ -226,7 +226,7 @@ export function toggleFocusMode() {
             if (focusTimeLeft <= 0) {
                 clearInterval(focusTimer);
                 toggleFocusMode();
-                Swal.fire('¡Tiempo Terminado!', 'Es hora de tu Pause activa de 15 minutos. El modo difuso del cerebro necesita asimilar lo aprendido.', 'info');
+                Swal.fire('¡Time Terminado!', 'Es hora de tu Pause activa de 15 minutos. El modo difuso del cerebro necesita asimilar lo aprendido.', 'info');
             }
         }, 1000);
     } else {

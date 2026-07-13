@@ -62,7 +62,7 @@
             <h3 class="text-xl font-bold text-slate-800 mb-2">¿Evaluar examen?</h3>
             <p class="text-slate-600 mb-6" id="confirm-message">Aún tienes Questions sin responder.</p>
             <div class="flex gap-3 justify-center">
-                <button id="btn-cancel-eval" class="px-5 py-2.5 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">Cancelar</button>
+                <button id="btn-cancel-eval" class="px-5 py-2.5 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">Cancel</button>
                 <button id="btn-confirm-eval" class="px-5 py-2.5 rounded-lg font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors">Sí, evaluar</button>
             </div>
         </div>
@@ -287,7 +287,7 @@
                 text: "En un dipolo eléctrico (una carga $+q$ y una $-q$ separadas por una Distance $d$), el Electric Field neto en el punto central de la línea que las une:", 
                 options: ["Es nulo.", "Apunta hacia la Positive Charge.", "Apunta hacia la Negative Charge.", "Es perpendicular a la línea que une las Charges."], 
                 answer: 2, 
-                tip: "SuperPosition vectorial: el campo de la Positive Charge la 'aleja' (apunta hacia la negativa) y el campo de la negativa la 'atrae' (también apunta hacia la negativa). Ambos vectores se suman en la misma dirección." 
+                tip: "Superposition vectorial: el campo de la Positive Charge la 'aleja' (apunta hacia la negativa) y el campo de la negativa la 'atrae' (también apunta hacia la negativa). Ambos vectores se suman en la misma dirección." 
             },
             { 
                 type: 'mcq', 
@@ -884,7 +884,7 @@
             
             const titleHTML = `<div id="pdf-header" class="mb-8 border-b-2 border-indigo-200 pb-4">
                                   <h1 class="text-3xl font-black text-indigo-900">Results: Electric Field</h1>
-                                  <p class="text-lg text-slate-600 font-bold mt-2">Puntaje obtenido: ${window.lastScore}%</p>
+                                  <p class="text-lg text-slate-600 font-bold mt-2">Score obtenido: ${window.lastScore}%</p>
                                </div>`;
             element.insertAdjacentHTML('afterbegin', titleHTML);
 

@@ -62,7 +62,7 @@
             <h3 class="text-xl font-bold text-slate-800 mb-2">¿Evaluar examen?</h3>
             <p class="text-slate-600 mb-6" id="confirm-message">Aún tienes Questions sin responder.</p>
             <div class="flex gap-3 justify-center">
-                <button id="btn-cancel-eval" class="px-5 py-2.5 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">Cancelar</button>
+                <button id="btn-cancel-eval" class="px-5 py-2.5 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">Cancel</button>
                 <button id="btn-confirm-eval" class="px-5 py-2.5 rounded-lg font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors">Sí, evaluar</button>
             </div>
         </div>
@@ -204,7 +204,7 @@
                             <div class="text-3xl font-black text-emerald-600 mt-1" id="stat-passrate">0%</div>
                         </div>
                         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-                            <div class="text-xs text-slate-500 font-bold uppercase tracking-wide">Tiempo Promedio</div>
+                            <div class="text-xs text-slate-500 font-bold uppercase tracking-wide">Time Promedio</div>
                             <div class="text-3xl font-black text-amber-500 mt-1" id="stat-avgtime">0m 0s</div>
                         </div>
                     </div>
@@ -333,7 +333,7 @@
                     return false;
                 }
             } else {
-                console.log("No se pudo save el progreso. Usuario no autenticado.");
+                console.log("No se pudo save el progreso. User no autenticado.");
                 return false;
             }
         };
@@ -412,7 +412,7 @@
             },
             { 
                 type: 'mcq', 
-                text: "Al aplicar el Teorema de SuperPosition para analizar un circuito lineal con múltiples fuentes, se debe analizar la contribución de cada fuente individualmente. Para 'apagar' o neutralizar las demás fuentes, ¿cómo se procede?", 
+                text: "Al aplicar el Teorema de Superposition para analizar un circuito lineal con múltiples fuentes, se debe analizar la contribución de cada fuente individualmente. Para 'apagar' o neutralizar las demás fuentes, ¿cómo se procede?", 
                 options: ["Reemplazando fuentes de Voltage por cortos y fuentes de Current por circuitos abiertos.", "Desconectando ambas y dejando el circuito abierto.", "Reemplazando ambas por cortocircuitos.", "Invirtiendo la polaridad de las fuentes no evaluadas."], 
                 answer: 0, 
                 tip: "Una fuente de Voltage 'cero' equivale a un cable ideal (cortocircuito, $V=0$). Una fuente de Current 'cero' equivale a cortar el cable (circuito abierto, $I=0$)." 
@@ -449,7 +449,7 @@
             },
             { 
                 type: 'mcq', 
-                text: "¿Por qué NO es válido usar el Teorema de SuperPosition directamente para Calculate la **Power total** disipada en un resistor cuando actúan múltiples fuentes simultáneamente?", 
+                text: "¿Por qué NO es válido usar el Teorema de Superposition directamente para Calculate la **Power total** disipada en un resistor cuando actúan múltiples fuentes simultáneamente?", 
                 options: ["Porque la Power es un parámetro exclusivo de CA.", "Porque la LVK no se cumple con la Power.", "Porque la relación de Power $P=I^2 R$ no es una ecuación lineal con respecto a la Current.", "Porque requiere Calculate la Resistance de Norton primero."], 
                 answer: 2, 
                 tip: "La superPosition funciona solo en relaciones lineales (Voltage y Current). Elevar al cuadrado una suma $(I_1 + I_2)^2$ no es igual a la suma de los cuadrados $(I_1^2 + I_2^2)$." 
@@ -1242,7 +1242,7 @@
             
             const titleHTML = `<div id="pdf-header" class="mb-8 border-b-2 border-emerald-200 pb-4">
                                   <h1 class="text-3xl font-black text-emerald-900">Results: Circuitos Eléctricos y Kirchhoff</h1>
-                                  <p class="text-lg text-slate-600 font-bold mt-2">Puntaje obtenido: ${window.lastScore}%</p>
+                                  <p class="text-lg text-slate-600 font-bold mt-2">Score obtenido: ${window.lastScore}%</p>
                                </div>`;
             element.insertAdjacentHTML('afterbegin', titleHTML);
 

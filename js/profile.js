@@ -161,7 +161,7 @@ export function cargarResultsChaeaPerfil() {
                 data: {
                     labels: ['Activo', 'Reflexivo', 'Teórico', 'Pragmático'],
                     datasets: [{
-                        label: 'Puntaje',
+                        label: 'Score',
                         data: [
                             result.scores.Activo,
                             result.scores.Reflexivo,
@@ -251,7 +251,7 @@ export async function saveEncuestaSemanal() {
             date: timestamp
         };
 
-        // save la encuesta en una subcolección (histórico)
+        // save la encuesta en una subcolesson (histórico)
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'surveys', timestamp.toString()), surveyData);
         
         // Actualizar la fecha de última encuesta en el perfil principal
@@ -276,7 +276,7 @@ export async function saveEncuestaSemanal() {
 export async function calificarRecurso(valor, lessonId = window.currentLeccionId) {
     if (!window.currentUserUid) return;
     if (!lessonId) {
-        Swal.fire('Error', 'No se pudo identificar la lección actual.', 'error');
+        Swal.fire('Error', 'No se pudo identificar la lesson actual.', 'error');
         return;
     }
 
