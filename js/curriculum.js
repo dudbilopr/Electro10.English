@@ -1,20 +1,20 @@
 // ============================================================
 // js/curriculum.js
-// Inicializa y renderiza el currículo en el sidebar.
-// Importa los Modules desde modules/ y construye el menú.
+// Initializes and renders the curriculum in the sidebar.
+// Imports modules from modules/ and builds the menu.
 // ============================================================
 import { getIconForType, loadContent } from './content-loader.js';
 
 export let curriculoData = null;
 export let totalLessons  = 0;
 
-// ── Charge el currículo desde modules/ ──────────────────────
+// ── Load the curriculum from modules/ ──────────────────
 export async function inicializarEstructuraBase(progressData) {
     try {
-        const module = await import('../modules/curriculo.js');
-        curriculoData = modulo.curriculoData;
+        const curriculo = await import('../modules/curriculo.js');
+        curriculoData = curriculo.curriculoData;
     } catch (error) {
-        console.warn('No se pudo importar el currículo externo. Usando respaldo mínimo.');
+        console.warn('Could not import curriculum module. Using minimal fallback.', error);
         curriculoData = {
             modules: [{
                 titulo: 'Module 1: Electrostatics - Coulomb\'s Law',

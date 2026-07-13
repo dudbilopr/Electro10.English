@@ -14,8 +14,8 @@ import { module11 } from './module11.js';
 import { module12 } from './module12.js';
 
 export const curriculoData = {
-    "titulo": "Introduction al Electromagnetismo",
-    "subtitulo": "Curso Universitario — CDAT",
+    "titulo": "Introduction to Electromagnetism",
+    "subtitulo": "University Course — CDAT",
     "modules": [
         modulo0_presaberes,
         module1, module2, module3, module4,
