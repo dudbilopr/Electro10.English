@@ -13,8 +13,8 @@
 ---
 
 ## Visión del Proyecto
-**Electro10.Easy** no es solo un curso; es un **Ecosistema Pedagógico Inteligente**. Diseñado específicamente para el **Centro de Desarrollo Académico y Tecnológico (CDAT)**, esta plataforma eleva el estándar de la educación universitaria integrando:
-- **Diagnósticos Inteligentes:** Evaluación matemática estricta antes de acceder a la física.
+**Electro10.Easy** no es solo un curso; es un **Ecosistema Pedagógico Inteligente**. Diseñado específicamente para el **Centro de Development Académico y Tecnológico (CDAT)**, esta plataforma eleva el estándar de la educación universitaria integrando:
+- **Diagnósticos Inteligentes:** Assessment matemática estricta antes de acceder a la física.
 - **Glassmorphism UI:** Arquitectura visual "Stitch with Google" / Material Design 3.
 - **Neuroeducación:** Consejos dinámicos basados en la curva de fatiga cognitiva.
 - **Analítica Predictiva:** Dashboard maestro que calcula retención y tasas de abandono.
@@ -23,8 +23,8 @@
 
 ## Características Principales
 
-### Módulo 0: Filtro de Presaberes
-Un ecosistema estricto que requiere un mínimo del **65%** en un examen diagnóstico de cálculo (diferencial, integral, vectorial) y álgebra lineal para desbloquear los módulos de electromagnetismo. Incluye un **Gráfico Radar de Diagnóstico** para revelar las fortalezas y debilidades.
+### Module 0: Filtro de Presaberes
+Un ecosistema estricto que requiere un mínimo del **65%** en un examen diagnóstico de cálculo (diferencial, integral, vectorial) y álgebra lineal para desbloquear los Modules de electromagnetismo. Incluye un **Gráfico Radar de Diagnóstico** para revelar las fortalezas y debilidades.
 
 ### Arquitectura Visual Premium
 Diseño inmersivo construido desde cero con `Vanilla CSS`:
@@ -33,7 +33,7 @@ Diseño inmersivo construido desde cero con `Vanilla CSS`:
 - **Bento-Cards Interactivas:** Sombras dinámicas y estados de 'hover' fluidos.
 
 ### Panel de Control Maestro (Admin)
-Data Science aplicado a la educación. Monitoreo en tiempo real de los estudiantes sincronizado en la nube:
+Data Science aplicado a la educación. Monitoreo en tiempo real de los Students sincronizado en la nube:
 - **Índice de Retención Cognitiva**
 - **Carga Cognitiva Promedio**
 - **Tasa de Abandono (Churn)**

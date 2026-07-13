@@ -1,38 +1,38 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PRESENTACIONES_DIR = os.path.join(BASE_DIR, "Presentaciones")
+Presentations_DIR = os.path.join(BASE_DIR, "Presentations")
 
 modules = [
     {
-        "folder": "M6_Resistivos",
-        "title": "Circuitos Resistivos y Corriente Continua",
+        "folder": "M6_Resistive",
+        "title": "Circuitos Resistivos y Current Continua",
         "subtitle": "Ley de Ohm, Resistividad y Leyes de Kirchhoff",
-        "sims": ["simuladores/Sim_M6_Resistividad.html", "simuladores/Sim_M6_Kirchhoff.html", "", ""]
+        "sims": ["simulators/Sim_M6_Resistivity.html", "simulators/Sim_M6_Kirchhoff.html", "", ""]
     },
     {
         "folder": "M9_Ampere",
         "title": "Ley de Ampere",
         "subtitle": "Circulación Magnética y Solenoides",
-        "sims": ["simuladores/Sim_M9_Solenoide.html", "simuladores/Sim_M9_Tabla_Ampere.html", "", ""]
+        "sims": ["simulators/Sim_M9_Solenoid.html", "simulators/Sim_M9_Ampere_Table.html", "", ""]
     },
     {
         "folder": "M10_Faraday",
-        "title": "Ley de Faraday y Ley de Lenz",
-        "subtitle": "Inducción Electromagnética y FEM",
-        "sims": ["simuladores/Sim_M10_FlujoMagnetico.html", "simuladores/Sim_M10_FEM_Movimiento.html", "", ""]
+        "title": "Faraday's Law y Ley de Lenz",
+        "subtitle": "Induction Electromagnética y FEM",
+        "sims": ["simulators/Sim_M10_Magnetic_Flux.html", "simulators/Sim_M10_Motional_EMF.html", "", ""]
     },
     {
         "folder": "M11_Maxwell",
-        "title": "Ecuaciones de Maxwell",
+        "title": "Equations de Maxwell",
         "subtitle": "Síntesis Electromagnética y Ondas EM",
-        "sims": ["simuladores/Sim_M11_EcuacionesMaxwell.html", "simuladores/Sim_M11_OndaEM.html", "", ""]
+        "sims": ["simulators/Sim_M11_Maxwell_Equations.html", "simulators/Sim_M11_EM_Wave.html", "", ""]
     },
     {
         "folder": "M12_AC",
-        "title": "Circuitos de Corriente Alterna",
-        "subtitle": "Oscilaciones LC, RLC y Fasores",
-        "sims": ["simuladores/Sim_M12_OsciladorLC.html", "simuladores/Sim_M12_RLC.html", "simuladores/Sim_M12_Fasores.html", ""]
+        "title": "Circuitos de Current Alterna",
+        "subtitle": "Oscilaciones LC, RLC y Phasors",
+        "sims": ["simulators/Sim_M12_LC_Oscillator.html", "simulators/Sim_M12_RLC.html", "simulators/Sim_M12_Phasors.html", ""]
     }
 ]
 
@@ -61,15 +61,15 @@ def get_portada_html(title, subtitle):
 </body>
 </html>"""
 
-def get_diapositiva_html(title, subtitle, sim_path, slide_num):
-    iframe_html = f'<iframe src="../../{sim_path}" class="w-full h-full border-none rounded-xl"></iframe>' if sim_path else '<div class="w-full h-full flex items-center justify-center text-slate-500 bg-slate-900 rounded-xl">Contenido Teórico Adicional</div>'
+def get_Slide_html(title, subtitle, sim_path, slide_num):
+    iframe_html = f'<iframe src="../../{sim_path}" class="w-full h-full border-none rounded-xl"></iframe>' if sim_path else '<div class="w-full h-full flex items-center justify-center text-slate-500 bg-slate-900 rounded-xl">Theoretical Content Adicional</div>'
     
     return f"""<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - Diapositiva {slide_num}</title>
+    <title>{title} - Slide {slide_num}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         window.MathJax = {{ tex: {{ inlineMath: [['$','$'], ['\\\\(','\\\\)']] }} }};
@@ -89,15 +89,15 @@ def get_diapositiva_html(title, subtitle, sim_path, slide_num):
         <aside class="w-1/3 glass p-6 rounded-xl overflow-y-auto">
             <h2 class="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-2">Conceptos Clave</h2>
             <div class="space-y-4 text-sm leading-relaxed text-slate-300">
-                <p>Esta diapositiva interactiva permite explorar los conceptos físicos fundamentales mediante simulación en tiempo real.</p>
+                <p>Esta Slide interactiva permite explorar los conceptos Physicals fundamentales mediante Real-time simulation.</p>
                 <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
                     <p class="font-mono text-sky-300 font-bold mb-2">Ecuación Fundamental:</p>
-                    <p class="text-center text-lg">$$ \\text{{Interactúa con el simulador}} $$</p>
+                    <p class="text-center text-lg">$$ \\text{{Interactúa con el Simulator}} $$</p>
                 </div>
                 <ul class="list-disc pl-5 space-y-2">
-                    <li>Modifica los parámetros en el panel de control.</li>
-                    <li>Observa la respuesta visual o gráfica.</li>
-                    <li>Analiza el comportamiento físico.</li>
+                    <li>Modifica los Parameters en el panel de control.</li>
+                    <li>Observa la Answer visual o Chart.</li>
+                    <li>Analiza el comportamiento Physical.</li>
                 </ul>
             </div>
         </aside>
@@ -110,18 +110,18 @@ def get_diapositiva_html(title, subtitle, sim_path, slide_num):
 
 
 for mod in modules:
-    mod_path = os.path.join(PRESENTACIONES_DIR, mod["folder"])
+    mod_path = os.path.join(Presentations_DIR, mod["folder"])
     if not os.path.exists(mod_path):
         os.makedirs(mod_path)
     
-    # Portada
-    with open(os.path.join(mod_path, "Portada.html"), "w", encoding="utf-8") as f:
+    # Cover
+    with open(os.path.join(mod_path, "Cover.html"), "w", encoding="utf-8") as f:
         f.write(get_portada_html(mod["title"], mod["subtitle"]))
         
-    # Diapositivas 1 to 4
+    # Slides 1 to 4
     for i in range(1, 5):
         sim = mod["sims"][i-1]
-        with open(os.path.join(mod_path, f"Diapositiva_{i}.html"), "w", encoding="utf-8") as f:
-            f.write(get_diapositiva_html(mod["title"], mod["subtitle"], sim, i))
+        with open(os.path.join(mod_path, f"Slide_{i}.html"), "w", encoding="utf-8") as f:
+            f.write(get_Slide_html(mod["title"], mod["subtitle"], sim, i))
             
 print("Missing presentations generated successfully.")

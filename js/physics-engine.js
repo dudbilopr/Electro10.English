@@ -1,5 +1,5 @@
 // js/physics-engine.js
-// Motor de simulación física 2D para calcular campos eléctricos y líneas de fuerza.
+// Motor de simulación física 2D para Calculate campos eléctricos y líneas de Force.
 
 class Charge {
     constructor(x, y, q) {
@@ -71,7 +71,7 @@ class PhysicsSimulation {
         this.render();
     }
 
-    // Calcula el vector de campo eléctrico E en un punto (x, y)
+    // Calcula el vector de Electric Field E en un punto (x, y)
     // E = k * q / r^2 * r_hat
     getElectricField(x, y) {
         let Ex = 0;
@@ -137,7 +137,7 @@ class PhysicsSimulation {
     render() {
         if (!this.ctx) return;
 
-        // Limpiar
+        // Clear
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Fondo oscuro para contraste de laboratorio
@@ -147,7 +147,7 @@ class PhysicsSimulation {
         // Dibujar campo vectorial
         this.drawVectorField();
 
-        // Dibujar cargas encima
+        // Dibujar Charges encima
         for (const charge of this.charges) {
             charge.draw(this.ctx);
         }

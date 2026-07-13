@@ -13,7 +13,7 @@ window.iniciarDiagnosticoHub = function() {
     if (!savedChaea) {
         Swal.fire({
             title: 'Fase 1: CHAEA',
-            text: 'Primero completaremos el test de estilos de aprendizaje CHAEA (80 preguntas).',
+            text: 'Primero completaremos el test de estilos de aprendizaje CHAEA (80 Questions).',
             icon: 'info',
             confirmButtonText: 'Comenzar'
         }).then(() => {
@@ -38,8 +38,8 @@ window.iniciarDiagnosticoHub = function() {
     }
     
     // All done! Update Profile
-    if (window.mostrarPerfil) {
-        window.mostrarPerfil();
+    if (window.ShowPerfil) {
+        window.ShowPerfil();
         setTimeout(() => window.cargarResultsHolisticos(), 100);
     } else {
         window.cargarResultsHolisticos();
@@ -84,7 +84,7 @@ function startKolbTest() {
         html: html,
         width: '900px',
         showCancelButton: true,
-        confirmButtonText: 'Guardar y Continuar',
+        confirmButtonText: 'Guardar y Continue',
         cancelButtonText: 'Cancelar',
         background: 'var(--bg-surface)',
         color: 'var(--text-high)',
@@ -113,7 +113,7 @@ function startKolbTest() {
                 const vals = Object.values(data[id]);
                 const unique = new Set(vals);
                 if(unique.size !== 4) {
-                    Swal.showValidationMessage(`En la pregunta ${id} repetiste números. Deben ser únicos (1, 2, 3, 4).`);
+                    Swal.showValidationMessage(`En la Question ${id} repetiste números. Deben ser únicos (1, 2, 3, 4).`);
                     return false;
                 }
             }
@@ -165,7 +165,7 @@ function calculateKolb(data) {
 function startMITest() {
     miResponses = new Array(35).fill(null);
     let html = `<div style="text-align:left; font-size:0.9rem; max-height:60vh; overflow-y:auto; padding-right:10px;">
-        <p style="color:var(--text-medium); margin-bottom:15px;">Responde Verdadero (V) o Falso (F) a las siguientes afirmaciones sobre ti.</p>
+        <p style="color:var(--text-medium); margin-bottom:15px;">Responde Verdadero (V) o Falso (F) a las Nexts afirmaciones sobre ti.</p>
         <div style="display:flex; flex-direction:column; gap:10px;">`;
         
     MI_QUESTIONS.forEach((q, idx) => {
@@ -235,8 +235,8 @@ function calculateMI(data) {
     
     guardarDiagnosticoNube().then(() => {
         Swal.fire('¡Diagnóstico Integral Completado!', 'Hemos generado tu mapa cognitivo y tu plan de estudio personalizado.', 'success').then(() => {
-            if (window.mostrarPerfil) {
-                window.mostrarPerfil();
+            if (window.ShowPerfil) {
+                window.ShowPerfil();
                 // Ensure there is a slight delay to allow the DOM to render before drawing charts
                 setTimeout(() => window.cargarResultsHolisticos(), 100);
             } else {

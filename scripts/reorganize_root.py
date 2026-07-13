@@ -7,23 +7,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Map of old dir names to new dir names
 RENAMES = {
     "Examen": "quizzes",
-    "Juegos": "juegos",
-    "ModulosJS": "modulos",
-    "Presentaciones": "presentaciones",
-    "Simuladores": "simuladores",
-    "Talleres": "talleres"
+    "Games": "games",
+    "modulesJS": "modules",
+    "Presentations": "presentations",
+    "Simulatores": "simulators",
+    "Workshops": "workshops"
 }
 
-# Directories to move to 'recursos'
-RECURSOS = ["Logo", "Mathematics", "_archivo"]
+# Directories to move to 'resources'
+Resources = ["Logo", "Mathematics", "_archive"]
 
 def move_dirs():
     print("Moving and renaming directories...")
     
-    # Create recursos if it doesn't exist
-    recursos_path = os.path.join(BASE_DIR, "recursos")
-    if not os.path.exists(recursos_path):
-        os.makedirs(recursos_path)
+    # Create Resources if it doesn't exist
+    Resources_path = os.path.join(BASE_DIR, "resources")
+    if not os.path.exists(Resources_path):
+        os.makedirs(Resources_path)
     
     # 1. Rename standard folders
     for old, new in RENAMES.items():
@@ -33,12 +33,12 @@ def move_dirs():
             print(f"Renaming {old} -> {new}")
             shutil.move(old_path, new_path)
             
-    # 2. Move to recursos
-    for item in RECURSOS:
+    # 2. Move to Resources
+    for item in Resources:
         item_path = os.path.join(BASE_DIR, item)
         if os.path.exists(item_path):
-            print(f"Moving {item} -> recursos/{item}")
-            shutil.move(item_path, os.path.join(recursos_path, item))
+            print(f"Moving {item} -> resources/{item}")
+            shutil.move(item_path, os.path.join(Resources_path, item))
             
 def update_references():
     print("Updating references in code...")
@@ -49,18 +49,18 @@ def update_references():
     # Mapping for string replacements
     # Need to be careful with word boundaries or paths
     # It's safest to replace specifically formatted paths to avoid false positives.
-    # We will replace occurrences like "ModulosJS/" -> "modulos/"
-    # or "Juegos/" -> "juegos/"
+    # We will replace occurrences like "modulesJS/" -> "modules/"
+    # or "Games/" -> "games/"
     replacements = {
         "Examen/": "quizzes/",
-        "Juegos/": "juegos/",
-        "ModulosJS/": "modulos/",
-        "Presentaciones/": "presentaciones/",
-        "Simuladores/": "simuladores/",
-        "Talleres/": "talleres/",
-        "Logo/": "recursos/Logo/",
-        "Mathematics/": "recursos/Mathematics/",
-        "_archivo/": "recursos/_archivo/"
+        "Games/": "games/",
+        "modulesJS/": "modules/",
+        "Presentations/": "presentations/",
+        "Simulatores/": "simulators/",
+        "Workshops/": "workshops/",
+        "Logo/": "resources/Logo/",
+        "Mathematics/": "resources/Mathematics/",
+        "_archive/": "resources/_archive/"
     }
     
     count = 0
@@ -83,12 +83,12 @@ def update_references():
                 new_content = content
                 
                 for old_val, new_val in replacements.items():
-                    # Replace things like href="Juegos/..." or src="./ModulosJS/..."
+                    # Replace things like href="Games/..." or src="./modulesJS/..."
                     # We can simply replace the substring safely because they are very specific folder names followed by /
                     new_content = new_content.replace(old_val, new_val)
                 
                 # Special cases where the word might not have a trailing slash
-                # e.g., if there's code dynamically appending to "ModulosJS" 
+                # e.g., if there's code dynamically appending to "modulesJS" 
                 
                 if new_content != content:
                     with open(filepath, 'w', encoding='utf-8') as f:

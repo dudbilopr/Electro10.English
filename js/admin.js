@@ -18,7 +18,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
             let filasHtml = '', iteraciones = 0, teachersCount = 0, studentsCount = 0, arrayScatter = [];
             
             let sumRetencion = 0;
-            let sumTiempoEstudiantes = 0;
+            let sumTiempoStudents = 0;
             let riskCount = 0;
             let sumRatings = 0, countRatings = 0;
             let methodCount = {};
@@ -69,7 +69,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                     // 1. Retención: Promedio de notas + un factor de tiempo
                     let retencionUsuario = promGrade || Math.min(100, completadas * 5);
                     sumRetencion += retencionUsuario;
-                    sumTiempoEstudiantes += tiempoUser;
+                    sumTiempoStudents += tiempoUser;
 
                     // 2. Churn (Riesgo de abandono): Si ha estado < 10 min y no ha completado nada, está en riesgo
                     if (tiempoUser < 10 && completadas < 2) {
@@ -79,7 +79,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
 
                 const selectHtml = `
                     <select onchange="window.cambiarRolUsuario('${uid}', this.value)" class="form-input btn-sm" style="width:auto;" ${uid === window.currentUserUid ? 'disabled' : ''}>
-                        <option value="student" ${d.role !== 'teacher' ? 'selected' : ''}>Estudiante</option>
+                        <option value="student" ${d.role !== 'teacher' ? 'selected' : ''}>Student</option>
                         <option value="teacher" ${d.role === 'teacher' ? 'selected' : ''}>Docente/Admin</option>
                     </select>`;
 
@@ -88,7 +88,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                     <td>${d.institution || 'N/A'}</td>
                     <td>${selectHtml}</td>
                     <td><span class="badge" style="background:var(--bg-surface-hover);color:var(--text-high);">${completadas} completadas (${tiempoUser} min)</span></td>
-                    <td><button class="btn-primary btn-sm" onclick="window.verDetalleEstudiante('${uid}','${d.name || d.email}')"><span class="material-symbols-outlined" style="font-size:16px;">monitoring</span> Ver Métricas</button></td>
+                    <td><button class="btn-primary btn-sm" onclick="window.verDetalleStudent('${uid}','${d.name || d.email}')"><span class="material-symbols-outlined" style="font-size:16px;">monitoring</span> Ver Métricas</button></td>
                 </tr>`;
 
                 iteraciones++;
@@ -100,7 +100,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                     if (studentsCount > 0) {
                         const avgRetencion = Math.round(sumRetencion / studentsCount);
                         const churnPct = Math.round((riskCount / studentsCount) * 100);
-                        const avgCarga = Math.round(sumTiempoEstudiantes / studentsCount);
+                        const avgCarga = Math.round(sumTiempoStudents / studentsCount);
 
                         const elRet = document.getElementById('admin-metric-retencion');
                         const elChurn = document.getElementById('admin-metric-churn');
@@ -133,14 +133,14 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                 }
             });
         } else {
-            tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-medium);">No hay estudiantes en el directorio.</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-medium);">No hay Students en el directorio.</td></tr>';
         }
     } catch (e) {
         tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--danger);">Error de lectura (Reglas de Firestore).</td></tr>';
     }
 }
 
-export async function verDetalleEstudiante(uid, nombre, curriculoData, totalLessons) {
+export async function verDetalleStudent(uid, nombre, curriculoData, totalLessons) {
     document.getElementById('modal-u-name').innerText = nombre;
     document.getElementById('modal-u-inst').innerText = 'Cargando métricas...';
     document.getElementById('modal-u-presaberes').innerHTML = '';
@@ -191,8 +191,8 @@ export async function verDetalleEstudiante(uid, nombre, curriculoData, totalLess
         document.getElementById('modal-u-grade').innerText = promGrade + '%';
 
         const mLabels = [], mData = [];
-        if (curriculoData?.modulos) {
-            curriculoData.modulos.forEach((mod, idx) => {
+        if (curriculoData?.modules) {
+            curriculoData.modules.forEach((mod, idx) => {
                 const shortTitle = mod.titulo.includes(': ') ? mod.titulo.split(': ')[1].split(' - ')[0] : `Mod ${idx + 1}`;
                 mLabels.push(shortTitle);
                 let mSum = 0, mC = 0;

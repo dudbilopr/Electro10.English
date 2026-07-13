@@ -24,14 +24,14 @@ export function resetNav() {
         .forEach(id => { const el = document.getElementById(id); if (el) el.style.display = 'none'; });
 }
 
-export function mostrarDashboardEstudiante() {
+export function ShowDashboardStudent() {
     resetNav();
     document.getElementById('nav-dashboard').classList.add('active');
     document.getElementById('student-dashboard').style.display = 'block';
     window.actualizarContenidoDashboard?.();
 }
 
-export function mostrarCalendario() {
+export function ShowCalendario() {
     resetNav();
     document.getElementById('nav-calendario').classList.add('active');
     document.getElementById('calendar-dashboard').style.display = 'block';
@@ -39,11 +39,11 @@ export function mostrarCalendario() {
     const grid = document.getElementById('calendar-grid');
     grid.innerHTML = '';
 
-    if (!_curriculoData?.modulos) return;
+    if (!_curriculoData?.modules) return;
 
     const icons = ['science', 'biotech', 'rocket_launch', 'architecture', 'radar', 'satellite_alt', 'explore', 'stream'];
 
-    _curriculoData.modulos.forEach((mod, idx) => {
+    _curriculoData.modules.forEach((mod, idx) => {
         let totalItems = 0, completedItems = 0;
         mod.lecciones.forEach(lec => {
             if (lec.tipo === 'grupo') {
@@ -63,7 +63,7 @@ export function mostrarCalendario() {
         }
 
         const icon = icons[idx % icons.length];
-        const shortTitle = mod.titulo.replace(/Módulo \d+:\s*/, '');
+        const shortTitle = mod.titulo.replace(/Module \d+:\s*/, '');
 
         const node = document.createElement('div');
         node.className = nodeClass;
@@ -76,7 +76,7 @@ export function mostrarCalendario() {
             <p class="c-desc">Exploración: ${completedItems}/${totalItems}</p>
         `;
         node.onclick = () => {
-            mostrarDashboardEstudiante();
+            ShowDashboardStudent();
             const titleEls = Array.from(document.querySelectorAll('.module-title'));
             const titleEl = titleEls.find(el => el.innerText.includes(shortTitle) || el.innerText.includes(mod.titulo));
             if (titleEl && !titleEl.classList.contains('active-module')) titleEl.click();
@@ -86,20 +86,20 @@ export function mostrarCalendario() {
     });
 }
 
-export function mostrarPerfil() {
+export function ShowPerfil() {
     resetNav();
     document.getElementById('nav-perfil').classList.add('active');
     document.getElementById('profile-dashboard').style.display = 'block';
     window.cargarDatosPerfil?.();
 }
 
-export function mostrarLaboratorios() {
+export function ShowLaboratorios() {
     resetNav();
     document.getElementById('nav-labs').classList.add('active');
     document.getElementById('labs-dashboard').style.display = 'block';
 }
 
-export function mostrarCerebro() {
+export function ShowCerebro() {
     resetNav();
     const btn = document.getElementById('nav-brain');
     if(btn) btn.classList.add('active');
@@ -115,7 +115,7 @@ export function cambiarTabCerebro(tabId, btnElement) {
 }
 
 
-export function abrirPanelAdmin(globalSettings) {
+export function OpenPanelAdmin(globalSettings) {
     resetNav();
     document.getElementById('nav-admin').classList.add('active');
     document.getElementById('admin-dashboard').style.display = 'block';
@@ -142,7 +142,7 @@ export function toggleTheme() {
     const dash = document.getElementById('student-dashboard');
     if (dash?.style.display === 'block') {
         const done = Object.keys(_progressData).length;
-        window.actualizarGraficosEstudiante?.(done, _totalLessons);
+        window.actualizarGraficosStudent?.(done, _totalLessons);
     }
 }
 
@@ -151,11 +151,11 @@ export function toggleChat() {
     p.style.display = p.style.display === 'flex' ? 'none' : 'flex';
 }
 
-export function abrirModalAuth() {
+export function OpenModalAuth() {
     document.getElementById('auth-modal').style.display = 'flex';
 }
 
-export function mostrarNotificaciones() {
+export function ShowNotificaciones() {
     Swal.fire({ title: 'Notificaciones', text: 'Toda la red de conocimiento está abierta para ti. Explora libremente.', icon: 'info', confirmButtonColor: 'var(--accent)' });
     document.getElementById('noti-dot').style.display = 'none';
 }
@@ -226,7 +226,7 @@ export function toggleFocusMode() {
             if (focusTimeLeft <= 0) {
                 clearInterval(focusTimer);
                 toggleFocusMode();
-                Swal.fire('¡Tiempo Terminado!', 'Es hora de tu pausa activa de 15 minutos. El modo difuso del cerebro necesita asimilar lo aprendido.', 'info');
+                Swal.fire('¡Tiempo Terminado!', 'Es hora de tu Pause activa de 15 minutos. El modo difuso del cerebro necesita asimilar lo aprendido.', 'info');
             }
         }, 1000);
     } else {

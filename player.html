@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación Interactiva — Electro10.easy</title>
+    <title>Presentation Interactiva — Electro10.easy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -47,21 +47,21 @@
     </nav>
 
     <script>
-        // ── Mapa de clases → diapositivas ────────────────────
+        // ── Mapa de clases → Slides ────────────────────
         // Para agregar una nueva clase: añade una entrada aquí.
         const CLASES = {
-            1: ['./presentaciones/M1_Coulomb/Portada.html','./presentaciones/M1_Coulomb/Diapositiva_1.html','./presentaciones/M1_Coulomb/Diapositiva_2.html','./presentaciones/M1_Coulomb/Diapositiva_3.html','./presentaciones/M1_Coulomb/Diapositiva_4.html','./presentaciones/M1_Coulomb/Diapositiva_5.html'],
-            2: ['./presentaciones/M2_Gauss/Portada.html','./presentaciones/M2_Gauss/Diapositiva_1.html','./presentaciones/M2_Gauss/Diapositiva_2.html','./presentaciones/M2_Gauss/Diapositiva_3.html','./presentaciones/M2_Gauss/Diapositiva_4.html'],
-            3: ['./presentaciones/M3_Potential/Portada.html','./presentaciones/M3_Potential/Diapositiva_1.html','./presentaciones/M3_Potential/Diapositiva_2.html','./presentaciones/M3_Potential/Diapositiva_3.html','./presentaciones/M3_Potential/Diapositiva_4.html'],
-            4: ['./presentaciones/M4_Materiales/Portada.html','./presentaciones/M4_Materiales/Diapositiva_1.html','./presentaciones/M4_Materiales/Diapositiva_2.html','./presentaciones/M4_Materiales/Diapositiva_3.html','./presentaciones/M4_Materiales/Diapositiva_4.html'],
-            5: ['./presentaciones/M5_Capacitance/Portada.html','./presentaciones/M5_Capacitance/Diapositiva_1.html','./presentaciones/M5_Capacitance/Diapositiva_2.html','./presentaciones/M5_Capacitance/Diapositiva_3.html','./presentaciones/M5_Capacitance/Diapositiva_4.html'],
-            6: ['./presentaciones/M6_Resistivos/Portada.html','./presentaciones/M6_Resistivos/Diapositiva_1.html','./presentaciones/M6_Resistivos/Diapositiva_2.html','./presentaciones/M6_Resistivos/Diapositiva_3.html','./presentaciones/M6_Resistivos/Diapositiva_4.html'],
-            7: ['./presentaciones/M7_Lorentz/Portada.html','./presentaciones/M7_Lorentz/Diapositiva_1.html','./presentaciones/M7_Lorentz/Diapositiva_2.html','./presentaciones/M7_Lorentz/Diapositiva_3.html','./presentaciones/M7_Lorentz/Diapositiva_4.html'],
-            8: ['./presentaciones/M8_BiotSavart/Portada.html','./presentaciones/M8_BiotSavart/Diapositiva_1.html','./presentaciones/M8_BiotSavart/Diapositiva_2.html','./presentaciones/M8_BiotSavart/Diapositiva_3.html','./presentaciones/M8_BiotSavart/Diapositiva_4.html'],
-            9: ['./presentaciones/M9_Ampere/Portada.html','./presentaciones/M9_Ampere/Diapositiva_1.html','./presentaciones/M9_Ampere/Diapositiva_2.html','./presentaciones/M9_Ampere/Diapositiva_3.html','./presentaciones/M9_Ampere/Diapositiva_4.html'],
-            10: ['./presentaciones/M10_Faraday/Portada.html','./presentaciones/M10_Faraday/Diapositiva_1.html','./presentaciones/M10_Faraday/Diapositiva_2.html','./presentaciones/M10_Faraday/Diapositiva_3.html','./presentaciones/M10_Faraday/Diapositiva_4.html'],
-            11: ['./presentaciones/M11_Maxwell/Portada.html','./presentaciones/M11_Maxwell/Diapositiva_1.html','./presentaciones/M11_Maxwell/Diapositiva_2.html','./presentaciones/M11_Maxwell/Diapositiva_3.html','./presentaciones/M11_Maxwell/Diapositiva_4.html'],
-            12: ['./presentaciones/M12_AC/Portada.html','./presentaciones/M12_AC/Diapositiva_1.html','./presentaciones/M12_AC/Diapositiva_2.html','./presentaciones/M12_AC/Diapositiva_3.html','./presentaciones/M12_AC/Diapositiva_4.html'],
+            1: ['./presentations/M1_Coulomb/Cover.html','./presentations/M1_Coulomb/Slide_1.html','./presentations/M1_Coulomb/Slide_2.html','./presentations/M1_Coulomb/Slide_3.html','./presentations/M1_Coulomb/Slide_4.html','./presentations/M1_Coulomb/Slide_5.html'],
+            2: ['./presentations/M2_Gauss/Cover.html','./presentations/M2_Gauss/Slide_1.html','./presentations/M2_Gauss/Slide_2.html','./presentations/M2_Gauss/Slide_3.html','./presentations/M2_Gauss/Slide_4.html'],
+            3: ['./presentations/M3_Potential/Cover.html','./presentations/M3_Potential/Slide_1.html','./presentations/M3_Potential/Slide_2.html','./presentations/M3_Potential/Slide_3.html','./presentations/M3_Potential/Slide_4.html'],
+            4: ['./presentations/M4_Materials/Cover.html','./presentations/M4_Materials/Slide_1.html','./presentations/M4_Materials/Slide_2.html','./presentations/M4_Materials/Slide_3.html','./presentations/M4_Materials/Slide_4.html'],
+            5: ['./presentations/M5_Capacitance/Cover.html','./presentations/M5_Capacitance/Slide_1.html','./presentations/M5_Capacitance/Slide_2.html','./presentations/M5_Capacitance/Slide_3.html','./presentations/M5_Capacitance/Slide_4.html'],
+            6: ['./presentations/M6_Resistive/Cover.html','./presentations/M6_Resistive/Slide_1.html','./presentations/M6_Resistive/Slide_2.html','./presentations/M6_Resistive/Slide_3.html','./presentations/M6_Resistive/Slide_4.html'],
+            7: ['./presentations/M7_Lorentz/Cover.html','./presentations/M7_Lorentz/Slide_1.html','./presentations/M7_Lorentz/Slide_2.html','./presentations/M7_Lorentz/Slide_3.html','./presentations/M7_Lorentz/Slide_4.html'],
+            8: ['./presentations/M8_BiotSavart/Cover.html','./presentations/M8_BiotSavart/Slide_1.html','./presentations/M8_BiotSavart/Slide_2.html','./presentations/M8_BiotSavart/Slide_3.html','./presentations/M8_BiotSavart/Slide_4.html'],
+            9: ['./presentations/M9_Ampere/Cover.html','./presentations/M9_Ampere/Slide_1.html','./presentations/M9_Ampere/Slide_2.html','./presentations/M9_Ampere/Slide_3.html','./presentations/M9_Ampere/Slide_4.html'],
+            10: ['./presentations/M10_Faraday/Cover.html','./presentations/M10_Faraday/Slide_1.html','./presentations/M10_Faraday/Slide_2.html','./presentations/M10_Faraday/Slide_3.html','./presentations/M10_Faraday/Slide_4.html'],
+            11: ['./presentations/M11_Maxwell/Cover.html','./presentations/M11_Maxwell/Slide_1.html','./presentations/M11_Maxwell/Slide_2.html','./presentations/M11_Maxwell/Slide_3.html','./presentations/M11_Maxwell/Slide_4.html'],
+            12: ['./presentations/M12_AC/Cover.html','./presentations/M12_AC/Slide_1.html','./presentations/M12_AC/Slide_2.html','./presentations/M12_AC/Slide_3.html','./presentations/M12_AC/Slide_4.html'],
         };
 
         // ── Leer parámetro ?clase= de la URL ─────────────────

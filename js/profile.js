@@ -1,6 +1,6 @@
 // ============================================================
 // js/profile.js
-// Guardar y cargar el perfil del estudiante en Firestore.
+// Guardar y cargar el perfil del Student en Firestore.
 // Gestión del avatar y modo de vista admin.
 // ============================================================
 import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -94,15 +94,15 @@ export async function cargarDatosPerfil() {
             if (roleDisplay) {
                 roleDisplay.value = window.isMasterAdmin
                     ? 'Administrador Maestro'
-                    : (data.role === 'teacher' ? 'Docente/Admin' : 'Estudiante');
+                    : (data.role === 'teacher' ? 'Docente/Admin' : 'Student');
             }
             
-            // Cargar configuración de ritmo
+            // Cargar Configuration de ritmo
             if (data.pacingMode && data.pacingLength && window.renderTimeline) {
                 window.renderTimeline(data.pacingMode, data.pacingLength);
             }
 
-            // Verificar la última fecha de la encuesta
+            // Verify la última fecha de la encuesta
             const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
             const now = new Date().getTime();
             if (!data.lastSurveyDate || (now - data.lastSurveyDate > ONE_WEEK_MS)) {
@@ -125,7 +125,7 @@ export async function cargarDatosPerfil() {
                 if (adminMode) adminMode.value = window.simulatedRole || 'teacher';
             }
             
-            // Cargar resultados Holísticos desde localStorage o Firestore
+            // Cargar Results Holísticos desde localStorage o Firestore
             if(window.cargarResultsHolisticos) {
                 window.cargarResultsHolisticos();
             } else {
@@ -204,19 +204,19 @@ window.cargarResultsChaeaPerfil = cargarResultsChaeaPerfil;
 
 export function cambiarModoVistaAdmin() {
     window.simulatedRole = document.getElementById('admin-view-mode').value;
-    Swal.fire('Modo Cambiado', `Navegando ahora como: ${window.simulatedRole === 'student' ? 'Estudiante' : 'Administrador'}.`, 'success')
+    Swal.fire('Modo Cambiado', `Navegando ahora como: ${window.simulatedRole === 'student' ? 'Student' : 'Administrador'}.`, 'success')
         .then(() => {
             const navAdmin = document.getElementById('nav-admin');
             if (window.simulatedRole === 'student') {
                 navAdmin.style.display = 'none';
-                window.mostrarDashboardEstudiante();
+                window.ShowDashboardStudent();
             } else {
                 navAdmin.style.display = 'flex';
             }
         });
 }
 
-// Guarda la configuración del ritmo flexible del usuario
+// Guarda la Configuration del ritmo flexible del usuario
 export async function guardarRitmo(mode, length) {
     if (!window.currentUserUid) return;
     try {
@@ -259,9 +259,9 @@ export async function guardarEncuestaSemanal() {
             lastSurveyDate: timestamp
         }, { merge: true });
 
-        // Cerrar modal
+        // Close modal
         document.getElementById('study-survey-modal').style.display = 'none';
-        Swal.fire('¡Excelente!', 'Has registrado tu progreso semanal. Sigue así.', 'success');
+        Swal.fire('Excellent!', 'Has registrado tu progreso semanal. Sigue así.', 'success');
         
     } catch (e) {
         Swal.fire('Error', 'No se pudo guardar la encuesta. Intenta nuevamente.', 'error');

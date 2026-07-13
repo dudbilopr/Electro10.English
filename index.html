@@ -60,16 +60,16 @@
             <button class="icon-btn focus-btn" onclick="window.toggleFocusMode()" title="Focus Mode (Pomodoro)" style="color: #10b981;">
                 <span class="material-symbols-outlined">timer</span>
             </button>
-            <button class="icon-btn" title="Notificaciones" onclick="window.mostrarNotificaciones()">
+            <button class="icon-btn" title="Notificaciones" onclick="window.ShowNotificaciones()">
                 <span class="material-symbols-outlined">notifications</span>
                 <span class="notification-dot" id="noti-dot"></span>
             </button>
             <button class="icon-btn" title="Ayuda" onclick="Swal.fire('Soporte', 'Visita el foro interactivo en la pestaña de la lección o contacta al administrador.', 'question')"><span class="material-symbols-outlined">help</span></button>
 
             <!-- AUTH ZONE -->
-            <button id="btn-login-modal" onclick="window.abrirModalAuth()" class="btn-auth" style="display: none;"><span class="material-symbols-outlined text-[18px]">login</span> Ingresar</button>
+            <button id="btn-login-modal" onclick="window.OpenModalAuth()" class="btn-auth" style="display: none;"><span class="material-symbols-outlined text-[18px]">login</span> Ingresar</button>
             
-            <div class="user-profile" id="user-info-container" onclick="window.mostrarPerfil()">
+            <div class="user-profile" id="user-info-container" onclick="window.ShowPerfil()">
                 <div class="user-avatar" id="avatar-initial">U</div>
                 <div style="display: flex; flex-direction: column; margin-right: 8px;">
                     <span class="user-name truncate" id="user-email-text" style="max-width: 100px; font-weight: 600;">Usuario</span>
@@ -101,27 +101,27 @@
         <aside class="sidebar" id="sidebar-menu">
             <div class="nav-section-title" style="margin-top: 0;">PANEL ACADÉMICO</div>
             
-            <a onclick="window.mostrarDashboardEstudiante()" class="nav-item active" id="nav-dashboard">
+            <a onclick="window.ShowDashboardStudent()" class="nav-item active" id="nav-dashboard">
                 <span class="material-symbols-outlined">dashboard</span>
                 <span>Dashboard</span>
             </a>
-            <a onclick="window.mostrarCalendario()" class="nav-item" id="nav-calendario">
+            <a onclick="window.ShowCalendario()" class="nav-item" id="nav-calendario">
                 <span class="material-symbols-outlined">hub</span>
                 <span>Universo de Conocimiento</span>
             </a>
-            <a onclick="window.mostrarPerfil()" class="nav-item" id="nav-perfil">
+            <a onclick="window.ShowPerfil()" class="nav-item" id="nav-perfil">
                 <span class="material-symbols-outlined">person</span>
                 <span>Mi Perfil</span>
             </a>
-            <a onclick="window.mostrarLaboratorios()" class="nav-item" id="nav-labs">
+            <a onclick="window.ShowLaboratorios()" class="nav-item" id="nav-labs">
                 <span class="material-symbols-outlined">science</span>
                 <span>Centro de Simulaciones</span>
             </a>
-            <a onclick="window.mostrarCerebro()" class="nav-item" id="nav-brain" style="color: #a855f7;">
+            <a onclick="window.ShowCerebro()" class="nav-item" id="nav-brain" style="color: #a855f7;">
                 <span class="material-symbols-outlined">psychology</span>
                 <span>Cerebro de Conocimiento</span>
             </a>
-            <a id="nav-admin" onclick="window.abrirPanelAdmin()" class="nav-item" style="display: none; color: var(--admin);">
+            <a id="nav-admin" onclick="window.OpenPanelAdmin()" class="nav-item" style="display: none; color: var(--admin);">
                 <span class="material-symbols-outlined icon-filled">admin_panel_settings</span>
                 <span>Panel Admin</span>
             </a>
@@ -144,9 +144,9 @@
             <div class="content-header" id="content-header" style="display: none;">
                 <div class="title-area">
                     <div class="breadcrumb" id="breadcrumb">
-                        <a href="#" onclick="window.mostrarDashboardEstudiante()" style="color: inherit; text-decoration: none;">Física III</a>
+                        <a href="#" onclick="window.ShowDashboardStudent()" style="color: inherit; text-decoration: none;">Física III</a>
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                        <span class="truncate" style="max-width: 150px;" id="bread-modulo">Módulo</span>
+                        <span class="truncate" style="max-width: 150px;" id="bread-modulo">Module</span>
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                         <span class="active truncate" style="max-width: 200px;" id="bread-leccion">Lección</span>
                     </div>
@@ -158,7 +158,7 @@
                 </div>
             </div>
 
-            <!-- ================= DASHBOARD ESTUDIANTE ================= -->
+            <!-- ================= DASHBOARD Student ================= -->
             <div id="student-dashboard" class="bento-container" style="display: block;">
                 <!-- ================= PLANIFICADOR DINÁMICO ================= -->
                 <div class="bento-card col-12 animate-fade-in" style="margin-bottom: 24px; padding: 20px;">
@@ -224,8 +224,8 @@
                     
                     <div class="bento-card hero-card col-8 animate-fade-in">
                         <div class="bento-label">BIENVENIDO A TU VIAJE ACADÉMICO</div>
-                        <h2>¡Hola, <span id="student-name-hero" style="color: #fff; font-weight: 900;">Estudiante</span>!</h2>
-                        <p>Te damos la bienvenida al maravilloso mundo del electromagnetismo. Prepárate para explorar las fuerzas que rigen el universo a través de simulaciones de vanguardia e IA integrada.</p>
+                        <h2>¡Hola, <span id="student-name-hero" style="color: #fff; font-weight: 900;">Student</span>!</h2>
+                        <p>Te damos la bienvenida al maravilloso mundo del electromagnetismo. Prepárate para explorar las Forces que rigen el universo a través de simulaciones de vanguardia e IA integrada.</p>
                         
                         <div id="next-lesson-container" style="margin-top: auto;">
                             <!-- Botón dinámico insertado aquí -->
@@ -283,7 +283,7 @@
                             </div>
 
                             <p class="author-bio">
-                                Físico y docente universitario con enfoque en inteligencia artificial aplicada a la educación. Desarrollo estrategias y herramientas basadas en modelos de lenguaje (LLM) para apoyar la enseñanza de la física, las matemáticas y la ciencia de datos.
+                                Physical y docente universitario con enfoque en inteligencia artificial aplicada a la educación. Development estrategias y Tools basadas en modelos de lenguaje (LLM) para apoyar la enseñanza de la física, las matemáticas y la ciencia de datos.
                             </p>
 
                             <a href="mailto:dpabon180@unab.edu.co" class="contact-btn">
@@ -292,12 +292,12 @@
                         </div>
                     </div>
 
-                    <!-- Fila de Gráficas Adicionales -->
+                    <!-- Fila de Charts Adicionales -->
                     <div class="bento-card col-4">
                         <div class="bento-header">
-                            <h3><span class="material-symbols-outlined text-accent">radar</span> Nivel Cognitivo</h3>
+                            <h3><span class="material-symbols-outlined text-accent">radar</span> Level Cognitivo</h3>
                         </div>
-                        <p style="font-size: 0.75rem; color: var(--text-low); margin: 0 0 10px 0;">Autoevaluaciones por módulo</p>
+                        <p style="font-size: 0.75rem; color: var(--text-low); margin: 0 0 10px 0;">Autoevaluaciones por Module</p>
                         <div class="chart-container" id="container-radar">
                             <canvas id="studentRadarChart"></canvas>
                         </div>
@@ -323,7 +323,7 @@
                         </div>
                     </div>
 
-                    <!-- NUEVAS TARJETAS DE ALTO IMPACTO (ESTUDIANTE) -->
+                    <!-- NUEVAS TARJETAS DE ALTO IMPACTO (Student) -->
                     <div class="bento-card col-4">
                         <div class="bento-header">
                             <h3><span class="material-symbols-outlined text-accent">group_work</span> Conexión de Aprendizaje</h3>
@@ -331,7 +331,7 @@
                         <p style="font-size: 0.75rem; color: var(--text-low); margin: 0 0 10px 0;">Red de pares estudiando lo mismo</p>
                         <div style="background: var(--bg-surface-hover); border-radius: 8px; padding: 15px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
                             <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent);" id="student-network-count">24</div>
-                            <div style="font-size: 0.85rem; color: var(--text-medium);">Compañeros activos en tu módulo</div>
+                            <div style="font-size: 0.85rem; color: var(--text-medium);">Compañeros activos en tu Module</div>
                             <div style="margin-top: 15px; display: flex; justify-content: center; gap: 5px;" id="student-network-avatars">
                                 <!-- Avatares dinámicos -->
                             </div>
@@ -480,7 +480,7 @@
 
                             <div class="input-group" style="margin-top: 15px;">
                                 <label>Rol Asignado</label>
-                                <input type="text" id="prof-role-display" class="form-input" value="Estudiante" disabled style="opacity:0.7; cursor:not-allowed;">
+                                <input type="text" id="prof-role-display" class="form-input" value="Student" disabled style="opacity:0.7; cursor:not-allowed;">
                             </div>
 
                             <!-- Selector de Paseo de Roles Exclusivo para Admin Maestro -->
@@ -488,9 +488,9 @@
                                 <label style="color: var(--admin);"><span class="material-symbols-outlined text-[16px]" style="vertical-align:bottom;">visibility</span> Modo de Visualización (Master Admin)</label>
                                 <select id="admin-view-mode" class="form-input" onchange="window.cambiarModoVistaAdmin()" style="border-color: var(--admin);">
                                     <option value="teacher">Vista de Administrador (Acceso Total)</option>
-                                    <option value="student">Simular Vista de Estudiante</option>
+                                    <option value="student">Simular Vista de Student</option>
                                 </select>
-                                <small style="color: var(--text-medium); display:block; margin-top:5px;">Te permite pasear y ver la plataforma tal como la ve un estudiante.</small>
+                                <small style="color: var(--text-medium); display:block; margin-top:5px;">Te permite pasear y ver la plataforma tal como la ve un Student.</small>
                             </div>
                             
                             <div class="input-group" style="margin-top: 25px; padding: 25px; border-radius: 12px; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2);">
@@ -545,7 +545,7 @@
                             
                             <div style="display: flex; gap: 15px; margin-top: 25px;">
                                 <button class="btn-primary" onclick="window.guardarPerfil()"><span class="material-symbols-outlined text-[18px]">save</span> Guardar Cambios</button>
-                                <button class="btn-primary" style="background: transparent; color: var(--danger); border: 1px solid var(--danger);" onclick="window.cerrarSesion()"><span class="material-symbols-outlined text-[18px]">logout</span> Cerrar Sesión</button>
+                                <button class="btn-primary" style="background: transparent; color: var(--danger); border: 1px solid var(--danger);" onclick="window.CloseSesion()"><span class="material-symbols-outlined text-[18px]">logout</span> Close Sesión</button>
                             </div>
                         </div>
                     </div>
@@ -562,25 +562,25 @@
                             <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--shape-large); padding: 20px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                                 <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: #10b981;">edit_note</span> Apuntes Efectivos</h4>
                                 <ul style="color: var(--text-medium); font-size: 0.85rem; padding-left: 20px; margin: 0; line-height: 1.6;">
-                                    <li>Usa el <b>Sistema Cornell</b>: Divide tus notas en conceptos clave, detalles y resumen.</li>
+                                    <li>Usa el <b>Sistema Cornell</b>: Divide tus notas en conceptos clave, detalles y Summary.</li>
                                     <li>No transcribas; parafrasea lo que entiendes.</li>
-                                    <li>Dibuja mapas mentales de los fenómenos físicos.</li>
+                                    <li>Dibuja mapas mentales de los fenómenos Physicals.</li>
                                 </ul>
                             </div>
                             
                             <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: var(--shape-large); padding: 20px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                                 <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: #f59e0b;">smart_display</span> Consumo de Videos</h4>
                                 <ul style="color: var(--text-medium); font-size: 0.85rem; padding-left: 20px; margin: 0; line-height: 1.6;">
-                                    <li><b>Pausa Activa</b>: Pausa el video antes de que el profesor resuelva el ejercicio e intenta hacerlo tú.</li>
+                                    <li><b>Pause Activa</b>: Pause el video antes de que el Professor resuelva el ejercicio e intenta hacerlo tú.</li>
                                     <li>Cero distracciones: Visualiza en pantalla completa.</li>
-                                    <li>Revisa los conceptos difíciles a velocidad 0.75x.</li>
+                                    <li>Revisa los conceptos difíciles a Velocity 0.75x.</li>
                                 </ul>
                             </div>
 
                             <div style="background: rgba(11, 87, 208, 0.05); border: 1px solid rgba(11, 87, 208, 0.2); border-radius: var(--shape-large); padding: 20px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                                <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: var(--accent);">science</span> Laboratorios y Simuladores</h4>
+                                <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: var(--accent);">science</span> Laboratorios y Simulatores</h4>
                                 <ul style="color: var(--text-medium); font-size: 0.85rem; padding-left: 20px; margin: 0; line-height: 1.6;">
-                                    <li><b>Experimenta primero</b>: Juega con el simulador antes de ver las matemáticas. Intuye qué pasa.</li>
+                                    <li><b>Experimenta primero</b>: Juega con el Simulator antes de ver las matemáticas. Intuye qué pasa.</li>
                                     <li>Cambia variables extremas para ver qué colapsa en el sistema.</li>
                                 </ul>
                             </div>
@@ -589,7 +589,7 @@
                                 <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: #8b5cf6;">import_contacts</span> Lectura Profunda</h4>
                                 <ul style="color: var(--text-medium); font-size: 0.85rem; padding-left: 20px; margin: 0; line-height: 1.6;">
                                     <li>Lee los primeros y últimos párrafos antes de entrar en los detalles matemáticos.</li>
-                                    <li>No te asustes por integrales triples; busca el <b>significado físico</b> de la ecuación.</li>
+                                    <li>No te asustes por integrales triples; busca el <b>significado Physical</b> de la ecuación.</li>
                                 </ul>
                             </div>
 
@@ -618,14 +618,14 @@
                             <div>
                                 <h3 style="margin: 0 0 5px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;">
                                     <span class="material-symbols-outlined" style="color: #0ea5e9;">model_training</span>
-                                    Simulador: Electric Field Interactivo
+                                    Simulator: Electric Field Interactivo
                                 </h3>
-                                <p style="margin: 0; color: var(--text-medium); font-size: 0.9rem;">Agrega cargas positivas o negativas y observa las líneas de fuerza en tiempo real.</p>
+                                <p style="margin: 0; color: var(--text-medium); font-size: 0.9rem;">Agrega Charges positivas o negativas y observa las líneas de Force en tiempo real.</p>
                             </div>
                             <div style="display: flex; gap: 10px;">
                                 <button id="btn-add-pos" class="btn-primary" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444;"><span class="material-symbols-outlined">add_circle</span> Carga +</button>
                                 <button id="btn-add-neg" class="btn-primary" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; border: 1px solid #3b82f6;"><span class="material-symbols-outlined">do_not_disturb_on</span> Carga -</button>
-                                <button id="btn-clear-canvas" class="icon-btn" title="Limpiar"><span class="material-symbols-outlined">delete</span></button>
+                                <button id="btn-clear-canvas" class="icon-btn" title="Clear"><span class="material-symbols-outlined">delete</span></button>
                             </div>
                         </div>
                         <div style="width: 100%; height: 400px; background: #000; position: relative;">
@@ -639,7 +639,7 @@
                             <span class="material-symbols-outlined" style="font-size: 48px; color: #0ea5e9; opacity: 0.5;">bolt</span>
                         </div>
                         <h3 style="margin: 0 0 10px 0; color: var(--text-high);">Práctica 2: Coulomb\'s Law</h3>
-                        <p style="color: var(--text-medium); font-size: 0.85rem; margin-bottom: 15px;">Simulation de fuerzas eléctricas interactivas.</p>
+                        <p style="color: var(--text-medium); font-size: 0.85rem; margin-bottom: 15px;">Simulation de Forces eléctricas interactivas.</p>
                         <div style="display: inline-block; background: var(--bg-surface-hover); color: var(--text-medium); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
                             <span class="material-symbols-outlined" style="font-size: 14px; vertical-align: middle;">schedule</span> Próximamente
                         </div>
@@ -659,7 +659,7 @@
                 </div>
             </div>
 
-            <!-- ================= CEREBRO DEL ESTUDIANTE (OBSIDIAN STYLE) ================= -->
+            <!-- ================= CEREBRO DEL Student (OBSIDIAN STYLE) ================= -->
             <div id="brain-dashboard" class="bento-container" style="display: none;">
                 <div class="bento-header" style="margin-bottom: 30px; text-align: center; flex-direction: column; gap: 15px;">
                     <h2 style="font-size: 2.8rem; font-weight: 900; margin:0; color: var(--text-high); letter-spacing: -1px; display:flex; align-items:center; justify-content:center; gap: 10px;">
@@ -667,16 +667,16 @@
                         Cerebro de Conocimiento
                     </h2>
                     <p style="color: var(--text-medium); font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-                        Tu segundo cerebro. Aquí se interconectan los conceptos que vas aprendiendo, herramientas cognitivas y un tutor IA visual.
+                        Tu segundo cerebro. Aquí se interconectan los conceptos que vas aprendiendo, Tools cognitivas y un tutor IA visual.
                     </p>
                 </div>
 
                 <!-- Navegación interna del Cerebro -->
                 <div class="tabs-nav" style="margin-bottom: 20px; border-bottom: 2px solid var(--border-color); display: flex; gap: 20px;">
                     <button class="tab-btn active" onclick="window.cambiarTabCerebro('brain-graph', this)"><span class="material-symbols-outlined">account_tree</span> Mapa Mental</button>
-                    <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-tools', this)"><span class="material-symbols-outlined">menu_book</span> Herramientas</button>
+                    <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-tools', this)"><span class="material-symbols-outlined">menu_book</span> Tools</button>
                     <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-history', this)"><span class="material-symbols-outlined">history_edu</span> Historia</button>
-                    <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-games', this)"><span class="material-symbols-outlined">extension</span> Juegos Cognitivos</button>
+                    <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-games', this)"><span class="material-symbols-outlined">extension</span> Games Cognitivos</button>
                     <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-camera', this)" style="color: #10b981;"><span class="material-symbols-outlined">photo_camera</span> Tutor por Cámara</button>
                     <button class="btn-primary" onclick="window.descargarObsidian()" style="margin-left: auto; background: #2b2b2b; color: #a855f7; border: 1px solid #a855f7;"><span class="material-symbols-outlined text-[18px]">download</span> Bóveda Obsidian</button>
                 </div>
@@ -692,12 +692,12 @@
                     </div>
                 </div>
 
-                <!-- Tab: Herramientas (Glosario, Formulas, Constantes) -->
+                <!-- Tab: Tools (Glossary, Formulas, Constantes) -->
                 <div id="brain-tools" class="brain-tab-content" style="display: none;">
                     <div class="bento-grid">
                         <div class="bento-card col-4">
-                            <h3><span class="material-symbols-outlined" style="color: var(--accent); vertical-align: middle;">sort_by_alpha</span> Glosario</h3>
-                            <div id="brain-glosario-list" style="max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-top: 15px;"></div>
+                            <h3><span class="material-symbols-outlined" style="color: var(--accent); vertical-align: middle;">sort_by_alpha</span> Glossary</h3>
+                            <div id="brain-Glossary-list" style="max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-top: 15px;"></div>
                         </div>
                         <div class="bento-card col-4">
                             <h3><span class="material-symbols-outlined" style="color: var(--accent); vertical-align: middle;">functions</span> Formulas y Leyes</h3>
@@ -724,18 +724,18 @@
                     </div>
                 </div>
 
-                <!-- Tab: Juegos Cognitivos -->
+                <!-- Tab: Games Cognitivos -->
                 <div id="brain-games" class="brain-tab-content" style="display: none;">
                     <div class="bento-grid">
                         <div class="bento-card col-12" style="display:flex; justify-content:space-between; align-items:center;">
                             <div>
                                 <h3 style="color: var(--text-high); display:flex; align-items:center; gap:10px;"><span class="material-symbols-outlined icon-filled" style="color: var(--accent);">sports_esports</span> Reto Metacognitivo: Asociación Visual</h3>
-                                <p style="color: var(--text-medium); margin: 0; font-size: 0.9rem;">Empareja el concepto con su definición o fórmula correcta. Selecciona un elemento de la izquierda y luego su pareja a la derecha.</p>
+                                <p style="color: var(--text-medium); margin: 0; font-size: 0.9rem;">Empareja el concepto con su definición o Formula correcta. Selecciona un elemento de la izquierda y luego su pareja a la derecha.</p>
                             </div>
-                            <button class="btn-primary" onclick="window.iniciarJuegoAsociacion()" id="btn-iniciar-juego">Jugar / Reset</button>
+                            <button class="btn-primary" onclick="window.iniciarGameAsociacion()" id="btn-iniciar-Game">Jugar / Reset</button>
                         </div>
 
-                        <!-- Panel del Juego -->
+                        <!-- Panel del Game -->
                         <div class="bento-card col-12" id="game-panel" style="display: none; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color);">
                             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
                                 <div style="font-size:1.2rem; font-weight:bold; color:var(--text-high);">Puntaje: <span id="game-score" style="color:var(--accent);">0</span></div>
@@ -744,7 +744,7 @@
                             <div style="display:flex; gap:20px; justify-content:center;">
                                 <!-- Columna Conceptos -->
                                 <div style="flex:1; display:flex; flex-direction:column; gap:10px;" id="game-col-a"></div>
-                                <!-- Columna Definiciones -->
+                                <!-- Columna DefHomenes -->
                                 <div style="flex:1; display:flex; flex-direction:column; gap:10px;" id="game-col-b"></div>
                             </div>
                         </div>
@@ -785,7 +785,7 @@
                 <div class="bento-grid">
                     <div class="bento-card col-12" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
                         <h2 style="margin:0 0 5px 0; color: var(--admin); font-size: 1.5rem; display: flex; align-items: center; gap: 10px;"><span class="material-symbols-outlined text-[28px] icon-filled">admin_panel_settings</span> Control Maestro de Analítica</h2>
-                        <p style="color: var(--text-medium); margin:0;">Insights pedagógicos, retención de estudiantes y ajustes estructurales del curso.</p>
+                        <p style="color: var(--text-medium); margin:0;">Insights pedagógicos, retención de Students y ajustes estructurales del curso.</p>
                     </div>
 
                     <!-- METRICAS DE NEUROCIENCIA Y DATA SCIENCE -->
@@ -803,7 +803,7 @@
                         <div class="stat-box" style="padding: 15px; border-left: 4px solid #3b82f6;">
                             <div class="stat-value" style="font-size: 2.2rem; color: #3b82f6;" id="admin-metric-carga">0</div>
                             <div class="stat-label" style="font-weight: bold;">Carga Cognitiva Promedio</div>
-                            <div style="font-size: 0.75rem; color: var(--text-medium); margin-top: 5px;">Horas/semana / Nivel Mates</div>
+                            <div style="font-size: 0.75rem; color: var(--text-medium); margin-top: 5px;">Horas/semana / Level Mates</div>
                         </div>
                         <div class="stat-box" style="padding: 15px; border-left: 4px solid #8b5cf6;">
                             <div class="stat-value" style="font-size: 1.5rem; color: #8b5cf6; display: flex; align-items: center; justify-content: center; gap: 5px;" id="admin-metric-rating"><span class="material-symbols-outlined icon-filled">star</span> 0.0</div>
@@ -813,7 +813,7 @@
                         <div class="stat-box" style="padding: 15px; border-left: 4px solid #f59e0b;">
                             <div class="stat-value" style="font-size: 1.2rem; color: #f59e0b;" id="admin-metric-metodologia">N/A</div>
                             <div class="stat-label" style="font-weight: bold;">Metodología Dominante</div>
-                            <div style="font-size: 0.75rem; color: var(--text-medium); margin-top: 5px;">Preferida por estudiantes</div>
+                            <div style="font-size: 0.75rem; color: var(--text-medium); margin-top: 5px;">Preferida por Students</div>
                         </div>
                     </div>
 
@@ -822,7 +822,7 @@
                         <div class="bento-header" style="margin-bottom:10px;">
                             <h3><span class="material-symbols-outlined" style="color: var(--accent);">calendar_clock</span> Ingeniería Curricular (Guía de Aprendizaje)</h3>
                         </div>
-                        <p style="color:var(--text-medium); font-size:0.85rem; margin-bottom:15px;">Define fechas, semanas excluidas (vacaciones) y <strong>asigna semanas específicas a cada módulo</strong> para adaptar el ritmo de aprendizaje.</p>
+                        <p style="color:var(--text-medium); font-size:0.85rem; margin-bottom:15px;">Define fechas, semanas excluidas (vacaciones) y <strong>asigna semanas específicas a cada Module</strong> para adaptar el ritmo de aprendizaje.</p>
                         
                         <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 15px;">
                             <div class="input-group" style="margin-bottom:0;">
@@ -830,12 +830,12 @@
                                 <input type="number" id="admin-set-week" value="1" min="1" max="52" class="form-input">
                             </div>
                             <div class="input-group" style="margin-bottom:0;">
-                                <label>Asignación de Módulos:</label>
+                                <label>Asignación de Modules:</label>
                                 <input type="text" id="admin-module-weeks" placeholder="Ej. 1-2; 3; 4-5" class="form-input">
-                                <small style="color:var(--text-low); font-size:0.7rem;">Separe con punto y coma (;) las semanas correspondientes al Módulo 1, 2, etc.</small>
+                                <small style="color:var(--text-low); font-size:0.7rem;">Separe con punto y coma (;) las semanas correspondientes al Module 1, 2, etc.</small>
                             </div>
                             <div class="input-group" style="margin-bottom:0;">
-                                <label>Fecha de Inicio:</label>
+                                <label>Fecha de Home:</label>
                                 <input type="date" id="admin-start-date" class="form-input">
                             </div>
                             <div class="input-group" style="margin-bottom:0;">
@@ -848,7 +848,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn-primary" onclick="window.guardarAjustesCalendario()"><span class="material-symbols-outlined text-[18px]">update</span> Aplicar a Estudiantes</button>
+                            <button class="btn-primary" onclick="window.guardarAjustesCalendario()"><span class="material-symbols-outlined text-[18px]">update</span> Aplicar a Students</button>
                         </div>
                     </div>
                     <div class="bento-card col-4">
@@ -877,7 +877,7 @@
                             <table class="admin-table" id="admin-users-table">
                                 <thead>
                                     <tr>
-                                        <th>Estudiante / Usuario</th>
+                                        <th>Student / Usuario</th>
                                         <th>Institución</th>
                                         <th>Rol de Plataforma</th>
                                         <th>Estado de Progreso</th>
@@ -922,8 +922,8 @@
                     <!-- Sistema de Calificación de Recurso -->
                     <div id="resource-rating-container" style="display: none; align-items: center; justify-content: space-between; background: var(--bg-surface-light); padding: 10px 20px; border-radius: 8px; margin-top: 10px; border: 1px solid var(--border-color);">
                         <div>
-                            <h4 style="margin: 0; color: var(--text-high); font-size: 0.95rem;">¿Qué te pareció este módulo/recurso?</h4>
-                            <p style="margin: 0; color: var(--text-medium); font-size: 0.8rem;">Tu evaluación nos ayuda a mejorar la experiencia</p>
+                            <h4 style="margin: 0; color: var(--text-high); font-size: 0.95rem;">¿Qué te pareció este Module/recurso?</h4>
+                            <p style="margin: 0; color: var(--text-medium); font-size: 0.8rem;">Tu Assessment nos ayuda a mejorar la experiencia</p>
                         </div>
                         <div class="star-rating" style="display: flex; gap: 5px; cursor: pointer;" id="resource-stars">
                             <span class="material-symbols-outlined star" data-value="1" onclick="window.calificarRecurso(1)" onmouseover="window.hoverStars(1)" onmouseout="window.resetStarsHover()" style="color: var(--text-medium); font-size: 28px; transition: color 0.2s;">star</span>
@@ -936,9 +936,9 @@
 
                     <div class="tabs-nav mt-4" id="tabs-navigation">
                         <button class="tab-btn active" onclick="window.cambiarTab('tab-detalles', this)">Detalles</button>
-                        <button class="tab-btn" onclick="window.cambiarTab('tab-eval', this)">Mi Nivel (Retroalimentación)</button>
+                        <button class="tab-btn" onclick="window.cambiarTab('tab-eval', this)">Mi Level (Retroalimentación)</button>
                         <button class="tab-btn" onclick="window.cambiarTab('tab-notas', this)">Mis Notas</button>
-                        <button class="tab-btn" onclick="window.cambiarTab('tab-preguntas', this)">Foro <span class="badge-count" style="background: var(--accent); color:#fff; border-radius:10px; padding:2px 6px; font-size:10px;">1</span></button>
+                        <button class="tab-btn" onclick="window.cambiarTab('tab-Questions', this)">Foro <span class="badge-count" style="background: var(--accent); color:#fff; border-radius:10px; padding:2px 6px; font-size:10px;">1</span></button>
                     </div>
 
                     <div id="tab-detalles" class="tab-content active">
@@ -947,7 +947,7 @@
                     </div>
 
                     <div id="tab-eval" class="tab-content">
-                        <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">psychology</span> Autoevaluación Cognitiva</h3>
+                        <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">psychology</span> AutoAssessment Cognitiva</h3>
                         <p style="color: var(--text-medium); margin-bottom: 20px;">Sé honesto contigo mismo. Evalúa qué tan bien dominas el concepto de esta lección para alimentar tus métricas.</p>
                         <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
                             <button class="eval-btn" onclick="window.guardarEval(1)" id="eval-1"><span class="material-symbols-outlined">sentiment_very_dissatisfied</span> Necesito Ayuda (25%)</button>
@@ -958,16 +958,16 @@
                     </div>
                     
                     <div id="tab-notas" class="tab-content">
-                        <textarea id="area-notas" style="width: 100%; height: 100px; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high);" placeholder="Apunta tus fórmulas, constantes o conclusiones del experimento aquí..."></textarea>
+                        <textarea id="area-notas" style="width: 100%; height: 100px; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high);" placeholder="Apunta tus Formulas, constantes o conclusiones del experimento aquí..."></textarea>
                         <div style="text-align: right; margin-top: 15px;">
                             <button class="btn-primary" onclick="window.guardarNotas()"><span class="material-symbols-outlined text-[18px]">save</span> Guardar Apuntes</button>
                         </div>
                     </div>
                     
-                    <div id="tab-preguntas" class="tab-content">
-                        <textarea id="area-preguntas" style="width: 100%; height: 90px; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high);" placeholder="Escribe tu consulta a la comunidad o al profesor..."></textarea>
+                    <div id="tab-Questions" class="tab-content">
+                        <textarea id="area-Questions" style="width: 100%; height: 90px; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high);" placeholder="Escribe tu consulta a la comunidad o al Professor..."></textarea>
                         <div style="text-align: right; margin-top: 15px;">
-                            <button class="btn-primary" style="background: var(--bg-surface-hover); color: var(--text-high); border: 1px solid var(--border-color);" onclick="Swal.fire('Foro', 'Función de envío en desarrollo.', 'info')"><span class="material-symbols-outlined text-[18px]">send</span> Publicar en el Foro</button>
+                            <button class="btn-primary" style="background: var(--bg-surface-hover); color: var(--text-high); border: 1px solid var(--border-color);" onclick="Swal.fire('Foro', 'Función de envío en Development.', 'info')"><span class="material-symbols-outlined text-[18px]">send</span> Publicar en el Foro</button>
                         </div>
                     </div>
                 </div>
@@ -998,7 +998,7 @@
             <div style="margin-top: 25px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px;">
                 <button class="btn-primary" style="width: 100%; justify-content: center; background: var(--bg-surface-light); color: var(--text-high); border: 1px solid var(--border-strong);" onclick="window.iniciarSesionConGoogle()">
                     <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width: 18px; height: 18px;">
-                    Continuar con Google
+                    Continue con Google
                 </button>
             </div>
         </div>
@@ -1008,7 +1008,7 @@
     <div class="modal" id="admin-user-modal">
         <div class="modal-content admin-user-modal-content">
             <button class="icon-btn" style="position: absolute; top: 15px; right: 15px;" onclick="document.getElementById('admin-user-modal').style.display='none'"><span class="material-symbols-outlined">close</span></button>
-            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; color: var(--accent);" id="modal-u-name">Nombre Estudiante</h3>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; color: var(--accent);" id="modal-u-name">Nombre Student</h3>
             <p style="color: var(--text-medium); margin-bottom: 20px;" id="modal-u-inst">Institución</p>
             
             <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; padding: 15px; margin-bottom: 20px;">
@@ -1033,7 +1033,7 @@
                 </div>
             </div>
 
-            <h4 style="margin:0 0 10px 0; color:var(--text-high);">Radar de Fortalezas (Por Módulo)</h4>
+            <h4 style="margin:0 0 10px 0; color:var(--text-high);">Radar de Fortalezas (Por Module)</h4>
             <div class="chart-container" style="height: 250px;">
                 <canvas id="modalUserRadarChart"></canvas>
             </div>
@@ -1059,7 +1059,7 @@
                 <div class="input-group">
                     <label>¿Qué metodologías aplicaste principalmente?</label>
                     <select id="survey-methodology" class="form-input">
-                        <option value="">Selecciona una opción...</option>
+                        <option value="">Select an option...</option>
                         <option value="pomodoro">Técnica Pomodoro</option>
                         <option value="feynman">Técnica de Feynman (Explicar a otros)</option>
                         <option value="spaced_repetition">Repetición Espaciada / Tarjetas</option>
@@ -1068,14 +1068,14 @@
                         <option value="practice">Exercises y Práctica Continua</option>
                         <option value="cornell_notes">Toma de Apuntes (Método Cornell / Esquemas)</option>
                         <option value="exam_prep">Preparación Activa / Simulacros de Examen</option>
-                        <option value="active_questioning">Indagación Crítica (Hacerse preguntas profundas)</option>
+                        <option value="active_questioning">Indagación Crítica (Hacerse Questions profundas)</option>
                         <option value="error_analysis">Análisis de Falencias y Errores (Metacognición)</option>
                         <option value="none">Lectura Pasiva</option>
                     </select>
                 </div>
                 
                 <div class="input-group">
-                    <label>¿Cómo evaluarías tu nivel de fatiga cognitiva?</label>
+                    <label>¿Cómo evaluarías tu Level de fatiga cognitiva?</label>
                     <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
                         <span style="font-size: 0.8rem;">Descansado</span>
                         <input type="range" id="survey-fatigue" min="1" max="10" value="5" style="flex: 1;">
@@ -1124,7 +1124,7 @@
                 <!-- Contenido Principal -->
                 <div style="flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center; position: relative;">
                     <!-- Botón Bandera -->
-                    <button id="chaea-btn-flag" class="icon-btn" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.05);" onclick="window.toggleChaeaFlag()" title="Marcar si no entiendes la pregunta">
+                    <button id="chaea-btn-flag" class="icon-btn" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.05);" onclick="window.toggleChaeaFlag()" title="Marcar si no entiendes la Question">
                         <span class="material-symbols-outlined" style="color: var(--text-medium);">flag</span>
                     </button>
 
@@ -1135,7 +1135,7 @@
 
                     <!-- Question -->
                     <h3 id="chaea-question-text" style="font-size: 1.8rem; color: var(--text-high); text-align: center; line-height: 1.4; margin-bottom: 50px;">
-                        Cargando pregunta...
+                        Cargando Question...
                     </h3>
 
                     <!-- Botones de Answer -->
@@ -1168,7 +1168,7 @@
                         </div>
                     </div>
                     
-                    <!-- Explicación -->
+                    <!-- Explanation -->
                     <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
                         <div class="bento-card" style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
                             <h3 style="margin-top:0; color:#3b82f6; display:flex; align-items:center; gap:10px;">
@@ -1183,7 +1183,7 @@
                             </ul>
                         </div>
                         
-                        <button class="btn-primary" style="margin-top: auto;" onclick="window.cerrarYGuardarChaea()">Guardar en Perfil y Continuar Curso</button>
+                        <button class="btn-primary" style="margin-top: auto;" onclick="window.CloseYGuardarChaea()">Guardar en Perfil y Continue Curso</button>
                     </div>
                 </div>
             </div>
@@ -1201,7 +1201,7 @@
     <!-- Motor de Exámenes Dinámicos y Cognitivos -->
     <script src="./js/quiz-engine.js"></script>
 
-    <!-- Módulo IA Contextual (BYOK) -->
+    <!-- Module IA Contextual (BYOK) -->
     <script src="./js/ai-chat.js"></script>
 
     <!-- Cerebro Obsidian (Graph & AI Grader) -->

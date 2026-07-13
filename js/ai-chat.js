@@ -1,5 +1,5 @@
 // ai-chat.js
-// Módulo de Inteligencia Artificial Contextual (BYOK - Bring Your Own Key)
+// Module de Inteligencia Artificial Contextual (BYOK - Bring Your Own Key)
 
 (function() {
     let apiKey = window.userApiKey || localStorage.getItem('userApiKey') || localStorage.getItem('electro10_gemini_key') || null;
@@ -38,7 +38,7 @@
                     </div>
 
                     <div id="ai-chat-area" style="display: none; flex-direction: row; gap: 8px;">
-                        <input type="text" id="input-chat-msg" placeholder="Hazme una pregunta sobre la lección..." style="flex: 1; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high); outline: none;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-color)'">
+                        <input type="text" id="input-chat-msg" placeholder="Hazme una Question sobre la lección..." style="flex: 1; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high); outline: none;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-color)'">
                         <button id="btn-send-chat" class="btn-primary" style="width: 40px; height: 40px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center;"><span class="material-symbols-outlined">send</span></button>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
         if (panel.style.display === 'none' || !panel.style.display) {
             panel.style.display = 'flex';
             panel.classList.add('animate-slide-up');
-            // Quitar el pulse glow al abrirlo
+            // Quitar el pulse glow al Openlo
             document.getElementById('ai-chat-fab').classList.remove('animate-pulse');
         } else {
             panel.style.display = 'none';
@@ -160,10 +160,10 @@
         let context = "El usuario está en el Dashboard principal.";
         const titleEl = document.getElementById('display-title');
         if (titleEl && titleEl.innerText !== 'Cargando...') {
-            context = `El usuario está estudiando la lección titulada: "${titleEl.innerText}". Responde sus dudas orientando la respuesta a esta temática específica de electromagnetismo o física.`;
+            context = `El usuario está estudiando la lección titulada: "${titleEl.innerText}". Responde sus dudas orientando la Answer a esta temática específica de electromagnetismo o física.`;
         }
 
-        const systemPrompt = `Eres un tutor experto en física y electromagnetismo de nivel universitario. Actúas de manera pedagógica y alentadora. No des las respuestas de los exámenes directamente, guía al estudiante para que las encuentre. Contexto actual: ${context}`;
+        const systemPrompt = `Eres un tutor experto en física y electromagnetismo de Level universitario. Actúas de manera pedagógica y alentadora. No des las Answers de los exámenes directamente, guía al Student para que las encuentre. Contexto actual: ${context}`;
 
         try {
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {

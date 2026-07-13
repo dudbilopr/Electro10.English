@@ -1,4 +1,4 @@
-// chaea.js - Lógica interactiva para el cuestionario CHAEA
+// chaea.js - Lógica interactiva para el Quiz CHAEA
 
 let chaeaAnswers = new Array(80).fill(null);
 let chaeaFlags = new Array(80).fill(false);
@@ -28,7 +28,7 @@ window.iniciarChaea = function() {
     document.querySelector('#chaea-modal .modal-content > div:nth-child(2)').style.display = 'flex';
     
     generarNavegacionChaea();
-    mostrarQuestionChaea(0);
+    ShowQuestionChaea(0);
 };
 
 function generarNavegacionChaea() {
@@ -41,7 +41,7 @@ function generarNavegacionChaea() {
             padding: 5px; font-size: 0.75rem; border: 1px solid var(--border-color);
             background: var(--bg-main); color: var(--text-high); cursor: pointer; border-radius: 4px;
         `;
-        btn.onclick = () => mostrarQuestionChaea(i);
+        btn.onclick = () => ShowQuestionChaea(i);
         btn.id = 'chaea-nav-' + i;
         grid.appendChild(btn);
     }
@@ -75,7 +75,7 @@ function actualizarEstadoNavegacion() {
     document.getElementById('btn-finalizar-chaea').disabled = respondidas < 80;
 }
 
-window.mostrarQuestionChaea = function(index) {
+window.ShowQuestionChaea = function(index) {
     if (index < 0 || index >= 80) return;
     chaeaCurrentIndex = index;
     const q = window.CHAEA_QUESTIONS[index];
@@ -90,13 +90,13 @@ window.mostrarQuestionChaea = function(index) {
     
     let txt = q.texto.toLowerCase();
     if (txt.includes('intuir') || txt.includes('intuición') || txt.includes('espontánea')) iconEl.innerText = 'lightbulb';
-    else if (txt.includes('lógica') || txt.includes('analizar') || txt.includes('teoría') || txt.includes('razonamiento')) iconEl.innerText = 'account_tree';
+    else if (txt.includes('lógica') || txt.includes('analizar') || txt.includes('Theory') || txt.includes('razonamiento')) iconEl.innerText = 'account_tree';
     else if (txt.includes('práctica') || txt.includes('experimentar') || txt.includes('concreto')) iconEl.innerText = 'science';
     else if (txt.includes('reflexionar') || txt.includes('observar') || txt.includes('escuchar')) iconEl.innerText = 'visibility';
     else if (txt.includes('normas') || txt.includes('orden') || txt.includes('estructuradas')) iconEl.innerText = 'rule';
     else iconEl.innerText = 'psychology';
     
-    // Estado de los botones de respuesta
+    // Estado de los botones de Answer
     const val = chaeaAnswers[index];
     document.getElementById('chaea-btn-yes').style.opacity = (val === 1) ? '1' : '0.5';
     document.getElementById('chaea-btn-no').style.opacity = (val === 0) ? '1' : '0.5';
@@ -117,16 +117,16 @@ window.responderChaea = function(valor) {
     actualizarEstadoNavegacion();
     
     if (chaeaCurrentIndex < 79) {
-        mostrarQuestionChaea(chaeaCurrentIndex + 1);
+        ShowQuestionChaea(chaeaCurrentIndex + 1);
     } else {
-        mostrarQuestionChaea(chaeaCurrentIndex); // just to update UI
+        ShowQuestionChaea(chaeaCurrentIndex); // just to update UI
     }
 
     if (!chaeaAnswers.includes(null)) {
         if(window.Swal) {
             Swal.fire({
                 title: '¡Test Completado!',
-                text: 'Has respondido todas las preguntas. ¿Deseas ver tus resultados ahora?',
+                text: 'Has respondido todas las Questions. ¿Deseas ver tus Results ahora?',
                 icon: 'success',
                 showCancelButton: true,
                 confirmButtonColor: '#10b981',
@@ -145,24 +145,24 @@ window.responderChaea = function(valor) {
 };
 
 window.prevChaea = function() {
-    mostrarQuestionChaea(chaeaCurrentIndex - 1);
+    ShowQuestionChaea(chaeaCurrentIndex - 1);
 };
 window.nextChaea = function() {
-    mostrarQuestionChaea(chaeaCurrentIndex + 1);
+    ShowQuestionChaea(chaeaCurrentIndex + 1);
 };
 
 window.toggleChaeaFlag = function() {
     chaeaFlags[chaeaCurrentIndex] = !chaeaFlags[chaeaCurrentIndex];
-    mostrarQuestionChaea(chaeaCurrentIndex);
+    ShowQuestionChaea(chaeaCurrentIndex);
 };
 
 window.finalizarChaea = function() {
     if (chaeaAnswers.includes(null)) {
-        if(window.Swal) Swal.fire('Atención', 'Aún tienes preguntas sin responder.', 'warning');
+        if(window.Swal) Swal.fire('Atención', 'Aún tienes Questions sin responder.', 'warning');
         return;
     }
     
-    // Calcular puntajes
+    // Calculate puntajes
     let scores = { activo: 0, reflexivo: 0, teorico: 0, pragmatico: 0 };
     
     for(let i=0; i<80; i++) {
@@ -185,12 +185,12 @@ window.finalizarChaea = function() {
         }
     });
     
-    mostrarResults(scores, dominante);
+    ShowResults(scores, dominante);
 };
 
 let chaeaChartInstance = null;
 
-function mostrarResults(scores, dominante) {
+function ShowResults(scores, dominante) {
     // Cambiar UI
     document.querySelector('#chaea-modal .modal-content > div:nth-child(2)').style.display = 'none';
     document.getElementById('chaea-results-view').style.display = 'flex';
@@ -198,15 +198,15 @@ function mostrarResults(scores, dominante) {
     const desc = {
         activo: "Eres de mente abierta, entusiasta y te lanzas a nuevas experiencias sin prejuicios. Aprendes mejor enfrentándote a retos, participando activamente y trabajando en equipo.",
         reflexivo: "Eres observador, analítico y prudente. Prefieres reunir datos, escuchando a los demás antes de actuar o tomar una decisión. Aprendes mejor cuando tienes tiempo para pensar y asimilar la información.",
-        teorico: "Eres lógico, objetivo y metódico. Te gusta integrar los hechos en teorías coherentes y complejas. Aprendes mejor con modelos, conceptos teóricos y sistemas lógicos.",
-        pragmatico: "Eres práctico, realista y directo. Te gusta probar ideas, teorías y técnicas nuevas para comprobar si funcionan en la práctica. Aprendes mejor con actividades directamente relacionadas a tu labor."
+        teorico: "Eres lógico, objetivo y metódico. Te gusta integrar los hechos en Theorys coherentes y complejas. Aprendes mejor con modelos, conceptos teóricos y sistemas lógicos.",
+        pragmatico: "Eres práctico, realista y directo. Te gusta probar ideas, Theorys y técnicas nuevas para comprobar si funcionan en la práctica. Aprendes mejor con actividades directamente relacionadas a tu labor."
     };
     
     const recs = {
-        activo: "<li><b>Experimenta con el simulador:</b> Interactúa con las cargas en PhET antes de leer la teoría.</li><li><b>Gamificación:</b> Participa activamente en los retos cognitivos y crucigramas.</li><li><b>Evita lecturas muy largas:</b> Divide el estudio en sesiones dinámicas y prácticas.</li>",
-        reflexivo: "<li><b>Bóveda Obsidian:</b> Utiliza y expande tu grafo de conocimiento tomando notas detalladas.</li><li><b>Análisis de Casos:</b> Reflexiona sobre los experimentos históricos como la balanza de Coulomb.</li><li><b>Tómate tu tiempo:</b> Revisa las clases grabadas y pausa para entender cada deducción matemática.</li>",
-        teorico: "<li><b>Formulario Matemático:</b> Dedica tiempo a entender las deducciones del Calculation Vectorial aplicadas a Maxwell.</li><li><b>Lecturas rigurosas:</b> Profundiza en las definiciones exactas del Glosario.</li><li><b>Busca la estructura:</b> Entiende el 'por qué' de cada fórmula antes de usarla.</li>",
-        pragmatico: "<li><b>Exercises Aplicados:</b> Enfócate en los problemas reales y el 'Tutor por Cámara' para validar tus soluciones.</li><li><b>Menos teoría, más práctica:</b> Aplica las ecuaciones de inmediato a circuitos o problemas de campo.</li><li><b>Busca utilidades:</b> Relaciona la teoría electromagnética con tecnologías reales (motores, antenas).</li>"
+        activo: "<li><b>Experimenta con el Simulator:</b> Interactúa con las Charges en PhET antes de leer la Theory.</li><li><b>Gamificación:</b> Participa activamente en los retos cognitivos y crucigramas.</li><li><b>Evita lecturas muy largas:</b> Divide el estudio en sesiones dinámicas y prácticas.</li>",
+        reflexivo: "<li><b>Bóveda Obsidian:</b> Utiliza y expande tu grafo de conocimiento tomando notas detalladas.</li><li><b>Análisis de Casos:</b> Reflexiona sobre los experimentos históricos como la balanza de Coulomb.</li><li><b>Tómate tu tiempo:</b> Revisa las clases grabadas y Pause para entender cada deducción matemática.</li>",
+        teorico: "<li><b>Formulario Matemático:</b> Dedica tiempo a entender las deducciones del Calculation Vectorial aplicadas a Maxwell.</li><li><b>Lecturas rigurosas:</b> Profundiza en las defHomenes exactas del Glossary.</li><li><b>Busca la estructura:</b> Entiende el 'por qué' de cada Formula antes de usarla.</li>",
+        pragmatico: "<li><b>Exercises Aplicados:</b> Enfócate en los problemas reales y el 'Tutor por Cámara' para validar tus soluciones.</li><li><b>Menos Theory, más práctica:</b> Aplica las Equations de inmediato a circuitos o problemas de campo.</li><li><b>Busca utilidades:</b> Relaciona la Theory electromagnética con tecnologías reales (motores, antenas).</li>"
     };
     
     document.getElementById('chaea-res-dom').innerText = dominante.charAt(0).toUpperCase() + dominante.slice(1);
@@ -262,7 +262,7 @@ function mostrarResults(scores, dominante) {
     }
 };
 
-window.cerrarYGuardarChaea = async function() {
+window.CloseYGuardarChaea = async function() {
     document.getElementById('chaea-modal').style.display = 'none';
     
     // Si hay usuario logueado, guardar en la nube
@@ -287,7 +287,7 @@ window.cerrarYGuardarChaea = async function() {
         window.cargarResultsChaeaPerfil();
     }
     
-    // Verificar si estamos en el módulo cero
+    // Verify si estamos en el Module cero
     if (document.getElementById('content-header') && document.getElementById('content-header').innerText.includes('Presaberes')) {
         document.getElementById('btn-finalizar-modulo').disabled = false;
         document.getElementById('btn-finalizar-modulo').classList.remove('btn-locked');

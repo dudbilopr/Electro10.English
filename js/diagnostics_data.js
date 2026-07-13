@@ -1,15 +1,15 @@
 // diagnostics_data.js
-// Contiene la base de datos de preguntas y lógica de cruce científico para Kolb e Inteligencias Múltiples
+// Contiene la base de datos de Questions y lógica de cruce científico para Kolb e Inteligencias Múltiples
 
 export const KOLB_QUESTIONS = [
     { id: 1, title: "Cuando aprendo:", a: "Prefiero valerme de mis sensaciones y sentimientos", b: "Prefiero mirar y atender", c: "Prefiero pensar en las ideas", d: "Prefiero hacer cosas" },
-    { id: 2, title: "Aprendo mejor cuando:", a: "Confío en mis corazonadas y sentimientos", b: "Atiendo y observo cuidadosamente", c: "Confío en mis pensamientos lógicos", d: "Trabajo duramente para que las cosas queden realizadas" },
+    { id: 2, title: "Aprendo mejor cuando:", a: "Confío en mis corazonadas y sentimientos", b: "Atiendo y observo cuidadosamente", c: "Confío en mis pensamientos lógicos", d: "Work duramente para que las cosas queden realizadas" },
     { id: 3, title: "Cuando estoy aprendiendo:", a: "Tengo sentimientos y reacciones fuertes", b: "Soy reservado y tranquilo", c: "Busco razonar sobre las cosas que están sucediendo", d: "Me siento responsable de las cosas" },
     { id: 4, title: "Aprendo a través de:", a: "Sentimientos", b: "Observaciones", c: "Razonamientos", d: "Acciones" },
     { id: 5, title: "Cuando aprendo:", a: "Estoy abierto a nuevas experiencias", b: "Tomo en cuenta todos los aspectos relacionados", c: "Prefiero analizar las cosas dividiéndolas en sus partes componentes", d: "Prefiero hacer las cosas directamente" },
     { id: 6, title: "Cuando estoy aprendiendo:", a: "Soy una persona intuitiva", b: "Soy una persona observadora", c: "Soy una persona lógica", d: "Soy una persona activa" },
     { id: 7, title: "Aprendo mejor a través de:", a: "Las relaciones con mis compañeros", b: "La observación", c: "Theorys racionales", d: "La práctica de los temas tratados" },
-    { id: 8, title: "Cuando aprendo:", a: "Me siento involucrado en los temas tratados", b: "Me tomo mi tiempo antes de actuar", c: "Prefiero las teorías y las ideas", d: "Prefiero ver los resultados a través de mi propio trabajo" },
+    { id: 8, title: "Cuando aprendo:", a: "Me siento involucrado en los temas tratados", b: "Me tomo mi tiempo antes de actuar", c: "Prefiero las Theorys y las ideas", d: "Prefiero ver los Results a través de mi propio Work" },
     { id: 9, title: "Aprendo mejor cuando:", a: "Me baso en mis intuiciones y sentimientos", b: "Me baso en observaciones personales", c: "Tomo en cuenta mis propias ideas sobre el tema", d: "Pruebo personalmente la tarea" },
     { id: 10, title: "Cuando estoy aprendiendo:", a: "Soy una persona abierta", b: "Soy una persona reservada", c: "Soy una persona racional", d: "Soy una persona responsable" },
     { id: 11, title: "Cuando aprendo:", a: "Me involucro", b: "Prefiero observar", c: "Prefiero evaluar las cosas", d: "Prefiero asumir una actitud activa" },
@@ -37,7 +37,7 @@ export const MI_QUESTIONS = [
     "Me gusta reunir grupos de personas en una fiesta o evento especial.",
     "Realmente la vida me parece vacía sin música.",
     "Siempre entiendo los gráficos que vienen en las instrucciones de equipos o instrumentos.",
-    "Me gusta resolver puzzles y entretenerme con juegos electrónicos.",
+    "Me gusta resolver puzzles y entretenerme con games electrónicos.",
     "Me fue fácil aprender a andar en bicicleta o patines.",
     "Me enojo cuando escucho una discusión o una afirmación que me parece ilógica o absurda.",
     "Soy capaz de convencer a otros que sigan mis planes o ideas.",
@@ -46,7 +46,7 @@ export const MI_QUESTIONS = [
     "Me gusta construir modelos, maquetas o hacer esculturas.",
     "Soy bueno para encontrar el significado preciso de las palabras.",
     "Puedo mirar un objeto de una manera y con la misma facilidad verlo dado vuelta o al revés.",
-    "Con frecuencia establezco la relación que puede haber entre una música o canción y algo que haya ocurrido en mi vida.",
+    "Con Frequency establezco la relación que puede haber entre una música o canción y algo que haya ocurrido en mi vida.",
     "Me gusta trabajar con números y figuras.",
     "Me gusta sentarme muy callado y pensar, reflexionar sobre mis sentimientos más íntimos.",
     "Solamente con mirar las formas de las construcciones y estructuras me siento a gusto.",
@@ -88,7 +88,7 @@ export function analyzeHolisticProfile(chaeaDominant, kolbDominant, topMI) {
     
     const isCongruent = (congruencia[chaeaDominant] === kolbDominant);
     if (!isCongruent) {
-        warnings.push(`Tus respuestas en el test CHAEA indican un perfil predominante **${chaeaDominant.toUpperCase()}**, pero en el ciclo de Kolb procesas más como **${kolbDominant.toUpperCase()}**. Esto sugiere alta flexibilidad cognitiva o que tiendes a comportarte diferente dependiendo de si estás en el aula o en un laboratorio práctico.`);
+        warnings.push(`Tus Answers en el test CHAEA indican un perfil predominante **${chaeaDominant.toUpperCase()}**, pero en el ciclo de Kolb procesas más como **${kolbDominant.toUpperCase()}**. Esto sugiere alta flexibilidad cognitiva o que tiendes a comportarte diferente dependiendo de si estás en el aula o en un laboratorio práctico.`);
     } else {
         warnings.push(`Existe una alta congruencia en tu perfil de procesamiento: Eres sólidamente **${kolbDominant.toUpperCase()} / ${chaeaDominant.toUpperCase()}**. Tu estilo de asimilar la información está muy definido.`);
     }
@@ -97,7 +97,7 @@ export function analyzeHolisticProfile(chaeaDominant, kolbDominant, topMI) {
     if (kolbDominant === "acomodador" || chaeaDominant === "activo") {
         let advice = "Dado que eres de perfil Acomodador/Activo, necesitas acción.";
         if (topMI.includes("cinestesica")) {
-            advice += " Con tu alta Inteligencia Cinestésica, **DEBES** construir circuitos físicos reales o usar guantes hápticos. Evita leer PDFs por más de 15 minutos sin interactuar con un simulador.";
+            advice += " Con tu alta Inteligencia Cinestésica, **DEBES** construir circuitos Physicals reales o usar guantes hápticos. Evita leer PDFs por más de 15 minutos sin interactuar con un Simulator.";
         } else if (topMI.includes("interpersonal")) {
             advice += " Tu inteligencia Interpersonal sugiere que el aprendizaje basado en roles (ej. explicar un experimento a un compañero) disparará tu retención al máximo.";
         }
@@ -107,7 +107,7 @@ export function analyzeHolisticProfile(chaeaDominant, kolbDominant, topMI) {
     if (kolbDominant === "asimilador" || chaeaDominant === "teorico") {
         let advice = "Como Asimilador/Teórico, tu cerebro busca la elegancia y la estructura del electromagnetismo.";
         if (topMI.includes("logica")) {
-            advice += " Con tu predominancia Lógico-Matemática, tu camino al éxito es entender las ecuaciones de Maxwell a profundidad antes de memorizar nada. Demuestra las fórmulas.";
+            advice += " Con tu predominancia Lógico-Matemática, tu camino al éxito es entender las Equations de Maxwell a profundidad antes de memorizar nada. Demuestra las Formulas.";
         } else if (topMI.includes("intrapersonal")) {
             advice += " Dedica tiempo a la 'Bóveda Obsidian'. Estructurar un mapa mental privado con tus propias reflexiones es clave para ti.";
         }
@@ -115,9 +115,9 @@ export function analyzeHolisticProfile(chaeaDominant, kolbDominant, topMI) {
     }
     
     if (kolbDominant === "convergente" || chaeaDominant === "pragmatico") {
-        let advice = "Tu perfil Convergente/Pragmático requiere que la teoría sirva para algo tangible.";
+        let advice = "Tu perfil Convergente/Pragmático requiere que la Theory sirva para algo tangible.";
         if (topMI.includes("visual")) {
-            advice += " Tu alta inteligencia Visual/Espacial significa que debes diagramar los problemas. Dibuja los vectores de campo eléctrico o usa código computacional para graficar.";
+            advice += " Tu alta inteligencia Visual/Espacial significa que debes diagramar los problemas. Dibuja los vectores de Electric Field o usa código computacional para graficar.";
         } else {
             advice += " Busca inmediatamente la aplicación tecnológica de cada ley física. Resuelve problemas numéricos antes de cuestionar la filosofía detrás de ellos.";
         }
@@ -129,7 +129,7 @@ export function analyzeHolisticProfile(chaeaDominant, kolbDominant, topMI) {
         if (topMI.includes("musical") || topMI.includes("verbal")) {
             advice += " Eres muy sensible a las narrativas y patrones sonoros. Aprovecha las analogías históricas (los debates de Faraday y Maxwell) o escucha música instrumental al abstraer los conceptos para aumentar tu enfoque.";
         } else {
-            advice += " Tómate tu tiempo. Es preferible que leas diferentes fuentes y discutas el tema en foros antes de intentar resolver ecuaciones a ciegas.";
+            advice += " Tómate tu tiempo. Es preferible que leas diferentes fuentes y discutas el tema en foros antes de intentar resolver Equations a ciegas.";
         }
         consejos.push(advice);
     }

@@ -1,5 +1,5 @@
 // ============================================================
-// ARCHIVO DE CONFIGURACIÓN PRIVADA — NO SUBIR A GIT
+// ARCHIVO DE Configuration PRIVADA — NO SUBIR A GIT
 // Este archivo está en .gitignore
 //
 // ⚠️  SEGURIDAD: Aunque estas claves sean visibles para el

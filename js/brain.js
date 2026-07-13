@@ -1,20 +1,20 @@
 // brain.js
-// Motor del "Cerebro del Estudiante" (Grafo Visual, Herramientas, Juegos y Cámara IA)
+// Motor del "Cerebro del Student" (Grafo Visual, Tools, Games y Cámara IA)
 
 // ── Datos Estáticos del Cerebro ──────────────────────────────
 const cerebroDatos = {
-    glosario: [
-        { termino: "Carga Eléctrica", definicion: "Propiedad física intrínseca de algunas partículas subatómicas que se manifiesta mediante fuerzas de atracción y repulsión." },
-        { termino: "Electric Field", definicion: "Región del espacio donde una carga eléctrica experimenta una fuerza eléctrica." },
-        { termino: "Coulomb\'s Law", definicion: "Establece que la fuerza eléctrica entre dos cargas puntuales es directamente proporcional al producto de las cargas e inversamente proporcional al cuadrado de la distancia que las separa." },
-        { termino: "Electric Potential", definicion: "Energía potencial eléctrica por unidad de carga en un punto de un campo eléctrico." },
-        { termino: "Capacitance", definicion: "Capacidad de un componente o circuito para recoger y almacenar energía en forma de carga eléctrica." }
+    Glossary: [
+        { termino: "Electric Charge", defHomen: "Propiedad física intrínseca de algunas partículas subatómicas que se manifiesta mediante Forces de atracción y repulsión." },
+        { termino: "Electric Field", defHomen: "Región del espacio donde una Electric Charge experimenta una Force eléctrica." },
+        { termino: "Coulomb\'s Law", defHomen: "Establece que la Force eléctrica entre dos Charges puntuales es directamente proporcional al producto de las Charges e inversamente proporcional al cuadrado de la Distance que las separa." },
+        { termino: "Electric Potential", defHomen: "Energy Powerl eléctrica por unidad de carga en un punto de un Electric Field." },
+        { termino: "Capacitance", defHomen: "Capacidad de un componente o circuito para recoger y almacenar Energy en forma de Electric Charge." }
     ],
     formulas: [
         { nombre: "Force de Coulomb", eq: "$$ F = k_e \\frac{|q_1 q_2|}{r^2} $$" },
         { nombre: "Electric Field (Puntual)", eq: "$$ E = k_e \\frac{|q|}{r^2} $$" },
         { nombre: "Electric Potential", eq: "$$ V = k_e \\frac{q}{r} $$" },
-        { nombre: "Energía Potential Eléctrica", eq: "$$ U = k_e \\frac{q_1 q_2}{r} $$" },
+        { nombre: "Energy Potential Eléctrica", eq: "$$ U = k_e \\frac{q_1 q_2}{r} $$" },
         { nombre: "Ley de Ohm", eq: "$$ V = I \\cdot R $$" }
     ],
     constantes: [
@@ -25,17 +25,17 @@ const cerebroDatos = {
         { simbolo: "m_p", valor: "1.672 × 10⁻²⁷ kg", nombre: "Masa del Protón" }
     ],
     cientificos: [
-        { nombre: "Charles-Augustin de Coulomb", epoca: "1736 - 1806", aporte: "Formuló la ley que describe la fuerza entre cargas eléctricas (Coulomb\'s Law). Inventó la balanza de torsión." },
-        { nombre: "Michael Faraday", epoca: "1791 - 1867", aporte: "Descubrió la inducción electromagnética, el diamagnetismo y la electrólisis. Introdujo el concepto de 'Líneas de campo'." },
-        { nombre: "James Clerk Maxwell", epoca: "1831 - 1879", aporte: "Unificó la electricidad y el magnetismo en su famosa teoría electromagnética (Maxwell\'s Equations), demostrando que la luz es una onda electromagnética." },
-        { nombre: "Alessandro Volta", epoca: "1745 - 1827", aporte: "Inventó la pila voltaica, la primera batería química, proporcionando la primera fuente continua de corriente eléctrica." },
+        { nombre: "Charles-Augustin de Coulomb", epoca: "1736 - 1806", aporte: "Formuló la ley que describe la Force entre Electric Charges (Coulomb\'s Law). Inventó la balanza de torsión." },
+        { nombre: "Michael Faraday", epoca: "1791 - 1867", aporte: "Descubrió la Induction electromagnética, el diamagnetismo y la electrólisis. Introdujo el concepto de 'Field Lines'." },
+        { nombre: "James Clerk Maxwell", epoca: "1831 - 1879", aporte: "Unificó la electricidad y el magnetismo en su famosa Theory electromagnética (Maxwell\'s Equations), demostrando que la luz es una Electromagnetic Wave." },
+        { nombre: "Alessandro Volta", epoca: "1745 - 1827", aporte: "Inventó la pila voltaica, la primera batería química, proporcionando la primera fuente continua de Current eléctrica." },
         { nombre: "Heinrich Hertz", epoca: "1857 - 1894", aporte: "Demostró experimentalmente la existencia de las ondas electromagnéticas teorizadas por Maxwell." }
     ],
     experimentos: [
-        { nombre: "Balanza de Torsión (Coulomb)", año: "1785", descripcion: "Midió con precisión la fuerza de repulsión y atracción electrostática entre cargas puntuales, estableciendo la dependencia de la inversa del cuadrado de la distancia." },
-        { nombre: "Experimento de la Cometa (Franklin)", año: "1752", descripcion: "Demostró que los rayos son descargas eléctricas al volar una cometa durante una tormenta, recolectando carga en una botella de Leyden." },
-        { nombre: "Descubrimiento de la Inducción (Faraday)", año: "1831", descripcion: "Usó un anillo de hierro y dos bobinas. Al encender/apagar la batería de un lado, observó una corriente transitoria en el otro, probando que un campo magnético cambiante induce un campo eléctrico." },
-        { nombre: "El Experimento de Oersted", año: "1820", descripcion: "Hans Christian Ørsted notó que la aguja de una brújula se desviaba cerca de un cable con corriente, descubriendo por primera vez la relación entre electricidad y magnetismo." },
+        { nombre: "Balanza de Torsión (Coulomb)", año: "1785", descripcion: "Midió con precisión la Force de repulsión y atracción electrostática entre Charges puntuales, estableciendo la dependencia de la inversa del cuadrado de la Distance." },
+        { nombre: "Experimento de la Cometa (Franklin)", año: "1752", descripcion: "Demostró que los rayos son desElectric Charges al volar una cometa durante una tormenta, recolectando carga en una botella de Leyden." },
+        { nombre: "Descubrimiento de la Induction (Faraday)", año: "1831", descripcion: "Usó un anillo de hierro y dos bobinas. Al encender/apagar la batería de un lado, observó una Current transitoria en el otro, probando que un campo magnético cambiante induce un Electric Field." },
+        { nombre: "El Experimento de Oersted", año: "1820", descripcion: "Hans Christian Ørsted notó que la aguja de una brújula se desviaba cerca de un cable con Current, descubriendo por primera vez la relación entre electricidad y magnetismo." },
         { nombre: "Gotas de Aceite de Millikan", año: "1909", descripcion: "Robert Millikan y Harvey Fletcher midieron la carga elemental (la carga del electrón) balanceando gotas de aceite cargadas entre campos eléctricos y gravitacionales." }
     ]
 };
@@ -46,7 +46,7 @@ let cameraStream = null;
 
 // ── Grafo Visual (Vis-Network) ───────────────────────────────
 window.initBrainGraph = function() {
-    renderGlosario();
+    renderGlossary();
     renderFormulas();
     renderConstantes();
     renderHistoria();
@@ -87,22 +87,22 @@ date: ${new Date().toISOString().split('T')[0]}
 ${notaContent}
 
 ## Enlaces Relacionados
-- [[Glosario]]
+- [[Glossary]]
 - [[Formulario Master]]
 `;
             notasFolder.file(`${leccionId}.md`, mdContent);
         }
     }
     
-    // 2. Glosario Maestro
-    let glosarioMd = `# Glosario de Electromagnetismo\n\n`;
-    cerebroDatos.glosario.forEach(item => {
-        glosarioMd += `## ${item.termino}\n${item.definicion}\n\n`;
+    // 2. Glossary Maestro
+    let GlossaryMd = `# Glossary de Electromagnetismo\n\n`;
+    cerebroDatos.Glossary.forEach(item => {
+        GlossaryMd += `## ${item.termino}\n${item.defHomen}\n\n`;
     });
-    vault.file("Glosario.md", glosarioMd);
+    vault.file("Glossary.md", GlossaryMd);
 
     // 3. Formulas Maestro
-    let formulasMd = `# Formulas y Ecuaciones\n\n`;
+    let formulasMd = `# Formulas y Equations\n\n`;
     cerebroDatos.formulas.forEach(item => {
         formulasMd += `### ${item.nombre}\n${item.eq}\n\n`;
     });
@@ -122,7 +122,7 @@ ${notaContent}
     // 5. Index (Home)
     const homeMd = `# Bóveda Electro10: ${new Date().getFullYear()}
 Bienvenido a tu segundo cerebro de física.
-- Revisa tus [[Glosario]]
+- Revisa tus [[Glossary]]
 - Revisa tu [[Formulario Master]]
 - Conoce la [[Historia y Experimentos]]
 
@@ -157,12 +157,12 @@ Esta bóveda fue autogenerada por tu **Tutor IA**.`;
     // Nodos de Electromagnetismo (Inspirados en el currículo)
     const nodes = new vis.DataSet([
         { id: 1, label: 'Electromagnetismo', group: 'core', value: 30 },
-        { id: 2, label: 'Carga Eléctrica', group: 'done', value: 20 },
+        { id: 2, label: 'Electric Charge', group: 'done', value: 20 },
         { id: 3, label: 'Coulomb\'s Law', group: 'done', value: 20 },
         { id: 4, label: 'Electric Field', group: 'doing', value: 25 },
         { id: 5, label: 'Electric Potential', group: 'todo', value: 15 },
         { id: 6, label: 'Capacitance', group: 'todo', value: 15 },
-        { id: 7, label: 'Corriente y Resistencia', group: 'todo', value: 15 },
+        { id: 7, label: 'Current y Resistance', group: 'todo', value: 15 },
         { id: 8, label: 'Circuitos DC', group: 'todo', value: 15 },
         { id: 9, label: 'Campo Magnético', group: 'todo', value: 20 }
     ]);
@@ -217,14 +217,14 @@ Esta bóveda fue autogenerada por tu **Tutor IA**.`;
     network = new vis.Network(container, data, options);
 };
 
-// ── Renderizado de Herramientas ──────────────────────────────
-function renderGlosario() {
-    const list = document.getElementById('brain-glosario-list');
+// ── Renderizado de Tools ──────────────────────────────
+function renderGlossary() {
+    const list = document.getElementById('brain-Glossary-list');
     if(!list) return;
-    list.innerHTML = cerebroDatos.glosario.map(item => `
+    list.innerHTML = cerebroDatos.Glossary.map(item => `
         <div style="background: var(--bg-main); padding: 10px; border-radius: 8px; border-left: 3px solid var(--accent);">
             <strong style="color: var(--text-high);">${item.termino}</strong>
-            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-medium);">${item.definicion}</p>
+            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-medium);">${item.defHomen}</p>
         </div>
     `).join('');
 }
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
         const base64Image = dataUrl.split(',')[1];
         
-        // Pause video y mostrar loading
+        // Pause video y Show loading
         video.pause();
         feedbackBox.innerHTML = `<div style="display:flex; flex-direction:column; align-items:center; gap:10px; padding: 20px;">
             <div class="material-symbols-outlined animate-pulse" style="font-size:40px; color:var(--accent);">smart_toy</div>
@@ -346,14 +346,14 @@ async function evaluarConGeminiVision(base64Image, feedbackBox) {
     try {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
         
-        const systemPrompt = `Eres un Profesor Experto en Electromagnetismo y Física. 
-El estudiante te está enviando una foto de su cuaderno con un ejercicio resuelto o un problema.
+        const systemPrompt = `Eres un Professor Experto en Electromagnetismo y Física. 
+El Student te está enviando una foto de su cuaderno con un ejercicio resuelto o un problema.
 Tu tarea es:
 1. Leer y transcribir mentalmente el contenido.
-2. Identificar si el procedimiento matemático y los conceptos físicos son correctos.
-3. Si hay errores, indícalos de manera constructiva y pedagógica, SIN darle la respuesta final (guíalo al descubrimiento).
-4. Usa lenguaje motivador. Puedes usar markdown y KaTeX (bloques $$ $$) para las fórmulas.
-Estructura tu respuesta con un saludo, un análisis paso a paso y una conclusión/pista.`;
+2. Identificar si el procedimiento matemático y los conceptos Physicals son Corrects.
+3. Si hay errores, indícalos de manera constructiva y pedagógica, SIN darle la Answer final (guíalo al descubrimiento).
+4. Usa lenguaje motivador. Puedes usar markdown y KaTeX (bloques $$ $$) para las Formulas.
+Estructura tu Answer con un saludo, un análisis paso a paso y una Conclusion/pista.`;
 
         const payload = {
             contents: [
@@ -390,14 +390,14 @@ Estructura tu respuesta con un saludo, un análisis paso a paso y una conclusió
     }
 }
 
-// ── Lógica de Juegos (Asociación Cognitiva) ────────────────────────
+// ── Lógica de Games (Asociación Cognitiva) ────────────────────────
 let gameDataA = [];
 let gameDataB = [];
 let selectedA = null;
 let selectedB = null;
 let gameScore = 0;
 
-window.iniciarJuegoAsociacion = function() {
+window.iniciarGameAsociacion = function() {
     document.getElementById('game-panel').style.display = 'block';
     const colA = document.getElementById('game-col-a');
     const colB = document.getElementById('game-col-b');
@@ -413,7 +413,7 @@ window.iniciarJuegoAsociacion = function() {
     selectedA = null;
     selectedB = null;
 
-    const pool = [...cerebroDatos.glosario.map(i => ({...i, tipo: 'def'})), ...cerebroDatos.formulas.map(i => ({...i, tipo: 'eq'}))];
+    const pool = [...cerebroDatos.Glossary.map(i => ({...i, tipo: 'def'})), ...cerebroDatos.formulas.map(i => ({...i, tipo: 'eq'}))];
     const shuffledPool = pool.sort(() => 0.5 - Math.random()).slice(0, 5);
     
     gameDataA = [];
@@ -421,7 +421,7 @@ window.iniciarJuegoAsociacion = function() {
     
     shuffledPool.forEach((item, index) => {
         gameDataA.push({ id: index, text: item.termino || item.nombre });
-        gameDataB.push({ id: index, text: item.definicion || item.eq, isMath: item.tipo === 'eq' });
+        gameDataB.push({ id: index, text: item.defHomen || item.eq, isMath: item.tipo === 'eq' });
     });
     
     gameDataB.sort(() => 0.5 - Math.random());

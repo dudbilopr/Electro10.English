@@ -12,7 +12,7 @@ with open(r'c:\Users\dudbi\Downloads\Curso_Introduccion_CDAT\index.html', encodi
 original_len = len(content)
 changes = []
 
-# ─── 1) Reemplazar head hasta cerrar <script de sweetalert ─────────────────
+# ─── 1) Reemplazar head hasta Close <script de sweetalert ─────────────────
 # Buscar la sección del head (antes del <style>)
 head_pattern = re.compile(
     r'<!DOCTYPE html>.*?<script src="https://cdn\.jsdelivr\.net/npm/sweetalert2@11"></script>',
@@ -28,7 +28,7 @@ new_head = '''<!DOCTYPE html>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plataforma educativa interactiva para el curso de Electromagnetismo. Videos, simuladores y evaluaciones.">
+    <meta name="description" content="Plataforma educativa interactiva para el curso de Electromagnetismo. Videos, Simulatores y evaluaciones.">
     <title>Electro10.easy | Plataforma Educativa</title>
 
     <!-- Fuentes Google: Inter y Material Symbols -->
@@ -51,7 +51,7 @@ if match:
 else:
     changes.append('HEAD no encontrado (revisar)')
 
-# ─── 2) Eliminar bloque <style>...</style> ─────────────────────────────────
+# ─── 2) Remove bloque <style>...</style> ─────────────────────────────────
 style_pattern = re.compile(r'\s*<style>.*?</style>', re.DOTALL)
 content, n = style_pattern.subn('', content, count=1)
 changes.append(f'Bloque <style> eliminado: {n} ocurrencia(s)')

@@ -1,26 +1,26 @@
 // ============================================================
 // js/curriculum.js
 // Inicializa y renderiza el currículo en el sidebar.
-// Importa los módulos desde modulos/ y construye el menú.
+// Importa los Modules desde modules/ y construye el menú.
 // ============================================================
 import { getIconForType, loadContent } from './content-loader.js';
 
 export let curriculoData = null;
 export let totalLessons  = 0;
 
-// ── Carga el currículo desde modulos/ ──────────────────────
+// ── Carga el currículo desde modules/ ──────────────────────
 export async function inicializarEstructuraBase(progressData) {
     try {
-        const modulo = await import('../modulos/curriculo.js');
+        const modulo = await import('../modules/curriculo.js');
         curriculoData = modulo.curriculoData;
     } catch (error) {
         console.warn('No se pudo importar el currículo externo. Usando respaldo mínimo.');
         curriculoData = {
-            modulos: [{
-                titulo: 'Módulo 1: Electrostática - Coulomb\'s Law',
+            modules: [{
+                titulo: 'Module 1: Electrostática - Coulomb\'s Law',
                 lecciones: [
                     { id: 'm1-l1', tipo: 'multivideo', recurso: 'xLyRPFL0GJ8|mrCyjv9lf3I', titulo: '1. Theory: Coulomb\'s Law', descripcion: 'Selecciona la parte en el panel derecho.', llmLink: 'https://notebooklm.google.com/notebook/37622815-4b54-4808-b770-37464cb05719' },
-                    { id: 'm1-l2', tipo: 'multipresentacion', recurso: './player.html?clase=1|./player.html?clase=1', titulo: '2. Diapositivas de Apoyo', descripcion: 'Material visual utilizado en la clase magistral.' }
+                    { id: 'm1-l2', tipo: 'multipresentacion', recurso: './player.html?clase=1|./player.html?clase=1', titulo: '2. Slides de Apoyo', descripcion: 'Material visual utilizado en la clase magistral.' }
                 ]
             }]
         };
@@ -29,11 +29,11 @@ export async function inicializarEstructuraBase(progressData) {
     const sidebar = document.getElementById('menu-content-area');
     totalLessons  = 0;
 
-    curriculoData.modulos.forEach((modulo, index) => {
+    curriculoData.modules.forEach((modulo, index) => {
         const moduleWrapper = document.createElement('div');
         moduleWrapper.className = 'module-wrapper';
 
-        let mainTitle = modulo.titulo, subLabel = `Módulo ${index + 1}`;
+        let mainTitle = modulo.titulo, subLabel = `Module ${index + 1}`;
         if (modulo.titulo.includes(': ')) {
             const p = modulo.titulo.split(': ');
             subLabel  = p[0];

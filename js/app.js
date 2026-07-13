@@ -1,6 +1,6 @@
 // ============================================================
 // js/app.js — Orquestador Principal
-// Importa todos los módulos, inicializa el estado compartido
+// Importa todos los Modules, inicializa el estado compartido
 // y registra las funciones en window para el HTML inline.
 // ============================================================
 
@@ -9,13 +9,13 @@ import { db }                                   from './firebase.js';
 import { APP_ID }                               from '../config/firebase.config.js';
 import { doc, setDoc, increment }               from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 import { auth }                                 from './firebase.js';
-import { iniciarSesion, registrarUsuario, iniciarSesionConGoogle, cerrarSesion, inicializarAuthObserver } from './auth.js';
-import { toggleSidebar, toggleTheme, toggleChat, abrirModalAuth, mostrarNotificaciones, cambiarTab, resetNav, mostrarDashboardEstudiante, mostrarCalendario, mostrarPerfil, mostrarLaboratorios, mostrarCerebro, cambiarTabCerebro, abrirPanelAdmin, actualizarAvatarUI, aplicarTemaGuardado, injectUIState, toggleFocusMode } from './ui.js';
+import { iniciarSesion, registrarUsuario, iniciarSesionConGoogle, CloseSesion, inicializarAuthObserver } from './auth.js';
+import { toggleSidebar, toggleTheme, toggleChat, OpenModalAuth, ShowNotificaciones, cambiarTab, resetNav, ShowDashboardStudent, ShowCalendario, ShowPerfil, ShowLaboratorios, ShowCerebro, cambiarTabCerebro, OpenPanelAdmin, actualizarAvatarUI, aplicarTemaGuardado, injectUIState, toggleFocusMode } from './ui.js';
 import { inicializarEstructuraBase }            from './curriculum.js';
 import { loadContent, guardarEval, guardarNotas, guardarProgresoNube, getIconForType } from './content-loader.js';
-import { actualizarGraficosEstudiante }         from './charts.js';
+import { actualizarGraficosStudent }         from './charts.js';
 import { guardarPerfil, cargarDatosPerfil, cambiarModoVistaAdmin, guardarRitmo, guardarEncuestaSemanal } from './profile.js';
-import { cargarDirectorioAdminFirebase, verDetalleEstudiante, cambiarRolUsuario, guardarAjustesCalendario } from './admin.js';
+import { cargarDirectorioAdminFirebase, verDetalleStudent, cambiarRolUsuario, guardarAjustesCalendario } from './admin.js';
 
 // ── Estado Global Compartido ─────────────────────────────────
 const progressData   = {};
@@ -62,7 +62,7 @@ window.addEventListener('message', async (event) => {
             }
             await guardarProgresoNube(lessonId);
             Swal.fire({ title: '¡Objetivo Alcanzado!', text: data.mensaje || 'Has completado esta actividad.', icon: 'success', toast: true, position: 'top-end', showConfirmButton: false, timer: 4000 });
-            actualizarGraficosEstudiante(Object.keys(progressData).length, totalLessons, progressData, evalData, timeData, curriculoData);
+            actualizarGraficosStudent(Object.keys(progressData).length, totalLessons, progressData, evalData, timeData, curriculoData);
         }
     }
     if (data.action === 'enviarNotaCognitiva' && data.score) {
@@ -75,7 +75,7 @@ window.actualizarContenidoDashboard = () => {
     if (!curriculoData) return;
     let nextLesson = null, nextLi = null;
     outer:
-    for (const mod of curriculoData.modulos) {
+    for (const mod of curriculoData.modules) {
         for (const lec of mod.lecciones) {
             const items = lec.tipo === 'grupo' ? lec.sublecciones : [lec];
             for (const item of items) {
@@ -106,30 +106,30 @@ window.actualizarContenidoDashboard = () => {
     } else {
         c.innerHTML = '<div style="background:rgba(16,185,129,0.2);color:#fff;padding:15px;border-radius:10px;"><span class="material-symbols-outlined" style="vertical-align:bottom;">workspace_premium</span> ¡Has completado todas las exploraciones disponibles!</div>';
     }
-    actualizarGraficosEstudiante(Object.keys(progressData).length, totalLessons, progressData, evalData, timeData, curriculoData);
+    actualizarGraficosStudent(Object.keys(progressData).length, totalLessons, progressData, evalData, timeData, curriculoData);
     generarDashboardGamificado(); // Actualiza consejos con base en tiempo/progreso
 };
 
-// ── Exposición en window (llamadas desde HTML) ───────────────
+// ── ExPosition en window (llamadas desde HTML) ───────────────
 window.toggleSidebar             = toggleSidebar;
 window.toggleTheme               = toggleTheme;
 window.toggleChat                = toggleChat;
-window.abrirModalAuth            = abrirModalAuth;
-window.mostrarNotificaciones     = mostrarNotificaciones;
+window.OpenModalAuth            = OpenModalAuth;
+window.ShowNotificaciones     = ShowNotificaciones;
 window.cambiarTab                = cambiarTab;
-window.mostrarDashboardEstudiante = mostrarDashboardEstudiante;
-window.mostrarCalendario         = () => { injectUIState({ progressData, curriculoData, totalLessons }); mostrarCalendario(); };
-window.mostrarPerfil             = mostrarPerfil;
-window.mostrarLaboratorios       = mostrarLaboratorios;
-window.mostrarCerebro            = mostrarCerebro;
+window.ShowDashboardStudent = ShowDashboardStudent;
+window.ShowCalendario         = () => { injectUIState({ progressData, curriculoData, totalLessons }); ShowCalendario(); };
+window.ShowPerfil             = ShowPerfil;
+window.ShowLaboratorios       = ShowLaboratorios;
+window.ShowCerebro            = ShowCerebro;
 window.cambiarTabCerebro         = cambiarTabCerebro;
 window.toggleFocusMode           = toggleFocusMode;
-window.abrirPanelAdmin           = () => abrirPanelAdmin(globalSettings);
-window.cerrarSesion              = cerrarSesion;
+window.OpenPanelAdmin           = () => OpenPanelAdmin(globalSettings);
+window.CloseSesion              = CloseSesion;
 window.iniciarSesion             = iniciarSesion;
 window.registrarUsuario          = registrarUsuario;
 window.iniciarSesionConGoogle    = iniciarSesionConGoogle;
-window.guardarEval               = (nivel) => guardarEval(nivel, evalData);
+window.guardarEval               = (Level) => guardarEval(Level, evalData);
 window.guardarNotas              = guardarNotas;
 window.guardarProgresoNube       = guardarProgresoNube;
 window.guardarPerfil             = guardarPerfil;
@@ -152,9 +152,9 @@ window.resetCourseStarsHover     = resetCourseStarsHover;
 window.cargarCalificacionCurso   = cargarCalificacionCurso;
 
 window.actualizarAvatarUI        = actualizarAvatarUI;
-window.actualizarGraficosEstudiante = (c, t) => actualizarGraficosEstudiante(c, t, progressData, evalData, timeData, curriculoData);
+window.actualizarGraficosStudent = (c, t) => actualizarGraficosStudent(c, t, progressData, evalData, timeData, curriculoData);
 window.cargarDirectorioAdminFirebase = () => cargarDirectorioAdminFirebase(curriculoData, totalLessons);
-window.verDetalleEstudiante      = (uid, nombre) => verDetalleEstudiante(uid, nombre, curriculoData, totalLessons);
+window.verDetalleStudent      = (uid, nombre) => verDetalleStudent(uid, nombre, curriculoData, totalLessons);
 window.cambiarRolUsuario         = cambiarRolUsuario;
 window.guardarAjustesCalendario  = () => guardarAjustesCalendario(globalSettings);
 window.renderAdminCharts         = (t, s, sc) => renderAdminCharts(t, s, sc);
@@ -168,7 +168,7 @@ window._loadContent = (leccion, modTitulo) => {
     if (!isAdmin && leccion.id !== examId && (!evalData[examId] || evalData[examId] < 65)) {
         Swal.fire({
             title: 'Acceso Restringido',
-            html: 'Debes completar el <b>Examen Diagnóstico de Presaberes</b> (Módulo 0) con al menos 65% para desbloquear el resto del curso.',
+            html: 'Debes completar el <b>Examen Diagnóstico de Presaberes</b> (Module 0) con al menos 65% para desbloquear el resto del curso.',
             icon: 'warning',
             confirmButtonText: 'Ir al Diagnóstico',
             confirmButtonColor: 'var(--accent)'
@@ -235,11 +235,11 @@ function generarDashboardGamificado() {
     const elTip = document.getElementById('student-neuro-tip');
     if (elTip) {
         if (minutos < 15) {
-            elTip.innerText = "Fase de Calentamiento Cognitivo: Tu cerebro está asimilando la estructura. Empieza por las lecturas introductorias antes de ir a simuladores.";
+            elTip.innerText = "Fase de Calentamiento Cognitivo: Tu cerebro está asimilando la estructura. Empieza por las lecturas introductorias antes de ir a Simulatores.";
         } else if (minutos >= 15 && minutos < 45) {
-            elTip.innerText = "¡Atención Máxima! Estás en la cresta de tu curva de Ebbinghaus. Resuelve cuestionarios o desafíos ahora.";
+            elTip.innerText = "¡Atención Máxima! Estás en la cresta de tu curva de Ebbinghaus. Resuelve Quizs o desafíos ahora.";
         } else if (minutos >= 45 && minutos < 60) {
-            elTip.innerText = "Alerta de Fatiga Neuronal: Has superado los 45 min. Levántate, bebe agua (Pausa Pomodoro) para consolidar lo aprendido en la memoria a largo plazo.";
+            elTip.innerText = "Alerta de Fatiga Neuronal: Has superado los 45 min. Levántate, bebe agua (Pause Pomodoro) para consolidar lo aprendido en la memoria a largo plazo.";
         } else {
             elTip.innerText = "Carga Cognitiva Elevada: Has estudiado mucho hoy. ¡Felicidades! Repasa tus apuntes visuales y desconecta para asegurar el aprendizaje subconsciente.";
         }
@@ -259,11 +259,11 @@ async function init() {
     curriculoData = result.curriculoData;
     totalLessons  = result.totalLessons;
 
-    // Inyectar estado en el módulo UI
+    // Inyectar estado en el Module UI
     injectUIState({ progressData, curriculoData, totalLessons });
 
     // Show dashboard inicial
-    mostrarDashboardEstudiante();
+    ShowDashboardStudent();
     generarDashboardGamificado(); // Primera carga visual
 
     // Start observer de autenticación
@@ -273,9 +273,9 @@ async function init() {
             injectUIState({ progressData, curriculoData, totalLessons }); 
             window.actualizarContenidoDashboard(); 
             cargarApuntes(); // Carga las notas de firebase
-            generarDashboardGamificado(); // Vuelve a calcular consejos
+            generarDashboardGamificado(); // Vuelve a Calculate consejos
         },
-        onLogout: () => { mostrarDashboardEstudiante(); }
+        onLogout: () => { ShowDashboardStudent(); }
     });
 
     // Fondo Cósmico (Particles.js)

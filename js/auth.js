@@ -14,7 +14,7 @@ import {
 import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 import { auth, db } from './firebase.js';
 import { APP_ID, ADMIN_EMAIL } from '../config/firebase.config.js';
-import { actualizarAvatarUI, mostrarDashboardEstudiante } from './ui.js';
+import { actualizarAvatarUI, ShowDashboardStudent } from './ui.js';
 import { cargarDatosPerfil } from './profile.js';
 
 // ── Acciones de auth ─────────────────────────────────────────
@@ -40,8 +40,8 @@ export function iniciarSesionConGoogle() {
         .catch(e => Swal.fire('Error Google', e.message, 'error'));
 }
 
-export function cerrarSesion() {
-    signOut(auth).then(() => mostrarDashboardEstudiante());
+export function CloseSesion() {
+    signOut(auth).then(() => ShowDashboardStudent());
 }
 
 // ── Observer de sesión ───────────────────────────────────────
@@ -106,7 +106,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
                 actualRole = window.simulatedRole;
             }
 
-            // Show/ocultar panel admin
+            // Show/Hide panel admin
             const navAdmin = document.getElementById('nav-admin');
             if ((window.isMasterAdmin || actualRole === 'teacher') && actualRole !== 'student') {
                 navAdmin.style.display = 'flex';
@@ -118,7 +118,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
                         title: '¡Bienvenido de nuevo!',
                         text: 'Sigue explorando el Universo de Conocimiento a tu propio ritmo.',
                         icon: 'info', confirmButtonText: 'Ver Mapa', confirmButtonColor: 'var(--accent)'
-                    }).then(res => { if (res.isConfirmed) window.mostrarCalendario(); });
+                    }).then(res => { if (res.isConfirmed) window.ShowCalendario(); });
                     localStorage.setItem(keyStorage, 'mostrada');
                     document.getElementById('noti-dot').style.display = 'block';
                 }

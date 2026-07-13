@@ -1,5 +1,5 @@
 // quiz-engine.js
-// Motor Centralizado de Evaluación Dinámica y Análisis Cognitivo para Electro10.Easy
+// Motor Centralizado de Assessment Dinámica y Análisis Cognitivo para Electro10.Easy
 
 (function() {
     let currentQuiz = null;
@@ -17,12 +17,12 @@
         currentQuestionIndex = 0;
         
         // Inicializar estado del usuario y métricas cognitivas
-        userState = leccion.preguntas.map(() => ({
+        userState = leccion.Questions.map(() => ({
             answered: false,
             value: null,
             flagged: false,
-            timeSpent: 0, // Segundos invertidos en esta pregunta
-            hesitations: 0 // Cambios de respuesta o re-visitas
+            timeSpent: 0, // Segundos invertidos en esta Question
+            hesitations: 0 // Cambios de Answer o re-visitas
         }));
 
         renderQuizUI();
@@ -39,7 +39,7 @@
                 <h2 style="color: var(--text-high); display: flex; align-items: center; justify-content: center; gap: 10px;">
                     <span class="material-symbols-outlined">quiz</span> ${currentQuiz.titulo}
                 </h2>
-                <p style="color: var(--text-medium);">${currentQuiz.descripcion || 'Selecciona la respuesta correcta para cada pregunta.'}</p>
+                <p style="color: var(--text-medium);">${currentQuiz.descripcion || 'Selecciona la Answer correcta para cada Question.'}</p>
             </div>
 
             <div style="display: flex; flex-direction: row; gap: 20px; flex-wrap: wrap;">
@@ -84,7 +84,7 @@
             <!-- Panel de Results (Oculto) -->
             <div id="quiz-results-panel" style="display: none; background: var(--bg-surface); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; margin-top: 20px;">
                 <span class="material-symbols-outlined" style="font-size: 60px; color: var(--success); margin-bottom: 20px;">task_alt</span>
-                <h2>Results de Evaluación</h2>
+                <h2>Results de Assessment</h2>
                 <h1 id="quiz-score-display" style="font-size: 4rem; color: var(--text-high); margin: 10px 0;">0%</h1>
                 <p id="quiz-feedback-msg" style="color: var(--text-medium); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px auto;"></p>
                 
@@ -103,7 +103,7 @@
 
         // Eventos
         document.getElementById('btn-quiz-prev').addEventListener('click', () => { if(currentQuestionIndex > 0) showQuestion(currentQuestionIndex - 1); });
-        document.getElementById('btn-quiz-next').addEventListener('click', () => { if(currentQuestionIndex < currentQuiz.preguntas.length - 1) showQuestion(currentQuestionIndex + 1); });
+        document.getElementById('btn-quiz-next').addEventListener('click', () => { if(currentQuestionIndex < currentQuiz.Questions.length - 1) showQuestion(currentQuestionIndex + 1); });
         document.getElementById('btn-quiz-flag').addEventListener('click', () => toggleFlag(currentQuestionIndex));
         document.getElementById('btn-evaluar-quiz').addEventListener('click', evaluateDynamicQuiz);
     }
@@ -111,7 +111,7 @@
     function renderNavGrid() {
         const grid = document.getElementById('quiz-nav-grid');
         grid.innerHTML = '';
-        currentQuiz.preguntas.forEach((_, i) => {
+        currentQuiz.Questions.forEach((_, i) => {
             const btn = document.createElement('button');
             btn.className = 'quiz-nav-item';
             btn.style.cssText = `width: 100%; aspect-ratio: 1; border-radius: 6px; font-weight: bold; border: 1px solid var(--border-color); background: transparent; color: var(--text-medium); cursor: pointer; transition: all 0.2s;`;
@@ -124,7 +124,7 @@
     }
 
     function updateNavStyles() {
-        currentQuiz.preguntas.forEach((_, i) => {
+        currentQuiz.Questions.forEach((_, i) => {
             const btn = document.getElementById(`quiz-nav-btn-${i}`);
             if(!btn) return;
             
@@ -156,7 +156,7 @@
         const container = document.getElementById('quiz-questions-container');
         container.innerHTML = '';
 
-        currentQuiz.preguntas.forEach((q, index) => {
+        currentQuiz.Questions.forEach((q, index) => {
             const card = document.createElement('div');
             card.className = `quiz-q-card`;
             card.id = `quiz-q-card-${index}`;
@@ -171,13 +171,13 @@
                     <span style="background: var(--bg-main); padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; color: var(--accent); border: 1px solid var(--border-color);">${q.tema || typeLabel}</span>
                     <span style="font-size: 0.8rem; color: var(--text-low);"><span class="material-symbols-outlined" style="font-size:14px; vertical-align:middle;">timer</span> <span id="timer-q-${index}">0s</span></span>
                 </div>
-                <h3 style="font-size: 1.2rem; color: var(--text-high); margin-bottom: 20px; line-height: 1.5;">${index + 1}. ${q.pregunta}</h3>
+                <h3 style="font-size: 1.2rem; color: var(--text-high); margin-bottom: 20px; line-height: 1.5;">${index + 1}. ${q.Question}</h3>
             `;
 
             // Si es MCQ o por defecto
             if (!q.type || q.type === 'mcq') {
                 html += `<div style="display: flex; flex-direction: column; gap: 10px;">`;
-                q.opciones.forEach((opt, oIdx) => {
+                q.Options.forEach((opt, oIdx) => {
                     html += `
                     <label style="display: flex; align-items: center; gap: 12px; p-padding: 15px; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; transition: all 0.2s; padding: 15px;" class="quiz-opt-wrapper hover:bg-slate-50">
                         <input type="radio" name="dq_${index}" value="${oIdx}" class="quiz-input-radio" style="width: 18px; height: 18px; accent-color: var(--accent);">
@@ -188,7 +188,7 @@
             } else if (q.type === 'fill' || q.type === 'equation') {
                 html += `
                 <div style="margin-top: 20px;">
-                    <input type="text" id="dq_${index}" placeholder="Escribe tu respuesta aquí..." style="width: 100%; padding: 15px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1.1rem; background: var(--bg-main); color: var(--text-high); text-align: center; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-color)'">
+                    <input type="text" id="dq_${index}" placeholder="Escribe tu Answer aquí..." style="width: 100%; padding: 15px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1.1rem; background: var(--bg-main); color: var(--text-high); text-align: center; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border-color)'">
                 </div>`;
             }
 
@@ -228,7 +228,7 @@
     }
 
     function showQuestion(index) {
-        // Pause timer de la pregunta anterior
+        // Pause timer de la Question Previous
         clearInterval(questionTimer);
 
         document.querySelectorAll('.quiz-q-card').forEach((el, i) => {
@@ -239,7 +239,7 @@
         updateNavStyles();
 
         document.getElementById('btn-quiz-prev').disabled = (index === 0);
-        document.getElementById('btn-quiz-next').disabled = (index === currentQuiz.preguntas.length - 1);
+        document.getElementById('btn-quiz-next').disabled = (index === currentQuiz.Questions.length - 1);
 
         const flagBtn = document.getElementById('btn-quiz-flag');
         const flagIcon = document.getElementById('icon-quiz-flag');
@@ -289,7 +289,7 @@
         if (unanswered > 0) {
             Swal.fire({
                 title: 'Questions sin responder',
-                html: `Aún tienes <b>${unanswered}</b> preguntas sin responder. <br>¿Estás seguro de enviar el examen?`,
+                html: `Aún tienes <b>${unanswered}</b> Questions sin responder. <br>¿Estás seguro de enviar el examen?`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Sí, evaluar',
@@ -309,7 +309,7 @@
         let totalTime = 0;
         let totalHesitations = 0;
 
-        currentQuiz.preguntas.forEach((q, i) => {
+        currentQuiz.Questions.forEach((q, i) => {
             const state = userState[i];
             pesoTotal += q.peso || 10;
             totalTime += state.timeSpent;
@@ -319,7 +319,7 @@
             let isCorrect = false;
 
             if (!q.type || q.type === 'mcq') {
-                isCorrect = parseInt(state.value) === q.respuestaCorrecta;
+                isCorrect = parseInt(state.value) === q.AnswerCorrecta;
             } else if (q.type === 'fill' || q.type === 'equation') {
                 isCorrect = state.value && state.value.trim().toLowerCase() === q.answer.trim().toLowerCase();
             }
@@ -341,18 +341,18 @@
 
         const puntajeFinal = Math.round((scorePonderado / pesoTotal) * 100);
         
-        // Muestra panel de resultados
+        // Muestra panel de Results
         document.getElementById('quiz-results-panel').style.display = 'block';
         document.getElementById('quiz-score-display').innerText = puntajeFinal + '%';
         
-        let msg = puntajeFinal >= 65 ? "¡Excelente trabajo! Has demostrado dominio cognitivo en esta área." : "Necesitas repasar algunos conceptos clave. Revisa el feedback en las preguntas.";
+        let msg = puntajeFinal >= 65 ? "¡Excelente Work! Has demostrado dominio cognitivo en esta área." : "Necesitas repasar algunos conceptos clave. Revisa el feedback en las Questions.";
         document.getElementById('quiz-feedback-msg').innerText = msg;
 
         // Fase 4: Tutoría IA Proactiva y Sistema Adaptativo
         let perfilCognitivo = puntajeFinal > 85 ? 'avanzado' : 'estructurado';
 
         if (puntajeFinal < 65 && window.triggerProactiveAI) {
-            window.triggerProactiveAI(`He notado que tu puntuación fue del ${puntajeFinal}%. No te preocupes, el aprendizaje es un proceso. ¿En qué conceptos sientes que tuviste más dudas? Estoy aquí para explicártelo de forma diferente.`);
+            window.triggerProactiveAI(`He notado que tu Score fue del ${puntajeFinal}%. No te preocupes, el aprendizaje es un proceso. ¿En qué conceptos sientes que tuviste más dudas? Estoy aquí para explicártelo de forma diferente.`);
         }
 
         // Show Insights Adaptativos (Learning by Doing / ABP)
@@ -363,13 +363,13 @@
                 adaptiveHtml = `
                 <div style="margin-top: 15px; padding: 15px; background: rgba(168, 85, 247, 0.1); border-left: 4px solid #a855f7; border-radius: 8px;">
                     <h4 style="margin: 0 0 5px 0; color: #a855f7;"><span class="material-symbols-outlined" style="vertical-align: middle;">psychology_alt</span> Reto de Física Profunda</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-medium);">Dominas este nivel. Intenta aplicar estos conceptos en el simulador desactivando las ayudas visuales y derivando tú mismo las ecuaciones.</p>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-medium);">Dominas este Level. Intenta aplicar estos conceptos en el Simulator desactivando las ayudas visuales y derivando tú mismo las Equations.</p>
                 </div>`;
             } else {
                 adaptiveHtml = `
                 <div style="margin-top: 15px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; border-radius: 8px;">
                     <h4 style="margin: 0 0 5px 0; color: #3b82f6;"><span class="material-symbols-outlined" style="vertical-align: middle;">lightbulb</span> Metodología Sugerida (Paso a Paso)</h4>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-medium);">Te recomendamos revisar el glosario en el "Cerebro de Conocimiento" y rehacer el experimento virtual anotando las variables una por una.</p>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-medium);">Te recomendamos revisar el Glossary en el "Cerebro de Conocimiento" y rehacer el experimento virtual anotando las variables una por una.</p>
                 </div>`;
             }
             // Inject after msg
@@ -382,12 +382,12 @@
             }
         }
 
-        // Calcular Índice de Carga Cognitiva
+        // Calculate Índice de Carga Cognitiva
         // (Un índice inventado para el admin: Mayor tiempo y mayor duda = Mayor Carga Cognitiva)
-        const avgTimePerQuestion = totalTime / currentQuiz.preguntas.length;
+        const avgTimePerQuestion = totalTime / currentQuiz.Questions.length;
         const cognitiveLoad = Math.min(100, Math.round((avgTimePerQuestion * 0.5) + (totalHesitations * 2)));
 
-        // Guardar la evaluación
+        // Guardar la Assessment
         if (window._currentLeccionId && window.evalData && window.progressData) {
             window.evalData[window._currentLeccionId] = puntajeFinal;
             localStorage.setItem('cursoElectromagnetismoEval', JSON.stringify(window.evalData));

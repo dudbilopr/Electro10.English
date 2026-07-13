@@ -1,7 +1,7 @@
 // ============================================================
 // js/charts.js
-// Gráficas Chart.js: donut de progreso, radar cognitivo,
-// gráfica de tiempo y gráficas del panel admin.
+// Charts Chart.js: donut de progreso, radar cognitivo,
+// Chart de tiempo y Charts del panel admin.
 // ============================================================
 
 let studentDonut, studentRadar, studentBar, adminPie, adminScatter, modalRadarChart;
@@ -14,7 +14,7 @@ function clearChartContainer(containerId, message) {
     }
 }
 
-export function actualizarGraficosEstudiante(completadas, total, progressData, evalData, timeData, curriculoData) {
+export function actualizarGraficosStudent(completadas, total, progressData, evalData, timeData, curriculoData) {
     const isDark    = document.documentElement.classList.contains('dark');
     const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)';
     const textColor = isDark ? '#94A3B8' : '#475569';
@@ -40,8 +40,8 @@ export function actualizarGraficosEstudiante(completadas, total, progressData, e
     // ── Radar y Bar ──────────────────────────────────────────
     let moduleLabels = [], moduleRadarData = [], moduleBarData = [];
 
-    if (curriculoData?.modulos) {
-        curriculoData.modulos.forEach((mod, idx) => {
+    if (curriculoData?.modules) {
+        curriculoData.modules.forEach((mod, idx) => {
             const shortTitle = mod.titulo.includes(': ') ? mod.titulo.split(': ')[1].split(' - ')[0] : `Mod ${idx + 1}`;
             moduleLabels.push(shortTitle);
 
@@ -102,7 +102,7 @@ export function renderAdminCharts(teachers, students, scatterData) {
         document.getElementById('admin-container-pie').innerHTML = '<canvas id="adminPieChart"></canvas>';
         adminPie = new Chart(document.getElementById('adminPieChart'), {
             type: 'pie',
-            data: { labels: ['Docentes', 'Estudiantes'], datasets: [{ data: [teachers, students], backgroundColor: ['#8b5cf6', '#3b82f6'], borderWidth: 0 }] },
+            data: { labels: ['Docentes', 'Students'], datasets: [{ data: [teachers, students], backgroundColor: ['#8b5cf6', '#3b82f6'], borderWidth: 0 }] },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: textColor } } } }
         });
     }

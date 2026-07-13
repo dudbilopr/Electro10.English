@@ -1,7 +1,7 @@
 // ============================================================
 // js/content-loader.js
 // Carga contenido en el visor principal según el tipo de
-// lección: video, multivideo, simulador, quiz, enlaces, etc.
+// lección: video, multivideo, Simulator, quiz, enlaces, etc.
 // Gestiona la playlist lateral y el marcado de progreso.
 // ============================================================
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -18,7 +18,7 @@ export function getIconForType(tipo) {
         case 'video':           return 'play_circle';
         case 'multipresentacion':
         case 'presentacion':    return 'menu_book';
-        case 'simulador':       return 'experiment';
+        case 'Simulator':       return 'experiment';
         case 'ejercicio':       return 'edit_note';
         case 'quiz':            return 'quiz';
         case 'enlaces':         return 'folder_special';
@@ -47,15 +47,15 @@ export async function guardarProgresoNube(leccionId) {
     } catch (e) { /* sin conexión */ }
 }
 
-// ── Guardar evaluación cognitiva ─────────────────────────────
-export async function guardarEval(nivel, evalData) {
+// ── Guardar Assessment cognitiva ─────────────────────────────
+export async function guardarEval(Level, evalData) {
     document.querySelectorAll('.eval-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById('eval-' + nivel)?.classList.add('active');
+    document.getElementById('eval-' + Level)?.classList.add('active');
 
     if (!currentLeccionId || !window.currentUserUid) return;
-    evalData[currentLeccionId] = parseInt(nivel);
+    evalData[currentLeccionId] = parseInt(Level);
     try {
-        await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'evaluations', 'data'), { [currentLeccionId]: parseInt(nivel) }, { merge: true });
+        await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'evaluations', 'data'), { [currentLeccionId]: parseInt(Level) }, { merge: true });
         Swal.fire({ title: 'Feedback Científico', text: 'Tus datos de cognición han sido guardados.', icon: 'success', timer: 2000, showConfirmButton: false });
     } catch (e) { /* sin conexión */ }
 }
@@ -94,14 +94,14 @@ export function loadContent(leccion, modulo, progressData, evalData) {
             newAccent = 'var(--theme-electric)';
         } else if (titleLower.includes('magnétic') || titleLower.includes('magnetismo') || titleLower.includes('faraday') || titleLower.includes('maxwell')) {
             newAccent = 'var(--theme-magnetic)';
-        } else if (titleLower.includes('kinemátic') || titleLower.includes('mecánica') || titleLower.includes('cinemática') || titleLower.includes('fuerza')) {
+        } else if (titleLower.includes('kinemátic') || titleLower.includes('mecánica') || titleLower.includes('cinemática') || titleLower.includes('Force')) {
             newAccent = 'var(--theme-kinetic)';
         }
     }
     document.documentElement.style.setProperty('--accent', newAccent);
 
     document.getElementById('display-title').innerText      = leccion.titulo;
-    document.getElementById('bread-modulo').innerText       = modulo?.titulo ? modulo.titulo.split(':')[0] : 'Módulo';
+    document.getElementById('bread-modulo').innerText       = modulo?.titulo ? modulo.titulo.split(':')[0] : 'Module';
     document.getElementById('bread-leccion').innerText      = leccion.titulo;
     
     // Construir detalles con los nuevos insights
@@ -117,12 +117,12 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         </div>`;
     }
 
-    if (modulo && modulo.ecuaciones) {
+    if (modulo && modulo.Equations) {
         detailsHtml += `
         <div style="margin-top: 15px; background: var(--bg-surface-hover); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
-            <h4 style="margin: 0 0 10px 0; color: var(--text-high);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px; color: #10b981;">functions</span> Ecuaciones Principales</h4>
+            <h4 style="margin: 0 0 10px 0; color: var(--text-high);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px; color: #10b981;">functions</span> Equations Principales</h4>
             <div style="color: var(--text-medium); font-size: 1rem;">
-                ${modulo.ecuaciones.join('<br>')}
+                ${modulo.Equations.join('<br>')}
             </div>
         </div>`;
     }
@@ -148,7 +148,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     const tabDescContainer = document.getElementById('tab-desc-text');
     tabDescContainer.innerHTML = detailsHtml;
     
-    // Renderizar ecuaciones si KaTeX está disponible
+    // Renderizar Equations si KaTeX está disponible
     if (window.renderMathInElement) {
         window.renderMathInElement(tabDescContainer, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });
     }
@@ -207,7 +207,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
                 html += '</div></div>';
             });
         } else {
-            html = '<div style="padding:50px;text-align:center;color:var(--text-medium);"><span class="material-symbols-outlined" style="font-size:40px;opacity:0.5;">link_off</span><br>El profesor aún no ha cargado enlaces.</div>';
+            html = '<div style="padding:50px;text-align:center;color:var(--text-medium);"><span class="material-symbols-outlined" style="font-size:40px;opacity:0.5;">link_off</span><br>El Professor aún no ha cargado enlaces.</div>';
         }
         enlacesContainer.innerHTML = html;
 
@@ -217,15 +217,15 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         playlistSidebar.style.display = 'block';
         playlistContent.innerHTML   = '';
 
-        const recursos = leccion.recurso.split('|');
-        recursos.forEach((rec, index) => {
+        const Resources = leccion.recurso.split('|');
+        Resources.forEach((rec, index) => {
             let thumbUrl = leccion.tipo === 'multivideo'
                 ? `https://img.youtube.com/vi/${rec.split('&')[0]}/mqdefault.jpg`
                 : `https://ui-avatars.com/api/?name=Part+${index + 1}&background=2563eb&color=fff&size=120`;
 
             const card = document.createElement('div');
             card.className = `thumbnail-card ${index === 0 ? 'active' : ''}`;
-            card.innerHTML = `<img src="${thumbUrl}" class="thumb-img" alt="Thumbnail"><div class="thumb-info"><h4 class="thumb-title">Recurso ${index + 1}</h4><span style="font-size:0.7rem;color:var(--text-medium);">${leccion.tipo === 'multivideo' ? 'Video Magistral' : 'Diapositiva'}</span></div>`;
+            card.innerHTML = `<img src="${thumbUrl}" class="thumb-img" alt="Thumbnail"><div class="thumb-info"><h4 class="thumb-title">Recurso ${index + 1}</h4><span style="font-size:0.7rem;color:var(--text-medium);">${leccion.tipo === 'multivideo' ? 'Video Magistral' : 'Slide'}</span></div>`;
             card.onclick = () => {
                 document.querySelectorAll('.thumbnail-card').forEach(c => c.classList.remove('active'));
                 card.classList.add('active');
@@ -235,19 +235,19 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         });
 
         if (leccion.tipo === 'multivideo') {
-            iframe.src = getYoutubeEmbed(recursos[0]);
+            iframe.src = getYoutubeEmbed(Resources[0]);
             iframeWrapper.style.aspectRatio = '16/9'; iframeWrapper.style.height = 'auto';
         } else {
-            iframe.src = recursos[0];
+            iframe.src = Resources[0];
             iframeWrapper.style.aspectRatio = 'auto'; iframeWrapper.style.height = '75vh'; iframeWrapper.style.minHeight = '500px';
         }
 
     } else {
-        // Video simple, simulador, ejercicio, quiz
+        // Video simple, Simulator, ejercicio, quiz
         if (leccion.tipo === 'video') {
             iframe.src = getYoutubeEmbed(leccion.recurso);
             iframeWrapper.style.aspectRatio = '16/9'; iframeWrapper.style.height = 'auto';
-        } else if (leccion.tipo === 'quiz' && leccion.preguntas) {
+        } else if (leccion.tipo === 'quiz' && leccion.Questions) {
             // Renderizado dinámico del Examen con el Nuevo Motor Cognitivo
             iframe.style.display = 'none';
             enlacesContainer.style.display = 'block';
@@ -268,7 +268,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         }
     }
 
-    // Enviar UID al iframe hijo (sincronización)
+    // Submit UID al iframe hijo (sincronización)
     iframe.onload = function () {
         if (window.currentUserUid) {
             this.contentWindow?.postMessage({ action: 'initSync', uid: window.currentUserUid, appId: APP_ID }, '*');
