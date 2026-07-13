@@ -1,5 +1,5 @@
 /* ============================================================
-   styles.css — Estilos globales de Electro10.easy
+   styles.css — Styles globales de Electro10.easy
    Extraído de index.html para modularizar el proyecto.
    ============================================================ */
 
@@ -194,7 +194,7 @@ html.dark header {
 .user-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-glow); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: bold; border: 1px solid var(--border-color); flex-shrink: 0;}
 
 /* ===================== LAYOUT PRINCIPAL ===================== */
-.app-container { display: flex; flex: 1; margin-top: 64px; overflow: hidden; }
+.app-container { display: flex; flex: 1; margin-top: 0; overflow: hidden; }
 
 /* --- SIDEBAR --- */
 .sidebar { 

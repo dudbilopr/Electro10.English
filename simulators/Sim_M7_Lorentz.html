@@ -145,7 +145,7 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
     <button class="btn btn-primary" onclick="ShowSolucion()"><i class="ph ph-chalkboard-teacher"></i> Ver Análisis Paso a Paso</button>
     <div style="width:1px;background:var(--glass-border);margin:0 10px;height:24px"></div>
     <label style="display:flex;align-items:center;gap:8px;font-size:0.95rem;cursor:pointer; background:var(--card-bg); padding:6px 12px; border-radius:6px">
-        <input type="checkbox" id="toggle-grid" checked onchange="toggleFieldGrid()"> Campo Magnético ($\vec{B}$) 3D
+        <input type="checkbox" id="toggle-grid" checked onchange="toggleFieldGrid()"> Field Magnetic ($\vec{B}$) 3D
     </label>
     <div class="vector-legend" style="margin-left:auto;">
         <div class="legend-item" style="color:#3498db"><div class="dot" style="background:#3498db"></div> $\vec{v}$</div>
@@ -219,17 +219,17 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
         <div class="section-title"><i class="ph ph-books"></i> Enunciados (Imágenes)</div>
         <select id="exercise-select" onchange="loadExercise(this.value)" style="margin-bottom:15px; font-weight:bold; background:rgba(78,204,163,0.1); border-color:var(--accent)">
             <option value="ex1">Ej 1: Haz de protones a 30°</option>
-            <option value="ex2">Ej 2: Fx y Fz con carga µC</option>
-            <option value="ex3">Ej 3: Carga -5.60 nC</option>
-            <option value="ex4">Ej 4: Carga -1.24x10⁻⁸ C</option>
+            <option value="ex2">Ej 2: Fx y Fz con charge µC</option>
+            <option value="ex3">Ej 3: Charge -5.60 nC</option>
+            <option value="ex4">Ej 4: Charge -1.24x10⁻⁸ C</option>
             <option value="custom">-- Modo Libre / Interactivo --</option>
         </select>
 
         <div class="enunciado-box card" id="latex-enunciado" style="background:var(--bg); border:1px solid var(--glass-border); border-left:4px solid var(--accent)">loading enunciado...</div>
 
-        <div class="section-title"><i class="ph ph-atom"></i> Partícula: Carga ($q$) y Position</div>
+        <div class="section-title"><i class="ph ph-atom"></i> Partícula: Charge ($q$) y Position</div>
         <div class="card">
-            <div class="input-label" style="text-align:left">Carga ($q$) [C]:</div>
+            <div class="input-label" style="text-align:left">Charge ($q$) [C]:</div>
             <input type="number" id="charge-q" step="any" value="1.6e-19" onchange="updateSim()" style="font-family:monospace; margin-bottom:10px;">
             <div class="input-label" style="text-align:left">Position Inicial 3D ($X_0, Y_0, Z_0$):</div>
             <div class="input-grid">
@@ -248,7 +248,7 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
             </div>
         </div>
 
-        <div class="section-title" style="color:#2ecc71"><i class="ph ph-magnet"></i> Campo Magnético ($\vec{B}$) [T]</div>
+        <div class="section-title" style="color:#2ecc71"><i class="ph ph-magnet"></i> Field Magnetic ($\vec{B}$) [T]</div>
         <div class="card" style="border-left:3px solid #2ecc71">
             <div class="input-grid">
                 <div class="slider-container"><div class="input-label">X ($\hat{i}$)</div><input type="number" id="b-x" value="0" step="any" oninput="syncSlider('b-x')"><input type="range" id="b-x-sl" min="-5" max="5" step="0.1" value="0" oninput="syncInput('b-x')"></div>
@@ -288,19 +288,19 @@ const simState = {
 
 const exData = {
     'ex1': {
-        enunciado: "Un haz de protones ($q = 1.6 \\times 10^{-19}$ C) se mueve a $3.0 \\times 10^5$ m/s a través de un campo magnético uniforme, con magnitudeeeee 2.0 T dirigido a lo largo del eje z positivo, como se indica en la figura. La Velocity de cada protón se encuentra en el plano xz con un Angle de 30° con respecto al eje +z. Calcule la Force sobre un protón.",
+        enunciado: "Un haz de protones ($q = 1.6 \\times 10^{-19}$ C) se mueve a $3.0 \\times 10^5$ m/s a través de un magnetic field uniforme, con magnitudeeeee 2.0 T dirigido a lo largo del eje z positivo, como se indica en la figura. La Velocity de cada protón se encuentra en el plano xz con un Angle de 30° con respecto al eje +z. Calcule la Force sobre un protón.",
         q: 1.6e-19, p0x:0, p0y:0, p0z:0, vx: 1.5e5, vy: 0, vz: 2.598e5, bx: 0, by: 0, bz: 2.0
     },
     'ex2': {
-        enunciado: "Una partícula con carga de $7.80 \\,\\mu$C se mueve con Velocity $\\vec{v} = -(3.80 \\times 10^3 \\text{ m/s})\\hat{j}$. Se mide la Force magnética sobre la partícula y resulta ser de $\\vec{F} = +(7.60 \\times 10^{-3} \\text{ N})\\hat{i} - (5.20 \\times 10^{-3} \\text{ N})\\hat{k}$. a) Calcule las componentes del campo magnético correspondientes.<br><br>*(El Simulator ajusta $\\vec{B}$ automáticamente para generar esta Force).*.",
+        enunciado: "Una partícula con charge de $7.80 \\,\\mu$C se mueve con Velocity $\\vec{v} = -(3.80 \\times 10^3 \\text{ m/s})\\hat{j}$. Se mide la Force magnetic sobre la partícula y resulta ser de $\\vec{F} = +(7.60 \\times 10^{-3} \\text{ N})\\hat{i} - (5.20 \\times 10^{-3} \\text{ N})\\hat{k}$. a) Calcule las componentes del magnetic field correspondientes.<br><br>*(El Simulator ajusta $\\vec{B}$ automáticamente para generar esta Force).*.",
         q: 7.8e-6, p0x:0, p0y:0, p0z:0, vx: 0, vy: -3800, vz: 0, bx: -0.1754, by: 0, bz: -0.2564
     },
     'ex3': {
-        enunciado: "Una partícula con carga de $-5.60$ nC se mueve en un campo magnético uniforme $\\vec{B} = -(1.25 \\text{ T})\\hat{k}$. La medición de la Force magnética resulta ser $\\vec{F} = -(3.40 \\times 10^{-7} \\text{ N})\\hat{i} + (7.40 \\times 10^{-7} \\text{ N})\\hat{j}$. Calcule la Velocity de la partícula.",
+        enunciado: "Una partícula con charge de $-5.60$ nC se mueve en un magnetic field uniforme $\\vec{B} = -(1.25 \\text{ T})\\hat{k}$. La medición de la Force magnetic resulta ser $\\vec{F} = -(3.40 \\times 10^{-7} \\text{ N})\\hat{i} + (7.40 \\times 10^{-7} \\text{ N})\\hat{j}$. Calcule la Velocity de la partícula.",
         q: -5.6e-9, p0x:0, p0y:0, p0z:0, vx: -105.71, vy: -48.57, vz: 0, bx: 0, by: 0, bz: -1.25
     },
     'ex4': {
-        enunciado: "Una partícula con carga de $-1.24 \\times 10^{-8}$ C se mueve con Velocity instantánea $\\vec{v} = (4.19 \\times 10^4 \\text{ m/s})\\hat{i} + (-3.85 \\times 10^4 \\text{ m/s})\\hat{j}$. ¿Cuál es la Force que sobre esta partícula ejerce un campo magnético $\\vec{B} = (1.40 \\text{ T})\\hat{k}$?",
+        enunciado: "Una partícula con charge de $-1.24 \\times 10^{-8}$ C se mueve con Velocity instantánea $\\vec{v} = (4.19 \\times 10^4 \\text{ m/s})\\hat{i} + (-3.85 \\times 10^4 \\text{ m/s})\\hat{j}$. ¿Cuál es la Force que sobre esta partícula ejerce un magnetic field $\\vec{B} = (1.40 \\text{ T})\\hat{k}$?",
         q: -1.24e-8, p0x:0, p0y:0, p0z:0, vx: 41900, vy: -38500, vz: 0, bx: 0, by: 0, bz: 1.40
     },
     'custom': { enunciado: "<b>Modo Libre:</b> Modifica libremente las variables a tu gusto. Observa cómo cambia la Trajectory de la partícula en 3D y el análisis matemático paso a paso." }
@@ -580,7 +580,7 @@ function prepararPasosLatex() {
     +\hat{k} \begin{vmatrix} ${formatLatexNum(s.v.x)} & ${formatLatexNum(s.v.y)} \\ ${formatLatexNum(s.b.x)} & ${formatLatexNum(s.b.y)} \\ \blacksquare & \blacksquare \end{vmatrix}_{\text{*(Visual)}} \rightarrow +\hat{k} \left[ (${formatLatexNum(s.v.x)})(${formatLatexNum(s.b.y)}) - (${formatLatexNum(s.v.y)})(${formatLatexNum(s.b.x)}) \right] = ${formatLatexNum(s.f.z/s.q)}\hat{k}`;
 
     const step5Tex = String.raw`
-    \text{Paso 5: Multiplicación por la Carga (q) y magnitudeeeee Final} \\
+    \text{Paso 5: Multiplicación por la Charge (q) y magnitudeeeee Final} \\
     \vec{F} = ${formatLatexNum(s.q)} \left( ${formatLatexNum(s.f.x/s.q)}\hat{i} ${s.f.y/s.q>=0?'+':''} ${formatLatexNum(s.f.y/s.q)}\hat{j} ${s.f.z/s.q>=0?'+':''} ${formatLatexNum(s.f.z/s.q)}\hat{k} \right) \\
     \vec{F} = \mathbf{${formatLatexNum(s.f.x)}\hat{i} ${s.f.y>=0?'+':''} ${formatLatexNum(s.f.y)}\hat{j} ${s.f.z>=0?'+':''} ${formatLatexNum(s.f.z)}\hat{k} \text{ N}} \\
     |\vec{F}| = \sqrt{F_x^2 + F_y^2 + F_z^2} = \mathbf{${formatLatexNum(fMag)} \text{ N}}`;
@@ -594,7 +594,7 @@ function prepararPasosLatex() {
     // Add tips pedagógicos visuales a los pasos
     if(!el2.querySelector('.pedagogy-tip')) el2.innerHTML += `<div class="pedagogy-tip"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip: Para hallar $\hat{i}$, ignoramos los valores en X (fila 1, columna 1) y cruzamos Y con Z.</div>`;
     if(!el3.querySelector('.pedagogy-tip')) el3.innerHTML += `<div class="pedagogy-tip"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Cuidado: La regla de signos para el determinante de orden 3 es $(+,-,+)$. Por eso la componente $\hat{j}$ lleva un menos delante.</div>`;
-    if(!el5.querySelector('.pedagogy-tip')) el5.innerHTML += `<div class="pedagogy-tip"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip: Al multiplicar por $q$, si la carga es negativa, <b>todos</b> los componentes de la Force invertirán su signo.</div>`;
+    if(!el5.querySelector('.pedagogy-tip')) el5.innerHTML += `<div class="pedagogy-tip"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip: Al multiplicar por $q$, si la charge es negativa, <b>todos</b> los componentes de la Force invertirán su signo.</div>`;
 
     const list = document.getElementById('analysis-list'); list.innerHTML = "";
     if (s.q < 0) list.innerHTML += `<li><b style="color:var(--danger)">Negative Charge:</b> Notarás en el "Paso 5" que multiplicar por un negativo invirtió el vector. La Force apunta en sentido contrario a la regla de la mano derecha.</li>`;
@@ -603,7 +603,7 @@ function prepararPasosLatex() {
     const vDotB = s.v.x*s.b.x + s.v.y*s.b.y + s.v.z*s.b.z, vLen = Math.hypot(s.v.x, s.v.y, s.v.z), bLen = Math.hypot(s.b.x, s.b.y, s.b.z);
     if(vLen > 0 && bLen > 0) {
         const cosT = Math.max(-1, Math.min(1, vDotB / (vLen * bLen))), angle = Math.acos(cosT) * (180/Math.PI);
-        list.innerHTML += `<li><b>Angle de Intersección:</b> El Angle espacial es $\\approx ${angle.toFixed(1)}^\\circ$ entre el vector Velocity y el vector Campo.</li>`;
+        list.innerHTML += `<li><b>Angle de Intersección:</b> El Angle espacial es $\\approx ${angle.toFixed(1)}^\\circ$ entre el vector Velocity y el vector Field.</li>`;
         
         if(fMag > 0) {
             const vDotF = s.v.x*s.f.x + s.v.y*s.f.y + s.v.z*s.f.z;
@@ -611,7 +611,7 @@ function prepararPasosLatex() {
         }
         
         if (Math.abs(angle) < 0.1 || Math.abs(angle - 180) < 0.1) list.innerHTML += `<li><b style="color:var(--danger)">¡Trajectory Paralela!</b> Al ser colineales, $\\vec{v} \\times \\vec{B} = 0$. La partícula viaja en línea recta porque no existe Force que la desvíe.</li>`;
-        else if (Math.abs(angle - 90) < 0.1) list.innerHTML += `<li><b>Force Máxima:</b> Vectors perpendiculares. La carga describirá un <b>Movimiento Circular Uniforme</b>.</li>`;
+        else if (Math.abs(angle - 90) < 0.1) list.innerHTML += `<li><b>Force Máxima:</b> Vectors perpendiculares. La charge describirá un <b>Movimiento Circular Uniforme</b>.</li>`;
         else list.innerHTML += `<li><b>Trajectory Helicoidal:</b> Al haber un Angle oblicuo, el componente paralelo mantiene Velocity constante y el perpendicular genera rotación, resultando en una espiral.</li>`;
     }
 }

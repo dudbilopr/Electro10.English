@@ -154,15 +154,15 @@ const QUIZ_CONFIG = {
    pista:"X_C ∝ 1/(ω × C)."
   },
   {Level:1,id:"c12-n1-3",
-   texto:"Resonancia en RLC serie cuando:",
+   texto:"Resonance en RLC serie cuando:",
    
    Options:[{"texto":"X_L = R","Correct":false},{"texto":"X_L = X_C","Correct":true},{"texto":"Z = X_L + X_C","Correct":false},{"texto":"ω = RC","Correct":false}],
-   feedback_ok:"Resonancia: X_L = X_C → Z = R (mínimo).",
+   feedback_ok:"Resonance: X_L = X_C → Z = R (mínimo).",
    feedback_bad:"X_L = X_C → ω₀ = 1/√(LC).",
-   pista:"En resonancia las reactancias se cancelan."
+   pista:"En resonance las reactancias se cancelan."
   },
   {Level:2,id:"c12-n2-4",
-   texto:"RLC: R=100Ω, L=0.1H, C=10μF. Frequency de resonancia:",
+   texto:"RLC: R=100Ω, L=0.1H, C=10μF. Frequency de resonance:",
    formula:"f₀ = 1/(2π√(LC))",
    Options:[{"texto":"f₀ ≈ 159 Hz","Correct":true},{"texto":"f₀ ≈ 1000 Hz","Correct":false},{"texto":"f₀ ≈ 50 Hz","Correct":false},{"texto":"f₀ ≈ 500 Hz","Correct":false}],
    feedback_ok:"f₀ = 1/(2π√(10⁻⁶)) = 1/(2π×10⁻³) ≈ 159 Hz.",
@@ -170,10 +170,10 @@ const QUIZ_CONFIG = {
    pista:"LC = 0.1 × 10μF = 10⁻⁶."
   },
   {Level:2,id:"c12-n2-5",
-   texto:"Impedancia de RLC serie:",
+   texto:"Impedance de RLC serie:",
    formula:"Z = √(R² + (X_L − X_C)²)",
    Options:[{"texto":"Z = R + X_L + X_C","Correct":false},{"texto":"Z = √(R² + (X_L − X_C)²)","Correct":true},{"texto":"Z = R + j(X_L + X_C)","Correct":false},{"texto":"Z = X_L × X_C / R","Correct":false}],
-   feedback_ok:"Z = √(R² + (X_L−X_C)²). En resonancia: Z = R.",
+   feedback_ok:"Z = √(R² + (X_L−X_C)²). En resonance: Z = R.",
    feedback_bad:"R y (X_L−X_C) son perpendiculares en el fasor.",
    pista:"R y reactancias netas son perpendiculares en el diagrama fasorial."
   },
@@ -181,7 +181,7 @@ const QUIZ_CONFIG = {
    texto:"Factor de Power:",
    formula:"FP = cos(φ) = R/Z",
    Options:[{"texto":"FP = cos(φ) = R/Z","Correct":true},{"texto":"FP = sin(φ)","Correct":false},{"texto":"FP = Z/R","Correct":false},{"texto":"FP = X_L/X_C","Correct":false}],
-   feedback_ok:"FP = R/Z = cos(φ). En resonancia FP = 1.",
+   feedback_ok:"FP = R/Z = cos(φ). En resonance FP = 1.",
    feedback_bad:"FP = cos(φ) = R/Z. FP = 1 sin desfase.",
    pista:"FP relaciona Power real (R) con aparente (Z)."
   },
@@ -198,7 +198,7 @@ const QUIZ_CONFIG = {
    formula:"ω₀ = 1/√(LC)",
    Options:[{"texto":"ω₀ = 1/√(LC), Energy oscila entre C y L","Correct":true},{"texto":"ω₀ = √(L/C)","Correct":false},{"texto":"Se amortigua siempre","Correct":false},{"texto":"ω₀ = LC","Correct":false}],
    feedback_ok:"ω₀ = 1/√(LC). Energy: ½Q²/C ↔ ½LI². Análogo al péndulo.",
-   feedback_bad:"LC ideal: ω₀ = 1/√(LC). Sin R: oscilaciones infinitas.",
+   feedback_bad:"LC ideal: ω₀ = 1/√(LC). Sin R: oscillations infinitas.",
    pista:"d²Q/dt² + Q/(LC) = 0 → compare con MAS."
   },
   {Level:3,id:"c12-n3-9",

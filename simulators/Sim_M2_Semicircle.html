@@ -165,31 +165,31 @@
                     <p class="font-semibold text-base mb-2">Ring Diferencial (en radio $a$)</p>
                     <div class="space-y-2 pl-2">
                         <p>Radius $a$: <span id="aValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> m</p>
-                        <p>Carga $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> C</p>
-                        <p>Campo $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
+                        <p>Charge $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> C</p>
+                        <p>Field $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                     </div>
                     <hr class="my-4 border-slate-200 dark:border-slate-700">
-                    <p class="font-semibold text-base mb-2">Campo Total (Integrado de $r_1$ a $r_2$)</p>
+                    <p class="font-semibold text-base mb-2">Field Total (Integrado de $r_1$ a $r_2$)</p>
                      <div class="space-y-2 pl-2">
-                        <p>Carga Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
-                        <p>Campo $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
+                        <p>Charge Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
+                        <p>Field $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                     </div>
                 </div>
                 
                 <!-- Theory Tab -->
                 <div id="teoria" class="tab-content p-2 text-sm space-y-3">
-                    <p class="font-semibold text-base">1. Campo de un Arc Delgado</p>
-                    <p>El campo en el centro de un arco de radio $a$ y apertura $\alpha$ es:</p>
+                    <p class="font-semibold text-base">1. Field de un Arc Delgado</p>
+                    <p>El field en el centro de un arco de radio $a$ y apertura $\alpha$ es:</p>
                     <p class="text-center my-1 p-2 border border-slate-200 dark:border-slate-700 rounded-md">
                         $$d\vec{E} = \frac{2 k_e \lambda}{a} \sin\left(\frac{\alpha}{2}\right) (-\hat{i})$$
                     </p>
                     <p class="font-semibold text-base">2. Ring Diferencial</p>
-                    <p>Para un anillo delgado de grosor $da$, la densidad lineal $\lambda$ es $\sigma da$. Sustituyendo en la Formula Previous, obtenemos el campo del anillo:</p>
+                    <p>Para un anillo delgado de grosor $da$, la densidad lineal $\lambda$ es $\sigma da$. Sustituyendo en la Formula Previous, obtenemos el field del anillo:</p>
                     <p class="text-center my-1 p-2 border border-slate-200 dark:border-slate-700 rounded-md">
                         $$d\vec{E} = \frac{2 k_e (\sigma da)}{a} \sin\left(\frac{\alpha}{2}\right) (-\hat{i})$$
                     </p>
-                    <p class="font-semibold text-base">3. Integral para el Campo Total</p>
-                    <p>Integramos el campo $dE$ de todos los anillos desde $r_1$ hasta $r_2$. Los términos constantes salen de la integral:</p>
+                    <p class="font-semibold text-base">3. Integral para el Field Total</p>
+                    <p>Integramos el field $dE$ de todos los anillos desde $r_1$ hasta $r_2$. Los términos constantes salen de la integral:</p>
                      <p class="text-center my-1 p-2 border border-slate-200 dark:border-slate-700 rounded-md">
                         $$\vec{E} = 2 k_e \sigma \sin\left(\frac{\alpha}{2}\right) \int_{r_1}^{r_2} \frac{da}{a} \, (-\hat{i})$$
                     </p>
@@ -204,14 +204,14 @@
                 <div id="analisis" class="tab-content p-2 text-sm space-y-4">
                     <p class="font-semibold text-base">Tips Conceptuales</p>
                     <ul class="list-disc list-inside space-y-2">
-                        <li><strong>Simetría:</strong> El campo neto siempre apunta a lo largo del eje de simetría (eje X en este caso). Las componentes verticales se cancelan.</li>
-                        <li><strong>Máximo Campo:</strong> Para radios y carga fijos, el campo es máximo cuando el arco es un semicírculo ($\alpha = 180^\circ$), ya que $\sin(\alpha/2) = \sin(90^\circ) = 1$.</li>
-                         <li><strong>Campo Cero:</strong> Si la apertura es de $360^\circ$ (un anillo completo), el campo en el centro es cero. ¡Compruébalo!</li>
+                        <li><strong>Symmetry:</strong> El field neto siempre apunta a lo largo del eje de symmetry (eje X en este caso). Las componentes verticales se cancelan.</li>
+                        <li><strong>Máximo Field:</strong> Para radios y charge fijos, el field es máximo cuando el arco es un semicírculo ($\alpha = 180^\circ$), ya que $\sin(\alpha/2) = \sin(90^\circ) = 1$.</li>
+                         <li><strong>Field Cero:</strong> Si la apertura es de $360^\circ$ (un anillo completo), el field en el centro es cero. ¡Compruébalo!</li>
                     </ul>
 
                     <p class="font-semibold text-base mt-4">Questions de Análisis</p>
                     <ol class="list-decimal list-inside space-y-2">
-                       <li>Fija todos los Parameters y varía solo el Angle. ¿Por qué el campo disminuye después de los 180°?</li>
+                       <li>Fija todos los Parameters y varía solo el Angle. ¿Por qué el field disminuye después de los 180°?</li>
                        <li>Si $r_1$ se hace muy cercano a $r_2$, ¿el Angle de apertura importa tanto como la separación de los radios?</li>
                     </ol>
 
@@ -226,7 +226,7 @@
                                 <li>Densidad superficial $\sigma = -4.0$ nC/m²</li>
                             </ul>
                             <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                                <strong>Pista:</strong> Usa los sliders para ajustar cada valor. ¡El panel de "Datos" te Showá el Result! (Recuerda que la magnitudeeeee del campo es siempre positiva).
+                                <strong>Pista:</strong> Usa los sliders para ajustar cada valor. ¡El panel de "Datos" te Showá el Result! (Recuerda que la magnitudeeeee del field es siempre positiva).
                             </p>
                         </div>
                     </div>
@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function drawArrow(fromx, fromy, dx, dy, color, lineWidth, label) {
         if (Math.hypot(dx, dy) < 1) return;
         
-        // El campo siempre apunta en -i si la carga es positiva
+        // El field siempre apunta en -i si la charge es positiva
         const final_dx = state.chargeSign > 0 ? -Math.abs(dx) : Math.abs(dx);
 
         const tox = fromx + final_dx;

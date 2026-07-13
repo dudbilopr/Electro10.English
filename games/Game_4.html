@@ -195,7 +195,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <script>
 const GAME_CONFIG = {
   titulo: "Electric Potential",
-  descripcion: "Domina el concepto de Energy en campos eléctricos. 5 rondas de Powerl y equiPowerles.",
+  descripcion: "Domina el concepto de Energy en fields electrics. 5 rondas de Powerl y equiPowerles.",
   color: "#d97706",
   moduloId: "m4-j1",
   xpGanado: 25,
@@ -203,7 +203,7 @@ const GAME_CONFIG = {
   rondas: [
     {
       titulo:"Ronda 1",categoria:"CONCEPTOS",
-      Question:"¿Cuánto Work requiere mover una carga sobre una superficie equiPowerl?",
+      Question:"¿Cuánto Work requiere mover una charge sobre una superficie equiPowerl?",
       formula:null,
       Options:["W = qV","W = q²/V","W = 0 (ninguno)","Depende de la Trajectory"],correcta:2,
       feedback_ok:"¡Exacto! Sobre una equiPowerl, ΔV = 0 → W = qΔV = 0. No se requiere Work.",
@@ -211,7 +211,7 @@ const GAME_CONFIG = {
     },
     {
       titulo:"Ronda 2",categoria:"CÁLCULO",
-      Question:"Potential a 0.3m de una carga de +1μC:",
+      Question:"Potential a 0.3m de una charge de +1μC:",
       formula:"V = kq/r",
       Options:["30000 V","3000 V","300 V","30 V"],correcta:0,
       feedback_ok:"V = 9×10⁹ × 10⁻⁶ / 0.3 = 30000 V = 30 kV.",
@@ -230,15 +230,15 @@ const GAME_CONFIG = {
       Question:"El Electric Field E y el Powerl V se relacionan por:",
       formula:"E = -∇V",
       Options:["E = +∇V","E = -∇V","E = V/r","E = 1/V"],correcta:1,
-      feedback_ok:"E = -∇V. El campo apunta en la dirección de máxima disminución del Powerl (cuesta abajo en V).",
+      feedback_ok:"E = -∇V. El field apunta en la dirección de máxima disminución del Powerl (cuesta abajo en V).",
       feedback_bad:"E = -∇V. El signo negativo indica que E apunta del Powerl alto al bajo."
     },
     {
       titulo:"Ronda 5",categoria:"SUPERPosition",
       Question:"El Powerl neto de dos Charges iguales +q en puntos equidistantes de ambas:",
       formula:"V_total = V₁ + V₂ (escalar)",
-      Options:["V = 0 por simetría","V = 2kq/r (el doble de cada una)","V = kq/r","V depende de la dirección"],correcta:1,
-      feedback_ok:"¡Correct! El Powerl es ESCALAR, así que V_total = V₁ + V₂ = 2kq/r. Mucho más simple que la suma vectorial del campo.",
+      Options:["V = 0 por symmetry","V = 2kq/r (el doble de cada una)","V = kq/r","V depende de la dirección"],correcta:1,
+      feedback_ok:"¡Correct! El Powerl es ESCALAR, así que V_total = V₁ + V₂ = 2kq/r. Mucho más simple que la suma vectorial del field.",
       feedback_bad:"El Powerl es escalar. V_total = V₁ + V₂ = 2×(kq/r) = 2kq/r. ¡Sin análisis vectorial!"
     }
   ]

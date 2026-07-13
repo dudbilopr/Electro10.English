@@ -53,12 +53,12 @@
                 </div>
             </section>
 
-            <!-- Configuration del Campo -->
+            <!-- Configuration del Field -->
             <section class="space-y-3 border-t border-slate-800 pt-4">
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Electric Field</h2>
                 <select id="fieldType" class="w-full bg-slate-800 border border-slate-600 rounded p-2 text-sm outline-none">
-                    <option value="uniform">Campo Uniforme</option>
-                    <option value="point">Carga Puntual</option>
+                    <option value="uniform">Field Uniforme</option>
+                    <option value="point">Charge Puntual</option>
                 </select>
 
                 <div id="uniformSettings" class="space-y-2">
@@ -67,16 +67,16 @@
                 </div>
 
                 <div id="pointSettings" class="hidden space-y-2">
-                    <label class="block text-xs">Carga (q)</label>
+                    <label class="block text-xs">Charge (q)</label>
                     <input type="range" id="chargeValue" min="-10" max="10" step="1" value="5" class="w-full accent-yellow-500">
-                    <p class="text-[10px] text-yellow-400 italic">Mueve la carga arrastrándola.</p>
+                    <p class="text-[10px] text-yellow-400 italic">Mueve la charge arrastrándola.</p>
                 </div>
             </section>
 
             <section class="mt-auto bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
                 <h3 class="text-blue-400 font-bold mb-1 text-sm">Análisis de Gauss</h3>
                 <p id="theoryText" class="text-[11px] text-slate-300 leading-tight italic">
-                    El flujo neto depende de la carga encerrada.
+                    El flux neto depende de la charge encerrada.
                 </p>
             </section>
         </div>
@@ -170,7 +170,7 @@
             setupInteractions();
             animate();
             
-            setTimeout(() => showToast("Pasa el mouse sobre la carga para arrastrarla"), 1000);
+            setTimeout(() => showToast("Pasa el mouse sobre la charge para arrastrarla"), 1000);
         }
 
         function createSurface() {
@@ -332,15 +332,15 @@
                     const field = new THREE.Vector3(0, 0, config.fieldStrength);
                     const cosTheta = normal.dot(field.clone().normalize());
                     flux = config.fieldStrength * area * cosTheta;
-                    theoryEl.innerText = "Superficie abierta: El flujo depende del Angle de incidencia.";
+                    theoryEl.innerText = "Superficie abierta: El flux depende del Angle de incidencia.";
                     stepsEl.innerHTML = `<div>• E = ${config.fieldStrength} N/C</div><div>• Área = ${area.toFixed(2)} m²</div><div>• cos(θ) = ${cosTheta.toFixed(2)}</div>`;
                 } else {
                     flux = 0;
-                    theoryEl.innerText = "Campo Uniforme: El flujo que entra es igual al que sale (Φ_neto = 0).";
+                    theoryEl.innerText = "Field Uniforme: El flux que entra es igual al que sale (Φ_neto = 0).";
                     stepsEl.innerHTML = `<div>• Superficie Cerrada</div><div>• Φ_neto = 0 (Gauss)</div>`;
                 }
             } else {
-                // Punto de carga
+                // Punto de charge
                 const bbox = new THREE.Box3().setFromObject(surface);
                 const isInsideBBox = bbox.containsPoint(chargeMesh.position);
                 let reallyInside = false;
@@ -361,23 +361,23 @@
                 if (isOpen) {
                     const dist = chargeMesh.position.distanceTo(surface.position);
                     flux = (config.chargeValue / (1 + dist * 0.5)) * (reallyInside ? 1 : 0.3);
-                    theoryEl.innerText = "Carga y superficie abierta: El flujo varía con la Distance.";
+                    theoryEl.innerText = "Charge y superficie abierta: El flux varía con la Distance.";
                 } else {
                     flux = reallyInside ? config.chargeValue : 0;
-                    theoryEl.innerText = reallyInside ? "¡Carga Encerrada! Hay flujo neto." : "Carga Exterior: Flujo neto cero.";
-                    stepsEl.innerHTML = `<div>• Carga q = ${config.chargeValue}</div><div>• ¿Interior? ${reallyInside ? 'SÍ' : 'NO'}</div>`;
+                    theoryEl.innerText = reallyInside ? "¡Charge Encerrada! Hay flux neto." : "Charge Exterior: Flux neto cero.";
+                    stepsEl.innerHTML = `<div>• Charge q = ${config.chargeValue}</div><div>• ¿Interior? ${reallyInside ? 'SÍ' : 'NO'}</div>`;
                 }
             }
 
             fluxValueEl.innerText = flux.toFixed(2);
             if (Math.abs(flux) < 0.05) {
                 statusEl.className = "w-full text-center py-1 rounded-full text-[10px] font-bold uppercase bg-slate-700";
-                statusEl.innerText = "Flujo Nulo";
+                statusEl.innerText = "Flux Nulo";
                 fluxValueEl.style.color = COLORS.null;
             } else {
                 const isPos = flux > 0;
                 statusEl.className = `w-full text-center py-1 rounded-full text-[10px] font-bold uppercase ${isPos ? 'bg-yellow-600' : 'bg-red-600'}`;
-                statusEl.innerText = isPos ? "Flujo Positive" : "Flujo Negative";
+                statusEl.innerText = isPos ? "Flux Positive" : "Flux Negative";
                 fluxValueEl.style.color = isPos ? COLORS.positive : COLORS.negative;
             }
         }

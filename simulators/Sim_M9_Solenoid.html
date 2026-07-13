@@ -40,7 +40,7 @@
     <header class="h-14 bg-slate-900 border-b border-slate-800 flex items-center px-4 z-20 shrink-0 shadow-md">
         <div class="flex items-center gap-3">
             <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20">B</div>
-            <h1 class="text-lg font-bold text-white">Simulator <span class="text-blue-400">Ley de Ampere (Solenoid)</span></h1>
+            <h1 class="text-lg font-bold text-white">Simulator <span class="text-blue-400">Ampere's Law (Solenoid)</span></h1>
         </div>
     </header>
 
@@ -95,7 +95,7 @@
             <div id="canvas-container" class="w-full h-1/2 border-b border-slate-800 relative cursor-move">
                 <div class="absolute top-4 left-4 z-10 glass-panel px-3 py-2 rounded-lg pointer-events-none">
                     <div class="text-xs font-bold text-slate-400 mb-1">Visualización 3D (Solenoid)</div>
-                    <div class="text-[10px] text-slate-500">Observa cómo el campo en el centro es uniforme.</div>
+                    <div class="text-[10px] text-slate-500">Observa cómo el field en el centro es uniforme.</div>
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
                 <div class="flex-1 min-w-[300px]">
                     <h3 class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        Ley de Ampere (Solenoid Ideal)
+                        Ampere's Law (Solenoid Ideal)
                     </h3>
                     <div class="glass-panel p-4 rounded-xl border-blue-500/30 border">
                         <div id="math-steps" class="space-y-3 text-sm text-slate-300 font-light">
@@ -260,7 +260,7 @@
                 data: {
                     labels: [],
                     datasets: [{
-                        label: 'Campo Bx (T)',
+                        label: 'Field Bx (T)',
                         data: [],
                         borderColor: '#3b82f6',
                         backgroundColor: 'rgba(59, 130, 246, 0.2)',
@@ -275,7 +275,7 @@
                     plugins: { legend: { display: false } },
                     scales: {
                         x: { title: { display: true, text: 'Position Eje x (m)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
-                        y: { title: { display: true, text: 'Campo Bx (T)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', format: { notation: "scientific" } } }
+                        y: { title: { display: true, text: 'Field Bx (T)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', format: { notation: "scientific" } } }
                     }
                 }
             });
@@ -320,7 +320,7 @@
                     $$ n = \\frac{N}{L} = \\frac{${state.N}}{${state.L.toFixed(2)}} = ${n.toFixed(1)}\\ \\text{m}^{-1} $$
                 </div>
                 <div class="mt-3 text-center">
-                    <span class="text-xs text-slate-400">Campo B en el centro (Ideal)</span>
+                    <span class="text-xs text-slate-400">Field B en el centro (Ideal)</span>
                     $$ B = \\mu_0 n I $$
                 </div>
                 <div class="mt-3 border-l-4 border-blue-500 pl-3">
@@ -329,7 +329,7 @@
                     </div>
                 </div>
                 <div class="bg-blue-500/10 p-3 rounded mt-4 border border-blue-500/20 text-center">
-                    <span class="text-xs text-blue-400 uppercase tracking-wider font-bold">Campo Magnético $B$</span><br>
+                    <span class="text-xs text-blue-400 uppercase tracking-wider font-bold">Field Magnetic $B$</span><br>
                     <span class="text-xl font-mono text-white">$$ B = ${B_ideal.toExponential(3)}\\ \\text{T} $$</span>
                 </div>
             `;

@@ -141,7 +141,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
     <aside class="sidebar sidebar-left" id="toolbar">
         <button class="tool-btn active" data-tool="select" title="select/Move (Arrastra para Multi-selesson)"><i class="ph ph-cursor"></i></button>
         <button class="tool-btn" data-tool="pan" title="Move Lienzo (Mano) - Atajo: Clic central ratón"><i class="ph ph-hand-palm"></i></button>
-        <button class="tool-btn" data-tool="wire" title="Conectar Cables (Snapping magnético a pines)"><i class="ph ph-line-segment"></i></button>
+        <button class="tool-btn" data-tool="wire" title="Conectar Cables (Snapping magnetic a pines)"><i class="ph ph-line-segment"></i></button>
         <button class="tool-btn" data-tool="battery" title="Fuente DC (Batería)"><i class="ph ph-battery-full"></i></button>
         <button class="tool-btn" data-tool="cap_ceramic" title="Capacitor Placas Paralelas"><i class="ph ph-pause" style="transform: rotate(90deg);"></i></button>
         <!-- Icono customizado SVG para Electrolítico IEEE -->
@@ -243,7 +243,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
                 <i class="ph ph-lightning" style="font-size: 5rem;"></i>
             </div>
             <h2 style="font-size: 2rem; margin-bottom: 12px; font-weight: 900; letter-spacing:1px;">Capacitance10</h2>
-            <p style="opacity: 0.95; font-size: 1rem; line-height: 1.6; font-weight:500;">Plataforma profesional de simulación de circuitos, análisis de campos eléctricos y algoritmos equivalentes para ingeniería.</p>
+            <p style="opacity: 0.95; font-size: 1rem; line-height: 1.6; font-weight:500;">Plataforma profesional de simulación de circuitos, análisis de fields electrics y algoritmos equivalentes para ingeniería.</p>
         </div>
         
         <div style="flex: 1.2; padding: 48px; display: flex; flex-direction: column; justify-content: center; background:var(--glass-bg);">
@@ -554,7 +554,7 @@ onAuthStateChanged(auth, async u => {
 });
 
 $('btn-login-email').onclick = async () => {
-    const e = $('auth-email').value, p = $('auth-pass').value; if(!e||!p) return toast('Llene campos');
+    const e = $('auth-email').value, p = $('auth-pass').value; if(!e||!p) return toast('Llene fields');
     try { await signInWithEmailAndPassword(auth, e, p); } catch(err) { if(err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential') { try { await createUserWithEmailAndPassword(auth, e, p); } catch(ex) { toast(ex.message); } } else toast(err.message); }
 };
 
@@ -687,7 +687,7 @@ const wToC = (x,y) => ({ x: (x - cur().pan.x)/cur().zoom, y: (y - cur().pan.y)/c
 const createNode = (x,y) => { let n={id:uid(),x,y}; cur().nodes.push(n); return n; };
 const getNode = (x,y, tolerance=15) => cur().nodes.find(n=>dist(n.x,n.y,x,y)<tolerance) || createNode(x,y);
 
-// Snapping preciso a pines magnéticos
+// Snapping preciso a pines magnetics
 const getClosestPin = (x, y) => {
     let closest = null; let minDist = 20; 
     cur().comps.forEach(c => {
@@ -842,7 +842,7 @@ const drawComp = (c) => {
         ctx.strokeRect(-15,-10,30,20); ctx.font='10px sans-serif'; ctx.fillText('V/C', -10, 3);
     }
     
-    // Physics Visual (Campo y Carga)
+    // Physics Visual (Field y Charge)
     if(c.type.includes('cap') && c.V !== undefined && !c.isEq && !c.exploded) {
         let qCount = Math.min(6, Math.max(2, Math.floor(Math.abs(c.Q)/10) || 2)); 
         let sL = c.V >= 0 ? '+' : '-'; let sR = c.V >= 0 ? '-' : '+';
@@ -962,7 +962,7 @@ const renderProps = () => {
         pc.innerHTML += `
         <div style="margin-top:16px; border-top:1px solid var(--glass-border); padding-top:12px;">
             <div class="panel-title" style="font-size:0.8rem; margin-bottom:8px;"><i class="ph ph-atom"></i> Physics Constructiva</div>
-            <div class="input-group"><label>Geometría del Capacitor</label>
+            <div class="input-group"><label>Geometry del Capacitor</label>
                 <select id="prop-geom">
                     <option value="paralelas" ${c.geom==='paralelas'?'selected':''}>Placas Paralelas</option>
                     <option value="cilindrico" ${c.geom==='cilindrico'?'selected':''}>Cilíndrico</option>

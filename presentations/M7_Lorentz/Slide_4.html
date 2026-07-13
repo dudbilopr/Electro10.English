@@ -381,10 +381,10 @@
             const stepsData = [
                 {
                     title: "Introduction y Glossary",
-                    desc: "welcome. Aprenderemos a resolver la red mediante el modelo $CircuitReductionResistor10.easy$. Nuestro objective es colapsar la topología y validar las Currents por la Ley de Ohm.",
+                    desc: "welcome. Aprenderemos a resolver la red mediante el modelo $CircuitReductionResistor10.easy$. Nuestro objective es colapsar la topología y validar las Currents por la Ohm's Law.",
                     glossary: [
                         { t: "Current Convencional (Rojo)", d: "Modelo teórico: la Current viaja del polo Positive (+) al Negative (-)." },
-                        { t: "Flujo de Electrones (Amarillo)", d: "Physics Real: los electrones viajan del polo Negative (-) hacia el Positive (+)." }
+                        { t: "Flux de Electrones (Amarillo)", d: "Physics Real: los electrones viajan del polo Negative (-) hacia el Positive (+)." }
                     ],
                     tip: "Activa el Puntero Laser y la Pantalla Completa en la barra superior. Toca el circuito visual para avanzar rápidamente."
                 },
@@ -423,26 +423,26 @@
                 },
                 {
                     title: "Paso 4: Resistance Equivalente Total",
-                    desc: "Hemos fusionado toda la red en $\\textcolor{"+C.req+"}{R_p}$, la cual ahora queda en serie directa con $\\textcolor{"+C.r1+"}{R_1}$. Sumamos estos dos elementos en serie y confirmamos el Result adelantado en nuestra ecuación maestra:",
+                    desc: "Hemos fusionado toda la red en $\\textcolor{"+C.req+"}{R_p}$, la cual ahora queda en serie directa con $\\textcolor{"+C.r1+"}{R_1}$. Sumamos estos dos elementos en serie y confirmamos el Result adelantado en nuestra equation maestra:",
                     math: `\\textcolor{${C.req}}{R_{eq}} = \\textcolor{${C.r1}}{R_1} + \\textcolor{${C.req}}{R_p} = ${v.r1} + ${fmt(c.rp)} = \\mathbf{\\textcolor{${C.req}}{${fmt(c.rt)} \\Omega}}`
                 },
                 {
                     title: "Paso 5: Iniciando el Despliegue",
-                    desc: "¡Inicia la fase de retorno! Conocida la Resistance global, aplicamos la Ley de Ohm ($I = V/R$) para Calculate la Current máxima $\\textcolor{"+C.req+"}{I_T}$ que provee la fuente. Acto seguido, abrimos el circuito y multiplicamos esa Current por $\\textcolor{"+C.r1+"}{R_1}$ para hallar la tensión que ésta disipa en forma de calor.",
+                    desc: "¡Inicia la fase de retorno! Conocida la Resistance global, aplicamos la Ohm's Law ($I = V/R$) para Calculate la Current máxima $\\textcolor{"+C.req+"}{I_T}$ que provee la fuente. Acto seguido, abrimos el circuito y multiplicamos esa Current por $\\textcolor{"+C.r1+"}{R_1}$ para hallar la tensión que ésta disipa en forma de calor.",
                     math: `\\begin{aligned}
                         \\textcolor{${C.req}}{I_T} &= \\frac{V_{fuente}}{\\textcolor{${C.req}}{R_{eq}}} = \\frac{${v.volt}}{${fmt(c.rt)}} = \\mathbf{\\textcolor{${C.req}}{${fmt(c.it)} A}} \\\\
                         \\textcolor{${C.r1}}{V_{R1}} &= \\textcolor{${C.req}}{I_T} \\cdot \\textcolor{${C.r1}}{R_1} = ${fmt(c.it)} \\cdot ${v.r1} = \\mathbf{\\textcolor{${C.r1}}{${fmt(c.vr1)} V}}
                     \\end{aligned}`,
-                    tip: "Por la Ley de Conservación de Carga, toda la Current del circuito atraviesa obligatoriamente a R1 por ser el punto de embudo."
+                    tip: "Por la Law of Conservación de Charge, toda la Current del circuito atraviesa obligatoriamente a R1 por ser el punto de embudo."
                 },
                 {
                     title: "Paso 6: Voltage del Paralelo",
-                    desc: "Por la Segunda Ley de Kirchhoff (Ley de Voltages LVK), la Energy restante luego del paso por $\\textcolor{"+C.r1+"}{R_1}$ alimentará con Voltage constante e igual a cada una de las ramificaciones paralelas $V_p$.",
+                    desc: "Por la Segunda Law of Kirchhoff (Law of Voltages LVK), la Energy restante luego del paso por $\\textcolor{"+C.r1+"}{R_1}$ alimentará con Voltage constante e igual a cada una de las ramificaciones paralelas $V_p$.",
                     math: `V_p = V_{fuente} - \\textcolor{${C.r1}}{V_{R1}} = ${v.volt} - ${fmt(c.vr1)} = \\mathbf{${fmt(c.vp)} V}`
                 },
                 {
                     title: "Paso 7: Currents Divisionales",
-                    desc: "Conocido el Voltage de los rieles ($V_p$), lo reemplazamos en la Ley de Ohm rama por rama para determinar la cantidad de electrones por segundo (Current) que viajarán por cada sendero individual:",
+                    desc: "Conocido el Voltage de los rieles ($V_p$), lo reemplazamos en la Ohm's Law rama por rama para determinar la cantidad de electrones por segundo (Current) que viajarán por cada sendero individual:",
                     math: `\\begin{aligned}
                         \\textcolor{${C.r2}}{I_2} &= \\frac{V_p}{\\textcolor{${C.r2}}{R_2}} = \\frac{${fmt(c.vp)}}{${v.r2}} = \\mathbf{\\textcolor{${C.r2}}{${fmt(c.i2)} A}} \\\\
                         \\textcolor{${C.r5}}{I_5} &= \\frac{V_p}{\\textcolor{${C.r5}}{R_5}} = \\frac{${fmt(c.vp)}}{${v.r5}} = \\mathbf{\\textcolor{${C.r5}}{${fmt(c.i5)} A}} \\\\
@@ -472,7 +472,7 @@
                 },
                 {
                     title: "Paso 11: Verificación de Nodos (LCK)",
-                    desc: "La Primera Ley de Kirchhoff establece: $\\sum I_{entran} = \\sum I_{salen}$. Reemplazamos los valores obtenidos para deShow esta ley rigurosa en los nodos iluminados del diagrama:",
+                    desc: "La Primera Law of Kirchhoff establece: $\\sum I_{entran} = \\sum I_{salen}$. Reemplazamos los valores obtenidos para deShow esta ley rigurosa en los nodos iluminados del diagrama:",
                     math: `\\begin{aligned}
                         \\text{Nodo } \\textcolor{${C.r2}}{R_2}:& \\quad \\textcolor{${C.req}}{I_T} = \\textcolor{${C.r2}}{I_2} + I_{resto} \\implies ${fmt(c.it)}\\text{A} = ${fmt(c.i2)}\\text{A} + ${fmt(c.it - c.i2)}\\text{A} \\quad \\textcolor{#10b981}{\\checkmark} \\\\
                         \\text{Nodo } \\textcolor{${C.r5}}{R_5}:& \\quad I_{resto} = \\textcolor{${C.r5}}{I_5} + \\textcolor{${C.rab}}{I_{ab}} \\implies ${fmt(c.it - c.i2)}\\text{A} = ${fmt(c.i5)}\\text{A} + ${fmt(c.iab)}\\text{A} \\quad \\textcolor{#10b981}{\\checkmark} \\\\

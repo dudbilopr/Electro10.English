@@ -8,7 +8,7 @@ import { getIconForType, loadContent } from './content-loader.js';
 export let curriculoData = null;
 export let totalLessons  = 0;
 
-// ── Carga el currículo desde modules/ ──────────────────────
+// ── Charge el currículo desde modules/ ──────────────────────
 export async function inicializarEstructuraBase(progressData) {
     try {
         const module = await import('../modules/curriculo.js');
@@ -17,10 +17,10 @@ export async function inicializarEstructuraBase(progressData) {
         console.warn('No se pudo importar el currículo externo. Usando respaldo mínimo.');
         curriculoData = {
             modules: [{
-                titulo: 'Module 1: Electrostática - Coulomb\'s Law',
+                titulo: 'Module 1: Electrostatics - Coulomb\'s Law',
                 lecciones: [
-                    { id: 'm1-l1', tipo: 'multivideo', recurso: 'xLyRPFL0GJ8|mrCyjv9lf3I', titulo: '1. Theory: Coulomb\'s Law', descripcion: 'Selecciona la parte en el panel derecho.', llmLink: 'https://notebooklm.google.com/notebook/37622815-4b54-4808-b770-37464cb05719' },
-                    { id: 'm1-l2', tipo: 'multipresentacion', recurso: './player.html?clase=1|./player.html?clase=1', titulo: '2. Slides de Apoyo', descripcion: 'Material visual utilizado en la clase magistral.' }
+                    { id: 'm1-l1', tipo: 'multivideo', recurso: 'xLyRPFL0GJ8|mrCyjv9lf3I', titulo: '1. Theory: Coulomb\'s Law', descripcion: 'Select the part in the right panel.', llmLink: 'https://notebooklm.google.com/notebook/37622815-4b54-4808-b770-37464cb05719' },
+                    { id: 'm1-l2', tipo: 'multipresentacion', recurso: './player.html?clase=1|./player.html?clase=1', titulo: '2. Support Slides', descripcion: 'Visual material used in the lecture.' }
                 ]
             }]
         };

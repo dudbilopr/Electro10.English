@@ -145,7 +145,7 @@
                             <i data-lucide="triangle" class="w-4 h-4"></i> Red Delta ($\Delta$) y Puente
                         </p>
                         <p class="mt-1 text-sm">
-                            En una malla $\Delta$, los elementos forman un bucle cerrado. Al conectarla a otras mallas (como en un <strong>Puente de Wheatstone</strong>), las Currents se dividen creando flujos cruzados. 
+                            En una malla $\Delta$, los elementos forman un bucle cerrado. Al conectarla a otras mallas (como en un <strong>Puente de Wheatstone</strong>), las Currents se dividen creando fluxs cruzados. 
                         </p>
                         <p class="text-[11px] text-indigo-600 mt-1 italic">Dentro del puente conviven tanto figuras Delta (ej. parte superior) como figuras Estrella (ej. nodo lateral). ¡Usa los botones del panel para resaltarlas!</p>
                         <div class="math-display">
@@ -170,7 +170,7 @@
                             <i data-lucide="share-2" class="w-4 h-4"></i> Red Estrella ($Y$) Multimalla
                         </p>
                         <p class="mt-1 text-sm">
-                            Cuenta con un nodo central común. Al conectar las otras ramas a diferentes lazos de retorno (múltiples mallas), la Current total de la fuente se distribuye en el nodo central, actuando como un centro distribuidor de carga.
+                            Cuenta con un nodo central común. Al conectar las otras ramas a diferentes lazos de retorno (múltiples mallas), la Current total de la fuente se distribuye en el nodo central, actuando como un centro distribuidor de charge.
                         </p>
                         <div class="math-display">
                             $$R_{AB} = \frac{R_A R_B + R_B R_C + R_C R_A}{R_C}$$
@@ -182,7 +182,7 @@
                             <i data-lucide="activity" class="w-4 h-4"></i> Convención vs Physical
                         </p>
                         <p class="text-sm mt-1">
-                            Physicsmente, los electrones ($-$) viajan hacia el polo ($+$). Por convención, dibujamos el flujo de ($+$ a $-$). Independientemente, la caída de tensión marca $+$ por donde "entra" la Current convencional.
+                            Physicsmente, los electrones ($-$) viajan hacia el polo ($+$). Por convención, dibujamos el flux de ($+$ a $-$). Independientemente, la caída de tensión marca $+$ por donde "entra" la Current convencional.
                         </p>
                     </div>
 
@@ -194,14 +194,14 @@
                     <!-- PANEL DE CONTROL AVANZADO -->
                     <div class="control-panel shadow-sm relative z-20 flex-none">
                         
-                        <!-- Controls Topología y Flujo -->
+                        <!-- Controls Topología y Flux -->
                         <div class="flex w-full gap-[1.5vmin] border-b border-slate-300 pb-2 items-center justify-between flex-wrap">
                             <div class="control-group flex-wrap">
                                 <label class="font-bold text-slate-800 flex items-center gap-1">
                                     <i data-lucide="layout-template" class="w-4 h-4"></i> Topología:
                                     <span class="relative tip-wrapper inline-block z-50">
                                         <span class="tip-btn">?</span>
-                                        <span class="tip-content"><strong>Estructura del Circuito:</strong> Selecciona diferentes conexiones. Las redes Delta y Estrella ahora incluyen mallas adicionales para deShow flujos realistas y cruzados (Ej. Puente de Wheatstone).</span>
+                                        <span class="tip-content"><strong>Estructura del Circuito:</strong> Selecciona diferentes conexiones. Las redes Delta y Estrella ahora incluyen mallas adicionales para deShow fluxs realistas y cruzados (Ej. Puente de Wheatstone).</span>
                                     </span>
                                 </label>
                                 <select id="circuit-selector" class="bg-white border border-slate-300 rounded px-2 py-1 font-bold text-slate-700 outline-none focus:border-blue-500 cursor-pointer">
@@ -229,11 +229,11 @@
                                     <i data-lucide="monitor" class="w-4 h-4"></i> Vista 2D
                                 </button>
                                 <button id="flow-toggle" class="btn-ui bg-indigo-100 text-indigo-800 border-indigo-300" title="Cambiar dirección de Current">
-                                    <i data-lucide="refresh-cw" class="w-4 h-4"></i> Flujo Conv.
+                                    <i data-lucide="refresh-cw" class="w-4 h-4"></i> Flux Conv.
                                 </button>
                                 <span class="relative tip-wrapper inline-block z-50 -ml-1">
                                     <span class="tip-btn bg-indigo-500">?</span>
-                                    <span class="tip-content"><strong>Flujo de Charges:</strong> Alterna entre el modelo convencional (+ a -) y el modelo real Physical de electrones (- a +). Notarás que el nodo de entrada a la Resistance se mantiene como polo positivo de caída de Powerl en ambas convenciones.</span>
+                                    <span class="tip-content"><strong>Flux de Charges:</strong> Alterna entre el modelo convencional (+ a -) y el modelo real Physical de electrones (- a +). Notarás que el nodo de entrada a la Resistance se mantiene como polo positivo de caída de Powerl en ambas convenciones.</span>
                                 </span>
                             </div>
                         </div>
@@ -293,7 +293,7 @@
                                 Caídas de Tensión (V)
                                 <span class="relative tip-wrapper inline-block z-50">
                                     <span class="tip-btn scale-50 bg-slate-500">?</span>
-                                    <span class="tip-content"><strong>Gráfico Dinámico:</strong> Representa la Ley de Kirchhoff de Voltages. Muestra la porción del Voltage total que es consumida por cada Resistance principal.</span>
+                                    <span class="tip-content"><strong>Gráfico Dinámico:</strong> Representa la Law of Kirchhoff de Voltages. Muestra la porción del Voltage total que es consumida por cada Resistance principal.</span>
                                 </span>
                             </h3>
                             <div class="flex-1 flex items-end justify-around pb-5 relative pt-4">
@@ -669,14 +669,14 @@
                 createResistor(nLeft, nBot, 'r4'); 
                 createResistor(nRight, nBot, 'r5'); 
 
-                // Flujos
+                // Fluxs
                 const pathPos = [nBatP, pC1, pC2, pC3, nTop];
                 const pathNeg = [nBot, nC1, nC2, nC3, nBatN];
 
                 addChargePath([...pathPos, nLeft, ...pathNeg], 'I4'); // Rama izquierda principal
                 addChargePath([...pathPos, nRight, ...pathNeg], 'I5'); // Rama derecha principal
-                addChargePath([...pathPos, nLeft, nRight, ...pathNeg], 'I3_LR'); // Flujo cruzado L->R
-                addChargePath([...pathPos, nRight, nLeft, ...pathNeg], 'I3_RL'); // Flujo cruzado R->L
+                addChargePath([...pathPos, nLeft, nRight, ...pathNeg], 'I3_LR'); // Flux cruzado L->R
+                addChargePath([...pathPos, nRight, nLeft, ...pathNeg], 'I3_RL'); // Flux cruzado R->L
             }
             else if (t === 'star') {
                 // Estrella Multi-Malla con Charges distribuidas - Ruteo perimetral (sin cruces)
@@ -908,7 +908,7 @@
 
                 let pHigh = l.posA, pLow = l.posB;
 
-                // Adaptar polaridad real en flujos cruzados
+                // Adaptar polaridad real en fluxs cruzados
                 if (params.topo === 'delta' && l.id === 'r3' && calc.I3_RL > 0) {
                     pHigh = l.posB; pLow = l.posA;
                 }
@@ -1078,10 +1078,10 @@
             flowConvention *= -1;
             const btn = e.currentTarget;
             if(flowConvention === 1) {
-                btn.innerHTML = `<i data-lucide="refresh-cw" class="w-4 h-4"></i> Flujo Conv.`;
+                btn.innerHTML = `<i data-lucide="refresh-cw" class="w-4 h-4"></i> Flux Conv.`;
                 btn.className = "btn-ui bg-indigo-100 text-indigo-800 border-indigo-300";
             } else {
-                btn.innerHTML = `<i data-lucide="zap" class="w-4 h-4"></i> Flujo Electr.`;
+                btn.innerHTML = `<i data-lucide="zap" class="w-4 h-4"></i> Flux Electr.`;
                 btn.className = "btn-ui bg-blue-100 text-blue-800 border-blue-300";
             }
             lucide.createIcons();

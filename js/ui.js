@@ -90,7 +90,7 @@ export function ShowPerfil() {
     resetNav();
     document.getElementById('nav-perfil').classList.add('active');
     document.getElementById('profile-dashboard').style.display = 'block';
-    window.cargarDatosPerfil?.();
+    window.chargerDatosPerfil?.();
 }
 
 export function ShowLaboratorios() {
@@ -126,7 +126,7 @@ export function OpenPanelAdmin(globalSettings) {
     document.getElementById('admin-excluded-weeks').value  = globalSettings.excludedWeeks.join(', ');
     document.getElementById('admin-module-weeks').value    = globalSettings.moduleWeeksMap.join('; ');
 
-    window.cargarDirectorioAdminFirebase?.();
+    window.chargerDirectorioAdminFirebase?.();
 }
 
 // ── Sidebar, tema, chat ──────────────────────────────────────

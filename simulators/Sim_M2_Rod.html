@@ -140,7 +140,7 @@
             <!-- Introductory text -->
             <div class="mb-4 text-center">
                 <p class="text-sm text-slate-600 dark:text-slate-400">
-                    welcome. Usa los Controls para explorar cómo una carga diferencial $dq$ contribuye al Electric Field total de una varilla loaded.
+                    welcome. Usa los Controls para explorar cómo una charge diferencial $dq$ contribuye al Electric Field total de una varilla loaded.
                 </p>
             </div>
 
@@ -161,7 +161,7 @@
                         <input id="lengthSlider" type="range" min="1" max="8" value="4" step="0.1" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
                     </div>
                     <div class="my-3">
-                        <label for="densitySlider" class="block text-sm font-medium">Densidad de carga (λ): <span id="densityValue">5.0</span> nC/m</label>
+                        <label for="densitySlider" class="block text-sm font-medium">Densidad de charge (λ): <span id="densityValue">5.0</span> nC/m</label>
                         <input id="densitySlider" type="range" min="1" max="10" value="5" step="0.1" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
                     </div>
                     <div class="my-3">
@@ -188,18 +188,18 @@
 
                 <!-- Datos Tab -->
                 <div id="datos" class="tab-content p-2 text-sm">
-                    <p class="font-semibold text-base mb-2">Campo Diferencial (de $dq$)</p>
+                    <p class="font-semibold text-base mb-2">Field Diferencial (de $dq$)</p>
                     <div class="space-y-2 pl-2">
-                        <p>Carga $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> nC</p>
+                        <p>Charge $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> nC</p>
                         <p>Distance $r$: <span id="rValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> m</p>
-                        <p>Campo $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
+                        <p>Field $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                         <p>Componente $dE_x$: <span id="dExValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                         <p>Componente $dE_y$: <span id="dEyValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                     </div>
                     <hr class="my-4 border-slate-200 dark:border-slate-700">
-                    <p class="font-semibold text-base mb-2">Campo Total (Integrado)</p>
+                    <p class="font-semibold text-base mb-2">Field Total (Integrado)</p>
                      <div class="space-y-2 pl-2">
-                        <p>Campo $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
+                        <p>Field $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                         <p>Componente $E_x$: <span id="ExTotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                         <p>Componente $E_y$: <span id="EyTotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                     </div>
@@ -208,14 +208,14 @@
                 <!-- Theory Tab -->
                 <div id="teoria" class="tab-content p-2 text-sm space-y-4">
                      <p class="font-semibold text-base">Superposition Principle</p>
-                    <p>Para Calculate el campo de un objeto con carga distribuida, lo dividimos en infinitos elementos de carga $dq$. Cada $dq$ se trata como una carga puntual.</p>
+                    <p>Para Calculate el field de un objeto con charge distribuida, lo dividimos en infinitos elementos de charge $dq$. Cada $dq$ se trata como una charge puntual.</p>
                     
-                    <p class="font-semibold text-base">Campo de un Elemento Diferencial</p>
+                    <p class="font-semibold text-base">Field de un Elemento Diferencial</p>
                     <p>Cada $dq$ produce un Electric Field diferencial $d\vec{E}$ en el punto P, dado por la Coulomb\'s Law:</p>
                     <p class="text-center my-2 p-2 border border-slate-200 dark:border-slate-700 rounded-md">$$d\vec{E} = k \frac{dq}{r^2} \hat{r}$$</p>
                     
-                    <p class="font-semibold text-base">Integración para el Campo Total</p>
-                    <p>El campo total $\vec{E}$ es la suma vectorial (integral) de todos los campos diferenciales a lo largo de la varilla:</p>
+                    <p class="font-semibold text-base">Integración para el Field Total</p>
+                    <p>El field total $\vec{E}$ es la suma vectorial (integral) de todos los fields diferenciales a lo largo de la varilla:</p>
                     <p class="text-center my-2 p-2 border border-slate-200 dark:border-slate-700 rounded-md">$$\vec{E} = \int_{varilla} d\vec{E} = \int_{-L/2}^{+L/2} k \frac{\lambda \, dx}{r^2} \hat{r}$$</p>
                      <p>Este Simulator visualiza el $d\vec{E}$ de un solo $dq$ y calcula el $\vec{E}$ total para construir la intuición detrás de la integración.</p>
                 </div>
@@ -225,13 +225,13 @@
                     <p class="font-semibold text-base">Tips Conceptuales</p>
                     <ul class="list-disc list-inside space-y-2">
                         <li>La dirección de $\vec{E}$ se aleja de Charges (+) y se acerca a Charges (-).</li>
-                        <li>La magnitudeeeee del campo $|d\vec{E}|$ disminuye con el cuadrado de la Distance ($1/r^2$).</li>
-                        <li>Mueve $P$ al eje Y ($x=0$) y observa la simetría. ¿Qué componente del campo total se anula?</li>
+                        <li>La magnitudeeeee del field $|d\vec{E}|$ disminuye con el cuadrado de la Distance ($1/r^2$).</li>
+                        <li>Mueve $P$ al eje Y ($x=0$) y observa la symmetry. ¿Qué componente del field total se anula?</li>
                     </ul>
 
                     <p class="font-semibold text-base mt-4">Questions de Análisis</p>
                     <ol class="list-decimal list-inside space-y-2">
-                       <li>¿Qué ocurre con $|\vec{E}_{total}|$ si duplicas la densidad de carga $\lambda$?</li>
+                       <li>¿Qué ocurre con $|\vec{E}_{total}|$ si duplicas la densidad de charge $\lambda$?</li>
                        <li>¿Cómo cambian $E_x$ y $E_y$ si mueves $P$ a lo largo de una línea vertical?</li>
                        <li>¿En qué Position del punto $P$ la componente $E_x$ es máxima? ¿Y la $E_y$?</li>
                     </ol>
@@ -243,7 +243,7 @@
                                 Imagina que quisiéramos Calculate el Electric Field <strong>total</strong> $\vec{E}$ en el punto P. ¿Por qué la componente $E_x$ se cancelaría si P estuviera directamente sobre el centro de la varilla (en $x=0$, $y=2$)?
                             </p>
                             <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                                <strong>Pista:</strong> Coloca $P$ en el eje Y. Mueve $dq$ de un extremo a otro y observa la simetría de la componente $dE_x$. Cada $dq$ a una Distance $+x$ tiene un par simétrico en $-x$ cuya componente horizontal anula a la primera.
+                                <strong>Pista:</strong> Coloca $P$ en el eje Y. Mueve $dq$ de un extremo a otro y observa la symmetry de la componente $dE_x$. Cada $dq$ a una Distance $+x$ tiene un par simétrico en $-x$ cuya componente horizontal anula a la primera.
                             </p>
                         </div>
                     </div>

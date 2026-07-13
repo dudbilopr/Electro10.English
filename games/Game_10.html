@@ -195,11 +195,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <script>
 const GAME_CONFIG = {
   titulo: "Faraday's Law",
-  descripcion: "Domina la Induction electromagnética. 5 misiones de Induction y Lenz.",
+  descripcion: "Domina la Induction electromagnetic. 5 misiones de Induction y Lenz.",
   color: "#e11d48",
   moduloId: "m10-j1",
   xpGanado: 25,
-  logro: {icono:"<span class="inline-flex items-center text-slate-400 mr-1"><i data-lucide="settings" class="w-4 h-4 inline"></i></span>",nombre:"Maestro de la Induction",desc:"Completaste el Physics Quest de Faraday sin errores"},
+  logro: {icono:"<span class="inline-flex items-center text-slate-400 mr-1"><i data-lucide="settings" class="w-4 h-4 inline"></i></span>",nombre:"Induction Master",desc:"Completaste el Physics Quest de Faraday sin errores"},
   rondas: [
     {
       titulo:"Ronda 1",categoria:"FARADAY",
@@ -215,7 +215,7 @@ const GAME_CONFIG = {
       formula:null,
       Options:["Crea un polo norte enfrentado al imán (repulsión)","Crea un polo sur enfrentado al imán (atracción)","No fluye Current","Depende de la Resistance"],correcta:0,
       feedback_ok:"Lenz: la Current inducida se opone al cambio → crea un polo norte para repeler el imán que se acerca.",
-      feedback_bad:"Lenz: la Induction se opone al cambio de flujo. Imán acercándose → flujo aumenta → espira lo repele."
+      feedback_bad:"Lenz: la Induction se opone al cambio de flux. Imán acercándose → flux aumenta → espira lo repele."
     },
     {
       titulo:"Ronda 3",categoria:"FEM MOTRIZ",
@@ -227,9 +227,9 @@ const GAME_CONFIG = {
     },
     {
       titulo:"Ronda 4",categoria:"INDUCTANCIA",
-      Question:"La autoinductancia L de un inductor relaciona:",
+      Question:"La autoinductance L de un inductor relaciona:",
       formula:"ε = -L dI/dt",
-      Options:["Voltage y Current DC","FEM inducida con la tasa de cambio de Current","Campo B y Current directa","Energy y Voltage"],correcta:1,
+      Options:["Voltage y Current DC","FEM inducida con la tasa de cambio de Current","Field B y Current directa","Energy y Voltage"],correcta:1,
       feedback_ok:"ε = -L dI/dt. La FEM autoinducida se opone a los cambios de Current (Lenz).",
       feedback_bad:"L mide la capacidad de un inductor para inducirse FEM en sí mismo: ε = -L dI/dt."
     },

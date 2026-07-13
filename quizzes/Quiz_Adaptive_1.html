@@ -156,7 +156,7 @@ const QUIZ_CONFIG = {
     },
     {
       Level: 1, id: "c1-n1-2",
-      texto: "¿Qué tipo de carga tienen los protones?",
+      texto: "¿Qué tipo de charge tienen los protones?",
       Options: [
         { texto: "Negative", Correct: false },
         { texto: "Positive", Correct: true },
@@ -205,16 +205,16 @@ const QUIZ_CONFIG = {
         { texto: "−9.1 × 10⁻³¹ C", Correct: false },
         { texto: "−1.6 × 10⁻²⁷ C", Correct: false }
       ],
-      feedback_ok: "¡Correct! e = −1.6 × 10⁻¹⁹ C es la carga del electrón. (9.1 × 10⁻³¹ es su masa en kg.)",
-      feedback_bad: "La carga elemental es e = ±1.6 × 10⁻¹⁹ C. El electrón tiene Negative Charge: −e = −1.6 × 10⁻¹⁹ C.",
-      pista: "No confundas carga con masa. La carga elemental |e| ≈ 1.6 × 10⁻¹⁹ C."
+      feedback_ok: "¡Correct! e = −1.6 × 10⁻¹⁹ C es la charge del electrón. (9.1 × 10⁻³¹ es su masa en kg.)",
+      feedback_bad: "La charge elemental es e = ±1.6 × 10⁻¹⁹ C. El electrón tiene Negative Charge: −e = −1.6 × 10⁻¹⁹ C.",
+      pista: "No confundas charge con masa. La charge elemental |e| ≈ 1.6 × 10⁻¹⁹ C."
     },
     {
       Level: 2, id: "c1-n2-3",
       texto: "Tres Charges iguales q = +1 μC en los vértices de un triAngle equilátero de lado 1 m. ¿Cuál es la Net Force sobre una de ellas?",
       formula: "F_net = √(F₁² + F₂² + 2F₁F₂cosθ)",
       Options: [
-        { texto: "0 N por simetría", Correct: false },
+        { texto: "0 N por symmetry", Correct: false },
         { texto: "9 × 10⁻³√3 N alejándose del centroide", Correct: true },
         { texto: "18 × 10⁻³ N", Correct: false },
         { texto: "9 × 10⁻³ N hacia el centroide", Correct: false }
@@ -249,12 +249,12 @@ const QUIZ_CONFIG = {
         { texto: "r ≈ 1 km", Correct: false }
       ],
       feedback_ok: "¡Correct! r = √(kq²/F) = √(9×10⁹ × 1 / 1) = √(9×10⁹) ≈ 94868 m ≈ 94.9 km... Revisando: r = √(9×10⁹) ≈ 94868 m ≈ 94.9 km. Esta es la Answer correcta si la Force es exactamente 1N.",
-      feedback_bad: "r = √(kq²/F) = √(9×10⁹ × 1² / 1) = √(9×10⁹) ≈ 94868 m ≈ 94.9 km. ¡La carga de 1 Coulomb es enorme!",
-      pista: "Despeja r de la ecuación de Coulomb: r² = kq²/F → r = √(kq²/F). Recuerda que 1 Coulomb es una carga enormemente grande."
+      feedback_bad: "r = √(kq²/F) = √(9×10⁹ × 1² / 1) = √(9×10⁹) ≈ 94868 m ≈ 94.9 km. ¡La charge de 1 Coulomb es enorme!",
+      pista: "Despeja r de la equation de Coulomb: r² = kq²/F → r = √(kq²/F). Recuerda que 1 Coulomb es una charge enormemente grande."
     },
     {
       Level: 3, id: "c1-n3-3",
-      texto: "Compara la Force gravitacional con la electrostática entre un electrón y un protón a Distance r. ¿Cuántas veces más intensa es la eléctrica?",
+      texto: "Compara la Force gravitacional con la electrostática entre un electrón y un protón a Distance r. ¿Cuántas veces más intensa es la electric?",
       formula: "Fg = Gmemp/r², Fe = ke²/r², G = 6.67×10⁻¹¹, me = 9.1×10⁻³¹, mp = 1.67×10⁻²⁷",
       Options: [
         { texto: "≈ 10³⁹ veces", Correct: true },
@@ -263,7 +263,7 @@ const QUIZ_CONFIG = {
         { texto: "Son iguales a escala atómica", Correct: false }
       ],
       feedback_ok: "¡Análisis dimensional magistral! Fe/Fg = ke²/(Gmemp) ≈ (9×10⁹ × 2.56×10⁻³⁸) / (6.67×10⁻¹¹ × 9.1×10⁻³¹ × 1.67×10⁻²⁷) ≈ 2.27×10⁻²⁸ / 1.015×10⁻⁶⁷ ≈ 2.2×10³⁹.",
-      feedback_bad: "Fe/Fg ≈ ke²/(Gmemp) ≈ 10³⁹. La Force eléctrica es 10³⁹ veces más fuerte que la gravitacional a escala atómica.",
+      feedback_bad: "Fe/Fg ≈ ke²/(Gmemp) ≈ 10³⁹. La Force electric es 10³⁹ veces más fuerte que la gravitacional a escala atómica.",
       pista: "Calcula Fe/Fg = [ke²/r²]/[Gmemp/r²] = ke²/(Gmemp). Las r se cancelan. Sustituye las constantes."
     }
   ]

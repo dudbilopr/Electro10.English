@@ -22,7 +22,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="window.katexLoaded = true;"></script>
 
-    <!-- Estilos externos -->
+    <!-- Styles externos -->
     <link rel="stylesheet" href="./css/styles.css">
 
     <!-- Librerias externas (Graficos y Alertas) -->
@@ -80,7 +80,7 @@
     </header>
 
     <!-- Featured EMI Microteaching Banner -->
-    <div style="background: linear-gradient(135deg, #0b57d0 0%, #1e3a8a 100%); color: white; padding: 16px 24px; border-radius: 16px; margin: 24px auto; max-width: 1200px; box-shadow: 0 10px 30px rgba(11, 87, 208, 0.3); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+    <div style="background: linear-gradient(135deg, #0b57d0 0%, #1e3a8a 100%); color: white; padding: 16px 24px; border-radius: 16px; margin: 12px auto 0 auto; max-width: 1200px; box-shadow: 0 10px 30px rgba(11, 87, 208, 0.3); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
         <div style="display: flex; align-items: center; gap: 16px;">
             <div style="background: rgba(255,255,255,0.2); padding: 12px; border-radius: 12px; font-size: 28px;"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span></div>
             <div>
@@ -315,7 +315,7 @@
 
                     <div class="bento-card col-4">
                         <div class="bento-header">
-                            <h3><span class="material-symbols-outlined text-accent">bubble_chart</span> Distribución Activa</h3>
+                            <h3><span class="material-symbols-outlined text-accent">bubble_chart</span> Distribution Activa</h3>
                         </div>
                         <p style="font-size: 0.75rem; color: var(--text-low); margin: 0 0 10px 0;">Formato de contenidos del curso</p>
                         <div class="chart-container" id="container-polar">
@@ -425,7 +425,7 @@
                                     </select>
                                 </div>
                                 <div class="input-group">
-                                    <label>Estilo de Avatar</label>
+                                    <label>Style de Avatar</label>
                                     <select id="prof-avatar" class="form-input">
                                         <option value="initials">Mis Iniciales (Clásico)</option>
                                         <option value="bot">Robot de Laboratorio</option>
@@ -483,7 +483,7 @@
                                 <input type="text" id="prof-role-display" class="form-input" value="Student" disabled style="opacity:0.7; cursor:not-allowed;">
                             </div>
 
-                            <!-- Selector de Paseo de Roles Exclusivo para Admin Maestro -->
+                            <!-- Selector de Paseo de Roles Exclusivo para Admin Master -->
                             <div class="input-group" id="admin-view-toggle-container" style="display: none; background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.3); margin-top: 15px;">
                                 <label style="color: var(--admin);"><span class="material-symbols-outlined text-[16px]" style="vertical-align:bottom;">visibility</span> Modo de Visualización (Master Admin)</label>
                                 <select id="admin-view-mode" class="form-input" onchange="window.cambiarModoVistaAdmin()" style="border-color: var(--admin);">
@@ -589,7 +589,7 @@
                                 <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: #8b5cf6;">import_contacts</span> Lectura Profunda</h4>
                                 <ul style="color: var(--text-medium); font-size: 0.85rem; padding-left: 20px; margin: 0; line-height: 1.6;">
                                     <li>Lee los primeros y últimos párrafos antes de entrar en los detalles matemáticos.</li>
-                                    <li>No te asustes por integrales triples; busca el <b>significado Physical</b> de la ecuación.</li>
+                                    <li>No te asustes por integrales triples; busca el <b>significado Physical</b> de la equation.</li>
                                 </ul>
                             </div>
 
@@ -623,8 +623,8 @@
                                 <p style="margin: 0; color: var(--text-medium); font-size: 0.9rem;">Agrega Charges positivas o negativas y observa las líneas de Force en tiempo real.</p>
                             </div>
                             <div style="display: flex; gap: 10px;">
-                                <button id="btn-add-pos" class="btn-primary" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444;"><span class="material-symbols-outlined">add_circle</span> Carga +</button>
-                                <button id="btn-add-neg" class="btn-primary" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; border: 1px solid #3b82f6;"><span class="material-symbols-outlined">do_not_disturb_on</span> Carga -</button>
+                                <button id="btn-add-pos" class="btn-primary" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444;"><span class="material-symbols-outlined">add_circle</span> Charge +</button>
+                                <button id="btn-add-neg" class="btn-primary" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; border: 1px solid #3b82f6;"><span class="material-symbols-outlined">do_not_disturb_on</span> Charge -</button>
                                 <button id="btn-clear-canvas" class="icon-btn" title="Clear"><span class="material-symbols-outlined">delete</span></button>
                             </div>
                         </div>
@@ -639,7 +639,7 @@
                             <span class="material-symbols-outlined" style="font-size: 48px; color: #0ea5e9; opacity: 0.5;">bolt</span>
                         </div>
                         <h3 style="margin: 0 0 10px 0; color: var(--text-high);">practice 2: Coulomb\'s Law</h3>
-                        <p style="color: var(--text-medium); font-size: 0.85rem; margin-bottom: 15px;">Simulation de Forces eléctricas interactivas.</p>
+                        <p style="color: var(--text-medium); font-size: 0.85rem; margin-bottom: 15px;">Simulation de Forces electrics interactivas.</p>
                         <div style="display: inline-block; background: var(--bg-surface-hover); color: var(--text-medium); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
                             <span class="material-symbols-outlined" style="font-size: 14px; vertical-align: middle;">schedule</span> Próximamente
                         </div>
@@ -678,7 +678,7 @@
                     <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-history', this)"><span class="material-symbols-outlined">history_edu</span> Historia</button>
                     <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-games', this)"><span class="material-symbols-outlined">extension</span> Games Cognitivos</button>
                     <button class="tab-btn" onclick="window.cambiarTabCerebro('brain-camera', this)" style="color: #10b981;"><span class="material-symbols-outlined">photo_camera</span> Tutor por Cámara</button>
-                    <button class="btn-primary" onclick="window.descargarObsidian()" style="margin-left: auto; background: #2b2b2b; color: #a855f7; border: 1px solid #a855f7;"><span class="material-symbols-outlined text-[18px]">download</span> Bóveda Obsidian</button>
+                    <button class="btn-primary" onclick="window.deschargerObsidian()" style="margin-left: auto; background: #2b2b2b; color: #a855f7; border: 1px solid #a855f7;"><span class="material-symbols-outlined text-[18px]">download</span> Bóveda Obsidian</button>
                 </div>
 
                 <!-- Tab: Grafo Visual (Obsidian) -->
@@ -784,7 +784,7 @@
             <div id="admin-dashboard" class="bento-container" style="display: none;">
                 <div class="bento-grid">
                     <div class="bento-card col-12" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
-                        <h2 style="margin:0 0 5px 0; color: var(--admin); font-size: 1.5rem; display: flex; align-items: center; gap: 10px;"><span class="material-symbols-outlined text-[28px] icon-filled">admin_panel_settings</span> Control Maestro de Analítica</h2>
+                        <h2 style="margin:0 0 5px 0; color: var(--admin); font-size: 1.5rem; display: flex; align-items: center; gap: 10px;"><span class="material-symbols-outlined text-[28px] icon-filled">admin_panel_settings</span> Control Master de Analítica</h2>
                         <p style="color: var(--text-medium); margin:0;">Insights pedagógicos, retención de Students y ajustes estructurales del curso.</p>
                     </div>
 
@@ -801,8 +801,8 @@
                             <div style="font-size: 0.75rem; color: var(--text-medium); margin-top: 5px;">Alerta de riesgo estudiantil (Churn)</div>
                         </div>
                         <div class="stat-box" style="padding: 15px; border-left: 4px solid #3b82f6;">
-                            <div class="stat-value" style="font-size: 2.2rem; color: #3b82f6;" id="admin-metric-carga">0</div>
-                            <div class="stat-label" style="font-weight: bold;">Carga Cognitiva Promedio</div>
+                            <div class="stat-value" style="font-size: 2.2rem; color: #3b82f6;" id="admin-metric-charge">0</div>
+                            <div class="stat-label" style="font-weight: bold;">Charge Cognitiva Promedio</div>
                             <div style="font-size: 0.75rem; color: var(--text-medium); margin-top: 5px;">Horas/semana / Level Mates</div>
                         </div>
                         <div class="stat-box" style="padding: 15px; border-left: 4px solid #8b5cf6;">
@@ -1090,7 +1090,7 @@
         </div>
     </div>
 
-    <!-- Modal CHAEA (Estilos de Aprendizaje) -->
+    <!-- Modal CHAEA (Styles de Aprendizaje) -->
     <div id="chaea-modal" class="modal" style="display: none; align-items:center; justify-content:center; z-index: 2000;">
         <div class="modal-content bento-card" style="width: 90%; max-width: 1000px; height: 90vh; display: flex; flex-direction: column; padding: 0; overflow: hidden; background: var(--bg-main);">
             <!-- Header -->
@@ -1098,7 +1098,7 @@
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <span class="material-symbols-outlined icon-filled" style="color: var(--primary); font-size: 32px;">psychology</span>
                     <div>
-                        <h2 style="margin: 0; color: var(--text-high);">Test de Estilos de Aprendizaje (CHAEA)</h2>
+                        <h2 style="margin: 0; color: var(--text-high);">Test de Styles de Aprendizaje (CHAEA)</h2>
                         <div style="font-size: 0.85rem; color: var(--text-medium);">Question <span id="chaea-current-num">1</span> de 80</div>
                     </div>
                 </div>
@@ -1162,7 +1162,7 @@
                 <div style="display: flex; gap: 30px;">
                     <!-- Gráfico -->
                     <div class="bento-card" style="flex: 1; background: var(--bg-surface); display:flex; flex-direction:column; align-items:center;">
-                        <h4 style="margin-top:0;">Distribución de Estilos</h4>
+                        <h4 style="margin-top:0;">Distribution de Styles</h4>
                         <div style="width: 100%; max-width: 400px; aspect-ratio: 1; position: relative;">
                             <canvas id="chaea-radar-chart"></canvas>
                         </div>
@@ -1172,7 +1172,7 @@
                     <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
                         <div class="bento-card" style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
                             <h3 style="margin-top:0; color:#3b82f6; display:flex; align-items:center; gap:10px;">
-                                <span class="material-symbols-outlined">psychology_alt</span> Estilo Predominante: <span id="chaea-res-dom"></span>
+                                <span class="material-symbols-outlined">psychology_alt</span> Style Predominante: <span id="chaea-res-dom"></span>
                             </h3>
                             <p id="chaea-res-desc" style="color: var(--text-high); line-height: 1.5; font-size: 0.95rem;"></p>
                         </div>

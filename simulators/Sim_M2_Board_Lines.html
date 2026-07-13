@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tablero Didáctico: Distribuciones de Carga</title>
+    <title>Tablero Didáctico: Distribuciones de Charge</title>
     
     <!-- KaTeX para renderizado matemático -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -394,7 +394,7 @@
     <div id="modal-overlay" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
-            <h2 style="margin-top:0; color:#0f172a; text-align:center; font-size:1.4rem;">Exploración de Simetrías Vectoriales</h2>
+            <h2 style="margin-top:0; color:#0f172a; text-align:center; font-size:1.4rem;">Exploración de Symmetrys Vectoriales</h2>
             <div id="modal-body"></div>
         </div>
     </div>
@@ -408,7 +408,7 @@
             </div>
             <div class="panel">
                 <strong>Consejo de Resolution:</strong>
-                Observe el principio de recursividad espacial: La solution de la línea (1D) se convierte en el diferencial del plano (2D). Preste atención a los vectores unitarios ($\hat{i}, \hat{j}, \hat{k}$) y a la cancelación de componentes por simetría.
+                Observe el principio de recursividad espacial: La solution de la línea (1D) se convierte en el diferencial del plano (2D). Preste atención a los vectores unitarios ($\hat{i}, \hat{j}, \hat{k}$) y a la cancelación de componentes por symmetry.
             </div>
         </div>
     </header>
@@ -571,7 +571,7 @@
 
                     <!-- FILAS DE TEXTO (ZONAS DROP) -->
                     <tr>
-                        <td>2. Identifique la densidad de carga apropiada</td>
+                        <td>2. Identifique la densidad de charge apropiada</td>
                         <td class="dropzone" id="dz_l_2"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_2"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_2"><div class="dropzone-content"></div></td>
@@ -583,7 +583,7 @@
                         <td class="dropzone" id="dz_v_3"><div class="dropzone-content"></div></td>
                     </tr>
                     <tr>
-                        <td>4. Expresión diferencial del campo $d\vec{E}$ <br><small style="color:var(--dist-color);">(Recursividad de dimensiones)</small></td>
+                        <td>4. Expresión diferencial del field $d\vec{E}$ <br><small style="color:var(--dist-color);">(Recursividad de dimensiones)</small></td>
                         <td class="dropzone" id="dz_l_4"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_4"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_4"><div class="dropzone-content"></div></td>
@@ -595,7 +595,7 @@
                         <td class="dropzone" id="dz_v_5"><div class="dropzone-content"></div></td>
                     </tr>
                     <tr>
-                        <td>6. Aplique argumentos de simetría</td>
+                        <td>6. Aplique argumentos de symmetry</td>
                         <td class="dropzone" id="dz_l_6"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_6"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_6"><div class="dropzone-content"></div></td>
@@ -671,7 +671,7 @@
             { id: "f_l_3", target: "dz_l_3", tex: "dq = \\lambda dy" },
             { id: "f_l_4", target: "dz_l_4", tex: "d\\vec{E} = k_e \\frac{dq}{r^2} \\hat{r}" },
             { id: "f_l_5", target: "dz_l_5", tex: "d\\vec{E} = k_e \\frac{\\lambda dy}{r^2} (\\cos(\\theta)\\,\\hat{i} - \\text{sen}(\\theta)\\,\\hat{j})" },
-            { id: "f_l_6", target: "dz_l_6", tex: "d\\vec{E}_y = 0 \\text{ (Por simetría impar)}" },
+            { id: "f_l_6", target: "dz_l_6", tex: "d\\vec{E}_y = 0 \\text{ (Por symmetry impar)}" },
             { id: "f_l_7", target: "dz_l_7", tex: "\\vec{E} = k_e \\lambda x_0 \\int_{-L/2}^{L/2} \\frac{dy}{(y^2 + x_0^2)^{3/2}} \\hat{i}" },
             { id: "f_l_8", target: "dz_l_8", tex: "\\vec{E} = \\frac{k_e Q}{x_0 L \\sqrt{x_0^2 + (L/2)^2}} \\hat{i}" },
             
@@ -689,9 +689,9 @@
             { id: "f_v_3", target: "dz_v_3", tex: "dq = \\rho L_y L_z dx' \\; \\text{(Plano)}" },
             { id: "f_v_4", target: "dz_v_4", tex: "d\\vec{E} = \\frac{dq/A}{2\\pi\\epsilon_0} \\arctan(...) \\hat{i}" }, 
             { id: "f_v_5", target: "dz_v_5", tex: "d\\vec{E} = \\frac{\\rho dx'}{2\\pi\\epsilon_0} \\arctan\\left(\\frac{L_y L_z}{4(x_0-x')\\sqrt{...}}\\right) \\hat{i}" },
-            { id: "f_v_6", target: "dz_v_6", tex: "d\\vec{E}_y = 0, \\; d\\vec{E}_z = 0 \\; \\text{(Simetría 2D)}" },
+            { id: "f_v_6", target: "dz_v_6", tex: "d\\vec{E}_y = 0, \\; d\\vec{E}_z = 0 \\; \\text{(Symmetry 2D)}" },
             { id: "f_v_7", target: "dz_v_7", tex: "\\vec{E} = \\int_{-L_x/2}^{L_x/2} d\\vec{E}_x \\, dx'" },
-            { id: "f_v_8", target: "dz_v_8", tex: "\\vec{E} \\approx \\frac{\\rho x_0}{\\epsilon_0} \\hat{i} \\; \\text{(Campo interior en infinito)}" } 
+            { id: "f_v_8", target: "dz_v_8", tex: "\\vec{E} \\approx \\frac{\\rho x_0}{\\epsilon_0} \\hat{i} \\; \\text{(Field interior en infinito)}" } 
         ];
 
         let globallyDraggedId = null; 

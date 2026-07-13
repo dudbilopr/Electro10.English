@@ -1,6 +1,6 @@
 // ============================================================
 // js/profile.js
-// save y cargar el perfil del Student en Firestore.
+// save y charger el perfil del Student en Firestore.
 // Gestión del avatar y modo de vista admin.
 // ============================================================
 import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -28,7 +28,7 @@ export async function savePerfil() {
         try {
             const d = await getDoc(doc(db, 'artifacts', APP_ID, 'public', 'data', 'directory', window.currentUserUid));
             if (d.exists()) existingRole = d.data().role || 'student';
-        } catch (e) { /* sin conexión */ }
+        } catch (e) { /* no connection */ }
 
         if (window.isMasterAdmin) existingRole = 'teacher';
 
@@ -58,7 +58,7 @@ export async function savePerfil() {
     }
 }
 
-export async function cargarDatosPerfil() {
+export async function chargerDatosPerfil() {
     if (!window.currentUserUid) return;
     try {
         const pSnap = await getDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'profile', 'data'));
@@ -93,11 +93,11 @@ export async function cargarDatosPerfil() {
             const roleDisplay = document.getElementById('prof-role-display');
             if (roleDisplay) {
                 roleDisplay.value = window.isMasterAdmin
-                    ? 'Administrador Maestro'
+                    ? 'Administrador Master'
                     : (data.role === 'teacher' ? 'Docente/Admin' : 'Student');
             }
             
-            // Cargar Configuration de ritmo
+            // Charger Configuration de ritmo
             if (data.pacingMode && data.pacingLength && window.renderTimeline) {
                 window.renderTimeline(data.pacingMode, data.pacingLength);
             }
@@ -113,9 +113,9 @@ export async function cargarDatosPerfil() {
                 }
             }
 
-            // Cargar calificación del curso si existe
-            if (window.cargarCalificacionCurso) {
-                window.cargarCalificacionCurso();
+            // Charger calificación del curso si existe
+            if (window.chargerCalificacionCurso) {
+                window.chargerCalificacionCurso();
             }
 
             const adminToggle = document.getElementById('admin-view-toggle-container');
@@ -125,17 +125,17 @@ export async function cargarDatosPerfil() {
                 if (adminMode) adminMode.value = window.simulatedRole || 'teacher';
             }
             
-            // Cargar Results Holísticos desde localStorage o Firestore
-            if(window.cargarResultsHolisticos) {
-                window.cargarResultsHolisticos();
+            // Charger Results Holísticos desde localStorage o Firestore
+            if(window.chargerResultsHolisticos) {
+                window.chargerResultsHolisticos();
             } else {
-                window.cargarResultsChaeaPerfil?.();
+                window.chargerResultsChaeaPerfil?.();
             }
         }
-    } catch (e) { /* sin conexión */ }
+    } catch (e) { /* no connection */ }
 }
 
-export function cargarResultsChaeaPerfil() {
+export function chargerResultsChaeaPerfil() {
     const statusEl = document.getElementById('profile-chaea-status');
     const dataEl = document.getElementById('profile-chaea-data');
     if (!statusEl || !dataEl) return;
@@ -149,7 +149,7 @@ export function cargarResultsChaeaPerfil() {
             document.getElementById('profile-chaea-dom').innerText = result.dominante;
             
             const desc = window.CHAEA_DATA ? window.CHAEA_DATA.explicaciones[result.dominante] : '';
-            document.getElementById('profile-chaea-desc').innerText = desc || 'Estilo de aprendizaje completado.';
+            document.getElementById('profile-chaea-desc').innerText = desc || 'Learning Style completado.';
 
             if (window.profileChaeaChart) {
                 window.profileChaeaChart.destroy();
@@ -200,7 +200,7 @@ export function cargarResultsChaeaPerfil() {
 }
 
 // Ensure function is globally accessible
-window.cargarResultsChaeaPerfil = cargarResultsChaeaPerfil;
+window.chargerResultsChaeaPerfil = chargerResultsChaeaPerfil;
 
 export function cambiarModoVistaAdmin() {
     window.simulatedRole = document.getElementById('admin-view-mode').value;
@@ -238,7 +238,7 @@ export async function saveEncuestaSemanal() {
     const fatigue = document.getElementById('survey-fatigue').value;
     
     if (!hours || !method) {
-        Swal.fire('Campos Incompletos', 'Por favor, ingresa las horas y la metodología principal.', 'warning');
+        Swal.fire('Fields Incompletos', 'Por favor, ingresa las horas y la metodología principal.', 'warning');
         return;
     }
 
@@ -273,7 +273,7 @@ export async function saveEncuestaSemanal() {
 // Funciones de Calificación (Ratings)
 // ==========================================
 
-export async function calificarRecurso(valor, lessonId = window.currentLeccionId) {
+export async function calificarResource(valor, lessonId = window.currentLeccionId) {
     if (!window.currentUserUid) return;
     if (!lessonId) {
         Swal.fire('Error', 'No se pudo identificar la lesson actual.', 'error');
@@ -307,7 +307,7 @@ export async function calificarRecurso(valor, lessonId = window.currentLeccionId
     }
 }
 
-export async function cargarCalificacionRecurso(lessonId) {
+export async function chargerCalificacionResource(lessonId) {
     if (!window.currentUserUid || !lessonId) return 0;
     try {
         const docRef = doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'ratings', lessonId);
@@ -316,7 +316,7 @@ export async function cargarCalificacionRecurso(lessonId) {
             return docSnap.data().rating;
         }
     } catch (e) {
-        console.error("Error al cargar calificación:", e);
+        console.error("Error al charger calificación:", e);
     }
     return 0;
 }
@@ -382,7 +382,7 @@ export async function calificarCurso(valor) {
     }
 }
 
-export async function cargarCalificacionCurso() {
+export async function chargerCalificacionCurso() {
     if (!window.currentUserUid) return;
     try {
         const docRef = doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'ratings', 'curso_global');
@@ -393,7 +393,7 @@ export async function cargarCalificacionCurso() {
             pintarCourseEstrellas(0);
         }
     } catch (e) {
-        console.error("Error al cargar calificación del curso:", e);
+        console.error("Error al charger calificación del curso:", e);
     }
 }
 

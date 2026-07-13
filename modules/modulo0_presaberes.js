@@ -1,49 +1,49 @@
 export const modulo0_presaberes = {
     id: "m0",
     titulo: "Module 0: Diagnostic Pre-Assessment",
-    descripcion: "Prueba obligatoria para evaluar tus bases matemáticas avanzadas antes de iniciar el curso. Score mínimo: 65%.",
+    descripcion: "Mandatory pre-assessment to evaluate your advanced mathematics foundations before starting the course. Minimum passing score: 65%.",
     lecciones: [
         {
             id: "m0_l0",
-            titulo: "Diagnóstico Holístico (CHAEA + Kolb + IM)",
+            titulo: "Holistic Diagnosis (CHAEA + Kolb + MI)",
             tipo: "diagnostico_hub",
             duracion: "25 min",
-            descripcion: "Descubre tu perfil neuro-cognitivo con 3 dimensiones: Estilo (CHAEA), Asimilación (Kolb) e Inteligencias Múltiples (Gardner)."
+            descripcion: "Discover your neuro-cognitive profile with 3 dimensions: Learning Style (CHAEA), Assimilation (Kolb), and Multiple Intelligences (Gardner)."
         },
         {
             id: "m0_l1",
-            titulo: "Diagnóstico Matemático Integral (Level Universitario)",
+            titulo: "Comprehensive Math Diagnostic (University Level)",
             tipo: "quiz",
             duracion: "30 min",
             Questions: [
                 {
-                    Question: "Evalúa el Next límite en varias variables: $$\\lim_{(x,y) \\to (0,0)} \\frac{x^2y}{x^4 + y^2}$$",
+                    Question: "Evaluate the following multivariable limit: $$\\lim_{(x,y) \\to (0,0)} \\frac{x^2y}{x^4 + y^2}$$",
                     Options: [
                         "1/2",
-                        "El límite no existe",
+                        "The limit does not exist",
                         "0",
                         "$\\infty$"
                     ],
                     AnswerCorrecta: 1,
                     peso: 5,
-                    tema: "Calculation Multivariado",
-                    feedback_error: "Acercándote por la Trajectory $y = x^2$, el límite da $1/2$, pero por el eje x da $0$. Como depende de la Trajectory, no existe."
+                    tema: "Multivariable Calculus",
+                    feedback_error: "Approaching along the path $y = x^2$, the limit equals $1/2$, but along the x-axis it gives $0$. Since the result depends on the path, the limit does not exist."
                 },
                 {
-                    Question: "Dada la integral de línea $$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r}$$ donde $\\mathbf{F} = (P, Q)$ es un campo conservativo y $C$ es una curva cerrada simple, ¿cuál es el Result?",
+                    Question: "Given the line integral $$\\oint_C \\mathbf{F} \\cdot d\\mathbf{r}$$ where $\\mathbf{F} = (P, Q)$ is a conservative field and $C$ is a simple closed curve, what is the result?",
                     Options: [
-                        "Depende de la parametrización de $C$",
+                        "Depends on the parameterization of $C$",
                         "$\\pi$",
                         "0",
-                        "El área encerrada por $C$"
+                        "The area enclosed by $C$"
                     ],
                     AnswerCorrecta: 2,
                     peso: 10,
-                    tema: "Calculation Vectorial",
-                    feedback_error: "La integral de línea de un campo conservativo sobre cualquier Trajectory cerrada siempre es 0 (Teorema Fundamental de las integrales de línea)."
+                    tema: "Vector Calculus",
+                    feedback_error: "The line integral of a conservative field over any closed path is always 0 (Fundamental Theorem of Line Integrals)."
                 },
                 {
-                    Question: "Calcula el flujo del campo vectorial $\\mathbf{F}(x,y,z) = x\\mathbf{i} + y\\mathbf{j} + z\\mathbf{k}$ a través de una esfera $S$ de radio $R$ orientada hacia afuera.",
+                    Question: "Calculate the flux of the vector field $\\mathbf{F}(x,y,z) = x\\mathbf{i} + y\\mathbf{j} + z\\mathbf{k}$ through a sphere $S$ of radius $R$ oriented outward.",
                     Options: [
                         "$4\\pi R^3$",
                         "0",
@@ -52,11 +52,11 @@ export const modulo0_presaberes = {
                     ],
                     AnswerCorrecta: 0,
                     peso: 10,
-                    tema: "Teorema de la Divergencia",
-                    feedback_error: "Por el Teorema de Gauss, $\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iiint_V (\\nabla \\cdot \\mathbf{F}) dV$. La divergencia es $3$. Volumen esfera = $\\frac{4}{3}\\pi R^3$. Total: $4\\pi R^3$."
+                    tema: "Divergence Theorem",
+                    feedback_error: "By Gauss's Theorem: $\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iiint_V (\\nabla \\cdot \\mathbf{F}) dV$. The divergence is $3$. Volume of sphere $= \\frac{4}{3}\\pi R^3$. Total: $4\\pi R^3$."
                 },
                 {
-                    Question: "En cinemática, si la Acceleration de un cuerpo es $a(t) = 6t$ y parte del reposo en $x=0$, ¿cuál es su Position en $t=2$?",
+                    Question: "In kinematics, if a body's acceleration is $a(t) = 6t$ and it starts from rest at $x=0$, what is its position at $t=2$?",
                     Options: [
                         "12",
                         "24",
@@ -65,11 +65,11 @@ export const modulo0_presaberes = {
                     ],
                     AnswerCorrecta: 2,
                     peso: 10,
-                    tema: "Cinemática",
-                    feedback_error: "$v(t) = \\int 6t dt = 3t^2$. Position $x(t) = \\int 3t^2 dt = t^3$. En $t=2$, $x = 2^3 = 8$."
+                    tema: "Kinematics",
+                    feedback_error: "$v(t) = \\int 6t\\,dt = 3t^2$. Position $x(t) = \\int 3t^2\\,dt = t^3$. At $t=2$: $x = 2^3 = 8$."
                 },
                 {
-                    Question: "Un bloque de masa $m$ desliza por un plano inclinado con Angle $\\theta$ (sin fricción). ¿Cuál es su Acceleration?",
+                    Question: "A block of mass $m$ slides down a frictionless inclined plane at angle $\\theta$. What is its acceleration?",
                     Options: [
                         "$g \\cos(\\theta)$",
                         "$g \\sin(\\theta)$",
@@ -78,11 +78,11 @@ export const modulo0_presaberes = {
                     ],
                     AnswerCorrecta: 1,
                     peso: 15,
-                    tema: "Dinámica (Leyes de Newton)",
-                    feedback_error: "La componente del peso paralela al plano es $mg \\sin(\\theta)$. Por $F=ma$, $ma = mg \\sin(\\theta) \\implies a = g \\sin(\\theta)$."
+                    tema: "Dynamics (Newton's Laws)",
+                    feedback_error: "The component of weight parallel to the plane is $mg \\sin(\\theta)$. By $F=ma$: $ma = mg \\sin(\\theta) \\implies a = g \\sin(\\theta)$."
                 },
                 {
-                    Question: "Un cilindro sólido de masa $M$ y radio $R$ gira sobre su eje. Su momento de inercia es $I = \\frac{1}{2}MR^2$. Si se le aplica un torque neto $\\tau$, ¿qué Acceleration angular $\\alpha$ adquiere?",
+                    Question: "A solid cylinder of mass $M$ and radius $R$ rotates about its axis. Its moment of inertia is $I = \\frac{1}{2}MR^2$. If a net torque $\\tau$ is applied, what angular acceleration $\\alpha$ does it acquire?",
                     Options: [
                         "$\\frac{2\\tau}{MR^2}$",
                         "$\\frac{\\tau}{MR^2}$",
@@ -91,24 +91,24 @@ export const modulo0_presaberes = {
                     ],
                     AnswerCorrecta: 0,
                     peso: 15,
-                    tema: "Rotación y Momento de Inercia",
-                    feedback_error: "Por la segunda ley de Newton para rotación: $\\tau = I\\alpha$. Despejando $\\alpha = \\frac{\\tau}{I} = \\frac{\\tau}{\\frac{1}{2}MR^2} = \\frac{2\\tau}{MR^2}$."
+                    tema: "Rotation and Moment of Inertia",
+                    feedback_error: "By Newton's second law for rotation: $\\tau = I\\alpha$. Solving: $\\alpha = \\frac{\\tau}{I} = \\frac{\\tau}{\\frac{1}{2}MR^2} = \\frac{2\\tau}{MR^2}$."
                 },
                 {
-                    Question: "Según la Ley de Gravitación Universal, si la Distance entre dos masas se reduce a la mitad, la Force de atracción gravitacional se:",
+                    Question: "According to the Law of Universal Gravitation, if the distance between two masses is halved, the gravitational attraction force:",
                     Options: [
-                        "Reduce a la mitad",
-                        "Duplica",
-                        "Cuadruplica",
-                        "Mantiene igual"
+                        "Is halved",
+                        "Doubles",
+                        "Quadruples",
+                        "Remains the same"
                     ],
                     AnswerCorrecta: 2,
                     peso: 15,
-                    tema: "Gravitación",
-                    feedback_error: "La Force gravitacional es inversamente proporcional al cuadrado de la Distance ($F \\propto \\frac{1}{r^2}$). Si $r \\to r/2$, entonces $1/(r/2)^2 = 4/r^2$, por lo que la Force se cuadruplica."
+                    tema: "Gravitation",
+                    feedback_error: "The gravitational force is inversely proportional to the square of the distance ($F \\propto \\frac{1}{r^2}$). If $r \\to r/2$, then $1/(r/2)^2 = 4/r^2$, so the force quadruples."
                 },
                 {
-                    Question: "Dados los vectores $\\mathbf{u} = 3\\mathbf{i} + 4\\mathbf{j}$ y $\\mathbf{v} = 4\\mathbf{i} - 3\\mathbf{j}$, ¿cuál es su producto escalar $\\mathbf{u} \\cdot \\mathbf{v}$?",
+                    Question: "Given vectors $\\mathbf{u} = 3\\mathbf{i} + 4\\mathbf{j}$ and $\\mathbf{v} = 4\\mathbf{i} - 3\\mathbf{j}$, what is their dot product $\\mathbf{u} \\cdot \\mathbf{v}$?",
                     Options: [
                         "12",
                         "0",
@@ -118,10 +118,10 @@ export const modulo0_presaberes = {
                     AnswerCorrecta: 1,
                     peso: 10,
                     tema: "Vectors",
-                    feedback_error: "El producto escalar es $(3)(4) + (4)(-3) = 12 - 12 = 0$. Esto indica que los vectores son perpendiculares (ortogonales)."
+                    feedback_error: "The dot product is $(3)(4) + (4)(-3) = 12 - 12 = 0$. This means the vectors are perpendicular (orthogonal)."
                 },
                 {
-                    Question: "Resuelve la Equation Diferencial Lineal: $$\\frac{dy}{dx} + \\frac{2}{x}y = \\frac{\\cos(x)}{x^2}$$",
+                    Question: "Solve the linear differential equation: $$\\frac{dy}{dx} + \\frac{2}{x}y = \\frac{\\cos(x)}{x^2}$$",
                     Options: [
                         "$y = \\frac{\\sin(x) + C}{x^2}$",
                         "$y = \\cos(x) + C x^2$",
@@ -130,8 +130,8 @@ export const modulo0_presaberes = {
                     ],
                     AnswerCorrecta: 0,
                     peso: 10,
-                    tema: "Equations Diferenciales",
-                    feedback_error: "El factor integrante es $\\mu(x) = x^2$. Multiplicando y resolviendo se llega a $y = \\frac{\\sin(x) + C}{x^2}$."
+                    tema: "Differential Equations",
+                    feedback_error: "The integrating factor is $\\mu(x) = x^2$. Multiplying and integrating yields $y = \\frac{\\sin(x) + C}{x^2}$."
                 }
             ]
         }

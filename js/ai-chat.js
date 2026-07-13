@@ -72,7 +72,7 @@
     }
 
     function checkApiKey() {
-        // Recargar desde memoria global si se guardó en el perfil
+        // Recharger desde memoria global si se guardó en el perfil
         apiKey = window.userApiKey || localStorage.getItem('userApiKey') || localStorage.getItem('electro10_gemini_key') || null;
         
         const keyArea = document.getElementById('ai-key-area');
@@ -144,7 +144,7 @@
         inputEl.value = '';
         inputEl.disabled = true;
 
-        // Show indicador de carga
+        // Show indicador de charge
         const loadingId = 'loading-' + Date.now();
         const msgContainer = document.getElementById('ai-chat-messages');
         const loadingDiv = document.createElement('div');

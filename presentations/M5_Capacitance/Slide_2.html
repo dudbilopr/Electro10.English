@@ -98,7 +98,7 @@
             <!-- CABECERA -->
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-red-600">
                 <h1 class="font-bold tracking-wide" style="font-size: clamp(20px, 2vw, 40px);">Electric Field: Hilo Rectilíneo loaded</h1>
-                <p class="text-red-300" style="font-size: clamp(12px, 1vw, 18px);">Simulation 3D de Simetría Cilíndrica y Gauss\'s Law</p>
+                <p class="text-red-300" style="font-size: clamp(12px, 1vw, 18px);">Simulation 3D de Symmetry Cilíndrica y Gauss\'s Law</p>
             </header>
 
             <!-- CUERPO PRINCIPAL -->
@@ -111,10 +111,10 @@
                     
                     <div class="bg-white p-[1.5vmin] border-l-[0.5vmin] border-red-600 shadow-sm rounded-r-lg relative">
                         <p class="flex items-start">
-                            <span><strong>1. Simetría del Problema:</strong> Un hilo rectilíneo infinitamente largo con densidad lineal de carga $\lambda$ genera un Electric Field puramente radial.</span>
+                            <span><strong>1. Symmetry del Problema:</strong> Un hilo rectilíneo infinitamente largo con densidad lineal de charge $\lambda$ genera un Electric Field puramente radial.</span>
                             <span class="relative tip-wrapper inline-block">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Simetría:</strong> Las componentes paralelas al hilo se cancelan por pares de Charges opuestas. El campo solo puede apuntar hacia afuera o hacia adentro.</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Symmetry:</strong> Las componentes paralelas al hilo se cancelan por pares de Charges opuestas. El field solo puede apuntar hacia afuera o hacia adentro.</span>
                             </span>
                         </p>
                         <p class="mt-[0.5vmin]">Elegimos una <strong>superficie gaussiana cilíndrica</strong> de radio $r$ y longitud $L$ coaxial con el hilo.</p>
@@ -122,7 +122,7 @@
 
                     <div class="bg-white p-[1.5vmin] border border-slate-200 shadow-sm rounded-lg relative">
                         <p class="mb-[0.5vmin] flex items-start">
-                            <span><strong>2. Análisis del Flujo:</strong> Dividimos la superficie cilíndrica en tres partes: las dos bases y la superficie lateral.</span>
+                            <span><strong>2. Análisis del Flux:</strong> Dividimos la superficie cilíndrica en tres partes: las dos bases y la superficie lateral.</span>
                             <span class="relative tip-wrapper inline-block z-40">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
                                 <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Bases = 0:</strong> En las tapas del cilindro, el vector área $d\vec{S}$ es paralelo al hilo, pero $\vec{E}$ es radial. Son perpendiculares, $\cos(90^\circ)=0$.</span>
@@ -136,7 +136,7 @@
 
                     <div class="bg-white p-[1.5vmin] border border-slate-200 shadow-sm rounded-lg relative">
                         <p class="flex items-start">
-                            <span><strong>3. Gauss\'s Law:</strong> Dado que el campo es constante en magnitudeeeee sobre la superficie lateral de área $2\pi r L$:</span>
+                            <span><strong>3. Gauss\'s Law:</strong> Dado que el field es constante en magnitudeeeee sobre la superficie lateral de área $2\pi r L$:</span>
                         </p>
                         <div class="math-display">$$ E \cdot (2\pi r L) = \frac{\lambda L}{\varepsilon_0} $$</div>
                         <div class="bg-red-50 text-red-900 p-[1vmin] rounded border border-red-200 font-bold text-center" style="font-size: clamp(16px, 1.6vw, 26px);">
@@ -146,7 +146,7 @@
 
                     <div class="bg-slate-100 p-[1.5vmin] shadow-sm rounded-lg border border-slate-300 relative">
                         <p class="flex items-start">
-                            <span><strong>4. Diferencia de Potential:</strong> El Work por unidad de carga para movernos desde un radio $r_0$ hasta $r$ es la integral del campo:</span>
+                            <span><strong>4. Diferencia de Potential:</strong> El Work por unidad de charge para movernos desde un radio $r_0$ hasta $r$ es la integral del field:</span>
                             <span class="relative tip-wrapper inline-block z-20">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
                                 <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Potential:</strong> Corresponde al área bajo la curva $E$ vs $r$. Crece logarítmicamente conforme nos acercamos al hilo.</span>
@@ -203,7 +203,7 @@
                             
                             <!-- Chart -->
                             <div class="flex-1 graph-wrapper p-[1vmin] flex flex-col">
-                                <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(12px, 1vw, 16px);">Chart: Campo vs Distance</div>
+                                <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(12px, 1vw, 16px);">Chart: Field vs Distance</div>
                                 <div class="flex-1 relative w-full" id="graph-container">
                                     <canvas id="graph-2d" class="absolute top-0 left-0 w-full h-full"></canvas>
                                 </div>
@@ -212,9 +212,9 @@
                                 </div>
                             </div>
 
-                            <!-- Stats Flujo -->
+                            <!-- Stats Flux -->
                             <div class="bg-white border border-slate-200 rounded-lg p-[1.5vmin] text-center shadow-sm">
-                                <div class="text-slate-600 font-serif italic mb-1" style="font-size: clamp(12px, 1vw, 16px);">Flujo Local en Parche $d\vec{S}$</div>
+                                <div class="text-slate-600 font-serif italic mb-1" style="font-size: clamp(12px, 1vw, 16px);">Flux Local en Parche $d\vec{S}$</div>
                                 <div class="font-mono font-bold text-blue-700" style="font-size: clamp(16px, 1.8vw, 28px);">
                                     $d\Phi = E \cdot dS \cdot \cos(0^\circ)$
                                 </div>
@@ -299,7 +299,7 @@
         // 3. ESTADO Y LÓGICA Physics
         // ==========================================
         let params = { lambda: 3, r: 2.5, L: 5, theta: 45, yPos: 0 };
-        const k_visual = 2; // Constante visual para escalar el campo
+        const k_visual = 2; // Constante visual para escalar el field
 
         function updateGeometry() {
             // Recrear Cylinder
@@ -353,7 +353,7 @@
                         const dir = new THREE.Vector3(px, 0, pz).normalize().multiplyScalar(dirMultiplier);
                         const origin = new THREE.Vector3(px, y, pz);
                         
-                        // Si la carga es negativa, la flecha apunta hacia adentro (ajustar origen para que apunte al hilo)
+                        // Si la charge es negativa, la flecha apunta hacia adentro (ajustar origen para que apunte al hilo)
                         let renderOrigin = origin;
                         if(dirMultiplier < 0) {
                             renderOrigin = origin.clone().sub(dir.clone().multiplyScalar(Math.min(eMag, 1.5)));

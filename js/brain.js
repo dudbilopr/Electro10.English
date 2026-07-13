@@ -5,20 +5,20 @@
 const cerebroDatos = {
     Glossary: [
         { termino: "Electric Charge", defHomen: "Propiedad Physics intrínseca de algunas partículas subatómicas que se manifiesta mediante Forces de atracción y repulsión." },
-        { termino: "Electric Field", defHomen: "Región del espacio donde una Electric Charge experimenta una Force eléctrica." },
-        { termino: "Coulomb\'s Law", defHomen: "Establece que la Force eléctrica entre dos Charges puntuales es directamente proporcional al producto de las Charges e inversamente proporcional al cuadrado de la Distance que las separa." },
-        { termino: "Electric Potential", defHomen: "Energy Powerl eléctrica por unidad de carga en un punto de un Electric Field." },
+        { termino: "Electric Field", defHomen: "Región del espacio donde una Electric Charge experimenta una Force electric." },
+        { termino: "Coulomb\'s Law", defHomen: "Establece que la Force electric entre dos Charges puntuales es directamente proporcional al producto de las Charges e inversamente proporcional al cuadrado de la Distance que las separa." },
+        { termino: "Electric Potential", defHomen: "Energy Powerl electric por unidad de charge en un punto de un Electric Field." },
         { termino: "Capacitance", defHomen: "Capacidad de un componente o circuito para recoger y almacenar Energy en forma de Electric Charge." }
     ],
     formulas: [
         { nombre: "Force de Coulomb", eq: "$$ F = k_e \\frac{|q_1 q_2|}{r^2} $$" },
         { nombre: "Electric Field (Puntual)", eq: "$$ E = k_e \\frac{|q|}{r^2} $$" },
         { nombre: "Electric Potential", eq: "$$ V = k_e \\frac{q}{r} $$" },
-        { nombre: "Energy Potential Eléctrica", eq: "$$ U = k_e \\frac{q_1 q_2}{r} $$" },
-        { nombre: "Ley de Ohm", eq: "$$ V = I \\cdot R $$" }
+        { nombre: "Energy Potential Electric", eq: "$$ U = k_e \\frac{q_1 q_2}{r} $$" },
+        { nombre: "Ohm's Law", eq: "$$ V = I \\cdot R $$" }
     ],
     constantes: [
-        { simbolo: "e", valor: "1.602 × 10⁻¹⁹ C", nombre: "Carga Elemental" },
+        { simbolo: "e", valor: "1.602 × 10⁻¹⁹ C", nombre: "Charge Elemental" },
         { simbolo: "k_e", valor: "8.987 × 10⁹ N·m²/C²", nombre: "Coulomb\'s Constant" },
         { simbolo: "ε₀", valor: "8.854 × 10⁻¹² F/m", nombre: "Permitividad del Vacío" },
         { simbolo: "m_e", valor: "9.109 × 10⁻³¹ kg", nombre: "Masa del Electrón" },
@@ -26,17 +26,17 @@ const cerebroDatos = {
     ],
     cientificos: [
         { nombre: "Charles-Augustin de Coulomb", epoca: "1736 - 1806", aporte: "Formuló la ley que describe la Force entre Electric Charges (Coulomb\'s Law). Inventó la balanza de torsión." },
-        { nombre: "Michael Faraday", epoca: "1791 - 1867", aporte: "Descubrió la Induction electromagnética, el diamagnetismo y la electrólisis. Introdujo el concepto de 'Field Lines'." },
-        { nombre: "James Clerk Maxwell", epoca: "1831 - 1879", aporte: "Unificó la electricidad y el magnetismo en su famosa Theory electromagnética (Maxwell\'s Equations), demostrando que la luz es una Electromagnetic Wave." },
-        { nombre: "Alessandro Volta", epoca: "1745 - 1827", aporte: "Inventó la pila voltaica, la primera batería química, proporcionando la primera fuente continua de Current eléctrica." },
-        { nombre: "Heinrich Hertz", epoca: "1857 - 1894", aporte: "Demostró experimentalmente la existencia de las ondas electromagnéticas teorizadas por Maxwell." }
+        { nombre: "Michael Faraday", epoca: "1791 - 1867", aporte: "Descubrió la Induction electromagnetic, el diamagnetismo y la electrólisis. Introdujo el concepto de 'Field Lines'." },
+        { nombre: "James Clerk Maxwell", epoca: "1831 - 1879", aporte: "Unificó la electricidad y el magnetismo en su famosa Theory electromagnetic (Maxwell\'s Equations), demostrando que la luz es una Electromagnetic Wave." },
+        { nombre: "Alessandro Volta", epoca: "1745 - 1827", aporte: "Inventó la pila voltaica, la primera batería química, proporcionando la primera fuente continua de Current electric." },
+        { nombre: "Heinrich Hertz", epoca: "1857 - 1894", aporte: "Demostró experimentalmente la existencia de las ondas electromagnetics teorizadas por Maxwell." }
     ],
     experimentos: [
         { nombre: "Balanza de Torsión (Coulomb)", año: "1785", descripcion: "Midió con precisión la Force de repulsión y atracción electrostática entre Charges puntuales, estableciendo la dependencia de la inversa del cuadrado de la Distance." },
-        { nombre: "Experimento de la Cometa (Franklin)", año: "1752", descripcion: "Demostró que los rayos son desElectric Charges al volar una cometa durante una tormenta, recolectando carga en una botella de Leyden." },
-        { nombre: "Descubrimiento de la Induction (Faraday)", año: "1831", descripcion: "Usó un anillo de hierro y dos bobinas. Al encender/apagar la batería de un lado, observó una Current transitoria en el otro, probando que un campo magnético cambiante induce un Electric Field." },
+        { nombre: "Experimento de la Cometa (Franklin)", año: "1752", descripcion: "Demostró que los rayos son desElectric Charges al volar una cometa durante una tormenta, recolectando charge en una botella de Leyden." },
+        { nombre: "Descubrimiento de la Induction (Faraday)", año: "1831", descripcion: "Usó un anillo de hierro y dos bobinas. Al encender/apagar la batería de un lado, observó una Current transitoria en el otro, probando que un magnetic field cambiante induce un Electric Field." },
         { nombre: "El Experimento de Oersted", año: "1820", descripcion: "Hans Christian Ørsted notó que la aguja de una brújula se desviaba cerca de un cable con Current, descubriendo por primera vez la relación entre electricidad y magnetismo." },
-        { nombre: "Gotas de Aceite de Millikan", año: "1909", descripcion: "Robert Millikan y Harvey Fletcher midieron la carga elemental (la carga del electrón) balanceando gotas de aceite loadeds entre campos eléctricos y gravitacionales." }
+        { nombre: "Gotas de Aceite de Millikan", año: "1909", descripcion: "Robert Millikan y Harvey Fletcher midieron la charge elemental (la charge del electrón) balanceando gotas de aceite loadeds entre fields electrics y gravitacionales." }
     ]
 };
 
@@ -61,7 +61,7 @@ window.initBrainGraph = function() {
     }
 
     // ── Bóveda Obsidian (Exportación) ─────────────────────────
-window.descargarObsidian = async function() {
+window.deschargerObsidian = async function() {
     if (typeof JSZip === 'undefined') {
         alert("La librería para generar ZIP no ha loaded. Reintenta en unos segundos.");
         return;
@@ -94,14 +94,14 @@ ${notaContent}
         }
     }
     
-    // 2. Glossary Maestro
+    // 2. Glossary Master
     let GlossaryMd = `# Glossary de Electromagnetismo\n\n`;
     cerebroDatos.Glossary.forEach(item => {
         GlossaryMd += `## ${item.termino}\n${item.defHomen}\n\n`;
     });
     vault.file("Glossary.md", GlossaryMd);
 
-    // 3. Formulas Maestro
+    // 3. Formulas Master
     let formulasMd = `# Formulas y Equations\n\n`;
     cerebroDatos.formulas.forEach(item => {
         formulasMd += `### ${item.nombre}\n${item.eq}\n\n`;
@@ -140,7 +140,7 @@ Esta bóveda fue autogenerada por tu **Tutor IA**.`;
     };
     obsFolder.file("graph.json", JSON.stringify(graphJson, null, 2));
 
-    // Generar y descargar
+    // Generar y descharger
     try {
         const content = await zip.generateAsync({ type: "blob" });
         const a = document.createElement("a");
@@ -164,7 +164,7 @@ Esta bóveda fue autogenerada por tu **Tutor IA**.`;
         { id: 6, label: 'Capacitance', group: 'todo', value: 15 },
         { id: 7, label: 'Current y Resistance', group: 'todo', value: 15 },
         { id: 8, label: 'Circuitos DC', group: 'todo', value: 15 },
-        { id: 9, label: 'Campo Magnético', group: 'todo', value: 20 }
+        { id: 9, label: 'Field Magnetic', group: 'todo', value: 20 }
     ]);
 
     const edges = new vis.DataSet([

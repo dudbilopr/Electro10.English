@@ -7,19 +7,20 @@ export const module1 = {
     "color": "#2563eb",
     "icono": "electric_bolt",
     "descripcionCorta": "Force between electric charges and superposition principle",
-    "subtemas": ["Electric Charge", "Conductors y Insulators", "Coulomb\'s Law", "Principio de superPosition", "Distribuciones de carga discreta"],
+    "subtemas": ["Electric Charge", "Conductors and Insulators", "Coulomb's Law", "Superposition Principle", "Discrete charge distributions"],
     "conceptosClave": ["Charge quantization", "Insulator vs Conductor", "Superposition", "Electrostatic induction"],
     "requisitosPrevios": ["Vector Addition (Classical Mechanics)", "Basic Trigonometry (Sine/Cosine)", "Scientific Notation"],
     "Equations": [
-        "$$ F = k_e \\frac{|q_1 q_2|}{r^2} $$ (magnitudeeeee de Coulomb)",
+        "$$ F = k_e \\frac{|q_1 q_2|}{r^2} $$ (Coulomb's Law magnitude)",
         "$$ \\vec{F} = \\vec{F}_1 + \\vec{F}_2 + ... $$ (Superposition)"
     ],
     "historia": {
         "hallazgo": "In 1785, Charles-Augustin de Coulomb used an ultra-sensitive torsion balance to measure the delicate electrostatic attraction between charged spheres, discovering the inverse-square law.",
         "experimentoClave": "Coulomb's Torsion Balance"
     },
-    "bibliografia": ["Serway, R. A., & Jewett, J. W. (2018). Physics for Scientists and Engineers (10th ed.). Cengage Learning. (Cap. 23)"],
+    "bibliografia": ["Serway, R. A., & Jewett, J. W. (2018). Physics for Scientists and Engineers (10th ed.). Cengage Learning. (Ch. 23)"],
     "lecciones": [
+        { "id":"m1-mt", "tipo":"microteaching", "recurso":"microteaching.html", "titulo":"0. EMI Microteaching — Coulomb's Law", "descripcion":"10-minute EMI lesson: Warm-up, Objectives, Video, Simulation Activity, Conclusion & Feedback. Topic: Coulomb's Law & Electric Charges.", "xp":30 },
         {
             "id": "m1-l1", "tipo": "multivideo",
             "recurso": "xLyRPFL0GJ8|mrCyjv9lf3I|HpHVmuQb1gM|YgP-9fVA0-Y|gigeloLe1jI|ph341nhqOII|tXschFCgjrY|q1Ez2tLVy10|EhCX3JR6mHQ|8FXllt2Z9Tk|a1M2OmlwGyc|_hgOrdi7Epw",
@@ -91,7 +92,7 @@ export const module1 = {
                     "links": [
                         { "url": "https://www.fisicalab.com/apartado/ley-de-coulomb", "titulo": "Fisicalab: Coulomb\'s Law", "descripcion": "Didactic explanation with charts and solved numerical examples." },
                         { "url": "https://en.wikipedia.org/wiki/Coulomb%27s_law", "titulo": "Wikipedia: Coulomb's Law", "descripcion": "Historical context, mathematical formulation, and applications." },
-                        { "url": "https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage", "titulo": "Khan Academy: Force Eléctrica", "descripcion": "Interactive videos and exercises (free access)." }
+                        { "url": "https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage", "titulo": "Khan Academy: Force Electric", "descripcion": "Interactive videos and exercises (free access)." }
                     ]
                 },
                 {

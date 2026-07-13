@@ -118,7 +118,7 @@
         .theme-neo .btn:hover { box-shadow: 2px 2px 0 #000; transform: translate(2px, 2px); }
         .btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
-        /* Estilos User/Firebase */
+        /* Styles User/Firebase */
         .user-badge { display: flex; align-items: center; gap: 0.5rem; color: var(--accent); font-weight: bold; font-size: 0.9rem; }
         .user-avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--accent); }
 
@@ -282,8 +282,8 @@
 
         <div class="control-group">
             <!-- Funciones de Persistencia Local y Cloud (Fase 7) -->
-            <button class="btn" onclick="window.exportJSON()" title="Descargar Escena Local"><i data-lucide="download"></i></button>
-            <label class="btn" title="Cargar Escena Local" style="cursor: pointer;">
+            <button class="btn" onclick="window.exportJSON()" title="Descharger Escena Local"><i data-lucide="download"></i></button>
+            <label class="btn" title="Charger Escena Local" style="cursor: pointer;">
                 <i data-lucide="upload"></i>
                 <input type="file" hidden accept=".json" onchange="window.importJSON(event)">
             </label>
@@ -529,7 +529,7 @@
                 userInfo.style.display = 'flex';
                 userAvatar.src = user.photoURL || '';
                 
-                // Rol de Administrador Maestro
+                // Rol de Administrador Master
                 if (user.email === "dudbilopr@gmail.com") {
                     btnEdit.style.display = 'flex';
                     btnCloudSave.style.display = 'flex';

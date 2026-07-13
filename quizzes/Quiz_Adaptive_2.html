@@ -140,10 +140,10 @@ const QUIZ_CONFIG = {
   {Level:1,id:"c2-n1-1",
    texto:"La dirección del Electric Field de una Positive Charge es:",
    
-   Options:[{"texto":"Hacia la carga","Correct":false},{"texto":"Alejándose de la carga","Correct":true},{"texto":"Perpendicular","Correct":false},{"texto":"No tiene dirección","Correct":false}],
-   feedback_ok:"El campo de +q apunta radialmente hacia afuera.",
-   feedback_bad:"El campo de una Positive Charge apunta alejándose de ella.",
-   pista:"E apunta en la dirección que seguiría una carga de prueba positiva."
+   Options:[{"texto":"Hacia la charge","Correct":false},{"texto":"Alejándose de la charge","Correct":true},{"texto":"Perpendicular","Correct":false},{"texto":"No tiene dirección","Correct":false}],
+   feedback_ok:"El field de +q apunta radialmente hacia afuera.",
+   feedback_bad:"El field de una Positive Charge apunta alejándose de ella.",
+   pista:"E apunta en la dirección que seguiría una charge de prueba positiva."
   },
   {Level:1,id:"c2-n1-2",
    texto:"La unidad del Electric Field en el SI es:",
@@ -158,7 +158,7 @@ const QUIZ_CONFIG = {
    
    Options:[{"texto":"Se cruzan entre sí","Correct":false},{"texto":"Nunca se cruzan","Correct":true},{"texto":"Son siempre circulares","Correct":false},{"texto":"Son paralelas siempre","Correct":false}],
    feedback_ok:"Las Field Lines nunca se cruzan. Si lo hicieran, habría dos direcciones de E en un punto.",
-   feedback_bad:"Las líneas de E nunca se cruzan porque en cada punto solo puede haber una dirección de campo.",
+   feedback_bad:"Las líneas de E nunca se cruzan porque en cada punto solo puede haber una dirección de field.",
    pista:"¿Qué significaría que dos líneas se cruzaran? ¿Podría E tener dos direcciones en un punto?"
   },
   {Level:2,id:"c2-n2-4",
@@ -170,23 +170,23 @@ const QUIZ_CONFIG = {
    pista:"Convierte μC → C (×10⁻⁶) y sustituye."
   },
   {Level:2,id:"c2-n2-5",
-   texto:"Dos Charges iguales +q en x = ±a. Campo en x = 0:",
+   texto:"Dos Charges iguales +q en x = ±a. Field en x = 0:",
    
-   Options:[{"texto":"E = 2kq/a²","Correct":false},{"texto":"E = 0 por simetría","Correct":true},{"texto":"E = kq/a²","Correct":false},{"texto":"E = 4kq/a²","Correct":false}],
-   feedback_ok:"Por simetría, los campos se cancelan exactamente en el punto medio.",
-   feedback_bad:"Las dos Charges iguales crean campos opuestos en el centro → E_net = 0.",
-   pista:"Usa superPosition. Los dos campos apuntan en direcciones opuestas en x=0."
+   Options:[{"texto":"E = 2kq/a²","Correct":false},{"texto":"E = 0 por symmetry","Correct":true},{"texto":"E = kq/a²","Correct":false},{"texto":"E = 4kq/a²","Correct":false}],
+   feedback_ok:"Por symmetry, los fields se cancelan exactamente en el punto medio.",
+   feedback_bad:"Las dos Charges iguales crean fields opuestos en el centro → E_net = 0.",
+   pista:"Usa superPosition. Los dos fields apuntan en direcciones opuestas en x=0."
   },
   {Level:2,id:"c2-n2-6",
-   texto:"El campo de un dipolo en su eje a gran Distance decae como:",
+   texto:"El field de un dipolo en su eje a gran Distance decae como:",
    formula:"E_eje ∝ 1/r³",
    Options:[{"texto":"1/r","Correct":false},{"texto":"1/r²","Correct":false},{"texto":"1/r³","Correct":true},{"texto":"constante","Correct":false}],
-   feedback_ok:"El campo del dipolo decae como 1/r³, más rápido que una carga puntual.",
-   feedback_bad:"El campo del dipolo decae como 1/r³. Una carga puntual: 1/r².",
+   feedback_ok:"El field del dipolo decae como 1/r³, más rápido que una charge puntual.",
+   feedback_bad:"El field del dipolo decae como 1/r³. Una charge puntual: 1/r².",
    pista:"El dipolo incluye el momento p = qd y decae más rápido."
   },
   {Level:3,id:"c2-n3-7",
-   texto:"Una carga entra con v₀ perpendicular a campo E uniforme. Trajectory:",
+   texto:"Una charge entra con v₀ perpendicular a field E uniforme. Trajectory:",
    
    Options:[{"texto":"Circular","Correct":false},{"texto":"Parabólica","Correct":true},{"texto":"Recta","Correct":false},{"texto":"Espiral","Correct":false}],
    feedback_ok:"Análogo al proyectil: v₀ constante en x, a = qE/m en y → parábola.",
@@ -194,20 +194,20 @@ const QUIZ_CONFIG = {
    pista:"¿Qué curva resulta de combinar Velocity horizontal constante con Acceleration vertical constante?"
   },
   {Level:3,id:"c2-n3-8",
-   texto:"El campo de un plano infinito con σ = 1 μC/m² depende de la Distance:",
+   texto:"El field de un plano infinito con σ = 1 μC/m² depende de la Distance:",
    formula:"E = σ/(2ε₀) para aislante",
    Options:[{"texto":"Es el mismo a cualquier Distance","Correct":true},{"texto":"Decae como 1/r","Correct":false},{"texto":"Decae como 1/r²","Correct":false},{"texto":"Aumenta con r","Correct":false}],
-   feedback_ok:"El campo de un plano infinito es E = σ/(2ε₀), independiente de la Distance.",
+   feedback_ok:"El field de un plano infinito es E = σ/(2ε₀), independiente de la Distance.",
    feedback_bad:"Para plano infinito: E = σ/(2ε₀) = constante. No depende de r.",
    pista:"Aplica Gauss con superficie cilíndrica paralela al plano."
   },
   {Level:3,id:"c2-n3-9",
    texto:"En el centro de un hexágono con Charges +q iguales en sus vértices:",
    
-   Options:[{"texto":"E = 6kq/a² radial","Correct":false},{"texto":"E = 0 por simetría hexagonal","Correct":true},{"texto":"E = kq/a²","Correct":false},{"texto":"E = 3kq/a²","Correct":false}],
-   feedback_ok:"Cada carga tiene una opuesta diametralmente. Sus campos se cancelan → E = 0.",
-   feedback_bad:"Por simetría hexagonal, los campos se cancelan en pares → E_neto = 0.",
-   pista:"En hexágono regular, cada vértice tiene su opuesto diametral. Sus campos se cancelan."
+   Options:[{"texto":"E = 6kq/a² radial","Correct":false},{"texto":"E = 0 por symmetry hexagonal","Correct":true},{"texto":"E = kq/a²","Correct":false},{"texto":"E = 3kq/a²","Correct":false}],
+   feedback_ok:"Cada charge tiene una opuesta diametralmente. Sus fields se cancelan → E = 0.",
+   feedback_bad:"Por symmetry hexagonal, los fields se cancelan en pares → E_neto = 0.",
+   pista:"En hexágono regular, cada vértice tiene su opuesto diametral. Sus fields se cancelan."
   }
   ]
 };

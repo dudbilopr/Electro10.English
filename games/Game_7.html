@@ -195,7 +195,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <script>
 const GAME_CONFIG = {
   titulo: "Lorentz Force Law",
-  descripcion: "Controla partículas loadeds en campos magnéticos. 5 misiones de Physics de partículas.",
+  descripcion: "Controla partículas loadeds en fields magnetics. 5 misiones de Physics de partículas.",
   color: "#ea580c",
   moduloId: "m7-j1",
   xpGanado: 25,
@@ -203,7 +203,7 @@ const GAME_CONFIG = {
   rondas: [
     {
       titulo:"Ronda 1",categoria:"DIRECCIÓN",
-      Question:"Positive Charge moviéndose en +x, B en +z. ¿Dirección de F_magnética?",
+      Question:"Positive Charge moviéndose en +x, B en +z. ¿Dirección de F_magnetic?",
       formula:"F = qv × B",
       Options:["+y","-y","+z","-x"],correcta:1,
       feedback_ok:"F = q(î × k̂) = q(-ĵ) = -ĵ. La Force es en -y.",
@@ -211,7 +211,7 @@ const GAME_CONFIG = {
     },
     {
       titulo:"Ronda 2",categoria:"Trajectory",
-      Question:"Una partícula loaded con v ⊥ B en campo B uniforme describe:",
+      Question:"Una partícula loaded con v ⊥ B en field B uniforme describe:",
       formula:null,
       Options:["Una parábola","Una elipse","Un círculo","Una recta"],correcta:2,
       feedback_ok:"v ⊥ B constantemente → F centrípeta constante → CÍRCULO. Radius: r = mv/(qB).",
@@ -227,15 +227,15 @@ const GAME_CONFIG = {
     },
     {
       titulo:"Ronda 4",categoria:"Work",
-      Question:"¿Cuánto Work realiza la Force magnética de Lorentz sobre una carga en movimiento?",
+      Question:"¿Cuánto Work realiza la Force magnetic de Lorentz sobre una charge en movimiento?",
       formula:"W = ∫F·v dt",
       Options:["W = qvB","W = 0 siempre","W = ½mv²","Depende de B"],correcta:1,
-      feedback_ok:"La Force de Lorentz es siempre ⊥ a v → W = F·v = 0. ¡La Force magnética no hace Work!",
+      feedback_ok:"La Force de Lorentz es siempre ⊥ a v → W = F·v = 0. ¡La Force magnetic no hace Work!",
       feedback_bad:"F_mag ⊥ v → W = ∫F·v dt = 0. La Velocity cambia de dirección, pero no de magnitudeeeee."
     },
     {
       titulo:"Ronda 5",categoria:"CICLOTRÓN",
-      Question:"El período de revolución de una carga en campo B uniforme. ¿Depende de la Velocity?",
+      Question:"El período de revolución de una charge en field B uniforme. ¿Depende de la Velocity?",
       formula:"T = 2πm/(qB)",
       Options:["Sí, T ∝ v","Sí, T ∝ 1/v","No, T = 2πm/(qB) es constante","Depende del radio"],correcta:2,
       feedback_ok:"T = 2πm/(qB). Aunque cambie v, el radio r = mv/(qB) también cambia, y T se mantiene constante. ¡Base del ciclotrón!",

@@ -8,7 +8,7 @@ import { db } from './firebase.js';
 import { APP_ID } from '../config/firebase.config.js';
 import { renderAdminCharts, renderModalRadarChart } from './charts.js';
 
-export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons) {
+export async function chargerDirectorioAdminFirebase(curriculoData, totalLessons) {
     const tableBody = document.querySelector('#admin-users-table tbody');
     tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:30px;"><span class="material-symbols-outlined" style="font-size:30px;">sync</span></td></tr>';
 
@@ -57,7 +57,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                             }
                         });
                     }
-                } catch (e) { /* sin conexión o sin datos */ }
+                } catch (e) { /* no connection o sin datos */ }
 
                 if (d.role === 'teacher') {
                     teachersCount++;
@@ -100,15 +100,15 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                     if (studentsCount > 0) {
                         const avgRetencion = Math.round(sumRetencion / studentsCount);
                         const churnPct = Math.round((riskCount / studentsCount) * 100);
-                        const avgCarga = Math.round(sumTimeStudents / studentsCount);
+                        const avgCharge = Math.round(sumTimeStudents / studentsCount);
 
                         const elRet = document.getElementById('admin-metric-retencion');
                         const elChurn = document.getElementById('admin-metric-churn');
-                        const elCarga = document.getElementById('admin-metric-carga');
+                        const elCharge = document.getElementById('admin-metric-charge');
 
                         if(elRet) elRet.innerText = `${avgRetencion}%`;
                         if(elChurn) elChurn.innerText = `${churnPct}%`;
-                        if(elCarga) elCarga.innerText = `${avgCarga} min`;
+                        if(elCharge) elCharge.innerText = `${avgCharge} min`;
 
                         const avgRating = countRatings > 0 ? (sumRatings / countRatings).toFixed(1) : '0.0';
                         const elRating = document.getElementById('admin-metric-rating');
@@ -206,7 +206,7 @@ export async function verDetalleStudent(uid, nombre, curriculoData, totalLessons
         renderModalRadarChart(mLabels, mData);
 
     } catch (e) {
-        document.getElementById('modal-u-inst').innerText = 'Fallo de conexión al cargar las métricas.';
+        document.getElementById('modal-u-inst').innerText = 'Fallo de conexión al charger las métricas.';
     }
 }
 
@@ -214,7 +214,7 @@ export async function cambiarRolUser(uid, nuevoRol) {
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'public', 'data', 'directory', uid), { role: nuevoRol }, { merge: true });
         Swal.fire({ title: 'Permisos', text: 'El rol se modificó correctamente.', icon: 'success', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000 });
-        window.cargarDirectorioAdminFirebase?.();
+        window.chargerDirectorioAdminFirebase?.();
     } catch (e) {
         Swal.fire('Restricción', 'No tienes los permisos requeridos.', 'error');
     }

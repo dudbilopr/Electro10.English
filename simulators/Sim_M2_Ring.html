@@ -120,31 +120,31 @@
                     <p class="font-semibold text-base mb-2">Valuees Infinitesimales (de $dq$)</p>
                     <div class="space-y-2 pl-2">
                         <p>Distance $r$: <span id="rValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> m</p>
-                        <p>Campo $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
+                        <p>Field $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                         <p>Componente Axial $dE_x$: <span id="dExValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                     </div>
                     <hr class="my-4 border-slate-200 dark:border-slate-700">
                     <p class="font-semibold text-base mb-2">Valuees Totales del Ring</p>
                      <div class="space-y-2 pl-2">
-                        <p>Carga Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
-                        <p>Campo Total $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
+                        <p>Charge Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
+                        <p>Field Total $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                     </div>
                 </div>
                 
                 <div id="teoria" class="tab-content p-2 text-sm space-y-3">
-                     <p class="font-semibold text-base">1. Campo de un Elemento $dq$</p>
-                    <p>Un elemento de carga $dq$ en el anillo crea un campo $d\vec{E}$ en el punto P.</p>
+                     <p class="font-semibold text-base">1. Field de un Elemento $dq$</p>
+                    <p>Un elemento de charge $dq$ en el anillo crea un field $d\vec{E}$ en el punto P.</p>
                      <p class="text-center my-1 p-2 border rounded-md">$$d\vec{E} = k_e \frac{dq}{r^2} \hat{r} \quad \text{donde } r = \sqrt{a^2 + x_0^2}$$</p>
                     
-                    <p class="font-semibold text-base">2. DescomPosition y Simetría</p>
-                    <p>El vector $d\vec{E}$ tiene una componente axial ($dE_x$) y una perpendicular ($dE_\perp$). Por cada $dq$, existe un $dq'$ opuesto cuyo campo $d\vec{E}'$ tiene una componente $dE'_\perp$ que cancela a la primera. <strong>Solo las componentes axiales ($dE_x$) sobreviven a la suma</strong>.</p>
+                    <p class="font-semibold text-base">2. DescomPosition y Symmetry</p>
+                    <p>El vector $d\vec{E}$ tiene una componente axial ($dE_x$) y una perpendicular ($dE_\perp$). Por cada $dq$, existe un $dq'$ opuesto cuyo field $d\vec{E}'$ tiene una componente $dE'_\perp$ que cancela a la primera. <strong>Solo las componentes axiales ($dE_x$) sobreviven a la suma</strong>.</p>
                      <p class="text-center my-1 p-2 border rounded-md">$$dE_x = |d\vec{E}| \cos(\theta) = k_e \frac{dq}{r^2} \frac{x_0}{r}$$</p>
 
                     <p class="font-semibold text-base">3. Integración</p>
-                    <p>Sumamos (integramos) $dE_x$ para todo el anillo. Como $k_e, x_0, r$ son constantes, la integral de $dq$ es la carga total $Q$.</p>
+                    <p>Sumamos (integramos) $dE_x$ para todo el anillo. Como $k_e, x_0, r$ son constantes, la integral de $dq$ es la charge total $Q$.</p>
                      <p class="text-center my-1 p-2 border rounded-md">$$E_x = \int dE_x = \frac{k_e x_0}{r^3} \int dq = \frac{k_e Q x_0}{(a^2+x_0^2)^{3/2}}$$</p>
                      <p class="font-semibold text-base">4. Result Final</p>
-                      <p>El campo total apunta a lo largo del eje x:</p>
+                      <p>El field total apunta a lo largo del eje x:</p>
                       <p class="text-center my-1 p-2 border rounded-md">$$ \vec{E} = \frac{k_e Q x_0}{(a^2+x_0^2)^{3/2}} \hat{i} $$</p>
                 </div>
                 
@@ -152,19 +152,19 @@
                      <p class="font-semibold text-base">Tips Conceptuales</p>
                     <ul class="list-disc list-inside space-y-2">
                         <li><strong>Centro del anillo ($x_0=0$):</strong> El Electric Field es CERO. Los vectores $d\vec{E}$ de puntos opuestos se cancelan perfectamente. Usa el slider para verlo.</li>
-                        <li><strong>Muy lejos del anillo ($x_0 \gg a$):</strong> El anillo se comporta como una carga puntual. La Formula se simplifica a $E \approx k_e Q / x_0^2$.</li>
-                        <li><strong>Campo Máximo:</strong> El campo no es máximo ni en el centro ni en el infinito, sino en un punto intermedio.</li>
+                        <li><strong>Muy lejos del anillo ($x_0 \gg a$):</strong> El anillo se comporta como una charge puntual. La Formula se simplifica a $E \approx k_e Q / x_0^2$.</li>
+                        <li><strong>Field Máximo:</strong> El field no es máximo ni en el centro ni en el infinito, sino en un punto intermedio.</li>
                     </ul>
 
                      <div class="mt-6">
-                        <p class="font-semibold text-base">Desafío: Campo Máximo</p>
+                        <p class="font-semibold text-base">Desafío: Field Máximo</p>
                         <div class="mt-2 p-3 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                             <p>Para un anillo de radio $a$, el Electric Field en el eje es máximo en la Position $x_0 = a / \sqrt{2}$.</p>
                             <p class="font-semibold my-2">Comprueba este Result:</p>
                             <ol class="list-decimal list-inside my-2 pl-4">
                                 <li>Fija el radio $a=1.0$ m.</li>
-                                <li>Calcula la Position teórica del campo máximo ($x_0 \approx 0.707$ m).</li>
-                                <li>Usa el slider para mover el punto P a esa Position y observa el valor del campo.</li>
+                                <li>Calcula la Position teórica del field máximo ($x_0 \approx 0.707$ m).</li>
+                                <li>Usa el slider para mover el punto P a esa Position y observa el valor del field.</li>
                                 <li>Mueve P a posiciones ligeramente mayores y menores para confirmar.</li>
                             </ol>
                         </div>

@@ -50,10 +50,10 @@
                 <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Componentes</h2>
                 
                 <div class="space-y-4">
-                    <!-- Inductancia L -->
+                    <!-- Inductance L -->
                     <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/50">
                         <div class="flex justify-between text-xs mb-2">
-                            <span class="text-indigo-400 font-medium">Inductancia ($L$)</span>
+                            <span class="text-indigo-400 font-medium">Inductance ($L$)</span>
                             <span id="l-val" class="font-mono text-slate-300">50 mH</span>
                         </div>
                         <input type="range" id="L-slider" min="10" max="200" step="10" value="50" class="w-full accent-indigo-500">
@@ -142,7 +142,7 @@
 
                 <div class="absolute top-4 left-4 z-10 glass-panel px-3 py-2 rounded-lg pointer-events-none">
                     <div class="text-xs font-bold text-slate-400">Esquema 2D: Transferencia de Energy</div>
-                    <div class="text-[10px] text-slate-500">La Energy oscila entre Eléctrica ($U_E$) y Magnética ($U_B$).</div>
+                    <div class="text-[10px] text-slate-500">La Energy oscila entre Electric ($U_E$) y Magnetic ($U_B$).</div>
                 </div>
             </div>
 
@@ -153,7 +153,7 @@
                 <div class="flex-1 min-w-[300px]">
                     <h3 class="text-xs font-bold text-pink-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        Frequency de Resonancia
+                        Frequency de Resonance
                     </h3>
                     <div class="glass-panel p-4 rounded-xl border-pink-500/30 border">
                         <div id="math-steps" class="space-y-4 text-sm text-slate-300 font-light">
@@ -166,7 +166,7 @@
                 <div class="flex-1 min-w-[300px] flex flex-col">
                     <h3 class="text-xs font-bold text-emerald-500 uppercase tracking-widest mb-2 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
-                        Carga $Q(t)$ y Current $I(t)$
+                        Charge $Q(t)$ y Current $I(t)$
                     </h3>
                     <div class="flex-1 glass-panel rounded-xl p-3 relative">
                         <canvas id="chartCanvas"></canvas>
@@ -313,7 +313,7 @@
                 type: 'line',
                 data: {
                     datasets: [
-                        { label: 'Carga Q (µC)', data: [], borderColor: '#10b981', borderWidth: 2, pointRadius: 0 },
+                        { label: 'Charge Q (µC)', data: [], borderColor: '#10b981', borderWidth: 2, pointRadius: 0 },
                         { label: 'Current I (mA)', data: [], borderColor: '#f43f5e', borderWidth: 2, pointRadius: 0 },
                         { label: 'Q Actual', data: [], backgroundColor: '#10b981', pointRadius: 5 },
                         { label: 'I Actual', data: [], backgroundColor: '#f43f5e', pointRadius: 5 }

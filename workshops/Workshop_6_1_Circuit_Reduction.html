@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Interactivo: Análisis de Redes Eléctricas</title>
+    <title>Workshop Interactivo: Análisis de Redes Electrics</title>
     
     <!-- Bibliotecas Externas -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,7 +40,7 @@
         }
         .drawing-layer.active { pointer-events: auto; cursor: crosshair; }
 
-        /* Estilos de Componentes Académicos */
+        /* Styles de Componentes Académicos */
         .problem-card { break-inside: avoid; transition: all 0.3s ease; }
         .problem-text { margin-bottom: 0.75rem; padding-left: 0.5rem; border-left: 3px solid #cbd5e1; }
         .compact-text { font-size: 0.85rem; line-height: 1.5; color: #334155; }
@@ -195,7 +195,7 @@
             </button>
             <button id="btnFlowToggle" onclick="toggleFlowType()" class="toolbar-btn bg-rose-100 text-rose-800 border border-rose-300 px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-rose-200">
                 <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                <span id="flowText">Flujo Convencional</span>
+                <span id="flowText">Flux Convencional</span>
             </button>
         </div>
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 mt-2 md:mt-0">
@@ -353,7 +353,7 @@
             1: { title: "Circuito Mixto Básico", desc: "Determine la Resistance equivalente, Voltages, Currents y Powers disipadas para cada componente." },
             2: { title: "Topología de Escalera", desc: "Analice el circuito en escalera. Emplee reducción sucesiva desde el extremo derecho hacia la fuente." },
             3: { title: "Nodos Múltiples", desc: "Dado el circuito con nodos distribuidos, calcule con precisión las caídas de tensión en cada rama." },
-            4: { title: "Topología Puente-T", desc: "Resuelva la topología de puente T (T-Bridge). Determine el flujo de Current en las uniones." },
+            4: { title: "Topología Puente-T", desc: "Resuelva la topología de puente T (T-Bridge). Determine el flux de Current en las uniones." },
             5: { title: "Lazos Anidados Simétricos", desc: "Analice la red. Recomendación: reduzca los paralelos locales primero antes de sumar en serie." },
             6: { title: "Puente Diagonal Resistivo", desc: "Resuelva el circuito que incluye un puente diagonal resistivo ($R_8$). Emplee reducción serie-paralelo." },
             7: { title: "Red Compleja Extendida", desc: "Para esta red de alta densidad, evalúe la Current total suministrada por la fuente." }

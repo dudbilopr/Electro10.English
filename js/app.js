@@ -14,8 +14,8 @@ import { toggleSidebar, toggleTheme, toggleChat, OpenModalAuth, ShowNotification
 import { inicializarEstructuraBase }            from './curriculum.js';
 import { loadContent, saveEval, saveNotas, saveProgresoNube, getIconForType } from './content-loader.js';
 import { actualizarGraficosStudent }         from './charts.js';
-import { savePerfil, cargarDatosPerfil, cambiarModoVistaAdmin, saveRitmo, saveEncuestaSemanal } from './profile.js';
-import { cargarDirectorioAdminFirebase, verDetalleStudent, cambiarRolUser, saveAjustesCalendario } from './admin.js';
+import { savePerfil, chargerDatosPerfil, cambiarModoVistaAdmin, saveRitmo, saveEncuestaSemanal } from './profile.js';
+import { chargerDirectorioAdminFirebase, verDetalleStudent, cambiarRolUser, saveAjustesCalendario } from './admin.js';
 
 // ── Estado Global Compartido ─────────────────────────────────
 const progressData   = {};
@@ -41,7 +41,7 @@ setInterval(async () => {
     timeData.value++;
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'stats', 'data'), { totalTimeMinutes: increment(1) }, { merge: true });
-    } catch (e) { /* sin conexión */ }
+    } catch (e) { /* no connection */ }
 }, 60000);
 
 // ── Listener de mensajes desde iframes hijo ──────────────────
@@ -61,7 +61,7 @@ window.addEventListener('message', async (event) => {
                 if (icon) { icon.innerText = 'check_circle'; icon.classList.add('icon-filled'); }
             }
             await saveProgresoNube(lessonId);
-            Swal.fire({ title: '¡objective Alcanzado!', text: data.mensaje || 'Has completado esta actividad.', icon: 'success', toast: true, position: 'top-end', showConfirmButton: false, timer: 4000 });
+            Swal.fire({ title: 'Goal Reached!', text: data.mensaje || 'Has completado esta actividad.', icon: 'success', toast: true, position: 'top-end', showConfirmButton: false, timer: 4000 });
             actualizarGraficosStudent(Object.keys(progressData).length, totalLessons, progressData, evalData, timeData, curriculoData);
         }
     }
@@ -91,20 +91,20 @@ window.actualizarContenidoDashboard = () => {
     const c = document.getElementById('next-lesson-container');
     if (nextLesson && nextLi) {
         c.innerHTML = `
-        <div class="task-item" onclick="document.getElementById('${nextLi.id}').click()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:20px;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;">
+        <div class="task-item" onclick="document.getElementById('${nextLi.id}').click()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:20px;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;margin-bottom:0;">
             <div style="display:flex;gap:15px;align-items:center;min-width:0;">
                 <div style="width:50px;height:50px;background:rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;border-radius:12px;">
                     <span class="material-symbols-outlined icon-filled" style="font-size:24px;">${getIconForType(nextLesson.tipo)}</span>
                 </div>
                 <div class="truncate">
                     <h4 class="truncate" style="margin:0 0 5px 0;font-size:1.1rem;color:#fff;">${nextLesson.titulo}</h4>
-                    <p style="margin:0;font-size:0.85rem;color:rgba(255,255,255,0.8);">Recomendación de Exploración</p>
+                    <p style="margin:0;font-size:0.85rem;color:rgba(255,255,255,0.8);">Exploration Recommendation</p>
                 </div>
             </div>
             <span class="material-symbols-outlined" style="color:#fff;">explore</span>
         </div>`;
     } else {
-        c.innerHTML = '<div style="background:rgba(16,185,129,0.2);color:#fff;padding:15px;border-radius:10px;"><span class="material-symbols-outlined" style="vertical-align:bottom;">workspace_premium</span> ¡Has completado todas las exploraciones disponibles!</div>';
+        c.innerHTML = '<div style="background:rgba(16,185,129,0.2);color:#fff;padding:15px;border-radius:10px;"><span class="material-symbols-outlined" style="vertical-align:bottom;">workspace_premium</span> You have completed all available explorations!</div>';
     }
     actualizarGraficosStudent(Object.keys(progressData).length, totalLessons, progressData, evalData, timeData, curriculoData);
     generarDashboardGamificado(); // Actualiza consejos con base en tiempo/progreso
@@ -133,27 +133,27 @@ window.saveEval               = (Level) => saveEval(Level, evalData);
 window.saveNotas              = saveNotas;
 window.saveProgresoNube       = saveProgresoNube;
 window.savePerfil             = savePerfil;
-window.cargarDatosPerfil         = cargarDatosPerfil;
+window.chargerDatosPerfil         = chargerDatosPerfil;
 window.cambiarModoVistaAdmin     = cambiarModoVistaAdmin;
 window.saveRitmo              = saveRitmo;
 window.saveEncuestaSemanal    = saveEncuestaSemanal;
 
 // Importar y exponer las de calificación dinámicamente si no quiero modificar el bloque import arriba, o mejor las importo arriba.
-import { calificarRecurso, hoverStars, resetStarsHover, cargarCalificacionRecurso, pintarEstrellas, calificarCurso, hoverCourseStars, resetCourseStarsHover, cargarCalificacionCurso } from './profile.js';
-window.calificarRecurso          = calificarRecurso;
+import { calificarResource, hoverStars, resetStarsHover, chargerCalificacionResource, pintarEstrellas, calificarCurso, hoverCourseStars, resetCourseStarsHover, chargerCalificacionCurso } from './profile.js';
+window.calificarResource          = calificarResource;
 window.hoverStars                = hoverStars;
 window.resetStarsHover           = resetStarsHover;
-window.cargarCalificacionRecurso = cargarCalificacionRecurso;
+window.chargerCalificacionResource = chargerCalificacionResource;
 window.pintarEstrellas           = pintarEstrellas;
 
 window.calificarCurso            = calificarCurso;
 window.hoverCourseStars          = hoverCourseStars;
 window.resetCourseStarsHover     = resetCourseStarsHover;
-window.cargarCalificacionCurso   = cargarCalificacionCurso;
+window.chargerCalificacionCurso   = chargerCalificacionCurso;
 
 window.actualizarAvatarUI        = actualizarAvatarUI;
 window.actualizarGraficosStudent = (c, t) => actualizarGraficosStudent(c, t, progressData, evalData, timeData, curriculoData);
-window.cargarDirectorioAdminFirebase = () => cargarDirectorioAdminFirebase(curriculoData, totalLessons);
+window.chargerDirectorioAdminFirebase = () => chargerDirectorioAdminFirebase(curriculoData, totalLessons);
 window.verDetalleStudent      = (uid, nombre) => verDetalleStudent(uid, nombre, curriculoData, totalLessons);
 window.cambiarRolUser         = cambiarRolUser;
 window.saveAjustesCalendario  = () => saveAjustesCalendario(globalSettings);
@@ -167,10 +167,10 @@ window._loadContent = (leccion, modTitulo) => {
     const isAdmin = window.currentUserEmail === 'dudbilopr@gmail.com' || window.currentUserRole === 'admin';
     if (!isAdmin && leccion.id !== examId && (!evalData[examId] || evalData[examId] < 65)) {
         Swal.fire({
-            title: 'Acceso Restringido',
+            title: 'Access Restricted',
             html: 'Debes completar el <b>Diagnostic Pre-Assessment</b> (Module 0) con al menos 65% para desbloquear el resto del curso.',
             icon: 'warning',
-            confirmButtonText: 'Ir al Diagnóstico',
+            confirmButtonText: 'Go to Diagnostic',
             confirmButtonColor: 'var(--accent)'
         }).then(() => {
             const presaberesLi = document.getElementById('menu-' + examId);
@@ -186,20 +186,20 @@ window._loadContent = (leccion, modTitulo) => {
 // ── Lógica de Alto Impacto (Neuroeducación y Gamificación) ──
 window.saveApuntes = async () => {
     if (!window.currentUserUid) {
-        return Swal.fire('Modo Visitante', 'Inicia sesión para save apuntes en la nube.', 'info');
+        return Swal.fire('Guest Mode', 'Sign in to save notes to the cloud.', 'info');
     }
     const notas = document.getElementById('student-notes').value.trim();
-    if (!notas) return Swal.fire('Oops', 'No puedes save un apunte vacío.', 'warning');
+    if (!notas) return Swal.fire('Oops', 'You cannot save an empty note.', 'warning');
     
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'notes', 'data'), { content: notas }, { merge: true });
-        Swal.fire('¡Apunte Guardado!', 'Tus conclusiones están seguras en Firestore.', 'success');
+        Swal.fire('Note Saved!', 'Your notes are securely stored in Firestore.', 'success');
     } catch (e) {
-        Swal.fire('Error', 'No se pudo save el apunte. Revisa tu conexión.', 'error');
+        Swal.fire('Error', 'Could not save your note. Please check your connection.', 'error');
     }
 };
 
-async function cargarApuntes() {
+async function chargerApuntes() {
     if (!window.currentUserUid) return;
     try {
         const { getDoc } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js");
@@ -241,7 +241,7 @@ function generarDashboardGamificado() {
         } else if (minutos >= 45 && minutos < 60) {
             elTip.innerText = "Alerta de Fatiga Neuronal: Has superado los 45 min. Levántate, bebe agua (Pause Pomodoro) para consolidar lo aprendido en la memoria a largo plazo.";
         } else {
-            elTip.innerText = "Carga Cognitiva Elevada: Has estudiado mucho hoy. ¡Felicidades! Repasa tus apuntes visuales y desconecta para asegurar el aprendizaje subconsciente.";
+            elTip.innerText = "Charge Cognitiva Elevada: Has estudiado mucho hoy. ¡Felicidades! Repasa tus apuntes visuales y desconecta para asegurar el aprendizaje subconsciente.";
         }
     }
 }
@@ -250,7 +250,7 @@ function generarDashboardGamificado() {
 async function init() {
     aplicarTemaGuardado();
 
-    // Cargar progreso desde localStorage (datos offline)
+    // Charger progreso desde localStorage (datos offline)
     const savedProgress = localStorage.getItem('cursoElectromagnetismoProgreso');
     if (savedProgress) Object.assign(progressData, JSON.parse(savedProgress));
 
@@ -264,7 +264,7 @@ async function init() {
 
     // Show dashboard inicial
     ShowDashboardStudent();
-    generarDashboardGamificado(); // Primera carga visual
+    generarDashboardGamificado(); // Primera charge visual
 
     // Start observer de autenticación
     inicializarAuthObserver({
@@ -272,7 +272,7 @@ async function init() {
         onLogin:  () => { 
             injectUIState({ progressData, curriculoData, totalLessons }); 
             window.actualizarContenidoDashboard(); 
-            cargarApuntes(); // Carga las notas de firebase
+            chargerApuntes(); // Charge las notas de firebase
             generarDashboardGamificado(); // Vuelve a Calculate consejos
         },
         onLogout: () => { ShowDashboardStudent(); }

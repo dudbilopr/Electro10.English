@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulator: Resonancia RLC</title>
+    <title>Simulator: Resonance RLC</title>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config = { darkMode: 'class' }</script>
@@ -37,7 +37,7 @@
     <header class="h-14 bg-slate-900 border-b border-slate-800 flex items-center px-4 z-20 shrink-0 shadow-md">
         <div class="flex items-center gap-3">
             <div class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-violet-500/20">RLC</div>
-            <h1 class="text-lg font-bold text-white">Simulator <span class="text-violet-400">Resonancia RLC en Serie</span></h1>
+            <h1 class="text-lg font-bold text-white">Simulator <span class="text-violet-400">Resonance RLC en Serie</span></h1>
         </div>
     </header>
 
@@ -59,10 +59,10 @@
                         <input type="range" id="R-slider" min="10" max="500" step="10" value="50" class="w-full accent-amber-500">
                     </div>
 
-                    <!-- Inductancia L -->
+                    <!-- Inductance L -->
                     <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/50">
                         <div class="flex justify-between text-xs mb-2">
-                            <span class="text-indigo-400 font-medium">Inductancia ($L$)</span>
+                            <span class="text-indigo-400 font-medium">Inductance ($L$)</span>
                             <span id="l-val" class="font-mono text-slate-300">100 mH</span>
                         </div>
                         <input type="range" id="L-slider" min="10" max="500" step="10" value="100" class="w-full accent-indigo-500">
@@ -93,7 +93,7 @@
         <div class="flex-1 flex flex-col relative bg-slate-950">
             <!-- Canvas / Charts -->
             <div id="chart-container" class="w-full h-2/3 border-b border-slate-800 relative flex flex-col p-4 bg-slate-900">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 ml-2">Curva de Resonancia: Current ($I_{rms}$) vs Frequency ($f$)</h3>
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 ml-2">Curva de Resonance: Current ($I_{rms}$) vs Frequency ($f$)</h3>
                 <div class="flex-1 glass-panel rounded-xl p-3 relative">
                     <canvas id="resonanceChart"></canvas>
                 </div>
@@ -106,7 +106,7 @@
                 <div class="flex-1">
                     <h3 class="text-xs font-bold text-violet-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        Impedancia y Current
+                        Impedance y Current
                     </h3>
                     <div class="glass-panel p-4 rounded-xl border-violet-500/30 border text-sm text-slate-300 font-light flex gap-8">
                         <div id="math-steps-1" class="flex-1">
@@ -153,7 +153,7 @@
                     labels: [],
                     datasets: [
                         { label: 'Current Irms (A)', data: [], borderColor: '#8b5cf6', backgroundColor: 'rgba(139, 92, 246, 0.2)', borderWidth: 3, tension: 0.4, fill: true, pointRadius: 0, yAxisID: 'y' },
-                        { label: 'Impedancia Z (Ω)', data: [], borderColor: '#f59e0b', borderDash: [5, 5], borderWidth: 2, pointRadius: 0, yAxisID: 'y1' },
+                        { label: 'Impedance Z (Ω)', data: [], borderColor: '#f59e0b', borderDash: [5, 5], borderWidth: 2, pointRadius: 0, yAxisID: 'y1' },
                         { label: 'Operación Actual', data: [], borderColor: '#ef4444', backgroundColor: '#ef4444', pointRadius: 8, showLine: false, yAxisID: 'y' }
                     ]
                 },
@@ -164,7 +164,7 @@
                     scales: {
                         x: { title: { display: true, text: 'Frequency (Hz)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
                         y: { type: 'linear', display: true, position: 'left', title: { display: true, text: 'Current (A)', color: '#8b5cf6' }, grid: { color: '#1e293b' }, ticks: { color: '#8b5cf6' } },
-                        y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: 'Impedancia (Ω)', color: '#f59e0b' }, grid: { drawOnChartArea: false }, ticks: { color: '#f59e0b' } }
+                        y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: 'Impedance (Ω)', color: '#f59e0b' }, grid: { drawOnChartArea: false }, ticks: { color: '#f59e0b' } }
                     }
                 }
             });
@@ -217,12 +217,12 @@
                 <div class="text-[11px] text-slate-400">Reactancia Capacitiva ($X_C$)</div>
                 <div class="mb-3">$$ X_C = \\frac{1}{2\\pi f C} = ${cur.XC.toFixed(1)}\\ \\Omega $$</div>
 
-                <div class="text-[11px] text-amber-400 font-bold">Impedancia Total ($Z$)</div>
+                <div class="text-[11px] text-amber-400 font-bold">Impedance Total ($Z$)</div>
                 <div>$$ Z = \\sqrt{R^2 + (X_L - X_C)^2} = ${cur.Z.toFixed(1)}\\ \\Omega $$</div>
             `;
 
             mSteps2.innerHTML = `
-                <div class="text-[11px] text-slate-400">Frequency de Resonancia ($f_{res}$)</div>
+                <div class="text-[11px] text-slate-400">Frequency de Resonance ($f_{res}$)</div>
                 <div class="mb-3">$$ f_{res} = \\frac{1}{2\\pi \\sqrt{LC}} = ${fres.toFixed(1)}\\ \\text{Hz} $$</div>
                 
                 <div class="bg-violet-500/10 p-3 rounded mt-4 border border-violet-500/20 text-center shadow-lg">

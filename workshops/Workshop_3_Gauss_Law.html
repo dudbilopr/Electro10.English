@@ -89,13 +89,13 @@
             </div>
             <div class="problem-text compact-text">
                 <strong>1.</strong> Considere la superficie mostrada en la figura, que está inmersa en una región donde hay un Electric Field uniforme \( E=600 \, N/C \). Determine el Electric Flux para cada una de las 5 superficies.<br><br>
-                <strong>2.</strong> Considere la figura del exercise Previous con los mismos datos y halle el flujo neto \( \Phi_{neto} \) total para la superficie entera de la caja.
+                <strong>2.</strong> Considere la figura del exercise Previous con los mismos datos y halle el flux neto \( \Phi_{neto} \) total para la superficie entera de la caja.
                 
                 <button onclick="toggleHint(this)" class="mt-2 text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
                     <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                 </button>
                 <div class="hint-content mt-2 p-3 bg-blue-50 rounded text-xs text-slate-700 border border-blue-100">
-                    <strong>Estrategia:</strong> El Electric Flux se define como \( \Phi_E = \vec{E} \cdot \vec{A} = EA \cos(\theta) \). Analiza el Angle \( \theta \) entre el vector de área (normal exterior) y las Field Lines para cada cara. Si es una superficie cerrada sin carga en su interior, recuerda el Result teórico del flujo neto.
+                    <strong>Estrategia:</strong> El Electric Flux se define como \( \Phi_E = \vec{E} \cdot \vec{A} = EA \cos(\theta) \). Analiza el Angle \( \theta \) entre el vector de área (normal exterior) y las Field Lines para cada cara. Si es una superficie cerrada sin charge en su interior, recuerda el Result teórico del flux neto.
                 </div>
             </div>
             
@@ -115,7 +115,7 @@
                     <input type="range" min="0" max="360" value="0" oninput="rotateObject('prism', this.value)">
                 </div>
                 <div>
-                    <label class="block font-semibold mb-1 text-slate-600">Densidad de Campo (Volumen)</label>
+                    <label class="block font-semibold mb-1 text-slate-600">Densidad de Field (Volumen)</label>
                     <div class="flex items-center gap-2">
                         <input type="range" id="e1-density" min="2" max="6" step="1" value="3" oninput="updateVolumeField('prism', 'e1-density')">
                     </div>
@@ -131,7 +131,7 @@
             </div>
             <div class="problem-text compact-text">
                 <strong>3.</strong> Determine el Electric Flux que pasa por un elemento de área \( A = 1.0 \, m^2 \) en el plano x-y, cuya normal está en la dirección del eje z positivo, si el Electric Field es uniforme: \( E = (1.0 \times 10^{-6} N/C) \frac{(\hat{i}-\hat{k})}{\sqrt{2}} \).<br><br>
-                <strong>10.</strong> Un Electric Field uniforme \( a\hat{i} + b\hat{j} \) intersecta a una superficie de área A. ¿Cuál es el flujo de ésta área si la superficie se ubica a) en el plano yz, b) en el plano xz, c) en el plano xy?
+                <strong>10.</strong> Un Electric Field uniforme \( a\hat{i} + b\hat{j} \) intersecta a una superficie de área A. ¿Cuál es el flux de ésta área si la superficie se ubica a) en el plano yz, b) en el plano xz, c) en el plano xy?
                 
                 <button onclick="toggleHint(this)" class="mt-2 text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
                     <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
@@ -173,7 +173,7 @@
                     <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                 </button>
                 <div class="hint-content mt-2 p-3 bg-blue-50 rounded text-xs text-slate-700 border border-blue-100">
-                    <strong>Estrategia:</strong> El flujo a través de superficies inclinadas complejas es igual en magnitudeeeee al flujo que atraviesa su <em>proyección perpendicular</em> al campo. Para la pirámide, considera el flujo de la base. Para el cono (campo horizontal), proyecta su sección transversal (un triAngle).
+                    <strong>Estrategia:</strong> El flux a través de superficies inclinadas complejas es igual en magnitudeeeee al flux que atraviesa su <em>proyección perpendicular</em> al field. Para la pirámide, considera el flux de la base. Para el cono (field horizontal), proyecta su sección transversal (un triAngle).
                 </div>
             </div>
             
@@ -210,13 +210,13 @@
             </div>
             <div class="problem-text compact-text">
                 <strong>7.</strong> Un disco cuyo radio mide 0.10 m está orientado con su vector unitario normal n formando un Angle de \( 30^\circ \) respecto a un Electric Field uniforme E cuya magnitudeeeee es de \( 2.0 \times 10^3 N/C \). ¿Cuál es el Electric Flux a través del disco?<br><br>
-                <strong>8.</strong> Considere la figura del exercise Previous y calcule: a) ¿Cuál es el flujo a través del disco si éste se orienta de modo que su normal sea perpendicular a E? b) ¿Cuál es el flujo a través del disco si su normal es paralela a E?
+                <strong>8.</strong> Considere la figura del exercise Previous y calcule: a) ¿Cuál es el flux a través del disco si éste se orienta de modo que su normal sea perpendicular a E? b) ¿Cuál es el flux a través del disco si su normal es paralela a E?
                 
                 <button onclick="toggleHint(this)" class="mt-2 text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
                     <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
                 </button>
                 <div class="hint-content mt-2 p-3 bg-blue-50 rounded text-xs text-slate-700 border border-blue-100">
-                    <strong>Equation de apoyo:</strong> \( \Phi_E = E \cdot (\pi r^2) \cdot \cos(\theta) \). Juega con el deslizador inferior para ver cómo cambia el flujo máximo y mínimo cuando los vectores son perpendiculares (\(90^\circ\)) o paralelos (\(0^\circ\)).
+                    <strong>Equation de apoyo:</strong> \( \Phi_E = E \cdot (\pi r^2) \cdot \cos(\theta) \). Juega con el deslizador inferior para ver cómo cambia el flux máximo y mínimo cuando los vectores son perpendiculares (\(90^\circ\)) o paralelos (\(0^\circ\)).
                 </div>
             </div>
 
@@ -246,19 +246,19 @@
                 <span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full text-[10px] font-bold tracking-wider">Gauss's Law (EJ 6, 9, 11, 12, 13, 15)</span>
             </div>
             <div class="problem-text compact-text h-40 overflow-y-auto pr-2" style="border-left-color: #10b981;">
-                <strong>6.</strong> Calculate el flujo a través de una superficie esférica de radio R=8 m debido a una partícula \( q=12\mu C \) en su centro.<br>
-                <strong>9.</strong> Una carga puntual positiva \( q=3.0\mu C \) está rodeada por una esfera centrada en la carga y cuyo radio es de 0.20 m. Halle el Electric Flux a través de la esfera.<br>
-                <strong>11.</strong> Se sabe que una caja cúbica contiene una carga neta de \( 6 \mu C \). El flujo medido por una cara del cubo es \( 8 \times 10^5 Nm^2/C \). ¿Cuál es el flujo total que pasa por las otras cinco caras?<br>
+                <strong>6.</strong> Calculate el flux a través de una superficie esférica de radio R=8 m debido a una partícula \( q=12\mu C \) en su centro.<br>
+                <strong>9.</strong> Una charge puntual positiva \( q=3.0\mu C \) está rodeada por una esfera centrada en la charge y cuyo radio es de 0.20 m. Halle el Electric Flux a través de la esfera.<br>
+                <strong>11.</strong> Se sabe que una caja cúbica contiene una charge neta de \( 6 \mu C \). El flux medido por una cara del cubo es \( 8 \times 10^5 Nm^2/C \). ¿Cuál es el flux total que pasa por las otras cinco caras?<br>
                 <strong>12.</strong> Un volumen esférico rodea dos Charges puntuales, \( Q_1=5 \mu C \) y \( Q_2= -3 \mu C \). ¿Cuál es el Electric Flux a través de la superficie de la esfera?<br>
-                <strong>13.</strong> Una carga puntual de 12 µC se coloca en el centro de un cascarón esférico de 22cm de radio. Cuál es el Electric Flux total a través de: a) La superficie del cascarón. b) Cualquier superficie hemisférica del cascarón.<br>
-                <strong>15.</strong> Una caja cúbica contiene una carga neta de -8 µC. El flujo medido por una cara del cubo es \( -10 \times 10^5 Nm^2/C \). ¿Cuál es el flujo total que atraviesa las paredes de la caja cúbica?
+                <strong>13.</strong> Una charge puntual de 12 µC se coloca en el centro de un cascarón esférico de 22cm de radio. Cuál es el Electric Flux total a través de: a) La superficie del cascarón. b) Cualquier superficie hemisférica del cascarón.<br>
+                <strong>15.</strong> Una caja cúbica contiene una charge neta de -8 µC. El flux medido por una cara del cubo es \( -10 \times 10^5 Nm^2/C \). ¿Cuál es el flux total que atraviesa las paredes de la caja cúbica?
             </div>
             
             <button onclick="toggleHint(this)" class="mt-1 text-[10px] font-bold text-emerald-600 hover:text-emerald-800 flex items-center gap-1 no-print">
                 <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
             </button>
             <div class="hint-content mt-1 p-3 bg-emerald-50 rounded text-xs text-slate-700 border border-emerald-100">
-                <strong>Clave de Gauss:</strong> La ley establece que \( \Phi_{neto} = \frac{Q_{enc}}{\epsilon_0} \). El radio, la forma de la superficie o el flujo por una sola cara no alteran el flujo <strong>total</strong> neto (que solo depende de la carga interior). Suma algebraicamente las Charges en el Ej. 12.
+                <strong>Clave de Gauss:</strong> La ley establece que \( \Phi_{neto} = \frac{Q_{enc}}{\epsilon_0} \). El radio, la forma de la superficie o el flux por una sola cara no alteran el flux <strong>total</strong> neto (que solo depende de la charge interior). Suma algebraicamente las Charges en el Ej. 12.
             </div>
 
             <div class="grid grid-cols-2 gap-2 mt-2">
@@ -292,15 +292,15 @@
                 <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-[10px] font-bold tracking-wider">EJ 14 & 16 (IRREGULARES)</span>
             </div>
             <div class="problem-text compact-text h-32 overflow-y-auto pr-2" style="border-left-color: #a855f7;">
-                <strong>14.</strong> Las Nexts Charges se localizan dentro de un submarino: 5.0µC, -9.0µC, 27µC, y -84µC. Calcule el flujo neto a través del submarino.<br>
-                <strong>16.</strong> Un conductor con una carga neta de 12µC presenta una cavidad como se ilustra en la figura. Dentro de la cavidad se encuentra una carga \( q = -3\mu C \). Calculate la carga \( q_1 \) en la superficie interior del conductor, y la carga \( q_2 \) en la superficie exterior.
+                <strong>14.</strong> Las Nexts Charges se localizan dentro de un submarino: 5.0µC, -9.0µC, 27µC, y -84µC. Calcule el flux neto a través del submarino.<br>
+                <strong>16.</strong> Un conductor con una charge neta de 12µC presenta una cavidad como se ilustra en la figura. Dentro de la cavidad se encuentra una charge \( q = -3\mu C \). Calculate la charge \( q_1 \) en la superficie interior del conductor, y la charge \( q_2 \) en la superficie exterior.
             </div>
             
             <button onclick="toggleHint(this)" class="mt-1 text-[10px] font-bold text-purple-600 hover:text-purple-800 flex items-center gap-1 no-print">
                 <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Didáctica
             </button>
             <div class="hint-content mt-1 p-3 bg-purple-50 rounded text-xs text-slate-700 border border-purple-100">
-                <strong>Análisis conceptual:</strong> En un conductor en equilibrio electrostático, el campo interno es cero. Por Gauss, la carga neta en una superficie que rodee solo la cavidad debe ser cero, forzando una carga inducida \( q_1 = -q_{interna} \). La carga total se conserva.
+                <strong>Análisis conceptual:</strong> En un conductor en equilibrio electrostático, el field interno es cero. Por Gauss, la charge neta en una superficie que rodee solo la cavidad debe ser cero, forzando una charge inducida \( q_1 = -q_{interna} \). La charge total se conserva.
             </div>
 
             <div class="canvas-container h-[220px]" id="container-submarine">
@@ -324,16 +324,16 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="problem-text compact-text h-72 overflow-y-auto pr-2 text-xs" style="border-left-color: #f59e0b;">
-                    <strong>17 (1).</strong> Una carga de prueba \( 3 \times 10^{-7} C \) recibe una Force horizontal hacia la derecha de \( 2 \times 10^{-4} N \). ¿Cuál es el valor de la intensidad del Electric Field en el punto donde está colocada la carga de prueba?<br><br>
-                    <strong>17 (2).</strong> Una carga de prueba de 2µC se sitúa en un punto en el que la intensidad del Electric Field tiene un valor de \( 5 \times 10^2 N/C \). ¿Cuál es el valor de la Force que actúa sobre ella?<br><br>
-                    <strong>18.</strong> Calculate el valor de la intensidad del Electric Field a una Distance de 50 cm de una carga de 4µC.<br><br>
-                    <strong>19.</strong> La intensidad del Electric Field producido por una carga de 3µC en un punto determinado tiene un valor de \( 6 \times 10^6 N/C \). ¿A qué Distance del punto considerado se encuentra la caja?<br><br>
-                    <strong>20.</strong> Una esfera metálica, cuyo diámetro es de 20cm, está electrizada con una carga de \( 8 \times 10^{-6} C \) distribuida uniformemente en su superficie. ¿Cuál es el valor de la intensidad del Electric Field a 8cm de la superficie de la esfera?<br><br>
-                    <strong>21.</strong> Para transportar una carga de 5µC desde el suelo hasta la superficie de una esfera loaded se realiza un Work de \( 60 \times 10^{-6} J \). ¿Cuál es el valor del Electric Potential de la esfera?<br><br>
-                    <strong>22.</strong> Determine el valor de una carga transportada desde un punto a otro al realizarse un Work de \( 10 \times 10^{-4} J \), si la diferencia de Powerl es \( 2 \times 10^2 V \).<br><br>
-                    <strong>23.</strong> Un conductor esférico de 20cm de diámetro tiene una carga de \( 3 \times 10^{-9} C \). Calculate: a) ¿Cuánto vale el Electric Potential en la superficie de la esfera? b) ¿Cuánto vale el Electric Potential a 30cm de su superficie?<br><br>
-                    <strong>24.</strong> Una carga de 7µC se coloca en un determinado punto de un Electric Field y adquiere una Energy Powerl de \( 63 \times 10^{-6} J \). ¿Cuál es el valor del Electric Potential en ese punto?<br><br>
-                    <strong>25.</strong> Determinar el valor del Electric Potential a una Distance de 10cm de una carga puntual de 8nC.
+                    <strong>17 (1).</strong> Una charge de prueba \( 3 \times 10^{-7} C \) recibe una Force horizontal hacia la derecha de \( 2 \times 10^{-4} N \). ¿Cuál es el valor de la intensidad del Electric Field en el punto donde está colocada la charge de prueba?<br><br>
+                    <strong>17 (2).</strong> Una charge de prueba de 2µC se sitúa en un punto en el que la intensidad del Electric Field tiene un valor de \( 5 \times 10^2 N/C \). ¿Cuál es el valor de la Force que actúa sobre ella?<br><br>
+                    <strong>18.</strong> Calculate el valor de la intensidad del Electric Field a una Distance de 50 cm de una charge de 4µC.<br><br>
+                    <strong>19.</strong> La intensidad del Electric Field producido por una charge de 3µC en un punto determinado tiene un valor de \( 6 \times 10^6 N/C \). ¿A qué Distance del punto considerado se encuentra la caja?<br><br>
+                    <strong>20.</strong> Una esfera metálica, cuyo diámetro es de 20cm, está electrizada con una charge de \( 8 \times 10^{-6} C \) distribuida uniformemente en su superficie. ¿Cuál es el valor de la intensidad del Electric Field a 8cm de la superficie de la esfera?<br><br>
+                    <strong>21.</strong> Para transportar una charge de 5µC desde el suelo hasta la superficie de una esfera loaded se realiza un Work de \( 60 \times 10^{-6} J \). ¿Cuál es el valor del Electric Potential de la esfera?<br><br>
+                    <strong>22.</strong> Determine el valor de una charge transportada desde un punto a otro al realizarse un Work de \( 10 \times 10^{-4} J \), si la diferencia de Powerl es \( 2 \times 10^2 V \).<br><br>
+                    <strong>23.</strong> Un conductor esférico de 20cm de diámetro tiene una charge de \( 3 \times 10^{-9} C \). Calculate: a) ¿Cuánto vale el Electric Potential en la superficie de la esfera? b) ¿Cuánto vale el Electric Potential a 30cm de su superficie?<br><br>
+                    <strong>24.</strong> Una charge de 7µC se coloca en un determinado punto de un Electric Field y adquiere una Energy Powerl de \( 63 \times 10^{-6} J \). ¿Cuál es el valor del Electric Potential en ese punto?<br><br>
+                    <strong>25.</strong> Determinar el valor del Electric Potential a una Distance de 10cm de una charge puntual de 8nC.
                 </div>
                 
                 <div class="flex flex-col gap-2">
@@ -342,8 +342,8 @@
                     </button>
                     <div class="hint-content p-3 bg-amber-50 rounded text-xs text-slate-700 border border-amber-100 mb-2">
                         <strong>Relaciones fundamentales:</strong> <br>
-                        Intensidad de Campo: \( E = \frac{F}{q} \) y \( E = k \frac{q}{r^2} \).<br>
-                        Electric Potential: \( V = \frac{W}{q} \) (o Energy Potential / carga), y \( V = k \frac{q}{r} \). <br>
+                        Intensidad de Field: \( E = \frac{F}{q} \) y \( E = k \frac{q}{r^2} \).<br>
+                        Electric Potential: \( V = \frac{W}{q} \) (o Energy Potential / charge), y \( V = k \frac{q}{r} \). <br>
                         Recuerda que para el caso de esferas conductoras, la Distance \( r \) se mide desde el centro de la esfera.
                     </div>
 
@@ -359,7 +359,7 @@
                             <input type="range" min="0" max="360" value="0" oninput="rotateObject('charges', this.value)">
                         </div>
                         <div>
-                            <label class="block font-semibold mb-1 text-amber-800">Densidad (Campo Radial)</label>
+                            <label class="block font-semibold mb-1 text-amber-800">Densidad (Field Radial)</label>
                             <input type="range" id="e17-density" min="2" max="6" step="1" value="3" oninput="updateVolumeField('charges', 'e17-density')">
                         </div>
                     </div>
@@ -522,7 +522,7 @@
             const angleRad = (angleDeg * Math.PI) / 180;
             // Rotar el meshGroup interno (el objeto en sí)
             config.meshGroup.rotation.y = angleRad;
-            // Si el campo es radial o interno al objeto, rotarlo también
+            // Si el field es radial o interno al objeto, rotarlo también
             if(config.fieldType === 'radial' || config.fieldType === 'radial_multi') {
                 config.field.rotation.y = angleRad;
             }
@@ -637,11 +637,11 @@
 
         function createChargesGeometry() {
             const group = new THREE.Group();
-            // Carga central (positiva)
+            // Charge central (positiva)
             const mainCharge = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), new THREE.MeshBasicMaterial({color: 0xef4444}));
             group.add(mainCharge);
 
-            // Carga de prueba orbitando
+            // Charge de prueba orbitando
             const testCharge = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 16), new THREE.MeshBasicMaterial({color: 0x3b82f6}));
             testCharge.position.set(4, 0, 0);
             group.add(testCharge);
@@ -769,7 +769,7 @@
             const element = document.body;
             const opt = {
                 margin: 0.2,
-                filename: 'Workshop_Fisica_Flujo.pdf',
+                filename: 'Workshop_Fisica_Flux.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }

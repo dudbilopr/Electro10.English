@@ -382,8 +382,8 @@
             }
         }
 
-        // Calculate Índice de Carga Cognitiva
-        // (Un índice inventado para el admin: Mayor tiempo y mayor duda = Mayor Carga Cognitiva)
+        // Calculate Índice de Charge Cognitiva
+        // (Un índice inventado para el admin: Mayor tiempo y mayor duda = Mayor Charge Cognitiva)
         const avgTimePerQuestion = totalTime / currentQuiz.Questions.length;
         const cognitiveLoad = Math.min(100, Math.round((avgTimePerQuestion * 0.5) + (totalHesitations * 2)));
 

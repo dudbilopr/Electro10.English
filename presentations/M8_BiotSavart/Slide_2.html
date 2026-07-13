@@ -45,7 +45,7 @@
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Estilos para las Equations de Text */
+        /* Styles para las Equations de Text */
         .vec-input { width: 75px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px; font-family: monospace; font-size: 13px; font-weight: bold; background-color: #f8fafc; color: #0f172a; transition: all 0.2s;}
         .vec-input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.3); background-color: #ffffff;}
         .vec-group { display: flex; align-items: center; gap: 6px; background: white; padding: 6px 10px; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
@@ -87,12 +87,12 @@
                                 <h2 class="font-bold text-blue-900 flex items-center gap-2 text-base border-b border-blue-200 pb-2 mb-2">
                                     <i data-lucide="crosshair" class="w-5 h-5 text-blue-600"></i> Interacción Lorentz Dinámica y Estática
                                 </h2>
-                                <p class="mb-2 text-justify text-xs text-blue-900">La Force electromagnética instantánea sobre una carga que atraviesa campos dados por funciones escalares depende rigurosamente del producto cruz:</p>
+                                <p class="mb-2 text-justify text-xs text-blue-900">La Force electromagnetic instantánea sobre una charge que atraviesa fields dados por funciones escalares depende rigurosamente del producto cruz:</p>
                                 <div class="math-display">$$\vec{F} = q(\vec{E}(x,y,z,t) + \vec{v}(t) \times \vec{B}(x,y,z,t))$$</div>
                                 
                                 <p class="text-[11px] text-blue-900 text-justify mt-3 bg-white p-3 rounded-lg border border-blue-100 shadow-sm leading-relaxed">
                                     <strong><i data-lucide="mouse-pointer-click" class="w-3 h-3 inline"></i> Prueba Analítica en el Simulator:</strong><br>
-                                    Pause la simulación. En este instante de tiempo ($t$), la partícula está estática en el espacio, pero retiene su vector Velocity inicial $\vec{v}$. Modifica la ecuación del campo magnético (ej. pon <code>x</code> o <code>sin(t)</code>) y observa cómo el vector de la Force $\vec{F}$ (Rojo) se re-dibuja y calcula instantáneamente antes de que la partícula inicie su movimiento.
+                                    Pause la simulación. En este instante de tiempo ($t$), la partícula está estática en el espacio, pero retiene su vector Velocity inicial $\vec{v}$. Modifica la equation del magnetic field (ej. pon <code>x</code> o <code>sin(t)</code>) y observa cómo el vector de la Force $\vec{F}$ (Rojo) se re-dibuja y calcula instantáneamente antes de que la partícula inicie su movimiento.
                                 </p>
 
                                 <div class="grid grid-cols-2 gap-2 mt-3">
@@ -114,7 +114,7 @@
                                 <h2 class="font-bold text-emerald-900 flex items-center gap-2 text-base border-b border-emerald-200 pb-2 mb-2">
                                     <i data-lucide="graduation-cap" class="w-5 h-5 text-emerald-600"></i> Demostración: De Partícula a Current
                                 </h2>
-                                <p class="text-xs text-emerald-800 mb-2 text-justify">La Ley de Laplace para un conductor (hilo) no es una ley nueva, sino la consecuencia directa de la Force de Lorentz actuando en simultáneo sobre billones de electrones en el hilo. El paso a paso es el Next:</p>
+                                <p class="text-xs text-emerald-800 mb-2 text-justify">La Law of Laplace para un conductor (hilo) no es una ley nueva, sino la consecuencia directa de la Force de Lorentz actuando en simultáneo sobre billones de electrones en el hilo. El paso a paso es el Next:</p>
                                 
                                 <div class="bg-white border border-emerald-200 p-4 rounded-lg text-[11px] text-slate-800 shadow-sm">
                                     <p class="mb-1"><strong>1. Force individual:</strong> Un solo electrón ($q$) moviéndose a una Velocity de deriva $\vec{v}_d$ sufre:</p>
@@ -125,7 +125,7 @@
                                     <p class="mb-1 mt-2"><strong>3. Force total integrada:</strong> Multiplicando la Force individual por $N$:</p>
                                     <div class="math-display text-xs text-emerald-700">$$\vec{F}_{total} = (n A L) q (\vec{v}_d \times \vec{B})$$</div>
                                     
-                                    <p class="mb-1 mt-2"><strong>4. Conversión a Current:</strong> Sabiendo que la Current eléctrica se define como carga atravesando el área por segundo ($I = n q v_d A$), extraemos esos términos. Asociando la dirección de $\vec{v}_d$ al vector longitud $\vec{L}$, se obtiene finalmente:</p>
+                                    <p class="mb-1 mt-2"><strong>4. Conversión a Current:</strong> Sabiendo que la Current electric se define como charge atravesando el área por segundo ($I = n q v_d A$), extraemos esos términos. Asociando la dirección de $\vec{v}_d$ al vector longitud $\vec{L}$, se obtiene finalmente:</p>
                                     <div class="bg-emerald-100 p-2 rounded text-center font-bold text-emerald-900 text-sm mt-2">
                                         $$\vec{F}_{Laplace} = I(\vec{L} \times \vec{B})$$
                                     </div>
@@ -136,14 +136,14 @@
                         <!-- TAB 3: REGLA DE LA MANO DERECHA -->
                         <div id="tab-regla" class="tab-content space-y-4">
                             <h2 class="font-bold text-slate-900 flex items-center gap-2 text-base border-b border-slate-200 pb-2">
-                                <i data-lucide="hand" class="w-5 h-5 text-rose-600"></i> Producto Cruz y Geometría 3D
+                                <i data-lucide="hand" class="w-5 h-5 text-rose-600"></i> Producto Cruz y Geometry 3D
                             </h2>
                             <p class="text-xs text-slate-700 mb-2">Para hallar la dirección de la Force sin usar las Equations analíticas, usa la Regla de la Mano Derecha para Charges positivas:</p>
                             
                             <div class="bg-white border border-slate-200 p-4 rounded-lg shadow-sm">
                                 <ol class="list-decimal pl-5 text-xs text-slate-800 space-y-3 font-medium">
                                     <li>Extiende la mano. Los dedos apuntan en la dirección de la <strong>Velocity $\vec{v}$ (Magenta)</strong>.</li>
-                                    <li>Cierra los dedos (como haciendo un puño) hacia donde apunta el <strong>Campo $\vec{B}$ (Cian)</strong>.</li>
+                                    <li>Cierra los dedos (como haciendo un puño) hacia donde apunta el <strong>Field $\vec{B}$ (Cian)</strong>.</li>
                                     <li>Tu <strong>pulgar extendido</strong> indica indefectiblemente el vector <strong>Force $\vec{F}$ (Rojo)</strong>.</li>
                                 </ol>
                                 
@@ -164,17 +164,17 @@
                             <div class="space-y-3">
                                 <div class="bg-white border border-violet-100 p-3 rounded-lg shadow-sm">
                                     <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2"><i data-lucide="filter" class="w-4 h-4 text-indigo-500"></i> 1. Espectrómetro de Masas</h3>
-                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Usando campos cruzados ortogonales ($\vec{E} \perp \vec{B}$), la partícula no se desvía solo si $v = E/B$ (Filtro de Velocityes). Luego entra a una zona solo magnética donde $R = mv/qB$. Usado para Calculate masas atómicas, datar fósiles con Carbono-14 y descubrir isótopos exóticos en astroPhysics.</p>
+                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Usando fields cruzados ortogonales ($\vec{E} \perp \vec{B}$), la partícula no se desvía solo si $v = E/B$ (Filtro de Velocityes). Luego entra a una zona solo magnetic donde $R = mv/qB$. Usado para Calculate masas atómicas, datar fósiles con Carbono-14 y descubrir isótopos exóticos en astroPhysics.</p>
                                 </div>
 
                                 <div class="bg-white border border-violet-100 p-3 rounded-lg shadow-sm">
                                     <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2"><i data-lucide="radiation" class="w-4 h-4 text-amber-500"></i> 2. Reactores de Fusión (Tokamak)</h3>
-                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Para crear una estrella en la Tierra, el plasma alcanza 150 millones de grados Celsius, derritiendo cualquier pared material Physics. Se utilizan campos magnéticos colosales en forma de "Dona" para generar <strong>confinamiento magnético</strong>; las partículas loadeds quedan levitando en órbitas helicoidales, sin tocar el contenedor.</p>
+                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Para crear una estrella en la Tierra, el plasma alcanza 150 millones de grados Celsius, derritiendo cualquier pared material Physics. Se utilizan fields magnetics colosales en forma de "Dona" para generar <strong>confinamiento magnetic</strong>; las partículas loadeds quedan levitando en órbitas helicoidales, sin tocar el contenedor.</p>
                                 </div>
                                 
                                 <div class="bg-white border border-violet-100 p-3 rounded-lg shadow-sm">
                                     <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2"><i data-lucide="train" class="w-4 h-4 text-emerald-500"></i> 3. Trenes Maglev y Frenado</h3>
-                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Al mover rieles Conductors en presencia de imanes, los electrones libres de la estructura sienten la Force de Lorentz, formando vórtices eléctricos que inducen repulsión magnética potente (Ley de Lenz), logrando trenes que flotan y se mueven sin rozamiento a más de 600 km/h.</p>
+                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Al mover rieles Conductors en presencia de imanes, los electrones libres de la estructura sienten la Force de Lorentz, formando vórtices electrics que inducen repulsión magnetic potente (Lenz's Law), logrando trenes que flotan y se mueven sin rozamiento a más de 600 km/h.</p>
                                 </div>
                             </div>
                         </div>
@@ -193,8 +193,8 @@
                             <div class="flex gap-2 items-center">
                                 <i data-lucide="monitor-play" class="w-4 h-4 text-slate-600"></i>
                                 <select id="sel-scene" class="bg-white border border-slate-300 rounded px-2 py-1 outline-none font-semibold text-blue-700 shadow-sm text-xs cursor-pointer focus:ring-2 focus:ring-blue-300">
-                                    <option value="particula">1. Carga Libre Analítica</option>
-                                    <option value="selector">2. Campos Cruzados (E y B)</option>
+                                    <option value="particula">1. Charge Libre Analítica</option>
+                                    <option value="selector">2. Fields Cruzados (E y B)</option>
                                     <option value="hilo">3. Conductor Recto</option>
                                     <option value="espira">4. Espira de Current (Torque)</option>
                                 </select>
@@ -215,9 +215,9 @@
                         <!-- ENTRADAS VECTORIALES (V, B, E) -> AHORA SON STRING (TEXT) -->
                         <div class="flex w-full gap-2 items-center justify-between flex-wrap bg-slate-100 p-2 rounded border border-slate-200 shadow-inner">
                             
-                            <!-- Carga/Current -->
+                            <!-- Charge/Current -->
                             <div class="flex items-center gap-1 bg-white border border-slate-300 px-2 py-1.5 rounded shadow-sm">
-                                <b class="text-[11px] text-slate-700" title="Carga (q) / Current (I)">$q$/$I$:</b> 
+                                <b class="text-[11px] text-slate-700" title="Charge (q) / Current (I)">$q$/$I$:</b> 
                                 <input type="number" id="in-q" value="2" step="1" class="vec-input !w-[45px]">
                             </div>
 
@@ -232,7 +232,7 @@
                                 <input type="text" id="in-vz" value="2" class="vec-input" title="Equation Componente Z">
                             </div>
 
-                            <!-- Vector Campo B (Función Espacial) -->
+                            <!-- Vector Field B (Función Espacial) -->
                             <div class="vec-group">
                                 <div class="flex flex-col items-center border-r border-cyan-200 pr-1 mr-1">
                                     <b class="text-[11px] text-cyan-700 leading-none">Mag.</b>
@@ -243,7 +243,7 @@
                                 <input type="text" id="in-bz" value="2" class="vec-input" title="Ec. B_z (soporta x,y,z,t)">
                             </div>
 
-                            <!-- Vector Campo E (Oculto por defecto) -->
+                            <!-- Vector Field E (Oculto por defecto) -->
                             <div class="vec-group hidden" id="grp-e">
                                 <div class="flex flex-col items-center border-r border-amber-200 pr-1 mr-1">
                                     <b class="text-[11px] text-amber-700 leading-none">Eléc.</b>
@@ -291,7 +291,7 @@
                                 <canvas id="cv-dcl" class="w-full h-full absolute top-0 left-0"></canvas>
                                 <div class="absolute bottom-2 left-2 right-2 text-[9px] text-white bg-slate-800/90 p-1.5 rounded border border-slate-600 shadow-md flex justify-between">
                                     <span class="text-fuchsia-400">$\vec{v}$ / $\vec{I}$</span> 
-                                    <span class="text-cyan-400">Campo local $\vec{B}$</span> 
+                                    <span class="text-cyan-400">Field local $\vec{B}$</span> 
                                     <span class="text-rose-400">Force $\vec{F}$</span>
                                 </div>
                             </div>
@@ -415,7 +415,7 @@
         // Creamos los objetos ArrowHelper una sola vez
         for(let x=-15; x<=15; x+=7.5) {
             for(let y=-15; y<=15; y+=7.5) {
-                // Position Z en 0 y en 10 para dar profundidad a las flechas pero sin sobrecargar
+                // Position Z en 0 y en 10 para dar profundidad a las flechas pero sin sobrecharger
                 [0, 10, -10].forEach(z => {
                     let a = new THREE.ArrowHelper(new THREE.Vector3(0,0,1), new THREE.Vector3(x,y,z), 1, 0x06b6d4, 1, 0.5);
                     a.line.material.transparent = true; a.line.material.opacity = 0.25;
@@ -427,7 +427,7 @@
         }
 
         const updateBFieldVisuals = () => {
-            // Evaluamos la ecuación del usuario en cada punto del espacio en tiempo real
+            // Evaluamos la equation del usuario en cada punto del espacio en tiempo real
             let hasT_in_B = $('in-bx').value.includes('t') || $('in-by').value.includes('t') || $('in-bz').value.includes('t');
             
             // Optimization: Si no estamos en play y no depende de T, no redibujamos siempre. Pero para ser seguros y "app-like", dibujamos en el bucle principal.
@@ -444,14 +444,14 @@
         };
 
         // 2. OBJETOS DE ESCENAS
-        // A. Partícula (Carga)
+        // A. Partícula (Charge)
         const particleGrp = new THREE.Group(); scene.add(particleGrp);
         const particleMesh = new THREE.Mesh(new THREE.SphereGeometry(0.8, 16, 16), new THREE.MeshStandardMaterial({color: 0xfacc15, roughness:0.2, metalness:0.3}));
         particleGrp.add(particleMesh);
         
         // Vectors visuales sobre la partícula
         const arrV = new THREE.ArrowHelper(new THREE.Vector3(1,0,0), new THREE.Vector3(0,0,0), 0, 0xd946ef, 1.5, 0.8); // Velocity
-        const arrB = new THREE.ArrowHelper(new THREE.Vector3(0,0,1), new THREE.Vector3(0,0,0), 0, 0x06b6d4, 1.5, 0.8); // Campo local
+        const arrB = new THREE.ArrowHelper(new THREE.Vector3(0,0,1), new THREE.Vector3(0,0,0), 0, 0x06b6d4, 1.5, 0.8); // Field local
         const arrF = new THREE.ArrowHelper(new THREE.Vector3(0,1,0), new THREE.Vector3(0,0,0), 0, 0xf43f5e, 1.5, 0.8); // Force
         arrV.line.material.linewidth = 4; arrB.line.material.linewidth = 4; arrF.line.material.linewidth = 5;
         particleGrp.add(arrV, arrB, arrF);
@@ -476,7 +476,7 @@
         forceWireArrow.line.material.linewidth = 5;
         wireGroup.add(wireMesh, currentArrow, forceWireArrow); scene.add(wireGroup);
 
-        // D. Espira (Loop magnético)
+        // D. Espira (Loop magnetic)
         const loopGroup = new THREE.Group();
         const loopMesh = new THREE.Mesh(new THREE.TorusGeometry(5, 0.3, 16, 64), new THREE.MeshStandardMaterial({color: 0xb45309}));
         const muArrow = new THREE.ArrowHelper(new THREE.Vector3(0,0,1), new THREE.Vector3(0,0,0), 6, 0x8b5cf6, 1.5, 0.8); // Purpura
@@ -567,17 +567,17 @@
             let q = getValFloat('in-q', 1);
             let m = 1.0; 
             
-            // Para el fondo (Visual Grid), usamos la ecuación del campo evaluada en cada punto x,y,z (llamado independientemente)
+            // Para el fondo (Visual Grid), usamos la equation del field evaluada en cada punto x,y,z (llamado independientemente)
             updateBFieldVisuals();
             
             if (state.scene === 'particula' || state.scene === 'selector') {
                 particleMesh.material.color.setHex(q < 0 ? 0x10b981 : (q > 0 ? 0xf43f5e : 0x94a3b8));
 
-                // Evaluar Campo E en la Position actual
+                // Evaluar Field E en la Position actual
                 let E = new THREE.Vector3(0,0,0);
                 if (state.scene === 'selector') E = getVecParsed('e', state.part.pos, state.time);
                 
-                // Evaluar Campo B local exacto en la Position de la partícula
+                // Evaluar Field B local exacto en la Position de la partícula
                 let B = getVecParsed('b', state.part.pos, state.time);
 
                 let v = new THREE.Vector3();
@@ -740,7 +740,7 @@
             ctx.beginPath(); ctx.strokeStyle = "#1e293b"; ctx.lineWidth = 1; 
             ctx.moveTo(0,cy); ctx.lineTo(cvDcl.width, cy); ctx.moveTo(cx,0); ctx.lineTo(cx, cvDcl.height); ctx.stroke();
 
-            // Identificar si la componente Z del Campo predomina visualmente
+            // Identificar si la componente Z del Field predomina visualmente
             if(Math.abs(b.z) > Math.abs(b.x) && Math.abs(b.z) > Math.abs(b.y)) {
                 ctx.beginPath(); ctx.fillStyle="#06b6d4";
                 if(b.z > 0) { // Punto (Saliente de Pantalla)

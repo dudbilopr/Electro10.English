@@ -27,7 +27,7 @@
         window.FirebaseAPI = { initializeApp, getAuth, signInAnonymously, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, getFirestore, doc, setDoc, getDoc, collection };
     </script>
 
-    <!-- Estilos Globales y Temas -->
+    <!-- Styles Globales y Temas -->
     <style>
         :root {
             --bg-color: #0f172a;
@@ -249,7 +249,7 @@
             { step: 2, tag: "ENFOQUE", action: "Pause dramática", text: "Ahora, viene el truco principal: hallaremos el 'menor' y el 'cofactor' para la primera fila." },
             { step: 3, tag: "ACCIÓN", action: "Tono didáctico", text: "Tomamos el primer número (3). Eliminamos su fila y su columna. El determinante 2x2 que nos sobra es su 'menor'." },
             { step: 4, tag: "ALERTA", action: "Levantar cejas (Ojo)", text: "Hacemos lo mismo con el segundo (-1). ¡Pero ojo aquí! Fíjate cómo el signo exterior alterna a negativo." },
-            { step: 5, tag: "CONTINUACIÓN", action: "Ritmo rápido", text: "Y finalmente con el tercer elemento (1). Con esto, ya tenemos la ecuación principal armada." },
+            { step: 5, tag: "CONTINUACIÓN", action: "Ritmo rápido", text: "Y finalmente con el tercer elemento (1). Con esto, ya tenemos la equation principal armada." },
             { step: 6, tag: "Development", action: "Tono explicativo", text: "Ahora resolvemos estos pequeños determinantes 2x2 multiplicando en cruz." },
             { step: 7, tag: "CÁLCULO", action: "Velocity normal", text: "Simplificamos las multiplicaciones internas que están dentro de los corchetes." },
             { step: 8, tag: "CÁLCULO", action: "Velocity normal", text: "Hacemos las restas correspondientes..." },
@@ -574,7 +574,7 @@
                     }
                 } catch (e) { 
                     console.error(e);
-                    alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al cargar.");
+                    alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al charger.");
                 }
             };
 
@@ -589,7 +589,7 @@
                         </button>
                     )}
 
-                    {/* SUPER NAVBAR FLOTANTE (Estilo App Moderna) */}
+                    {/* SUPER NAVBAR FLOTANTE (Style App Moderna) */}
                     {mode !== 'record' && (
                         <header className="floating-island app-panel flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-2 border border-[var(--border-color)] shadow-2xl">
                             
@@ -642,7 +642,7 @@
                                 {/* Botones Nube */}
                                 <div className="flex bg-[var(--surface-color)] rounded-xl p-1 shadow-inner">
                                     <button className="p-1.5 rounded-lg btn-tool text-[var(--accent-color)]" onClick={handleCloudSync} title="save a la Nube"><Icons.CloudSave /></button>
-                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--secondary-color)]" onClick={handleCloudLoad} title="Cargar de la Nube"><Icons.CloudLoad /></button>
+                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--secondary-color)]" onClick={handleCloudLoad} title="Charger de la Nube"><Icons.CloudLoad /></button>
                                 </div>
 
                                 {/* Auth Administrador */}

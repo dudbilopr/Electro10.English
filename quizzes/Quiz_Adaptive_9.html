@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adaptive Quiz — Ley de Ampere</title>
+<title>Adaptive Quiz — Ampere's Law</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
 <style>
@@ -79,7 +79,7 @@
   <div class="quiz-header">
     <div class="quiz-icon"><span class="material-symbols-outlined">loop</span></div>
     <div>
-      <div class="quiz-title" id="quiz-title">Adaptive Quiz — Ley de Ampere</div>
+      <div class="quiz-title" id="quiz-title">Adaptive Quiz — Ampere's Law</div>
       <div class="quiz-subtitle">Sistema adaptativo • 3 Leveles de dificultad • Retroalimentación inmediata</div>
     </div>
   </div>
@@ -132,25 +132,25 @@
 
 <script>
 const QUIZ_CONFIG = {
-  titulo: "Adaptive Quiz — Ley de Ampere",
+  titulo: "Adaptive Quiz — Ampere's Law",
   icono: "loop",
   moduloId: "m9-q1",
   xpBase: 40,
   Questions: [
   {Level:1,id:"c9-n1-1",
-   texto:"Ley de Ampere integral:",
+   texto:"Ampere's Law integral:",
    formula:"∮ B·dl = μ₀I_enc",
    Options:[{"texto":"∮ B·dl = μ₀I_enc","Correct":true},{"texto":"∮ E·dA = Q/ε₀","Correct":false},{"texto":"∮ B·dA = 0","Correct":false},{"texto":"∮ E·dl = −dΦ/dt","Correct":false}],
-   feedback_ok:"∮ B·dl = μ₀I_enc es la Ley de Ampere.",
+   feedback_ok:"∮ B·dl = μ₀I_enc es la Ampere's Law.",
    feedback_bad:"Ampere: ∮B·dl = μ₀I_enc.",
-   pista:"Ampere involucra la CIRCULACIÓN de B, no el flujo."
+   pista:"Ampere involucra la CIRCULACIÓN de B, no el flux."
   },
   {Level:1,id:"c9-n1-2",
    texto:"Ampere es práctico cuando:",
    
-   Options:[{"texto":"Siempre","Correct":false},{"texto":"Solo con simetría que hace B constante en el camino","Correct":true},{"texto":"Solo para Currents infinitas","Correct":false},{"texto":"Solo en Conductors","Correct":false}],
+   Options:[{"texto":"Siempre","Correct":false},{"texto":"Solo con symmetry que hace B constante en el camino","Correct":true},{"texto":"Solo para Currents infinitas","Correct":false},{"texto":"Solo en Conductors","Correct":false}],
    feedback_ok:"Ampere es simple solo cuando B es constante en el camino elegido.",
-   feedback_bad:"Sin simetría, usa Biot-Savart. Ampere: cuando B = cte en el camino.",
+   feedback_bad:"Sin symmetry, usa Biot-Savart. Ampere: cuando B = cte en el camino.",
    pista:"¿Cuándo puedes sacar B fuera de la integral?"
   },
   {Level:1,id:"c9-n1-3",
@@ -197,17 +197,17 @@ const QUIZ_CONFIG = {
    texto:"B para r > b en el mismo coaxial:",
    
    Options:[{"texto":"B = μ₀(2I)/(2πr)","Correct":false},{"texto":"B = 0","Correct":true},{"texto":"B = μ₀I/(2πr)","Correct":false},{"texto":"B = μ₀I/(2πb)","Correct":false}],
-   feedback_ok:"I_enc = I − I = 0 → B = 0. ¡Sin campo externo!",
+   feedback_ok:"I_enc = I − I = 0 → B = 0. ¡Sin field externo!",
    feedback_bad:"I_enc = +I + (−I) = 0 → B = 0.",
    pista:"Suma TODAS las Currents: conductor interno +I y externo −I."
   },
   {Level:3,id:"c9-n3-9",
    texto:"¿Por qué ∮ B·dA = 0?",
    
-   Options:[{"texto":"No existen monopolos magnéticos","Correct":true},{"texto":"B ⊥ dA","Correct":false},{"texto":"Las Currents se cancelan","Correct":false},{"texto":"Por Lenz","Correct":false}],
-   feedback_ok:"No existen monopolos. Las líneas de B son siempre cerradas → flujo neto = 0.",
-   feedback_bad:"A diferencia de E, las líneas de B son siempre cerradas. No hay 'carga magnética'.",
-   pista:"El Electric Flux puede ser ≠ 0. ¿Por qué el magnético siempre es 0?"
+   Options:[{"texto":"No existen monopolos magnetics","Correct":true},{"texto":"B ⊥ dA","Correct":false},{"texto":"Las Currents se cancelan","Correct":false},{"texto":"Por Lenz","Correct":false}],
+   feedback_ok:"No existen monopolos. Las líneas de B son siempre cerradas → flux neto = 0.",
+   feedback_bad:"A diferencia de E, las líneas de B son siempre cerradas. No hay 'charge magnetic'.",
+   pista:"El Electric Flux puede ser ≠ 0. ¿Por qué el magnetic siempre es 0?"
   }
   ]
 };

@@ -195,19 +195,19 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <script>
 const GAME_CONFIG = {
   titulo: "Electric Field",
-  descripcion: "Navega vectores de campo y calcula magnitudeeeeees. 5 rondas de electrostática vectorial.",
+  descripcion: "Navega vectores de field y calcula magnitudeeeeees. 5 rondas de electrostática vectorial.",
   color: "#7c3aed",
   moduloId: "m2-j1",
   xpGanado: 25,
-  logro: {icono:"<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️",nombre:"Cartógrafo de Campos",desc:"Completaste el Physics Quest de Electric Field sin errores"},
+  logro: {icono:"<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️",nombre:"Cartógrafo de Fields",desc:"Completaste el Physics Quest de Electric Field sin errores"},
   rondas: [
     {
       titulo:"Ronda 1",categoria:"CONCEPTOS",
       Question:"¿En qué dirección apunta el Electric Field de una Negative Charge?",
       formula:null,
-      Options:["Alejándose de la carga","Hacia la carga","En círculos alrededor","Perpendicular a la carga"],correcta:1,
-      feedback_ok:"El campo de una Negative Charge apunta hacia ella (una Positive Charge de prueba sería atraída).",
-      feedback_bad:"El campo de Negative Charge apunta HACIA ella. Contrario al de Positive Charge."
+      Options:["Alejándose de la charge","Hacia la charge","En círculos alrededor","Perpendicular a la charge"],correcta:1,
+      feedback_ok:"El field de una Negative Charge apunta hacia ella (una Positive Charge de prueba sería atraída).",
+      feedback_bad:"El field de Negative Charge apunta HACIA ella. Contrario al de Positive Charge."
     },
     {
       titulo:"Ronda 2",categoria:"CÁLCULO",
@@ -221,9 +221,9 @@ const GAME_CONFIG = {
       titulo:"Ronda 3",categoria:"VECTORES",
       Question:"Dos Charges iguales +q están en los extremos de una recta. En el punto medio, E_total es:",
       formula:null,
-      Options:["2kq/d² en cualquier dirección","kq/d² hacia una carga","Cero por simetría","kq/2d²"],correcta:2,
-      feedback_ok:"Por simetría, los campos de ambas Charges se cancelan exactamente en el punto medio.",
-      feedback_bad:"Las dos Charges iguales crean campos de igual magnitudeeeee pero opuesta dirección en el centro."
+      Options:["2kq/d² en cualquier dirección","kq/d² hacia una charge","Cero por symmetry","kq/2d²"],correcta:2,
+      feedback_ok:"Por symmetry, los fields de ambas Charges se cancelan exactamente en el punto medio.",
+      feedback_bad:"Las dos Charges iguales crean fields de igual magnitudeeeee pero opuesta dirección en el centro."
     },
     {
       titulo:"Ronda 4",categoria:"Field Lines",
@@ -231,14 +231,14 @@ const GAME_CONFIG = {
       formula:null,
       Options:["Ser curvas","Cruzarse entre sí","start en Charges positivas","Terminar en Charges negativas"],correcta:1,
       feedback_ok:"Las Field Lines no pueden cruzarse. Si se cruzaran, habría dos direcciones de E en ese punto.",
-      feedback_bad:"Las líneas de E nunca se cruzan porque en cada punto el campo tiene una sola dirección."
+      feedback_bad:"Las líneas de E nunca se cruzan porque en cada punto el field tiene una sola dirección."
     },
     {
       titulo:"Ronda 5 — FINAL",categoria:"DIPOLO ELÉCTRICO",
-      Question:"El campo de un dipolo eléctrico a gran Distance decae como:",
+      Question:"El field de un dipolo electric a gran Distance decae como:",
       formula:"E_dipolo ~ p/r³",
       Options:["1/r","1/r²","1/r³","constante"],correcta:2,
-      feedback_ok:"El campo del dipolo decae como 1/r³, más rápido que el de una carga puntual (1/r²).",
+      feedback_ok:"El field del dipolo decae como 1/r³, más rápido que el de una charge puntual (1/r²).",
       feedback_bad:"E_dipolo ∝ 1/r³. El factor extra de 1/r viene del momento dipolar p = qd."
     }
   ]

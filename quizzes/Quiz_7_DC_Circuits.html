@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Universitaria: Circuitos Eléctricos y Leyes de Kirchhoff</title>
+    <title>Physics Universitaria: Circuitos Electrics y Leyes de Kirchhoff</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -79,7 +79,7 @@
                     <i class="ph ph-plug text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Physics Eléctrica y Redes</h1>
+                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Physics Electric y Redes</h1>
                     <p class="text-xs md:text-sm text-slate-500 font-medium">Assessment: Circuitos de CC, Resistivity y Leyes de Kirchhoff</p>
                 </div>
             </div>
@@ -267,7 +267,7 @@
             }
         });
 
-        // --- 2. MODO LINK DIRECTO (Cargamos Firebase localmente) ---
+        // --- 2. MODO LINK DIRECTO (Chargemos Firebase localmente) ---
         if (!isInIframe) {
             const firebaseConfig = {
                 apiKey: "AIzaSyCI0c7KgnEAn-sV_CrHs0Er1LXL13CvQSA",
@@ -293,7 +293,7 @@
                     statusEl.innerHTML = `<i class="ph ph-warning-circle text-amber-500"></i> Sesión no detectada`;
                     statusEl.classList.remove('hidden');
                     
-                    // Aviso no intrusivo al cargar
+                    // Aviso no intrusivo al charger
                     setTimeout(() => {
                         showToast("Para que tu progreso se guarde, debes iniciar sesión en la plataforma principal.", "warning");
                     }, 1500);
@@ -342,24 +342,24 @@
         const questions = [
             { 
                 type: 'mcq', 
-                text: "Si la longitud de un conductor cilíndrico de cobre se duplica y su radio transversal se reduce a la mitad, ¿cómo cambia su Resistance eléctrica $R$ original?", 
+                text: "Si la longitud de un conductor cilíndrico de cobre se duplica y su radio transversal se reduce a la mitad, ¿cómo cambia su Resistance electric $R$ original?", 
                 options: ["Aumenta por un factor de 2", "Aumenta por un factor de 4", "Aumenta por un factor de 8", "Permanece igual"], 
                 answer: 2, 
                 tip: "Usa la Formula de resistividad: $R = \\rho \\frac{L}{A}$. Recuerda que el área $A = \\pi r^2$. Si $r$ se reduce a la mitad, $r^2$ disminuye a $1/4$, lo que multiplica $R$ por 4. Sumado al doble de longitud ($L \\times 2$), el factor total es $4 \\times 2 = 8$." 
             },
             { 
                 type: 'mcq', 
-                text: "En un nodo de un circuito convergen 3 ramas. Se sabe que por la rama A entran $5 \\text{ A}$, y por la rama B salen $2 \\text{ A}$. Según la Ley de Currents de Kirchhoff (LCK), ¿cuál es la Current en la rama C?", 
+                text: "En un nodo de un circuito convergen 3 ramas. Se sabe que por la rama A entran $5 \\text{ A}$, y por la rama B salen $2 \\text{ A}$. Según la Law of Currents de Kirchhoff (LCK), ¿cuál es la Current en la rama C?", 
                 options: ["$7 \\text{ A}$ saliendo", "$3 \\text{ A}$ saliendo", "$3 \\text{ A}$ entrando", "$0 \\text{ A}$"], 
                 answer: 1, 
-                tip: "LCK establece que $\\sum I_{\\text{entran}} = \\sum I_{\\text{salen}}$. Si entran $5\\text{A}$ y solo salen $2\\text{A}$ por B, deben salir $3\\text{A}$ adicionales por C para conservar la carga." 
+                tip: "LCK establece que $\\sum I_{\\text{entran}} = \\sum I_{\\text{salen}}$. Si entran $5\\text{A}$ y solo salen $2\\text{A}$ por B, deben salir $3\\text{A}$ adicionales por C para conservar la charge." 
             },
             { 
                 type: 'mcq', 
                 text: "Tres Resistances $R_1 = 100 \\; \\Omega$, $R_2 = 200 \\; \\Omega$ y $R_3 = 300 \\; \\Omega$ están conectadas en serie a una batería ideal. Si la Current que fluye por $R_1$ es de $10 \\text{ mA}$, ¿cuál es el Voltage de la batería?", 
                 options: ["$1 \\text{ V}$", "$3 \\text{ V}$", "$6 \\text{ V}$", "$12 \\text{ V}$"], 
                 answer: 2, 
-                tip: "En un circuito en serie, la Current es la misma en todos los elementos. Encuentra la Resistance equivalente ($R_{eq} = R_1 + R_2 + R_3$) y luego aplica la Ley de Ohm: $V = I \\cdot R_{eq}$." 
+                tip: "En un circuito en serie, la Current es la misma en todos los elementos. Encuentra la Resistance equivalente ($R_{eq} = R_1 + R_2 + R_3$) y luego aplica la Ohm's Law: $V = I \\cdot R_{eq}$." 
             },
             { 
                 type: 'fill', 
@@ -376,9 +376,9 @@
             },
             { 
                 type: 'equation', 
-                text: "Escribe la expresión algebraica para Calculate la **Power eléctrica** disipada por una Resistance en términos de la Current $I$ y su Resistance $R$. (Escribe usando notación plana, ej: I^2*R)", 
+                text: "Escribe la expresión algebraica para Calculate la **Power electric** disipada por una Resistance en términos de la Current $I$ y su Resistance $R$. (Escribe usando notación plana, ej: I^2*R)", 
                 answer: "I^2*R", 
-                tip: "Combina la ley de la Power $P = V \\cdot I$ con la Ley de Ohm $V = I \\cdot R$ para Remove el Voltage." 
+                tip: "Combina la law of la Power $P = V \\cdot I$ con la Ohm's Law $V = I \\cdot R$ para Remove el Voltage." 
             },
             { 
                 type: 'mcq', 
@@ -389,17 +389,17 @@
             },
             { 
                 type: 'drag', 
-                text: "Asocia el Teorema o Ley de circuitos de la columna de la derecha con la definición correcta de la izquierda:", 
+                text: "Asocia el Teorema o Law of circuitos de la columna de la derecha con la definición correcta de la izquierda:", 
                 pairs: [
-                    { id: 'p1', question: "Ley de Currents (LCK)", answer: "Garantiza el principio Physical de conservación de la carga en un nodo." },
-                    { id: 'p2', question: "Ley de Voltages (LVK)", answer: "Garantiza el principio Physical de conservación de la Energy en una Trajectory cerrada." },
-                    { id: 'p3', question: "Teorema de Thévenin", answer: "Reduce una red lineal a una fuente de Voltage ideal en serie con una impedancia." }
+                    { id: 'p1', question: "Law of Currents (LCK)", answer: "Garantiza el principio Physical de conservación de la charge en un nodo." },
+                    { id: 'p2', question: "Law of Voltages (LVK)", answer: "Garantiza el principio Physical de conservación de la Energy en una Trajectory cerrada." },
+                    { id: 'p3', question: "Teorema de Thévenin", answer: "Reduce una red lineal a una fuente de Voltage ideal en serie con una impedance." }
                 ],
-                tip: "Thévenin simplifica para análisis de carga. LCK cuenta electrones que entran y salen. LVK cuenta Energy ganada y perdida en un ciclo cerrado."
+                tip: "Thévenin simplifica para análisis de charge. LCK cuenta electrones que entran y salen. LVK cuenta Energy ganada y perdida en un ciclo cerrado."
             },
             { 
                 type: 'mcq', 
-                text: "En el análisis de Nodos (basado en la LCK), uno de los nodos de la red eléctrica debe ser forzosamente asignado como el 'nodo de referencia'. ¿Qué valor de Electric Potential se le asume por convención matemática?", 
+                text: "En el análisis de Nodos (basado en la LCK), uno de los nodos de la red electric debe ser forzosamente asignado como el 'nodo de referencia'. ¿Qué valor de Electric Potential se le asume por convención matemática?", 
                 options: ["El Voltage más alto de la red.", "El promedio de los Voltages.", "$0 \\text{ V}$ (Tierra).", "Infinito."], 
                 answer: 2, 
                 tip: "Para establecer un sistema de Equations algebraicas, se necesita un Level base desde donde medir todas las caídas de tensión." 
@@ -419,27 +419,27 @@
             },
             { 
                 type: 'mcq', 
-                text: "Una batería real de $9 \\text{ V}$ nominales se conecta a una carga externa de $17 \\; \\Omega$. Si el voltímetro marca que el Voltage en las terminales de la batería cae a $8.5 \\text{ V}$, ¿cuál es la Resistance interna $r$ de la batería?", 
+                text: "Una batería real de $9 \\text{ V}$ nominales se conecta a una charge externa de $17 \\; \\Omega$. Si el voltímetro marca que el Voltage en las terminales de la batería cae a $8.5 \\text{ V}$, ¿cuál es la Resistance interna $r$ de la batería?", 
                 options: ["$1 \\; \\Omega$", "$0.5 \\; \\Omega$", "$2 \\; \\Omega$", "$0 \\; \\Omega$ (es ideal)"], 
                 answer: 0, 
-                tip: "Primero halla la Current del circuito: $I = V_{carga} / R_{carga} = 8.5 / 17 = 0.5\\text{A}$. La caída interna de tensión es $9\\text{V} - 8.5\\text{V} = 0.5\\text{V}$. Aplica Ohm a la Resistance interna: $r = V_{int} / I$." 
+                tip: "Primero halla la Current del circuito: $I = V_{charge} / R_{charge} = 8.5 / 17 = 0.5\\text{A}$. La caída interna de tensión es $9\\text{V} - 8.5\\text{V} = 0.5\\text{V}$. Aplica Ohm a la Resistance interna: $r = V_{int} / I$." 
             },
             { 
                 type: 'fill', 
-                text: "El Teorema de la Máxima Transferencia de Power establece que una fuente entregará la Power máxima a una carga cuando la Resistance de la carga sea ________ a la Resistance de Thévenin de la red.", 
+                text: "El Teorema de la Máxima Transferencia de Power establece que una fuente entregará la Power máxima a una charge cuando la Resistance de la charge sea ________ a la Resistance de Thévenin de la red.", 
                 answer: "igual", 
-                tip: "Se conoce como adaptación o acople de impedancias. Matemáticamente ocurre en el vértice de la parábola donde $R_L = R_{th}$." 
+                tip: "Se conoce como adaptación o acople de impedances. Matemáticamente ocurre en el vértice de la parábola donde $R_L = R_{th}$." 
             },
             { 
                 type: 'mcq', 
                 text: "Si se coloca un cable conductor de cobre ideal (sin Resistance) exactamente en paralelo a una Resistance $R_1$ que está conectada en un circuito activo, ¿qué sucede Physicsmente?", 
                 options: ["La Current se divide por igual entre el cable y la Resistance.", "La Resistance equivalente del bloque se vuelve infinita.", "Toda la Current fluye por el cable, 'cortocircuitando' a $R_1$.", "El Voltage en $R_1$ se duplica."], 
                 answer: 2, 
-                tip: "El cálculo paralelo entre un valor R y 0 (el cable) es: $R_{eq} = (R \\times 0) / (R + 0) = 0$. La Current eléctrica sigue el camino de menor Resistance." 
+                tip: "El cálculo paralelo entre un valor R y 0 (el cable) es: $R_{eq} = (R \\times 0) / (R + 0) = 0$. La Current electric sigue el camino de menor Resistance." 
             },
             { 
                 type: 'drag', 
-                text: "Arrastra el instrumento de medición eléctrica hacia su Configuration ideal en un laboratorio:", 
+                text: "Arrastra el instrumento de medición electric hacia su Configuration ideal en un laboratorio:", 
                 pairs: [
                     { id: 'i1', question: "Amperímetro Ideal", answer: "Se conecta en serie; Resistance interna tendiente a 0 Ω." },
                     { id: 'i2', question: "Voltímetro Ideal", answer: "Se conecta en paralelo; Resistance interna tendiente a Infinito." },
@@ -450,32 +450,32 @@
             { 
                 type: 'mcq', 
                 text: "¿Por qué NO es válido usar el Teorema de Superposition directamente para Calculate la **Power total** disipada en un resistor cuando actúan múltiples fuentes simultáneamente?", 
-                options: ["Porque la Power es un parámetro exclusivo de CA.", "Porque la LVK no se cumple con la Power.", "Porque la relación de Power $P=I^2 R$ no es una ecuación lineal con respecto a la Current.", "Porque requiere Calculate la Resistance de Norton primero."], 
+                options: ["Porque la Power es un parámetro exclusivo de CA.", "Porque la LVK no se cumple con la Power.", "Porque la relación de Power $P=I^2 R$ no es una equation lineal con respecto a la Current.", "Porque requiere Calculate la Resistance de Norton primero."], 
                 answer: 2, 
                 tip: "La superPosition funciona solo en relaciones lineales (Voltage y Current). Elevar al cuadrado una suma $(I_1 + I_2)^2$ no es igual a la suma de los cuadrados $(I_1^2 + I_2^2)$." 
             },
             { 
                 type: 'mcq', 
-                text: "En un Análisis de Mallas, escribes la ecuación para la malla 1 usando LVK. ¿Cómo modelas la caída de tensión en un resistor $R$ que es compartido entre la malla 1 (Current $I_1$) y la malla adyacente 2 (Current $I_2$) asumiendo el mismo sentido de rotación?", 
+                text: "En un Análisis de Mallas, escribes la equation para la malla 1 usando LVK. ¿Cómo modelas la caída de tensión en un resistor $R$ que es compartido entre la malla 1 (Current $I_1$) y la malla adyacente 2 (Current $I_2$) asumiendo el mismo sentido de rotación?", 
                 options: ["$-R(I_1 + I_2)$", "$-R(I_1 - I_2)$", "$-R \\cdot I_1$", "El componente se ignora matemáticamente."], 
                 answer: 1, 
                 tip: "Al estar en el límite, la Current neta real que atraviesa el resistor visto desde la perspectiva de la malla 1 es la Current principal menos la contraCurrent de la malla vecina." 
             },
             { 
                 type: 'equation', 
-                text: "Escribe la ecuación equivalente de Resistances en paralelo para dos resistores, R1 y R2, simplificada en un solo término fraccionario. (Ej: R1*R2/(R1+R2))", 
+                text: "Escribe la equation equivalente de Resistances en paralelo para dos resistores, R1 y R2, simplificada en un solo término fraccionario. (Ej: R1*R2/(R1+R2))", 
                 answer: "R1*R2/(R1+R2)", 
                 tip: "Es el famoso producto sobre la suma. Sale algebraicamente de $1 / (1/R_1 + 1/R_2)$." 
             },
             { 
                 type: 'fill', 
-                text: "El fenómeno Physical mediante el cual toda Current eléctrica que fluye a través de un material conductor con Resistance $R > 0$ genera Energy térmica (calor) se conoce universalmente como Efecto ________.", 
+                text: "El fenómeno Physical mediante el cual toda Current electric que fluye a través de un material conductor con Resistance $R > 0$ genera Energy térmica (calor) se conoce universalmente como Efecto ________.", 
                 answer: "Joule", 
                 tip: "Este efecto es la base de funcionamiento de estufas, tostadoras, y la razón por la que los procesadores necesitan ventiladores." 
             },
             { 
                 type: 'canvas', 
-                text: "Simulator Ley de Ohm: Tienes un circuito en CC alimentado por una batería ideal de $12 \\text{ V}$. **Arrastra el selector** cilíndrico del reóstato (resistor variable) para ajustar su Resistance $R$ de modo que el Amperímetro indique una Current de **$0.15 \\text{ A}$** exactos para completar la Question.", 
+                text: "Simulator Ohm's Law: Tienes un circuito en CC alimentado por una batería ideal de $12 \\text{ V}$. **Arrastra el selector** cilíndrico del reóstato (resistor variable) para ajustar su Resistance $R$ de modo que el Amperímetro indique una Current de **$0.15 \\text{ A}$** exactos para completar la Question.", 
                 tip: "Usa la ley fundamental $V = I \\cdot R$. Si conoces que $V = 12$ y necesitas $I = 0.15$, despeja $R$ ($R = 12 / 0.15$). Arrastra la barra hasta llegar a ese valor (80 ohmios)." 
             }
         ];
@@ -1066,7 +1066,7 @@
 
             const msg = document.getElementById('feedback-message');
             if (percentage >= 70) {
-                msg.textContent = "¡Aprobado! Demuestras una excelente capacidad para analizar redes eléctricas y teoremas fundamentales.";
+                msg.textContent = "¡Aprobado! Demuestras una excelente capacidad para analizar redes electrics y teoremas fundamentales.";
                 msg.className = "text-xl font-bold text-emerald-700 mb-6 text-center max-w-lg";
                 document.getElementById('btn-save').classList.remove('hidden');
             } else {
@@ -1146,7 +1146,7 @@
                 // 2. Guardamos haciendo Merge y usando Increment()
                 await setDoc(statsRef, statsUpdate, { merge: true });
 
-                // 3. Descargamos el documento ya actualizado para crear la Chart
+                // 3. Deschargemos el documento ya actualizado para crear la Chart
                 const snap = await getDoc(statsRef);
                 if (!snap.exists()) return;
 
@@ -1241,7 +1241,7 @@
             showToast("Generando PDF detallado... Esto puede tardar unos segundos.", "info");
             
             const titleHTML = `<div id="pdf-header" class="mb-8 border-b-2 border-emerald-200 pb-4">
-                                  <h1 class="text-3xl font-black text-emerald-900">Results: Circuitos Eléctricos y Kirchhoff</h1>
+                                  <h1 class="text-3xl font-black text-emerald-900">Results: Circuitos Electrics y Kirchhoff</h1>
                                   <p class="text-lg text-slate-600 font-bold mt-2">Score obtenido: ${window.lastScore}%</p>
                                </div>`;
             element.insertAdjacentHTML('afterbegin', titleHTML);

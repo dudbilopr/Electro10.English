@@ -15,7 +15,7 @@ import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/f
 import { auth, db } from './firebase.js';
 import { APP_ID, ADMIN_EMAIL } from '../config/firebase.config.js';
 import { actualizarAvatarUI, ShowDashboardStudent } from './ui.js';
-import { cargarDatosPerfil } from './profile.js';
+import { chargerDatosPerfil } from './profile.js';
 
 // ── Acciones de auth ─────────────────────────────────────────
 
@@ -63,7 +63,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
             document.getElementById('student-name-hero').innerText   = shortEmail.toUpperCase();
             actualizarAvatarUI('initials', user.uid, shortEmail);
 
-            // Cargar datos de Firestore
+            // Charger datos de Firestore
             try {
                 const profSnap = await getDoc(doc(db, 'artifacts', APP_ID, 'users', user.uid, 'profile', 'data'));
                 if (profSnap.exists() && profSnap.data().name) {
@@ -80,9 +80,9 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
 
                 const tSnap = await getDoc(doc(db, 'artifacts', APP_ID, 'users', user.uid, 'stats', 'data'));
                 if (tSnap.exists()) timeData.value = tSnap.data().totalTimeMinutes || 0;
-            } catch (e) { /* sin conexión */ }
+            } catch (e) { /* no connection */ }
 
-            // Cargar ajustes del curso
+            // Charger ajustes del curso
             try {
                 const setSnap = await getDoc(doc(db, 'artifacts', APP_ID, 'public', 'data', 'settings', 'courseInfo'));
                 if (setSnap.exists()) {
@@ -93,7 +93,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
                     globalSettings.excludedWeeks  = info.excludedWeeks  || [];
                     globalSettings.moduleWeeksMap = info.moduleWeeksMap || [];
                 }
-            } catch (e) { /* sin conexión */ }
+            } catch (e) { /* no connection */ }
 
             // Determinar rol real
             let actualRole = window.isMasterAdmin ? 'teacher' : 'student';
@@ -101,7 +101,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
                 try {
                     const myDir = await getDoc(doc(db, 'artifacts', APP_ID, 'public', 'data', 'directory', user.uid));
                     if (myDir.exists()) actualRole = myDir.data().role || actualRole;
-                } catch (e) { /* sin conexión */ }
+                } catch (e) { /* no connection */ }
             } else {
                 actualRole = window.simulatedRole;
             }
@@ -124,7 +124,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
                 }
             }
 
-            await cargarDatosPerfil();
+            await chargerDatosPerfil();
 
             // Restaurar estados de progreso en el menú
             document.querySelectorAll('.lesson-item').forEach(li => {

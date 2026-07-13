@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Laboratory: Potential y Work Eléctrico</title>
+    <title>Virtual Laboratory: Potential y Work Electric</title>
     <meta name="description" content="Simulator de Electric Potential (V) y Work (W) con sistema de referencia dinámico.">
     
     <!-- Librerías Originales -->
@@ -176,7 +176,7 @@
 <body>
 
 <header>
-    <div><h2><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Potential y Work Eléctrico PRO</h2></div>
+    <div><h2><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Potential y Work Electric PRO</h2></div>
     <div class="version">
         <span id="user-info" style="color: #a29bfe; font-weight: bold;">Autenticando...</span>
         <span id="user-stats" style="color: #f1c40f; font-weight: bold; margin-left: 10px; display: none; cursor: pointer; background: #2b2b3b; padding: 2px 8px; border-radius: 4px; border: 1px solid #444;" onclick="OpenModalPerfil()" title="Ver Misiones y Logros"><span class="inline-flex items-center text-amber-400 mr-1"><i data-lucide="award" class="w-4 h-4 inline"></i></span> Lvl 1 | 0 pts</span>
@@ -218,7 +218,7 @@
                 <button class="btn-tool" onclick="undo()">↩️ Undo</button>
                 <button id="btn-hide-show" class="btn-tool btn-toggle" onclick="toggleVisibility()" title="Oculta temporalmente los trazos y objetos"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Hide / Show</button>
                 <button class="btn-tool btn-danger" onclick="ClearTodo()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Clear Todo</button>
-                <button class="btn-tool" style="background: #e67e22; color: white;" onclick="exportarImagen()" title="Descargar imagen del lienzo con tus Results"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Exportar Imagen</button>
+                <button class="btn-tool" style="background: #e67e22; color: white;" onclick="exportarImagen()" title="Descharger imagen del lienzo con tus Results"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Exportar Imagen</button>
             </div>
             
             <div class="color-picker-container">
@@ -258,7 +258,7 @@
             <div class="section-title">Parameters Physicals</div>
             
             <div style="margin-bottom: 10px;">
-                <label style="font-size:0.8rem; color:#aaa;">Carga Móvil ($q_0$):</label>
+                <label style="font-size:0.8rem; color:#aaa;">Charge Móvil ($q_0$):</label>
                 <div class="input-row">
                     <input type="number" id="q0-input" value="1.0" step="0.1" onchange="analizarFisica(); requestSync(true);">
                     <span style="font-size:0.8rem;">µC</span>
@@ -266,7 +266,7 @@
             </div>
 
             <div style="margin-bottom: 10px;">
-                <label style="font-size:0.8rem; color:#aaa;">U. Carga Fuente:</label>
+                <label style="font-size:0.8rem; color:#aaa;">U. Charge Fuente:</label>
                 <select id="charge-unit" onchange="analizarFisica(); requestSync(true);">
                     <option value="1e-6">Microcoulombs (µC)</option>
                     <option value="1e-9">Nanocoulombs (nC)</option>
@@ -554,7 +554,7 @@
     });
 
     let compEx, compEy;
-    function actualizarFilaCampo() {
+    function actualizarFilaField() {
         try {
             if (typeof math === 'undefined') {
                 compEx = { evaluate: () => 0 };
@@ -577,7 +577,7 @@
     }
     
     function getE_ext(px, py) {
-        if(!compEx) actualizarFilaCampo();
+        if(!compEx) actualizarFilaField();
         try {
             let ex = compEx.evaluate({x: px, y: py});
             let ey = compEy.evaluate({x: px, y: py});
@@ -925,7 +925,7 @@
     function classifyGroup(indices, b) { if (!indices || indices.length === 0) return 'unknown'; const strokes = indices.map(i => state.rawStrokes[i]).filter(s => s && s.length > 0); if (strokes.length === 0) return 'unknown'; const diag = Math.hypot(b.w, b.h); if (diag < 45 && strokes.length <= 3) return 'point'; let maxL = 0; let mainStrokeIdx = -1; strokes.forEach((s, i) => { let l = 0; for(let k=0; k<s.length-1; k++) l += Math.hypot(s[k+1].x-s[k].x, s[k+1].y-s[k].y); if(l >= maxL) { maxL = l; mainStrokeIdx = i; } }); if(mainStrokeIdx === -1) return 'unknown'; const mainStroke = strokes[mainStrokeIdx]; const distEnds = Math.hypot(mainStroke[0].x - mainStroke[mainStroke.length-1].x, mainStroke[0].y - mainStroke[mainStroke.length-1].y); const isClosed = maxL > 0 && distEnds < maxL * 0.4; if (diag > 30 && !isClosed) return 'trajectory_path'; const r = b.w / (b.h || 1); if (r > 0.3 && r < 3.0 && diag > 15 && isClosed) { const innerStrokes = strokes.filter((_, i) => i !== mainStrokeIdx); if (innerStrokes.length === 0) return 'charge_pos'; let allInnerPts = []; innerStrokes.forEach(s => allInnerPts.push(...s)); const ib = getBounds(allInnerPts); if (ib.w > (ib.h || 1) * 1.1) return 'charge_neg'; return 'charge_pos'; } return 'unknown'; }
 
     function analizarFisica() {
-        actualizarFilaCampo(); const charges = state.objects.filter(o => o.type.startsWith('charge')), points = state.objects.filter(o => o.type === 'point'), trajectories = state.objects.filter(o => o.type === 'trajectory');
+        actualizarFilaField(); const charges = state.objects.filter(o => o.type.startsWith('charge')), points = state.objects.filter(o => o.type === 'point'), trajectories = state.objects.filter(o => o.type === 'trajectory');
         const Ke = 8.99e9, scaleFactor = getSafeScale(), chargeU = parseFloat(document.getElementById('charge-unit').value || 1e-6), q0_val = parseFloat(document.getElementById('q0-input').value || 1.0), q0 = q0_val * 1e-6; 
         charges.forEach(c => { const elQ = document.getElementById(`q-${c.id}`); if(elQ) c.q = parseFloat(elQ.value); c.physX = (c.x - state.origin.x) / scaleFactor; c.physY = (state.origin.y - c.y) / scaleFactor; });
         const pointPotentials = {};
@@ -955,7 +955,7 @@
         const box = document.getElementById('latex-result'); let html = ""; const { points, works } = state.calculations; const pointList = Object.values(points || {});
         if (pointList.length === 0) { html = "\\text{Dibuja puntos para Calculate Potential (V)}"; } 
         else {
-            html += "\\textbf{1. Potentiales Eléctricos ($V_p$):} \\\\"; const cU = document.getElementById('charge-unit'); const exponent = cU.value === '1e-6' ? '-6' : (cU.value === '1e-9' ? '-9' : '-3');
+            html += "\\textbf{1. Potentiales Electrics ($V_p$):} \\\\"; const cU = document.getElementById('charge-unit'); const exponent = cU.value === '1e-6' ? '-6' : (cU.value === '1e-9' ? '-9' : '-3');
             pointList.forEach(p => { 
                 html += `\\underline{\\text{Punto } ${p.label} (x: ${p.physX.toFixed(2)}, y: ${p.physY.toFixed(2)})}: \\\\`;
                 if (p.chargeDetails && p.chargeDetails.length > 0) { let sumStr = p.chargeDetails.map(d => { let sign = d.qVal >= 0 ? "+" : "-"; let val = Math.abs(d.qVal); return `${sign} \\frac{${val}}{${d.r.toFixed(2)}}`; }).join(" "); if (sumStr.startsWith("+ ")) sumStr = sumStr.substring(2); html += `V_{\\text{Charges}} = k_e \\sum \\frac{q}{r} = 8.99\\times 10^9 \\left[ ${sumStr} \\right] \\times 10^{${exponent}} \\\\`; html += `V_{\\text{Charges}} = ${p.V_charges.toExponential(2)} \\text{ V} \\\\[0.3em]`; }
@@ -1310,7 +1310,7 @@
         if(d.tareas) {
             if (p.Level === 1) {
                 tareasDiv.innerHTML = `
-                    <div class="task-item ${d.tareas.tarea_1 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 1 carga en el lienzo</span></div>
+                    <div class="task-item ${d.tareas.tarea_1 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 1 charge en el lienzo</span></div>
                     <div class="task-item ${d.tareas.tarea_2 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Coloca 1 punto de análisis</span></div>
                     <div class="task-item ${d.tareas.tarea_3 ? 'done' : ''}"><div class="task-check"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></div><span>Haz 5 interacciones (Move/Dibujar)</span></div>
                 `;

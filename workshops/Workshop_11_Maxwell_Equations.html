@@ -111,7 +111,7 @@
                 <span class="text-slate-400 text-[10px] uppercase font-semibold">Workshop</span>
             </div>
             <div class="problem-text compact-text text-sm">
-                <strong>Problema 2:</strong> Muestre cómo la Ley de Ampere original es inconsistente para un circuito que incluye un capacitor cargándose y cómo la Current de desplazamiento lo soluciona.
+                <strong>Problema 2:</strong> Muestre cómo la Ampere's Law original es inconsistente para un circuito que incluye un capacitor cargándose y cómo la Current de desplazamiento lo soluciona.
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mt-2 flex items-center justify-center min-h-[100px] text-slate-400 text-xs italic">
                 Espacio de Work del Student (Añade SVGs aquí si lo requieres)
@@ -145,7 +145,7 @@
                 <span class="text-slate-400 text-[10px] uppercase font-semibold">Workshop</span>
             </div>
             <div class="problem-text compact-text text-sm">
-                <strong>Problema 4:</strong> Demuestre que las Equations de Maxwell implican que las ondas electromagnéticas en el vacío viajan a la Velocity c.
+                <strong>Problema 4:</strong> Demuestre que las Equations de Maxwell implican que las ondas electromagnetics en el vacío viajan a la Velocity c.
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mt-2 flex items-center justify-center min-h-[100px] text-slate-400 text-xs italic">
                 Espacio de Work del Student (Añade SVGs aquí si lo requieres)
@@ -162,7 +162,7 @@
                 <span class="text-slate-400 text-[10px] uppercase font-semibold">Workshop</span>
             </div>
             <div class="problem-text compact-text text-sm">
-                <strong>Problema 5:</strong> Un rayo láser tiene una intensidad media de 5.0 mW/m². Calcule los valores máximos de los campos eléctrico y magnético.
+                <strong>Problema 5:</strong> Un rayo láser tiene una intensidad media de 5.0 mW/m². Calcule los valores máximos de los fields electric y magnetic.
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mt-2 flex items-center justify-center min-h-[100px] text-slate-400 text-xs italic">
                 Espacio de Work del Student (Añade SVGs aquí si lo requieres)
@@ -182,7 +182,7 @@
     <script>
         const scenes = {};
 
-        // Start Three.js al cargar
+        // Start Three.js al charger
         function init3D() { return; 
             createScene('3dfield', 'container-3dfield', createDipoleGeometry, 'dipole_field', 3);
             animate();
@@ -236,7 +236,7 @@
             });
         }
 
-        // --- Geometrías 3D ---
+        // --- Geometrys 3D ---
         function createDipoleGeometry() {
             const group = new THREE.Group();
             // Positive Charge
@@ -276,7 +276,7 @@
                 group.add(arrow);
             };
 
-            // Campo simulado de Dipolo E = k(q1/r1^2 * r1_hat - q2/r2^2 * r2_hat)
+            // Field simulado de Dipolo E = k(q1/r1^2 * r1_hat - q2/r2^2 * r2_hat)
             if (type === 'dipole_field') {
                 const q1Pos = new THREE.Vector3(-2, 0, 0);
                 const q2Pos = new THREE.Vector3(2, 0, 0);

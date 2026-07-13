@@ -96,7 +96,7 @@
                     <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Electric Field Dinámico 2D/3D
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
-                    Proporcionalidad del Campo, Topología, DCL y Scales Visibles
+                    Proporcionalidad del Field, Topología, DCL y Scales Visibles
                 </p>
             </header>
 
@@ -108,14 +108,14 @@
                     <!-- BASE COMÚN -->
                     <div class="bg-slate-100 p-[1.5vmin] border-l-[0.5vmin] border-blue-600 shadow-sm rounded-r-lg mb-[1vmin]">
                         <p class="mb-1 flex items-start">
-                            <span>El <strong>Electric Field ($\vec{E}$)</strong> es una magnitudeeeee vectorial. <strong>La densidad y cantidad de las Field Lines es directamente proporcional a la magnitudeeeee de la carga ($|Q|$).</strong></span>
+                            <span>El <strong>Electric Field ($\vec{E}$)</strong> es una magnitudeeeee vectorial. <strong>La densidad y cantidad de las Field Lines es directamente proporcional a la magnitudeeeee de la charge ($|Q|$).</strong></span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Proporcionalidad y Topología:</strong> Si duplicas la carga, observarás el doble de líneas salir (o entrar) de ella. Además, las líneas NUNCA se cruzan en el espacio 3D ni 2D.</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Proporcionalidad y Topología:</strong> Si duplicas la charge, observarás el doble de líneas salir (o entrar) de ella. Además, las líneas NUNCA se cruzan en el espacio 3D ni 2D.</span>
                             </span>
                         </p>
                         <div class="math-display">$$\vec{E} = \sum \frac{k Q_i}{r_i^2} \hat{r}_i \quad ; \quad \vec{F}_{neta} = q_0 \vec{E}_{neto}$$</div>
-                        <p class="text-xs text-slate-600 italic">Haz clic sobre cualquier carga para selectla y modificar su magnitudeeeee y polaridad individualmente.</p>
+                        <p class="text-xs text-slate-600 italic">Haz clic sobre cualquier charge para selectla y modificar su magnitudeeeee y polaridad individualmente.</p>
                     </div>
 
                     <!-- CASO 1: VECTORES Y COMPONENTES (DCL) -->
@@ -124,10 +124,10 @@
                             Force, DCL y Trajectorys
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> DescomPosition:</strong> La Force $\vec{F}$ puede descomponerse en $X$ e $Y$. Además, puedes animar la carga para que viaje a favor del campo o perpendicular a él (equiPowerl).</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> DescomPosition:</strong> La Force $\vec{F}$ puede descomponerse en $X$ e $Y$. Además, puedes animar la charge para que viaje a favor del field o perpendicular a él (equiPowerl).</span>
                             </span>
                         </p>
-                        <p class="mt-1 text-sm">La Force eléctrica resultante $\vec{F}$ es un vector que puede descomponerse trigonométricamente:</p>
+                        <p class="mt-1 text-sm">La Force electric resultante $\vec{F}$ es un vector que puede descomponerse trigonométricamente:</p>
                         <div class="math-display">
                             \begin{aligned}
                             F_x &= |\vec{F}| \cos(\theta) \\
@@ -139,32 +139,32 @@
                             <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Interpretación y Movimiento
                         </p>
                         <p class="text-xs">
-                            <strong>EquiPowerl:</strong> Si seleccionas "Pasear EquiPowerl", la carga se moverá a 90° del campo, manteniendo el campo local constante.<br>
-                            <strong>Field Lines:</strong> Al "Pasear Línea de Campo", la carga acelerará siguiendo estrictamente las Trajectorys curvas visibles.
+                            <strong>EquiPowerl:</strong> Si seleccionas "Pasear EquiPowerl", la charge se moverá a 90° del field, manteniendo el field local constante.<br>
+                            <strong>Field Lines:</strong> Al "Pasear Línea de Field", la charge acelerará siguiendo estrictamente las Trajectorys curvas visibles.
                         </p>
                     </div>
 
                     <!-- CASO ESPECÍFICO DINÁMICO -->
                     <div id="teoria-dinamica" class="bg-indigo-50 p-[1.5vmin] border border-indigo-200 shadow-sm rounded-lg relative flex-1">
                         <div id="teoria-c1" class="flex flex-col gap-1">
-                            <p class="font-bold text-indigo-800">Geometría: Carga Puntual (+Q)</p>
-                            <p class="text-sm">Modifica el deslizador "Sel. $Q$" y observa cómo la cantidad de líneas emanadas se ajusta de forma proporcional a la carga.</p>
+                            <p class="font-bold text-indigo-800">Geometry: Charge Puntual (+Q)</p>
+                            <p class="text-sm">Modifica el deslizador "Sel. $Q$" y observa cómo la cantidad de líneas emanadas se ajusta de forma proporcional a la charge.</p>
                         </div>
                         <div id="teoria-c2" class="hidden flex-col gap-1">
-                            <p class="font-bold text-indigo-800">Geometría: Carga Puntual (-Q)</p>
-                            <p class="text-sm">Las Field Lines convergen radialmente hacia el centro. Una carga de prueba positiva será atraída directamente hacia la fuente.</p>
+                            <p class="font-bold text-indigo-800">Geometry: Charge Puntual (-Q)</p>
+                            <p class="text-sm">Las Field Lines convergen radialmente hacia el centro. Una charge de prueba positiva será atraída directamente hacia la fuente.</p>
                         </div>
                         <div id="teoria-c3" class="hidden flex-col gap-1">
-                            <p class="font-bold text-indigo-800">Geometría: Dipolo Eléctrico (+Q y -Q)</p>
-                            <p class="text-sm">Ajusta una de las Charges para que sea mayor que la otra. Verás cómo las líneas de la carga mayor superan en número a las de la menor, forzando a algunas líneas a escapar al infinito.</p>
+                            <p class="font-bold text-indigo-800">Geometry: Dipolo Electric (+Q y -Q)</p>
+                            <p class="text-sm">Ajusta una de las Charges para que sea mayor que la otra. Verás cómo las líneas de la charge mayor superan en número a las de la menor, forzando a algunas líneas a escapar al infinito.</p>
                         </div>
                         <div id="teoria-c4" class="hidden flex-col gap-1">
-                            <p class="font-bold text-indigo-800">Geometría: Dos Charges (+Q y +Q)</p>
-                            <p class="text-sm">Generan un plano de simetría repulsiva. Exactamente en el punto medio, el campo es nulo ($\vec{E} = 0$). Las líneas se repelen visualmente sin tocarse jamás.</p>
+                            <p class="font-bold text-indigo-800">Geometry: Dos Charges (+Q y +Q)</p>
+                            <p class="text-sm">Generan un plano de symmetry repulsiva. Exactamente en el punto medio, el field es nulo ($\vec{E} = 0$). Las líneas se repelen visualmente sin tocarse jamás.</p>
                         </div>
                         <div id="teoria-custom" class="hidden flex-col gap-1">
                             <p class="font-bold text-indigo-800">Configuration Libre (Personalizada)</p>
-                            <p class="text-sm">Has añadido Charges manualmente o modificado una carga individual. Analiza cómo las Field Lines en 3D se ajustan dinámicamente, manteniendo la proporcionalidad $N \propto |Q|$ y respetando la superPosition.</p>
+                            <p class="text-sm">Has añadido Charges manualmente o modificado una charge individual. Analiza cómo las Field Lines en 3D se ajustan dinámicamente, manteniendo la proporcionalidad $N \propto |Q|$ y respetando la superPosition.</p>
                         </div>
                     </div>
 
@@ -219,7 +219,7 @@
                                 <select id="select-traj" class="bg-amber-50 border border-amber-300 text-amber-800 font-bold rounded px-1 py-0.5 cursor-pointer text-xs">
                                     <option value="none"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Prueba: Manual</option>
                                     <option value="equipotential"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Paseo: EquiPowerl</option>
-                                    <option value="field"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Paseo: Línea de Campo</option>
+                                    <option value="field"><span class="inline-flex items-center text-sky-400 mr-1"><i data-lucide="zap" class="w-4 h-4 inline"></i></span> Paseo: Línea de Field</option>
                                     <option value="random"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Paseo: Aleatorio</option>
                                 </select>
                             </div>
@@ -228,13 +228,13 @@
                         <!-- Fila 2 -->
                         <div class="flex w-full gap-[1.5vmin] items-center">
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Selecciona una carga con clic para modificarla">Sel. $Q$ (μC):</label>
+                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Selecciona una charge con clic para modificarla">Sel. $Q$ (μC):</label>
                                 <input type="range" id="slider-Q" min="-15" max="15" step="1" value="5" class="w-[3.5vw]">
                                 <span id="val-Q" class="font-mono font-bold w-[1.5vw] text-right text-red-600">5</span>
                             </div>
 
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-yellow-600 text-xs md:text-sm" title="Carga de prueba amarilla">Prueba $q_0$ (μC):</label>
+                                <label class="font-bold text-yellow-600 text-xs md:text-sm" title="Charge de prueba amarilla">Prueba $q_0$ (μC):</label>
                                 <input type="range" id="slider-q0" min="-5" max="5" step="1" value="1" class="w-[3.5vw]">
                                 <span id="val-q0" class="font-mono font-bold w-[1.5vw] text-right text-yellow-600">1</span>
                             </div>
@@ -295,7 +295,7 @@
                                 </div>
                             </div>
 
-                            <!-- Chart Perfil del Campo -->
+                            <!-- Chart Perfil del Field -->
                             <div class="h-[45%] graph-wrapper p-[1vmin] flex flex-col bg-slate-50">
                                 <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(12px, 1vw, 15px);">
                                     Perfil $|\vec{E}|$ vs $X$
@@ -446,7 +446,7 @@
 
         const canvasEl = renderer.domElement;
 
-        // Actualiza el UI para reflejar la carga seleccionada
+        // Actualiza el UI para reflejar la charge seleccionada
         function updateSelectionUI() {
             if (selectedSource) {
                 let val = selectedSource.q;
@@ -620,7 +620,7 @@
                         let mag = E.length();
                         if (mag < 0.05) break; 
                         
-                        let trueDir = E.clone().normalize(); // Dirección REAL del campo (siempre es un unit vector válido)
+                        let trueDir = E.clone().normalize(); // Dirección REAL del field (siempre es un unit vector válido)
                         let stepDir = trueDir.clone();
                         
                         if (!isPositive) stepDir.negate(); // Paso inverso para negativas

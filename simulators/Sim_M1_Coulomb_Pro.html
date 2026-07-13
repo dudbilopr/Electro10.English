@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio Maestro: Coulomb\'s Law Pro</title>
+    <title>Laboratorio Master: Coulomb\'s Law Pro</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- MathJax -->
@@ -104,10 +104,10 @@
                 </div>
 
                 <div id="controls-area" class="space-y-3 opacity-50 pointer-events-none transition-opacity">
-                    <!-- Carga Control -->
+                    <!-- Charge Control -->
                     <div>
                         <label class="flex justify-between text-xs font-medium mb-1 text-slate-400">
-                            magnitudeeeee de Carga
+                            magnitudeeeee de Charge
                         </label>
                         <div class="flex gap-2 mb-2">
                             <input type="number" id="input-q-val" step="0.1" class="input-dark w-2/3" placeholder="Value">
@@ -222,7 +222,7 @@
                             Enunciado del Problema Generado
                         </h3>
                         <div id="statement-text" class="text-slate-300 text-sm leading-relaxed font-light">
-                            Seleccione una carga en el Simulator para generar el planteamiento del problema Physical automáticamente.
+                            Seleccione una charge en el Simulator para generar el planteamiento del problema Physical automáticamente.
                         </div>
                     </div>
 
@@ -233,7 +233,7 @@
                             solution Analítica Paso a Paso
                         </h3>
                         <div id="math-steps" class="space-y-4 text-slate-300 text-sm">
-                            <p class="italic text-slate-600">Esperando selesson de carga objeto...</p>
+                            <p class="italic text-slate-600">Esperando selesson de charge objeto...</p>
                         </div>
                     </div>
                 </div>
@@ -587,7 +587,7 @@
                 document.getElementById('controls-area').classList.add('opacity-50', 'pointer-events-none');
                 document.getElementById('selected-id-badge').textContent = "Ninguna";
                 document.getElementById('problem-statement').classList.add('opacity-50');
-                document.getElementById('statement-text').innerHTML = "Seleccione una carga para generar el problema.";
+                document.getElementById('statement-text').innerHTML = "Seleccione una charge para generar el problema.";
                 document.getElementById('math-steps').innerHTML = "<p class='italic text-slate-600'>Esperando selesson...</p>";
                 return;
             }
@@ -595,7 +595,7 @@
             const c = charges[selectedIdx];
             document.getElementById('controls-area').classList.remove('opacity-50', 'pointer-events-none');
             document.getElementById('problem-statement').classList.remove('opacity-50');
-            document.getElementById('selected-id-badge').textContent = `Carga q${c.id}`;
+            document.getElementById('selected-id-badge').textContent = `Charge q${c.id}`;
             document.getElementById('selected-id-badge').className = `text-xs px-2 py-0.5 rounded font-bold text-white ${c.q >=0 ? 'bg-red-500' : 'bg-blue-500'}`;
 
             // Sync Inputs
@@ -629,12 +629,12 @@
             const dMult = getDistMultiplier();
 
             // 1. ENUNCIADO
-            let text = `<p class="mb-2"><strong class="text-white">Problema:</strong> Se tiene una carga puntual <span class="${target.q>=0?'text-red-400':'text-blue-400'}">$q_{${target.id}} = ${(target.q/qMult).toFixed(2)} \\text{ ${qUnit}}$</span> ubicada en la Position $\\vec{r}_{${target.id}} = (${(target.x*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{i} - ${(target.y*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{j})$ ${dUnit}.</p>`;
+            let text = `<p class="mb-2"><strong class="text-white">Problema:</strong> Se tiene una charge puntual <span class="${target.q>=0?'text-red-400':'text-blue-400'}">$q_{${target.id}} = ${(target.q/qMult).toFixed(2)} \\text{ ${qUnit}}$</span> ubicada en la Position $\\vec{r}_{${target.id}} = (${(target.x*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{i} - ${(target.y*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{j})$ ${dUnit}.</p>`;
             
             if (others.length > 0) {
-                text += `<p class="mb-2">Determine la Force eléctrica neta que ejercen sobre ella las Nexts Charges:</p><ul class="list-disc pl-5 space-y-1 mb-2">`;
+                text += `<p class="mb-2">Determine la Force electric neta que ejercen sobre ella las Nexts Charges:</p><ul class="list-disc pl-5 space-y-1 mb-2">`;
                 others.forEach(c => {
-                    text += `<li>Carga <span class="${c.q>=0?'text-red-400':'text-blue-400'}">$q_{${c.id}} = ${(c.q/qMult).toFixed(2)} \\text{ ${qUnit}}$</span> en $\\vec{r}_{${c.id}} = (${(c.x*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{i} - ${(c.y*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{j})$ ${dUnit}.</li>`;
+                    text += `<li>Charge <span class="${c.q>=0?'text-red-400':'text-blue-400'}">$q_{${c.id}} = ${(c.q/qMult).toFixed(2)} \\text{ ${qUnit}}$</span> en $\\vec{r}_{${c.id}} = (${(c.x*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{i} - ${(c.y*PIXELS_TO_METERS/dMult).toFixed(2)} \\hat{j})$ ${dUnit}.</li>`;
                 });
                 text += `</ul>`;
             } else {
@@ -722,7 +722,7 @@
             dclCtx.clearRect(0,0,dclCanvas.width, dclCanvas.height);
             dclCtx.fillStyle = '#475569'; dclCtx.textAlign='center'; dclCtx.textBaseline='middle';
             dclCtx.font='10px sans-serif';
-            dclCtx.fillText("Seleccione carga", dclCanvas.width/2, dclCanvas.height/2);
+            dclCtx.fillText("Seleccione charge", dclCanvas.width/2, dclCanvas.height/2);
             clearLabelsOverlay(activeDCLLabels, dclLabelsOverlay);
         }
 
@@ -798,7 +798,7 @@
         }
 
         function recordData() {
-            if (selectedIdx === -1) { alert("Seleccione una carga"); return; }
+            if (selectedIdx === -1) { alert("Seleccione una charge"); return; }
             const phys = calculateForces(selectedIdx);
             if (phys.nearestDist === Infinity) return;
 

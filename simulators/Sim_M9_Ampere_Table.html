@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla Interactiva: Ley de Ampere</title>
+    <title>Tabla Interactiva: Ampere's Law</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config = { darkMode: 'class' }</script>
     <script>
@@ -30,9 +30,9 @@
         <div>
             <h1 class="text-2xl font-bold text-white flex items-center gap-2">
                 <span class="bg-indigo-500 text-white px-2 py-1 rounded-lg text-sm">M9</span>
-                Tabla de la Ley de Ampere
+                Tabla de la Ampere's Law
             </h1>
-            <p class="text-slate-400 text-sm mt-1">Deducción interactiva del campo magnético usando $\oint \vec{B} \cdot d\vec{s} = \mu_0 I_{enc}$</p>
+            <p class="text-slate-400 text-sm mt-1">Deducción interactiva del magnetic field usando $\oint \vec{B} \cdot d\vec{s} = \mu_0 I_{enc}$</p>
         </div>
     </header>
 
@@ -40,7 +40,7 @@
         
         <!-- Sidebar -->
         <aside class="glass-panel p-5 rounded-2xl h-fit">
-            <h2 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Selecciona la Geometría</h2>
+            <h2 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Selecciona la Geometry</h2>
             
             <div class="space-y-3">
                 <button onclick="loadGeometry('wire')" class="w-full text-left p-4 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800 transition-all group focus:border-indigo-500 focus:bg-slate-800">
@@ -60,7 +60,7 @@
             </div>
             
             <div class="mt-8 p-4 bg-slate-800/50 rounded-lg text-sm text-slate-400">
-                <strong class="text-slate-300">Recuerda:</strong> La Ley de Ampere es útil solo cuando existe un alto grado de simetría, permitiendo sacar la magnitudeeeee de $\vec{B}$ fuera de la integral.
+                <strong class="text-slate-300">Recuerda:</strong> La Ampere's Law es útil solo cuando existe un alto grado de symmetry, permitiendo sacar la magnitudeeeee de $\vec{B}$ fuera de la integral.
             </div>
         </aside>
 
@@ -68,7 +68,7 @@
         <div id="steps-container" class="lg:col-span-2 space-y-4">
             <div class="glass-panel p-10 rounded-2xl flex flex-col items-center justify-center text-center text-slate-500 min-h-[400px]">
                 <svg class="w-16 h-16 mb-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
-                <p>Selecciona una geometría en el menú lateral para ver la deducción paso a paso.</p>
+                <p>Selecciona una geometry en el menú lateral para ver la deducción paso a paso.</p>
             </div>
         </div>
 
@@ -90,7 +90,7 @@
                     <text x="125" y="70" fill="#94a3b8" font-size="12" font-family="sans-serif">r</text>
                 </svg>`,
                 steps: [
-                    { t: "1. Elegir Bucle Amperiano", m: "Circunferencia de radio $r$ centrada en el hilo. Por simetría, $\\vec{B}$ es constante y tangente al bucle en todo punto." },
+                    { t: "1. Elegir Bucle Amperiano", m: "Circunferencia de radio $r$ centrada en el hilo. Por symmetry, $\\vec{B}$ es constante y tangente al bucle en todo punto." },
                     { t: "2. Evaluar la Integral", m: "$$ \\oint \\vec{B} \\cdot d\\vec{s} = B \\oint ds = B (2\\pi r) $$" },
                     { t: "3. Current Encerrada", m: "El bucle encierra la Current total $I$.<br>$$ I_{enc} = I $$" },
                     { t: "4. Result Final", m: "$$ B (2\\pi r) = \\mu_0 I \\implies B = \\frac{\\mu_0 I}{2\\pi r} $$", result: true }

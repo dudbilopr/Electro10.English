@@ -32,10 +32,10 @@ Diseño inmersivo construido desde cero con `Vanilla CSS`:
 - **Material 3 (Google Blue):** Paletas reactivas con soporte nativo de Light/Dark Mode.
 - **Bento-Cards Interactivas:** Sombras dinámicas y estados de 'hover' fluidos.
 
-### Panel de Control Maestro (Admin)
+### Panel de Control Master (Admin)
 Data Science aplicado a la educación. Monitoreo en tiempo real de los Students sincronizado en la nube:
 - **Índice de Retención Cognitiva**
-- **Carga Cognitiva Promedio**
+- **Charge Cognitiva Promedio**
 - **Tasa de Abandono (Churn)**
 
 ---
@@ -52,7 +52,7 @@ Data Science aplicado a la educación. Monitoreo en tiempo real de los Students 
 Para desplegar esta maravilla de la ingeniería de software de forma gratuita:
 
 1. **Haz un Fork o clona** este repositorio.
-2. Ve a las **Configuraciones (Settings)** del repositorio en GitHub.
+2. Ve a las **Configurations (Settings)** del repositorio en GitHub.
 3. Navega a la sección **Pages**.
 4. Selecciona la rama `main` y la carpeta `/root`.
 5. ¡Listo! En 2 minutos tu plataforma educativa estará online.

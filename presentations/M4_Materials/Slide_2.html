@@ -95,7 +95,7 @@
                     <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Electric Field en Polares y Superposition
                 </h1>
                 <p class="text-orange-300" style="font-size: clamp(12px, 1vw, 18px);">
-                    Integración Numérica de Arcs de Carga, Diferenciales y Componentes Vectoriales
+                    Integración Numérica de Arcs de Charge, Diferenciales y Componentes Vectoriales
                 </p>
             </header>
 
@@ -110,12 +110,12 @@
                             Superposition Principle en Polares
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Analogía:</strong> Imagina la curva como un collar de perlas minúsculas ($dq$). Cada perla emite su propio rayo de campo ($d\vec{E}$). El campo total es la suma vectorial de todos estos rayos.</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Analogía:</strong> Imagina la curva como un collar de perlas minúsculas ($dq$). Cada perla emite su propio rayo de field ($d\vec{E}$). El field total es la suma vectorial de todos estos rayos.</span>
                             </span>
                         </p>
-                        <p class="text-sm">Para curvas en el plano $XY$ con radio $R$, evaluamos el campo en un punto de prueba $P(x,y,z)$.</p>
+                        <p class="text-sm">Para curvas en el plano $XY$ con radio $R$, evaluamos el field en un punto de prueba $P(x,y,z)$.</p>
                         <ol class="text-sm list-decimal pl-5 space-y-1 mt-2">
-                            <li><strong>Diferencial de Carga ($dq$):</strong> Usamos la longitud de arco $dl = R d\theta$. Por tanto, $dq = \lambda(\theta) R d\theta$.</li>
+                            <li><strong>Diferencial de Charge ($dq$):</strong> Usamos la longitud de arco $dl = R d\theta$. Por tanto, $dq = \lambda(\theta) R d\theta$.</li>
                             <li><strong>Vectors de Position:</strong><br>
                                 Position de $dq$: $\vec{r}_{dq} = R\cos\theta\,\hat{i} + R\sin\theta\,\hat{j}$<br>
                                 Position de $P$: $\vec{r}_{P} = x\,\hat{i} + y\,\hat{j} + z\,\hat{k}$<br>
@@ -131,14 +131,14 @@
                             <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Singularidades Matemáticas
                         </p>
                         <p class="text-xs">
-                            Si acercas la partícula $P$ directamente sobre la línea de carga ($|\vec{r}| \to 0$), la ecuación diverge al infinito. En la simulación se aplica un pequeño límite para evitar rupturas numéricas.
+                            Si acercas la partícula $P$ directamente sobre la línea de charge ($|\vec{r}| \to 0$), la equation diverge al infinito. En la simulación se aplica un pequeño límite para evitar rupturas numéricas.
                         </p>
                     </div>
 
                     <!-- CASO 1: ARCO / ANILLO -->
                     <div id="teoria-arco" class="bg-orange-50 p-[1.5vmin] border border-orange-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
                         <p class="font-bold text-orange-800 flex items-center">1. solution: Arc Paramétrico</p>
-                        <p class="text-sm mt-1">Con el vector $\vec{r}$ definido, sustituimos en la ecuación integral $d\vec{E} = k \frac{dq}{|\vec{r}|^3} \vec{r}$ y separamos en componentes. Integramos desde $0$ hasta la <strong>Apertura ($\theta_{max}$)</strong>:</p>
+                        <p class="text-sm mt-1">Con el vector $\vec{r}$ definido, sustituimos en la equation integral $d\vec{E} = k \frac{dq}{|\vec{r}|^3} \vec{r}$ y separamos en componentes. Integramos desde $0$ hasta la <strong>Apertura ($\theta_{max}$)</strong>:</p>
                         <div class="math-display">
                             \begin{aligned}
                             E_x &= \int_{0}^{\theta_{max}} k\lambda \frac{x - R\cos\theta}{|\vec{r}|^3} R d\theta \\
@@ -146,24 +146,24 @@
                             E_z &= \int_{0}^{\theta_{max}} k\lambda \frac{z}{|\vec{r}|^3} R d\theta
                             \end{aligned}
                         </div>
-                        <p class="text-xs text-orange-700 mt-2"><strong>Nota de Simetría:</strong> Si formamos un Ring Completo ($\theta_{max} = 2\pi$) y evaluamos en su eje central ($x=0, y=0$), los términos en $\hat{i}$ y $\hat{j}$ se anulan al integrar senos y cosenos en un periodo completo.</p>
+                        <p class="text-xs text-orange-700 mt-2"><strong>Nota de Symmetry:</strong> Si formamos un Ring Completo ($\theta_{max} = 2\pi$) y evaluamos en su eje central ($x=0, y=0$), los términos en $\hat{i}$ y $\hat{j}$ se anulan al integrar senos y cosenos en un periodo completo.</p>
                     </div>
 
                     <!-- CASO 2: PAR DE ANILLOS (DIPOLO) -->
                     <div id="teoria-dipolo" class="hidden flex-col bg-rose-50 p-[1.5vmin] border border-rose-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
                         <p class="font-bold text-rose-800 flex items-center">2. solution: Dipolo de Rings</p>
-                        <p class="text-sm mt-1">Tenemos dos curvas idénticas separadas verticalmente. Ring superior en $z = +d$ con carga $-\lambda$ y anillo inferior en $z = -d$ con carga $+\lambda$.</p>
-                        <p class="text-sm mt-1"><strong>Paso a Paso:</strong> El campo es la superPosition $\vec{E}_{tot} = \vec{E}_{inf} + \vec{E}_{sup}$. Evaluando en el eje Z ($x=0, y=0$) para anillos completos, las componentes transversales se cancelan y sumamos las contribuciones en $\hat{k}$:</p>
+                        <p class="text-sm mt-1">Tenemos dos curvas idénticas separadas verticalmente. Ring superior en $z = +d$ con charge $-\lambda$ y anillo inferior en $z = -d$ con charge $+\lambda$.</p>
+                        <p class="text-sm mt-1"><strong>Paso a Paso:</strong> El field es la superPosition $\vec{E}_{tot} = \vec{E}_{inf} + \vec{E}_{sup}$. Evaluando en el eje Z ($x=0, y=0$) para anillos completos, las componentes transversales se cancelan y sumamos las contribuciones en $\hat{k}$:</p>
                         <div class="math-display">
                             $$E_z = k\lambda(2\pi R) \left[ \frac{z+d}{(R^2 + (z+d)^2)^{3/2}} - \frac{z-d}{(R^2 + (z-d)^2)^{3/2}} \right]$$
                         </div>
-                        <p class="text-xs text-rose-700 mt-1">Entre los anillos (cerca del origen), los campos se reForcen creando un área de alta Acceleration longitudinal.</p>
+                        <p class="text-xs text-rose-700 mt-1">Entre los anillos (cerca del origen), los fields se reForcen creando un área de alta Acceleration longitudinal.</p>
                     </div>
 
                     <!-- CASO 3: INTERACCIÓN LÍNEA Y ANILLO -->
                     <div id="teoria-linea" class="hidden flex-col bg-teal-50 p-[1.5vmin] border border-teal-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
                         <p class="font-bold text-teal-800 flex items-center">3. solution: Línea Infinita vs Ring</p>
-                        <p class="text-sm mt-1"><strong>Paso a Paso:</strong> Sumamos dos fuentes de campo con geometrías completamente diferentes.</p>
+                        <p class="text-sm mt-1"><strong>Paso a Paso:</strong> Sumamos dos fuentes de field con geometrys completamente diferentes.</p>
                         <ol class="text-sm list-decimal pl-5 mt-1">
                             <li><strong>$\vec{E}_1$ (Ring):</strong> Usamos la integral de superPosition polar.</li>
                             <li><strong>$\vec{E}_2$ (Línea):</strong> Línea desplazada a $x = -x_0$. Su diferencial es $dq = \lambda dy$. Su vector de Position relativo es $\vec{r}_{linea} = (x - (-x_0))\hat{i} + (y - y_{dq})\hat{j} + z\hat{k}$.</li>
@@ -176,14 +176,14 @@
                     <div id="teoria-variable" class="hidden flex-col bg-pink-50 p-[1.5vmin] border border-pink-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
                         <p class="font-bold text-pink-800 flex items-center">4. solution: Densidad Polar $\lambda(\theta)$</p>
                         <p class="text-sm mt-1">Si $\lambda$ no es constante, no puede salir de la integral. Analizamos el caso de un <strong>dipolo curvo</strong> donde $\lambda(\theta) = \lambda_0 \cos(\theta)$.</p>
-                        <p class="text-sm mt-1">Sustituimos en la integral del campo en el centro ($x=0,y=0,z=0$):</p>
+                        <p class="text-sm mt-1">Sustituimos en la integral del field en el centro ($x=0,y=0,z=0$):</p>
                         <div class="math-display">
                             \begin{aligned}
                             E_x &= \int_{0}^{2\pi} \frac{k (\lambda_0 \cos\theta)}{R^2} (-\cos\theta) R d\theta \neq 0\\
                             E_y &= \int_{0}^{2\pi} \frac{k (\lambda_0 \cos\theta)}{R^2} (-\sin\theta) R d\theta = 0
                             \end{aligned}
                         </div>
-                        <p class="text-xs text-pink-700 mt-1">A diferencia del anillo uniforme, el campo en el centro <strong>no es nulo</strong>; existe un Electric Field neto actuando como un condensador circular.</p>
+                        <p class="text-xs text-pink-700 mt-1">A diferencia del anillo uniforme, el field en el centro <strong>no es nulo</strong>; existe un Electric Field neto actuando como un condensador circular.</p>
                     </div>
 
                     <!-- Conclusion -->
@@ -191,11 +191,11 @@
                         <p class="font-bold text-amber-400 mb-1 text-center">Datos Physicals (Time Real) en $P(x,y,z)$</p>
                         <div class="grid grid-cols-2 gap-2 text-sm">
                             <div class="bg-slate-700 p-2 rounded">
-                                <span class="block text-slate-300 text-xs">Force Eléctrica Neta $|\vec{F}_{e}|$:</span>
+                                <span class="block text-slate-300 text-xs">Force Electric Neta $|\vec{F}_{e}|$:</span>
                                 <span id="ui-mag-f" class="font-mono font-bold text-yellow-400">0.00</span> <span class="text-xs">N</span>
                             </div>
                             <div class="bg-slate-700 p-2 rounded">
-                                <span class="block text-slate-300 text-xs">Module Campo $|\vec{E}_{tot}|$:</span>
+                                <span class="block text-slate-300 text-xs">Module Field $|\vec{E}_{tot}|$:</span>
                                 <span id="ui-mag-e" class="font-mono font-bold text-emerald-400">0.00</span> <span class="text-xs">N/C</span>
                             </div>
                             <div class="bg-slate-700 p-2 rounded col-span-2 flex justify-between">
@@ -221,7 +221,7 @@
                             </div>
                             
                             <div class="control-group border-r border-slate-300 pr-3">
-                                <label class="font-bold text-slate-800">Geometría:</label>
+                                <label class="font-bold text-slate-800">Geometry:</label>
                                 <select id="select-config" class="bg-white border border-slate-300 rounded px-1 py-0.5 font-bold text-slate-700 outline-none hover:border-orange-500 cursor-pointer">
                                     <option value="arco">1. Arc / Ring</option>
                                     <option value="dipolo">2. Dipolo de Rings</option>
@@ -240,7 +240,7 @@
                         <!-- Fila 2 -->
                         <div class="flex w-full gap-[1.5vmin] items-center">
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Carga de prueba">Carga $q$:</label>
+                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Charge de prueba">Charge $q$:</label>
                                 <input type="range" id="slider-q" min="-5" max="5" step="0.5" value="1" class="w-[3.5vw]">
                                 <span id="val-q" class="font-mono font-bold w-[1.5vw] text-right text-red-600">1.0</span>
                             </div>
@@ -252,7 +252,7 @@
                             </div>
 
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="Densidad lineal de carga">Densidad $\lambda_0$:</label>
+                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="Densidad lineal de charge">Densidad $\lambda_0$:</label>
                                 <input type="range" id="slider-e" min="1" max="20" step="1" value="10" class="w-[3.5vw]">
                                 <span id="val-e" class="font-mono font-bold w-[1.5vw] text-right text-purple-600">10</span>
                             </div>
@@ -305,14 +305,14 @@
                             </div>
                             
                             <div class="control-group border-r border-indigo-200 pr-2 flex items-center gap-1">
-                                <label class="font-bold text-indigo-900 text-xs" title="Position de la carga de prueba P">Position $P$:</label>
+                                <label class="font-bold text-indigo-900 text-xs" title="Position de la charge de prueba P">Position $P$:</label>
                                 <input type="number" id="in-px" value="0" step="0.5" class="eq-input bg-white w-[40px] text-xs" title="X">
                                 <input type="number" id="in-py" value="5" step="0.5" class="eq-input bg-white w-[40px] text-xs" title="Y">
                                 <input type="number" id="in-pz" value="0" step="0.5" class="eq-input bg-white w-[40px] text-xs" title="Z">
                             </div>
 
                             <div class="control-group pr-2 flex items-center gap-1">
-                                <label class="font-bold text-indigo-900 text-xs" title="Centro de la distribución de carga">Centro Carga:</label>
+                                <label class="font-bold text-indigo-900 text-xs" title="Centro de la distribution de charge">Centro Charge:</label>
                                 <input type="number" id="in-cx" value="0" step="0.5" class="eq-input bg-white w-[40px] text-xs" title="X">
                                 <input type="number" id="in-cy" value="0" step="0.5" class="eq-input bg-white w-[40px] text-xs" title="Y">
                                 <input type="number" id="in-cz" value="0" step="0.5" class="eq-input bg-white w-[40px] text-xs" title="Z">
@@ -327,7 +327,7 @@
                         <!-- 3D Canvas / Paint Canvas -->
                         <div class="w-[60%] h-full canvas-wrapper relative" id="canvas-wrapper-3d">
                             <div class="hint-overlay shadow-md flex flex-col gap-1">
-                                <span><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> <strong>Arrastra la partícula ($P$)</strong> para ver el campo y componentes.</span>
+                                <span><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> <strong>Arrastra la partícula ($P$)</strong> para ver el field y componentes.</span>
                                 <span id="hint-3d" class="text-xs text-indigo-600 hidden"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Arrastra el fondo para rotar en 3D</span>
                             </div>
                             
@@ -355,7 +355,7 @@
                                 </div>
                             </div>
 
-                            <!-- Chart Perfil del Campo -->
+                            <!-- Chart Perfil del Field -->
                             <div class="h-[40%] graph-wrapper p-[1vmin] flex flex-col bg-slate-50">
                                 <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(12px, 1vw, 15px);">
                                     Trajectory $Y(t)$ vs Time
@@ -411,9 +411,9 @@
         // ==========================================
         let params = {
             config: 'arco',
-            q: 1.0,      // Carga de prueba
+            q: 1.0,      // Charge de prueba
             m: 1.0,      // Masa
-            E_scale: 10.0, // Multiplicador de campo (lambda_0)
+            E_scale: 10.0, // Multiplicador de field (lambda_0)
             g: 5.0,       // Gravedad
             useGravity: false,
             is3D: false,
@@ -437,7 +437,7 @@
             maxTrail: 300
         };
 
-        // Materiales y Geometrías Prueba
+        // Materiales y Geometrys Prueba
         const geoTest = new THREE.SphereGeometry(0.4, 32, 32);
         const matTest = new THREE.MeshStandardMaterial({ color: 0xfacc15, roughness: 0.1, emissive: 0x665500 });
         particle.mesh = new THREE.Mesh(geoTest, matTest);
@@ -526,7 +526,7 @@
                 E_total.add(dE_vec);
 
                 if (isTargetDq) {
-                    // Mapear este dq específico para visualización, normalizando su dE real (sin el dt) para Show el "vector de campo instantáneo"
+                    // Mapear este dq específico para visualización, normalizando su dE real (sin el dt) para Show el "vector de field instantáneo"
                     dq_position.copy(rdq);
                     let dq_real = charge_sign * lambda_0 * density_factor; // Densidad puntual
                     let dE_real_mag = k * dq_real / (dist * dist * dist);
@@ -648,7 +648,7 @@
                 }
             }
             
-            // Reubicar toda la geometría de las fuentes en el Centro configurado
+            // Reubicar toda la geometry de las fuentes en el Centro configurado
             sourcesGroup.position.set(params.cx, params.cy, params.cz);
 
             updateDifferentials();
@@ -1088,7 +1088,7 @@
                 particle.pos.y = parseFloat(document.getElementById('in-py').value) || 0;
                 particle.pos.z = parseFloat(document.getElementById('in-pz').value) || 0;
                 particle.mesh.position.copy(particle.pos);
-                updatePhysics(); // Actualiza campos dE, UI y DCL al reposicionar
+                updatePhysics(); // Actualiza fields dE, UI y DCL al reposicionar
             }
         };
         document.getElementById('in-px').addEventListener('input', syncParticlePosFromUI);
@@ -1113,7 +1113,7 @@
         document.getElementById('btn-pause').addEventListener('click', () => { params.isPlaying = false; });
         document.getElementById('btn-reset').addEventListener('click', () => {
             params.isPlaying = false;
-            particle.pos.set(0, 5, 0); // Position interesante para observar oscilaciones
+            particle.pos.set(0, 5, 0); // Position interesante para observar oscillations
             particle.vel.set(0, 0, 0); 
             particle.trail = []; trailLine.geometry.setFromPoints([]);
             graphDataY = []; simTime = 0;

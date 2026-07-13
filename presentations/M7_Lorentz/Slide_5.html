@@ -141,7 +141,7 @@
         
         .math-container { font-size: clamp(0.95rem, 1.4vw, 1.2rem); overflow-x: auto; padding: 0.5rem 0; text-align: center; width: 100%; }
 
-        /* Estilos de Botones Activos */
+        /* Styles de Botones Activos */
         .btn-flow { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .btn-flow.active { background-color: #2563eb; color: white; transform: scale(1.05); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); }
         .dark .btn-flow.active { background-color: #38bdf8; color: #0f172a; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4); }
@@ -257,7 +257,7 @@
                     </div>
                     <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">Análisis Topológico Experto</h2>
                     <p class="reveal-item text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed mb-6">
-                        welcomes. Para hacer este análisis visualmente intuitivo, hemos asociado un <strong>color único a cada Resistance</strong> basado en la Current real que la atraviesa. Emplearemos la rigurosa Ley de Voltages de Kirchhoff (LVK) para las mallas.
+                        welcomes. Para hacer este análisis visualmente intuitivo, hemos asociado un <strong>color único a cada Resistance</strong> basado en la Current real que la atraviesa. Emplearemos la rigurosa Law of Voltages de Kirchhoff (LVK) para las mallas.
                     </p>
                     <div class="reveal-item eq-box border-l-4 border-indigo-500 dark:border-sky-500 shadow-md">
                         <ul class="space-y-5 text-slate-700 dark:text-slate-300 text-sm md:text-base">
@@ -271,9 +271,9 @@
                 <!-- PASO 1: Nodos -->
                 <div class="step-content p-6 md:p-12" id="step-1">
                     <div class="reveal-item flex items-center gap-2 text-yellow-600 dark:text-yellow-400 font-bold tracking-wider text-sm mb-2"><i data-lucide="git-merge" class="w-5 h-5"></i> PASO 1</div>
-                    <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">Ley de Nodos (LCK)</h2>
+                    <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">Law of Nodos (LCK)</h2>
                     <p class="reveal-item text-slate-700 dark:text-slate-300 text-base md:text-lg mb-6">
-                        La carga no se acumula. Observa los tres nodos en el Simulator: te Showán flechas indicando exactamente qué Current entra y cuál sale. Analicemos cómo interactúan para formar las Currents Physicss netas ($I_a, I_b, I_c$).
+                        La charge no se acumula. Observa los tres nodos en el Simulator: te Showán flechas indicando exactamente qué Current entra y cuál sale. Analicemos cómo interactúan para formar las Currents Physicss netas ($I_a, I_b, I_c$).
                     </p>
                     <div class="space-y-5">
                         <div class="reveal-item eq-box border-l-4 border-purple-500 shadow-md">
@@ -299,14 +299,14 @@
                     <div class="reveal-item flex items-center gap-2 text-red-600 dark:text-red-400 font-bold tracking-wider text-sm mb-2"><i data-lucide="box" class="w-5 h-5"></i> PASO 2</div>
                     <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">LVK Malla 1 (Roja)</h2>
                     <p class="reveal-item text-slate-700 dark:text-slate-300 text-base md:text-lg mb-6">
-                        Recorremos la malla roja en sentido horario. Analizaremos paso a paso el planteamiento deductivo de la ecuación desde la Theory pura hasta los valores de tu circuito.
+                        Recorremos la malla roja en sentido horario. Analizaremos paso a paso el planteamiento deductivo de la equation desde la Theory pura hasta los valores de tu circuito.
                     </p>
                     
                     <div class="eq-box border-l-4 border-red-500 shadow-md mb-6 flex flex-col gap-2">
                         <div class="reveal-item text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide mt-2"><i data-lucide="pen-tool" class="inline w-4 h-4 mr-1"></i>1. Planteamos la LVK (Sumatoria de Voltages = 0)</div>
                         <div id="math-m1-0" class="reveal-item math-container font-bold text-slate-900 dark:text-white"></div>
 
-                        <div class="reveal-item text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide border-t border-slate-200 dark:border-slate-700 pt-3 mt-1"><i data-lucide="zap" class="inline w-4 h-4 mr-1"></i>2. Aplicamos la Ley de Ohm ($V = I \cdot R$) en cada Resistance</div>
+                        <div class="reveal-item text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide border-t border-slate-200 dark:border-slate-700 pt-3 mt-1"><i data-lucide="zap" class="inline w-4 h-4 mr-1"></i>2. Aplicamos la Ohm's Law ($V = I \cdot R$) en cada Resistance</div>
                         <div id="math-m1-1" class="reveal-item math-container font-bold text-slate-900 dark:text-white"></div>
 
                         <div class="reveal-item text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide border-t border-slate-200 dark:border-slate-700 pt-3 mt-1"><i data-lucide="sliders" class="inline w-4 h-4 mr-1"></i>3. Reemplazamos por los valores reales del Simulator</div>
@@ -323,7 +323,7 @@
                     <div class="reveal-item bg-yellow-50/90 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-5 rounded-r-xl shadow-md">
                         <div class="flex items-center gap-2 text-yellow-800 dark:text-yellow-300 font-extrabold mb-2 text-lg"><i data-lucide="lightbulb" class="w-6 h-6"></i> El Método de Inspección Directa</div>
                         <p class="text-sm text-yellow-900 dark:text-yellow-200 leading-relaxed mb-3">
-                            ¡Fíjate en la última ecuación! Podíamos llegar a ella <strong>de un solo paso</strong> sin hacer álgebra utilizando la Formula general del método de mallas basada en la Ley de Voltages de Kirchhoff (LVK):
+                            ¡Fíjate en la última equation! Podíamos llegar a ella <strong>de un solo paso</strong> sin hacer álgebra utilizando la Formula general del método de mallas basada en la Law of Voltages de Kirchhoff (LVK):
                         </p>
                         
                         <div class="reveal-item my-4 p-4 bg-white/60 dark:bg-slate-900/50 rounded-xl border border-yellow-300 dark:border-yellow-600/50 text-center shadow-inner">
@@ -357,7 +357,7 @@
                         <div class="reveal-item text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide mt-2">1. Sumatoria de Voltages de lazo (LVK)</div>
                         <div id="math-m2-0" class="reveal-item math-container font-bold text-slate-900 dark:text-white"></div>
 
-                        <div class="reveal-item text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide border-t border-slate-200 dark:border-slate-700 pt-3 mt-1">2. Traducción a Resistances y Currents (Ley de Ohm)</div>
+                        <div class="reveal-item text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide border-t border-slate-200 dark:border-slate-700 pt-3 mt-1">2. Traducción a Resistances y Currents (Ohm's Law)</div>
                         <div id="math-m2-1" class="reveal-item math-container font-bold text-slate-900 dark:text-white"></div>
 
                         <div class="reveal-item text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide border-t border-slate-200 dark:border-slate-700 pt-3 mt-1">3. Inserción de valores numéricos de tu diseño</div>
@@ -444,7 +444,7 @@
                 <div class="step-content p-6 md:p-10" id="step-6">
                     <div class="reveal-item flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold tracking-wider text-sm mb-2"><i data-lucide="scale" class="w-5 h-5"></i> PASO 6</div>
                     <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">Conservación de Energy</h2>
-                    <p class="reveal-item text-slate-700 dark:text-slate-300 text-base md:text-lg mb-8">El <strong>Teorema de Tellegen</strong> afirma que todo circuito eléctrico es un sistema cerrado en perfecto equilibrio termodinámico. Evaluemos la Power térmica que desprenden las Resistances ($P = I^2 \cdot R$) frente a la Power eléctrica bombeada por las fuentes ($P = V \cdot I$).</p>
+                    <p class="reveal-item text-slate-700 dark:text-slate-300 text-base md:text-lg mb-8">El <strong>Teorema de Tellegen</strong> afirma que todo circuito electric es un sistema cerrado en perfecto equilibrio termodinámico. Evaluemos la Power térmica que desprenden las Resistances ($P = I^2 \cdot R$) frente a la Power electric bombeada por las fuentes ($P = V \cdot I$).</p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="reveal-item glass-panel p-8 rounded-2xl flex flex-col items-center justify-center border border-rose-200 dark:border-rose-900/50 shadow-lg relative overflow-hidden">
@@ -470,7 +470,7 @@
                     <div class="reveal-item flex items-center gap-2 text-indigo-600 dark:text-sky-400 font-bold tracking-wider text-sm mb-2"><i data-lucide="table" class="w-5 h-5"></i> PASO 7</div>
                     <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">Tabla de Results Dinámica</h2>
                     <p class="reveal-item text-slate-700 dark:text-slate-300 text-base md:text-lg mb-8">
-                        Desglose final de variables por componente. Validado dinámicamente en tiempo real usando la Ley de Ohm ($V = I \cdot R$) y la Ley de Joule de Power Eléctrica ($P = I^2 \cdot R$).
+                        Desglose final de variables por componente. Validado dinámicamente en tiempo real usando la Ohm's Law ($V = I \cdot R$) y la Law of Joule de Power Electric ($P = I^2 \cdot R$).
                     </p>
                     
                     <div class="reveal-item overflow-x-auto rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700">
@@ -495,14 +495,14 @@
                     <div class="reveal-item flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold tracking-wider text-sm mb-2"><i data-lucide="award" class="w-5 h-5"></i> PASO 8</div>
                     <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">Alternativas de Resolution</h2>
                     <p class="reveal-item text-slate-700 dark:text-slate-300 text-base md:text-lg mb-8">
-                        Aunque el análisis de Mallas (LVK) es matemáticamente riguroso, dependiendo de la topología (forma) del circuito, un ingeniero eléctrico puede optar por alternativas más eficientes:
+                        Aunque el análisis de Mallas (LVK) es matemáticamente riguroso, dependiendo de la topología (forma) del circuito, un ingeniero electric puede optar por alternativas más eficientes:
                     </p>
                     
                     <div class="space-y-6">
                         <div class="reveal-item bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 border-l-4 border-l-yellow-500">
                             <h3 class="font-extrabold text-slate-800 dark:text-slate-100 text-xl flex items-center gap-3"><i data-lucide="git-commit" class="w-6 h-6 text-yellow-500"></i> Análisis Nodal Complejo (LCK)</h3>
                             <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-                                A diferencia de las mallas, aquí buscamos <strong>Voltages</strong>. Asignamos el nodo inferior a Tierra ($0\text{V}$) y bautizamos a los nodos superiores como incógnitas ($V_a, V_b$). Planteamos la ecuación sumando las Currents que salen de un nodo igualadas a cero: $\sum \frac{V_x - V_{adyacente}}{R} = 0$. <strong>Ventaja:</strong> Si un circuito tiene muchas mallas pero pocos nodos, este método requiere resolver menos Equations simultáneas.
+                                A diferencia de las mallas, aquí buscamos <strong>Voltages</strong>. Asignamos el nodo inferior a Tierra ($0\text{V}$) y bautizamos a los nodos superiores como incógnitas ($V_a, V_b$). Planteamos la equation sumando las Currents que salen de un nodo igualadas a cero: $\sum \frac{V_x - V_{adyacente}}{R} = 0$. <strong>Ventaja:</strong> Si un circuito tiene muchas mallas pero pocos nodos, este método requiere resolver menos Equations simultáneas.
                             </p>
                         </div>
                         <div class="reveal-item bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 border-l-4 border-l-purple-500">
@@ -514,7 +514,7 @@
                         <div class="reveal-item bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border border-slate-200 dark:border-slate-700 border-l-4 border-l-pink-500">
                             <h3 class="font-extrabold text-slate-800 dark:text-slate-100 text-xl flex items-center gap-3"><i data-lucide="target" class="w-6 h-6 text-pink-500"></i> Equivalente de Thévenin</h3>
                             <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-                                Reduce la red entera, sin importar lo compleja que sea, a un modelo extremadamente simple visto desde los terminales de una sola Resistance (carga). Extraemos el componente a estudiar, medimos el Voltage restante en los bornes huecos ($V_{th}$) y, apagando las fuentes, calculamos la Resistance equivalente total desde esos mismos bornes ($R_{th}$). <strong>Ventaja:</strong> Permite cambiar el valor de un componente múltiples veces y ver su efecto de forma instantánea sin Back a Calculate todo el circuito matricial.
+                                Reduce la red entera, sin importar lo compleja que sea, a un modelo extremadamente simple visto desde los terminales de una sola Resistance (charge). Extraemos el componente a estudiar, medimos el Voltage restante en los bornes huecos ($V_{th}$) y, apagando las fuentes, calculamos la Resistance equivalente total desde esos mismos bornes ($R_{th}$). <strong>Ventaja:</strong> Permite cambiar el valor de un componente múltiples veces y ver su efecto de forma instantánea sin Back a Calculate todo el circuito matricial.
                             </p>
                         </div>
                     </div>
@@ -526,20 +526,20 @@
                     <h2 class="reveal-item text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-8">Glossary Avanzado</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div class="reveal-item p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <h4 class="font-extrabold text-indigo-600 dark:text-sky-400 mb-2 text-lg">Malla Eléctrica</h4>
+                            <h4 class="font-extrabold text-indigo-600 dark:text-sky-400 mb-2 text-lg">Malla Electric</h4>
                             <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Trajectory de lazo estrictamente cerrado dentro de un circuito que no contiene otros lazos en su interior. Es la unidad base para la LVK.</p>
                         </div>
                         <div class="reveal-item p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <h4 class="font-extrabold text-yellow-600 dark:text-yellow-500 mb-2 text-lg">Nodo Eléctrico</h4>
+                            <h4 class="font-extrabold text-yellow-600 dark:text-yellow-500 mb-2 text-lg">Nodo Electric</h4>
                             <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Punto Physical de interconexión donde convergen 3 o más componentes. Aquí, la Current obligatoriamente se divide o se suma (LCK).</p>
                         </div>
                         <div class="reveal-item p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <h4 class="font-extrabold text-red-600 dark:text-red-500 mb-2 text-lg">Ley de Kirchhoff (LVK / LCK)</h4>
-                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"><strong>LVK:</strong> En un lazo, la suma de Voltages es igual a cero (Conservación de Energy). <strong>LCK:</strong> En un nodo, la Current que entra es igual a la que sale (Conservación de carga).</p>
+                            <h4 class="font-extrabold text-red-600 dark:text-red-500 mb-2 text-lg">Law of Kirchhoff (LVK / LCK)</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"><strong>LVK:</strong> En un lazo, la suma de Voltages es igual a cero (Conservación de Energy). <strong>LCK:</strong> En un nodo, la Current que entra es igual a la que sale (Conservación de charge).</p>
                         </div>
                         <div class="reveal-item p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <h4 class="font-extrabold text-cyan-600 dark:text-cyan-400 mb-2 text-lg">Ley de Ohm</h4>
-                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Equation fundamental ($V = I \cdot R$) que dicta que el flujo de Current en un material es proporcional a la Force del Voltage e inversamente proporcional a la oPosition (Resistance).</p>
+                            <h4 class="font-extrabold text-cyan-600 dark:text-cyan-400 mb-2 text-lg">Ohm's Law</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Equation fundamental ($V = I \cdot R$) que dicta que el flux de Current en un material es proporcional a la Force del Voltage e inversamente proporcional a la oPosition (Resistance).</p>
                         </div>
                         <div class="reveal-item p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                             <h4 class="font-extrabold text-rose-600 dark:text-rose-500 mb-2 text-lg">Efecto Joule (Power)</h4>

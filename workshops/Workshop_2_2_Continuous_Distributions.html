@@ -6,7 +6,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Interactivo: Distribuciones de Carga Continua</title>
+    <title>Workshop Interactivo: Distribuciones de Charge Continua</title>
     <!-- Bibliotecas Externas -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -79,8 +79,8 @@
 
     <!-- Header Principal -->
     <header class="text-center mb-8 border-b border-blue-100 pb-6">
-        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Workshop: Distribuciones de Carga Continua</h2>
-        <p class="text-slate-500 mt-2 text-sm">Physics II • Electromagnetismo • Integración de Elementos de Carga (\(dq\))</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Workshop: Distribuciones de Charge Continua</h2>
+        <p class="text-slate-500 mt-2 text-sm">Physics II • Electromagnetismo • Integración de Elementos de Charge (\(dq\))</p>
         <div class="flex flex-wrap justify-center gap-4 md:gap-8 mt-4 text-[10px] md:text-xs font-mono text-slate-400 uppercase tracking-widest">
             <span>Grupo: 10E-PHYS</span>
             <span>Docente: Physics.10easy Builder</span>
@@ -95,8 +95,8 @@
             <div class="flex items-start gap-4 mb-6">
                 <span class="bg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm flex-shrink-0">1</span>
                 <div>
-                    <h3 class="text-lg font-bold text-slate-800">Conceptos: Geometría de la Carga Continua</h3>
-                    <p class="text-slate-500 text-sm">Identifique el diferencial de carga \(dq\) apropiado para cada dimensión geométrica.</p>
+                    <h3 class="text-lg font-bold text-slate-800">Conceptos: Geometry de la Charge Continua</h3>
+                    <p class="text-slate-500 text-sm">Identifique el diferencial de charge \(dq\) apropiado para cada dimensión geométrica.</p>
                 </div>
             </div>
 
@@ -155,7 +155,7 @@
                     <h3 class="text-lg font-bold">Ring Uniformemente loaded</h3>
                 </div>
                 <div class="problem-text compact-text mb-4">
-                    <p>Un anillo delgado de radio \(R = 15.0\text{ cm}\) tiene una carga total \(Q = +24.0\ \mu\text{C}\) distribuida uniformemente en su longitud.</p>
+                    <p>Un anillo delgado de radio \(R = 15.0\text{ cm}\) tiene una charge total \(Q = +24.0\ \mu\text{C}\) distribuida uniformemente en su longitud.</p>
                     <ul class="space-y-1 mt-2 text-xs">
                         <li><strong>(a)</strong> Demuestre la expresión analítica para el Electric Field \(\vec{E}\) en un punto P sobre el eje central (eje Z), a una Distance \(z\) del centro.</li>
                         <li><strong>(b)</strong> Calcule la magnitudeeeee de \(E\) en \(z = 20.0\text{ cm}\).</li>
@@ -185,9 +185,9 @@
                     </svg>
                 </div>
                 <div class="mt-4">
-                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista de Simetría</button>
+                    <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista de Symmetry</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
-                        Por simetría, las componentes perpendiculares al eje Z (\(dE_x, dE_y\)) se cancelan. Solo sobrevive \(dE_z = dE \cdot \cos(\theta)\). Sustituye \(\cos(\theta) = \frac{z}{r}\) y \(r = \sqrt{R^2 + z^2}\). Como \(z\) y \(R\) son constantes para todos los \(dq\) del anillo, la integral de \(dq\) es simplemente la carga total \(Q\).
+                        Por symmetry, las componentes perpendiculares al eje Z (\(dE_x, dE_y\)) se cancelan. Solo sobrevive \(dE_z = dE \cdot \cos(\theta)\). Sustituye \(\cos(\theta) = \frac{z}{r}\) y \(r = \sqrt{R^2 + z^2}\). Como \(z\) y \(R\) son constantes para todos los \(dq\) del anillo, la integral de \(dq\) es simplemente la charge total \(Q\).
                     </div>
                 </div>
             </article>
@@ -223,7 +223,7 @@
                 <div class="mt-4">
                     <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista de Integración</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
-                        El elemento de carga es \(dq = \lambda dy\). La Distance es \(r = \sqrt{x^2 + y^2}\). El Powerl es la integral escalar \( V = \int_{-a}^{a} \frac{k \lambda dy}{\sqrt{x^2 + y^2}} \). Utilice la tabla de integrales: \(\int \frac{du}{\sqrt{u^2 + c^2}} = \ln(u + \sqrt{u^2 + c^2})\).
+                        El elemento de charge es \(dq = \lambda dy\). La Distance es \(r = \sqrt{x^2 + y^2}\). El Powerl es la integral escalar \( V = \int_{-a}^{a} \frac{k \lambda dy}{\sqrt{x^2 + y^2}} \). Utilice la tabla de integrales: \(\int \frac{du}{\sqrt{u^2 + c^2}} = \ln(u + \sqrt{u^2 + c^2})\).
                     </div>
                 </div>
             </article>
@@ -235,7 +235,7 @@
                     <h3 class="text-lg font-bold">Placa Plana y Levitación</h3>
                 </div>
                 <div class="problem-text compact-text mb-4">
-                    <p>Una lámina horizontal muy grande (infinita) posee una densidad de carga superficial \(\sigma = -4.5 \times 10^{-9}\text{ C/m}^2\).</p>
+                    <p>Una lámina horizontal muy grande (infinita) posee una densidad de charge superficial \(\sigma = -4.5 \times 10^{-9}\text{ C/m}^2\).</p>
                     <p class="font-bold text-primary mt-2">Un protón (\(m = 1.67 \times 10^{-27}\text{ kg}\)) se suelta sobre la lámina. Determine su Acceleration inicial debido al Electric Field y la gravedad.</p>
                 </div>
                 
@@ -261,7 +261,7 @@
                 <div class="mt-4">
                     <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
-                        El Electric Field de una placa infinita es uniforme y constante a cualquier Distance: \(E = \frac{|\sigma|}{2\epsilon_0}\). Ambas Forces (eléctrica y gravitatoria) apuntan hacia abajo. Usa la segunda ley de Newton: \( \sum F = m \cdot a \implies qE + mg = m \cdot a\).
+                        El Electric Field de una placa infinita es uniforme y constante a cualquier Distance: \(E = \frac{|\sigma|}{2\epsilon_0}\). Ambas Forces (electric y gravitatoria) apuntan hacia abajo. Usa la segunda law of Newton: \( \sum F = m \cdot a \implies qE + mg = m \cdot a\).
                     </div>
                 </div>
             </article>
@@ -270,10 +270,10 @@
             <article class="problem-card bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col">
                 <div class="flex items-center gap-3 mb-4">
                     <span class="bg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm">5</span>
-                    <h3 class="text-lg font-bold">Esfera Sólida (Distribución Volumétrica)</h3>
+                    <h3 class="text-lg font-bold">Esfera Sólida (Distribution Volumétrica)</h3>
                 </div>
                 <div class="problem-text compact-text mb-4">
-                    <p>Una esfera aislante de radio \(R\) tiene una carga \(Q\) distribuida uniformemente en todo su volumen (\(\rho = cte\)).</p>
+                    <p>Una esfera aislante de radio \(R\) tiene una charge \(Q\) distribuida uniformemente en todo su volumen (\(\rho = cte\)).</p>
                     <p class="font-bold text-primary mt-2">Aplicando la Gauss\'s Law, encuentre la magnitudeeeee del Electric Field \(E\) para un radio interno \(r < R\).</p>
                 </div>
                 
@@ -299,7 +299,7 @@
                 <div class="mt-4">
                     <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista de Gauss</button>
                     <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
-                        La carga encerrada \(q_{enc}\) por la superficie gaussiana imaginaria de radio \(r\) es una fracción del total: \(q_{enc} = \rho \cdot V_{gauss} = \rho \left( \frac{4}{3}\pi r^3 \right)\). Al aplicar Gauss \(\oint E \cdot dA = \frac{q_{enc}}{\epsilon_0}\), el área es \(4\pi r^2\). El campo crece linealmente con \(r\).
+                        La charge encerrada \(q_{enc}\) por la superficie gaussiana imaginaria de radio \(r\) es una fracción del total: \(q_{enc} = \rho \cdot V_{gauss} = \rho \left( \frac{4}{3}\pi r^3 \right)\). Al aplicar Gauss \(\oint E \cdot dA = \frac{q_{enc}}{\epsilon_0}\), el área es \(4\pi r^2\). El field crece linealmente con \(r\).
                     </div>
                 </div>
             </article>
@@ -309,18 +309,18 @@
                 <div class="flex-1">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="bg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm">6</span>
-                        <h3 class="text-lg font-bold">Arc de Carga Uniforme</h3>
+                        <h3 class="text-lg font-bold">Arc de Charge Uniforme</h3>
                     </div>
                     <div class="problem-text compact-text">
                         <p>Un alambre de plástico no conductor está doblado en forma de un semicírculo de radio \(R\).</p>
-                        <p>Tiene una carga total \(+Q\) distribuida uniformemente a lo largo de su longitud.</p>
+                        <p>Tiene una charge total \(+Q\) distribuida uniformemente a lo largo de su longitud.</p>
                         <p class="font-bold text-primary mt-2">Halle el Electric Potential \(V\) y el Electric Field \(\vec{E}\) en el punto \(O\) (el centro de curvatura).</p>
                     </div>
                     <div class="mt-4">
                         <button onclick="toggleHint(this)" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Ver Pista Analítica</button>
                         <div class="hint-content p-2 bg-blue-50 rounded border border-blue-100 text-xs text-slate-700">
                             <strong>Para el Potential (Scaler):</strong> Todos los \(dq\) están exactamente a la misma Distance \(R\) del punto O. Por tanto, no hay que integrar vectores. La Answer es directa: \(V = \frac{kQ}{R}\). <br><br>
-                            <strong>Para el Campo (Vectorial):</strong> Por simetría, las componentes horizontales se cancelan. Solo se integran las componentes verticales: \(dE_y = \frac{k \cdot dq}{R^2} \sin(\theta)\), donde \(dq = \lambda \cdot R \cdot d\theta\). Integra desde $0$ a $\pi$.
+                            <strong>Para el Field (Vectorial):</strong> Por symmetry, las componentes horizontales se cancelan. Solo se integran las componentes verticales: \(dE_y = \frac{k \cdot dq}{R^2} \sin(\theta)\), donde \(dq = \lambda \cdot R \cdot d\theta\). Integra desde $0$ a $\pi$.
                         </div>
                     </div>
                 </div>
@@ -362,14 +362,14 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="problem-text compact-text text-xs md:col-span-1" style="border-left-color: #6366f1;">
                     <strong>Simulator Topográfico de Potential (Ring loaded):</strong><br><br>
-                    El Electric Potential generado por una distribución continua se mapea en 3D calculando la superPosition de infinitos puntos de carga.<br><br>
+                    El Electric Potential generado por una distribution continua se mapea en 3D calculando la superPosition de infinitos puntos de charge.<br><br>
                     En este modelo, observamos el <strong>"Cráter de Potential"</strong> creado por un anillo loaded uniformemente en el plano XZ. La altura (eje vertical) representa la magnitudeeeee del Powerl \(V\). <br><br>
-                    Note cómo el Powerl alcanza un valor máximo en el borde del anillo y desciende de forma curva hacia el centro (originando un mínimo local, aunque el campo E es cero allí) y decae suavemente hacia el exterior a medida que \(1/r\).
+                    Note cómo el Powerl alcanza un valor máximo en el borde del anillo y desciende de forma curva hacia el centro (originando un mínimo local, aunque el field E es cero allí) y decae suavemente hacia el exterior a medida que \(1/r\).
                 </div>
                 
                 <div class="md:col-span-2 flex flex-col gap-2">
                     <div class="canvas-container h-[300px] w-full" id="container-3dfield">
-                        <div class="absolute top-2 left-2 text-white/70 text-[10px] font-mono">Topografía de V - Ring de Carga Continua</div>
+                        <div class="absolute top-2 left-2 text-white/70 text-[10px] font-mono">Topografía de V - Ring de Charge Continua</div>
                         <div class="absolute bottom-2 left-2 z-10 no-print">
                             <button onclick="toggleRotation('3dfield')" class="bg-blue-600 text-white px-2 py-1 text-[10px] rounded btn-pause shadow hover:bg-blue-700">Pause Vista</button>
                         </div>
@@ -384,7 +384,7 @@
         <div class="max-w-4xl mx-auto px-6">
             <h4 class="text-primary font-black uppercase tracking-widest text-xs mb-4">Workshop Didáctico de Physics</h4>
             <p class="text-slate-500 text-[11px] leading-relaxed max-w-xl mx-auto">
-                Workshop interactivo de repaso de Electromagnetismo enfocado en técnicas de integración para distribuciones de Carga Continua (Coulomb\'s Law y Gauss\'s Law).
+                Workshop interactivo de repaso de Electromagnetismo enfocado en técnicas de integración para distribuciones de Charge Continua (Coulomb\'s Law y Gauss\'s Law).
             </p>
             <div class="flex justify-center gap-8 mt-6 grayscale opacity-40">
                 <div class="text-[9px] font-mono">Physics_II_2026</div>
@@ -397,7 +397,7 @@
     <script>
         const scenes = {};
 
-        // Start Three.js al cargar
+        // Start Three.js al charger
         function init3D() {
             createSceneRing('3dfield', 'container-3dfield');
             animate();
@@ -639,7 +639,7 @@
             const element = document.body;
             const opt = {
                 margin: 0.2,
-                filename: 'Workshop_Carga_Continua.pdf',
+                filename: 'Workshop_Charge_Continua.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }

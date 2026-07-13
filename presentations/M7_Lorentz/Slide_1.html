@@ -199,7 +199,7 @@
                         <i data-lucide="microscope" class="w-8 h-8 text-blue-500"></i> Virtual Laboratory: Electrodinámica y Modelo de Drude
                     </h1>
                     <p class="relative z-10 transition-colors light:text-slate-600 dark:text-blue-300/80" style="font-size: clamp(11px, 1vw, 18px);">
-                        Conducción Microscópica, Ley de Ohm y Resolution de Circuitos de CD en Time Real
+                        Conducción Microscópica, Ohm's Law y Resolution de Circuitos de CD en Time Real
                     </p>
                 </div>
                 <!-- Toggle Mode Button -->
@@ -232,7 +232,7 @@
                     <!-- BLOQUE 2: DEMOSTRACIÓN LEY DE OHM FIJA -->
                     <div class="glass-card p-[1.5vmin] border-l-[3px] border-emerald-500 rounded-r-lg mb-[1vmin]">
                         <p class="font-bold text-emerald-700 dark:text-emerald-400 mb-2 flex items-center gap-2">
-                            <i data-lucide="file-check-2" class="w-5 h-5"></i> 2. Demostración Formal: Ley de Ohm
+                            <i data-lucide="file-check-2" class="w-5 h-5"></i> 2. Demostración Formal: Ohm's Law
                         </p>
                         <div class="flex flex-col gap-[0.8vmin]">
                             <div class="bg-emerald-50/50 dark:bg-emerald-950/30 p-[1vmin] rounded border border-emerald-200 dark:border-emerald-800/50">
@@ -271,10 +271,10 @@
                             3. Densidad de Current ($\vec{J}$) y Current ($I$)
                             <span class="relative tip-wrapper inline-block z-50">
                                 <span class="tip-btn"><i data-lucide="users" class="w-4 h-4"></i></span>
-                                <span class="tip-content"><strong class="text-indigo-500 flex items-center gap-2 mb-1"><i data-lucide="box" class="w-4 h-4"></i> Densidad de Portadores ($n$):</strong> Un mayor número de electrones disponibles por unidad de volumen permite transportar más carga ($I$) a la misma Velocity ($\vec{v}_d$).</span>
+                                <span class="tip-content"><strong class="text-indigo-500 flex items-center gap-2 mb-1"><i data-lucide="box" class="w-4 h-4"></i> Densidad de Portadores ($n$):</strong> Un mayor número de electrones disponibles por unidad de volumen permite transportar más charge ($I$) a la misma Velocity ($\vec{v}_d$).</span>
                             </span>
                         </p>
-                        <p class="mt-1 text-sm">El flujo de carga a través de la sección transversal ($A$) relaciona lo microscópico con lo macroscópico:</p>
+                        <p class="mt-1 text-sm">El flux de charge a través de la sección transversal ($A$) relaciona lo microscópico con lo macroscópico:</p>
                         <div class="math-display overflow-x-auto custom-scroll">
                             \begin{aligned}
                             \vec{J} &= -n e \vec{v}_d \\
@@ -330,7 +330,7 @@
                     <!-- PANEL DE CONTROL AVANZADO -->
                     <div class="control-panel glass-card relative z-20 flex-col !items-start">
                         
-                        <!-- Fila 1: Materiales y Geometría -->
+                        <!-- Fila 1: Materiales y Geometry -->
                         <div class="flex flex-wrap w-full gap-[1.5vmin] border-b border-slate-300 dark:border-slate-600/50 pb-2 mb-1 items-center justify-between">
                             <div class="flex gap-[1.5vmin] flex-wrap">
                                 <div class="control-group pr-2">
@@ -421,7 +421,7 @@
                                 <!-- LEYENDA VECTORES MEJORADA -->
                                 <div class="mt-1 flex flex-col gap-1 text-[10px] bg-white/80 dark:bg-slate-900/80 p-1.5 rounded border border-slate-300 dark:border-slate-600/50 backdrop-blur-sm">
                                     <div class="flex items-center gap-2"><div class="w-3 h-1 bg-green-500 dark:bg-green-400 shadow-[0_0_5px_rgba(74,222,128,0.5)]"></div><span class="opacity-80 font-bold">Electric Field $\vec{E}$</span></div>
-                                    <div class="flex items-center gap-2"><div class="w-3 h-1 bg-blue-500 dark:bg-blue-400 shadow-[0_0_5px_rgba(96,165,250,0.5)]"></div><span class="opacity-80 font-bold">Flujo Electrones ($e^-$)</span></div>
+                                    <div class="flex items-center gap-2"><div class="w-3 h-1 bg-blue-500 dark:bg-blue-400 shadow-[0_0_5px_rgba(96,165,250,0.5)]"></div><span class="opacity-80 font-bold">Flux Electrones ($e^-$)</span></div>
                                     <div class="flex items-center gap-2"><div class="w-3 h-1 bg-red-600 dark:bg-red-500 shadow-[0_0_5px_rgba(239,68,68,0.5)]"></div><span class="opacity-80 font-bold">Current Convencional ($I$)</span></div>
                                 </div>
                                 <span id="hint-e-field" class="text-[11px] opacity-70 font-mono mt-1 flex items-center gap-1"><i data-lucide="zap-off" class="w-3 h-3"></i> Apagado</span>
@@ -881,9 +881,9 @@
                 }
                 
                 cCtx.fillStyle = '#ef4444'; cCtx.font = '10px sans-serif';
-                cCtx.fillText('<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Flujo (I)', cx, bottom + 15);
+                cCtx.fillText('<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Flux (I)', cx, bottom + 15);
                 cCtx.fillStyle = '#3b82f6';
-                cCtx.fillText('◀ Flujo (e⁻)', cx, top + 25);
+                cCtx.fillText('◀ Flux (e⁻)', cx, top + 25);
             }
         }
 

@@ -53,10 +53,10 @@
                 <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Variables Physicss</h2>
                 
                 <div class="space-y-4">
-                    <!-- Campo B -->
+                    <!-- Field B -->
                     <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/50">
                         <div class="flex justify-between text-xs mb-2">
-                            <span class="text-purple-400 font-medium">Campo B ($B$)</span>
+                            <span class="text-purple-400 font-medium">Field B ($B$)</span>
                             <span id="B-val" class="font-mono text-slate-300">1.0 T</span>
                         </div>
                         <input type="range" id="B-slider" min="0" max="5" step="0.1" value="1.0" class="w-full accent-purple-500">
@@ -98,7 +98,7 @@
             <div id="canvas-container" class="w-full h-1/2 border-b border-slate-800 relative cursor-move">
                 <div class="absolute top-4 left-4 z-10 glass-panel px-3 py-2 rounded-lg pointer-events-none">
                     <div class="text-xs font-bold text-slate-400 mb-1">Visor 3D: Superficie y Field Lines</div>
-                    <div class="text-[10px] text-slate-500">El vector amarillo es la Normal ($\hat{n}$). Las flechas moradas son el campo $\vec{B}$.</div>
+                    <div class="text-[10px] text-slate-500">El vector amarillo es la Normal ($\hat{n}$). Las flechas moradas son el field $\vec{B}$.</div>
                 </div>
             </div>
 
@@ -109,7 +109,7 @@
                 <div class="flex-1 min-w-[300px]">
                     <h3 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        Definición de Flujo
+                        Definición de Flux
                     </h3>
                     <div class="glass-panel p-4 rounded-xl border-amber-500/30 border">
                         <div id="math-steps" class="space-y-4 text-sm text-slate-300 font-light">
@@ -251,7 +251,7 @@
                 data: {
                     labels: [],
                     datasets: [{
-                        label: 'Flujo Φ (Wb)',
+                        label: 'Flux Φ (Wb)',
                         data: [],
                         borderColor: '#f59e0b',
                         backgroundColor: 'rgba(245, 158, 11, 0.1)',
@@ -274,7 +274,7 @@
                     plugins: { legend: { display: false } },
                     scales: {
                         x: { title: { display: true, text: 'Angle (grados)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, min: 0, max: 360 },
-                        y: { title: { display: true, text: 'Flujo Φ (Wb)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, suggestedMin: -10, suggestedMax: 10 }
+                        y: { title: { display: true, text: 'Flux Φ (Wb)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, suggestedMin: -10, suggestedMax: 10 }
                     }
                 }
             });
@@ -322,7 +322,7 @@
                     $$ \\Phi_B = (${state.B.toFixed(1)})(${state.A.toFixed(1)}) \\cos(${state.theta}^\\circ) $$
                 </div>
                 <div class="bg-amber-500/10 p-3 rounded mt-4 border border-amber-500/20 text-center">
-                    <span class="text-xs text-amber-400 uppercase tracking-wider font-bold">Flujo Resultante</span><br>
+                    <span class="text-xs text-amber-400 uppercase tracking-wider font-bold">Flux Resultante</span><br>
                     <span class="text-xl font-mono text-white">$$ \\Phi_B = ${Phi.toFixed(2)}\\ \\text{Wb} $$</span>
                 </div>
             `;

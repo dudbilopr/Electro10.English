@@ -1,6 +1,6 @@
 // ============================================================
 // js/content-loader.js
-// Carga contenido en el visor principal según el tipo de
+// Charge contenido en el visor principal según el tipo de
 // lesson: video, multivideo, Simulator, quiz, enlaces, etc.
 // Gestiona la playlist lateral y el marcado de progreso.
 // ============================================================
@@ -11,7 +11,7 @@ import { resetNav } from './ui.js';
 
 export let currentLeccionId = null;
 
-// ── Helper: ícono por tipo ───────────────────────────────────
+// ── Helper: icon by lesson type ─────────────────────────────
 export function getIconForType(tipo) {
     switch (tipo) {
         case 'multivideo':      return 'ondemand_video';
@@ -22,6 +22,10 @@ export function getIconForType(tipo) {
         case 'exercise':       return 'edit_note';
         case 'quiz':            return 'quiz';
         case 'enlaces':         return 'folder_special';
+        case 'microteaching':   return 'school';
+        case 'Game':            return 'sports_esports';
+        case 'notebooklm':      return 'psychology';
+        case 'referencias':     return 'menu_book';
         default:                return 'description';
     }
 }
@@ -44,7 +48,7 @@ export async function saveProgresoNube(leccionId) {
     if (!window.currentUserUid) return;
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'progress', 'data'), { [leccionId]: true }, { merge: true });
-    } catch (e) { /* sin conexión */ }
+    } catch (e) { /* no connection */ }
 }
 
 // ── save Assessment cognitiva ─────────────────────────────
@@ -56,15 +60,15 @@ export async function saveEval(Level, evalData) {
     evalData[currentLeccionId] = parseInt(Level);
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'evaluations', 'data'), { [currentLeccionId]: parseInt(Level) }, { merge: true });
-        Swal.fire({ title: 'Feedback Científico', text: 'Tus datos de cognición han sido guardados.', icon: 'success', timer: 2000, showConfirmButton: false });
-    } catch (e) { /* sin conexión */ }
+        Swal.fire({ title: 'Scientific Feedback', text: 'Your cognition data has been saved.', icon: 'success', timer: 2000, showConfirmButton: false });
+    } catch (e) { /* no connection */ }
 }
 
 // ── save notas locales ────────────────────────────────────
 export function saveNotas() {
     if (!currentLeccionId) return;
     localStorage.setItem('notas_' + currentLeccionId, document.getElementById('area-notas').value);
-    Swal.fire({ title: 'Apuntes Guardados', text: 'Tus notas se han sincronizado.', icon: 'success', timer: 1500, showConfirmButton: false, toast: true, position: 'top-end' });
+    Swal.fire({ title: 'Notes Saved', text: 'Your notes have been synchronized.', icon: 'success', timer: 1500, showConfirmButton: false, toast: true, position: 'top-end' });
 }
 
 // ── loadedr principal de contenido ─────────────────────────
@@ -105,7 +109,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     document.getElementById('bread-leccion').innerText      = leccion.titulo;
     
     // Construir detalles con los nuevos insights
-    let detailsHtml = `<p style="color: var(--text-medium); margin-bottom: 15px;">${leccion.descripcion || "Explora el recurso analítico."}</p>`;
+    let detailsHtml = `<p style="color: var(--text-medium); margin-bottom: 15px;">${leccion.descripcion || "Explore this analytical resource."}</p>`;
     
     if (module && modulo.conceptosClave) {
         detailsHtml += `
@@ -120,7 +124,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     if (module && modulo.Equations) {
         detailsHtml += `
         <div style="margin-top: 15px; background: var(--bg-surface-hover); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
-            <h4 style="margin: 0 0 10px 0; color: var(--text-high);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px; color: #10b981;">functions</span> Equations Principales</h4>
+            <h4 style="margin: 0 0 10px 0; color: var(--text-high);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px; color: #10b981;">functions</span> Key Equations</h4>
             <div style="color: var(--text-medium); font-size: 1rem;">
                 ${modulo.Equations.join('<br>')}
             </div>
@@ -130,7 +134,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     if (module && modulo.historia) {
         detailsHtml += `
         <div style="margin-top: 15px; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.2);">
-            <h4 style="margin: 0 0 10px 0; color: #3b82f6;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">history_edu</span> Contexto Histórico: ${modulo.historia.experimentoClave}</h4>
+            <h4 style="margin: 0 0 10px 0; color: #3b82f6;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">history_edu</span> Historical Context: ${modulo.historia.experimentoClave}</h4>
             <p style="margin: 0; color: var(--text-medium); font-size: 0.85rem; line-height: 1.5;">${modulo.historia.hallazgo}</p>
         </div>`;
     }
@@ -138,7 +142,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     if (module && modulo.bibliografia) {
         detailsHtml += `
         <div style="margin-top: 15px;">
-            <h4 style="margin: 0 0 5px 0; color: var(--text-high); font-size: 0.9rem;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 16px;">menu_book</span> Bibliografía Recomendada</h4>
+            <h4 style="margin: 0 0 5px 0; color: var(--text-high); font-size: 0.9rem;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 16px;">menu_book</span> Recommended Bibliography</h4>
             <ul style="margin: 0; padding-left: 20px; color: var(--text-medium); font-size: 0.8rem;">
                 ${modulo.bibliografia.map(b => `<li>${b}</li>`).join('')}
             </ul>
@@ -165,8 +169,8 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     if (ratingContainer) {
         ratingContainer.style.display = 'flex';
         if (window.pintarEstrellas) window.pintarEstrellas(0);
-        if (window.cargarCalificacionRecurso) {
-            window.cargarCalificacionRecurso(leccion.id).then(rating => {
+        if (window.chargerCalificacionResource) {
+            window.chargerCalificacionResource(leccion.id).then(rating => {
                 if (rating && window.pintarEstrellas) {
                     window.pintarEstrellas(rating);
                 }
@@ -207,7 +211,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
                 html += '</div></div>';
             });
         } else {
-            html = '<div style="padding:50px;text-align:center;color:var(--text-medium);"><span class="material-symbols-outlined" style="font-size:40px;opacity:0.5;">link_off</span><br>El Professor aún no ha loaded enlaces.</div>';
+            html = '<div style="padding:50px;text-align:center;color:var(--text-medium);"><span class="material-symbols-outlined" style="font-size:40px;opacity:0.5;">link_off</span><br>The instructor has not yet added links.</div>';
         }
         enlacesContainer.innerHTML = html;
 
@@ -225,7 +229,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
 
             const card = document.createElement('div');
             card.className = `thumbnail-card ${index === 0 ? 'active' : ''}`;
-            card.innerHTML = `<img src="${thumbUrl}" class="thumb-img" alt="Thumbnail"><div class="thumb-info"><h4 class="thumb-title">Recurso ${index + 1}</h4><span style="font-size:0.7rem;color:var(--text-medium);">${leccion.tipo === 'multivideo' ? 'Video Magistral' : 'Slide'}</span></div>`;
+            card.innerHTML = `<img src="${thumbUrl}" class="thumb-img" alt="Thumbnail"><div class="thumb-info"><h4 class="thumb-title">Resource ${index + 1}</h4><span style="font-size:0.7rem;color:var(--text-medium);">${leccion.tipo === 'multivideo' ? 'Lecture Video' : 'Slide'}</span></div>`;
             card.onclick = () => {
                 document.querySelectorAll('.thumbnail-card').forEach(c => c.classList.remove('active'));
                 card.classList.add('active');
@@ -261,7 +265,41 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         } else if (leccion.tipo === 'chaea' || leccion.tipo === 'diagnostico_hub') {
             iframe.style.display = 'none';
             enlacesContainer.style.display = 'block';
-            enlacesContainer.innerHTML = '<div style="padding: 50px; text-align: center;"><span class="material-symbols-outlined" style="font-size:64px; color:var(--primary); margin-bottom: 20px; display:block;">hub</span><h3 style="color:var(--text-high); margin-bottom: 20px;">Diagnóstico Holístico (CHAEA + Kolb + IM)</h3><p style="color:var(--text-medium); margin-bottom: 30px;">Identifica tu perfil neuro-cognitivo para recibir recomendaciones personalizadas de estudio.</p><button class="btn-primary" onclick="window.iniciarDiagnosticoHub()">start Centro de Diagnóstico Ahora</button></div>';
+            enlacesContainer.innerHTML = '<div style="padding: 50px; text-align: center;"><span class="material-symbols-outlined" style="font-size:64px; color:var(--primary); margin-bottom: 20px; display:block;">hub</span><h3 style="color:var(--text-high); margin-bottom: 20px;">Holistic Diagnosis (CHAEA + Kolb + MI)</h3><p style="color:var(--text-medium); margin-bottom: 30px;">Identify your neuro-cognitive profile to receive personalized study recommendations.</p><button class="btn-primary" onclick="window.iniciarDiagnosticoHub()">Start Diagnostic Center Now</button></div>';
+        } else if (leccion.tipo === 'microteaching') {
+            // ── Rich EMI Microteaching Launch Card ───────────────
+            iframe.style.display = 'none';
+            enlacesContainer.style.display = 'block';
+            iframeWrapper.style.aspectRatio = 'auto';
+            iframeWrapper.style.height = 'auto';
+            enlacesContainer.innerHTML = `
+            <div style="max-width:800px;margin:0 auto;padding:32px 24px;">
+                <div style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#2563eb 100%);border-radius:20px;padding:40px;color:#fff;margin-bottom:24px;text-align:center;box-shadow:0 20px 60px rgba(37,99,235,0.3);">
+                    <span class="material-symbols-outlined" style="font-size:64px;margin-bottom:16px;display:block;opacity:0.9;">school</span>
+                    <h2 style="margin:0 0 8px 0;font-size:1.8rem;font-weight:700;">${leccion.titulo.replace('0. EMI Microteaching — ','EMI Microteaching')}</h2>
+                    <p style="margin:0;font-size:1rem;opacity:0.85;line-height:1.6;">${leccion.descripcion}</p>
+                    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border-radius:20px;padding:6px 16px;margin-top:16px;font-size:0.85rem;">
+                        <span class="material-symbols-outlined" style="font-size:16px;">timer</span> 10-minute structured lesson
+                        <span style="opacity:0.5;margin:0 4px;">|</span>
+                        <span class="material-symbols-outlined" style="font-size:16px;">workspace_premium</span> +${leccion.xp || 30} XP
+                    </div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+                    ${[['directions_run','Warm-Up','Activate prior knowledge with a quick challenge'],['flag','Objectives','Clear learning goals for the session'],['play_circle','Video Analysis','Watch and annotate the expert explanation'],['science','Simulation Activity','Interact with the physics simulator'],['emoji_events','Conclusion','Synthesize key takeaways together'],['forum','Q&A & Feedback','Open discussion and reflection']].map(([icon,title,desc])=>`
+                    <div style="background:var(--bg-surface-hover);border:1px solid var(--border-color);border-radius:12px;padding:16px;text-align:center;">
+                        <span class="material-symbols-outlined" style="font-size:28px;color:var(--accent);margin-bottom:8px;display:block;">${icon}</span>
+                        <strong style="font-size:0.85rem;color:var(--text-high);display:block;margin-bottom:4px;">${title}</strong>
+                        <span style="font-size:0.75rem;color:var(--text-medium);line-height:1.4;">${desc}</span>
+                    </div>`).join('')}
+                </div>
+                <div style="text-align:center;">
+                    <a href="${leccion.recurso}" target="_blank" style="display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;padding:16px 40px;border-radius:14px;text-decoration:none;font-size:1.1rem;font-weight:700;box-shadow:0 8px 30px rgba(37,99,235,0.4);transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(37,99,235,0.5)';" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 30px rgba(37,99,235,0.4)';">
+                        <span class="material-symbols-outlined icon-filled" style="font-size:24px;">rocket_launch</span>
+                        Launch EMI Microteaching
+                    </a>
+                    <p style="margin-top:14px;font-size:0.8rem;color:var(--text-low);">Opens in a new tab &bull; Complete all 6 phases to earn XP</p>
+                </div>
+            </div>`;
         } else {
             iframe.src = leccion.recurso;
             iframeWrapper.style.aspectRatio = 'auto'; iframeWrapper.style.height = '75vh'; iframeWrapper.style.minHeight = '500px';
@@ -312,8 +350,8 @@ export function loadContent(leccion, modulo, progressData, evalData) {
                         _marcarCompletado(leccion, elementLi, progressData);
                         if (window.Swal) {
                             window.Swal.fire({
-                                title: '¡Dedicación Recompensada!',
-                                text: 'Has dominado esta lesson. (+Progreso)',
+                                title: 'Dedication Rewarded!',
+                                text: 'You have mastered this lesson. (+Progress)',
                                 icon: 'success',
                                 toast: true,
                                 position: 'top-end',

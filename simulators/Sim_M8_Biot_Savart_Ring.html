@@ -95,7 +95,7 @@
             <div id="canvas-container" class="w-full h-1/2 border-b border-slate-800 relative cursor-move">
                 <div class="absolute top-4 left-4 z-10 glass-panel px-3 py-2 rounded-lg pointer-events-none">
                     <div class="text-xs font-bold text-slate-400 mb-1">Visualización 3D (Eje Axial)</div>
-                    <div class="text-[10px] text-slate-500">El campo B apunta a lo largo del eje. Mueve la cámara.</div>
+                    <div class="text-[10px] text-slate-500">El field B apunta a lo largo del eje. Mueve la cámara.</div>
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
                 <div class="flex-1 min-w-[300px]">
                     <h3 class="text-xs font-bold text-pink-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        Calculation del Campo en el Eje
+                        Calculation del Field en el Eje
                     </h3>
                     <div class="glass-panel p-4 rounded-xl border-pink-500/30 border">
                         <div id="math-steps" class="space-y-4 text-sm text-slate-300 font-light">
@@ -247,7 +247,7 @@
                 data: {
                     labels: [],
                     datasets: [{
-                        label: 'Campo Bx (T)',
+                        label: 'Field Bx (T)',
                         data: [],
                         borderColor: '#ec4899',
                         backgroundColor: 'rgba(236, 72, 153, 0.2)',
@@ -270,7 +270,7 @@
                     plugins: { legend: { display: false } },
                     scales: {
                         x: { title: { display: true, text: 'Distance x (m)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
-                        y: { title: { display: true, text: 'Campo Bx (T)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', format: { notation: "scientific" } } }
+                        y: { title: { display: true, text: 'Field Bx (T)', color: '#64748b' }, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', format: { notation: "scientific" } } }
                     }
                 }
             });
@@ -306,7 +306,7 @@
 
             let mathHtml = `
                 <div class="text-center">
-                    <span class="text-xs text-slate-400">Formula del Campo en el eje</span>
+                    <span class="text-xs text-slate-400">Formula del Field en el eje</span>
                     $$ B_x = \\frac{\\mu_0 I a^2}{2(a^2 + x^2)^{3/2}} $$
                 </div>
                 <div class="mt-4 border-l-4 border-pink-500 pl-3">
@@ -316,7 +316,7 @@
                     </div>
                 </div>
                 <div class="bg-pink-500/10 p-3 rounded mt-4 border border-pink-500/20 text-center">
-                    <span class="text-xs text-pink-400 uppercase tracking-wider font-bold">Campo Magnético $B_x$</span><br>
+                    <span class="text-xs text-pink-400 uppercase tracking-wider font-bold">Field Magnetic $B_x$</span><br>
                     <span class="text-xl font-mono text-white">$$ B_x = ${B.toExponential(3)}\\ \\text{T} $$</span>
                 </div>
             `;

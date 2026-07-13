@@ -115,10 +115,10 @@
                     <!-- BLOQUE 2: GRAVITACIÓN -->
                     <div class="bg-emerald-50 p-[1.5vmin] border-l-[0.5vmin] border-emerald-600 shadow-sm rounded-r-lg mb-[1.5vmin]">
                         <p class="mb-1 flex items-start">
-                            <span><strong>Ley de Gravitación Universal:</strong> Describe la atracción entre partículas con masa. Es estrictamente atractiva y posee idéntica estructura geométrica:</span>
+                            <span><strong>Law of Gravitación Universal:</strong> Describe la atracción entre partículas con masa. Es estrictamente atractiva y posee idéntica estructura geométrica:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Geometría 3D:</strong> El término $1/r^2$ en ambas leyes surge porque el "flujo" de la Force se esparce sobre el área de una esfera ($4\pi r^2$).</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Geometry 3D:</strong> El término $1/r^2$ en ambas leyes surge porque el "flux" de la Force se esparce sobre el área de una esfera ($4\pi r^2$).</span>
                             </span>
                         </p>
                         <div class="math-display">$$\vec{F}_g = -G \frac{m_1 m_2}{r^2} \hat{r}$$</div>
@@ -139,7 +139,7 @@
                             <tbody>
                                 <tr>
                                     <td class="border px-2 py-1 font-semibold">Causa/Origen</td>
-                                    <td class="border px-2 py-1">Carga ($q$)</td>
+                                    <td class="border px-2 py-1">Charge ($q$)</td>
                                     <td class="border px-2 py-1">Masa ($m$)</td>
                                 </tr>
                                 <tr class="bg-slate-50">
@@ -164,7 +164,7 @@
                     <!-- BLOQUE 4: ADVERTENCIA Y Conclusion -->
                     <div class="bg-amber-50 p-[1.5vmin] border border-amber-300 shadow-sm rounded-lg relative">
                         <p class="font-bold text-amber-800 mb-1"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Paradoja Cósmica</p>
-                        <p class="text-sm text-slate-700">La repulsión eléctrica entre dos protones es $\sim 10^{36}$ veces mayor que su atracción gravitatoria. ¿Por qué la gravedad rige el universo macroscópico? Porque la materia a gran escala es eléctricamente neutra (se cancela), mientras que la masa siempre se suma y se acumula.</p>
+                        <p class="text-sm text-slate-700">La repulsión electric entre dos protones es $\sim 10^{36}$ veces mayor que su atracción gravitatoria. ¿Por qué la gravedad rige el universo macroscópico? Porque la materia a gran escala es electricmente neutra (se cancela), mientras que la masa siempre se suma y se acumula.</p>
                     </div>
 
                 </div>
@@ -202,7 +202,7 @@
                         </div>
 
                         <div class="control-group flex-1 justify-end gap-2 text-[10px] md:text-sm font-semibold text-slate-700">
-                            <label><input type="checkbox" id="toggle-field"> Líneas Campo</label>
+                            <label><input type="checkbox" id="toggle-field"> Líneas Field</label>
                             <label><input type="checkbox" id="toggle-force" checked> Vectors $\vec{F}$</label>
                             <button id="btn-animate" class="bg-blue-600 text-white px-2 py-1 rounded shadow hover:bg-blue-700 transition"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i> Soltar Partículas</button>
                         </div>
@@ -227,7 +227,7 @@
                                 </div>
                             </div>
 
-                            <!-- Stats Flujo -->
+                            <!-- Stats Flux -->
                             <div class="bg-white border border-slate-200 rounded-lg p-[1.5vmin] text-center shadow-sm">
                                 <div class="text-slate-600 font-serif italic mb-1" style="font-size: clamp(12px, 1vw, 16px);">Estado Dinámico</div>
                                 <div class="font-bold text-slate-800 rounded p-1" id="ui-region" style="font-size: clamp(14px, 1.2vw, 20px);">
@@ -311,7 +311,7 @@
         const forceGroup = new THREE.Group(); scene.add(forceGroup);
         let arrow1, arrow2;
 
-        // Campo (anclado a la escena general para mejor rendimiento)
+        // Field (anclado a la escena general para mejor rendimiento)
         const fieldGroup = new THREE.Group(); 
         scene.add(fieldGroup);
 
@@ -383,7 +383,7 @@
 
             const maxDist = 8;
             const steps = 5;
-            // Dibujamos campo alrededor de particle1
+            // Dibujamos field alrededor de particle1
             for (let x = -steps; x <= steps; x++) {
                 for (let y = -steps; y <= steps; y++) {
                     if (x===0 && y===0) continue;
@@ -647,7 +647,7 @@
                 
                 params.r_current = new_r;
 
-                updateAll(); // Refrescar Chart, cuerpos, campos y UI simultáneamente
+                updateAll(); // Refrescar Chart, cuerpos, fields y UI simultáneamente
             }
 
             renderer.render(scene, cam);

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Physics Quest — Ley de Ampere</title>
+<title>Physics Quest — Ampere's Law</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{--accent:#0d9488;--bg:#070b1a;--surface:#0f172a;--card:#1e293b;--border:rgba(255,255,255,0.07);--text:#f1f5f9;--mid:#94a3b8;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--glow:#0d948866}
@@ -194,18 +194,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 
 <script>
 const GAME_CONFIG = {
-  titulo: "Ley de Ampere",
-  descripcion: "Domina la circulación del campo magnético con simetría. 5 rondas de electrodinámica.",
+  titulo: "Ampere's Law",
+  descripcion: "Domina la circulación del magnetic field con symmetry. 5 rondas de electrodinámica.",
   color: "#0d9488",
   moduloId: "m9-j1",
   xpGanado: 25,
-  logro: {icono:"<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>",nombre:"Maestro Amperiano",desc:"Completaste el Physics Quest de Ampere sin errores"},
+  logro: {icono:"<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>",nombre:"Amperian Master",desc:"Completaste el Physics Quest de Ampere sin errores"},
   rondas: [
     {
       titulo:"Ronda 1",categoria:"CIRCULACIÓN",
-      Question:"La Ley de Ampere relaciona la circulación de B con:",
+      Question:"La Ampere's Law relaciona la circulación de B con:",
       formula:"∮ B·dl = μ₀I_enc",
-      Options:["El flujo magnético","La Current encerrada en el camino","El Electric Field","La carga encerrada"],correcta:1,
+      Options:["El magnetic flux","La Current encerrada en el camino","El Electric Field","La charge encerrada"],correcta:1,
       feedback_ok:"∮B·dl = μ₀I_enc. Solo la Current que ATRAVIESA la superficie del lazo contribuye.",
       feedback_bad:"Ampere: ∮B·dl = μ₀I_enc. Es la Current que pasa a través del camino amperiano."
     },
@@ -214,7 +214,7 @@ const GAME_CONFIG = {
       Question:"B dentro de solenoide infinito ideal (n vueltas/m, Current I):",
       formula:"B = μ₀nI",
       Options:["B varía con r","B = μ₀nI (uniforme)","B = 0","B = μ₀nI/r"],correcta:1,
-      feedback_ok:"B = μ₀nI es uniforme dentro del solenoide ideal. ¡Es uno de los campos uniformes más importantes en electromagnetismo!",
+      feedback_ok:"B = μ₀nI es uniforme dentro del solenoide ideal. ¡Es uno de los fields uniformes más importantes en electromagnetismo!",
       feedback_bad:"Dentro del solenoide ideal: B = μ₀nI = constante y uniforme."
     },
     {
@@ -237,9 +237,9 @@ const GAME_CONFIG = {
       titulo:"Ronda 5",categoria:"MAXWELL",
       Question:"La Current de desplazamiento de Maxwell explica:",
       formula:"I_d = ε₀ dΦ_E/dt",
-      Options:["Por qué la carga se conserva en Conductors","Por qué existe campo magnético entre placas de capacitor en carga","La Resistance de los materiales","Por qué el solenoide tiene campo uniforme"],correcta:1,
-      feedback_ok:"Maxwell: al cargar un capacitor, el campo E entre placas varía → Current de desplazamiento → genera B. ¡Esto permitió predecir las ondas EM!",
-      feedback_bad:"I_d = ε₀dΦ_E/dt. Entre las placas del capacitor, el campo E variable actúa como Current generando B."
+      Options:["Por qué la charge se conserva en Conductors","Por qué existe magnetic field entre placas de capacitor en charge","La Resistance de los materiales","Por qué el solenoide tiene field uniforme"],correcta:1,
+      feedback_ok:"Maxwell: al charger un capacitor, el field E entre placas varía → Current de desplazamiento → genera B. ¡Esto permitió predecir las ondas EM!",
+      feedback_bad:"I_d = ε₀dΦ_E/dt. Entre las placas del capacitor, el field E variable actúa como Current generando B."
     }
   ]
 };

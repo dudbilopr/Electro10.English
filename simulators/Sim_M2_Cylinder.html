@@ -123,24 +123,24 @@
                 <div id="datos" class="tab-content p-2 text-sm">
                     <p class="font-semibold text-base mb-2">Valuees del Disk Diferencial (en Position $x$)</p>
                     <div class="space-y-2 pl-2">
-                        <p>Carga del disco $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> C</p>
-                        <p>Campo del disco $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
+                        <p>Charge del disco $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> C</p>
+                        <p>Field del disco $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                     </div>
                     <hr class="my-4 border-slate-200 dark:border-slate-700">
                     <p class="font-semibold text-base mb-2">Valuees Totales del Cylinder</p>
                      <div class="space-y-2 pl-2">
-                        <p>Carga Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
-                        <p>Campo Total $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
+                        <p>Charge Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
+                        <p>Field Total $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                     </div>
                 </div>
                 
                 <div id="teoria" class="tab-content p-2 text-sm space-y-3">
                     <p class="font-semibold text-base">1. Estrategia: Integrar Disks</p>
-                    <p>Tratamos el cilindro como una suma de infinitos discos delgados de grosor $dx$. El campo de un disco de radio $R$ y carga $dq$ a una Distance $x_0$ es:</p>
+                    <p>Tratamos el cilindro como una suma de infinitos discos delgados de grosor $dx$. El field de un disco de radio $R$ y charge $dq$ a una Distance $x_0$ es:</p>
                      <p class="text-center my-1 p-2 border rounded-md">$$d\vec{E} = 2\pi k_e \sigma \left( 1 - \frac{x_0}{\sqrt{R^2 + x_0^2}} \right) \hat{i}$$</p>
                     
                     <p class="font-semibold text-base">2. Variables del Problema</p>
-                    <p>Un disco diferencial en la Position $x$ tiene una carga $dq = \rho dV = \rho (\pi R^2 dx)$. Su densidad superficial es $\sigma = dq/(\pi R^2) = \rho dx$. La Distance a P es $x_0 = x_1 - x$.</p>
+                    <p>Un disco diferencial en la Position $x$ tiene una charge $dq = \rho dV = \rho (\pi R^2 dx)$. Su densidad superficial es $\sigma = dq/(\pi R^2) = \rho dx$. La Distance a P es $x_0 = x_1 - x$.</p>
 
                     <p class="font-semibold text-base">3. Sustitución e Integración</p>
                     <p>Sustituimos $\sigma$ y $x_0$ en la Formula de $dE$ e integramos a lo largo de la longitud del cilindro, desde $x=0$ hasta $x=L$.</p>
@@ -153,14 +153,14 @@
                 <div id="analisis" class="tab-content p-2 text-sm space-y-4">
                      <p class="font-semibold text-base">Tips Conceptuales</p>
                     <ul class="list-disc list-inside space-y-2">
-                         <li><strong>Lejos del cilindro ($x_1 \gg L, R$):</strong> El cilindro se comporta como una carga puntual $Q = \rho (\pi R^2 L)$. La Formula se simplifica a $E \approx k_e Q / x_1^2$.</li>
-                         <li><strong>Rod Delgada ($R \to 0$):</strong> Si el radio es muy pequeño, el campo debería ser similar al de una varilla loaded de longitud $L$. ¡Puedes compararlo!</li>
+                         <li><strong>Lejos del cilindro ($x_1 \gg L, R$):</strong> El cilindro se comporta como una charge puntual $Q = \rho (\pi R^2 L)$. La Formula se simplifica a $E \approx k_e Q / x_1^2$.</li>
+                         <li><strong>Rod Delgada ($R \to 0$):</strong> Si el radio es muy pequeño, el field debería ser similar al de una varilla loaded de longitud $L$. ¡Puedes compararlo!</li>
                     </ul>
 
                      <div class="mt-6">
-                        <p class="font-semibold text-base">Desafío: Campo adentro</p>
+                        <p class="font-semibold text-base">Desafío: Field adentro</p>
                         <div class="mt-2 p-3 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                            <p>¿Qué sucede con el campo si el punto P se encuentra exactamente en el centro de la cara frontal del cilindro (es decir, $x_1 = L$)?</p>
+                            <p>¿Qué sucede con el field si el punto P se encuentra exactamente en el centro de la cara frontal del cilindro (es decir, $x_1 = L$)?</p>
                              <ol class="list-decimal list-inside my-2 pl-4">
                                 <li>Usa los sliders para que $x_1$ sea igual a $L$.</li>
                                 <li>Simplifica la Formula final en la pestaña de Theory para este caso.</li>

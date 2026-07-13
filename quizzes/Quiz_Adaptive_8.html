@@ -140,9 +140,9 @@ const QUIZ_CONFIG = {
   {Level:1,id:"c8-n1-1",
    texto:"Biot-Savart calcula:",
    
-   Options:[{"texto":"La Force sobre Current","Correct":false},{"texto":"El campo magnético de Currents","Correct":true},{"texto":"El Powerl magnético","Correct":false},{"texto":"La Induction eléctrica","Correct":false}],
+   Options:[{"texto":"La Force sobre Current","Correct":false},{"texto":"El magnetic field de Currents","Correct":true},{"texto":"El Powerl magnetic","Correct":false},{"texto":"La Induction electric","Correct":false}],
    feedback_ok:"dB = (μ₀/4π) Idl × r̂ / r².",
-   feedback_bad:"Biot-Savart: campo B creado por Currents.",
+   feedback_bad:"Biot-Savart: field B creado por Currents.",
    pista:"Análogo a Coulomb pero para Currents."
   },
   {Level:1,id:"c8-n1-2",
@@ -181,12 +181,12 @@ const QUIZ_CONFIG = {
    texto:"B en eje de espira para z >> R:",
    formula:"B ∝ 1/z³",
    Options:[{"texto":"B ∝ 1/z³","Correct":true},{"texto":"B ∝ 1/z²","Correct":false},{"texto":"B ∝ 1/z","Correct":false},{"texto":"B = constante","Correct":false}],
-   feedback_ok:"Para z >> R: B ≈ μ₀IR²/(2z³) ∝ 1/z³ (dipolo magnético).",
+   feedback_ok:"Para z >> R: B ≈ μ₀IR²/(2z³) ∝ 1/z³ (dipolo magnetic).",
    feedback_bad:"B_eje ≈ μ₀IR²/(2z³) para z >> R.",
    pista:"Simplifica (R²+z²)^(3/2) para z >> R."
   },
   {Level:3,id:"c8-n3-7",
-   texto:"Solenoid N=500, L=0.5m, I=2A. Campo interior:",
+   texto:"Solenoid N=500, L=0.5m, I=2A. Field interior:",
    formula:"B = μ₀nI, n = N/L",
    Options:[{"texto":"B ≈ 2.51 mT","Correct":true},{"texto":"B ≈ 25.1 mT","Correct":false},{"texto":"B ≈ 0.251 mT","Correct":false},{"texto":"B ≈ 1.26 mT","Correct":false}],
    feedback_ok:"n = 1000 v/m. B = 4π×10⁻⁷ × 1000 × 2 ≈ 2.51 mT.",
@@ -196,16 +196,16 @@ const QUIZ_CONFIG = {
   {Level:3,id:"c8-n3-8",
    texto:"¿Por qué B = 0 fuera del solenoide infinito?",
    
-   Options:[{"texto":"Simetría de traslación + Ampere: I_enc = 0 afuera","Correct":true},{"texto":"Current solo fluye adentro","Correct":false},{"texto":"Teorema de Gauss magnético","Correct":false},{"texto":"Ley de Lenz","Correct":false}],
+   Options:[{"texto":"Symmetry de traslación + Ampere: I_enc = 0 afuera","Correct":true},{"texto":"Current solo fluye adentro","Correct":false},{"texto":"Teorema de Gauss magnetic","Correct":false},{"texto":"Lenz's Law","Correct":false}],
    feedback_ok:"Ampere con lazo rectangular: afuera I_enc = 0 → B = 0.",
    feedback_bad:"Por Ampere con lazo adecuado: afuera I_enc = 0 → B = 0.",
    pista:"Aplica Ampere con lazo rectangular mitad adentro, mitad afuera."
   },
   {Level:3,id:"c8-n3-9",
-   texto:"Bobinas Helmholtz (N, radio R, separación R). Campo en punto medio:",
+   texto:"Bobinas Helmholtz (N, radio R, separación R). Field en punto medio:",
    formula:"B = 8μ₀NI/(5√5 R)",
    Options:[{"texto":"B = 8μ₀NI/(5^(3/2)R)","Correct":true},{"texto":"B = μ₀NI/(2R)","Correct":false},{"texto":"B = μ₀NI/R","Correct":false},{"texto":"B = 2μ₀NI/R","Correct":false}],
-   feedback_ok:"B_Helmholtz = 8μ₀NI/(5√5 R). Campo notablemente uniforme.",
+   feedback_ok:"B_Helmholtz = 8μ₀NI/(5√5 R). Field notablemente uniforme.",
    feedback_bad:"Helmholtz: B = 8μ₀NI/(5^(3/2) R).",
    pista:"Suma las dos contribuciones axiales en el punto medio."
   }

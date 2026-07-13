@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio: Electrodinámica de Distribuciones Lineales de Carga</title>
+    <title>Laboratorio: Electrodinámica de Distribuciones Lineales de Charge</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -92,10 +92,10 @@
             
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-blue-500">
                 <h1 class="font-bold tracking-wide flex items-center gap-3" style="font-size: clamp(20px, 2vw, 36px);">
-                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Distribuciones Lineales de Carga
+                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Distribuciones Lineales de Charge
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
-                    Líneas finitas e infinitas, Superposition, Work Eléctrico y Trajectorys
+                    Líneas finitas e infinitas, Superposition, Work Electric y Trajectorys
                 </p>
             </header>
 
@@ -107,10 +107,10 @@
                     <!-- BASE COMÚN -->
                     <div class="bg-slate-100 p-[1.5vmin] border-l-[0.5vmin] border-blue-600 shadow-sm rounded-r-lg mb-[1vmin]">
                         <p class="mb-1 flex items-start">
-                            <span>Para una distribución continua de carga unidimensional con densidad lineal $\lambda = dq/dy$, el <strong>Electric Field ($\vec{E}$)</strong> se obtiene mediante el principio de superPosition integrando las contribuciones de cada diferencial de carga $dq$.</span>
+                            <span>Para una distribution continua de charge unidimensional con densidad lineal $\lambda = dq/dy$, el <strong>Electric Field ($\vec{E}$)</strong> se obtiene mediante el principio de superPosition integrando las contribuciones de cada diferencial de charge $dq$.</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Densidad Lineal:</strong> Representa la cantidad de carga por unidad de longitud ($C/m$). Si $\lambda$ es constante, la carga total es $Q = \lambda L$.</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Densidad Lineal:</strong> Representa la cantidad de charge por unidad de longitud ($C/m$). Si $\lambda$ es constante, la charge total es $Q = \lambda L$.</span>
                             </span>
                         </p>
                         <div class="math-display">$$d\vec{E} = \frac{1}{4\pi\epsilon_0} \frac{dq}{r^2} \hat{r} \quad \implies \quad \vec{E} = \int \frac{k \lambda \, dy}{r^2} \hat{r}$$</div>
@@ -119,9 +119,9 @@
                     <!-- CASO 1: LÍNEA FINITA -->
                     <div id="teoria-finita" class="bg-indigo-50 p-[1.5vmin] border border-indigo-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
                         <p class="font-bold text-indigo-800 flex items-center">
-                            1. Línea Finita de Carga (Length $L$)
+                            1. Línea Finita de Charge (Length $L$)
                         </p>
-                        <p class="text-sm mt-1">Calculamos el campo en un punto $P(x,y,z)$ integrando desde $-L/2$ hasta $L/2$. Las componentes del campo en el plano $z=0$ resultan ser:</p>
+                        <p class="text-sm mt-1">Calculamos el field en un punto $P(x,y,z)$ integrando desde $-L/2$ hasta $L/2$. Las componentes del field en el plano $z=0$ resultan ser:</p>
                         <div class="math-display">
                             \begin{aligned}
                             E_x &= \frac{k\lambda}{x} \left[ \frac{y+L/2}{\sqrt{x^2+(y+L/2)^2}} - \frac{y-L/2}{\sqrt{x^2+(y-L/2)^2}} \right] \\
@@ -135,9 +135,9 @@
                     <!-- CASO 2: LÍNEA INFINITA -->
                     <div id="teoria-infinita" class="hidden flex-col bg-emerald-50 p-[1.5vmin] border border-emerald-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
                         <p class="font-bold text-emerald-800 flex items-center">
-                            2. Línea Infinita de Carga ($L \to \infty$)
+                            2. Línea Infinita de Charge ($L \to \infty$)
                         </p>
-                        <p class="text-sm mt-1">Al tomar el límite cuando $L$ tiende a infinito (o aplicando la Gauss\'s Law en una superficie cilíndrica), la componente paralela $E_y$ se cancela por simetría.</p>
+                        <p class="text-sm mt-1">Al tomar el límite cuando $L$ tiende a infinito (o aplicando la Gauss\'s Law en una superficie cilíndrica), la componente paralela $E_y$ se cancela por symmetry.</p>
                         <div class="math-display">$$\vec{E}(r) = \frac{1}{2\pi\epsilon_0} \frac{\lambda}{r} \hat{r} = \frac{2k\lambda}{r} \hat{r}$$</div>
                         <p class="text-xs mt-1 text-emerald-700">Donde $r$ es la Distance perpendicular a la línea. El Electric Potential asociado toma una forma logarítmica: $V(r) = -2k\lambda \ln(r/r_0)$.</p>
                     </div>
@@ -149,19 +149,19 @@
                         </p>
                         <p class="text-sm mt-1">Dos hilos Conductors paralelos con densidades $+\lambda$ y $-\lambda$ separados una Distance $2d$. Aplicamos superPosition vectorial:</p>
                         <div class="math-display">$$\vec{E}_{total} = \vec{E}_+ + \vec{E}_-$$</div>
-                        <p class="text-xs mt-1 text-amber-700">Las Field Lines abandonan la línea positiva y convergen en la negativa. Si una partícula se coloca entre ellas, experimentará un campo uniforme aproximado en el centro, similar a un condensador cilíndrico abierto.</p>
+                        <p class="text-xs mt-1 text-amber-700">Las Field Lines abandonan la línea positiva y convergen en la negativa. Si una partícula se coloca entre ellas, experimentará un field uniforme aproximado en el centro, similar a un condensador cilíndrico abierto.</p>
                     </div>
 
                     <!-- CASO 4: INTERACCIÓN Y Work -->
                     <div id="teoria-interaccion" class="hidden flex-col bg-purple-50 p-[1.5vmin] border border-purple-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
                         <p class="font-bold text-purple-800 flex items-center">
-                            4. Dinámica y Work Eléctrico
+                            4. Dinámica y Work Electric
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Potential vs Work:</strong> El Powerl $V$ es Energy por unidad de carga. El campo realiza Work a expensas de reducir esta Energy Powerl.</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Potential vs Work:</strong> El Powerl $V$ es Energy por unidad de charge. El field realiza Work a expensas de reducir esta Energy Powerl.</span>
                             </span>
                         </p>
-                        <p class="text-sm mt-1">La Force sobre una partícula puntual es $\vec{F} = q\vec{E}$. El <strong>Work Eléctrico ($W$)</strong> realizado por el campo al mover la carga desde el punto $A$ al punto $B$ es independiente de la Trajectory:</p>
+                        <p class="text-sm mt-1">La Force sobre una partícula puntual es $\vec{F} = q\vec{E}$. El <strong>Work Electric ($W$)</strong> realizado por el field al mover la charge desde el punto $A$ al punto $B$ es independiente de la Trajectory:</p>
                         <div class="math-display">$$W = \int_{A}^{B} \vec{F} \cdot d\vec{r} = -q \Delta V = -q(V_B - V_A)$$</div>
                         <p class="text-xs mt-1 text-purple-700">Arrastra la partícula en la simulación para visualizar los cambios de Powerl y el Work efectuado durante su desplazamiento libre.</p>
                     </div>
@@ -173,11 +173,11 @@
                         </p>
                         <p class="text-sm mt-1">Dada una línea finita en el eje Y:</p>
                         <ul class="text-sm list-disc pl-5 mt-1">
-                            <li><strong>Sobre el plano bisector ($y=0$):</strong> La componente $E_y = 0$. El campo es puramente radial y perpendicular a la barra.</li>
-                            <li><strong>Sobre el eje de la línea ($x=0, z=0$):</strong> El campo es paralelo a la línea. $\vec{E} = E_y \hat{j}$.</li>
+                            <li><strong>Sobre el plano bisector ($y=0$):</strong> La componente $E_y = 0$. El field es puramente radial y perpendicular a la barra.</li>
+                            <li><strong>Sobre el eje de la línea ($x=0, z=0$):</strong> El field es paralelo a la línea. $\vec{E} = E_y \hat{j}$.</li>
                         </ul>
                         <div class="math-display">$$E_{y(eje)} = k\lambda \left( \frac{1}{|y-L/2|} - \frac{1}{|y+L/2|} \right)$$</div>
-                        <p class="text-xs text-rose-700"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Advertencia: Si $y = \pm L/2$ (justo en la punta), el campo matemático diverge al infinito ($\to \infty$).</p>
+                        <p class="text-xs text-rose-700"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Advertencia: Si $y = \pm L/2$ (justo en la punta), el field matemático diverge al infinito ($\to \infty$).</p>
                     </div>
 
                     <!-- NUEVO CASO 6: DENSIDAD VARIABLE E INTEGRACIÓN -->
@@ -189,9 +189,9 @@
                                 <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Diferencial:</strong> $dq = \lambda(y) dy$. Observa cómo la contribución $d\vec{E}$ cambia en magnitudeeeee y dirección al recorrer la línea.</span>
                             </span>
                         </p>
-                        <p class="text-sm mt-1">Cuando la densidad de carga no es constante ($\lambda = f(y)$), no podemos sacar $\lambda$ de la integral. El campo exacto se computa mediante la suma (integración) de infinitos elementos de carga $dq$:</p>
+                        <p class="text-sm mt-1">Cuando la densidad de charge no es constante ($\lambda = f(y)$), no podemos sacar $\lambda$ de la integral. El field exacto se computa mediante la suma (integración) de infinitos elementos de charge $dq$:</p>
                         <div class="math-display">$$\vec{E} = \int_{-L/2}^{L/2} \frac{k \cdot \lambda(y) dy}{|\vec{r}|^2} \hat{r}$$</div>
-                        <p class="text-xs mt-1 text-fuchsia-700">Utiliza el control "Barrido Integral" para visualizar cómo cada elemento $dq$ aporta su diferencial de campo $d\vec{E}$ formando el campo total por superPosition.</p>
+                        <p class="text-xs mt-1 text-fuchsia-700">Utiliza el control "Barrido Integral" para visualizar cómo cada elemento $dq$ aporta su diferencial de field $d\vec{E}$ formando el field total por superPosition.</p>
                     </div>
 
                     <!-- Conclusion -->
@@ -253,7 +253,7 @@
                         <!-- Fila 2 -->
                         <div class="flex w-full gap-[1.5vmin] items-center">
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Carga de la partícula">Carga $q$:</label>
+                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Charge de la partícula">Charge $q$:</label>
                                 <input type="range" id="slider-q" min="-5" max="5" step="0.5" value="1" class="w-[3.5vw]">
                                 <span id="val-q" class="font-mono font-bold w-[1.5vw] text-right text-red-600">1.0</span>
                             </div>
@@ -265,7 +265,7 @@
                             </div>
 
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="Densidad Lineal de Carga">Densidad $\lambda$:</label>
+                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="Densidad Lineal de Charge">Densidad $\lambda$:</label>
                                 <input type="range" id="slider-e" min="0.5" max="10" step="0.5" value="5" class="w-[3.5vw]">
                                 <span id="val-e" class="font-mono font-bold w-[1.5vw] text-right text-purple-600">5.0</span>
                             </div>
@@ -309,7 +309,7 @@
                         <!-- NUEVA Fila 4: Controls de Integración y dq -->
                         <div class="flex w-full gap-[1.5vmin] items-center border-t border-slate-300 pt-1 mt-1 flex-wrap bg-slate-100 p-1 rounded">
                             <div class="control-group border-r border-slate-300 pr-2 text-xs">
-                                <label class="font-bold text-fuchsia-800" title="Elemento diferencial de carga">Elem. $dq$:</label>
+                                <label class="font-bold text-fuchsia-800" title="Elemento diferencial de charge">Elem. $dq$:</label>
                                 <input type="checkbox" id="toggle-dq" checked class="accent-fuchsia-600">
                             </div>
                             <div class="control-group border-r border-slate-300 pr-2 text-xs">
@@ -330,8 +330,8 @@
                             <div class="control-group border-r border-slate-300 pr-2 text-xs">
                                 <label class="font-bold text-slate-700">Ver:</label>
                                 <label title="Vector de Position Relativa" class="cursor-pointer text-gray-600"><input type="checkbox" id="toggle-r" checked> $\vec{r}$</label>
-                                <label title="Vector Diferencial de Campo" class="cursor-pointer text-fuchsia-600 ml-1"><input type="checkbox" id="toggle-de" checked> $d\vec{E}$</label>
-                                <label title="Componentes del Campo" class="cursor-pointer text-blue-600 ml-1"><input type="checkbox" id="toggle-de-comp"> Comp.</label>
+                                <label title="Vector Diferencial de Field" class="cursor-pointer text-fuchsia-600 ml-1"><input type="checkbox" id="toggle-de" checked> $d\vec{E}$</label>
+                                <label title="Componentes del Field" class="cursor-pointer text-blue-600 ml-1"><input type="checkbox" id="toggle-de-comp"> Comp.</label>
                             </div>
                             <div class="control-group border-r border-slate-300 pr-2 text-xs hidden" id="ui-lambda-var">
                                 <label class="font-bold text-fuchsia-700">$\lambda(y)=$</label>
@@ -373,12 +373,12 @@
                                     <canvas id="dcl-canvas" class="absolute top-0 left-0 w-full h-full"></canvas>
                                 </div>
                                 <div class="text-center text-xs text-slate-300 mt-1 font-mono flex flex-col items-center">
-                                    <span>F_eléctrica: <span id="ui-dcl-fe" class="text-yellow-400">0.0</span> N</span>
+                                    <span>F_electric: <span id="ui-dcl-fe" class="text-yellow-400">0.0</span> N</span>
                                     <span>W_gravedad: <span id="ui-dcl-wg" class="text-emerald-300">0.0</span> N</span>
                                 </div>
                             </div>
 
-                            <!-- Chart Perfil del Campo -->
+                            <!-- Chart Perfil del Field -->
                             <div class="h-[45%] graph-wrapper p-[1vmin] flex flex-col bg-slate-50">
                                 <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(12px, 1vw, 15px);">
                                     Chart $X(t)$ vs Time
@@ -479,9 +479,9 @@
         // ==========================================
         let params = {
             config: 'finita',
-            q: 1.0,      // Carga
+            q: 1.0,      // Charge
             m: 1.0,      // Masa
-            E_scale: 5.0, // Multiplicador de campo (lambda)
+            E_scale: 5.0, // Multiplicador de field (lambda)
             g: 5.0,       // Scale visual de gravedad
             useGravity: false,
             is3D: false,
@@ -508,7 +508,7 @@
             wTotal: 0     // Work acumulado
         };
 
-        // Materiales y Geometrías
+        // Materiales y Geometrys
         const geoTest = new THREE.SphereGeometry(0.35, 32, 32);
         const matTest = new THREE.MeshStandardMaterial({ color: 0xfacc15, roughness: 0.1, emissive: 0x665500 });
         particle.mesh = new THREE.Mesh(geoTest, matTest);
@@ -612,7 +612,7 @@
                     let E1x = 2*k*(x+d)/rp2;
                     let E1z = 2*k*z/rp2;
                     
-                    // Línea - en x = d (carga -lambda)
+                    // Línea - en x = d (charge -lambda)
                     let rm2 = Math.pow(x-d, 2) + z*z + 1e-6;
                     let E2x = -2*k*(x-d)/rm2;
                     let E2z = -2*k*z/rm2;
@@ -909,7 +909,7 @@
                     trailLine.geometry.setFromPoints(particle.trail);
                 }
 
-                // Work Eléctrico Acumulado = -q(V_actual - V_start)
+                // Work Electric Acumulado = -q(V_actual - V_start)
                 let currentV = calculateV(particle.pos);
                 particle.wTotal = -params.q * (currentV - particle.vStart);
 
@@ -1165,7 +1165,7 @@
                 dclCtx.fillStyle = "#ff00ff";
                 dclCtx.fillText(`|dE| Mag. : ${Math.abs(dE_mag).toFixed(3)} N/C`, 5, 90);
                 
-                // Show ecuación si es variable
+                // Show equation si es variable
                 if(params.config === 'variable') {
                     dclCtx.fillStyle = "#8b5cf6";
                     dclCtx.fillText(`λ(y) = ${params.lambda_str}`, 5, 105);
@@ -1383,7 +1383,7 @@
             params.E_scale = parseFloat(e.target.value);
             document.getElementById('val-e').textContent = params.E_scale.toFixed(1);
             
-            // ReCalculate V base al cambiar campo
+            // ReCalculate V base al cambiar field
             particle.vStart = calculateV(particle.pos); 
 
             updateBackgroundGrid();

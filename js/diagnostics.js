@@ -40,9 +40,9 @@ window.iniciarDiagnosticoHub = function() {
     // All done! Update Profile
     if (window.ShowPerfil) {
         window.ShowPerfil();
-        setTimeout(() => window.cargarResultsHolisticos(), 100);
+        setTimeout(() => window.chargerResultsHolisticos(), 100);
     } else {
-        window.cargarResultsHolisticos();
+        window.chargerResultsHolisticos();
     }
 };
 
@@ -238,9 +238,9 @@ function calculateMI(data) {
             if (window.ShowPerfil) {
                 window.ShowPerfil();
                 // Ensure there is a slight delay to allow the DOM to render before drawing charts
-                setTimeout(() => window.cargarResultsHolisticos(), 100);
+                setTimeout(() => window.chargerResultsHolisticos(), 100);
             } else {
-                window.cargarResultsHolisticos();
+                window.chargerResultsHolisticos();
             }
         });
     });
@@ -264,7 +264,7 @@ async function saveDiagnosticoNube() {
 }
 
 // Hooked into profile.js or called explicitly
-window.cargarResultsHolisticos = async function() {
+window.chargerResultsHolisticos = async function() {
     const statusEl = document.getElementById('profile-diagnostics-status');
     const dataEl = document.getElementById('profile-diagnostics-data');
     if (!statusEl || !dataEl) return;

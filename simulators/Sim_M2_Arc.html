@@ -111,7 +111,7 @@
             <!-- Introductory text -->
             <div class="mb-4 text-center">
                 <p class="text-sm text-slate-600 dark:text-slate-400">
-                    Usa los Controls para explorar el Electric Field generado por un arco con carga uniforme.
+                    Usa los Controls para explorar el Electric Field generado por un arco con charge uniforme.
                 </p>
             </div>
 
@@ -136,7 +136,7 @@
                         <input id="angleSlider" type="range" min="10" max="180" value="180" step="1" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
                     </div>
                     <div class="my-3">
-                        <label for="densitySlider" class="block text-sm font-medium">Densidad de carga (λ): <span id="densityValue">5.0</span> nC/m</label>
+                        <label for="densitySlider" class="block text-sm font-medium">Densidad de charge (λ): <span id="densityValue">5.0</span> nC/m</label>
                         <input id="densitySlider" type="range" min="1" max="10" value="5" step="0.1" class="w-full h-2 rounded-lg appearance-none cursor-pointer">
                     </div>
                     <div class="my-3">
@@ -163,17 +163,17 @@
 
                 <!-- Datos Tab -->
                 <div id="datos" class="tab-content p-2 text-sm">
-                    <p class="font-semibold text-base mb-2">Campo Diferencial (de $dq$)</p>
+                    <p class="font-semibold text-base mb-2">Field Diferencial (de $dq$)</p>
                     <div class="space-y-2 pl-2">
                         <p>Distance $r$: <span id="rValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> m</p>
-                        <p>Campo $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
+                        <p>Field $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                         <p>Componente $dE_x$: <span id="dExValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                         <p>Componente $dE_y$: <span id="dEyValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                     </div>
                     <hr class="my-4 border-slate-200 dark:border-slate-700">
-                    <p class="font-semibold text-base mb-2">Campo Total (Integrado)</p>
+                    <p class="font-semibold text-base mb-2">Field Total (Integrado)</p>
                      <div class="space-y-2 pl-2">
-                        <p>Campo $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
+                        <p>Field $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                         <p>Componente $E_x$: <span id="ExTotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                         <p>Componente $E_y$: <span id="EyTotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                     </div>
@@ -182,30 +182,30 @@
                 <!-- Theory Tab -->
                 <div id="teoria" class="tab-content p-2 text-sm space-y-4">
                     <p class="font-semibold text-base">Elemento Diferencial de Arc</p>
-                    <p>En una geometría curva, el elemento de carga $dq$ se define a partir de un elemento de longitud de arco $ds$.</p>
+                    <p>En una geometry curva, el elemento de charge $dq$ se define a partir de un elemento de longitud de arco $ds$.</p>
                     <p class="text-center my-2 p-2 border border-slate-200 dark:border-slate-700 rounded-md">
                         $$ds = R \, d\theta \implies dq = \lambda \, ds = \lambda R \, d\theta$$
                     </p>
                     
-                    <p class="font-semibold text-base">Integración del Campo</p>
-                    <p>Si el arco tiene una apertura total $\alpha$, el campo $\vec{E}$ es la integral a lo largo del arco (desde $-\alpha/2$ hasta $+\alpha/2$):</p>
+                    <p class="font-semibold text-base">Integración del Field</p>
+                    <p>Si el arco tiene una apertura total $\alpha$, el field $\vec{E}$ es la integral a lo largo del arco (desde $-\alpha/2$ hasta $+\alpha/2$):</p>
                     <p class="text-center my-2 p-2 border border-slate-200 dark:border-slate-700 rounded-md">
                         $$\vec{E} = \int_{-\alpha/2}^{+\alpha/2} k \frac{\lambda R \, d\theta}{r^2} \hat{r}$$
                     </p>
-                    <p>Este Simulator calcula esta integral numéricamente para encontrar el campo total en cualquier punto P.</p>
+                    <p>Este Simulator calcula esta integral numéricamente para encontrar el field total en cualquier punto P.</p>
                 </div>
                 
                 <!-- Análisis Tab -->
                 <div id="analisis" class="tab-content p-2 text-sm space-y-4">
                     <p class="font-semibold text-base">Tips Conceptuales</p>
                     <ul class="list-disc list-inside space-y-2">
-                        <li>El campo $\vec{E}$ en el centro de curvatura (0, 0) apunta directamente hacia abajo (o arriba) debido a la simetría.</li>
-                        <li>Si el punto P está sobre el eje Y (el eje de simetría), la componente horizontal del campo total ($E_x$) siempre será cero.</li>
+                        <li>El field $\vec{E}$ en el centro de curvatura (0, 0) apunta directamente hacia abajo (o arriba) debido a la symmetry.</li>
+                        <li>Si el punto P está sobre el eje Y (el eje de symmetry), la componente horizontal del field total ($E_x$) siempre será cero.</li>
                     </ul>
 
                     <p class="font-semibold text-base mt-4">Questions de Análisis</p>
                     <ol class="list-decimal list-inside space-y-2">
-                       <li>¿Qué le pasa al campo total $\vec{E}$ si duplicas el radio $R$ pero mantienes $\lambda$ constante?</li>
+                       <li>¿Qué le pasa al field total $\vec{E}$ si duplicas el radio $R$ pero mantienes $\lambda$ constante?</li>
                        <li>Mueve el punto P a lo largo del eje X. ¿Cómo cambia la dirección del vector $\vec{E}$?</li>
                        <li>¿Por qué la componente $E_x$ se anula sobre el eje Y? Utiliza el $dq$ móvil para visualizarlo.</li>
                     </ol>
@@ -214,7 +214,7 @@
                         <p class="font-semibold text-base">Desafío Interactivo</p>
                         <div class="mt-2 p-3 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                             <p>
-                                El problema original pide Calculate el campo en el origen para $\lambda = 2$ C/m. Como es un valor muy grande para visualizar, vamos a adaptarlo a la escala del Simulator:
+                                El problema original pide Calculate el field en el origen para $\lambda = 2$ C/m. Como es un valor muy grande para visualizar, vamos a adaptarlo a la escala del Simulator:
                             </p>
                             <p class="font-semibold my-2">Encuentra el Electric Field en el origen si:</p>
                             <ul class="list-disc list-inside my-2 pl-4">
@@ -223,7 +223,7 @@
                                 <li>Apertura total de $90^\circ$ (desde $-45^\circ$ hasta $+45^\circ$)</li>
                             </ul>
                             <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                                <strong>Pista:</strong> Coloca el punto P en (0,0) arrastrándolo. Luego, ajusta los sliders de Radius, Apertura y Densidad a los valores del problema. ¡El panel de "Datos" te Showá el campo total resultante!
+                                <strong>Pista:</strong> Coloca el punto P en (0,0) arrastrándolo. Luego, ajusta los sliders de Radius, Apertura y Densidad a los valores del problema. ¡El panel de "Datos" te Showá el field total resultante!
                             </p>
                         </div>
                     </div>

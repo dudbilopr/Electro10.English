@@ -115,10 +115,10 @@
                     <!-- BLOQUE 1: Coulomb's Law VECTORIAL -->
                     <div class="bg-slate-100 p-[1.5vmin] border-l-[0.5vmin] border-blue-600 shadow-sm rounded-r-lg mb-[1vmin]">
                         <p class="mb-1 flex items-start">
-                            <span><strong>1. Forma Vectorial:</strong> La Force eléctrica está dirigida a lo largo de la línea que une las Charges. El vector unitario $\hat{r}$ le da el carácter direccional a la Force:</span>
+                            <span><strong>1. Forma Vectorial:</strong> La Force electric está dirigida a lo largo de la línea que une las Charges. El vector unitario $\hat{r}$ le da el carácter direccional a la Force:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> magnitudeeeee Q:</strong> Ahora puedes hacer clic en cualquier carga y modificar su magnitudeeeee. Observa cómo una mayor magnitudeeeee alarga los vectores de Force proporcionalmente al producto $q_1 q_2$.</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> magnitudeeeee Q:</strong> Ahora puedes hacer clic en cualquier charge y modificar su magnitudeeeee. Observa cómo una mayor magnitudeeeee alarga los vectores de Force proporcionalmente al producto $q_1 q_2$.</span>
                             </span>
                         </p>
                         <div class="math-display"> $$\vec{F}_{12} = k \frac{q_1 q_2}{r^2} \hat{r} = k \frac{q_1 q_2}{|\vec{r}_{12}|^2} \left(\frac{\vec{r}_2 - \vec{r}_1}{|\vec{r}_{12}|}\right) = k \frac{q_1 q_2}{|\vec{r}_{12}|^3} (\vec{r}_2 - \vec{r}_1) $$</div>
@@ -152,7 +152,7 @@
                                 <span class="tip-content"><strong><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Antioscilación:</strong> Matemáticamente $1/r^2 \to \infty$ si $r \to 0$. Para evitar una oscilación infinita y caótica al acercarse, el Simulator amortigua el movimiento cuando las Charges están en contacto inelástico.</span>
                             </span>
                         </p>
-                        <p class="mt-1 text-sm">Al liberar las Charges, obedecen la 2da Ley de Newton ($\vec{a} = \vec{F}_{neta}/m$). Observa que las Charges más pesadas o de menor carga acelerarán más lentamente.</p>
+                        <p class="mt-1 text-sm">Al liberar las Charges, obedecen la 2da Law of Newton ($\vec{a} = \vec{F}_{neta}/m$). Observa que las Charges más pesadas o de menor charge acelerarán más lentamente.</p>
                     </div>
 
                     <!-- BLOQUE 4: SUPERPosition Y DCL DETALLADO -->
@@ -165,7 +165,7 @@
                             </span>
                         </p>
                         <p class="text-sm mt-1">
-                            En un sistema múltiple, la Net Force sobre una carga (flecha gruesa) es la <strong>suma vectorial exacta</strong> de todas las contribuciones individuales (flechas naranjas). Selecciona una carga con el mouse para ver su DCL en detalle en el panel derecho.
+                            En un sistema múltiple, la Net Force sobre una charge (flecha gruesa) es la <strong>suma vectorial exacta</strong> de todas las contribuciones individuales (flechas naranjas). Selecciona una charge con el mouse para ver su DCL en detalle en el panel derecho.
                         </p>
                         <div class="math-display">$$ \vec{F}_{neta} = \sum_{i} \vec{F}_i = \vec{F}_1 + \vec{F}_2 + \vec{F}_3 \dots $$</div>
                     </div>
@@ -188,14 +188,14 @@
                         </div>
 
                         <div class="control-group border-r border-slate-300 pr-3 gap-1">
-                            <button class="btn-action btn-pos" id="btn-add-pos">+ Carga Q</button>
-                            <button class="btn-action btn-neg" id="btn-add-neg">- Carga Q</button>
+                            <button class="btn-action btn-pos" id="btn-add-pos">+ Charge Q</button>
+                            <button class="btn-action btn-neg" id="btn-add-neg">- Charge Q</button>
                             <button class="btn-action btn-reset" id="btn-reset">Clear</button>
                         </div>
 
-                        <!-- Edición de Carga Seleccionada -->
+                        <!-- Edición de Charge Seleccionada -->
                         <div class="control-group border-r border-slate-300 pr-3 transition-opacity duration-300" id="ui-charge-editor" style="opacity: 0.3; pointer-events: none;">
-                            <label class="font-bold text-amber-700" title="Selecciona una carga primero">Modificar Q:</label>
+                            <label class="font-bold text-amber-700" title="Selecciona una charge primero">Modificar Q:</label>
                             <input type="range" id="slider-q" min="-5" max="5" step="0.5" value="1" class="w-[5vw]">
                             <span id="val-q" class="font-mono font-bold w-[2vw] text-right text-slate-700">1.0</span>
                         </div>
@@ -239,7 +239,7 @@
                                     Detalle Analítico DCL (Selesson)
                                 </div>
                                 <div id="ui-dcl-math" class="font-mono text-slate-600 flex-1 overflow-y-auto custom-scroll pr-1" style="font-size: clamp(10px, 0.9vw, 14px);">
-                                    <div class="text-center text-slate-400 mt-4 italic">Haz clic en una carga en el espacio 3D para ver su diagrama de Forces individuales y resultantes.</div>
+                                    <div class="text-center text-slate-400 mt-4 italic">Haz clic en una charge en el espacio 3D para ver su diagrama de Forces individuales y resultantes.</div>
                                 </div>
                             </div>
 
@@ -297,7 +297,7 @@
             softening: 0.1, // Evitar colapso total
             dt: 0.016, // Time step
             damping: 0.99, // Fricción base
-            collisionDist: 0.8 // 2 * radio de carga (0.4)
+            collisionDist: 0.8 // 2 * radio de charge (0.4)
         };
 
         const geoCharge = new THREE.SphereGeometry(0.4, 32, 32);
@@ -315,7 +315,7 @@
                 params.mode === '3d' ? (Math.random() - 0.5) * range * 2 : 0
             );
             
-            // Scaler visualmente según la magnitudeeeee de la carga
+            // Scaler visualmente según la magnitudeeeee de la charge
             const absQ = Math.abs(sign * 1.0);
             const scaleFac = 0.5 + 0.5 * absQ;
             mesh.scale.set(scaleFac, scaleFac, scaleFac);
@@ -400,7 +400,7 @@
                 editor.style.pointerEvents = 'none';
                 valLabel.textContent = "-";
                 ring.style.display = 'none';
-                document.getElementById('ui-dcl-math').innerHTML = '<div class="text-center text-slate-400 mt-4 italic">Haz clic en una carga para ver su diagrama de Forces.</div>';
+                document.getElementById('ui-dcl-math').innerHTML = '<div class="text-center text-slate-400 mt-4 italic">Haz clic en una charge para ver su diagrama de Forces.</div>';
             }
         }
 
@@ -502,7 +502,7 @@
                     const c1 = charges[i];
                     const c2 = charges[j];
                     
-                    if(c1.q === 0 || c2.q === 0) continue; // Si alguna carga es 0, no hay Force mutua
+                    if(c1.q === 0 || c2.q === 0) continue; // Si alguna charge es 0, no hay Force mutua
                     
                     const rVec = new THREE.Vector3().subVectors(c2.mesh.position, c1.mesh.position);
                     const rDist = rVec.length();
@@ -542,7 +542,7 @@
                         c1.individualForces.push({ force: fVecOn2.clone().negate(), source: c2 });
 
                         c2.f.add(fVecOn2);
-                        c1.f.sub(fVecOn2); // Ley de Acción/Reacción
+                        c1.f.sub(fVecOn2); // Law of Acción/Reacción
                     }
                 }
             }
@@ -660,15 +660,15 @@
                 }
             });
 
-            // Panel Matemático DCL (Basado en la carga seleccionada)
+            // Panel Matemático DCL (Basado en la charge seleccionada)
             if (selectedCharge) {
                 const cTarget = selectedCharge;
                 const fNeta = cTarget.f.length();
                 
-                let html = `<div class="font-bold text-center text-indigo-800 bg-indigo-50 py-1 rounded mb-2">Análisis de Carga ${cTarget.id} (Q = ${cTarget.q.toFixed(1)}C)</div>`;
+                let html = `<div class="font-bold text-center text-indigo-800 bg-indigo-50 py-1 rounded mb-2">Análisis de Charge ${cTarget.id} (Q = ${cTarget.q.toFixed(1)}C)</div>`;
 
                 if (cTarget.individualForces.length === 0) {
-                     html += `<div class="text-center text-slate-400 mt-2 text-xs">No hay interacción (se requiere otra carga con magnitudeeeee $\\neq$ 0).</div>`;
+                     html += `<div class="text-center text-slate-400 mt-2 text-xs">No hay interacción (se requiere otra charge con magnitudeeeee $\\neq$ 0).</div>`;
                 } else {
                     html += `<div class="text-xs font-bold text-slate-500 mb-1">Forces Individuales:</div>`;
                     cTarget.individualForces.forEach(indF => {
@@ -753,7 +753,7 @@
             }
             ctx.stroke(); ctx.setLineDash([]);
 
-            // Dato experimental (Basado en la Carga Seleccionada y su mayor interacción)
+            // Dato experimental (Basado en la Charge Seleccionada y su mayor interacción)
             if (selectedCharge && selectedCharge.individualForces.length > 0) {
                 // Trazar el punto del par de Charges que genera la Force más fuerte (para visualización)
                 let maxF = null;

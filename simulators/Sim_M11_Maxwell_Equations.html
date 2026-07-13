@@ -44,11 +44,11 @@
             
             <div class="space-y-3">
                 <button onclick="loadEq('gaussE')" class="w-full text-left p-4 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800 transition-all focus:border-indigo-500 focus:bg-slate-800">
-                    <div class="font-bold text-indigo-400">Gauss\'s Law (Eléctrica)</div>
+                    <div class="font-bold text-indigo-400">Gauss\'s Law (Electric)</div>
                 </button>
                 
                 <button onclick="loadEq('gaussB')" class="w-full text-left p-4 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800 transition-all focus:border-indigo-500 focus:bg-slate-800">
-                    <div class="font-bold text-indigo-400">Gauss\'s Law (Magnética)</div>
+                    <div class="font-bold text-indigo-400">Gauss\'s Law (Magnetic)</div>
                 </button>
 
                 <button onclick="loadEq('faraday')" class="w-full text-left p-4 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800 transition-all focus:border-indigo-500 focus:bg-slate-800">
@@ -56,7 +56,7 @@
                 </button>
 
                 <button onclick="loadEq('ampere')" class="w-full text-left p-4 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800 transition-all focus:border-indigo-500 focus:bg-slate-800">
-                    <div class="font-bold text-indigo-400">Ley de Ampere-Maxwell</div>
+                    <div class="font-bold text-indigo-400">Ampere's Law-Maxwell</div>
                 </button>
             </div>
             
@@ -66,7 +66,7 @@
         <div id="steps-container" class="lg:col-span-2 space-y-4">
             <div class="glass-panel p-10 rounded-2xl flex flex-col items-center justify-center text-center text-slate-500 min-h-[400px]">
                 <svg class="w-16 h-16 mb-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                <p>Selecciona una ecuación en el menú lateral para estudiarla a fondo.</p>
+                <p>Selecciona una equation en el menú lateral para estudiarla a fondo.</p>
             </div>
         </div>
 
@@ -80,30 +80,30 @@
                 steps: [
                     { t: "Forma Integral", m: "$$ \\oint_S \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enc}}{\\varepsilon_0} $$", c: "bg-blue-900/40 border-blue-500" },
                     { t: "Forma Diferencial", m: "$$ \\nabla \\cdot \\vec{E} = \\frac{\\rho}{\\varepsilon_0} $$", c: "bg-emerald-900/40 border-emerald-500" },
-                    { t: "Significado Physical", m: "El Electric Flux neto a través de una superficie cerrada es proporcional a la carga neta encerrada. La divergencia de $\\vec{E}$ indica si un punto del espacio es un manantial (Positive Charge) o un sumidero (Negative Charge).", c: "bg-slate-800 border-slate-600" }
+                    { t: "Significado Physical", m: "El Electric Flux neto a través de una superficie cerrada es proporcional a la charge neta encerrada. La divergencia de $\\vec{E}$ indica si un punto del espacio es un manantial (Positive Charge) o un sumidero (Negative Charge).", c: "bg-slate-800 border-slate-600" }
                 ]
             },
             gaussB: {
-                title: "Gauss\'s Law (Campo Magnético)",
-                desc: "No existen monopolos magnéticos aislados en la naturaleza.",
+                title: "Gauss\'s Law (Field Magnetic)",
+                desc: "No existen monopolos magnetics aislados en la naturaleza.",
                 steps: [
                     { t: "Forma Integral", m: "$$ \\oint_S \\vec{B} \\cdot d\\vec{A} = 0 $$", c: "bg-blue-900/40 border-blue-500" },
                     { t: "Forma Diferencial", m: "$$ \\nabla \\cdot \\vec{B} = 0 $$", c: "bg-emerald-900/40 border-emerald-500" },
-                    { t: "Significado Physical", m: "Las Field Lines magnético siempre forman bucles cerrados continuos. Toda línea que entra a una superficie cerrada debe salir. Por tanto, la divergencia de $\\vec{B}$ siempre es cero.", c: "bg-slate-800 border-slate-600" }
+                    { t: "Significado Physical", m: "Las Field Lines magnetic siempre forman bucles cerrados continuos. Toda línea que entra a una superficie cerrada debe salir. Por tanto, la divergencia de $\\vec{B}$ siempre es cero.", c: "bg-slate-800 border-slate-600" }
                 ]
             },
             faraday: {
                 title: "Faraday's Law de la Induction",
-                desc: "Un campo magnético cambiante en el tiempo induce un Electric Field rotacional.",
+                desc: "Un magnetic field cambiante en el tiempo induce un Electric Field rotacional.",
                 steps: [
                     { t: "Forma Integral", m: "$$ \\oint_C \\vec{E} \\cdot d\\vec{l} = - \\frac{d\\Phi_B}{dt} $$", c: "bg-blue-900/40 border-blue-500" },
                     { t: "Forma Diferencial", m: "$$ \\nabla \\times \\vec{E} = - \\frac{\\partial \\vec{B}}{\\partial t} $$", c: "bg-emerald-900/40 border-emerald-500" },
-                    { t: "Significado Physical", m: "La circulación del Electric Field alrededor de un camino cerrado no es cero si el flujo magnético está cambiando. El rotacional de $\\vec{E}$ es directamente proporcional a la tasa de cambio de $\\vec{B}$ (con signo negativo por la Ley de Lenz).", c: "bg-slate-800 border-slate-600" }
+                    { t: "Significado Physical", m: "La circulación del Electric Field alrededor de un camino cerrado no es cero si el magnetic flux está cambiando. El rotacional de $\\vec{E}$ es directamente proporcional a la tasa de cambio de $\\vec{B}$ (con signo negativo por la Lenz's Law).", c: "bg-slate-800 border-slate-600" }
                 ]
             },
             ampere: {
-                title: "Ley de Ampere-Maxwell",
-                desc: "Los campos magnéticos se generan por Currents eléctricas Y por campos eléctricos cambiantes.",
+                title: "Ampere's Law-Maxwell",
+                desc: "Los fields magnetics se generan por Currents electrics Y por fields electrics cambiantes.",
                 steps: [
                     { t: "Forma Integral", m: "$$ \\oint_C \\vec{B} \\cdot d\\vec{l} = \\mu_0 I_{enc} + \\mu_0 \\varepsilon_0 \\frac{d\\Phi_E}{dt} $$", c: "bg-blue-900/40 border-blue-500" },
                     { t: "Forma Diferencial", m: "$$ \\nabla \\times \\vec{B} = \\mu_0 \\vec{J} + \\mu_0 \\varepsilon_0 \\frac{\\partial \\vec{E}}{\\partial t} $$", c: "bg-emerald-900/40 border-emerald-500" },

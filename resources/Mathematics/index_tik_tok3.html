@@ -26,7 +26,7 @@
         window.FirebaseAPI = { initializeApp, getAuth, signInAnonymously, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithCustomToken, getFirestore, doc, setDoc, getDoc, collection };
     </script>
 
-    <!-- Estilos Globales y Temas -->
+    <!-- Styles Globales y Temas -->
     <style>
         :root {
             --bg-color: #0f172a; --surface-color: #1e293b; --text-color: #f8fafc;
@@ -670,7 +670,7 @@
                 try {
                     const app = window.FirebaseAPI.initializeApp(firebaseConfig);
                     const db = window.FirebaseAPI.getFirestore(app);
-                    if (!currentUser || currentUser.isAnonymous) return alert("Debes iniciar sesión como Admin para cargar.");
+                    if (!currentUser || currentUser.isAnonymous) return alert("Debes iniciar sesión como Admin para charger.");
                     const docRef = window.FirebaseAPI.doc(db, 'artifacts', MAIN_APP_ID, 'users', currentUser.uid, 'projects', 'main');
                     const docSnap = await window.FirebaseAPI.getDoc(docRef);
                     if (docSnap.exists()) {
@@ -684,7 +684,7 @@
                         saveStateToHistory(); 
                         alert("<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Proyecto loaded desde la Nube.");
                     } else { alert("ℹ️ No hay proyectos guardados en tu cuenta."); }
-                } catch (e) { console.error(e); alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al cargar."); }
+                } catch (e) { console.error(e); alert("<span class="inline-flex items-center text-rose-400 mr-1"><i data-lucide="x-circle" class="w-4 h-4 inline"></i></span> Error al charger."); }
             };
 
             useEffect(() => {
@@ -771,7 +771,7 @@
                                     )}
                                     <div className="w-px h-5 bg-[var(--border-color)] mx-1"></div>
                                     <button className="p-1.5 rounded-lg btn-tool text-[var(--accent-color)]" onClick={handleCloudSync} title="save en Nube"><Icons.CloudSave /></button>
-                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--secondary-color)]" onClick={handleCloudLoad} title="Cargar de Nube"><Icons.CloudLoad /></button>
+                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--secondary-color)]" onClick={handleCloudLoad} title="Charger de Nube"><Icons.CloudLoad /></button>
                                 </div>
                             </div>
                         </header>

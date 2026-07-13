@@ -1,11 +1,11 @@
 // js/physics-engine.js
-// Motor de simulación Physics 2D para Calculate campos eléctricos y líneas de Force.
+// Motor de simulación Physics 2D para Calculate fields electrics y líneas de Force.
 
 class Charge {
     constructor(x, y, q) {
         this.x = x;
         this.y = y;
-        this.q = q; // Carga en Coulombs (ej: +1 o -1 para simplificar)
+        this.q = q; // Charge en Coulombs (ej: +1 o -1 para simplificar)
         this.radius = 15;
     }
 
@@ -59,7 +59,7 @@ class PhysicsSimulation {
     }
 
     addCharge(q) {
-        // Colocar carga en el centro
+        // Colocar charge en el centro
         const x = this.canvas.width / 2 + (Math.random() * 50 - 25);
         const y = this.canvas.height / 2 + (Math.random() * 50 - 25);
         this.charges.push(new Charge(x, y, q));
@@ -85,7 +85,7 @@ class PhysicsSimulation {
             const dy = y - charge.y;
             const r2 = dx*dx + dy*dy;
             
-            // Evitar singularidad matemática justo en la carga
+            // Evitar singularidad matemática justo en la charge
             if (r2 < 100) continue; 
             
             const r = Math.sqrt(r2);
@@ -97,7 +97,7 @@ class PhysicsSimulation {
         return { Ex, Ey };
     }
 
-    // Dibuja una cuadrícula de vectores (campo vectorial)
+    // Dibuja una cuadrícula de vectores (field vectorial)
     drawVectorField() {
         if (this.charges.length === 0) return;
 
@@ -110,7 +110,7 @@ class PhysicsSimulation {
                 const E = this.getElectricField(x, y);
                 const E_mag = Math.sqrt(E.Ex*E.Ex + E.Ey*E.Ey);
                 
-                if (E_mag < 0.01) continue; // Campo muy débil
+                if (E_mag < 0.01) continue; // Field muy débil
 
                 // Normalizar y escalar para la vista
                 const maxLen = resolution * 0.8;
@@ -144,7 +144,7 @@ class PhysicsSimulation {
         this.ctx.fillStyle = '#0f172a';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // Dibujar campo vectorial
+        // Dibujar field vectorial
         this.drawVectorField();
 
         // Dibujar Charges encima
@@ -197,7 +197,7 @@ window.initPhysicsEngine = function() {
     if(btnClr) btnClr.addEventListener('click', () => window.physicsSim.clearCharges());
 };
 
-// Autoiniciar si el canvas existe al cargar
+// Autoiniciar si el canvas existe al charger
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('physics-canvas')) {
         window.initPhysicsEngine();

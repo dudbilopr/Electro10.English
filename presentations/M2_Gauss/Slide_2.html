@@ -6,7 +6,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio: Dinámica de Partículas y Campos Eléctricos</title>
+    <title>Laboratorio: Dinámica de Partículas y Fields Electrics</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -95,7 +95,7 @@
             
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-blue-500">
                 <h1 class="font-bold tracking-wide flex items-center gap-3" style="font-size: clamp(20px, 2vw, 36px);">
-                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Dinámica en Campos Eléctricos Arbitrarios
+                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio Interactivo: Dinámica en Fields Electrics Arbitrarios
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
                     Integración Numérica, Experimento de Millikan, Funciones Vectoriales y Placas Paralelas
@@ -110,14 +110,14 @@
                     <!-- BASE COMÚN -->
                     <div class="bg-slate-100 p-[1.5vmin] border-l-[0.5vmin] border-blue-600 shadow-sm rounded-r-lg mb-[1vmin]">
                         <p class="mb-1 flex items-start">
-                            <span>La Net Force sobre una partícula loaded ($q$) en presencia de un <strong>Electric Field ($\vec{E}$)</strong> y un campo gravitacional ($\vec{g}$) determina su Trajectory mediante la Segunda Ley de Newton.</span>
+                            <span>La Net Force sobre una partícula loaded ($q$) en presencia de un <strong>Electric Field ($\vec{E}$)</strong> y un field gravitacional ($\vec{g}$) determina su Trajectory mediante la Segunda Law of Newton.</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
                                 <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Equation de Movimiento:</strong> A través de métodos numéricos (como Euler), podemos integrar esta Acceleration paso a paso para predecir cualquier Trajectory compleja.</span>
                             </span>
                         </p>
                         <div class="math-display">$$\vec{F}_{neta} = q\vec{E}(x,y,z) + m\vec{g} = m\frac{d^2\vec{r}}{dt^2}$$</div>
-                        <p class="text-xs text-slate-600 italic">En este Simulator, la partícula es evaluada matemáticamente en tiempo real ($dt$) sobre la ecuación de campo definida.</p>
+                        <p class="text-xs text-slate-600 italic">En este Simulator, la partícula es evaluada matemáticamente en tiempo real ($dt$) sobre la equation de field definida.</p>
                     </div>
 
                     <!-- CASO 1: VECTORES Y COMPONENTES (DCL) -->
@@ -141,7 +141,7 @@
                             <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Gravedad Interactiva
                         </p>
                         <p class="text-xs">
-                            Activar la gravedad añade una Force constante descendente $\vec{W} = m\vec{g}$. Si el campo $\vec{E}$ empuja en sentido opuesto con la intensidad adecuada, la partícula flotará (Net Force nula).
+                            Activar la gravedad añade una Force constante descendente $\vec{W} = m\vec{g}$. Si el field $\vec{E}$ empuja en sentido opuesto con la intensidad adecuada, la partícula flotará (Net Force nula).
                         </p>
                     </div>
 
@@ -150,17 +150,17 @@
                         <div id="teoria-millikan" class="flex flex-col gap-1">
                             <p class="font-bold text-indigo-800">1. Uniforme (Exp. Millikan)</p>
                             <div class="math-display">$$\vec{E} = (0, E_0, 0)$$</div>
-                            <p class="text-sm">El campo es constante en todo el espacio. Intenta ajustar el deslizador <strong>Intensidad $|E|$</strong> o la <strong>Masa ($m$)</strong> para lograr que la partícula se detenga en el aire, demostrando $qE_y = mg$.</p>
+                            <p class="text-sm">El field es constante en todo el espacio. Intenta ajustar el deslizador <strong>Intensidad $|E|$</strong> o la <strong>Masa ($m$)</strong> para lograr que la partícula se detenga en el aire, demostrando $qE_y = mg$.</p>
                         </div>
                         <div id="teoria-radial" class="hidden flex-col gap-1">
-                            <p class="font-bold text-indigo-800">2. Campo Central (Puntual)</p>
+                            <p class="font-bold text-indigo-800">2. Field Central (Puntual)</p>
                             <div class="math-display">$$\vec{E} = k \frac{\hat{r}}{r^2}$$</div>
-                            <p class="text-sm">Simula el campo generado por una carga en el origen. Dependiendo del signo de $q$, la partícula será atraída o repelida en una Trajectory radial o parabólica modificada (tipo dispersión de Rutherford si hay Velocity inicial).</p>
+                            <p class="text-sm">Simula el field generado por una charge en el origen. Dependiendo del signo de $q$, la partícula será atraída o repelida en una Trajectory radial o parabólica modificada (tipo dispersión de Rutherford si hay Velocity inicial).</p>
                         </div>
                         <div id="teoria-rotacional" class="hidden flex-col gap-1">
-                            <p class="font-bold text-indigo-800">3. Campo Rotacional</p>
+                            <p class="font-bold text-indigo-800">3. Field Rotacional</p>
                             <div class="math-display">$$\vec{E} = (-y, x, 0)$$</div>
-                            <p class="text-sm">Un campo artificial donde las líneas forman vórtices cerrados. Si la partícula tiene masa y no hay gravedad, trazará órbitas complejas espirales acelerando constantemente angularmente.</p>
+                            <p class="text-sm">Un field artificial donde las líneas forman vórtices cerrados. Si la partícula tiene masa y no hay gravedad, trazará órbitas complejas espirales acelerando constantemente angularmente.</p>
                         </div>
                         <div id="teoria-custom" class="hidden flex-col gap-1">
                             <p class="font-bold text-indigo-800">4. Equation Libre</p>
@@ -237,7 +237,7 @@
                         <!-- Fila 2 -->
                         <div class="flex w-full gap-[1.5vmin] items-center">
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Carga de la partícula">Carga $q$:</label>
+                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Charge de la partícula">Charge $q$:</label>
                                 <input type="range" id="slider-q" min="-5" max="5" step="0.5" value="1" class="w-[3.5vw]">
                                 <span id="val-q" class="font-mono font-bold w-[1.5vw] text-right text-red-600">1.0</span>
                             </div>
@@ -249,7 +249,7 @@
                             </div>
 
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="magnitudeeeee base del Campo">Mag. $\vec{E}$:</label>
+                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="magnitudeeeee base del Field">Mag. $\vec{E}$:</label>
                                 <input type="range" id="slider-e" min="0" max="10" step="0.5" value="5" class="w-[3.5vw]">
                                 <span id="val-e" class="font-mono font-bold w-[1.5vw] text-right text-purple-600">5.0</span>
                             </div>
@@ -321,12 +321,12 @@
                                     <canvas id="dcl-canvas" class="absolute top-0 left-0 w-full h-full"></canvas>
                                 </div>
                                 <div class="text-center text-xs text-slate-300 mt-1 font-mono flex flex-col items-center">
-                                    <span>F_eléctrica: <span id="ui-dcl-fe" class="text-yellow-400">0.0</span> N</span>
+                                    <span>F_electric: <span id="ui-dcl-fe" class="text-yellow-400">0.0</span> N</span>
                                     <span>W_gravedad: <span id="ui-dcl-wg" class="text-emerald-300">0.0</span> N</span>
                                 </div>
                             </div>
 
-                            <!-- Chart Perfil del Campo -->
+                            <!-- Chart Perfil del Field -->
                             <div class="h-[45%] graph-wrapper p-[1vmin] flex flex-col bg-slate-50">
                                 <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(12px, 1vw, 15px);">
                                     Chart $Y(t)$ vs Time
@@ -431,9 +431,9 @@
         // ==========================================
         let params = {
             config: 'millikan',
-            q: 1.0,      // Carga
+            q: 1.0,      // Charge
             m: 1.0,      // Masa
-            E_scale: 5.0, // Multiplicador de campo
+            E_scale: 5.0, // Multiplicador de field
             g: 5.0,       // Scale visual de gravedad (m/s^2 Acceleration base)
             useGravity: true,
             is3D: false,
@@ -448,7 +448,7 @@
             maxTrail: 300
         };
 
-        // Materiales y Geometrías
+        // Materiales y Geometrys
         const geoTest = new THREE.SphereGeometry(0.4, 32, 32);
         const matTest = new THREE.MeshStandardMaterial({ color: 0xfacc15, roughness: 0.1, emissive: 0x665500 });
         particle.mesh = new THREE.Mesh(geoTest, matTest);
@@ -526,17 +526,17 @@
 
             switch (params.config) {
                 case 'millikan':
-                    // Campo uniforme hacia arriba
+                    // Field uniforme hacia arriba
                     E.set(0, k, 0);
                     break;
                 case 'radial':
-                    // Campo de una carga puntual en el origen
+                    // Field de una charge puntual en el origen
                     let r2 = x*x + y*y + z*z + 0.1; // evitamos div/0
                     let r = Math.sqrt(r2);
                     E.set((k*10*x)/(r2*r), (k*10*y)/(r2*r), (k*10*z)/(r2*r));
                     break;
                 case 'rotacional':
-                    // Campo que genera giros espirales
+                    // Field que genera giros espirales
                     E.set(-k * y * 0.5, k * x * 0.5, 0);
                     break;
                 case 'custom':
@@ -550,7 +550,7 @@
                 case 'placas':
                     // Placas ubicadas entre x=-5 y x=5, separadas entre y=-5 y y=5, con profundidad z=-2.5 a 2.5
                     if (x >= -5 && x <= 5 && y <= 5 && y >= -5 && z >= -2.5 && z <= 2.5) {
-                        // Campo uniforme apuntando de la placa positiva a la negativa (hacia abajo)
+                        // Field uniforme apuntando de la placa positiva a la negativa (hacia abajo)
                         E.set(0, -k * 1.5, 0);
                     } else {
                         // Fuera del condensador no hay Electric Field
@@ -623,7 +623,7 @@
             if (params.isPlaying) {
                 simTime += dt;
                 
-                // 1. Calculate Campo y Forces
+                // 1. Calculate Field y Forces
                 let E = calculateE(particle.pos);
                 let Fe = E.clone().multiplyScalar(params.q);
                 
@@ -632,7 +632,7 @@
 
                 let Fnet = Fe.clone().add(W);
                 
-                // 2. Segunda Ley de Newton: a = F/m
+                // 2. Segunda Law of Newton: a = F/m
                 let mass = Math.max(params.m, 0.01); // prevenir div/0
                 let acc = Fnet.clone().divideScalar(mass);
 
@@ -869,7 +869,7 @@
 
             // Dibujar W (Gravedad)
             drawArrowCtx(W, "#34d399", 2); // Verde esmeralda
-            // Dibujar Fe (Eléctrica)
+            // Dibujar Fe (Electric)
             drawArrowCtx(Fe, "#facc15", 2); // Amarillo
             // Dibujar Neta
             drawArrowCtx(Fnet, "#ef4444", 3, true); // Rojo punteado
@@ -1016,7 +1016,7 @@
             params.config = e.target.value; 
             updateTeoriaUI(params.config);
             
-            // Lógica especial al select Placas Paralelas para que la partícula "entre" al campo
+            // Lógica especial al select Placas Paralelas para que la partícula "entre" al field
             if (params.config === 'placas') {
                 document.getElementById('in-vx').value = 6;
                 document.getElementById('in-vy').value = 0;
@@ -1026,7 +1026,7 @@
                 particle.vel.set(6, 0, 0);     // Velocity inicial horizontal aplicada
                 particle.trail = [];
                 trailLine.geometry.setFromPoints([]);
-                // Sugerimos desactivar la gravedad para ver el efecto puro de desviación eléctrica
+                // Sugerimos desactivar la gravedad para ver el efecto puro de desviación electric
                 document.getElementById('toggle-grav').checked = false;
                 params.useGravity = false;
             } else {

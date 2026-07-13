@@ -195,25 +195,25 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <script>
 const GAME_CONFIG = {
   titulo: "Gauss\'s Law",
-  descripcion: "Domina el Electric Flux y las superficies gaussianas. 5 rondas de simetría EM.",
+  descripcion: "Domina el Electric Flux y las superficies gaussianas. 5 rondas de symmetry EM.",
   color: "#dc2626",
   moduloId: "m3-j1",
   xpGanado: 25,
-  logro: {icono:"<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>",nombre:"Guardián del Flujo",desc:"Completaste el Physics Quest de Gauss\'s Law sin errores"},
+  logro: {icono:"<i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>",nombre:"Guardián del Flux",desc:"Completaste el Physics Quest de Gauss\'s Law sin errores"},
   rondas: [
     {
       titulo:"Ronda 1",categoria:"FLUJO",
       Question:"El Electric Flux a través de una superficie cerrada que no contiene Charges es:",
       formula:"Φ = Q_enc/ε₀",
-      Options:["Igual al campo × área","Cero","Negative siempre","Positive siempre"],correcta:1,
-      feedback_ok:"Φ = Q_enc/ε₀ = 0/ε₀ = 0. Sin carga dentro, el flujo neto es cero.",
+      Options:["Igual al field × área","Cero","Negative siempre","Positive siempre"],correcta:1,
+      feedback_ok:"Φ = Q_enc/ε₀ = 0/ε₀ = 0. Sin charge dentro, el flux neto es cero.",
       feedback_bad:"Φ = Q_enc/ε₀. Si Q_enc = 0 → Φ = 0."
     },
     {
       titulo:"Ronda 2",categoria:"SIMETRÍA",
       Question:"Para aplicar la Gauss\'s Law con máxima eficiencia, la superficie gaussiana debe tener:",
       formula:null,
-      Options:["El mismo material que el conductor","Simetría que haga E constante y paralelo a dA","La mayor área posible","Forma de cubo siempre"],correcta:1,
+      Options:["El mismo material que el conductor","Symmetry que haga E constante y paralelo a dA","La mayor área posible","Forma de cubo siempre"],correcta:1,
       feedback_ok:"La superficie ideal hace que E sea constante y paralelo (o perpendicular) a dA, simplificando la integral.",
       feedback_bad:"La clave es que E sea constante en la superficie para poder sacarlo de la integral."
     },
@@ -229,17 +229,17 @@ const GAME_CONFIG = {
       titulo:"Ronda 4",categoria:"CONDUCTOR",
       Question:"El Electric Field dentro de un conductor en equilibrio electrostático es:",
       formula:null,
-      Options:["Máximo en el centro","Cero","Igual al campo externo","Proporcional a la carga"],correcta:1,
-      feedback_ok:"En equilibrio electrostático, E = 0 dentro del conductor. Las Charges libres se redistribuyen hasta cancelar el campo.",
-      feedback_bad:"E = 0 dentro. Las Charges libres del conductor se mueven hasta cancelar cualquier campo interno."
+      Options:["Máximo en el centro","Cero","Igual al field externo","Proporcional a la charge"],correcta:1,
+      feedback_ok:"En equilibrio electrostático, E = 0 dentro del conductor. Las Charges libres se redistribuyen hasta cancelar el field.",
+      feedback_bad:"E = 0 dentro. Las Charges libres del conductor se mueven hasta cancelar cualquier field interno."
     },
     {
       titulo:"Ronda 5",categoria:"GAUSS AVANZADO",
-      Question:"El campo de un plano conductor infinito con densidad σ a CUALQUIER Distance es:",
+      Question:"El field de un plano conductor infinito con densidad σ a CUALQUIER Distance es:",
       formula:"E = σ/ε₀",
       Options:["Decrece como 1/r²","Decrece como 1/r","Es constante: E = σ/ε₀","Depende del conductor"],correcta:2,
-      feedback_ok:"¡Campo constante! E = σ/ε₀ para conductor, independiente de la Distance. Esto hace los condensadores tan especiales.",
-      feedback_bad:"E = σ/ε₀ = constante. El plano infinito crea campo uniforme a cualquier Distance."
+      feedback_ok:"¡Field constante! E = σ/ε₀ para conductor, independiente de la Distance. Esto hace los condensadores tan especiales.",
+      feedback_bad:"E = σ/ε₀ = constante. El plano infinito crea field uniforme a cualquier Distance."
     }
   ]
 };

@@ -394,7 +394,7 @@
     <div id="modal-overlay" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()"><i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i></button>
-            <h2 style="margin-top:0; color:#0f172a; text-align:center; font-size:1.4rem;">Exploración de Simetrías Vectoriales</h2>
+            <h2 style="margin-top:0; color:#0f172a; text-align:center; font-size:1.4rem;">Exploración de Symmetrys Vectoriales</h2>
             <div id="modal-body"></div>
         </div>
     </div>
@@ -408,7 +408,7 @@
             </div>
             <div class="panel">
                 <strong>Consejo de Resolution (Recursividad):</strong>
-                Observe cómo la solution del Ring (1D) se convierte en el diferencial $d\vec{E}$ para Calculate el Disk (2D). Asimismo, el campo del Disk es el diferencial para el Cylinder (3D). Preste atención a la notación vectorial $d\vec{E}$.
+                Observe cómo la solution del Ring (1D) se convierte en el diferencial $d\vec{E}$ para Calculate el Disk (2D). Asimismo, el field del Disk es el diferencial para el Cylinder (3D). Preste atención a la notación vectorial $d\vec{E}$.
             </div>
         </div>
     </header>
@@ -575,7 +575,7 @@
 
                     <!-- FILAS DE TEXTO (ZONAS DROP) -->
                     <tr>
-                        <td>2. Identifique la densidad de carga apropiada</td>
+                        <td>2. Identifique la densidad de charge apropiada</td>
                         <td class="dropzone" id="dz_l_2"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_2"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_2"><div class="dropzone-content"></div></td>
@@ -587,7 +587,7 @@
                         <td class="dropzone" id="dz_v_3"><div class="dropzone-content"></div></td>
                     </tr>
                     <tr>
-                        <td>4. Expresión diferencial del campo $d\vec{E}$ <br><small style="color:var(--primary-color);">(Recursividad de dimensiones)</small></td>
+                        <td>4. Expresión diferencial del field $d\vec{E}$ <br><small style="color:var(--primary-color);">(Recursividad de dimensiones)</small></td>
                         <td class="dropzone" id="dz_l_4"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_4"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_4"><div class="dropzone-content"></div></td>
@@ -599,7 +599,7 @@
                         <td class="dropzone" id="dz_v_5"><div class="dropzone-content"></div></td>
                     </tr>
                     <tr>
-                        <td>6. Aplique argumentos de simetría (cancelación de vectores)</td>
+                        <td>6. Aplique argumentos de symmetry (cancelación de vectores)</td>
                         <td class="dropzone" id="dz_l_6"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_6"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_6"><div class="dropzone-content"></div></td>
@@ -671,7 +671,7 @@
             { id: "f_l_3", target: "dz_l_3", tex: "dq = \\lambda dl = \\lambda a d\\phi" },
             { id: "f_l_4", target: "dz_l_4", tex: "d\\vec{E} = k_e \\frac{dq}{r^2} \\hat{r}" },
             { id: "f_l_5", target: "dz_l_5", tex: "d\\vec{E} = k_e \\frac{\\lambda a d\\phi}{a^2 + x_0^2} (\\cos(\\theta)\\hat{i} - \\text{sen}(\\theta)\\hat{r}_{||})" },
-            { id: "f_l_6", target: "dz_l_6", tex: "d\\vec{E}_{||} = 0 \\text{ (Simetría radial)}" },
+            { id: "f_l_6", target: "dz_l_6", tex: "d\\vec{E}_{||} = 0 \\text{ (Symmetry radial)}" },
             { id: "f_l_7", target: "dz_l_7", tex: "\\vec{E} = k_e \\frac{\\lambda a x_0}{(a^2 + x_0^2)^{3/2}} \\int_{0}^{2\\pi} d\\phi \\, \\hat{i}" },
             { id: "f_l_8", target: "dz_l_8", tex: "\\vec{E} = k_e \\frac{Q x_0}{(a^2 + x_0^2)^{3/2}} \\hat{i}" },
             
@@ -689,7 +689,7 @@
             { id: "f_v_3", target: "dz_v_3", tex: "dq = \\rho (\\pi R^2 dx) \\; \\text{(Disk)}" },
             { id: "f_v_4", target: "dz_v_4", tex: "d\\vec{E} = 2k_e \\frac{dq}{R^2} \\left( 1 - \\frac{x_1 - x}{\\sqrt{R^2 + (x_1 - x)^2}} \\right) \\hat{i}" }, // Recursividad de 2D
             { id: "f_v_5", target: "dz_v_5", tex: "d\\vec{E} = 2k_e \\rho \\pi \\, dx \\left( 1 - \\frac{x_1 - x}{\\sqrt{R^2 + (x_1 - x)^2}} \\right) \\hat{i}" },
-            { id: "f_v_6", target: "dz_v_6", tex: "d\\vec{E}_\\perp = 0 \\; \\text{(Simetría axial)}" },
+            { id: "f_v_6", target: "dz_v_6", tex: "d\\vec{E}_\\perp = 0 \\; \\text{(Symmetry axial)}" },
             { id: "f_v_7", target: "dz_v_7", tex: "\\vec{E} = 2k_e \\rho \\pi \\left( \\int_0^L dx - \\int_0^L \\frac{x_1 - x}{\\sqrt{R^2 + (x_1-x)^2}} dx \\right) \\hat{i}" },
             { id: "f_v_8", target: "dz_v_8", tex: "\\vec{E} = 2k_e \\frac{Q}{R^2 L} \\left( L + \\sqrt{R^2 + (x_1 - L)^2} - \\sqrt{R^2 + x_1^2} \\right) \\hat{i}" } 
         ];

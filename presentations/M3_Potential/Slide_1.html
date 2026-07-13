@@ -95,7 +95,7 @@
             
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-blue-500">
                 <h1 class="font-bold tracking-wide flex items-center gap-3" style="font-size: clamp(20px, 2vw, 36px);">
-                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio: Work Eléctrico y Superficies Equipotentials
+                    <span class="inline-flex items-center text-teal-400 mr-1"><i data-lucide="microscope" class="w-4 h-4 inline"></i></span> Laboratorio: Work Electric y Superficies Equipotentials
                 </h1>
                 <p class="text-blue-300" style="font-size: clamp(12px, 1vw, 18px);">
                     Integración de Línea, Conservación de Energy e Independencia de la Trajectory
@@ -110,7 +110,7 @@
                     <!-- BASE COMÚN -->
                     <div class="bg-slate-100 p-[1.5vmin] border-l-[0.5vmin] border-blue-600 shadow-sm rounded-r-lg mb-[1vmin]">
                         <p class="mb-1 flex items-start">
-                            <span>El <strong>Work Eléctrico ($W$)</strong> realizado por un Electric Field $\vec{E}$ sobre una carga de prueba $q$ que se desplaza desde un punto $A$ a un punto $B$ se define mediante la integral de línea de la Force eléctrica:</span>
+                            <span>El <strong>Work Electric ($W$)</strong> realizado por un Electric Field $\vec{E}$ sobre una charge de prueba $q$ que se desplaza desde un punto $A$ a un punto $B$ se define mediante la integral de línea de la Force electric:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
                                 <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Integración Numérica:</strong> En esta simulación, la partícula avanza en pasos infinitesimales $d\vec{r}$, acumulando el producto punto $\vec{F} \cdot d\vec{r}$ en tiempo real.</span>
@@ -123,60 +123,60 @@
                     <!-- CASO 1: Energy PowerL -->
                     <div class="bg-emerald-50 p-[1.5vmin] border border-emerald-200 shadow-sm rounded-lg relative mb-[1vmin]">
                         <p class="font-bold text-emerald-800 flex items-center">
-                            Campos Conservativos y Potential ($V$)
+                            Fields Conservativos y Potential ($V$)
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn"><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span></span>
-                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Analogía TopoChart:</strong> El Powerl es como la "altura". Movese perpendicular al campo no cuesta Work, moverse a favor del campo extrae Energy.</span>
+                                <span class="tip-content"><strong><span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Analogía TopoChart:</strong> El Powerl es como la "altura". Movese perpendicular al field no cuesta Work, moverse a favor del field extrae Energy.</span>
                             </span>
                         </p>
-                        <p class="mt-1 text-sm">Dado que el campo electrostático es conservativo ($\nabla \times \vec{E} = 0$), el Work <strong>no depende de la Trajectory</strong>, sino solo de la diferencia de Powerl electrostático ($\Delta V$) entre los extremos:</p>
+                        <p class="mt-1 text-sm">Dado que el field electrostático es conservativo ($\nabla \times \vec{E} = 0$), el Work <strong>no depende de la Trajectory</strong>, sino solo de la diferencia de Powerl electrostático ($\Delta V$) entre los extremos:</p>
                         <div class="math-display">
                             \begin{aligned}
-                            W_{campo} &= -\Delta U = -(U_B - U_A) \\
-                            W_{campo} &= q(V_A - V_B)
+                            W_{field} &= -\Delta U = -(U_B - U_A) \\
+                            W_{field} &= q(V_A - V_B)
                             \end{aligned}
                         </div>
                         <hr class="border-emerald-200 my-2">
                         <p class="font-bold text-sm text-emerald-900 flex items-center">
-                            <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Work Externo vs. Campo
+                            <i data-lucide="dot" class="w-4 h-4 inline text-sky-400"></i>️ Work Externo vs. Field
                         </p>
                         <p class="text-xs">
-                            Si desplazamos la carga lentamente (sin acelerarla), un agente externo debe ejercer una Force opuesta al campo. Por lo tanto, el Work del agente externo es el negativo del Work del campo: $W_{ext} = \Delta U = q(V_B - V_A)$.
+                            Si desplazamos la charge lentamente (sin acelerarla), un agente externo debe ejercer una Force opuesta al field. Por lo tanto, el Work del agente externo es el negativo del Work del field: $W_{ext} = \Delta U = q(V_B - V_A)$.
                         </p>
                     </div>
 
                     <!-- CASOS ESPECÍFICOS DE PowerL Y CAMPO -->
                     <div id="teoria-dinamica" class="bg-indigo-50 p-[1.5vmin] border border-indigo-200 shadow-sm rounded-lg relative flex-1">
                         <div id="teoria-millikan" class="flex flex-col gap-1">
-                            <p class="font-bold text-indigo-800">1. Campo Uniforme (Placas)</p>
+                            <p class="font-bold text-indigo-800">1. Field Uniforme (Placas)</p>
                             <div class="math-display">$$V(y) = -E_0 y$$</div>
-                            <p class="text-sm">El Powerl decrece linealmente en la dirección del campo. Las Equipotential Surfaces son planos paralelos. El Work numérico y analítico coincidirán sin importar qué tan sinuosa sea la ruta.</p>
+                            <p class="text-sm">El Powerl decrece linealmente en la dirección del field. Las Equipotential Surfaces son planos paralelos. El Work numérico y analítico coincidirán sin importar qué tan sinuosa sea la ruta.</p>
                         </div>
                         <div id="teoria-radial" class="hidden flex-col gap-1">
-                            <p class="font-bold text-indigo-800">2. Carga Puntual Central</p>
+                            <p class="font-bold text-indigo-800">2. Charge Puntual Central</p>
                             <div class="math-display">$$V(r) = k \frac{Q}{r}$$</div>
-                            <p class="text-sm">El Powerl obedece a la ley de la inversa de la Distance. Si la carga de prueba es del mismo signo, acercarla requiere Work externo negativo (el campo se opone); si es opuesto, el campo hace el Work.</p>
+                            <p class="text-sm">El Powerl obedece a la law of la inversa de la Distance. Si la charge de prueba es del mismo signo, acercarla requiere Work externo negativo (el field se opone); si es opuesto, el field hace el Work.</p>
                         </div>
                         <div id="teoria-rotacional" class="hidden flex-col gap-1">
-                            <p class="font-bold text-indigo-800">3. Dipolo Eléctrico</p>
+                            <p class="font-bold text-indigo-800">3. Dipolo Electric</p>
                             <div class="math-display">$$V(x,y) = kQ \left(\frac{1}{r_1} - \frac{1}{r_2}\right)$$</div>
-                            <p class="text-sm">Configuration de dos Charges opuestas. Movese por el eje de simetría (donde las Distances $r_1$ y $r_2$ son iguales) implica viajar por una superficie equiPowerl de $V=0$, resultando en $W=0$.</p>
+                            <p class="text-sm">Configuration de dos Charges opuestas. Movese por el eje de symmetry (donde las Distances $r_1$ y $r_2$ son iguales) implica viajar por una superficie equiPowerl de $V=0$, resultando en $W=0$.</p>
                         </div>
                         <div id="teoria-custom" class="hidden flex-col gap-1">
                             <p class="font-bold text-indigo-800">4. Potential Libre V(x,y)</p>
-                            <p class="text-sm mb-1">Define una expresión escalar para $V(x,y)$. El motor derivará automáticamente el campo $\vec{E} = -\nabla V$ mediante diferencias finitas y Calculateá el Work exacto de la Trajectory.</p>
+                            <p class="text-sm mb-1">Define una expresión escalar para $V(x,y)$. El motor derivará automáticamente el field $\vec{E} = -\nabla V$ mediante diferencias finitas y Calculateá el Work exacto de la Trajectory.</p>
                             <p class="text-xs text-indigo-600">example de curva asintótica: <code class="bg-indigo-100 px-1 rounded">sin(x)*cos(y)</code></p>
                         </div>
                         <div id="teoria-placas" class="hidden flex-col gap-1">
                             <p class="font-bold text-indigo-800">5. Cuadripolo / Múltiples Charges</p>
                             <div class="math-display">$$V = \sum_{i} k\frac{q_i}{r_i}$$</div>
-                            <p class="text-sm">Superposition de 4 fuentes alternadas. Observa la complejidad del mapa de calor equiPowerl. Incluso en geometrías complejas, la integral de línea en bucles cerrados ($A \to B \to A$) siempre dará $0 \text{ J}$.</p>
+                            <p class="text-sm">Superposition de 4 fuentes alternadas. Observa la complejidad del mapa de calor equiPowerl. Incluso en geometrys complejas, la integral de línea en bucles cerrados ($A \to B \to A$) siempre dará $0 \text{ J}$.</p>
                         </div>
-                        <!-- NUEVO CASO AÑADIDO: Campo E vectorial libre -->
+                        <!-- NUEVO CASO AÑADIDO: Field E vectorial libre -->
                         <div id="teoria-custom-e" class="hidden flex-col gap-1">
                             <p class="font-bold text-teal-800">6. Electric Field Libre $\vec{E}(x,y,z)$</p>
-                            <p class="text-sm mb-1">Define directamente las componentes vectoriales del campo. <strong>¡Atención!</strong> Si el campo definido no cumple $\nabla \times \vec{E} = 0$, el campo <strong>no será conservativo</strong>.</p>
-                            <p class="text-xs text-teal-700">Explora añadiendo múltiples puntos de control Bézier: el Work numérico dependerá del camino elegido, probando que no existe un Powerl escalar global $V$ para este campo.</p>
+                            <p class="text-sm mb-1">Define directamente las componentes vectoriales del field. <strong>¡Atención!</strong> Si el field definido no cumple $\nabla \times \vec{E} = 0$, el field <strong>no será conservativo</strong>.</p>
+                            <p class="text-xs text-teal-700">Explora añadiendo múltiples puntos de control Bézier: el Work numérico dependerá del camino elegido, probando que no existe un Powerl escalar global $V$ para este field.</p>
                         </div>
                     </div>
 
@@ -217,13 +217,13 @@
                             <div class="control-group border-r border-slate-300 pr-3">
                                 <label class="font-bold text-slate-800">Sistema:</label>
                                 <select id="select-config" class="bg-white border border-slate-300 rounded px-1 py-0.5 font-bold text-slate-700 outline-none hover:border-blue-500 cursor-pointer">
-                                    <option value="millikan">1. Campo Uniforme</option>
-                                    <option value="radial">2. Carga Puntual (+/-)</option>
-                                    <option value="rotacional">3. Dipolo Eléctrico</option>
+                                    <option value="millikan">1. Field Uniforme</option>
+                                    <option value="radial">2. Charge Puntual (+/-)</option>
+                                    <option value="rotacional">3. Dipolo Electric</option>
                                     <option value="custom">4. Potential Libre V(x,y)</option>
                                     <option value="placas">5. Cuadripolo Múltiple</option>
                                     <!-- NUEVO CAMPO AÑADIDO -->
-                                    <option value="custom-E" class="text-teal-700 font-bold">6. Campo Libre E(x,y,z)</option>
+                                    <option value="custom-E" class="text-teal-700 font-bold">6. Field Libre E(x,y,z)</option>
                                 </select>
                             </div>
 
@@ -249,13 +249,13 @@
                         <!-- Fila 2 -->
                         <div class="flex w-full gap-[1.5vmin] items-center">
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Carga que se desplaza">Carga prueba $q$:</label>
+                                <label class="font-bold text-red-700 text-xs md:text-sm" title="Charge que se desplaza">Charge prueba $q$:</label>
                                 <input type="range" id="slider-q" min="-5" max="5" step="0.5" value="1" class="w-[3.5vw]">
                                 <span id="val-q" class="font-mono font-bold w-[1.5vw] text-right text-red-600">1.0</span>
                             </div>
 
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-blue-700 text-xs md:text-sm" title="magnitudeeeee de la fuente de campo">Carga Fte. $Q$:</label>
+                                <label class="font-bold text-blue-700 text-xs md:text-sm" title="magnitudeeeee de la fuente de field">Charge Fte. $Q$:</label>
                                 <input type="range" id="slider-m" min="-10" max="10" step="1" value="5.0" class="w-[3.5vw]">
                                 <span id="val-m" class="font-mono font-bold w-[1.5vw] text-right text-blue-600">5.0</span>
                             </div>
@@ -407,9 +407,9 @@
         // ==========================================
         let params = {
             config: 'millikan',
-            q: 1.0,      // Carga de prueba
-            m: 5.0,      // Carga Fuente Q
-            E_scale: 2.0, // Multiplicador de campo k
+            q: 1.0,      // Charge de prueba
+            m: 5.0,      // Charge Fuente Q
+            E_scale: 2.0, // Multiplicador de field k
             useEqui: true,
             is3D: false,
             isPlaying: false
@@ -512,7 +512,7 @@
 
         // CÁLCULO DEL PowerL ESCALAR V(x,y)
         function calculateV(pos) {
-            // NUEVA CONDICIONAL: Si el campo es Custom-E Vectorial, el Powerl escalar podría no estar definido (no conservativo).
+            // NUEVA CONDICIONAL: Si el field es Custom-E Vectorial, el Powerl escalar podría no estar definido (no conservativo).
             if (params.config === 'custom-E') return 0; 
 
             let x = pos.x, y = pos.y, z = 0;
@@ -521,14 +521,14 @@
 
             switch (params.config) {
                 case 'millikan':
-                    // Campo uniforme hacia abajo (Potential crece arriba)
+                    // Field uniforme hacia abajo (Potential crece arriba)
                     return k * y;
                 case 'radial':
-                    // Carga puntual en el origen
+                    // Charge puntual en el origen
                     let r = Math.sqrt(x*x + y*y + 0.1);
                     return (k * Q * 3) / r;
                 case 'rotacional':
-                    // Dipolo eléctrico (Q y -Q)
+                    // Dipolo electric (Q y -Q)
                     let r1 = Math.sqrt((x-3)**2 + y**2 + 0.1);
                     let r2 = Math.sqrt((x+3)**2 + y**2 + 0.1);
                     return (k * Q * 3) / r1 - (k * Q * 3) / r2;
@@ -577,7 +577,7 @@
         // 5. RENDERIZADO VISUAL (MALLA PowerL Y VECTORES)
         // ==========================================
         function updateEquiMesh() {
-            // Si es un campo customizado vectorial, se ocultan las equiPowerles (puede ser no conservativo)
+            // Si es un field customizado vectorial, se ocultan las equiPowerles (puede ser no conservativo)
             if (!params.useEqui || params.config === 'custom-E') { equiMesh.visible = false; return; }
             equiMesh.visible = true;
             
@@ -782,7 +782,7 @@
             workData.vA = calculateV(nodeA.position);
             let v_actual = calculateV(particle.pos);
 
-            // Modificación para contemplar Campos E Independientes (que no provienen de V)
+            // Modificación para contemplar Fields E Independientes (que no provienen de V)
             if (params.config === 'custom-E') {
                 document.getElementById('ui-pos-x').textContent = "N/A ";
                 document.getElementById('ui-pos-y').textContent = "N/A ";
@@ -964,7 +964,7 @@
                 dclCtx.stroke();
             };
 
-            drawArrowCtx(Fe, "#facc15", 3, scaleF); // Force Eléctrica (Amarillo)
+            drawArrowCtx(Fe, "#facc15", 3, scaleF); // Force Electric (Amarillo)
             drawArrowCtx(dr, "#93c5fd", 2, scaleV); // Desplazamiento local dr (Azul Claro)
         }
 
@@ -1012,7 +1012,7 @@
             gCtx.beginPath(); gCtx.strokeStyle = "#cbd5e1"; gCtx.lineWidth = 1; gCtx.setLineDash([2,2]);
             gCtx.moveTo(padX, mapY(0)); gCtx.lineTo(w - padX/2, mapY(0)); gCtx.stroke(); gCtx.setLineDash([]);
 
-            // W Analítico (Azul Solido grueso, Hide en Campos Customizados E)
+            // W Analítico (Azul Solido grueso, Hide en Fields Customizados E)
             if (params.config !== 'custom-E') {
                 gCtx.beginPath(); gCtx.strokeStyle = "#2563eb"; gCtx.lineWidth = 3;
                 for(let i=0; i<graphData.length; i++) {
@@ -1129,7 +1129,7 @@
         // Listeners for custom E components
         ['in-e-x', 'in-e-y', 'in-e-z'].forEach(id => {
             document.getElementById(id).addEventListener('input', () => {
-                updateBackgroundGrid(); // Recomputar visualización del campo
+                updateBackgroundGrid(); // Recomputar visualización del field
             });
         });
 

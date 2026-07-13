@@ -45,7 +45,7 @@
     <header class="h-14 bg-slate-900 border-b border-slate-800 flex items-center px-4 z-20 shrink-0 shadow-md">
         <div class="flex items-center gap-3">
             <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20">DC</div>
-            <h1 class="text-lg font-bold text-white">Simulator <span class="text-blue-400">Ley de Ohm y Power</span></h1>
+            <h1 class="text-lg font-bold text-white">Simulator <span class="text-blue-400">Ohm's Law y Power</span></h1>
         </div>
     </header>
 
@@ -287,7 +287,7 @@
             let mathHtml = `
                 <div class="grid grid-cols-2 gap-4">
                     <div class="bg-slate-800/50 p-3 rounded border border-slate-700">
-                        <div class="text-xs text-blue-400 font-bold mb-1 uppercase">Current (Ley de Ohm)</div>
+                        <div class="text-xs text-blue-400 font-bold mb-1 uppercase">Current (Ohm's Law)</div>
                         $$ I = \\frac{V}{R} $$
                         $$ I = \\frac{${state.V.toFixed(1)}}{${state.R.toFixed(1)}} = \\mathbf{${I.toFixed(2)}\\ A} $$
                     </div>

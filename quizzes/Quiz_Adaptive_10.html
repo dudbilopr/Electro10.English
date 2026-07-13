@@ -143,15 +143,15 @@ const QUIZ_CONFIG = {
    Options:[{"texto":"ε = −dΦ_B/dt","Correct":true},{"texto":"ε = Φ_B × t","Correct":false},{"texto":"ε = B × A","Correct":false},{"texto":"ε = dQ/dt","Correct":false}],
    feedback_ok:"ε = −dΦ_B/dt. El signo − es Lenz.",
    feedback_bad:"Faraday: ε = −dΦ_B/dt.",
-   pista:"La FEM depende de la TASA DE CAMBIO del flujo."
+   pista:"La FEM depende de la TASA DE CAMBIO del flux."
   },
   {Level:1,id:"c10-n1-2",
-   texto:"La Ley de Lenz dice que la Current inducida:",
+   texto:"La Lenz's Law dice que la Current inducida:",
    
-   Options:[{"texto":"Aumenta el flujo","Correct":false},{"texto":"Se opone al cambio de flujo","Correct":true},{"texto":"Siempre es horaria","Correct":false},{"texto":"Depende de R","Correct":false}],
-   feedback_ok:"Lenz: se opone al cambio de flujo (conservación de Energy).",
+   Options:[{"texto":"Aumenta el flux","Correct":false},{"texto":"Se opone al cambio de flux","Correct":true},{"texto":"Siempre es horaria","Correct":false},{"texto":"Depende de R","Correct":false}],
+   feedback_ok:"Lenz: se opone al cambio de flux (conservación de Energy).",
    feedback_bad:"El signo '−' en ε = −dΦ/dt representa Lenz.",
-   pista:"El signo '−' en Faraday representa la Ley de Lenz."
+   pista:"El signo '−' en Faraday representa la Lenz's Law."
   },
   {Level:1,id:"c10-n1-3",
    texto:"Espira estacionaria en B constante. FEM:",
@@ -178,9 +178,9 @@ const QUIZ_CONFIG = {
    pista:"ε = BLv cuando v ⊥ B ⊥ L."
   },
   {Level:2,id:"c10-n2-6",
-   texto:"La inductancia mutua M:",
+   texto:"La inductance mutua M:",
    
-   Options:[{"texto":"FEM en una bobina cuando cambia I en la otra","Correct":true},{"texto":"El campo magnético total","Correct":false},{"texto":"La Resistance compartida","Correct":false},{"texto":"El flujo total","Correct":false}],
+   Options:[{"texto":"FEM en una bobina cuando cambia I en la otra","Correct":true},{"texto":"El magnetic field total","Correct":false},{"texto":"La Resistance compartida","Correct":false},{"texto":"El flux total","Correct":false}],
    feedback_ok:"ε₂ = −M dI₁/dt.",
    feedback_bad:"ε₂ = −M dI₁/dt. M cuantifica el acoplamiento.",
    pista:"M está en: ε = −M dI/dt."
@@ -194,7 +194,7 @@ const QUIZ_CONFIG = {
    pista:"V₂/V₁ = N₂/N₁ e I₁N₁ = I₂N₂."
   },
   {Level:3,id:"c10-n3-8",
-   texto:"Autoinductancia solenoide N=200, A=5cm², l=0.2m:",
+   texto:"Autoinductance solenoide N=200, A=5cm², l=0.2m:",
    formula:"L = μ₀N²A/l",
    Options:[{"texto":"L ≈ 126 μH","Correct":true},{"texto":"L ≈ 1.26 mH","Correct":false},{"texto":"L ≈ 12.6 μH","Correct":false},{"texto":"L ≈ 0.126 H","Correct":false}],
    feedback_ok:"L = 4π×10⁻⁷ × 40000 × 5×10⁻⁴ / 0.2 ≈ 126 μH.",

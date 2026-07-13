@@ -140,53 +140,53 @@ const QUIZ_CONFIG = {
   {Level:1,id:"c3-n1-1",
    texto:"El Electric Flux a través de una superficie se define como:",
    formula:"Φ = ∮ E·dA",
-   Options:[{"texto":"Número de Field Lines","Correct":false},{"texto":"Integral de E·dA","Correct":true},{"texto":"Force por área","Correct":false},{"texto":"Campo × carga","Correct":false}],
+   Options:[{"texto":"Número de Field Lines","Correct":false},{"texto":"Integral de E·dA","Correct":true},{"texto":"Force por área","Correct":false},{"texto":"Field × charge","Correct":false}],
    feedback_ok:"Φ = ∮ E·dA es la integral de la componente normal de E sobre la superficie.",
-   feedback_bad:"El flujo es Φ = ∮ E·dA. El número de líneas es solo una interpretación cualitativa.",
-   pista:"Flujo = cuánto campo pasa a través, considerando el Angle."
+   feedback_bad:"El flux es Φ = ∮ E·dA. El número de líneas es solo una interpretación cualitativa.",
+   pista:"Flux = cuánto field pasa a través, considerando el Angle."
   },
   {Level:1,id:"c3-n1-2",
-   texto:"La Gauss\'s Law relaciona el flujo con:",
+   texto:"La Gauss\'s Law relaciona el flux con:",
    formula:"∮ E·dA = Q_enc/ε₀",
-   Options:[{"texto":"La carga total dentro","Correct":true},{"texto":"La carga en la superficie","Correct":false},{"texto":"El campo en cada punto","Correct":false},{"texto":"El área","Correct":false}],
-   feedback_ok:"Solo la carga dentro de la superficie gaussiana contribuye al flujo neto.",
+   Options:[{"texto":"La charge total dentro","Correct":true},{"texto":"La charge en la superficie","Correct":false},{"texto":"El field en cada punto","Correct":false},{"texto":"El área","Correct":false}],
+   feedback_ok:"Solo la charge dentro de la superficie gaussiana contribuye al flux neto.",
    feedback_bad:"Φ = Q_enc/ε₀. Solo Q dentro importa.",
-   pista:"'Enc' = encerrada. Las Charges fuera no contribuyen al flujo NETO."
+   pista:"'Enc' = encerrada. Las Charges fuera no contribuyen al flux NETO."
   },
   {Level:1,id:"c3-n1-3",
-   texto:"Si Q_enc = 0, el flujo a través de cualquier superficie cerrada es:",
+   texto:"Si Q_enc = 0, el flux a través de cualquier superficie cerrada es:",
    
    Options:[{"texto":"Indefinido","Correct":false},{"texto":"Depende de E","Correct":false},{"texto":"Cero","Correct":true},{"texto":"Depende del área","Correct":false}],
-   feedback_ok:"Φ = Q_enc/ε₀ = 0. Aunque haya campo externo, el flujo neto es cero.",
+   feedback_ok:"Φ = Q_enc/ε₀ = 0. Aunque haya field externo, el flux neto es cero.",
    feedback_bad:"Gauss: Φ = Q_enc/ε₀. Si Q_enc = 0 → Φ = 0.",
    pista:"Φ = Q_enc/ε₀. ¿Cuánto es Φ si Q_enc = 0?"
   },
   {Level:2,id:"c3-n2-4",
-   texto:"Campo E en el interior de un conductor esférico en equilibrio:",
+   texto:"Field E en el interior de un conductor esférico en equilibrio:",
    
    Options:[{"texto":"E = kQ/r²","Correct":false},{"texto":"E = 0","Correct":true},{"texto":"E = σ/ε₀","Correct":false},{"texto":"E = ρr/(3ε₀)","Correct":false}],
    feedback_ok:"En un conductor en equilibrio, E = 0 en su interior.",
    feedback_bad:"Dentro de un conductor en equilibrio, E = 0. Las Charges libres se redistribuyen.",
-   pista:"¿Qué pasa con las Charges libres si hay campo interno en el conductor?"
+   pista:"¿Qué pasa con las Charges libres si hay field interno en el conductor?"
   },
   {Level:2,id:"c3-n2-5",
-   texto:"E dentro de una esfera aislante de radio R con carga Q uniformemente distribuida (r < R):",
+   texto:"E dentro de una esfera aislante de radio R con charge Q uniformemente distribuida (r < R):",
    formula:"E = kQr/R³",
    Options:[{"texto":"E = kQ/r²","Correct":false},{"texto":"E = 0","Correct":false},{"texto":"E = kQr/R³","Correct":true},{"texto":"E = kQ/R²","Correct":false}],
    feedback_ok:"Q_enc = Q(r/R)³. Gauss: E = kQr/R³ — crece linealmente con r.",
    feedback_bad:"Q_enc = Q(r³/R³). E = kQ_enc/r² = kQr/R³.",
-   pista:"¿Cuánta carga encierra una superficie de radio r < R dentro de la esfera?"
+   pista:"¿Cuánta charge encierra una superficie de radio r < R dentro de la esfera?"
   },
   {Level:2,id:"c3-n2-6",
    texto:"E fuera de un plano conductor con densidad superficial σ:",
    formula:"E = σ/ε₀ (conductor) vs σ/(2ε₀) (aislante)",
    Options:[{"texto":"E = σ/(2ε₀)","Correct":false},{"texto":"E = σ/ε₀","Correct":true},{"texto":"E = 2σ/ε₀","Correct":false},{"texto":"E = σε₀","Correct":false}],
-   feedback_ok:"Conductor: E = σ/ε₀. Aislante plano: E = σ/(2ε₀). El conductor tiene campo solo hacia afuera.",
-   feedback_bad:"Conductor: toda la carga está en la superficie y el campo sale solo hacia un lado → E = σ/ε₀.",
-   pista:"¿Cuántas caras del conductor contribuyen al campo externo?"
+   feedback_ok:"Conductor: E = σ/ε₀. Aislante plano: E = σ/(2ε₀). El conductor tiene field solo hacia afuera.",
+   feedback_bad:"Conductor: toda la charge está en la superficie y el field sale solo hacia un lado → E = σ/ε₀.",
+   pista:"¿Cuántas caras del conductor contribuyen al field externo?"
   },
   {Level:3,id:"c3-n3-7",
-   texto:"+Q en centro de cáscara esférica con carga −Q total. Campo para r > R:",
+   texto:"+Q en centro de cáscara esférica con charge −Q total. Field para r > R:",
    
    Options:[{"texto":"E = kQ/r²","Correct":false},{"texto":"E = 0","Correct":true},{"texto":"E = k(2Q)/r²","Correct":false},{"texto":"E = kQ/R²","Correct":false}],
    feedback_ok:"Q_enc = +Q − Q = 0. Gauss: E = 0 para r > R.",
@@ -194,19 +194,19 @@ const QUIZ_CONFIG = {
    pista:"Suma TODAS las Charges dentro de tu superficie gaussiana."
   },
   {Level:3,id:"c3-n3-8",
-   texto:"Simetría para Gauss en un cilindro largo con λ C/m:",
+   texto:"Symmetry para Gauss en un cilindro largo con λ C/m:",
    
    Options:[{"texto":"Esférica: 4πr²","Correct":false},{"texto":"Cilíndrica: E radial, S = 2πrL","Correct":true},{"texto":"Plana","Correct":false},{"texto":"No aplica Gauss","Correct":false}],
-   feedback_ok:"Simetría cilíndrica: E radial y constante en la superficie lateral S = 2πrL.",
-   feedback_bad:"Cylinder infinito: simetría cilíndrica. E es radial y constante en S_lateral.",
+   feedback_ok:"Symmetry cilíndrica: E radial y constante en la superficie lateral S = 2πrL.",
+   feedback_bad:"Cylinder infinito: symmetry cilíndrica. E es radial y constante en S_lateral.",
    pista:"¿En qué dirección apunta E de un conductor cilíndrico infinito?"
   },
   {Level:3,id:"c3-n3-9",
-   texto:"σ [C/m²] y su relación con el campo en superficie de conductor:",
+   texto:"σ [C/m²] y su relación con el field en superficie de conductor:",
    
    Options:[{"texto":"σ en C/m², E = σ/ε₀","Correct":true},{"texto":"σ en C/m, E = σε₀","Correct":false},{"texto":"σ en C/m³, E = σ/(3ε₀)","Correct":false},{"texto":"σ en V/m, E = σ","Correct":false}],
    feedback_ok:"σ [C/m²]. Para conductor: E = σ/ε₀ justo en su superficie.",
-   feedback_bad:"σ es carga por área → [C/m²]. Superficie conductora: E = σ/ε₀.",
+   feedback_bad:"σ es charge por área → [C/m²]. Superficie conductora: E = σ/ε₀.",
    pista:"Hay 3 densidades: λ [C/m], σ [C/m²] y ρ [C/m³]."
   }
   ]

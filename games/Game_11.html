@@ -203,15 +203,15 @@ const GAME_CONFIG = {
   rondas: [
     {
       titulo:"Ronda 1",categoria:"CUATRO Equations",
-      Question:"¿Cuál de estas NO es una ecuación de Maxwell?",
+      Question:"¿Cuál de estas NO es una equation de Maxwell?",
       formula:null,
       Options:["∮ E·dA = Q/ε₀","∮ B·dA = 0","F = qE + qv×B","∮ E·dl = -dΦ_B/dt"],correcta:2,
-      feedback_ok:"F = q(E + v×B) es la Lorentz Force, no una ecuación de Maxwell. Las 4 de Maxwell son: Gauss E, Gauss B, Faraday y Ampere-Maxwell.",
-      feedback_bad:"La Lorentz Force no es una ecuación de Maxwell. Maxwell: Gauss(×2) + Faraday + Ampere-Maxwell."
+      feedback_ok:"F = q(E + v×B) es la Lorentz Force, no una equation de Maxwell. Las 4 de Maxwell son: Gauss E, Gauss B, Faraday y Ampere-Maxwell.",
+      feedback_bad:"La Lorentz Force no es una equation de Maxwell. Maxwell: Gauss(×2) + Faraday + Ampere-Maxwell."
     },
     {
       titulo:"Ronda 2",categoria:"ONDAS EM",
-      Question:"La Velocity de las ondas electromagnéticas en vacío predita por Maxwell:",
+      Question:"La Velocity de las ondas electromagnetics en vacío predita por Maxwell:",
       formula:"c = 1/√(μ₀ε₀)",
       Options:["c ≈ 3×10⁸ m/s (Velocity de la luz)","c ≈ 3×10⁶ m/s","c depende de la Frequency","No se puede Calculate"],correcta:0,
       feedback_ok:"Maxwell calculó c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s — ¡idéntico a la Velocity de la luz medida! Esto demostró que la luz ES una Electromagnetic Wave.",
@@ -221,25 +221,25 @@ const GAME_CONFIG = {
       titulo:"Ronda 3",categoria:"GAUSS B",
       Question:"¿Qué implica Physicsmente que ∮ B·dA = 0?",
       formula:null,
-      Options:["B es siempre cero","No existen monopolos magnéticos (Charges magnéticas aisladas)","Las líneas de B son siempre rectas","B no penetra superficies cerradas"],correcta:1,
-      feedback_ok:"¡Exacto! ∮B·dA = 0 significa que las líneas de B son siempre cerradas — no hay 'Charges magnéticas' (monopolos) que las originen o terminen.",
-      feedback_bad:"Si existieran monopolos magnéticos, la ecuación sería ∮B·dA = μ₀Q_m ≠ 0."
+      Options:["B es siempre cero","No existen monopolos magnetics (Charges magnetics aisladas)","Las líneas de B son siempre rectas","B no penetra superficies cerradas"],correcta:1,
+      feedback_ok:"¡Exacto! ∮B·dA = 0 significa que las líneas de B son siempre cerradas — no hay 'Charges magnetics' (monopolos) que las originen o terminen.",
+      feedback_bad:"Si existieran monopolos magnetics, la equation sería ∮B·dA = μ₀Q_m ≠ 0."
     },
     {
       titulo:"Ronda 4",categoria:"FARADAY-MAXWELL",
       Question:"¿Qué dice la versión de Faraday de Maxwell en forma diferencial?",
       formula:"∇ × E = -∂B/∂t",
       Options:["∇ · E = ρ/ε₀","∇ × E = -∂B/∂t","∇ · B = 0","∇ × B = μ₀J"],correcta:1,
-      feedback_ok:"∇ × E = -∂B/∂t: un campo B que cambia en el tiempo genera un campo E rotacional. Es la base de los inductores y transformadores.",
+      feedback_ok:"∇ × E = -∂B/∂t: un field B que cambia en el tiempo genera un field E rotacional. Es la base de los inductores y transformadores.",
       feedback_bad:"Las 4 formas diferenciales: ∇·E=ρ/ε₀, ∇·B=0, ∇×E=-∂B/∂t (Faraday), ∇×B=μ₀J+μ₀ε₀∂E/∂t."
     },
     {
       titulo:"Ronda 5",categoria:"SÍNTESIS",
-      Question:"En una onda EM plana, los campos E y B son:",
+      Question:"En una onda EM plana, los fields E y B son:",
       formula:"E/B = c, E ⊥ B ⊥ k",
       Options:["Paralelos entre sí y a la dirección de propagación","E paralelo a k, B perpendicular","Ambos perpendiculares a la dirección de propagación y entre sí","E perpendicular a B pero paralelos a k"],correcta:2,
       feedback_ok:"¡Perfecto! E ⊥ B ⊥ k (dirección de propagación). La onda es transversal. E/B = c y oscilan en fase.",
-      feedback_bad:"EM Wave: E ⊥ B ⊥ dirección de propagación. Ambos campos son perpendiculares a k y entre sí."
+      feedback_bad:"EM Wave: E ⊥ B ⊥ dirección de propagación. Ambos fields son perpendiculares a k y entre sí."
     }
   ]
 };

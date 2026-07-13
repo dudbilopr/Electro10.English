@@ -119,45 +119,45 @@
                 <div id="datos" class="tab-content p-2 text-sm">
                     <p class="font-semibold text-base mb-2">Valuees del Ring Diferencial (en radio $a$)</p>
                     <div class="space-y-2 pl-2">
-                        <p>Carga del anillo $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> C</p>
-                        <p>Campo del anillo $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
+                        <p>Charge del anillo $dq$: <span id="dqValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> C</p>
+                        <p>Field del anillo $|d\vec{E}|$: <span id="dEValue" class="font-mono font-semibold text-blue-600 dark:text-blue-400">...</span> N/C</p>
                     </div>
                     <hr class="my-4 border-slate-200 dark:border-slate-700">
                     <p class="font-semibold text-base mb-2">Valuees Totales del Disk</p>
                      <div class="space-y-2 pl-2">
-                        <p>Carga Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
-                        <p>Campo Total $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
+                        <p>Charge Total $Q$: <span id="QValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> C</p>
+                        <p>Field Total $|\vec{E}_{total}|$: <span id="EtotalValue" class="font-mono font-semibold text-purple-600 dark:text-purple-400">...</span> N/C</p>
                     </div>
                 </div>
                 
                 <div id="teoria" class="tab-content p-2 text-sm space-y-3">
                     <p class="font-semibold text-base">1. Estrategia: Dividir y Vencerás</p>
-                    <p>Tratamos el disco como una colesson de infinitos anillos concéntricos. El campo de un anillo de radio $a$ y carga $dq$ ya lo conocemos:</p>
+                    <p>Tratamos el disco como una colesson de infinitos anillos concéntricos. El field de un anillo de radio $a$ y charge $dq$ ya lo conocemos:</p>
                      <p class="text-center my-1 p-2 border rounded-md">$$d\vec{E} = \frac{k_e x_0 dq}{(a^2 + x_0^2)^{3/2}} \hat{i}$$</p>
                     
-                    <p class="font-semibold text-base">2. Carga del Ring Diferencial ($dq$)</p>
-                    <p>La carga $dq$ del anillo es la densidad superficial $\sigma$ por su área $dA$. El área de un anillo delgado es su circunferencia ($2\pi a$) por su grosor ($da$).</p>
+                    <p class="font-semibold text-base">2. Charge del Ring Diferencial ($dq$)</p>
+                    <p>La charge $dq$ del anillo es la densidad superficial $\sigma$ por su área $dA$. El área de un anillo delgado es su circunferencia ($2\pi a$) por su grosor ($da$).</p>
                      <p class="text-center my-1 p-2 border rounded-md">$$dq = \sigma dA = \sigma (2\pi a \, da)$$</p>
 
                     <p class="font-semibold text-base">3. Sustitución e Integración</p>
-                    <p>Sustituimos $dq$ en la Formula de $dE$ y sumamos (integramos) los campos de todos los anillos, desde el centro ($a=0$) hasta el borde ($a=R$).</p>
+                    <p>Sustituimos $dq$ en la Formula de $dE$ y sumamos (integramos) los fields de todos los anillos, desde el centro ($a=0$) hasta el borde ($a=R$).</p>
                      <p class="text-center my-1 p-2 border rounded-md">$$\vec{E} = \int_{0}^{R} \frac{k_e x_0 (\sigma 2\pi a \, da)}{(a^2 + x_0^2)^{3/2}} \hat{i}$$</p>
                      <p class="font-semibold text-base">4. Result Final</p>
-                      <p>Resolviendo la integral (con sustitución $u=a^2+x_0^2$), obtenemos el campo total del disco:</p>
+                      <p>Resolviendo la integral (con sustitución $u=a^2+x_0^2$), obtenemos el field total del disco:</p>
                       <p class="text-center my-1 p-2 border rounded-md">$$ \vec{E} = 2\pi k_e \sigma \left( 1 - \frac{x_0}{\sqrt{R^2 + x_0^2}} \right) \hat{i} $$</p>
                 </div>
                 
                 <div id="analisis" class="tab-content p-2 text-sm space-y-4">
                      <p class="font-semibold text-base">Tips Conceptuales</p>
                     <ul class="list-disc list-inside space-y-2">
-                        <li><strong>Cerca del disco ($x_0 \ll R$):</strong> El término de la raíz se hace pequeño y el campo se aproxima a $2\pi k_e \sigma$. ¡Es casi constante!</li>
-                        <li><strong>Lejos del disco ($x_0 \gg R$):</strong> El disco se comporta como una carga puntual $Q = \sigma \pi R^2$. La Formula se simplifica a $E \approx k_e Q / x_0^2$.</li>
+                        <li><strong>Cerca del disco ($x_0 \ll R$):</strong> El término de la raíz se hace pequeño y el field se aproxima a $2\pi k_e \sigma$. ¡Es casi constante!</li>
+                        <li><strong>Lejos del disco ($x_0 \gg R$):</strong> El disco se comporta como una charge puntual $Q = \sigma \pi R^2$. La Formula se simplifica a $E \approx k_e Q / x_0^2$.</li>
                     </ul>
 
                      <div class="mt-6">
                         <p class="font-semibold text-base">Desafío: El Plano Infinito</p>
                         <div class="mt-2 p-3 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                            <p>Un Result fundamental es que el campo de un plano infinito de carga es constante y vale $E = \sigma / (2\epsilon_0) = 2\pi k_e \sigma$.</p>
+                            <p>Un Result fundamental es que el field de un plano infinito de charge es constante y vale $E = \sigma / (2\epsilon_0) = 2\pi k_e \sigma$.</p>
                             <p class="font-semibold my-2">Simula un plano infinito:</p>
                             <ol class="list-decimal list-inside my-2 pl-4">
                                 <li>Maximiza el radio del disco ($R=3$ m).</li>

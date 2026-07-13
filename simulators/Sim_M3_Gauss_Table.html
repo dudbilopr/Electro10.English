@@ -632,7 +632,7 @@
             ],
             questionMetrics: [
               { id: 'Q1', title: 'Electrización', avgScore: 0.85, avgTime: 45, status: 'optimal' },
-              { id: 'Q2', title: 'Campo y Force', avgScore: 0.62, avgTime: 120, status: 'review' },
+              { id: 'Q2', title: 'Field y Force', avgScore: 0.62, avgTime: 120, status: 'review' },
               { id: 'Q3', title: 'Bóveda de Gauss', avgScore: 0.35, avgTime: 255, status: 'critical' },
               { id: 'Q4', title: 'Coulomb\'s Law', avgScore: 0.40, avgTime: 180, status: 'critical' },
               { id: 'Q5', title: 'Matriz Universal Gauss', avgScore: 0.50, avgTime: 300, status: 'critical' }
@@ -830,7 +830,7 @@
                     
                     <div className="text-center mb-14 border-b-4 border-slate-900 pb-10">
                       <h1 className="text-5xl font-black text-slate-900 tracking-tighter uppercase mb-4">Assessment de Rango</h1>
-                      <p className="text-slate-500 font-bold text-xl tracking-wide uppercase">Carga, Vector Field y Flujo Gaussiano</p>
+                      <p className="text-slate-500 font-bold text-xl tracking-wide uppercase">Charge, Vector Field y Flux Gaussiano</p>
                     </div>
 
                     {/* Student Info */}
@@ -847,10 +847,10 @@
                     </div>
 
                     {/* LEVEL 1 */}
-                    <MisionBox title="I. Naturaleza y Geometría de la Carga" points="0.30">
+                    <MisionBox title="I. Naturaleza y Geometry de la Charge" points="0.30">
                       <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-2xl mb-10">
                         <p className="font-black text-blue-900 text-xl mb-2 flex items-center gap-2"><Activity size={24}/> 1.1 Mecanismos de Electrización <span className="text-sm text-red-600 ml-auto bg-red-100 px-3 py-1 rounded-lg">[0.15 pts]</span></p>
-                        <p className="text-blue-800 font-medium text-base">Identifique el mecanismo mediante las Options y describa la Physics del flujo electrónico.</p>
+                        <p className="text-blue-800 font-medium text-base">Identifique el mecanismo mediante las Options y describa la Physics del flux electrónico.</p>
                       </div>
                       
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-14">
@@ -887,7 +887,7 @@
                               <label className="uppercase text-slate-500 text-xs font-black tracking-widest mb-2 block flex justify-between">¿Qué ocurre? <span className="text-red-500">[0.03]</span></label>
                               <ERadiusGroup id="o2" answers={answers} handleInputChange={handleInputChange} isSubmitted={isSubmitted} expected="equil" options={[
                                  {val:'create', label:'Creación espontánea de Charges.'},
-                                 {val:'equil', label:'Flujo de <Latex text={"$e^-$"}/> libres hasta el equilibrio.'},
+                                 {val:'equil', label:'Flux de <Latex text={"$e^-$"}/> libres hasta el equilibrio.'},
                                  {val:'polar', label:'Polarización sin salto de electrones.'}
                               ]} />
                             </div>
@@ -906,9 +906,9 @@
                             <div className="flex-grow flex flex-col">
                               <label className="uppercase text-slate-500 text-xs font-black tracking-widest mb-2 block flex justify-between">¿Qué ocurre? <span className="text-red-500">[0.03]</span></label>
                               <ERadiusGroup id="o3" answers={answers} handleInputChange={handleInputChange} isSubmitted={isSubmitted} expected="ground" options={[
-                                 {val:'friction', label:'Fricción inducida magnéticamente.'},
+                                 {val:'friction', label:'Fricción inducida magneticmente.'},
                                  {val:'ground', label:'Polarización y drenaje a tierra.'},
-                                 {val:'spark', label:'Arc eléctrico por alta tensión.' }
+                                 {val:'spark', label:'Arc electric por alta tensión.' }
                               ]} />
                             </div>
                           </div>
@@ -936,7 +936,7 @@
                         <table className="w-full text-left border-collapse text-lg">
                           <thead className="bg-slate-800 text-white">
                             <tr>
-                              <th className="p-6 font-bold tracking-wider uppercase text-sm">Geometría</th>
+                              <th className="p-6 font-bold tracking-wider uppercase text-sm">Geometry</th>
                               <th className="p-6 text-center font-bold tracking-wider uppercase text-sm">Símbolo <span className="text-amber-400">[0.01]</span></th>
                               <th className="p-6 font-bold tracking-wider uppercase text-sm">Formula <Latex text={"$dq=$"} /> <span className="text-amber-400">[0.02]</span></th>
                               <th className="p-6 font-bold tracking-wider uppercase text-sm">Unites <span className="text-amber-400">[0.02]</span></th>
@@ -977,13 +977,13 @@
                       </div>
 
                       <div className="mb-10 leading-loose bg-white p-10 rounded-[2rem] border-2 border-slate-200 shadow-sm text-xl text-slate-700 text-center">
-                        La <strong className="text-slate-900 font-black">Force Eléctrica</strong> es una interacción que requiere estrictamente de <InlineSelect id="b1" value={answers.b1} onChange={handleInputChange} isSubmitted={isSubmitted} expected="dos" options={[{val:'una', label:'una'}, {val:'dos', label:'dos'}, {val:'infinitas', label:'infinitas'}]}/> Charges para existir. Por otro lado, el <strong className="text-slate-900 font-black">Electric Field</strong> es una perturbación del espacio generada por <InlineSelect id="b2" value={answers.b2} onChange={handleInputChange} isSubmitted={isSubmitted} expected="una" options={[{val:'una', label:'una'}, {val:'dos', label:'dos'}, {val:'cero', label:'ninguna'}]}/> carga fuente. Si colocamos una carga de prueba (<Latex text={"$q_0$"}/>) en un punto donde existe un campo vectorial <Latex text={'$\\vec{E}$'}/>, experimentará una Force según la ecuación matemática <Latex text={'$\\vec{F} = $'}/> <InlineSelect id="b3" value={answers.b3} onChange={handleInputChange} isSubmitted={isSubmitted} expected="q_0 \vec{E}" width="w-48" options={[{val:'\\vec{E}/q_0', label:'\\frac{\\vec{E}}{q_0}'}, {val:'q_0 \\vec{E}', label:'q_0 \\vec{E}'}, {val:'k q_0 / r^2', label:'\\frac{k q_0}{r^2}'}]}/>.
+                        La <strong className="text-slate-900 font-black">Force Electric</strong> es una interacción que requiere estrictamente de <InlineSelect id="b1" value={answers.b1} onChange={handleInputChange} isSubmitted={isSubmitted} expected="dos" options={[{val:'una', label:'una'}, {val:'dos', label:'dos'}, {val:'infinitas', label:'infinitas'}]}/> Charges para existir. Por otro lado, el <strong className="text-slate-900 font-black">Electric Field</strong> es una perturbación del espacio generada por <InlineSelect id="b2" value={answers.b2} onChange={handleInputChange} isSubmitted={isSubmitted} expected="una" options={[{val:'una', label:'una'}, {val:'dos', label:'dos'}, {val:'cero', label:'ninguna'}]}/> charge fuente. Si colocamos una charge de prueba (<Latex text={"$q_0$"}/>) en un punto donde existe un field vectorial <Latex text={'$\\vec{E}$'}/>, experimentará una Force según la equation matemática <Latex text={'$\\vec{F} = $'}/> <InlineSelect id="b3" value={answers.b3} onChange={handleInputChange} isSubmitted={isSubmitted} expected="q_0 \vec{E}" width="w-48" options={[{val:'\\vec{E}/q_0', label:'\\frac{\\vec{E}}{q_0}'}, {val:'q_0 \\vec{E}', label:'q_0 \\vec{E}'}, {val:'k q_0 / r^2', label:'\\frac{k q_0}{r^2}'}]}/>.
                       </div>
 
                       <div className="bg-violet-50 border-l-4 border-violet-500 p-6 rounded-r-2xl mb-10 flex items-center justify-between">
                         <div>
                           <p className="font-black text-violet-900 text-xl mb-1 flex items-center gap-2"><MousePointer2 size={24}/> 2.2 Cartografía Vectorial Interactiva</p>
-                          <p className="text-violet-800 font-medium text-base">Seleccione una dirección en la barra y haga <strong>clic en la cuadrícula</strong> para trazar el campo. Evalúe la simetría.</p>
+                          <p className="text-violet-800 font-medium text-base">Seleccione una dirección en la barra y haga <strong>clic en la cuadrícula</strong> para trazar el field. Evalúe la symmetry.</p>
                         </div>
                         <span className="text-lg font-black text-red-600 bg-red-100 px-4 py-1.5 rounded-xl shadow-sm border border-red-200">[0.20 pts]</span>
                       </div>
@@ -991,7 +991,7 @@
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <div className="bg-white p-4 rounded-[2rem] border-2 border-slate-200 shadow-md">
                           <div className="font-black text-lg bg-slate-900 text-white p-5 rounded-t-[1.5rem] flex justify-between items-center tracking-wide mb-4">
-                            <span>A: Carga Aislada (<Latex text={"$-Q$"}/>)</span>
+                            <span>A: Charge Aislada (<Latex text={"$-Q$"}/>)</span>
                             <span className="text-amber-400 bg-white/10 px-3 py-1 rounded-lg border border-amber-400/20">[0.05 pts]</span>
                           </div>
                           <InteractiveVectorField systemType="A" id="canvasA" onChange={handleInputChange} isSubmitted={isSubmitted} />
@@ -1026,28 +1026,28 @@
                             <span className="flex items-center gap-3 bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-200"><div className={`w-5 h-5 rounded-full shadow-inner ${examVars.q3>0?'bg-red-500':'bg-blue-500'}`}></div> q3: {examVars.q3}q</span>
                             <span className="flex items-center gap-3 bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-200"><div className={`w-5 h-5 rounded-full shadow-inner ${examVars.q4>0?'bg-red-500':'bg-blue-500'}`}></div> q4: {examVars.q4}q</span>
                           </div>
-                          <TipButton id="tip_3" usedTips={usedTips} setUsedTips={setUsedTips} text={"El Electric Flux neto $\\Phi_E$ que atraviesa una superficie cerrada depende únicamente de la suma algebraica de las Charges que están en su interior. Ignora cualquier carga exterior."} />
+                          <TipButton id="tip_3" usedTips={usedTips} setUsedTips={setUsedTips} text={"El Electric Flux neto $\\Phi_E$ que atraviesa una superficie cerrada depende únicamente de la suma algebraica de las Charges que están en su interior. Ignora cualquier charge exterior."} />
                         </div>
 
                         <div className="lg:col-span-7 flex flex-col justify-center space-y-12">
                           <div className="bg-white border-2 border-slate-200 rounded-3xl shadow-md overflow-hidden">
                             <div className="bg-slate-100 p-8 border-b-2 border-slate-200 flex justify-between items-center rounded-t-[calc(1.5rem-2px)]">
                               <div>
-                                <h4 className="font-black text-slate-900 text-2xl mb-2">Assessment Matemática de Flujo (<Latex text={'$\\Phi_E$'} />)</h4>
+                                <h4 className="font-black text-slate-900 text-2xl mb-2">Assessment Matemática de Flux (<Latex text={'$\\Phi_E$'} />)</h4>
                                 <p className="text-base text-slate-600 font-medium">Seleccione la suma correcta según la imagen 3D.</p>
                               </div>
                               <span className="text-lg font-black text-red-600 bg-red-100 px-4 py-1.5 rounded-xl shadow-sm border border-red-200">[0.30 pts]</span>
                             </div>
                             <div className="p-10 space-y-8">
                               <div className="flex flex-col md:flex-row md:items-center justify-between border-b-2 border-slate-100 pb-6 gap-4">
-                                <span className="font-bold text-slate-800 text-xl flex items-center gap-4"><div className="w-6 h-6 bg-blue-500/20 border-4 border-blue-500 rounded-full"></div> Flujo en <Latex text={"$S_1$"}/>:</span>
+                                <span className="font-bold text-slate-800 text-xl flex items-center gap-4"><div className="w-6 h-6 bg-blue-500/20 border-4 border-blue-500 rounded-full"></div> Flux en <Latex text={"$S_1$"}/>:</span>
                                 <span className="text-2xl font-bold flex items-center">
                                   <Latex text={'$\\Phi_{E1} = $'} className="mr-3"/> 
                                   <InlineSelect id="p1" value={answers.p1} onChange={handleInputChange} isSubmitted={isSubmitted} expected={`${examVars.q1 + examVars.q2}q`} width="w-48" options={gaussOptionsS1}/> 
                                 </span>
                               </div>
                               <div className="flex flex-col md:flex-row md:items-center justify-between pb-2 gap-4">
-                                <span className="font-bold text-slate-800 text-xl flex items-center gap-4"><div className="w-6 h-6 bg-violet-500/20 border-4 border-violet-500 rounded-full"></div> Flujo en <Latex text={"$S_3$"}/>:</span>
+                                <span className="font-bold text-slate-800 text-xl flex items-center gap-4"><div className="w-6 h-6 bg-violet-500/20 border-4 border-violet-500 rounded-full"></div> Flux en <Latex text={"$S_3$"}/>:</span>
                                 <span className="text-2xl font-bold flex items-center">
                                   <Latex text={'$\\Phi_{E3} = $'} className="mr-3"/> 
                                   <InlineSelect id="p3" value={answers.p3} onChange={handleInputChange} isSubmitted={isSubmitted} expected={`${examVars.q1 + examVars.q2 + examVars.q3 + examVars.q4}q`} width="w-48" options={gaussOptionsS3}/> 
@@ -1063,11 +1063,11 @@
                                 <span>Análisis Teórico Profundo</span>
                                 <span className="text-red-400 bg-red-400/10 border border-red-400/30 px-4 py-1.5 rounded-xl text-base tracking-widest uppercase shadow-inner">[0.10 pts]</span>
                               </p>
-                              <p className="text-lg text-slate-300 mb-6 leading-relaxed font-medium">¿El campo <Latex text={'$\\vec{E}$'} className="text-white font-bold"/> evaluado en un punto específico sobre la superficie fronteriza <Latex text={'$S_1$'} className="text-white font-bold"/> depende SOLO de las Charges internas?</p>
+                              <p className="text-lg text-slate-300 mb-6 leading-relaxed font-medium">¿El field <Latex text={'$\\vec{E}$'} className="text-white font-bold"/> evaluado en un punto específico sobre la superficie fronteriza <Latex text={'$S_1$'} className="text-white font-bold"/> depende SOLO de las Charges internas?</p>
                               <ERadiusGroup id="pt" answers={answers} handleInputChange={handleInputChange} isSubmitted={isSubmitted} expected="no" options={[
-                                {val: 'yes1', label: 'Sí. La Gauss's Law establece inequívocamente que solo la carga encerrada genera el campo en la frontera.'},
+                                {val: 'yes1', label: 'Sí. La Gauss's Law establece inequívocamente que solo la charge encerrada genera el field en la frontera.'},
                                 {val: 'yes2', label: 'Sí. Las Charges externas al sistema son completamente apantalladas por la superficie gaussiana imaginaria.'},
-                                {val: 'no', label: 'No. El flujo neto depende solo de las internas, pero el vector campo E sufre superPosition de TODAS las Charges.'}
+                                {val: 'no', label: 'No. El flux neto depende solo de las internas, pero el vector field E sufre superPosition de TODAS las Charges.'}
                               ]} />
                             </div>
                           </div>
@@ -1081,7 +1081,7 @@
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                           <p className="font-black text-amber-900 text-xl flex items-center gap-2"><LayoutDashboard size={24}/> Matriz Analítica Universal</p>
                           <div className="flex gap-4">
-                            <span className="text-sm font-black bg-white px-3 py-1.5 rounded-xl text-amber-700 border border-amber-200"><Latex text={"Carga: $Q=5\\text{nC}$"} /></span>
+                            <span className="text-sm font-black bg-white px-3 py-1.5 rounded-xl text-amber-700 border border-amber-200"><Latex text={"Charge: $Q=5\\text{nC}$"} /></span>
                             <span className="text-sm font-black bg-white px-3 py-1.5 rounded-xl text-amber-700 border border-amber-200"><Latex text={"Dist: $15\\text{cm}$"} /></span>
                           </div>
                         </div>
@@ -1138,7 +1138,7 @@
                             <tr>
                               <td className="p-4 bg-slate-50 rounded-2xl border-2 border-slate-200 font-bold text-slate-700 shadow-inner">
                                 <span className="block text-xs uppercase tracking-widest text-slate-400 mb-1">Paso III [0.10 c/u]</span>
-                                Geometría (<Latex text={"$r^2$"} />)
+                                Geometry (<Latex text={"$r^2$"} />)
                               </td>
                               <td className="p-4 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
                                 <InlineSelect id="c1_r2" value={answers.c1_r2} onChange={handleInputChange} isSubmitted={isSubmitted} expected="R^2 + z^2" width="w-full" options={coulombR2Opts} />
@@ -1216,7 +1216,7 @@
                         <div>
                           <p className="font-black text-sky-900 text-xl flex items-center gap-2 mb-2"><Activity size={24}/> Matriz de Topologías Gaussianas</p>
                           <p className="text-sky-800 font-medium text-base">
-                            Evalúe el comportamiento del campo <Latex text={"$\\vec{E}$"} /> y Powerl <Latex text={"$V$"} /> para 4 distribuciones bajo las mismas dimensiones (<Latex text={"$b=20\\text{cm}, a=10\\text{cm}$"} />).
+                            Evalúe el comportamiento del field <Latex text={"$\\vec{E}$"} /> y Powerl <Latex text={"$V$"} /> para 4 distribuciones bajo las mismas dimensiones (<Latex text={"$b=20\\text{cm}, a=10\\text{cm}$"} />).
                           </p>
                         </div>
                         <div className="flex flex-col gap-2 min-w-[200px]">
@@ -1241,7 +1241,7 @@
                             <tr>
                               <td className="p-4 bg-slate-50 rounded-2xl border-2 border-slate-200 font-bold text-slate-700 shadow-inner">
                                 <span className="block text-xs uppercase tracking-widest text-slate-400 mb-1">Paso I [0.10 pts]</span>
-                                Distribución de Carga Physicsmente
+                                Distribution de Charge Physicsmente
                               </td>
                               <td className="p-4 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
                                 <InlineSelect id="g1_dist" value={answers.g1_dist} onChange={handleInputChange} isSubmitted={isSubmitted} expected="vol" width="w-full" options={gaussDistOpts} />
@@ -1444,9 +1444,9 @@
                   <BrainCircuit size={28}/> Mensaje de Calificación Pedagógica
                 </h3>
                 <p className="leading-relaxed text-lg font-medium">
-                  {score >= 3.2 ? "¡Level Dios alcanzado! Tu dominio sobre los flujos vectoriales y la Gauss's Law es absoluto. Estás listo para topologías complejas y distribuciones asimétricas." : 
-                   score >= 2.0 ? "Buen Work operativo. Sin embargo, hay vacíos conceptuales en las fronteras de Gauss. Analiza la diferencia entre Flujo Neto y el Superposition Principle en el Campo Local." : 
-                   "Anomalía detectada. El sistema adaptativo sugiere repasar urgentemente los mecanismos de polarización y el concepto de carga encerrada. ¡Vuelve a intentarlo, la Physics requiere iteración!"}
+                  {score >= 3.2 ? "¡Level Dios alcanzado! Tu dominio sobre los fluxs vectoriales y la Gauss's Law es absoluto. Estás listo para topologías complejas y distribuciones asimétricas." : 
+                   score >= 2.0 ? "Buen Work operativo. Sin embargo, hay vacíos conceptuales en las fronteras de Gauss. Analiza la diferencia entre Flux Neto y el Superposition Principle en el Field Local." : 
+                   "Anomalía detectada. El sistema adaptativo sugiere repasar urgentemente los mecanismos de polarización y el concepto de charge encerrada. ¡Vuelve a intentarlo, la Physics requiere iteración!"}
                 </p>
                 {usedTips.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-current/20 text-sm font-bold opacity-80">

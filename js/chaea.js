@@ -206,7 +206,7 @@ function ShowResults(scores, dominante) {
         activo: "<li><b>Experimenta con el Simulator:</b> Interactúa con las Charges en PhET antes de leer la Theory.</li><li><b>Gamificación:</b> Participa activamente en los retos cognitivos y crucigramas.</li><li><b>Evita lecturas muy largas:</b> Divide el estudio en sesiones dinámicas y practices.</li>",
         reflexivo: "<li><b>Bóveda Obsidian:</b> Utiliza y expande tu grafo de conocimiento tomando notas detalladas.</li><li><b>Análisis de Casos:</b> Reflexiona sobre los experimentos históricos como la balanza de Coulomb.</li><li><b>Tómate tu tiempo:</b> Revisa las clases grabadas y Pause para entender cada deducción matemática.</li>",
         teorico: "<li><b>Formulario Matemático:</b> Dedica tiempo a entender las deducciones del Calculation Vectorial aplicadas a Maxwell.</li><li><b>Lecturas rigurosas:</b> Profundiza en las defHomenes exactas del Glossary.</li><li><b>Busca la estructura:</b> Entiende el 'por qué' de cada Formula antes de usarla.</li>",
-        pragmatico: "<li><b>Exercises Aplicados:</b> Enfócate en los problemas reales y el 'Tutor por Cámara' para validar tus solutions.</li><li><b>Menos Theory, más practice:</b> Aplica las Equations de inmediato a circuitos o problemas de campo.</li><li><b>Busca utilidades:</b> Relaciona la Theory electromagnética con tecnologías reales (motores, antenas).</li>"
+        pragmatico: "<li><b>Exercises Aplicados:</b> Enfócate en los problemas reales y el 'Tutor por Cámara' para validar tus solutions.</li><li><b>Menos Theory, más practice:</b> Aplica las Equations de inmediato a circuitos o problemas de field.</li><li><b>Busca utilidades:</b> Relaciona la Theory electromagnetic con tecnologías reales (motores, antenas).</li>"
     };
     
     document.getElementById('chaea-res-dom').innerText = dominante.charAt(0).toUpperCase() + dominante.slice(1);
@@ -281,10 +281,10 @@ window.CloseYsaveChaea = async function() {
     }
     
     // Actualizar vista de perfil (Holístico)
-    if (window.cargarResultsHolisticos) {
-        window.cargarResultsHolisticos();
-    } else if (window.cargarResultsChaeaPerfil) {
-        window.cargarResultsChaeaPerfil();
+    if (window.chargerResultsHolisticos) {
+        window.chargerResultsHolisticos();
+    } else if (window.chargerResultsChaeaPerfil) {
+        window.chargerResultsChaeaPerfil();
     }
     
     // Verify si estamos en el Module cero

@@ -236,7 +236,7 @@
         // ==========================================
         
         // A. LA SINGULARIDAD / ESPUMA CUÁNTICA (Shader Personalizado)
-        // Esto crea una geometría que no existe de forma estática, fluye en el tiempo.
+        // Esto crea una geometry que no existe de forma estática, fluye en el tiempo.
         const coreGeo = new THREE.IcosahedronGeometry(1.8, 64); // Muy tesselada
         
         const coreVertexShader = `
@@ -417,7 +417,7 @@
             const delta = clock.getDelta();
             const time = clock.getElapsedTime();
 
-            // Actualizar shader del núcleo (La geometría respira y cambia)
+            // Actualizar shader del núcleo (La geometry respira y cambia)
             coreUniforms.uTime.value = time;
             quantumCore.rotation.y += 0.002;
             quantumCore.rotation.z += 0.001;
