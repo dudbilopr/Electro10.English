@@ -41,7 +41,7 @@
         <aside class="w-80 glass-panel border-r border-slate-800 flex flex-col shrink-0 overflow-y-auto z-10 p-4 space-y-6">
             
             <div>
-                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Amplitudeeeees de Voltage</h2>
+                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">amplitudeeeeeees de Voltage</h2>
                 
                 <div class="space-y-4">
                     <!-- VR -->
@@ -98,7 +98,7 @@
                         <!-- Axes -->
                         <line x1="-140" y1="0" x2="140" y2="0" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
                         <line x1="0" y1="-140" x2="0" y2="140" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
-                        <!-- Circles to guide Magnitudeeees (50, 100) -->
+                        <!-- Circles to guide magnitudeeeeees (50, 100) -->
                         <circle cx="0" cy="0" r="50" fill="none" stroke="#1e293b" stroke-width="1"/>
                         <circle cx="0" cy="0" r="100" fill="none" stroke="#1e293b" stroke-width="1"/>
                         
@@ -272,14 +272,14 @@
             const Vx = state.Vr;
             const Vy = state.Vl - state.Vc; // Standard physics: Vl leads by 90 (up), Vc lags by 90 (down)
 
-            // Resultant Magnitudeeee and angle
+            // Resultant magnitudeeeeee and angle
             const Vs = Math.sqrt(Vx*Vx + Vy*Vy);
             
             // Apply Rotation (wt)
             const deg = -(state.wt * 180 / Math.PI); // negative because SVG rotates clockwise for positive deg
             pGroup.setAttribute('transform', `rotate(${deg}, 0, 0)`);
 
-            // Update lines based on Magnitudeeees (SVG coordinates: +Y is down, so we flip Y)
+            // Update lines based on magnitudeeeeees (SVG coordinates: +Y is down, so we flip Y)
             // Vr
             pVr.setAttribute('x2', state.Vr);
             tVr.setAttribute('x', state.Vr + 5);

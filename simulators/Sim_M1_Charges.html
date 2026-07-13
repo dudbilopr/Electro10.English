@@ -38,7 +38,7 @@
                 </h2>
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-slate-600 mb-1">Charge Magnitudeeee:</label>
+                        <label class="block text-sm font-medium text-slate-600 mb-1">Charge magnitudeeeeee:</label>
                         <div class="flex gap-2">
                             <input type="number" id="qInput" value="10" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none">
                             <select id="qUnit" class="p-2 border rounded-md bg-slate-50">
@@ -85,14 +85,14 @@
                 <h3 class="text-orange-700 font-bold mb-2 flex items-center gap-2">
                     <span>📝</span> Enunciado del Problema Physical
                 </h3>
-                <div id="exerciseText" class="text-slate-700 leading-relaxed">Agregue Charges para comenzar la generación del problema.</div>
+                <div id="exerciseText" class="text-slate-700 leading-relaxed">Agregue Charges para start la generación del problema.</div>
             </div>
 
             <div class="bg-white p-2 rounded-xl shadow-md border border-slate-200">
                 <div class="canvas-container">
                     <canvas id="mainCanvas" width="800" height="500"></canvas>
                 </div>
-                <p class="text-[10px] text-slate-400 p-2 text-center uppercase tracking-widest">Arrastra para mover • Click derecho para seleccionar centro de análisis</p>
+                <p class="text-[10px] text-slate-400 p-2 text-center uppercase tracking-widest">Arrastra para mover • Click derecho para select centro de análisis</p>
             </div>
 
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 overflow-x-auto">
@@ -123,7 +123,7 @@
                 <div>
                     <h3 class="text-xl font-bold text-indigo-300 mb-2">⚡ La Coulomb\'s Law</h3>
                     <p class="text-indigo-100 leading-relaxed opacity-90 text-sm">
-                        La Magnitudeee de la Force electrostática entre dos Charges puntuales ($q_1$ y $q_2$) es directamente proporcional al producto de las Magnitudeeees de las Charges e inversamente proporcional al cuadrado de la Distance ($r$) que las separa.
+                        La magnitudeeeee de la Force electrostática entre dos Charges puntuales ($q_1$ y $q_2$) es directamente proporcional al producto de las magnitudeeeeees de las Charges e inversamente proporcional al cuadrado de la Distance ($r$) que las separa.
                     </p>
                     <div class="bg-indigo-900/50 p-4 my-4 rounded-lg border border-indigo-700 text-center">
                         $$ \vec{F}_{12} = K \frac{q_1 q_2}{r^2} \hat{r}_{12} $$
@@ -407,7 +407,7 @@ function updateTable() {
 function updateExercise() {
     const textEl = document.getElementById('exerciseText');
     if (charges.length < 2) {
-        textEl.innerHTML = "Agregue al menos dos Charges al plano para comenzar el análisis vectorial.";
+        textEl.innerHTML = "Agregue al menos dos Charges al plano para start el análisis vectorial.";
         return;
     }
     if (selectedIdx === -1) {

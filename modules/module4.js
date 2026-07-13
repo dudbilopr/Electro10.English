@@ -7,7 +7,7 @@ export const module4 = {
     "descripcionCorta": "Energy Powerl eléctrica, Electric Potential y Equipotential Surfaces",
     "subtemas": ["Work y Energy en Electric Field","Energy Powerl eléctrica","Potential eléctrico — definición","Potential de una carga puntual","Equipotential Surfaces","Relación E y V (gradiente)","Potential de distribuciones continuas","Energy almacenada en un sistema de Charges"],
     "lecciones": [
-        { "id":"m4-l1","tipo":"multivideo","recurso":"mR1neFcFQms|UHPetewKgvc|D4_fOFVP5bI|gTjRqI6aFx8|DkD5JxYMjvU|eVt1V7G6W-I","titulo":"1. Videos — Electric Potential","descripcion":"Del Work eléctrico al Powerl: derivación completa con ejemplos.","xp":10 },
+        { "id":"m4-l1","tipo":"multivideo","recurso":"mR1neFcFQms|UHPetewKgvc|D4_fOFVP5bI|gTjRqI6aFx8|DkD5JxYMjvU|eVt1V7G6W-I","titulo":"1. Videos — Electric Potential","descripcion":"Del Work eléctrico al Powerl: derivación completa con examples.","xp":10 },
         { "id":"m4-l2","tipo":"presentacion","recurso":"./player.html?clase=4","titulo":"2. Slides Interactivas","descripcion":"Equipotential Surfaces animadas y relación E–V con visualizaciones 3D.","xp":15 },
         { "id":"m4-g1","tipo":"grupo","titulo":"3. Laboratorio Virtual",
           "sublecciones":[
@@ -17,7 +17,7 @@ export const module4 = {
           ]
         },
         { "id":"m4-j1","tipo":"Game","recurso":"games/Game_4.html","titulo":"4. Physics Quest — Potential","descripcion":"Navega partículas hacia zonas de menor Powerl. ¡El Work hace la diferencia!","xp":25,"logro":{"id":"logro_m4","nombre":"Explorador de Superficies","icono":"⛰️"} },
-        { "id":"m4-l7","tipo":"ejercicio","recurso":"workshops/Workshop_4_Potential_Electrico.html","titulo":"5. Workshop Práctico — Electric Potential","descripcion":"Problemas de Energy Powerl, Powerl de distribuciones y equiPowerles.","xp":30 },
+        { "id":"m4-l7","tipo":"exercise","recurso":"workshops/Workshop_4_Potential_Electrico.html","titulo":"5. Workshop Práctico — Electric Potential","descripcion":"Problemas de Energy Powerl, Powerl de distribuciones y equiPowerles.","xp":30 },
         { "id":"m4-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_4.html","titulo":"6. Quiz Adaptativo — Module 4","descripcion":"Evalúa desde conceptos de Work hasta cálculo de Powerl en distribuciones complejas.","xp":40 },
         { "id":"m4-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 4: Reemplaza "#" con tu link
@@ -26,12 +26,12 @@ export const module4 = {
         { "id":"m4-e1","tipo":"referencias","titulo":"8. Referencias BiblioCharts","descripcion":"Fuentes académicas sobre Electric Potential y Energy en campos eléctricos.","xp":10,
           "secciones":[
             { "tituloSeccion":"📘 Libros de texto","links":[
-                { "url":"https://openstax.org/books/university-physics-volume-2/pages/7-1-electric-potential-energy","titulo":"OpenStax: Energy Potential y Potential — Cap. 7","descripcion":"Development completo del Electric Potential con ejemplos." },
+                { "url":"https://openstax.org/books/university-physics-volume-2/pages/7-1-electric-potential-energy","titulo":"OpenStax: Energy Potential y Potential — Cap. 7","descripcion":"Development completo del Electric Potential con examples." },
                 { "url":"https://www.amazon.com/dp/0321971174","titulo":"Griffiths — Electrodynamics Cap. 2.3","descripcion":"Potential eléctrico con rigor matemático." }
             ]},
             { "tituloSeccion":"🌐 Resources web","links":[
-                { "url":"https://www.fisicalab.com/apartado/Powerl-electrico","titulo":"Fisicalab: Electric Potential","descripcion":"Theory y ejercicios con Charts de equiPowerles." },
-                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-electric-charge-electric-force-and-voltage/electric-potential-voltage-ap/v/electric-potential-energy","titulo":"Khan Academy: Electric Potential","descripcion":"Videos conceptuales y práctica." }
+                { "url":"https://www.fisicalab.com/apartado/Powerl-electrico","titulo":"Fisicalab: Electric Potential","descripcion":"Theory y exercises con Charts de equiPowerles." },
+                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-electric-charge-electric-force-and-voltage/electric-potential-voltage-ap/v/electric-potential-energy","titulo":"Khan Academy: Electric Potential","descripcion":"Videos conceptuales y practice." }
             ]},
             { "tituloSeccion":"🔬 Simulatores externos","links":[
                 { "url":"https://phet.colorado.edu/es/simulations/charges-and-fields","titulo":"PhET: Charges y Potential","descripcion":"Mide el Powerl en cualquier punto del espacio." }

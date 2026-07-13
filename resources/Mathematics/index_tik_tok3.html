@@ -659,11 +659,11 @@
                 try {
                     const app = window.FirebaseAPI.initializeApp(firebaseConfig);
                     const db = window.FirebaseAPI.getFirestore(app);
-                    if (!currentUser || currentUser.isAnonymous) return alert("Debes iniciar sesión como Admin para guardar.");
+                    if (!currentUser || currentUser.isAnonymous) return alert("Debes iniciar sesión como Admin para save.");
                     const docRef = window.FirebaseAPI.doc(db, 'artifacts', MAIN_APP_ID, 'users', currentUser.uid, 'projects', 'main');
                     await window.FirebaseAPI.setDoc(docRef, { elements, arrows, strokes, teleprompterData, theme, format, timestamp: Date.now() });
                     alert("✅ Guardado exitoso en el Laboratorio de Coulomb");
-                } catch (e) { console.error(e); alert("❌ Error al guardar. Verifica permisos o config."); }
+                } catch (e) { console.error(e); alert("❌ Error al save. Verifica permisos o config."); }
             };
 
             const handleCloudLoad = async () => {
@@ -682,7 +682,7 @@
                         if (data.theme) setTheme(data.theme);
                         if (data.format) setFormat(data.format);
                         saveStateToHistory(); 
-                        alert("☁️ Proyecto cargado desde la Nube.");
+                        alert("☁️ Proyecto loaded desde la Nube.");
                     } else { alert("ℹ️ No hay proyectos guardados en tu cuenta."); }
                 } catch (e) { console.error(e); alert("❌ Error al cargar."); }
             };
@@ -770,7 +770,7 @@
                                         <button className="p-1.5 rounded-lg btn-tool text-red-400" onClick={handleLogout} title={`Salir (${currentUser.email})`}><Icons.Logout /></button>
                                     )}
                                     <div className="w-px h-5 bg-[var(--border-color)] mx-1"></div>
-                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--accent-color)]" onClick={handleCloudSync} title="Guardar en Nube"><Icons.CloudSave /></button>
+                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--accent-color)]" onClick={handleCloudSync} title="save en Nube"><Icons.CloudSave /></button>
                                     <button className="p-1.5 rounded-lg btn-tool text-[var(--secondary-color)]" onClick={handleCloudLoad} title="Cargar de Nube"><Icons.CloudLoad /></button>
                                 </div>
                             </div>
@@ -933,7 +933,7 @@
                                 <div className="flex justify-end gap-3 mt-6">
                                     <button className="px-4 py-2 rounded-lg hover:bg-white/10 font-bold text-sm text-[var(--text-color)]" onClick={() => setShowStepModal(false)}>Cancelar</button>
                                     <button className="px-5 py-2 rounded-lg bg-purple-600 text-white font-bold text-sm hover:bg-purple-500 shadow-lg" onClick={handleSaveStep}>
-                                        {editingTeleprompterStep !== null ? 'Guardar Cambios' : 'Crear Paso'}
+                                        {editingTeleprompterStep !== null ? 'save Cambios' : 'Crear Paso'}
                                     </button>
                                 </div>
                             </div>
@@ -1025,7 +1025,7 @@
                                 <div className="flex justify-end gap-3 mt-5">
                                     <button className="px-5 py-2.5 rounded-lg hover:bg-white/10 transition font-bold text-[var(--text-color)]" onClick={() => setEditingElement(null)}>Cancelar</button>
                                     <button className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-[var(--accent-color)] to-[var(--secondary-color)] text-white font-bold shadow-[0_0_15px_var(--accent-color)] btn-action"
-                                            onClick={() => { setElements(prev => prev.map(el => el.id === editingElement.id ? editingElement : el)); saveStateToHistory(); setEditingElement(null); }}>Guardar Cambios</button>
+                                            onClick={() => { setElements(prev => prev.map(el => el.id === editingElement.id ? editingElement : el)); saveStateToHistory(); setEditingElement(null); }}>save Cambios</button>
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- ✅ SOLUCIÓN PERFECTA CSP: Autoriza explícitamente a Google Auth y Firebase a usar Assessment interna, eliminando el bloqueo -->
+<!-- ✅ solution PERFECTA CSP: Autoriza explícitamente a Google Auth y Firebase a usar Assessment interna, eliminando el bloqueo -->
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://www.gstatic.com https://apis.google.com;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Capacitance10.easy - Laboratorio Avanzado</title>
@@ -139,7 +139,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
 
 <main>
     <aside class="sidebar sidebar-left" id="toolbar">
-        <button class="tool-btn active" data-tool="select" title="Seleccionar/Mover (Arrastra para Multi-selección)"><i class="ph ph-cursor"></i></button>
+        <button class="tool-btn active" data-tool="select" title="select/Mover (Arrastra para Multi-selección)"><i class="ph ph-cursor"></i></button>
         <button class="tool-btn" data-tool="pan" title="Mover Lienzo (Mano) - Atajo: Clic central ratón"><i class="ph ph-hand-palm"></i></button>
         <button class="tool-btn" data-tool="wire" title="Conectar Cables (Snapping magnético a pines)"><i class="ph ph-line-segment"></i></button>
         <button class="tool-btn" data-tool="battery" title="Fuente DC (Batería)"><i class="ph ph-battery-full"></i></button>
@@ -200,7 +200,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
                     <button class="win-btn win-min" onclick="window.minWin('math-window')">-</button>
                     <button class="win-btn win-max" onclick="window.maxWin('math-window')">+</button>
                 </div>
-                <span class="panel-title" style="flex:1; text-align:center; font-size:0.85rem;"><i class="ph ph-function"></i> Análisis & Física</span>
+                <span class="panel-title" style="flex:1; text-align:center; font-size:0.85rem;"><i class="ph ph-function"></i> Análisis & Physics</span>
                 <button class="close-btn" id="btn-show-steps" style="display:none; color:var(--accent); font-size:1.1rem; width:24px; height:24px;" title="Ver Reducción en Lienzo"><i class="ph ph-eye"></i></button>
             </div>
             <div class="window-body">
@@ -250,7 +250,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
             <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 24px; color:var(--accent);">Acceder al Laboratorio</h3>
             <div class="input-group" style="margin-bottom: 16px;">
                 <label>Correo Electrónico Institucional</label>
-                <input type="email" id="auth-email" placeholder="ejemplo@universidad.edu">
+                <input type="email" id="auth-email" placeholder="example@universidad.edu">
             </div>
             <div class="input-group" style="margin-bottom: 24px;">
                 <label>Contraseña Maestra</label>
@@ -278,7 +278,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
         <div style="display:flex; align-items:center; gap:20px; background:rgba(0,0,0,0.1); padding:20px; border-radius:16px;">
             <div style="font-size:4rem; color:var(--accent); background:rgba(14,165,233,0.1); padding:10px; border-radius:50%; box-shadow:0 10px 20px rgba(0,0,0,0.2);" id="prof-avatar-icon"><i class="ph ph-user-circle"></i></div>
             <div style="flex:1;">
-                <h3 id="prof-name" style="font-size:1.4rem; font-weight:800;">Cargando...</h3>
+                <h3 id="prof-name" style="font-size:1.4rem; font-weight:800;">loading...</h3>
                 <p id="prof-role" style="font-size:0.85rem; opacity:0.8; margin-bottom:8px;"></p>
                 <div style="display:flex; gap:12px;">
                     <span style="background:var(--accent); color:white; padding:4px 10px; border-radius:12px; font-size:0.8rem; font-weight:bold;">Level <span id="prof-level">1</span></span>
@@ -301,7 +301,7 @@ tr:hover td { background:rgba(255,255,255,0.05); }
             </select>
         </div>
         <div style="display:flex; gap:12px; margin-top:12px;">
-            <button class="btn" id="btn-save-profile" style="flex:2;">Guardar Configuration</button>
+            <button class="btn" id="btn-save-profile" style="flex:2;">save Configuration</button>
             <button class="btn btn-outline" id="btn-logout" style="flex:1; border-color:var(--danger); color:var(--danger);">Close Sesión</button>
         </div>
     </div>
@@ -430,7 +430,7 @@ let st = {
 st.activeTabId = st.tabs[0].id;
 const cur = () => st.tabs.find(t => t.id === st.activeTabId) || st.tabs[0];
 
-// Constantes Físicas
+// Constantes Physicss
 const E0 = 8.854e-12; 
 const DIEL = { vacio:1, teflon:2.1, papel:3.7, vidrio:7.5, ceramica:100 };
 
@@ -540,7 +540,7 @@ onAuthStateChanged(auth, async u => {
             }
             
             $('btn-admin').style.display = st.profile?.rol==='Admin' ? 'block' : 'none';
-            toast(`Bienvenido Investigador ${st.profile.alias}`); 
+            toast(`welcome Investigador ${st.profile.alias}`); 
             renderTabs();
         } catch (error) {
             console.error("Error crítico de Firestore:", error);
@@ -558,7 +558,7 @@ $('btn-login-email').onclick = async () => {
     try { await signInWithEmailAndPassword(auth, e, p); } catch(err) { if(err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential') { try { await createUserWithEmailAndPassword(auth, e, p); } catch(ex) { toast(ex.message); } } else toast(err.message); }
 };
 
-// ✅ SOLUCIÓN PERFECTA GOOGLE SSO: Redirección pura con selección forzada de cuenta
+// ✅ solution PERFECTA GOOGLE SSO: Redirección pura con selección forzada de cuenta
 $('btn-login-google').onclick = () => { 
     const provider = new GoogleAuthProvider();
     // Obliga a Google a Show la pantalla de elegir cuenta siempre
@@ -842,7 +842,7 @@ const drawComp = (c) => {
         ctx.strokeRect(-15,-10,30,20); ctx.font='10px sans-serif'; ctx.fillText('V/C', -10, 3);
     }
     
-    // Física Visual (Campo y Carga)
+    // Physics Visual (Campo y Carga)
     if(c.type.includes('cap') && c.V !== undefined && !c.isEq && !c.exploded) {
         let qCount = Math.min(6, Math.max(2, Math.floor(Math.abs(c.Q)/10) || 2)); 
         let sL = c.V >= 0 ? '+' : '-'; let sR = c.V >= 0 ? '-' : '+';
@@ -961,7 +961,7 @@ const renderProps = () => {
     if(c.type.includes('cap')) {
         pc.innerHTML += `
         <div style="margin-top:16px; border-top:1px solid var(--glass-border); padding-top:12px;">
-            <div class="panel-title" style="font-size:0.8rem; margin-bottom:8px;"><i class="ph ph-atom"></i> Física Constructiva</div>
+            <div class="panel-title" style="font-size:0.8rem; margin-bottom:8px;"><i class="ph ph-atom"></i> Physics Constructiva</div>
             <div class="input-group"><label>Geometría del Capacitor</label>
                 <select id="prop-geom">
                     <option value="paralelas" ${c.geom==='paralelas'?'selected':''}>Placas Paralelas</option>
@@ -1215,7 +1215,7 @@ $('btn-solve').onclick = () => {
     let Qtot = Ctot * vSrc.val;
     blocks.push({type:'math', content:`\\textbf{Síntesis Equivalente}\\\\ \\rule{6cm}{0.4pt} \\\\ C_{eq} = ${Ctot.toFixed(2)}\\mu F \\\\ Q_{total} = ${Qtot.toFixed(2)}\\mu C`});
 
-    blocks.push({type:'math', content:`\\textbf{Retro-Propagación Física}\\\\ \\rule{6cm}{0.4pt}`});
+    blocks.push({type:'math', content:`\\textbf{Retro-Propagación Physics}\\\\ \\rule{6cm}{0.4pt}`});
     workingEdges.forEach(e => { e.V = vSrc.val; e.Q = e.val * e.V; });
 
     for(let i = history.length - 1; i >= 0; i--) {
@@ -1295,7 +1295,7 @@ $('btn-admin').onclick = async () => {
         
         const qUsr = await getDocs(collection(db, 'artifacts', appId, 'public', 'data', 'directory'));
         let totalUsr = 0, sumPts = 0; 
-        tb.innerHTML = ''; // Clear el estado de "Cargando"
+        tb.innerHTML = ''; // Clear el estado de "loading"
 
         if (qUsr.empty) {
             tb.innerHTML = '<tr><td colspan="6" style="text-align:center; padding: 20px;">No hay investigadores en la base de datos.</td></tr>';

@@ -124,7 +124,7 @@
     <div id="result-feedback" style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;font-size:0.88rem;line-height:1.6;color:var(--text-mid);margin-bottom:20px"></div>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <button class="btn btn-secondary" onclick="ResetQuiz()"><span class="material-symbols-outlined" style="font-size:16px">refresh</span> Intentar de nuevo</button>
-      <button class="btn btn-primary" onclick="enviarResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> Guardar Result</button>
+      <button class="btn btn-primary" onclick="submitResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> save Result</button>
     </div>
   </div>
 </div>
@@ -178,7 +178,7 @@ const QUIZ_CONFIG = {
    pista:"En serie: Ceq < C_min siempre."
   },
   {Level:2,id:"c5-n2-6",
-   texto:"Energy en C=10μF cargado a 100V:",
+   texto:"Energy en C=10μF loaded a 100V:",
    formula:"U = ½CV²",
    Options:[{"texto":"0.05 J","Correct":true},{"texto":"0.5 J","Correct":false},{"texto":"50 J","Correct":false},{"texto":"5 mJ","Correct":false}],
    feedback_ok:"U = ½ × 10⁻⁵ × 10⁴ = 0.05 J.",
@@ -186,7 +186,7 @@ const QUIZ_CONFIG = {
    pista:"Convierte C a Farads."
   },
   {Level:3,id:"c5-n3-7",
-   texto:"C₁=5μF cargado a 200V, desconectado, conectado a C₂=3μF vacío. V final:",
+   texto:"C₁=5μF loaded a 200V, desconectado, conectado a C₂=3μF vacío. V final:",
    formula:"Q_total = cte, Vf = Q/(C₁+C₂)",
    Options:[{"texto":"125 V","Correct":true},{"texto":"200 V","Correct":false},{"texto":"100 V","Correct":false},{"texto":"75 V","Correct":false}],
    feedback_ok:"Q = 5×200 = 1000 μC. Vf = 1000/(5+3) = 125 V.",
@@ -202,7 +202,7 @@ const QUIZ_CONFIG = {
    pista:"La Energy está en el CAMPO, con densidad ∝ E²."
   },
   {Level:3,id:"c5-n3-9",
-   texto:"Capacitor con κ=2.5 cargado a Q₀ y desconectado. Si se retira el Dielectric, V:",
+   texto:"Capacitor con κ=2.5 loaded a Q₀ y desconectado. Si se retira el Dielectric, V:",
    
    Options:[{"texto":"V aumenta por factor κ","Correct":true},{"texto":"V disminuye","Correct":false},{"texto":"V no cambia","Correct":false},{"texto":"Q cambia","Correct":false}],
    feedback_ok:"Q cte, C disminuye (sin κ). V = Q/C aumenta por factor κ.",
@@ -382,7 +382,7 @@ function showResults() {
   document.getElementById('result-feedback').innerHTML = feedbackText;
 }
 
-function enviarResult() {
+function submitResult() {
   const pct = Math.round((results.correct / results.total) * 100) || 0;
   const xp = Math.round(QUIZ_CONFIG.xpBase * (pct/100) * (results.maxLevel/3));
   window.parent?.postMessage({

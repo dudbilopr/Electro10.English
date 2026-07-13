@@ -38,7 +38,7 @@
         .inline-blank { display: inline-block; vertical-align: middle; margin: 0 6px; }
     </style>
 
-    <!-- KaTeX cargado estáticamente -->
+    <!-- KaTeX loaded estáticamente -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
 
@@ -271,7 +271,7 @@
                   className={`w-full px-3 py-2 min-h-[40px] text-sm md:text-base font-bold border-2 ${bgClass} ${textClass} rounded-xl outline-none transition-all shadow-sm flex items-center justify-between cursor-pointer disabled:cursor-default`}
                 >
                   <span className="flex-grow text-center flex items-center justify-center overflow-hidden">
-                    {selectedOption ? <Latex text={selectedOption.label} /> : <span className="text-slate-400 font-normal text-xs whitespace-nowrap">Seleccionar...</span>}
+                    {selectedOption ? <Latex text={selectedOption.label} /> : <span className="text-slate-400 font-normal text-xs whitespace-nowrap">select...</span>}
                   </span>
                   {!isSubmitted && <ChevronDown size={14} className={`text-slate-400 flex-shrink-0 transition-transform ml-2 ${isOpen ? 'rotate-180' : ''}`} />}
                 </button>
@@ -871,7 +871,7 @@
               {val: 'Charges_tipos', label: '$\\text{Positive y Negative}$'},
               {val: 'carga_def', label: '$\\text{Propiedad intrínseca de la materia (interacción EM)}$'},
               {val: 'elec_tipos', label: '$\\text{Frotamiento, Contacto, Induction}$'},
-              {val: 'dipolo_def', label: '$\\text{Dos Charges de igual Magnitudeee y signo opuesto separadas } d$'}
+              {val: 'dipolo_def', label: '$\\text{Dos Charges de igual magnitudeeeee y signo opuesto separadas } d$'}
           ].sort(() => Math.random() - 0.5), []);
           
           const optsProporcionF = [
@@ -1100,7 +1100,7 @@
                 <div className="flex flex-col items-center justify-center mt-24 px-4 animate-in fade-in duration-700 flex-grow">
                   <div className="text-center max-w-3xl mb-12">
                     <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tight leading-tight">Control Maestro</h2>
-                    <p className="text-xl text-slate-600 font-medium">Bienvenido Administrador. ¿Bajo qué rol deseas operar el sistema?</p>
+                    <p className="text-xl text-slate-600 font-medium">welcome Administrador. ¿Bajo qué rol deseas operar el sistema?</p>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
@@ -1266,7 +1266,7 @@
                           <button onClick={() => setView('profile')} className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-xl transition-colors">Completar mi Perfil Universitario</button>
                       </div>
                   ) : (
-                      <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">¡Hola {profile.displayName.split(' ')[0]}! Bienvenido a tu prueba procedimental de Electromagnetismo. Esta Assessment exige Development analítico paso a paso. La calificación es sobre 5.0. <strong>Nota vital:</strong> Tu tiempo y uso de asistencias cognitivas serán medidos para determinar tu perfil de aprendizaje mediante telemetría. Ten a mano lápiz, papel y calculadora.</p>
+                      <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">¡Hola {profile.displayName.split(' ')[0]}! welcome a tu prueba procedimental de Electromagnetismo. Esta Assessment exige Development analítico paso a paso. La calificación es sobre 5.0. <strong>Nota vital:</strong> Tu tiempo y uso de asistencias cognitivas serán medidos para determinar tu perfil de aprendizaje mediante telemetría. Ten a mano lápiz, papel y calculadora.</p>
                   )}
                   
                   <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-base font-bold text-slate-600">
@@ -1331,9 +1331,9 @@
                               </div>
 
                               <div className="bg-white p-8 rounded-3xl border-2 border-slate-200 shadow-sm mb-12 text-lg leading-loose text-slate-700 text-justify">
-                                  La <strong>Coulomb\'s Law</strong> puede ser expresada como <InlineSelect id="t_a" value={answers.t_a} onChange={handleInputChange} isSubmitted={isSubmitted} expected="f_coulomb" options={optsTeoria} /> y modela la Magnitudeee de la Force eléctrica. 
+                                  La <strong>Coulomb\'s Law</strong> puede ser expresada como <InlineSelect id="t_a" value={answers.t_a} onChange={handleInputChange} isSubmitted={isSubmitted} expected="f_coulomb" options={optsTeoria} /> y modela la magnitudeeeee de la Force eléctrica. 
                                   Existen dos tipos de carga en la naturaleza: <InlineSelect id="t_b" value={answers.t_b} onChange={handleInputChange} isSubmitted={isSubmitted} expected="Charges_tipos" options={optsTeoria} />. 
-                                  Físicamente, la carga se define como <InlineSelect id="t_c" value={answers.t_c} onChange={handleInputChange} isSubmitted={isSubmitted} expected="carga_def" options={optsTeoria} />.
+                                  Physicsmente, la carga se define como <InlineSelect id="t_c" value={answers.t_c} onChange={handleInputChange} isSubmitted={isSubmitted} expected="carga_def" options={optsTeoria} />.
                                   Los mecanismos principales por los que los cuerpos ganan o pierden esta propiedad son <InlineSelect id="t_d" value={answers.t_d} onChange={handleInputChange} isSubmitted={isSubmitted} expected="elec_tipos" options={optsTeoria} />.
                                   Cuando analizamos <InlineSelect id="t_e" value={answers.t_e} onChange={handleInputChange} isSubmitted={isSubmitted} expected="dipolo_def" options={optsTeoria} />, nos referimos a un dipolo eléctrico.
                               </div>
@@ -1347,8 +1347,8 @@
                               </div>
                               <div className="bg-white p-8 rounded-3xl border-2 border-slate-200 shadow-sm mb-12">
                                   <div className="text-lg leading-loose text-slate-700 text-justify mb-8">
-                                     Si la Distance $r$ entre dos Charges interactuantes se duplica ($2r$), la Magnitudeee de la Force se convierte en <InlineSelect id="t_prop2" value={answers.t_prop2} onChange={handleInputChange} isSubmitted={isSubmitted} expected="f_4" options={optsProporcionF} />. 
-                                     Si, en cambio, la Magnitudeee de solo una de las Charges se duplica, la Force resultará en <InlineSelect id="t_prop1" value={answers.t_prop1} onChange={handleInputChange} isSubmitted={isSubmitted} expected="2f" options={optsProporcionF} />.
+                                     Si la Distance $r$ entre dos Charges interactuantes se duplica ($2r$), la magnitudeeeee de la Force se convierte en <InlineSelect id="t_prop2" value={answers.t_prop2} onChange={handleInputChange} isSubmitted={isSubmitted} expected="f_4" options={optsProporcionF} />. 
+                                     Si, en cambio, la magnitudeeeee de solo una de las Charges se duplica, la Force resultará en <InlineSelect id="t_prop1" value={answers.t_prop1} onChange={handleInputChange} isSubmitted={isSubmitted} expected="2f" options={optsProporcionF} />.
                                      Para sistemas múltiples, el Superposition Principle nos dicta que <InlineSelect id="t_sup" value={answers.t_sup} onChange={handleInputChange} isSubmitted={isSubmitted} expected="sup_correcta" options={optsSuperposicion} />.
                                   </div>
                                   
@@ -1473,7 +1473,7 @@
                                           </div>
 
                                           <div className={`p-4 rounded-xl border step-container ${answers.f_f1 ? 'step-active' : 'step-pending'}`}>
-                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 5: Magnitudeeees Individuales</p>
+                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 5: magnitudeeeeees Individuales</p>
                                               <div className="grid grid-cols-2 gap-4">
                                                   <div><label className="text-sm font-bold text-slate-700 block mb-1"><Latex text={"Mag. $|F_{13}|$ (N)"} /></label>
                                                      <InlineSelect id="f_f1" value={answers.f_f1} onChange={handleInputChange} isSubmitted={isSubmitted} expected="0.0234" width="w-full" options={optsMag} />
@@ -1499,7 +1499,7 @@
                                           <div className={`p-4 rounded-xl border step-container ${answers.f_mag ? 'step-active' : 'step-pending'}`}>
                                               <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 8-10: Resultante Final</p>
                                               <div className="grid grid-cols-1 gap-4 mb-4">
-                                                  <div><label className="text-sm font-bold text-slate-700 block mb-1"><Latex text={"Magnitudeee Total $|F_{\\text{neta}}|$ (N)"} /></label>
+                                                  <div><label className="text-sm font-bold text-slate-700 block mb-1"><Latex text={"magnitudeeeee Total $|F_{\\text{neta}}|$ (N)"} /></label>
                                                      <InlineSelect id="f_mag" value={answers.f_mag} onChange={handleInputChange} isSubmitted={isSubmitted} expected="0.0340" width="w-full" options={optsTot} />
                                                   </div>
                                               </div>
@@ -1507,7 +1507,7 @@
 
                                           {/* CONCLUSION STEP TEXT */}
                                           <div className={`p-4 rounded-xl border step-container ${answers.f_concl ? 'step-active' : 'step-pending'}`}>
-                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 11: Conclusion Física</p>
+                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 11: Conclusion Physics</p>
                                               <div className="text-lg leading-loose text-slate-700 text-justify">
                                                   En Summary, observamos que <InlineSelect id="f_concl" value={answers.f_concl} onChange={handleInputChange} isSubmitted={isSubmitted} expected="ok" options={optsConclusionForce} />.
                                               </div>
@@ -1528,7 +1528,7 @@
                               <div className="bg-violet-50 border-l-4 border-violet-500 p-6 rounded-r-2xl mb-10 flex flex-col md:flex-row gap-6 items-start justify-between">
                                 <div>
                                   <p className="font-black text-violet-900 text-xl mb-2 flex items-center gap-2"><Target size={24}/> 3.1 El Campo en Circunferencia</p>
-                                  <p className="text-violet-800 font-medium text-base"><Latex text={"Determine la Magnitudeee y dirección del Electric Field en el punto $P$, generado por tres Charges puntuales distribuidas sobre una circunferencia de radio $R$. Considere: $q = 2 \\ \\text{nC}$, $R = 4 \\ \\text{cm}$."} /></p>
+                                  <p className="text-violet-800 font-medium text-base"><Latex text={"Determine la magnitudeeeee y dirección del Electric Field en el punto $P$, generado por tres Charges puntuales distribuidas sobre una circunferencia de radio $R$. Considere: $q = 2 \\ \\text{nC}$, $R = 4 \\ \\text{cm}$."} /></p>
                                 </div>
                               </div>
 
@@ -1571,7 +1571,7 @@
                                           </div>
 
                                           <div className={`p-4 rounded-xl border step-container ${answers.c_e1_mag ? 'step-active' : 'step-pending'}`}>
-                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2"><Latex text={"Paso 5: Magnitudeeees (En función de $E_0$)"} /></p>
+                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2"><Latex text={"Paso 5: magnitudeeeeees (En función de $E_0$)"} /></p>
                                               <div className="grid grid-cols-3 gap-4">
                                                   <InlineSelect id="c_e1_mag" value={answers.c_e1_mag} onChange={handleInputChange} isSubmitted={isSubmitted} expected="E_0" width="w-full" options={optsMagRel} />
                                                   <InlineSelect id="c_e2_mag" value={answers.c_e2_mag} onChange={handleInputChange} isSubmitted={isSubmitted} expected="2E_0" width="w-full" options={optsMagRel} />
@@ -1592,7 +1592,7 @@
                                           </div>
 
                                           <div className={`p-4 rounded-xl border step-container ${answers.c_mag_tot ? 'step-active' : 'step-pending'}`}>
-                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 8: Magnitudeee Final</p>
+                                              <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Paso 8: magnitudeeeee Final</p>
                                               <div><label className="text-sm font-bold text-slate-700 block mb-1"><Latex text={"$|\\vec{E}_{\\text{neto}}|$ en P (N/C)"} /></label>
                                                 <InlineSelect id="c_mag_tot" value={answers.c_mag_tot} onChange={handleInputChange} isSubmitted={isSubmitted} expected="14881" width="w-full" options={optsTot3} />
                                               </div>
@@ -1697,7 +1697,7 @@
                     <p className="leading-relaxed text-lg font-medium mb-4">
                       {score >= 4.0 ? "Excellent! Tu dominio teórico y tu capacidad para estructurar procedimientos matemáticos en el espacio es sólida. Entiendes las simetrías y los diagramas de cuerpo libre perfectamente." : 
                        score >= 3.0 ? "Buen Work procedimental. Entiendes el diagrama de cuerpo libre, pero la telemetría sugiere que necesitas afianzar la descomPosition vectorial (uso de unitarios y sumatorias) para no perder puntos en cálculo puro." : 
-                       "Anomalía detectada. El sistema IRT (Item Response Theory) detecta fallos desde la estructura conceptual base (DCL) y en la sustitución de las Distances relativas. ¡La perseverancia y el orden son la clave de la física!"}
+                       "Anomalía detectada. El sistema IRT (Item Response Theory) detecta fallos desde la estructura conceptual base (DCL) y en la sustitución de las Distances relativas. ¡La perseverancia y el orden son la clave de la Physics!"}
                     </p>
                     <div className="text-sm font-bold opacity-80 border-t border-current pt-4 flex flex-col gap-3 text-left">
                         <span className="flex items-start gap-2"><Timer size={18} className="shrink-0"/>{timeMsg}</span>

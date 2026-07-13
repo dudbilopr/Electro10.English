@@ -60,7 +60,7 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
         <button id="btn-chat" class="btn" style="display:none;background:#3498db;color:#fff" onclick="document.getElementById('room-chat-panel').style.display='flex'"><i class="ph ph-chat-centered-dots"></i> Chat Sala</button>
         <button id="btn-admin" class="btn" style="display:none;background:#ffbd2e;color:#000;font-weight:bold" onclick="showAdminDashboard()"><i class="ph ph-shield-star"></i> Panel Admin</button>
         <span id="user-stats" class="btn" style="display:none;border-color:#f1c40f;color:#f1c40f" onclick="showModal('profile-setup-modal')"><i class="ph ph-trophy"></i> Level 1 | 0 pts</span>
-        <button id="user-info" class="btn" style="font-weight:bold;border:1px solid var(--accent)" onclick="editProfile()">Cargando...</button>
+        <button id="user-info" class="btn" style="font-weight:bold;border:1px solid var(--accent)" onclick="editProfile()">loading...</button>
         <button id="btn-rooms" class="btn" style="display:none" onclick="openRooms()"><i class="ph ph-users-three"></i> Salas</button>
         <button id="btn-logout" class="btn btn-danger" style="display:none" onclick="CloseSesion()"><i class="ph ph-sign-out"></i> Salir</button>
     </div>
@@ -98,7 +98,7 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
                 <button class="win-btn win-max" onclick="toggleWin('solution-overlay','max')"></button>
                 <button class="win-btn win-close" onclick="document.getElementById('solution-overlay').style.display='none'"></button>
             </div>
-            <div class="section-title" style="margin-top:10px"><i class="ph ph-math-operations"></i> Solución Matemática</div>
+            <div class="section-title" style="margin-top:10px"><i class="ph ph-math-operations"></i> solution Matemática</div>
             <div id="latex-result" style="background:var(--card-bg);color:var(--text);padding:15px;border-radius:6px;font-size:.9rem;overflow-x:auto;min-height:100px;border:1px solid var(--glass-border)">---</div>
             <div id="solution-conclusion" style="margin-top:10px;padding:12px;background:rgba(78,204,163,0.1);border-left:4px solid var(--accent);font-size:.85rem;border-radius:0 6px 6px 0;line-height:1.5"></div>
             <div id="theory-questions" style="margin-top:10px;padding:12px;background:rgba(241,196,15,0.1);border-left:4px solid #f1c40f;font-size:.85rem;border-radius:0 6px 6px 0;line-height:1.5"></div>
@@ -108,7 +108,7 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
             <span class="close-btn" style="top:5px;right:10px;font-size:16px" onclick="closeCtx()">&times;</span>
             <div class="section-title" style="margin-top:0"><i class="ph ph-sliders"></i> Propiedades Carga</div>
             <div style="display:flex;flex-direction:column;gap:8px">
-                <label style="font-size:.8rem">Magnitudeee (Q): <input type="number" id="ctx-q" step="0.1" onchange="ctxUpdate()"></label>
+                <label style="font-size:.8rem">magnitudeeeee (Q): <input type="number" id="ctx-q" step="0.1" onchange="ctxUpdate()"></label>
                 <label style="font-size:.8rem">Position X: <input type="number" id="ctx-x" onchange="ctxUpdate()"></label>
                 <label style="font-size:.8rem">Position Y: <input type="number" id="ctx-y" onchange="ctxUpdate()"></label>
             </div>
@@ -149,7 +149,7 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
         <div id="dcl-buttons-container" style="display:flex;gap:5px;flex-wrap:wrap;margin-top:10px"></div>
         
         <button id="btn-toggle-dcl" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:10px;margin-top:15px;" onclick="toggleInCanvasDCL()"><i class="ph ph-eye"></i> Visualizar DCL en Lienzo</button>
-        <button class="btn" style="width:100%;justify-content:center;background:#9b59b6;color:#fff" onclick="document.getElementById('solution-overlay').style.display='block'"><i class="ph ph-chalkboard-teacher"></i> Ver Solución Completa</button>
+        <button class="btn" style="width:100%;justify-content:center;background:#9b59b6;color:#fff" onclick="document.getElementById('solution-overlay').style.display='block'"><i class="ph ph-chalkboard-teacher"></i> Ver solution Completa</button>
     </div>
 </div>
 
@@ -163,11 +163,11 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
 </footer>
 
 <!-- Modals -->
-<div class="modal" id="auth-modal"><div class="modal-content glass"><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-lock-key"></i> Acceso Seguro</h3><p style="font-size:.85rem;color:#888;margin-bottom:15px">Inicia sesión para guardar progreso, enviar regalos y participar.</p><input type="email" id="auth-email" placeholder="Correo electrónico" style="margin-bottom:10px"><input type="password" id="auth-pass" placeholder="Contraseña" style="margin-bottom:15px"><div style="display:flex;gap:10px"><button class="btn btn-primary" style="flex:1;justify-content:center" onclick="iniciarSesion()">Entrar</button><button class="btn" style="flex:1;justify-content:center;background:var(--card-bg)" onclick="registrarUsuario()">Registro</button></div><button class="btn" style="width:100%;justify-content:center;margin-top:10px;background:#fff;color:#000;font-weight:bold" onclick="iniciarSesionConGoogle()"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" style="width:18px"> Google</button></div></div>
+<div class="modal" id="auth-modal"><div class="modal-content glass"><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-lock-key"></i> Acceso Seguro</h3><p style="font-size:.85rem;color:#888;margin-bottom:15px">Inicia sesión para save progreso, submit regalos y participar.</p><input type="email" id="auth-email" placeholder="Correo electrónico" style="margin-bottom:10px"><input type="password" id="auth-pass" placeholder="Contraseña" style="margin-bottom:15px"><div style="display:flex;gap:10px"><button class="btn btn-primary" style="flex:1;justify-content:center" onclick="iniciarSesion()">Entrar</button><button class="btn" style="flex:1;justify-content:center;background:var(--card-bg)" onclick="registrarUsuario()">Registro</button></div><button class="btn" style="width:100%;justify-content:center;margin-top:10px;background:#fff;color:#000;font-weight:bold" onclick="iniciarSesionConGoogle()"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" style="width:18px"> Google</button></div></div>
 
 <div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> Mi Perfil</h3><p style="font-size:.85rem;color:var(--text);margin-bottom:10px">Elige un avatar y actualiza tus datos.</p>
 <div style="display:flex;justify-content:space-around;background:rgba(78,204,163,0.1);padding:10px;border-radius:8px;margin-bottom:15px;border:1px solid var(--accent)"><div style="text-align:center"><b>Level</b><br><span id="prof-Level-disp" style="font-size:1.5rem;color:var(--accent)">1</span></div><div style="text-align:center"><b>Puntos</b><br><span id="prof-puntos-disp" style="font-size:1.5rem;color:#f1c40f">0</span></div></div>
-<div id="prof-avatars" style="display:flex;justify-content:center;gap:15px;font-size:2rem;margin-bottom:15px;cursor:pointer"><span class="avt" onclick="selAvt(this)" style="border-color:var(--accent);transform:scale(1.2)">👨‍🔬</span><span class="avt" onclick="selAvt(this)">👩‍🔬</span><span class="avt" onclick="selAvt(this)">🤖</span><span class="avt" onclick="selAvt(this)">👽</span><span class="avt" onclick="selAvt(this)">🦸</span></div><input type="text" id="prof-name" placeholder="Nombre completo" style="margin-bottom:10px"><input type="text" id="prof-alias" placeholder="Alias (Ej: ElectroMaster)" style="margin-bottom:10px"><input type="number" id="prof-age" placeholder="Edad" style="margin-bottom:10px"><select id="prof-gender" style="margin-bottom:10px"><option value="">Género...</option><option value="M">Masculino</option><option value="F">Femenino</option><option value="O">Otro</option></select><input type="text" id="prof-major" placeholder="Carrera / Institución" style="margin-bottom:15px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="saveProfile()">Guardar Perfil</button></div></div>
+<div id="prof-avatars" style="display:flex;justify-content:center;gap:15px;font-size:2rem;margin-bottom:15px;cursor:pointer"><span class="avt" onclick="selAvt(this)" style="border-color:var(--accent);transform:scale(1.2)">👨‍🔬</span><span class="avt" onclick="selAvt(this)">👩‍🔬</span><span class="avt" onclick="selAvt(this)">🤖</span><span class="avt" onclick="selAvt(this)">👽</span><span class="avt" onclick="selAvt(this)">🦸</span></div><input type="text" id="prof-name" placeholder="Nombre completo" style="margin-bottom:10px"><input type="text" id="prof-alias" placeholder="Alias (Ej: ElectroMaster)" style="margin-bottom:10px"><input type="number" id="prof-age" placeholder="Edad" style="margin-bottom:10px"><select id="prof-gender" style="margin-bottom:10px"><option value="">Género...</option><option value="M">Masculino</option><option value="F">Femenino</option><option value="O">Otro</option></select><input type="text" id="prof-major" placeholder="Carrera / Institución" style="margin-bottom:15px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="saveProfile()">save Perfil</button></div></div>
 
 <div class="modal" id="admin-modal"><div class="modal-content glass" style="max-width:900px;width:95%"><span class="close-btn" onclick="hideModal('admin-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-shield-star"></i> Control General (Admin)</h3><div id="admin-stats" style="display:flex;gap:15px;margin-bottom:15px;flex-wrap:wrap"><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Usuarios</h4><div id="adm-users-count" style="font-size:24px;color:var(--accent);font-weight:bold">0</div></div><div class="card" style="flex:1;text-align:center;min-width:120px"><h4>Rating Gral.</h4><div id="adm-rating-avg" style="font-size:24px;color:#f1c40f;font-weight:bold">0.0 ⭐</div></div></div><div class="section-title">Gestión de Usuarios, Roles y Grupos</div><div style="overflow-x:auto;max-height:400px;background:var(--card-bg);border-radius:6px;padding:5px"><table style="width:100%;min-width:700px"><thead><tr><th>Usuario</th><th>Nombre</th><th>Rol (Permiso)</th><th>Asignar Grupo</th><th>Acción</th></tr></thead><tbody id="adm-users-list"></tbody></table></div></div></div>
 
@@ -186,7 +186,7 @@ table{width:100%;text-align:left;border-collapse:collapse;font-size:0.9rem} th,t
 
 <div class="modal" id="review-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('review-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-star"></i> Calificar Simulator</h3><div style="text-align:center;margin-bottom:15px"><div class="star-rating" id="app-rating-stars"><i class="ph ph-star" onclick="setAppRating(1)"></i><i class="ph ph-star" onclick="setAppRating(2)"></i><i class="ph ph-star" onclick="setAppRating(3)"></i><i class="ph ph-star" onclick="setAppRating(4)"></i><i class="ph ph-star" onclick="setAppRating(5)"></i></div></div><label style="font-size:0.85rem;display:block;margin-bottom:5px">¿Qué tan fácil fue usarlo?</label><select id="rev-q1" style="margin-bottom:10px"><option value="Muy Fácil">Muy Fácil</option><option value="Fácil">Fácil</option><option value="Regular">Regular</option><option value="Difícil">Difícil</option></select><label style="font-size:0.85rem;display:block;margin-bottom:5px">¿Te ayudó a comprender mejor?</label><select id="rev-q2" style="margin-bottom:15px"><option value="Sí, mucho">Sí, mucho</option><option value="Algo">Algo</option><option value="No mucho">No mucho</option></select><textarea id="rev-comment" rows="3" placeholder="Deja un comentario o sugerencia..." style="margin-bottom:15px;resize:none"></textarea><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitAppReview()">Submit Calificación</button></div></div>
 
-<div class="modal" id="tour-modal"><div class="modal-content glass" style="text-align:center"><h3 style="color:var(--accent);margin-bottom:10px">¡Bienvenido a CoulombLab10!</h3><p style="font-size:.9rem;color:var(--text);margin-bottom:15px">1. <b>IA:</b> Dibuja círculos y el sistema los Backá Charges.<br>2. <b>Vectors:</b> Dibuja líneas desde las Charges.<br>3. <b>Propiedades:</b> Usa la herramienta Mover y haz clic en una carga para editar su Magnitudeee y ver cómo cambia de tamaño.<br>4. <b>Copiar/Pegar:</b> Usa <kbd>Ctrl+C</kbd> y <kbd>Ctrl+V</kbd> para copiar objetos entre casos.</p><button class="btn btn-primary" onclick="hideModal('tour-modal');localStorage.setItem('tourDone','1')">¡Entendido!</button></div></div>
+<div class="modal" id="tour-modal"><div class="modal-content glass" style="text-align:center"><h3 style="color:var(--accent);margin-bottom:10px">¡welcome a CoulombLab10!</h3><p style="font-size:.9rem;color:var(--text);margin-bottom:15px">1. <b>IA:</b> Dibuja círculos y el sistema los Backá Charges.<br>2. <b>Vectors:</b> Dibuja líneas desde las Charges.<br>3. <b>Propiedades:</b> Usa la herramienta Mover y haz clic en una carga para editar su magnitudeeeee y ver cómo cambia de tamaño.<br>4. <b>Copiar/Pegar:</b> Usa <kbd>Ctrl+C</kbd> y <kbd>Ctrl+V</kbd> para copiar objetos entre casos.</p><button class="btn btn-primary" onclick="hideModal('tour-modal');localStorage.setItem('tourDone','1')">¡Entendido!</button></div></div>
 
 <div class="modal" id="fbd-modal"><div class="modal-content glass" style="text-align:center;max-width:450px"><div class="window-controls"><button class="win-btn win-min" onclick="hideModal('fbd-modal')"></button><button class="win-btn win-max" onclick="document.getElementById('fbd-canvas').style.transform='scale(1.5)'"></button><button class="win-btn win-close" onclick="hideModal('fbd-modal')"></button></div><h3 style="margin-bottom:10px;color:var(--accent)"><i class="ph ph-crosshair"></i> Diagrama Cuerpo Libre</h3><div style="background:#fff;border-radius:8px;padding:10px;overflow:hidden"><canvas id="fbd-canvas" width="400" height="400" style="position:relative;background:#fff;max-width:100%;height:auto;transition:transform .3s"></canvas></div></div></div>
 
@@ -421,7 +421,7 @@ function updateStatement(chs, qU) {
     if(chs.length < 2) { el.innerHTML = "Coloca al menos dos Charges en el lienzo e interactúa con ellas para generar el problema."; return; }
     let t = `Un sistema consta de ${chs.length} Charges puntuales interaccionando en el vacío: `;
     t += chs.map(c => `<b>q<sub>${c.id}</sub> = ${formatExpHTML(c.q * qU)} C</b>`).join(', ') + '. ';
-    t += `<br><br>Determine analítica y Chartmente la Magnitudeee y dirección de la <b>Force eléctrica resultante</b> sobre cada una de las Charges originada por el resto del sistema.`;
+    t += `<br><br>Determine analítica y Chartmente la magnitudeeeee y dirección de la <b>Force eléctrica resultante</b> sobre cada una de las Charges originada por el resto del sistema.`;
     el.innerHTML = t;
 }
 
@@ -430,7 +430,7 @@ function generateInsights(chs, fs) {
     const theo = document.getElementById('theory-questions');
     if(chs.length < 2) { conc.innerHTML=''; theo.innerHTML=''; return; }
 
-    let cHtml = "<strong style='color:var(--accent)'><i class='ph ph-info'></i> Conclusiones Físicas:</strong><ul style='margin-left:20px;margin-top:5px'>";
+    let cHtml = "<strong style='color:var(--accent)'><i class='ph ph-info'></i> Conclusiones Physicss:</strong><ul style='margin-left:20px;margin-top:5px'>";
     chs.forEach(ch => {
         const fToMe = fs.filter(f=>f.target===ch.id);
         if(fToMe.length===0) return;
@@ -601,7 +601,7 @@ window.iniciarSesionConGoogle=async()=>{
 
 window.CloseSesion = async () => {
     if(curRoomRef) {
-        if(confirm("¿Deseas guardar la sincronización actual antes de salir?")) window.sendData();
+        if(confirm("¿Deseas save la sincronización actual antes de salir?")) window.sendData();
     }
     await signOut(auth);
 };
@@ -620,7 +620,7 @@ window.editProfile = async () => {
             document.getElementById('prof-major').value = d.carrera||'';
         }
         showModal('profile-setup-modal');
-    } catch(e) { alert("Error cargando perfil: "+e.message); }
+    } catch(e) { alert("Error loading perfil: "+e.message); }
 };
 
 window.saveProfile = async () => {
@@ -740,7 +740,7 @@ window.showAdminDashboard = async () => {
                     </select>
                 </td>
                 <td><input type="text" id="adm-group-${uid}" value="${u.grupo||'General'}" style="padding:4px;font-size:0.8rem;background:transparent;border:1px solid var(--glass-border);width:100px"></td>
-                <td><button class="btn btn-primary" style="padding:4px 8px;font-size:0.75rem" onclick="adminUpdateUser('${uid}')">Guardar</button></td>
+                <td><button class="btn btn-primary" style="padding:4px 8px;font-size:0.75rem" onclick="adminUpdateUser('${uid}')">save</button></td>
             </tr>`;
         });
         
@@ -777,7 +777,7 @@ window.openRooms = async () => {
             rl.innerHTML += `<div class="card" style="display:flex;justify-content:space-between;align-items:center;padding:10px;margin-bottom:8px">
                 <div><b>${u.avatar||''} ${u.alias||u.nombre}</b><br><span style="font-size:0.75rem;color:#888">Grupo: ${u.grupo||'General'} | Rol: ${u.rol}</span></div> 
                 <div style="display:flex;gap:5px">
-                    <button class="btn" style="background:rgba(231,76,60,0.2);color:#e74c3c;padding:4px 8px" onclick="enviarRegalo('${u.id}')" title="Submit Regalo">🎁 ${u.regalos||0}</button>
+                    <button class="btn" style="background:rgba(231,76,60,0.2);color:#e74c3c;padding:4px 8px" onclick="submitRegalo('${u.id}')" title="Submit Regalo">🎁 ${u.regalos||0}</button>
                     <button class="btn" style="background:rgba(241,196,15,0.2);color:#f1c40f;padding:4px 8px" onclick="darEstrella('${u.id}')" title="Dar Estrella">⭐ ${u.estrellas||0}</button>
                 </div>
             </div>`;
@@ -799,7 +799,7 @@ window.openRooms = async () => {
     } catch(e) { console.error("Error abriendo comunidad:", e); }
 };
 
-window.enviarRegalo = async (uid) => {
+window.submitRegalo = async (uid) => {
     try { await updateDoc(doc(db, `artifacts/${APP_ID}/public/data/directory/${uid}`), { regalos: increment(1) }); openRooms(); }
     catch(e) {}
 };

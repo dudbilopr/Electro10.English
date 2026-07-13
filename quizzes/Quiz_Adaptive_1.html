@@ -124,7 +124,7 @@
     <div id="result-feedback" style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;font-size:0.88rem;line-height:1.6;color:var(--text-mid);margin-bottom:20px"></div>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <button class="btn btn-secondary" onclick="ResetQuiz()"><span class="material-symbols-outlined" style="font-size:16px">refresh</span> Intentar de nuevo</button>
-      <button class="btn btn-primary" onclick="enviarResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> Guardar Result</button>
+      <button class="btn btn-primary" onclick="submitResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> save Result</button>
     </div>
   </div>
 </div>
@@ -179,12 +179,12 @@ const QUIZ_CONFIG = {
       ],
       feedback_ok: "¡Correct! k ≈ 8.99 × 10⁹ ≈ 9 × 10⁹ N·m²/C². Nota: 8.85 × 10⁻¹² es la permitividad del vacío ε₀.",
       feedback_bad: "k = 8.99 × 10⁹ N·m²/C² ≈ 9 × 10⁹ N·m²/C². No confundas con ε₀ = 8.85 × 10⁻¹² C²/(N·m²).",
-      pista: "k es la constante electrostática de Coulomb. Recuerda su orden de Magnitudeee: 10⁹."
+      pista: "k es la constante electrostática de Coulomb. Recuerda su orden de magnitudeeeee: 10⁹."
     },
     // ── Level 2: COMPRENSIÓN ─────────────────────────────────
     {
       Level: 2, id: "c1-n2-1",
-      texto: "Dos Charges q₁ = +3 μC y q₂ = −2 μC están separadas 0.3 m. ¿Cuál es la Magnitudeee de la Force entre ellas?",
+      texto: "Dos Charges q₁ = +3 μC y q₂ = −2 μC están separadas 0.3 m. ¿Cuál es la magnitudeeeee de la Force entre ellas?",
       formula: "F = k|q₁||q₂|/r²",
       Options: [
         { texto: "0.3 N (atractiva)", Correct: false },
@@ -219,7 +219,7 @@ const QUIZ_CONFIG = {
         { texto: "18 × 10⁻³ N", Correct: false },
         { texto: "9 × 10⁻³ N hacia el centroide", Correct: false }
       ],
-      feedback_ok: "¡Excelente análisis vectorial! Las dos Forces (igual Magnitudeee F = 9×10⁻³ N) forman 60°. F_net = F√3 ≈ 15.6 × 10⁻³ N apuntando hacia afuera del triAngle.",
+      feedback_ok: "¡Excelente análisis vectorial! Las dos Forces (igual magnitudeeeee F = 9×10⁻³ N) forman 60°. F_net = F√3 ≈ 15.6 × 10⁻³ N apuntando hacia afuera del triAngle.",
       feedback_bad: "Las Forces F₁ = F₂ = 9×10⁻³ N forman 60°. Suma vectorial: F_net = √(F²+F²+2F²cos60°) = F√3 en dirección radial hacia afuera.",
       pista: "Usa superPosition: calcula las dos Forces por separado, luego suma vectorialmente. El Angle entre ellas es 60°."
     },
@@ -449,7 +449,7 @@ function showResults() {
   document.getElementById('result-feedback').innerHTML = feedbackText;
 }
 
-function enviarResult() {
+function submitResult() {
   const pct = Math.round((results.correct / results.total) * 100) || 0;
   const xp = Math.round(QUIZ_CONFIG.xpBase * (pct/100) * (results.maxLevel/3));
   window.parent?.postMessage({

@@ -92,9 +92,9 @@ spacing:
 ## 1. Overview
 El rediseño transforma la plataforma en un HUD (Heads-Up Display) de laboratorio científico. Mantenemos un **Modo Claro** por defecto con altos contrastes (blancos limpios y azules técnicos), pero la estructura está preparada para un Modo Oscuro inmersivo.
 
-## 2. Conceptos Clave
+## 2. Key Concepts
 - **Glassmorphism:** Las tarjetas principales tienen fondos ligeramente translúcidos con bordes finos, evocando paneles de cristal inteligente.
-- **Colores Temáticos:** Cada Module de la física utilizará su propio color de acento para reforzar el contexto (Azul Eléctrico para Electricidad, Magenta para Magnetismo).
+- **Colores Temáticos:** Cada Module de la Physics utilizará su propio color de acento para reforzar el contexto (Azul Eléctrico para Electricidad, Magenta para Magnetismo).
 - **Tipografía:** Combinación de `Outfit` (geométrica, moderna, perfecta para encabezados científicos) e `Inter` (alta legibilidad para el contenido educativo).
 - **Sombras Direccionales:** En lugar de sombras difusas, usaremos "brillos" suaves (`box-shadow` teñido con el color primario) para simular emisión de luz.
 

@@ -1,6 +1,6 @@
 // ============================================================
 // js/profile.js
-// Guardar y cargar el perfil del Student en Firestore.
+// save y cargar el perfil del Student en Firestore.
 // Gestión del avatar y modo de vista admin.
 // ============================================================
 import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -8,7 +8,7 @@ import { db, auth } from './firebase.js';
 import { APP_ID } from '../config/firebase.config.js';
 import { actualizarAvatarUI } from './ui.js';
 
-export async function guardarPerfil() {
+export async function savePerfil() {
     if (!window.currentUserUid) return;
 
     const name        = document.getElementById('prof-name').value;
@@ -41,7 +41,7 @@ export async function guardarPerfil() {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'profile', 'data'), profileData, { merge: true });
         await setDoc(doc(db, 'artifacts', APP_ID, 'public', 'data', 'directory', window.currentUserUid), profileData, { merge: true });
 
-        // Guardar API Key localmente para acceso rápido en ai-chat.js
+        // save API Key localmente para acceso rápido en ai-chat.js
         if(apikey) {
             localStorage.setItem('userApiKey', apikey);
             window.userApiKey = apikey;
@@ -217,7 +217,7 @@ export function cambiarModoVistaAdmin() {
 }
 
 // Guarda la Configuration del ritmo flexible del usuario
-export async function guardarRitmo(mode, length) {
+export async function saveRitmo(mode, length) {
     if (!window.currentUserUid) return;
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'profile', 'data'), {
@@ -225,12 +225,12 @@ export async function guardarRitmo(mode, length) {
             pacingLength: length
         }, { merge: true });
     } catch (e) {
-        console.error("Error al guardar el ritmo:", e);
+        console.error("Error al save el ritmo:", e);
     }
 }
 
 // Guarda la encuesta de metodología de estudio semanal
-export async function guardarEncuestaSemanal() {
+export async function saveEncuestaSemanal() {
     if (!window.currentUserUid) return;
     
     const hours = document.getElementById('survey-hours').value;
@@ -251,7 +251,7 @@ export async function guardarEncuestaSemanal() {
             date: timestamp
         };
 
-        // Guardar la encuesta en una subcolección (histórico)
+        // save la encuesta en una subcolección (histórico)
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'surveys', timestamp.toString()), surveyData);
         
         // Actualizar la fecha de última encuesta en el perfil principal
@@ -264,7 +264,7 @@ export async function guardarEncuestaSemanal() {
         Swal.fire('Excellent!', 'Has registrado tu progreso semanal. Sigue así.', 'success');
         
     } catch (e) {
-        Swal.fire('Error', 'No se pudo guardar la encuesta. Intenta nuevamente.', 'error');
+        Swal.fire('Error', 'No se pudo save la encuesta. Intenta nuevamente.', 'error');
         console.error(e);
     }
 }
@@ -287,7 +287,7 @@ export async function calificarRecurso(valor, lessonId = window.currentLeccionId
             userId: window.currentUserUid
         };
 
-        // Guardar la calificación del usuario para este recurso
+        // save la calificación del usuario para este recurso
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'ratings', lessonId), ratingData);
         
         // Efecto visual
@@ -303,7 +303,7 @@ export async function calificarRecurso(valor, lessonId = window.currentLeccionId
         });
 
     } catch (e) {
-        console.error("Error al guardar calificación:", e);
+        console.error("Error al save calificación:", e);
     }
 }
 
@@ -322,7 +322,7 @@ export async function cargarCalificacionRecurso(lessonId) {
 }
 
 export function pintarEstrellas(valor) {
-    window.currentRatingValue = valor; // Guardar valor real
+    window.currentRatingValue = valor; // save valor real
     const stars = document.querySelectorAll('#resource-stars .star');
     stars.forEach((star, index) => {
         if (index < valor) {
@@ -363,7 +363,7 @@ export async function calificarCurso(valor) {
             userId: window.currentUserUid
         };
 
-        // Guardar la calificación del usuario para el curso completo
+        // save la calificación del usuario para el curso completo
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'ratings', 'curso_global'), ratingData);
         
         pintarCourseEstrellas(valor);
@@ -378,7 +378,7 @@ export async function calificarCurso(valor) {
         });
 
     } catch (e) {
-        console.error("Error al guardar calificación del curso:", e);
+        console.error("Error al save calificación del curso:", e);
     }
 }
 
@@ -398,7 +398,7 @@ export async function cargarCalificacionCurso() {
 }
 
 export function pintarCourseEstrellas(valor) {
-    window.currentCourseRatingValue = valor; // Guardar valor real
+    window.currentCourseRatingValue = valor; // save valor real
     const stars = document.querySelectorAll('#course-stars .star');
     stars.forEach((star, index) => {
         if (index < valor) {

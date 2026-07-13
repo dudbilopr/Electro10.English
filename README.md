@@ -14,7 +14,7 @@
 
 ## Visión del Proyecto
 **Electro10.Easy** no es solo un curso; es un **Ecosistema Pedagógico Inteligente**. Diseñado específicamente para el **Centro de Development Académico y Tecnológico (CDAT)**, esta plataforma eleva el estándar de la educación universitaria integrando:
-- **Diagnósticos Inteligentes:** Assessment matemática estricta antes de acceder a la física.
+- **Diagnósticos Inteligentes:** Assessment matemática estricta antes de acceder a la Physics.
 - **Glassmorphism UI:** Arquitectura visual "Stitch with Google" / Material Design 3.
 - **Neuroeducación:** Consejos dinámicos basados en la curva de fatiga cognitiva.
 - **Analítica Predictiva:** Dashboard maestro que calcula retención y tasas de abandono.
@@ -63,6 +63,6 @@ Para desplegar esta maravilla de la ingeniería de software de forma gratuita:
 ---
 
 <div align="center">
-  <i>Construido con excelencia para revolucionar la enseñanza de la física.</i><br>
+  <i>Construido con excelencia para revolucionar la enseñanza de la Physics.</i><br>
   <b>2026 © CDAT Universitario</b>
 </div>

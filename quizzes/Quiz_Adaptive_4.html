@@ -124,7 +124,7 @@
     <div id="result-feedback" style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;font-size:0.88rem;line-height:1.6;color:var(--text-mid);margin-bottom:20px"></div>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <button class="btn btn-secondary" onclick="ResetQuiz()"><span class="material-symbols-outlined" style="font-size:16px">refresh</span> Intentar de nuevo</button>
-      <button class="btn btn-primary" onclick="enviarResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> Guardar Result</button>
+      <button class="btn btn-primary" onclick="submitResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> save Result</button>
     </div>
   </div>
 </div>
@@ -188,7 +188,7 @@ const QUIZ_CONFIG = {
   {Level:3,id:"c4-n3-7",
    texto:"Relación entre E y V en 3D:",
    formula:"E = -∇V",
-   Options:[{"texto":"E = ∇V","Correct":false},{"texto":"E = −∇V","Correct":true},{"texto":"V = ∫E·dr solo Magnitudeee","Correct":false},{"texto":"No se relacionan","Correct":false}],
+   Options:[{"texto":"E = ∇V","Correct":false},{"texto":"E = −∇V","Correct":true},{"texto":"V = ∫E·dr solo magnitudeeeee","Correct":false},{"texto":"No se relacionan","Correct":false}],
    feedback_ok:"E = −∇V. El campo apunta en dirección de máximo descenso del Powerl.",
    feedback_bad:"E = −∇V. El signo es crucial: campo del Powerl alto al bajo.",
    pista:"El campo va del Powerl ALTO al BAJO. ¿Qué signo tiene esa derivada?"
@@ -382,7 +382,7 @@ function showResults() {
   document.getElementById('result-feedback').innerHTML = feedbackText;
 }
 
-function enviarResult() {
+function submitResult() {
   const pct = Math.round((results.correct / results.total) * 100) || 0;
   const xp = Math.round(QUIZ_CONFIG.xpBase * (pct/100) * (results.maxLevel/3));
   window.parent?.postMessage({

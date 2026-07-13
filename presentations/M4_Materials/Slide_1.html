@@ -128,7 +128,7 @@
                             E_y &= k\lambda \left[ \frac{1}{\sqrt{x^2+(y-L/2)^2}} - \frac{1}{\sqrt{x^2+(y+L/2)^2}} \right]
                             \end{aligned}
                         </div>
-                        <p class="font-bold text-sm text-indigo-900 mt-2">⚠️ Advertencia Física</p>
+                        <p class="font-bold text-sm text-indigo-900 mt-2">⚠️ Advertencia Physics</p>
                         <p class="text-xs">Cerca de los extremos de la línea, el Electric Field se curva fuertemente ("efecto de borde"), generando una Force que empuja las partículas hacia el centro o hacia afuera dependiendo del signo.</p>
                     </div>
 
@@ -186,7 +186,7 @@
                             6. Densidad Variable e Integración Visual
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Diferencial:</strong> $dq = \lambda(y) dy$. Observa cómo la contribución $d\vec{E}$ cambia en Magnitudeee y dirección al recorrer la línea.</span>
+                                <span class="tip-content"><strong>💡 Diferencial:</strong> $dq = \lambda(y) dy$. Observa cómo la contribución $d\vec{E}$ cambia en magnitudeeeee y dirección al recorrer la línea.</span>
                             </span>
                         </p>
                         <p class="text-sm mt-1">Cuando la densidad de carga no es constante ($\lambda = f(y)$), no podemos sacar $\lambda$ de la integral. El campo exacto se computa mediante la suma (integración) de infinitos elementos de carga $dq$:</p>
@@ -720,7 +720,7 @@
         }
 
         // ==========================================
-        // 6. MOTOR DE INTEGRACIÓN (FÍSICA DE LA PARTÍCULA)
+        // 6. MOTOR DE INTEGRACIÓN (Physics DE LA PARTÍCULA)
         // ==========================================
         let lastTime = performance.now();
         let graphDataX = []; // Almacena (t, x)
@@ -776,7 +776,7 @@
             rArrow.setLength(r_dist, r_dist * 0.1, r_dist * 0.05);
             rArrow.visible = params.show_r;
 
-            // Uso del multiplicador visual (scale_dE) sobre la Magnitudeee física real
+            // Uso del multiplicador visual (scale_dE) sobre la magnitudeeeee Physics real
             let vis_dE_len = Math.abs(dE_mag) * params.scale_dE; 
 
             if (lam < 0) dEArrow.setDirection(dE_vec.clone().normalize().negate());

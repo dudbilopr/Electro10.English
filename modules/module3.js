@@ -13,11 +13,11 @@ export const module3 = {
           "sublecciones":[
             { "id":"m3-s1","tipo":"Simulator","recurso":"simulators/Sim_M3_Flux.html","titulo":"3.1 Electric Flux","descripcion":"Visualiza el flujo a través de diferentes superficies en tiempo real.","xp":20 },
             { "id":"m3-s2","tipo":"Simulator","recurso":"simulators/Sim_M3_Gauss_Table.html","titulo":"3.2 Tabla de Gauss Interactiva","descripcion":"Selecciona geometría y calcula el campo con la Gauss\'s Law.","xp":20 },
-            { "id":"m3-s3","tipo":"Simulator","recurso":"simulators/Sim_M2_Board_Distributions.html","titulo":"3.3 Distribuciones Simétricas","descripcion":"Campo de anillo, disco y cilindro cargados.","xp":20 }
+            { "id":"m3-s3","tipo":"Simulator","recurso":"simulators/Sim_M2_Board_Distributions.html","titulo":"3.3 Distribuciones Simétricas","descripcion":"Campo de anillo, disco y cilindro loadeds.","xp":20 }
           ]
         },
         { "id":"m3-j1","tipo":"Game","recurso":"games/Game_3.html","titulo":"4. Physics Quest — Gauss","descripcion":"Elige la superficie gaussiana correcta y calcula el campo. ¡5 rondas desafiantes!","xp":25,"logro":{"id":"logro_m3","nombre":"Guardián del Flujo","icono":"🌊"} },
-        { "id":"m3-l7","tipo":"ejercicio","recurso":"workshops/Workshop_3_Gauss_Law.html","titulo":"5. Workshop Práctico — Gauss","descripcion":"Problemas de Electric Flux y aplicación de la Gauss\'s Law con geometrías reales.","xp":30 },
+        { "id":"m3-l7","tipo":"exercise","recurso":"workshops/Workshop_3_Gauss_Law.html","titulo":"5. Workshop Práctico — Gauss","descripcion":"Problemas de Electric Flux y aplicación de la Gauss\'s Law con geometrías reales.","xp":30 },
         { "id":"m3-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_3.html","titulo":"6. Quiz Adaptativo — Module 3","descripcion":"Evalúa tu comprensión del flujo, las superficies gaussianas y sus aplicaciones.","xp":40 },
         { "id":"m3-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 3: Reemplaza "#" con tu link
@@ -30,8 +30,8 @@ export const module3 = {
                 { "url":"https://www.amazon.com/dp/0321971174","titulo":"Griffiths — Introduction to Electrodynamics","descripcion":"Cap. 2: electrostática con derivación rigurosa de la Gauss\'s Law." }
             ]},
             { "tituloSeccion":"🌐 Resources web","links":[
-                { "url":"https://www.fisicalab.com/apartado/ley-de-gauss","titulo":"Fisicalab: Gauss\'s Law","descripcion":"Aplicaciones por simetría con ejemplos numéricos." },
-                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-electric-charge-electric-force-and-voltage/gauss-law-ap/v/electric-flux","titulo":"Khan Academy: Flujo y Gauss\'s Law","descripcion":"Video introductorio y ejercicios." }
+                { "url":"https://www.fisicalab.com/apartado/ley-de-gauss","titulo":"Fisicalab: Gauss\'s Law","descripcion":"Aplicaciones por simetría con examples numéricos." },
+                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-electric-charge-electric-force-and-voltage/gauss-law-ap/v/electric-flux","titulo":"Khan Academy: Flujo y Gauss\'s Law","descripcion":"Video introductorio y exercises." }
             ]},
             { "tituloSeccion":"🔬 Simulatores externos","links":[
                 { "url":"https://phet.colorado.edu/es/simulations/charges-and-fields","titulo":"PhET: Charges y Campos (flujo)","descripcion":"Mide el flujo a través de superficies definidas por el usuario." }

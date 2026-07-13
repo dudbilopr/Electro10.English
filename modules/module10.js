@@ -16,7 +16,7 @@ export const module10 = {
           ]
         },
         { "id":"m10-j1","tipo":"Game","recurso":"games/Game_10.html","titulo":"4. Physics Quest — Faraday","descripcion":"¡Genera la Current exacta moviendo el conductor! 5 misiones de Induction.","xp":25,"logro":{"id":"logro_m10","nombre":"Maestro de la Induction","icono":"⚙️"} },
-        { "id":"m10-l7","tipo":"ejercicio","recurso":"workshops/Workshop_10_Faraday_Law.html","titulo":"5. Workshop Práctico — Faraday","descripcion":"Calculation de FEM inducida, inductancia mutua, autoinductancia y Energy en inductores.","xp":30 },
+        { "id":"m10-l7","tipo":"exercise","recurso":"workshops/Workshop_10_Faraday_Law.html","titulo":"5. Workshop Práctico — Faraday","descripcion":"Calculation de FEM inducida, inductancia mutua, autoinductancia y Energy en inductores.","xp":30 },
         { "id":"m10-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_10.html","titulo":"6. Quiz Adaptativo — Module 10","descripcion":"Evalúa desde el concepto de flujo hasta el diseño de transformadores.","xp":40 },
         { "id":"m10-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 10: Reemplaza "#" con tu link
@@ -29,8 +29,8 @@ export const module10 = {
                 { "url":"https://www.amazon.com/dp/0321971174","titulo":"Griffiths — Electrodynamics Cap. 7","descripcion":"Electrodinámica: Induction y Energy del campo." }
             ]},
             { "tituloSeccion":"🌐 Resources web","links":[
-                { "url":"https://www.fisicalab.com/apartado/induccion-electromagnetica","titulo":"Fisicalab: Induction Electromagnética","descripcion":"Theory y ejercicios de Faraday y Lenz." },
-                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-electromagnetic-induction","titulo":"Khan Academy: Induction EM","descripcion":"Videos y práctica completa." }
+                { "url":"https://www.fisicalab.com/apartado/induccion-electromagnetica","titulo":"Fisicalab: Induction Electromagnética","descripcion":"Theory y exercises de Faraday y Lenz." },
+                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-electromagnetic-induction","titulo":"Khan Academy: Induction EM","descripcion":"Videos y practice completa." }
             ]},
             { "tituloSeccion":"🔬 Simulatores externos","links":[
                 { "url":"https://phet.colorado.edu/es/simulations/faradays-law","titulo":"PhET: Faraday's Law","descripcion":"Mueve un imán y observa la FEM inducida en tiempo real." },

@@ -102,7 +102,7 @@
                     <!-- BASE COMÚN -->
                     <div class="bg-slate-100 p-[1.5vmin] border-l-[0.5vmin] border-blue-600 shadow-sm rounded-r-lg mb-[1vmin]">
                         <p class="mb-1 flex items-start">
-                            <span>La Force eléctrica entre dos Charges puntuales en reposo es dictada por la <strong>Coulomb\'s Law</strong>. Su Magnitudeee es inversamente proporcional al cuadrado de la Distance $d$ que las separa:</span>
+                            <span>La Force eléctrica entre dos Charges puntuales en reposo es dictada por la <strong>Coulomb\'s Law</strong>. Su magnitudeeeee es inversamente proporcional al cuadrado de la Distance $d$ que las separa:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn">💡</span>
                                 <span class="tip-content"><strong>💡 Coulomb\'s Constant:</strong> $k = 1/(4\pi\varepsilon_0) \approx 9\times 10^9 \text{ N m}^2/\text{C}^2$. Define la intensidad del acoplamiento eléctrico en el vacío.</span>
@@ -265,7 +265,7 @@
         </div>
     </div>
 
-    <!-- LÓGICA CORE: THREE.JS Y FÍSICA -->
+    <!-- LÓGICA CORE: THREE.JS Y Physics -->
     <script>
         // ==========================================
         // 1. INICIALIZACIÓN DE THREE.JS
@@ -288,7 +288,7 @@
         light.position.set(10, 20, 10); scene.add(light);
 
         // ==========================================
-        // 2. CONSTANTES FÍSICAS Y ESTADO
+        // 2. CONSTANTES PhysicsS Y ESTADO
         // ==========================================
         let params = { r: 5.0, rho: 5.0, theta: 4.0, material: 'c1' };
         
@@ -314,7 +314,7 @@
         const groupPendulo = new THREE.Group(); scene.add(groupPendulo);
         const groupBalanza = new THREE.Group(); scene.add(groupBalanza);
         
-        // Objeto Externo Cargado
+        // Objeto Externo loaded
         const geoExtSphere = new THREE.SphereGeometry(0.8, 32, 32);
         const matExtSphere = new THREE.MeshPhysicalMaterial({ color: 0xdc2626, emissive: 0x450000, transparent: true, opacity: 0.9 });
         const extObj = new THREE.Mesh(geoExtSphere, matExtSphere);
@@ -511,7 +511,7 @@
             const uiRegion = document.getElementById('ui-region');
             let txt = "", cls = "";
             if (params.material === 'c1') {
-                txt = "Estado: " + (Math.abs(params.rho)>0.1 ? "Hojas Inducidas (Repulsión)" : "Neutro (Descargado)");
+                txt = "Estado: " + (Math.abs(params.rho)>0.1 ? "Hojas Inducidas (Repulsión)" : "Neutro (Desloaded)");
                 cls = "text-amber-700";
             } else if (params.material === 'c2') {
                 txt = "Estado: " + (phys.hasTouched ? "Repulsión por Contacto" : "Atracción por Polarización");
@@ -707,7 +707,7 @@
                 extObj.position.set(4, 0, params.r); // Balanza
             }
 
-            // --- FÍSICA Y DINÁMICA ---
+            // --- Physics Y DINÁMICA ---
             const m = params.theta; // Masa o Rigidez
             let F_real = calculateForce(params.r);
             let targetTheta = 0;

@@ -144,13 +144,13 @@
             <div class="content-header" id="content-header" style="display: none;">
                 <div class="title-area">
                     <div class="breadcrumb" id="breadcrumb">
-                        <a href="#" onclick="window.ShowDashboardStudent()" style="color: inherit; text-decoration: none;">Física III</a>
+                        <a href="#" onclick="window.ShowDashboardStudent()" style="color: inherit; text-decoration: none;">Physics III</a>
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                         <span class="truncate" style="max-width: 150px;" id="bread-modulo">Module</span>
                         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                         <span class="active truncate" style="max-width: 200px;" id="bread-leccion">Lección</span>
                     </div>
-                    <h2 id="display-title">Cargando...</h2>
+                    <h2 id="display-title">loading...</h2>
                 </div>
                 <div class="action-buttons" style="display: flex; gap: 10px;">
                     <a id="btn-notebook" class="btn-primary" style="display: none; background: #6366f1;" href="#" target="_blank"><span class="material-symbols-outlined text-[18px]">auto_awesome</span> Asistente IA</a>
@@ -213,7 +213,7 @@
                         const mode = document.getElementById('pacing-mode').value;
                         const length = document.getElementById('pacing-length').value;
                         window.renderTimeline(mode, length);
-                        if (window.guardarRitmo) window.guardarRitmo(mode, length);
+                        if (window.saveRitmo) window.saveRitmo(mode, length);
                     };
 
                     // Inicializar con 16 semanas por defecto
@@ -223,9 +223,9 @@
                 <div class="bento-grid">
                     
                     <div class="bento-card hero-card col-8 animate-fade-in">
-                        <div class="bento-label">BIENVENIDO A TU VIAJE ACADÉMICO</div>
+                        <div class="bento-label">welcome A TU VIAJE ACADÉMICO</div>
                         <h2>¡Hola, <span id="student-name-hero" style="color: #fff; font-weight: 900;">Student</span>!</h2>
-                        <p>Te damos la bienvenida al maravilloso mundo del electromagnetismo. Prepárate para explorar las Forces que rigen el universo a través de simulaciones de vanguardia e IA integrada.</p>
+                        <p>Te damos la welcome al maravilloso mundo del electromagnetismo. Prepárate para explorar las Forces que rigen el universo a través de simulaciones de vanguardia e IA integrada.</p>
                         
                         <div id="next-lesson-container" style="margin-top: auto;">
                             <!-- Botón dinámico insertado aquí -->
@@ -283,7 +283,7 @@
                             </div>
 
                             <p class="author-bio">
-                                Physical y docente universitario con enfoque en inteligencia artificial aplicada a la educación. Development estrategias y Tools basadas en modelos de lenguaje (LLM) para apoyar la enseñanza de la física, las matemáticas y la ciencia de datos.
+                                Physical y docente universitario con enfoque en inteligencia artificial aplicada a la educación. Development estrategias y Tools basadas en modelos de lenguaje (LLM) para apoyar la enseñanza de la Physics, las matemáticas y la ciencia de datos.
                             </p>
 
                             <a href="mailto:dpabon180@unab.edu.co" class="contact-btn">
@@ -346,7 +346,7 @@
                         <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 15px; height: 100%; display: flex; align-items: flex-start; gap: 10px;">
                             <span class="material-symbols-outlined" style="color: #f59e0b; font-size: 24px;">lightbulb</span>
                             <div style="font-size: 0.9rem; color: var(--text-high); line-height: 1.5;" id="student-neuro-tip">
-                                Tu atención sostenida está en un punto óptimo. Aprovecha para resolver ejercicios prácticos ahora.
+                                Tu atención sostenida está en un punto óptimo. Aprovecha para resolver exercises prácticos ahora.
                             </div>
                         </div>
                     </div>
@@ -358,7 +358,7 @@
                         <p style="font-size: 0.75rem; color: var(--text-low); margin: 0 0 10px 0;">Tus notas sincronizadas en la nube</p>
                         <div style="display: flex; flex-direction: column; gap: 10px; height: 100%;">
                             <textarea id="student-notes" style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; color: var(--text-high); font-family: inherit; font-size: 0.85rem; resize: none;" placeholder="Escribe tus conclusiones clave aquí..."></textarea>
-                            <button class="btn-primary" style="justify-content: center; background: #10b981; color: #fff; border: none;" onclick="window.guardarApuntes()"><span class="material-symbols-outlined text-[18px]">cloud_upload</span> Guardar Apunte</button>
+                            <button class="btn-primary" style="justify-content: center; background: #10b981; color: #fff; border: none;" onclick="window.saveApuntes()"><span class="material-symbols-outlined text-[18px]">cloud_upload</span> save Apunte</button>
                         </div>
                     </div>
                 </div>
@@ -418,7 +418,7 @@
                                 <div class="input-group">
                                     <label>Género</label>
                                     <select id="prof-gender" class="form-input">
-                                        <option value="No Especificado">Seleccionar...</option>
+                                        <option value="No Especificado">select...</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
                                         <option value="Otro">Otro / Prefiero no decirlo</option>
@@ -437,7 +437,7 @@
                             <h4 style="margin: 25px 0 15px 0; color: var(--text-high); border-bottom: 1px solid var(--border-color); padding-bottom: 8px;"><span class="material-symbols-outlined text-[18px]" style="vertical-align:bottom; color: var(--accent);">functions</span> Base Matemática y Dedicación</h4>
                             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
                                 <div class="input-group">
-                                    <label>Horas semanales dedicadas a física</label>
+                                    <label>Horas semanales dedicadas a Physics</label>
                                     <input type="number" id="prof-hours" class="form-input" placeholder="Ej. 5" min="0" max="40">
                                 </div>
                                 <div class="input-group">
@@ -544,7 +544,7 @@
                             </div>
                             
                             <div style="display: flex; gap: 15px; margin-top: 25px;">
-                                <button class="btn-primary" onclick="window.guardarPerfil()"><span class="material-symbols-outlined text-[18px]">save</span> Guardar Cambios</button>
+                                <button class="btn-primary" onclick="window.savePerfil()"><span class="material-symbols-outlined text-[18px]">save</span> save Cambios</button>
                                 <button class="btn-primary" style="background: transparent; color: var(--danger); border: 1px solid var(--danger);" onclick="window.CloseSesion()"><span class="material-symbols-outlined text-[18px]">logout</span> Close Sesión</button>
                             </div>
                         </div>
@@ -562,7 +562,7 @@
                             <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--shape-large); padding: 20px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                                 <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: #10b981;">edit_note</span> Apuntes Efectivos</h4>
                                 <ul style="color: var(--text-medium); font-size: 0.85rem; padding-left: 20px; margin: 0; line-height: 1.6;">
-                                    <li>Usa el <b>Sistema Cornell</b>: Divide tus notas en conceptos clave, detalles y Summary.</li>
+                                    <li>Usa el <b>Sistema Cornell</b>: Divide tus notas en Key Concepts, detalles y Summary.</li>
                                     <li>No transcribas; parafrasea lo que entiendes.</li>
                                     <li>Dibuja mapas mentales de los fenómenos Physicals.</li>
                                 </ul>
@@ -571,7 +571,7 @@
                             <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: var(--shape-large); padding: 20px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                                 <h4 style="margin: 0 0 10px 0; color: var(--text-high); display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined" style="color: #f59e0b;">smart_display</span> Consumo de Videos</h4>
                                 <ul style="color: var(--text-medium); font-size: 0.85rem; padding-left: 20px; margin: 0; line-height: 1.6;">
-                                    <li><b>Pause Activa</b>: Pause el video antes de que el Professor resuelva el ejercicio e intenta hacerlo tú.</li>
+                                    <li><b>Pause Activa</b>: Pause el video antes de que el Professor resuelva el exercise e intenta hacerlo tú.</li>
                                     <li>Cero distracciones: Visualiza en pantalla completa.</li>
                                     <li>Revisa los conceptos difíciles a Velocity 0.75x.</li>
                                 </ul>
@@ -607,7 +607,7 @@
                         Centro de Simulation
                     </h2>
                     <p style="color: var(--text-medium); font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-                        El puente entre las matemáticas y la realidad física. Aquí encontrarás las guías de laboratorio y entornos de experimentación interactiva.
+                        El puente entre las matemáticas y la realidad Physics. Aquí encontrarás las guías de laboratorio y entornos de experimentación interactiva.
                     </p>
                 </div>
 
@@ -638,7 +638,7 @@
                         <div style="height: 150px; background: rgba(14, 165, 233, 0.1); border-radius: var(--shape-medium); display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                             <span class="material-symbols-outlined" style="font-size: 48px; color: #0ea5e9; opacity: 0.5;">bolt</span>
                         </div>
-                        <h3 style="margin: 0 0 10px 0; color: var(--text-high);">Práctica 2: Coulomb\'s Law</h3>
+                        <h3 style="margin: 0 0 10px 0; color: var(--text-high);">practice 2: Coulomb\'s Law</h3>
                         <p style="color: var(--text-medium); font-size: 0.85rem; margin-bottom: 15px;">Simulation de Forces eléctricas interactivas.</p>
                         <div style="display: inline-block; background: var(--bg-surface-hover); color: var(--text-medium); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
                             <span class="material-symbols-outlined" style="font-size: 14px; vertical-align: middle;">schedule</span> Próximamente
@@ -650,7 +650,7 @@
                         <div style="height: 150px; background: rgba(14, 165, 233, 0.1); border-radius: var(--shape-medium); display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                             <span class="material-symbols-outlined" style="font-size: 48px; color: #0ea5e9; opacity: 0.5;">electric_meter</span>
                         </div>
-                        <h3 style="margin: 0 0 10px 0; color: var(--text-high);">Práctica 3: Circuitos DC</h3>
+                        <h3 style="margin: 0 0 10px 0; color: var(--text-high);">practice 3: Circuitos DC</h3>
                         <p style="color: var(--text-medium); font-size: 0.85rem; margin-bottom: 15px;">Leyes de Kirchhoff usando multímetros virtuales.</p>
                         <div style="display: inline-block; background: var(--bg-surface-hover); color: var(--text-medium); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
                             <span class="material-symbols-outlined" style="font-size: 14px; vertical-align: middle;">schedule</span> Próximamente
@@ -714,7 +714,7 @@
                 <div id="brain-history" class="brain-tab-content" style="display: none;">
                     <div class="bento-grid">
                         <div class="bento-card col-6">
-                            <h3><span class="material-symbols-outlined" style="color: #3b82f6; vertical-align: middle;">groups</span> Pioneros de la Física</h3>
+                            <h3><span class="material-symbols-outlined" style="color: #3b82f6; vertical-align: middle;">groups</span> Pioneros de la Physics</h3>
                             <div id="brain-cientificos-list" style="max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-top: 15px;"></div>
                         </div>
                         <div class="bento-card col-6">
@@ -756,7 +756,7 @@
                     <div class="bento-grid">
                         <div class="bento-card col-6" style="display: flex; flex-direction: column; align-items: center;">
                             <h3 style="width:100%; color: var(--text-high); display: flex; align-items: center; gap: 10px;"><span class="material-symbols-outlined" style="color: #10b981;">linked_camera</span> Captura de Exercise</h3>
-                            <p style="color: var(--text-medium); font-size: 0.9rem; width: 100%;">Muestra a la cámara el ejercicio que acabas de resolver en tu cuaderno para que el Tutor IA lo evalúe.</p>
+                            <p style="color: var(--text-medium); font-size: 0.9rem; width: 100%;">Muestra a la cámara el exercise que acabas de resolver en tu cuaderno para que el Tutor IA lo evalúe.</p>
                             
                             <div style="width: 100%; aspect-ratio: 4/3; background: #000; border-radius: 12px; margin: 20px 0; position: relative; overflow: hidden; border: 2px solid var(--border-color);">
                                 <video id="ai-camera-video" autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
@@ -772,7 +772,7 @@
                         <div class="bento-card col-6" style="display: flex; flex-direction: column;">
                             <h3 style="color: var(--text-high); display: flex; align-items: center; gap: 10px;"><span class="material-symbols-outlined" style="color: #a855f7;">smart_toy</span> Retroalimentación IA</h3>
                             <div id="ai-camera-feedback" style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; margin-top: 15px; padding: 20px; overflow-y: auto; color: var(--text-medium);">
-                                Esperando captura del ejercicio...
+                                Esperando captura del exercise...
                             </div>
                         </div>
                     </div>
@@ -848,7 +848,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn-primary" onclick="window.guardarAjustesCalendario()"><span class="material-symbols-outlined text-[18px]">update</span> Aplicar a Students</button>
+                            <button class="btn-primary" onclick="window.saveAjustesCalendario()"><span class="material-symbols-outlined text-[18px]">update</span> Aplicar a Students</button>
                         </div>
                     </div>
                     <div class="bento-card col-4">
@@ -942,7 +942,7 @@
                     </div>
 
                     <div id="tab-detalles" class="tab-content active">
-                        <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">flag</span> Objetivos de la Lección</h3>
+                        <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">flag</span> objectives de la Lección</h3>
                         <p id="tab-desc-text" style="color: var(--text-medium); margin-bottom: 15px;">Descripción general del recurso y el tema abordado.</p>
                     </div>
 
@@ -950,17 +950,17 @@
                         <h3 style="margin-top:0; font-size: 1.1rem; color: var(--text-high);"><span class="material-symbols-outlined text-accent icon-filled">psychology</span> AutoAssessment Cognitiva</h3>
                         <p style="color: var(--text-medium); margin-bottom: 20px;">Sé honesto contigo mismo. Evalúa qué tan bien dominas el concepto de esta lección para alimentar tus métricas.</p>
                         <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
-                            <button class="eval-btn" onclick="window.guardarEval(1)" id="eval-1"><span class="material-symbols-outlined">sentiment_very_dissatisfied</span> Necesito Ayuda (25%)</button>
-                            <button class="eval-btn" onclick="window.guardarEval(2)" id="eval-2"><span class="material-symbols-outlined">sentiment_neutral</span> Regular (50%)</button>
-                            <button class="eval-btn" onclick="window.guardarEval(3)" id="eval-3"><span class="material-symbols-outlined">sentiment_satisfied</span> Lo Comprendo (75%)</button>
-                            <button class="eval-btn" onclick="window.guardarEval(4)" id="eval-4"><span class="material-symbols-outlined">sentiment_very_satisfied</span> Lo Domino (100%)</button>
+                            <button class="eval-btn" onclick="window.saveEval(1)" id="eval-1"><span class="material-symbols-outlined">sentiment_very_dissatisfied</span> Necesito Ayuda (25%)</button>
+                            <button class="eval-btn" onclick="window.saveEval(2)" id="eval-2"><span class="material-symbols-outlined">sentiment_neutral</span> Regular (50%)</button>
+                            <button class="eval-btn" onclick="window.saveEval(3)" id="eval-3"><span class="material-symbols-outlined">sentiment_satisfied</span> Lo Comprendo (75%)</button>
+                            <button class="eval-btn" onclick="window.saveEval(4)" id="eval-4"><span class="material-symbols-outlined">sentiment_very_satisfied</span> Lo Domino (100%)</button>
                         </div>
                     </div>
                     
                     <div id="tab-notas" class="tab-content">
                         <textarea id="area-notas" style="width: 100%; height: 100px; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high);" placeholder="Apunta tus Formulas, constantes o conclusiones del experimento aquí..."></textarea>
                         <div style="text-align: right; margin-top: 15px;">
-                            <button class="btn-primary" onclick="window.guardarNotas()"><span class="material-symbols-outlined text-[18px]">save</span> Guardar Apuntes</button>
+                            <button class="btn-primary" onclick="window.saveNotas()"><span class="material-symbols-outlined text-[18px]">save</span> save Apuntes</button>
                         </div>
                     </div>
                     
@@ -1065,7 +1065,7 @@
                         <option value="spaced_repetition">Repetición Espaciada / Tarjetas</option>
                         <option value="mind_maps">Mapas Mentales</option>
                         <option value="summaries">Resúmenes y Notas Tradicionales</option>
-                        <option value="practice">Exercises y Práctica Continua</option>
+                        <option value="practice">Exercises y practice Continua</option>
                         <option value="cornell_notes">Toma de Apuntes (Método Cornell / Esquemas)</option>
                         <option value="exam_prep">Preparación Activa / Simulacros de Examen</option>
                         <option value="active_questioning">Indagación Crítica (Hacerse Questions profundas)</option>
@@ -1083,8 +1083,8 @@
                     </div>
                 </div>
 
-                <button class="btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 10px;" onclick="window.guardarEncuestaSemanal()">
-                    <span class="material-symbols-outlined">save</span> Guardar Progreso Semanal
+                <button class="btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 10px;" onclick="window.saveEncuestaSemanal()">
+                    <span class="material-symbols-outlined">save</span> save Progreso Semanal
                 </button>
             </div>
         </div>
@@ -1135,7 +1135,7 @@
 
                     <!-- Question -->
                     <h3 id="chaea-question-text" style="font-size: 1.8rem; color: var(--text-high); text-align: center; line-height: 1.4; margin-bottom: 50px;">
-                        Cargando Question...
+                        loading Question...
                     </h3>
 
                     <!-- Botones de Answer -->
@@ -1183,7 +1183,7 @@
                             </ul>
                         </div>
                         
-                        <button class="btn-primary" style="margin-top: auto;" onclick="window.CloseYGuardarChaea()">Guardar en Perfil y Continue Curso</button>
+                        <button class="btn-primary" style="margin-top: auto;" onclick="window.CloseYsaveChaea()">save en Perfil y Continue Curso</button>
                     </div>
                 </div>
             </div>
@@ -1195,7 +1195,7 @@
     <!-- =========================================================================================
          LÓGICA UNIFICADA Y ANALÍTICA
     ========================================================================================== -->
-    <!-- Motor de Simulation Física 2D -->
+    <!-- Motor de Simulation Physics 2D -->
     <script src="./js/physics-engine.js"></script>
 
     <!-- Motor de Exámenes Dinámicos y Cognitivos -->

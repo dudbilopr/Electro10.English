@@ -12,10 +12,10 @@ import { auth }                                 from './firebase.js';
 import { iniciarSesion, registrarUsuario, iniciarSesionConGoogle, CloseSesion, inicializarAuthObserver } from './auth.js';
 import { toggleSidebar, toggleTheme, toggleChat, OpenModalAuth, ShowNotificaciones, cambiarTab, resetNav, ShowDashboardStudent, ShowCalendario, ShowPerfil, ShowLaboratorios, ShowCerebro, cambiarTabCerebro, OpenPanelAdmin, actualizarAvatarUI, aplicarTemaGuardado, injectUIState, toggleFocusMode } from './ui.js';
 import { inicializarEstructuraBase }            from './curriculum.js';
-import { loadContent, guardarEval, guardarNotas, guardarProgresoNube, getIconForType } from './content-loader.js';
+import { loadContent, saveEval, saveNotas, saveProgresoNube, getIconForType } from './content-loader.js';
 import { actualizarGraficosStudent }         from './charts.js';
-import { guardarPerfil, cargarDatosPerfil, cambiarModoVistaAdmin, guardarRitmo, guardarEncuestaSemanal } from './profile.js';
-import { cargarDirectorioAdminFirebase, verDetalleStudent, cambiarRolUsuario, guardarAjustesCalendario } from './admin.js';
+import { savePerfil, cargarDatosPerfil, cambiarModoVistaAdmin, saveRitmo, saveEncuestaSemanal } from './profile.js';
+import { cargarDirectorioAdminFirebase, verDetalleStudent, cambiarRolUsuario, saveAjustesCalendario } from './admin.js';
 
 // ── Estado Global Compartido ─────────────────────────────────
 const progressData   = {};
@@ -60,13 +60,13 @@ window.addEventListener('message', async (event) => {
                 const icon = li.querySelector('.icon-status');
                 if (icon) { icon.innerText = 'check_circle'; icon.classList.add('icon-filled'); }
             }
-            await guardarProgresoNube(lessonId);
-            Swal.fire({ title: '¡Objetivo Alcanzado!', text: data.mensaje || 'Has completado esta actividad.', icon: 'success', toast: true, position: 'top-end', showConfirmButton: false, timer: 4000 });
+            await saveProgresoNube(lessonId);
+            Swal.fire({ title: '¡objective Alcanzado!', text: data.mensaje || 'Has completado esta actividad.', icon: 'success', toast: true, position: 'top-end', showConfirmButton: false, timer: 4000 });
             actualizarGraficosStudent(Object.keys(progressData).length, totalLessons, progressData, evalData, timeData, curriculoData);
         }
     }
-    if (data.action === 'enviarNotaCognitiva' && data.score) {
-        guardarEval(data.score, evalData);
+    if (data.action === 'submitNotaCognitiva' && data.score) {
+        saveEval(data.score, evalData);
     }
 });
 
@@ -129,14 +129,14 @@ window.CloseSesion              = CloseSesion;
 window.iniciarSesion             = iniciarSesion;
 window.registrarUsuario          = registrarUsuario;
 window.iniciarSesionConGoogle    = iniciarSesionConGoogle;
-window.guardarEval               = (Level) => guardarEval(Level, evalData);
-window.guardarNotas              = guardarNotas;
-window.guardarProgresoNube       = guardarProgresoNube;
-window.guardarPerfil             = guardarPerfil;
+window.saveEval               = (Level) => saveEval(Level, evalData);
+window.saveNotas              = saveNotas;
+window.saveProgresoNube       = saveProgresoNube;
+window.savePerfil             = savePerfil;
 window.cargarDatosPerfil         = cargarDatosPerfil;
 window.cambiarModoVistaAdmin     = cambiarModoVistaAdmin;
-window.guardarRitmo              = guardarRitmo;
-window.guardarEncuestaSemanal    = guardarEncuestaSemanal;
+window.saveRitmo              = saveRitmo;
+window.saveEncuestaSemanal    = saveEncuestaSemanal;
 
 // Importar y exponer las de calificación dinámicamente si no quiero modificar el bloque import arriba, o mejor las importo arriba.
 import { calificarRecurso, hoverStars, resetStarsHover, cargarCalificacionRecurso, pintarEstrellas, calificarCurso, hoverCourseStars, resetCourseStarsHover, cargarCalificacionCurso } from './profile.js';
@@ -156,7 +156,7 @@ window.actualizarGraficosStudent = (c, t) => actualizarGraficosStudent(c, t, pro
 window.cargarDirectorioAdminFirebase = () => cargarDirectorioAdminFirebase(curriculoData, totalLessons);
 window.verDetalleStudent      = (uid, nombre) => verDetalleStudent(uid, nombre, curriculoData, totalLessons);
 window.cambiarRolUsuario         = cambiarRolUsuario;
-window.guardarAjustesCalendario  = () => guardarAjustesCalendario(globalSettings);
+window.saveAjustesCalendario  = () => saveAjustesCalendario(globalSettings);
 window.renderAdminCharts         = (t, s, sc) => renderAdminCharts(t, s, sc);
 
     // window.renderizarQuizDinamico y window.evaluarQuizDinamico han sido movidos al motor avanzado quiz-engine.js
@@ -184,18 +184,18 @@ window._loadContent = (leccion, modTitulo) => {
 };
 
 // ── Lógica de Alto Impacto (Neuroeducación y Gamificación) ──
-window.guardarApuntes = async () => {
+window.saveApuntes = async () => {
     if (!window.currentUserUid) {
-        return Swal.fire('Modo Visitante', 'Inicia sesión para guardar apuntes en la nube.', 'info');
+        return Swal.fire('Modo Visitante', 'Inicia sesión para save apuntes en la nube.', 'info');
     }
     const notas = document.getElementById('student-notes').value.trim();
-    if (!notas) return Swal.fire('Oops', 'No puedes guardar un apunte vacío.', 'warning');
+    if (!notas) return Swal.fire('Oops', 'No puedes save un apunte vacío.', 'warning');
     
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'notes', 'data'), { content: notas }, { merge: true });
         Swal.fire('¡Apunte Guardado!', 'Tus conclusiones están seguras en Firestore.', 'success');
     } catch (e) {
-        Swal.fire('Error', 'No se pudo guardar el apunte. Revisa tu conexión.', 'error');
+        Swal.fire('Error', 'No se pudo save el apunte. Revisa tu conexión.', 'error');
     }
 };
 

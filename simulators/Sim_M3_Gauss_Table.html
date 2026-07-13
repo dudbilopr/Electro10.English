@@ -850,7 +850,7 @@
                     <MisionBox title="I. Naturaleza y Geometría de la Carga" points="0.30">
                       <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-2xl mb-10">
                         <p className="font-black text-blue-900 text-xl mb-2 flex items-center gap-2"><Activity size={24}/> 1.1 Mecanismos de Electrización <span className="text-sm text-red-600 ml-auto bg-red-100 px-3 py-1 rounded-lg">[0.15 pts]</span></p>
-                        <p className="text-blue-800 font-medium text-base">Identifique el mecanismo mediante las Options y describa la física del flujo electrónico.</p>
+                        <p className="text-blue-800 font-medium text-base">Identifique el mecanismo mediante las Options y describa la Physics del flujo electrónico.</p>
                       </div>
                       
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-14">
@@ -923,7 +923,7 @@
 
                       {!isSubmitted && (
                         <div className="bg-slate-100 p-6 rounded-2xl border-2 border-slate-300 mb-8 shadow-inner">
-                          <p className="text-xs font-black uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2"><Hand size={16}/> Banco de Answers (Toca para seleccionar)</p>
+                          <p className="text-xs font-black uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2"><Hand size={16}/> Banco de Answers (Toca para select)</p>
                           <div className="flex flex-wrap gap-4">
                             {['\\lambda', '\\sigma', '\\rho', '\\lambda dl', '\\sigma dA', '\\rho dV', 'C/m', 'C/m^2', 'C/m^3'].map(item => (
                               <DraggableItem key={item} val={item} isSubmitted={isSubmitted} activeDraggable={activeDraggable} setActiveDraggable={setActiveDraggable} />
@@ -1241,7 +1241,7 @@
                             <tr>
                               <td className="p-4 bg-slate-50 rounded-2xl border-2 border-slate-200 font-bold text-slate-700 shadow-inner">
                                 <span className="block text-xs uppercase tracking-widest text-slate-400 mb-1">Paso I [0.10 pts]</span>
-                                Distribución de Carga Físicamente
+                                Distribución de Carga Physicsmente
                               </td>
                               <td className="p-4 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
                                 <InlineSelect id="g1_dist" value={answers.g1_dist} onChange={handleInputChange} isSubmitted={isSubmitted} expected="vol" width="w-full" options={gaussDistOpts} />
@@ -1446,7 +1446,7 @@
                 <p className="leading-relaxed text-lg font-medium">
                   {score >= 3.2 ? "¡Level Dios alcanzado! Tu dominio sobre los flujos vectoriales y la Gauss's Law es absoluto. Estás listo para topologías complejas y distribuciones asimétricas." : 
                    score >= 2.0 ? "Buen Work operativo. Sin embargo, hay vacíos conceptuales en las fronteras de Gauss. Analiza la diferencia entre Flujo Neto y el Superposition Principle en el Campo Local." : 
-                   "Anomalía detectada. El sistema adaptativo sugiere repasar urgentemente los mecanismos de polarización y el concepto de carga encerrada. ¡Vuelve a intentarlo, la física requiere iteración!"}
+                   "Anomalía detectada. El sistema adaptativo sugiere repasar urgentemente los mecanismos de polarización y el concepto de carga encerrada. ¡Vuelve a intentarlo, la Physics requiere iteración!"}
                 </p>
                 {usedTips.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-current/20 text-sm font-bold opacity-80">

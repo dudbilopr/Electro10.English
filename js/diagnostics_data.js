@@ -8,7 +8,7 @@ export const KOLB_QUESTIONS = [
     { id: 4, title: "Aprendo a través de:", a: "Sentimientos", b: "Observaciones", c: "Razonamientos", d: "Acciones" },
     { id: 5, title: "Cuando aprendo:", a: "Estoy abierto a nuevas experiencias", b: "Tomo en cuenta todos los aspectos relacionados", c: "Prefiero analizar las cosas dividiéndolas en sus partes componentes", d: "Prefiero hacer las cosas directamente" },
     { id: 6, title: "Cuando estoy aprendiendo:", a: "Soy una persona intuitiva", b: "Soy una persona observadora", c: "Soy una persona lógica", d: "Soy una persona activa" },
-    { id: 7, title: "Aprendo mejor a través de:", a: "Las relaciones con mis compañeros", b: "La observación", c: "Theorys racionales", d: "La práctica de los temas tratados" },
+    { id: 7, title: "Aprendo mejor a través de:", a: "Las relaciones con mis compañeros", b: "La observación", c: "Theorys racionales", d: "La practice de los temas tratados" },
     { id: 8, title: "Cuando aprendo:", a: "Me siento involucrado en los temas tratados", b: "Me tomo mi tiempo antes de actuar", c: "Prefiero las Theorys y las ideas", d: "Prefiero ver los Results a través de mi propio Work" },
     { id: 9, title: "Aprendo mejor cuando:", a: "Me baso en mis intuiciones y sentimientos", b: "Me baso en observaciones personales", c: "Tomo en cuenta mis propias ideas sobre el tema", d: "Pruebo personalmente la tarea" },
     { id: 10, title: "Cuando estoy aprendiendo:", a: "Soy una persona abierta", b: "Soy una persona reservada", c: "Soy una persona racional", d: "Soy una persona responsable" },
@@ -119,7 +119,7 @@ export function analyzeHolisticProfile(chaeaDominant, kolbDominant, topMI) {
         if (topMI.includes("visual")) {
             advice += " Tu alta inteligencia Visual/Espacial significa que debes diagramar los problemas. Dibuja los vectores de Electric Field o usa código computacional para graficar.";
         } else {
-            advice += " Busca inmediatamente la aplicación tecnológica de cada ley física. Resuelve problemas numéricos antes de cuestionar la filosofía detrás de ellos.";
+            advice += " Busca inmediatamente la aplicación tecnológica de cada ley Physics. Resuelve problemas numéricos antes de cuestionar la filosofía detrás de ellos.";
         }
         consejos.push(advice);
     }

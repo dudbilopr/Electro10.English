@@ -118,7 +118,7 @@
                             <p class="mt-1 text-sm">El Work mecánico arranca electrones del vidrio, que tiene menor afinidad electrónica que la seda.</p>
                             <div class="math-display"> $$ Q_{\text{vidrio}} = +ne \quad , \quad Q_{\text{seda}} = -ne $$ </div>
                             <p class="text-sm text-red-700 font-bold mt-1">⚠️ Los electrones fluyen del vidrio a la seda.</p>
-                            <p class="text-sm mt-2 text-indigo-800 font-bold">🎯 Conclusion: Materiales con distinta afinidad se cargan con la misma Magnitudeee pero signos opuestos tras el contacto íntimo.</p>
+                            <p class="text-sm mt-2 text-indigo-800 font-bold">🎯 Conclusion: Materiales con distinta afinidad se cargan con la misma magnitudeeeee pero signos opuestos tras el contacto íntimo.</p>
                         </div>
                     </div>
 
@@ -178,7 +178,7 @@
                             <p class="font-bold text-orange-800 flex items-center">4. Contacto: Metal y Ruptura Dieléctrica</p>
                             <p class="mt-1 text-sm">Si el Electric Field $\vec{E}$ entre las placas supera la rigidez dieléctrica del aire ($~3 \times 10^6$ V/m), el aire se ioniza volviéndose conductor momentáneo.</p>
                             <div class="math-display"> $$ E = \frac{\Delta V}{d} > 3\text{ MV/m} \implies \text{Chispa!} $$ </div>
-                            <p class="text-sm text-orange-700 font-bold mt-1">⚠️ La descarga ocurre milisegundos ANTES de que se toquen físicamente.</p>
+                            <p class="text-sm text-orange-700 font-bold mt-1">⚠️ La descarga ocurre milisegundos ANTES de que se toquen Physicsmente.</p>
                             <p class="text-sm mt-2 text-indigo-800 font-bold">🎯 Conclusion: Un arco eléctrico transfiere electrones violentamente, disipando Energy en forma de luz, calor y sonido.</p>
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                             <p class="mt-1 text-sm">El Electric Field extremo inducido por el lápiz plástico frotado levanta pedazos de papel aislante venciendo la gravedad.</p>
                             <div class="math-display"> $$ q_{\text{inducida}} E > m g $$ </div>
                             <p class="text-sm text-yellow-700 font-bold mt-1">⚠️ Tras un tiempo (t > 80), el aire y la humedad descargan el sistema y los papeles caen.</p>
-                            <p class="text-sm mt-2 text-indigo-800 font-bold">🎯 Conclusion: La Force electromagnética es órdenes de Magnitudeee más fuerte que la interacción gravitacional terrestre.</p>
+                            <p class="text-sm mt-2 text-indigo-800 font-bold">🎯 Conclusion: La Force electromagnética es órdenes de magnitudeeeee más fuerte que la interacción gravitacional terrestre.</p>
                         </div>
                     </div>
 
@@ -229,7 +229,7 @@
                     <div id="teoria-c9" class="hidden flex-col gap-[1vmin] flex-1">
                         <div class="bg-rose-50 p-[1.5vmin] border border-rose-300 shadow-sm rounded-lg relative">
                             <p class="font-bold text-rose-800 flex items-center">9. Repulsión Capilar (Pelo que se levanta)</p>
-                            <p class="mt-1 text-sm">Al frotar fuertemente un globo en la cabeza, el cabello cede electrones quedando positivamente cargado. Cada hebra se repele mutuamente.</p>
+                            <p class="mt-1 text-sm">Al frotar fuertemente un globo en la cabeza, el cabello cede electrones quedando positivamente loaded. Cada hebra se repele mutuamente.</p>
                             <div class="math-display"> $$ \vec{F}_{\text{hebra 1 a 2}} = k \frac{(+q)(+q)}{r^2} \hat{r} \quad (\text{Repulsión}) $$</div>
                             <p class="text-sm mt-2 text-indigo-800 font-bold">🎯 Conclusion: Las hebras de cabello intentan maximizar su Distance entre sí, alineándose con las líneas de Electric Field radial.</p>
                         </div>
@@ -336,7 +336,7 @@
         </div>
     </div>
 
-    <!-- LÓGICA CORE: THREE.JS Y FÍSICA -->
+    <!-- LÓGICA CORE: THREE.JS Y Physics -->
     <script>
         // ==========================================
         // 1. INICIALIZACIÓN DE THREE.JS
@@ -484,7 +484,7 @@
         for (let k in objects) { scene.add(objects[k]); objects[k].visible = false; }
 
         // ==========================================
-        // 4. MOTOR DE ESTADOS (FÍSICA Y TIEMPO)
+        // 4. MOTOR DE ESTADOS (Physics Y TIEMPO)
         // ==========================================
         let params = { t: 0, q: 8, mode: 'c1' };
 
@@ -501,7 +501,7 @@
             
             // Fases Generales
             if (t < tA) s.phase = "Acercamiento";
-            else if (t <= tS) s.phase = ["c1","c2","c3"].includes(mode) ? "Fricción en progreso" : "Interacción Física";
+            else if (t <= tS) s.phase = ["c1","c2","c3"].includes(mode) ? "Fricción en progreso" : "Interacción Physics";
             else s.phase = "Separación / Reposo";
 
             let gapBase = 0.5, startD = 8;
@@ -547,7 +547,7 @@
                     }
                     break;
                 case 'c5': // Péndulo
-                    s.nameA = "Barra Cargada"; s.nameB = "Péndulo Neutro";
+                    s.nameA = "Barra loaded"; s.nameB = "Péndulo Neutro";
                     s.qA = q0; s.distA = -3;
                     if (t < tA) { s.qB = 0; s.distB = 3; }
                     else if (t <= 50) {

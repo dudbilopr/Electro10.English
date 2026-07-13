@@ -15,8 +15,8 @@ export const module7 = {
             { "id":"m7-s2","tipo":"Simulator","recurso":"simulators/Sim_M2_Vector_Field.html","titulo":"3.2 Force sobre Conductor","descripcion":"Visualiza la Force sobre segmentos de Current en campo magnético.","xp":20 }
           ]
         },
-        { "id":"m7-j1","tipo":"Game","recurso":"games/Game_7.html","titulo":"4. Physics Quest — Lorentz","descripcion":"Dirige partículas cargadas a través de campos magnéticos hacia el objetivo. ¡5 misiones!","xp":25,"logro":{"id":"logro_m7","nombre":"Piloto Cuántico","icono":"🚀"} },
-        { "id":"m7-l7","tipo":"ejercicio","recurso":"workshops/Workshop_7_Lorentz_Law.html","titulo":"5. Workshop Práctico — Lorentz","descripcion":"Problemas de Trajectorys en campo magnético, espectrómetros y ciclotrones.","xp":30 },
+        { "id":"m7-j1","tipo":"Game","recurso":"games/Game_7.html","titulo":"4. Physics Quest — Lorentz","descripcion":"Dirige partículas loadeds a través de campos magnéticos hacia el objective. ¡5 misiones!","xp":25,"logro":{"id":"logro_m7","nombre":"Piloto Cuántico","icono":"🚀"} },
+        { "id":"m7-l7","tipo":"exercise","recurso":"workshops/Workshop_7_Lorentz_Law.html","titulo":"5. Workshop Práctico — Lorentz","descripcion":"Problemas de Trajectorys en campo magnético, espectrómetros y ciclotrones.","xp":30 },
         { "id":"m7-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_7.html","titulo":"6. Quiz Adaptativo — Module 7","descripcion":"Evalúa desde la dirección de la Force (regla de la mano derecha) hasta cálculos de radio de ciclotrón.","xp":40 },
         { "id":"m7-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 7: Reemplaza "#" con tu link
@@ -29,11 +29,11 @@ export const module7 = {
                 { "url":"https://www.amazon.com/dp/0321971174","titulo":"Griffiths — Electrodynamics Cap. 5.1","descripcion":"Force magnética sobre Charges y Currents." }
             ]},
             { "tituloSeccion":"🌐 Resources web","links":[
-                { "url":"https://www.fisicalab.com/apartado/Force-magnetica","titulo":"Fisicalab: Force Magnética","descripcion":"Lorentz Force Law con ejemplos numéricos." },
+                { "url":"https://www.fisicalab.com/apartado/Force-magnetica","titulo":"Fisicalab: Force Magnética","descripcion":"Lorentz Force Law con examples numéricos." },
                 { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-magnetic-forces-and-magnetic-fields","titulo":"Khan Academy: Forces Magnéticas","descripcion":"Videos interactivos sobre magnetismo y Lorentz." }
             ]},
             { "tituloSeccion":"🔬 Simulatores externos","links":[
-                { "url":"https://phet.colorado.edu/es/simulations/charges-and-fields","titulo":"PhET: Movimiento en Campo Magnético","descripcion":"Visualiza Trajectorys de partículas cargadas." }
+                { "url":"https://phet.colorado.edu/es/simulations/charges-and-fields","titulo":"PhET: Movimiento en Campo Magnético","descripcion":"Visualiza Trajectorys de partículas loadeds." }
             ]}
           ]
         }

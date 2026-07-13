@@ -34,7 +34,7 @@
                     <div id="ai-key-area" style="display: none; flex-direction: column; gap: 10px;">
                         <p style="font-size: 0.8rem; color: var(--text-medium); margin: 0;">Para mantener este servicio 100% gratuito, ingresa tu API Key institucional de Google Gemini.</p>
                         <input type="password" id="input-api-key" placeholder="Pega tu Google Gemini API Key aquí..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-high); outline: none;">
-                        <button id="btn-save-key" class="btn-primary" style="width: 100%; padding: 10px; font-weight: 600;">Guardar y Conectar</button>
+                        <button id="btn-save-key" class="btn-primary" style="width: 100%; padding: 10px; font-weight: 600;">save y Conectar</button>
                     </div>
 
                     <div id="ai-chat-area" style="display: none; flex-direction: row; gap: 8px;">
@@ -84,7 +84,7 @@
         if (!apiKey) {
             keyArea.style.display = 'flex';
             chatArea.style.display = 'none';
-            appendMessage('bot', '¡Hola! Soy tu Tutor IA. Para interactuar conmigo, por favor proporciona tu API Key institucional de Google Gemini. Tu llave se guardará localmente en tu dispositivo.');
+            appendMessage('bot', '¡Hola! Soy tu Tutor IA. Para interactuar conmigo, por favor proporciona tu API Key institucional de Google Gemini. Tu llave se saveá localmente en tu dispositivo.');
         } else {
             keyArea.style.display = 'none';
             chatArea.style.display = 'flex';
@@ -159,11 +159,11 @@
         // Obtener contexto de la página
         let context = "El usuario está en el Dashboard principal.";
         const titleEl = document.getElementById('display-title');
-        if (titleEl && titleEl.innerText !== 'Cargando...') {
-            context = `El usuario está estudiando la lección titulada: "${titleEl.innerText}". Responde sus dudas orientando la Answer a esta temática específica de electromagnetismo o física.`;
+        if (titleEl && titleEl.innerText !== 'loading...') {
+            context = `El usuario está estudiando la lección titulada: "${titleEl.innerText}". Responde sus dudas orientando la Answer a esta temática específica de electromagnetismo o Physics.`;
         }
 
-        const systemPrompt = `Eres un tutor experto en física y electromagnetismo de Level universitario. Actúas de manera pedagógica y alentadora. No des las Answers de los exámenes directamente, guía al Student para que las encuentre. Contexto actual: ${context}`;
+        const systemPrompt = `Eres un tutor experto en Physics y electromagnetismo de Level universitario. Actúas de manera pedagógica y alentadora. No des las Answers de los exámenes directamente, guía al Student para que las encuentre. Contexto actual: ${context}`;
 
         try {
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {

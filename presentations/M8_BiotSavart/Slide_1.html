@@ -113,7 +113,7 @@
                             <h2 class="font-bold text-slate-900 flex items-center gap-2 text-base">
                                 <i data-lucide="scale-3d" class="w-5 h-5 text-rose-600"></i> Análisis de Forces Fundamentales
                             </h2>
-                            <p class="text-xs text-slate-600 mb-2">La física clásica describe estas interacciones principales a Level macroscópico. Observa la asimetría de la Force magnética:</p>
+                            <p class="text-xs text-slate-600 mb-2">La Physics clásica describe estas interacciones principales a Level macroscópico. Observa la asimetría de la Force magnética:</p>
                             
                             <div class="overflow-x-auto shadow-sm rounded-lg border border-slate-200">
                                 <table class="w-full text-xs text-left border-collapse bg-white">
@@ -187,7 +187,7 @@
                                     <h3 class="font-bold text-sm text-stone-800 flex items-center gap-2">
                                         <i data-lucide="gem" class="w-4 h-4"></i> Excepción: La Magnetita ($\text{Fe}_3\text{O}_4$)
                                     </h3>
-                                    <p class="text-[10px] text-stone-700 mt-1 text-justify">La magnetita es <strong>Ferrimagnética</strong>. Posee dos subredes de átomos de Hierro con espines apuntando en direcciones opuestas (antiparalelos). Como la Magnitudeee de estas subredes es <em>desigual</em>, no se cancelan, generando un poderoso imán natural.</p>
+                                    <p class="text-[10px] text-stone-700 mt-1 text-justify">La magnetita es <strong>Ferrimagnética</strong>. Posee dos subredes de átomos de Hierro con espines apuntando en direcciones opuestas (antiparalelos). Como la magnitudeeeee de estas subredes es <em>desigual</em>, no se cancelan, generando un poderoso imán natural.</p>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                     
                     <!-- PANEL DE CONTROL TÉCNICO -->
                     <div class="control-panel flex-col items-start shadow-sm z-20">
-                        <!-- Fila 1: Configuration Física -->
+                        <!-- Fila 1: Configuration Physics -->
                         <div class="flex w-full gap-3 border-b border-slate-300 pb-2 mb-2 items-center justify-between">
                             <div class="flex gap-2 items-center">
                                 <i data-lucide="layout-template" class="w-4 h-4 text-slate-600"></i>
@@ -252,7 +252,7 @@
                         <div class="flex w-full gap-3 items-center flex-wrap">
                             
                             <div class="flex items-center gap-1 bg-white border border-slate-300 px-3 py-1.5 rounded-lg shadow-sm">
-                                <label class="text-[10px] font-bold text-slate-700 flex items-center gap-1" title="Resolución (Densidad de líneas)"><i data-lucide="grid-3x3" class="w-3 h-3 text-indigo-500"></i> Densidad</label>
+                                <label class="text-[10px] font-bold text-slate-700 flex items-center gap-1" title="Resolution (Densidad de líneas)"><i data-lucide="grid-3x3" class="w-3 h-3 text-indigo-500"></i> Densidad</label>
                                 <input type="range" id="sl-den" min="2" max="6" step="0.5" value="3.5" class="w-14 mx-1">
                                 
                                 <div class="w-px h-5 bg-slate-300 mx-1"></div>
@@ -302,7 +302,7 @@
                             <!-- Panel de Medición -->
                             <div class="h-[50%] graph-wrapper p-3 flex flex-col shadow-sm border border-slate-200 bg-slate-50">
                                 <p class="text-xs font-bold text-slate-800 mb-2 text-center flex items-center justify-center gap-2 border-b border-slate-200 pb-2">
-                                    <i data-lucide="gauge" class="w-4 h-4 text-indigo-600"></i> Telemetría Física
+                                    <i data-lucide="gauge" class="w-4 h-4 text-indigo-600"></i> Telemetría Physics
                                 </p>
                                 <div class="text-xs font-mono flex flex-col gap-2 w-full mt-1">
                                     <div class="bg-rose-50 text-rose-900 p-2.5 rounded border border-rose-200 flex justify-between shadow-sm items-center transition-colors duration-200" id="ui-f-box">
@@ -559,7 +559,7 @@
             return B;
         };
 
-        // 4. BUCLE DE INTEGRACIÓN FÍSICA (Oscilador Armónico Magnético)
+        // 4. BUCLE DE INTEGRACIÓN Physics (Oscilador Armónico Magnético)
         let lastT = performance.now();
         const updatePhysics = () => {
             let dt = Math.min((performance.now() - lastT)/1000, 0.03); lastT = performance.now();

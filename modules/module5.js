@@ -16,7 +16,7 @@ export const module5 = {
           ]
         },
         { "id":"m5-j1","tipo":"Game","recurso":"games/Game_5.html","titulo":"4. Physics Quest — Capacitance","descripcion":"Diseña el capacitor perfecto para almacenar la Energy requerida. ¡5 desafíos de ingeniería!","xp":25,"logro":{"id":"logro_m5","nombre":"Ingeniero de Circuitos","icono":"🔋"} },
-        { "id":"m5-l7","tipo":"ejercicio","recurso":"workshops/Workshop_5_Capacitance.html","titulo":"5. Workshop Práctico — Capacitance","descripcion":"Problemas de capacitores simples, combinaciones en red y Energy almacenada.","xp":30 },
+        { "id":"m5-l7","tipo":"exercise","recurso":"workshops/Workshop_5_Capacitance.html","titulo":"5. Workshop Práctico — Capacitance","descripcion":"Problemas de capacitores simples, combinaciones en red y Energy almacenada.","xp":30 },
         { "id":"m5-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_5.html","titulo":"6. Quiz Adaptativo — Module 5","descripcion":"Desde definición de Capacitance hasta cálculo de Energy con Dielectrics.","xp":40 },
         { "id":"m5-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 5: Reemplaza "#" con tu link
@@ -25,8 +25,8 @@ export const module5 = {
         { "id":"m5-e1","tipo":"referencias","titulo":"8. Referencias BiblioCharts","descripcion":"Fuentes académicas sobre capacitores, Dielectrics y Energy en campos eléctricos.","xp":10,
           "secciones":[
             { "tituloSeccion":"📘 Libros de texto","links":[
-                { "url":"https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance","titulo":"OpenStax: Capacitores — Cap. 8","descripcion":"Capacitance, Energy y Dielectrics con ejemplos resueltos." },
-                { "url":"https://www.amazon.com/dp/0131496824","titulo":"Serway — Física Vol. 2 Cap. 26","descripcion":"Capacitores en circuitos: Theory y problemas." }
+                { "url":"https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance","titulo":"OpenStax: Capacitores — Cap. 8","descripcion":"Capacitance, Energy y Dielectrics con examples resueltos." },
+                { "url":"https://www.amazon.com/dp/0131496824","titulo":"Serway — Physics Vol. 2 Cap. 26","descripcion":"Capacitores en circuitos: Theory y problemas." }
             ]},
             { "tituloSeccion":"🌐 Resources web","links":[
                 { "url":"https://www.fisicalab.com/apartado/condensadores","titulo":"Fisicalab: Condensadores","descripcion":"Capacitores, Dielectrics y combinaciones." },

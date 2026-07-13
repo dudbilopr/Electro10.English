@@ -16,7 +16,7 @@ export const module9 = {
           ]
         },
         { "id":"m9-j1","tipo":"Game","recurso":"games/Game_9.html","titulo":"4. Physics Quest — Ley de Ampere","descripcion":"Elige el camino amperiano Correct y calcula el campo. ¡5 geometrías distintas!","xp":25,"logro":{"id":"logro_m9","nombre":"Maestro Amperiano","icono":"🔄"} },
-        { "id":"m9-l7","tipo":"ejercicio","recurso":"workshops/Workshop_9_Ampere_Law.html","titulo":"5. Workshop Práctico — Ley de Ampere","descripcion":"Problemas de solenoides, toroides, Conductors coaxiales y campo toroidal.","xp":30 },
+        { "id":"m9-l7","tipo":"exercise","recurso":"workshops/Workshop_9_Ampere_Law.html","titulo":"5. Workshop Práctico — Ley de Ampere","descripcion":"Problemas de solenoides, toroides, Conductors coaxiales y campo toroidal.","xp":30 },
         { "id":"m9-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_9.html","titulo":"6. Quiz Adaptativo — Module 9","descripcion":"Evalúa desde el concepto de circulación hasta aplicaciones con Current de desplazamiento.","xp":40 },
         { "id":"m9-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 9: Reemplaza "#" con tu link
@@ -29,7 +29,7 @@ export const module9 = {
                 { "url":"https://www.amazon.com/dp/0321971174","titulo":"Griffiths — Electrodynamics Cap. 5.3","descripcion":"Ley de Ampere rigurosa con problemas." }
             ]},
             { "tituloSeccion":"🌐 Resources web","links":[
-                { "url":"https://www.fisicalab.com/apartado/ley-de-ampere","titulo":"Fisicalab: Ley de Ampere","descripcion":"Simetría, solenoides y ejemplos." },
+                { "url":"https://www.fisicalab.com/apartado/ley-de-ampere","titulo":"Fisicalab: Ley de Ampere","descripcion":"Simetría, solenoides y examples." },
                 { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-magnetic-forces-and-magnetic-fields/ap-magnetic-field-from-currents/v/amperes-law","titulo":"Khan Academy: Ley de Ampere","descripcion":"Introduction conceptual con practice." }
             ]},
             { "tituloSeccion":"🔬 Simulatores externos","links":[

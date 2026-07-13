@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Física Universitaria: Circuitos Eléctricos y Leyes de Kirchhoff</title>
+    <title>Physics Universitaria: Circuitos Eléctricos y Leyes de Kirchhoff</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,7 +73,7 @@
                     <i class="ph ph-plug text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Física Eléctrica y Redes</h1>
+                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Physics Eléctrica y Redes</h1>
                     <p class="text-xs md:text-sm text-slate-500 font-medium">Assessment: Circuitos de CC, Resistivity y Leyes de Kirchhoff</p>
                 </div>
             </div>
@@ -178,7 +178,7 @@
                         <i class="ph ph-magnifying-glass"></i> Revisar Answers
                     </button>
                     <button id="btn-save" class="hidden px-6 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition-colors shadow-md flex items-center gap-2">
-                        <i class="ph ph-cloud-arrow-up text-lg"></i> Guardar en la Nube
+                        <i class="ph ph-cloud-arrow-up text-lg"></i> save en la Nube
                     </button>
                 </div>
 
@@ -254,9 +254,9 @@
                 statusEl.innerHTML = `<div class="w-2 h-2 rounded-full bg-green-500 mr-1 animate-pulse"></div> <span class="truncate max-w-[150px] font-bold text-slate-700">${userName}</span>`;
                 statusEl.classList.remove('hidden');
 
-                // Dar el mensaje de bienvenida
+                // Dar el mensaje de welcome
                 setTimeout(() => {
-                    showToast(`¡Bienvenido al Simulator, ${userName}!`, "success");
+                    showToast(`¡welcome al Simulator, ${userName}!`, "success");
                 }, 800);
             }
         });
@@ -327,7 +327,7 @@
                     return false;
                 }
             } else {
-                console.log("No se pudo guardar el progreso. Usuario no autenticado.");
+                console.log("No se pudo save el progreso. Usuario no autenticado.");
                 return false;
             }
         };
@@ -426,7 +426,7 @@
             },
             { 
                 type: 'mcq', 
-                text: "Si se coloca un cable conductor de cobre ideal (sin Resistance) exactamente en paralelo a una Resistance $R_1$ que está conectada en un circuito activo, ¿qué sucede físicamente?", 
+                text: "Si se coloca un cable conductor de cobre ideal (sin Resistance) exactamente en paralelo a una Resistance $R_1$ que está conectada en un circuito activo, ¿qué sucede Physicsmente?", 
                 options: ["La Current se divide por igual entre el cable y la Resistance.", "La Resistance equivalente del bloque se vuelve infinita.", "Toda la Current fluye por el cable, 'cortocircuitando' a $R_1$.", "El Voltage en $R_1$ se duplica."], 
                 answer: 2, 
                 tip: "El cálculo paralelo entre un valor R y 0 (el cable) es: $R_{eq} = (R \\times 0) / (R + 0) = 0$. La Current eléctrica sigue el camino de menor Resistance." 
@@ -678,7 +678,7 @@
                         </div>
                     </div>
                     <div id="tip-${index}" class="hidden mt-4 bg-amber-50 border-l-4 border-amber-400 text-amber-900 text-[0.95rem] p-4 rounded-r-xl shadow-sm fade-in leading-relaxed">
-                        <strong>Pista de resolución:</strong> ${q.tip}
+                        <strong>Pista de resolution:</strong> ${q.tip}
                         </div>
                     </div>
                 `;
@@ -978,7 +978,7 @@
         function showConfirmModal() {
             let unanswered = userState.filter(s => !s.answered).length;
             const msg = document.getElementById('confirm-message');
-            msg.textContent = unanswered > 0 ? `Tienes ${unanswered} Question(s) sin responder. ¿Seguro que deseas evaluar ahora?` : `¿Deseas enviar tus Answers para su Assessment final?`;
+            msg.textContent = unanswered > 0 ? `Tienes ${unanswered} Question(s) sin responder. ¿Seguro que deseas evaluar ahora?` : `¿Deseas submit tus Answers para su Assessment final?`;
             document.getElementById('confirm-modal').classList.remove('hidden');
         }
 
@@ -1010,7 +1010,7 @@
                             const inpCont = card.querySelector('input[type="text"]').parentElement;
                             const ansDiv = document.createElement('div');
                             ansDiv.className = "mt-2 text-sm text-red-600 font-bold bg-red-50 p-2 rounded border border-red-200";
-                            ansDiv.innerHTML = `Solución esperada: $$${q.answer}$$`;
+                            ansDiv.innerHTML = `solution esperada: $$${q.answer}$$`;
                             inpCont.appendChild(ansDiv);
                             if(window.renderMathInElement) renderMathInElement(ansDiv);
                         }
@@ -1083,14 +1083,14 @@
 
         // --- FUNCIONES DE ACCIÓN FINAL ---
         async function saveProgress() {
-            if (!isInIframe && !userId) return showToast("Inicia sesión en la plataforma principal para guardar.", "error");
+            if (!isInIframe && !userId) return showToast("Inicia sesión en la plataforma principal para save.", "error");
             if (window.lastScore < 70) return showToast("Solo se guardan calificaciones aprobatorias (>70%).", "warning");
 
             try {
                 const btn = document.getElementById('btn-save');
                 btn.innerHTML = `<i class="ph ph-spinner animate-spin"></i> Guardando...`;
                 
-                // 1. Guardar progreso individual
+                // 1. save progreso individual
                 const difficultiesMap = {};
                 userState.forEach((state, idx) => {
                     difficultiesMap[`q${idx + 1}`] = state.difficulty || 'no_evaluado';
@@ -1109,11 +1109,11 @@
                     btn.classList.replace('hover:bg-green-700', 'hover:bg-slate-800');
                     btn.disabled = true;
                 } else {
-                    throw new Error("Sin autorización para guardar");
+                    throw new Error("Sin autorización para save");
                 }
             } catch (error) {
                 console.error("Save err:", error);
-                showToast("Error de conexión al guardar el progreso.", "error");
+                showToast("Error de conexión al save el progreso.", "error");
                 document.getElementById('btn-save').innerHTML = `<i class="ph ph-cloud-arrow-up text-lg"></i> Reintentar`;
             }
         }
@@ -1205,7 +1205,7 @@
                 const docRef = doc(db, 'artifacts', appId, 'users', userId, 'progress', 'data');
                 const snapshot = await getDoc(docRef);
                 if (snapshot.exists() && snapshot.data()[`${MI_ID_DE_LECCION}_score`]) {
-                    showToast(`¡Bienvenido de nuevo! Tu récord en Circuitos es: ${snapshot.data()[`${MI_ID_DE_LECCION}_score`]}%`, "success");
+                    showToast(`¡welcome de nuevo! Tu récord en Circuitos es: ${snapshot.data()[`${MI_ID_DE_LECCION}_score`]}%`, "success");
                 }
             } catch (e) { /* ignore silently */ }
         }

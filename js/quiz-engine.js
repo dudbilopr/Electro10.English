@@ -289,7 +289,7 @@
         if (unanswered > 0) {
             Swal.fire({
                 title: 'Questions sin responder',
-                html: `Aún tienes <b>${unanswered}</b> Questions sin responder. <br>¿Estás seguro de enviar el examen?`,
+                html: `Aún tienes <b>${unanswered}</b> Questions sin responder. <br>¿Estás seguro de submit el examen?`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Sí, evaluar',
@@ -345,7 +345,7 @@
         document.getElementById('quiz-results-panel').style.display = 'block';
         document.getElementById('quiz-score-display').innerText = puntajeFinal + '%';
         
-        let msg = puntajeFinal >= 65 ? "¡Excelente Work! Has demostrado dominio cognitivo en esta área." : "Necesitas repasar algunos conceptos clave. Revisa el feedback en las Questions.";
+        let msg = puntajeFinal >= 65 ? "¡Excelente Work! Has demostrado dominio cognitivo en esta área." : "Necesitas repasar algunos Key Concepts. Revisa el feedback en las Questions.";
         document.getElementById('quiz-feedback-msg').innerText = msg;
 
         // Fase 4: Tutoría IA Proactiva y Sistema Adaptativo
@@ -362,7 +362,7 @@
             if(perfilCognitivo === 'avanzado') {
                 adaptiveHtml = `
                 <div style="margin-top: 15px; padding: 15px; background: rgba(168, 85, 247, 0.1); border-left: 4px solid #a855f7; border-radius: 8px;">
-                    <h4 style="margin: 0 0 5px 0; color: #a855f7;"><span class="material-symbols-outlined" style="vertical-align: middle;">psychology_alt</span> Reto de Física Profunda</h4>
+                    <h4 style="margin: 0 0 5px 0; color: #a855f7;"><span class="material-symbols-outlined" style="vertical-align: middle;">psychology_alt</span> Reto de Physics Profunda</h4>
                     <p style="margin: 0; font-size: 0.9rem; color: var(--text-medium);">Dominas este Level. Intenta aplicar estos conceptos en el Simulator desactivando las ayudas visuales y derivando tú mismo las Equations.</p>
                 </div>`;
             } else {
@@ -387,7 +387,7 @@
         const avgTimePerQuestion = totalTime / currentQuiz.Questions.length;
         const cognitiveLoad = Math.min(100, Math.round((avgTimePerQuestion * 0.5) + (totalHesitations * 2)));
 
-        // Guardar la Assessment
+        // save la Assessment
         if (window._currentLeccionId && window.evalData && window.progressData) {
             window.evalData[window._currentLeccionId] = puntajeFinal;
             localStorage.setItem('cursoElectromagnetismoEval', JSON.stringify(window.evalData));
@@ -395,10 +395,10 @@
             if (puntajeFinal >= 65) {
                 window.progressData[window._currentLeccionId] = true;
                 localStorage.setItem('cursoElectromagnetismoProgreso', JSON.stringify(window.progressData));
-                if(window.guardarProgresoNube) window.guardarProgresoNube(window._currentLeccionId);
+                if(window.saveProgresoNube) window.saveProgresoNube(window._currentLeccionId);
             }
             
-            // Guardar en Firestore con métricas avanzadas y Perfil Cognitivo
+            // save en Firestore con métricas avanzadas y Perfil Cognitivo
             if (window.currentUserUid && window.APP_ID) {
                 try {
                     const { doc, setDoc } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js");

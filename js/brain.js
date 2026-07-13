@@ -4,7 +4,7 @@
 // ── Datos Estáticos del Cerebro ──────────────────────────────
 const cerebroDatos = {
     Glossary: [
-        { termino: "Electric Charge", defHomen: "Propiedad física intrínseca de algunas partículas subatómicas que se manifiesta mediante Forces de atracción y repulsión." },
+        { termino: "Electric Charge", defHomen: "Propiedad Physics intrínseca de algunas partículas subatómicas que se manifiesta mediante Forces de atracción y repulsión." },
         { termino: "Electric Field", defHomen: "Región del espacio donde una Electric Charge experimenta una Force eléctrica." },
         { termino: "Coulomb\'s Law", defHomen: "Establece que la Force eléctrica entre dos Charges puntuales es directamente proporcional al producto de las Charges e inversamente proporcional al cuadrado de la Distance que las separa." },
         { termino: "Electric Potential", defHomen: "Energy Powerl eléctrica por unidad de carga en un punto de un Electric Field." },
@@ -36,7 +36,7 @@ const cerebroDatos = {
         { nombre: "Experimento de la Cometa (Franklin)", año: "1752", descripcion: "Demostró que los rayos son desElectric Charges al volar una cometa durante una tormenta, recolectando carga en una botella de Leyden." },
         { nombre: "Descubrimiento de la Induction (Faraday)", año: "1831", descripcion: "Usó un anillo de hierro y dos bobinas. Al encender/apagar la batería de un lado, observó una Current transitoria en el otro, probando que un campo magnético cambiante induce un Electric Field." },
         { nombre: "El Experimento de Oersted", año: "1820", descripcion: "Hans Christian Ørsted notó que la aguja de una brújula se desviaba cerca de un cable con Current, descubriendo por primera vez la relación entre electricidad y magnetismo." },
-        { nombre: "Gotas de Aceite de Millikan", año: "1909", descripcion: "Robert Millikan y Harvey Fletcher midieron la carga elemental (la carga del electrón) balanceando gotas de aceite cargadas entre campos eléctricos y gravitacionales." }
+        { nombre: "Gotas de Aceite de Millikan", año: "1909", descripcion: "Robert Millikan y Harvey Fletcher midieron la carga elemental (la carga del electrón) balanceando gotas de aceite loadeds entre campos eléctricos y gravitacionales." }
     ]
 };
 
@@ -63,7 +63,7 @@ window.initBrainGraph = function() {
     // ── Bóveda Obsidian (Exportación) ─────────────────────────
 window.descargarObsidian = async function() {
     if (typeof JSZip === 'undefined') {
-        alert("La librería para generar ZIP no ha cargado. Reintenta en unos segundos.");
+        alert("La librería para generar ZIP no ha loaded. Reintenta en unos segundos.");
         return;
     }
     
@@ -121,7 +121,7 @@ ${notaContent}
 
     // 5. Index (Home)
     const homeMd = `# Bóveda Electro10: ${new Date().getFullYear()}
-Bienvenido a tu segundo cerebro de física.
+welcome a tu segundo cerebro de Physics.
 - Revisa tus [[Glossary]]
 - Revisa tu [[Formulario Master]]
 - Conoce la [[Historia y Experimentos]]
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         video.pause();
         feedbackBox.innerHTML = `<div style="display:flex; flex-direction:column; align-items:center; gap:10px; padding: 20px;">
             <div class="material-symbols-outlined animate-pulse" style="font-size:40px; color:var(--accent);">smart_toy</div>
-            <div>Analizando tu ejercicio... esto puede tomar unos segundos.</div>
+            <div>Analizando tu exercise... esto puede tomar unos segundos.</div>
         </div>`;
 
         // Evaluar con IA
@@ -346,8 +346,8 @@ async function evaluarConGeminiVision(base64Image, feedbackBox) {
     try {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
         
-        const systemPrompt = `Eres un Professor Experto en Electromagnetismo y Física. 
-El Student te está enviando una foto de su cuaderno con un ejercicio resuelto o un problema.
+        const systemPrompt = `Eres un Professor Experto en Electromagnetismo y Physics. 
+El Student te está enviando una foto de su cuaderno con un exercise resuelto o un problema.
 Tu tarea es:
 1. Leer y transcribir mentalmente el contenido.
 2. Identificar si el procedimiento matemático y los conceptos Physicals son Corrects.

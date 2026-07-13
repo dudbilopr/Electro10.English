@@ -76,7 +76,7 @@ select:focus, input:focus { border-color: var(--accent); }
 input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent); margin-top: 5px; }
 .slider-container { display: flex; flex-direction: column; gap: 2px; text-align: center; }
 
-/* Panel Solución / Backdrop */
+/* Panel solution / Backdrop */
 #solution-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); z-index: 9998; }
 #solution-overlay { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 95vw; max-width: 800px; height: 90vh; display: none; flex-direction: column; z-index: 9999; background: var(--panel-bg); border: 2px solid var(--accent); box-shadow: 0 10px 50px rgba(0,0,0,0.9); border-radius: 12px; padding: 25px; overflow: hidden; }
 .solution-scroll-area { flex: 1; overflow-y: auto; padding-right: 15px; margin-bottom: 15px; }
@@ -167,7 +167,7 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
             <button class="btn" style="justify-content:center" onclick="resetSim()"><i class="ph ph-arrow-counter-clockwise"></i> Restaurar Position</button>
         </div>
 
-        <!-- OVERLAY DE SOLUCIÓN PEDAGÓGICA -->
+        <!-- OVERLAY DE solution PEDAGÓGICA -->
         <div id="solution-backdrop" onclick="document.getElementById('solution-overlay').style.display='none'; this.style.display='none';"></div>
         <div id="solution-overlay">
             <div class="window-controls">
@@ -225,7 +225,7 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
             <option value="custom">-- Modo Libre / Interactivo --</option>
         </select>
 
-        <div class="enunciado-box card" id="latex-enunciado" style="background:var(--bg); border:1px solid var(--glass-border); border-left:4px solid var(--accent)">Cargando enunciado...</div>
+        <div class="enunciado-box card" id="latex-enunciado" style="background:var(--bg); border:1px solid var(--glass-border); border-left:4px solid var(--accent)">loading enunciado...</div>
 
         <div class="section-title"><i class="ph ph-atom"></i> Partícula: Carga ($q$) y Position</div>
         <div class="card">
@@ -266,7 +266,7 @@ input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--accent);
 
 <!-- Modales Firebase/Auth -->
 <div class="modal" id="auth-modal"><div class="modal-content glass"><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-lock-key"></i> Autenticación Requerida</h3><input type="email" id="auth-email" placeholder="Correo electrónico" style="margin-bottom:10px; background:var(--bg)"><input type="password" id="auth-pass" placeholder="Contraseña" style="margin-bottom:15px; background:var(--bg)"><div style="display:flex;gap:10px"><button class="btn btn-primary" style="flex:1;justify-content:center" onclick="iniciarSesion()">Entrar</button><button class="btn" style="flex:1;justify-content:center;background:var(--card-bg)" onclick="registrarUsuario()">Registro</button></div></div></div>
-<div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> Mi Perfil</h3><input type="text" id="prof-name" placeholder="Nombre completo o Alias" style="margin-bottom:15px; background:var(--bg); padding:12px;"><button class="btn btn-primary" style="width:100%;justify-content:center; padding:12px;" onclick="saveProfile()">Guardar Perfil</button></div></div>
+<div class="modal" id="profile-setup-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('profile-setup-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-user-circle"></i> Mi Perfil</h3><input type="text" id="prof-name" placeholder="Nombre completo o Alias" style="margin-bottom:15px; background:var(--bg); padding:12px;"><button class="btn btn-primary" style="width:100%;justify-content:center; padding:12px;" onclick="saveProfile()">save Perfil</button></div></div>
 <div class="modal" id="rooms-modal"><div class="modal-content glass"><span class="close-btn" onclick="hideModal('rooms-modal')">&times;</span><h3 style="color:var(--accent);margin-bottom:10px"><i class="ph ph-users"></i> Conexión a Sala Multi-Usuario</h3><input type="text" id="new-room-name" placeholder="Ej: GrupoFisica101" style="margin-bottom:15px; background:var(--bg); padding:12px;"><button class="btn btn-primary" style="width:100%;justify-content:center; padding:12px;" onclick="crearUnirseSala()">Entrar / Crear Sala</button></div></div>
 
 <script>
@@ -288,7 +288,7 @@ const simState = {
 
 const exData = {
     'ex1': {
-        enunciado: "Un haz de protones ($q = 1.6 \\times 10^{-19}$ C) se mueve a $3.0 \\times 10^5$ m/s a través de un campo magnético uniforme, con Magnitudeee 2.0 T dirigido a lo largo del eje z positivo, como se indica en la figura. La Velocity de cada protón se encuentra en el plano xz con un Angle de 30° con respecto al eje +z. Calcule la Force sobre un protón.",
+        enunciado: "Un haz de protones ($q = 1.6 \\times 10^{-19}$ C) se mueve a $3.0 \\times 10^5$ m/s a través de un campo magnético uniforme, con magnitudeeeee 2.0 T dirigido a lo largo del eje z positivo, como se indica en la figura. La Velocity de cada protón se encuentra en el plano xz con un Angle de 30° con respecto al eje +z. Calcule la Force sobre un protón.",
         q: 1.6e-19, p0x:0, p0y:0, p0z:0, vx: 1.5e5, vy: 0, vz: 2.598e5, bx: 0, by: 0, bz: 2.0
     },
     'ex2': {
@@ -385,7 +385,7 @@ function createFieldGrid() {
     scene.add(fieldGridGroup);
 }
 
-// --- FÍSICA Y Trajectory ---
+// --- Physics Y Trajectory ---
 function calculateTrajectory() {
     pathPoints = [];
     let p = new THREE.Vector3(simState.p0.x, simState.p0.y, simState.p0.z);
@@ -524,7 +524,7 @@ function drawProjection(canvasId, ax1, ax2, axZ) {
     }
 }
 
-// --- SOLUCIÓN PASO A PASO PEDAGÓGICA (LATEX) ---
+// --- solution PASO A PASO PEDAGÓGICA (LATEX) ---
 function formatLatexNum(num) {
     if (num === 0) return "0";
     let [m, e] = num.toExponential(2).split('e');
@@ -580,7 +580,7 @@ function prepararPasosLatex() {
     +\hat{k} \begin{vmatrix} ${formatLatexNum(s.v.x)} & ${formatLatexNum(s.v.y)} \\ ${formatLatexNum(s.b.x)} & ${formatLatexNum(s.b.y)} \\ \blacksquare & \blacksquare \end{vmatrix}_{\text{*(Visual)}} \rightarrow +\hat{k} \left[ (${formatLatexNum(s.v.x)})(${formatLatexNum(s.b.y)}) - (${formatLatexNum(s.v.y)})(${formatLatexNum(s.b.x)}) \right] = ${formatLatexNum(s.f.z/s.q)}\hat{k}`;
 
     const step5Tex = String.raw`
-    \text{Paso 5: Multiplicación por la Carga (q) y Magnitudeee Final} \\
+    \text{Paso 5: Multiplicación por la Carga (q) y magnitudeeeee Final} \\
     \vec{F} = ${formatLatexNum(s.q)} \left( ${formatLatexNum(s.f.x/s.q)}\hat{i} ${s.f.y/s.q>=0?'+':''} ${formatLatexNum(s.f.y/s.q)}\hat{j} ${s.f.z/s.q>=0?'+':''} ${formatLatexNum(s.f.z/s.q)}\hat{k} \right) \\
     \vec{F} = \mathbf{${formatLatexNum(s.f.x)}\hat{i} ${s.f.y>=0?'+':''} ${formatLatexNum(s.f.y)}\hat{j} ${s.f.z>=0?'+':''} ${formatLatexNum(s.f.z)}\hat{k} \text{ N}} \\
     |\vec{F}| = \sqrt{F_x^2 + F_y^2 + F_z^2} = \mathbf{${formatLatexNum(fMag)} \text{ N}}`;

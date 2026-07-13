@@ -9,13 +9,13 @@ export const module1 = {
     "descripcionCorta": "Force entre Electric Charges y principio de superPosition",
     "subtemas": ["Electric Charge", "Conductors y Insulators", "Coulomb\'s Law", "Principio de superPosition", "Distribuciones de carga discreta"],
     "conceptosClave": ["Cuantización de la carga", "Aislante vs Conductor", "SuperPosition", "Induction electrostática"],
-    "requisitosPrevios": ["Suma de Vectors (Física Mecánica)", "Trigonometría Básica (Seno/Coseno)", "Notación Científica"],
+    "requisitosPrevios": ["Suma de Vectors (Physics Mecánica)", "Trigonometría Básica (Seno/Coseno)", "Notación Científica"],
     "Equations": [
-        "$$ F = k_e \\frac{|q_1 q_2|}{r^2} $$ (Magnitudeee de Coulomb)",
+        "$$ F = k_e \\frac{|q_1 q_2|}{r^2} $$ (magnitudeeeee de Coulomb)",
         "$$ \\vec{F} = \\vec{F}_1 + \\vec{F}_2 + ... $$ (SuperPosition)"
     ],
     "historia": {
-        "hallazgo": "En 1785, Charles-Augustin de Coulomb utilizó una balanza de torsión ultrasensible para medir la debilísima Force de atracción entre dos esferas cargadas, descubriendo la ley de la inversa del cuadrado.",
+        "hallazgo": "En 1785, Charles-Augustin de Coulomb utilizó una balanza de torsión ultrasensible para medir la debilísima Force de atracción entre dos esferas loadeds, descubriendo la ley de la inversa del cuadrado.",
         "experimentoClave": "Balanza de Torsión de Coulomb"
     },
     "bibliografia": ["Serway, R. A., & Jewett, J. W. (2018). Physics for Scientists and Engineers (10th ed.). Cengage Learning. (Cap. 23)"],
@@ -24,7 +24,7 @@ export const module1 = {
             "id": "m1-l1", "tipo": "multivideo",
             "recurso": "xLyRPFL0GJ8|mrCyjv9lf3I|HpHVmuQb1gM|YgP-9fVA0-Y|gigeloLe1jI|ph341nhqOII|tXschFCgjrY|q1Ez2tLVy10|EhCX3JR6mHQ|8FXllt2Z9Tk|a1M2OmlwGyc|_hgOrdi7Epw",
             "titulo": "1. Videos — Coulomb\'s Law",
-            "descripcion": "Selecciona el video en el panel derecho. Incluye Theory, ejemplos resueltos y experimentos.",
+            "descripcion": "Selecciona el video en el panel derecho. Incluye Theory, examples resueltos y experimentos.",
             "xp": 10
         },
         {
@@ -50,7 +50,7 @@ export const module1 = {
             "xp": 25, "logro": { "id": "logro_m1", "nombre": "Maestro Electrostático", "icono": "⚡" }
         },
         {
-            "id": "m1-l7", "tipo": "ejercicio",
+            "id": "m1-l7", "tipo": "exercise",
             "recurso": "workshops/Workshop_1_Coulomb_Law.html",
             "titulo": "5. Workshop Práctico — Coulomb",
             "descripcion": "Guía de 15 problemas con dificultad progresiva: conceptuales, numéricos y de aplicación.",
@@ -65,11 +65,11 @@ export const module1 = {
         },
         {
             // 📓 NOTEBOOKLM: Reemplaza el '#' con el link real de tu notebook
-            // Ejemplo: "llmLink": "https://notebooklm.google.com/notebook/TU-ID-AQUI"
+            // example: "llmLink": "https://notebooklm.google.com/notebook/TU-ID-AQUI"
             "id": "m1-nb1", "tipo": "notebooklm",
             "llmLink": "https://notebooklm.google.com/notebook/37622815-4b54-4808-b770-37464cb05719",
             "titulo": "7. NotebookLLM — Coulomb\'s Law",
-            "descripcion": "Asistente de IA entrenado con todo el material del Module. Hazle Questions, pide explicaciones o genera ejercicios.",
+            "descripcion": "Asistente de IA entrenado con todo el material del Module. Hazle Questions, pide explicaciones o genera exercises.",
             "xp": 10
         },
         {
@@ -81,7 +81,7 @@ export const module1 = {
                 {
                     "tituloSeccion": "📘 Libros de texto principales",
                     "links": [
-                        { "url": "https://openstax.org/books/university-physics-volume-2/pages/1-1-electric-charge", "titulo": "OpenStax: University Physics Vol. 2 — Cap. 1", "descripcion": "Development formal de la Coulomb\'s Law con ejemplos resueltos (acceso libre)." },
+                        { "url": "https://openstax.org/books/university-physics-volume-2/pages/1-1-electric-charge", "titulo": "OpenStax: University Physics Vol. 2 — Cap. 1", "descripcion": "Development formal de la Coulomb\'s Law con examples resueltos (acceso libre)." },
                         { "url": "https://www.amazon.com/dp/0131496824", "titulo": "Serway & Jewett — Physics for Scientists and Engineers", "descripcion": "Capítulos 23–24: electrostática clásica." },
                         { "url": "https://www.amazon.com/dp/0470469080", "titulo": "Hayt & Kemmerly — Engineering Electromagnetics", "descripcion": "Fundamentos de electrostática para ingeniería." }
                     ]
@@ -89,9 +89,9 @@ export const module1 = {
                 {
                     "tituloSeccion": "🌐 Resources web académicos",
                     "links": [
-                        { "url": "https://www.fisicalab.com/apartado/ley-de-coulomb", "titulo": "Fisicalab: Coulomb\'s Law", "descripcion": "Explanation didáctica con Charts y ejemplos numéricos." },
+                        { "url": "https://www.fisicalab.com/apartado/ley-de-coulomb", "titulo": "Fisicalab: Coulomb\'s Law", "descripcion": "Explanation didáctica con Charts y examples numéricos." },
                         { "url": "https://en.wikipedia.org/wiki/Coulomb%27s_law", "titulo": "Wikipedia: Coulomb's Law", "descripcion": "Contexto histórico, formulación matemática y aplicaciones." },
-                        { "url": "https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage", "titulo": "Khan Academy: Force Eléctrica", "descripcion": "Videos y ejercicios interactivos (gratuitos)." }
+                        { "url": "https://www.khanacademy.org/science/physics/electric-charge-electric-force-and-voltage", "titulo": "Khan Academy: Force Eléctrica", "descripcion": "Videos y exercises interactivos (gratuitos)." }
                     ]
                 },
                 {

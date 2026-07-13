@@ -165,7 +165,7 @@
                         <div id="teoria-custom" class="hidden flex-col gap-1">
                             <p class="font-bold text-indigo-800">4. Potential Libre V(x,y)</p>
                             <p class="text-sm mb-1">Define una expresión escalar para $V(x,y)$. El motor derivará automáticamente el campo $\vec{E} = -\nabla V$ mediante diferencias finitas y Calculateá el Work exacto de la Trajectory.</p>
-                            <p class="text-xs text-indigo-600">Ejemplo de curva asintótica: <code class="bg-indigo-100 px-1 rounded">sin(x)*cos(y)</code></p>
+                            <p class="text-xs text-indigo-600">example de curva asintótica: <code class="bg-indigo-100 px-1 rounded">sin(x)*cos(y)</code></p>
                         </div>
                         <div id="teoria-placas" class="hidden flex-col gap-1">
                             <p class="font-bold text-indigo-800">5. Cuadripolo / Múltiples Charges</p>
@@ -255,7 +255,7 @@
                             </div>
 
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-blue-700 text-xs md:text-sm" title="Magnitudeee de la fuente de campo">Carga Fte. $Q$:</label>
+                                <label class="font-bold text-blue-700 text-xs md:text-sm" title="magnitudeeeee de la fuente de campo">Carga Fte. $Q$:</label>
                                 <input type="range" id="slider-m" min="-10" max="10" step="1" value="5.0" class="w-[3.5vw]">
                                 <span id="val-m" class="font-mono font-bold w-[1.5vw] text-right text-blue-600">5.0</span>
                             </div>
@@ -693,7 +693,7 @@
             controlNodes.forEach(n => n.visible = isBezier); // Hide nodos si es recta
             
             let pts = [];
-            for (let i=0; i<=60; i++) { // Se aumenta resolución para curvas de mayor grado
+            for (let i=0; i<=60; i++) { // Se aumenta resolution para curvas de mayor grado
                 pts.push(getPathPosAndVel(i/60.0).pos);
             }
             pathLine.geometry.setFromPoints(pts);

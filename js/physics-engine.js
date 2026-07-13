@@ -1,5 +1,5 @@
 // js/physics-engine.js
-// Motor de simulación física 2D para Calculate campos eléctricos y líneas de Force.
+// Motor de simulación Physics 2D para Calculate campos eléctricos y líneas de Force.
 
 class Charge {
     constructor(x, y, q) {
@@ -51,7 +51,7 @@ class PhysicsSimulation {
     }
 
     resize() {
-        // Ajustar resolución del canvas para pantallas retina (DPI)
+        // Ajustar resolution del canvas para pantallas retina (DPI)
         const rect = this.canvas.parentElement.getBoundingClientRect();
         this.canvas.width = rect.width;
         this.canvas.height = rect.height || 400;

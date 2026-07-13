@@ -118,7 +118,7 @@
                             <span><strong>1. Forma Vectorial:</strong> La Force eléctrica está dirigida a lo largo de la línea que une las Charges. El vector unitario $\hat{r}$ le da el carácter direccional a la Force:</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn">💡</span>
-                                <span class="tip-content"><strong>💡 Magnitudeee Q:</strong> Ahora puedes hacer clic en cualquier carga y modificar su Magnitudeee. Observa cómo una mayor Magnitudeee alarga los vectores de Force proporcionalmente al producto $q_1 q_2$.</span>
+                                <span class="tip-content"><strong>💡 magnitudeeeee Q:</strong> Ahora puedes hacer clic en cualquier carga y modificar su magnitudeeeee. Observa cómo una mayor magnitudeeeee alarga los vectores de Force proporcionalmente al producto $q_1 q_2$.</span>
                             </span>
                         </p>
                         <div class="math-display"> $$\vec{F}_{12} = k \frac{q_1 q_2}{r^2} \hat{r} = k \frac{q_1 q_2}{|\vec{r}_{12}|^2} \left(\frac{\vec{r}_2 - \vec{r}_1}{|\vec{r}_{12}|}\right) = k \frac{q_1 q_2}{|\vec{r}_{12}|^3} (\vec{r}_2 - \vec{r}_1) $$</div>
@@ -217,7 +217,7 @@
                         
                         <!-- 3D Canvas -->
                         <div class="w-[60%] h-full canvas-wrapper" id="canvas-3d">
-                            <div class="hint-overlay">⟲ Rotar | ⚲ Zoom | 🖱️ <strong>Click para editar Magnitudeee. Arrastra para mover.</strong></div>
+                            <div class="hint-overlay">⟲ Rotar | ⚲ Zoom | 🖱️ <strong>Click para editar magnitudeeeee. Arrastra para mover.</strong></div>
                             <div id="lbl-angle" class="angle-label"></div>
                             <div id="selection-ring" class="selected-ring w-12 h-12"></div>
                         </div>
@@ -227,13 +227,13 @@
                             
                             <!-- Chart F vs r -->
                             <div class="h-[40%] graph-wrapper p-[1vmin] flex flex-col bg-slate-50">
-                                <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(10px, 0.9vw, 14px);">Magnitudeee $|\vec{F}|$ vs Distance $r$</div>
+                                <div class="text-center font-bold text-slate-700 mb-1" style="font-size: clamp(10px, 0.9vw, 14px);">magnitudeeeee $|\vec{F}|$ vs Distance $r$</div>
                                 <div class="flex-1 relative w-full" id="graph-container">
                                     <canvas id="graph-2d" class="absolute top-0 left-0 w-full h-full"></canvas>
                                 </div>
                             </div>
 
-                            <!-- DCL y Solución Analítica -->
+                            <!-- DCL y solution Analítica -->
                             <div class="flex-1 bg-white border border-slate-200 rounded-lg p-[1.5vmin] shadow-sm flex flex-col min-h-0">
                                 <div class="text-slate-700 font-bold border-b border-slate-200 pb-1 mb-2 text-center" style="font-size: clamp(12px, 1vw, 16px);">
                                     Detalle Analítico DCL (Selección)
@@ -251,7 +251,7 @@
         </div>
     </div>
 
-    <!-- LÓGICA CORE: THREE.JS Y FÍSICA -->
+    <!-- LÓGICA CORE: THREE.JS Y Physics -->
     <script>
         // ==========================================
         // 1. INICIALIZACIÓN DE THREE.JS
@@ -315,7 +315,7 @@
                 params.mode === '3d' ? (Math.random() - 0.5) * range * 2 : 0
             );
             
-            // Scaler visualmente según la Magnitudeee de la carga
+            // Scaler visualmente según la magnitudeeeee de la carga
             const absQ = Math.abs(sign * 1.0);
             const scaleFac = 0.5 + 0.5 * absQ;
             mesh.scale.set(scaleFac, scaleFac, scaleFac);
@@ -357,7 +357,7 @@
 
             charges.push(chargeObj);
             scene.add(mesh);
-            selectCharge(chargeObj); // Seleccionar automáticamente al crear
+            selectCharge(chargeObj); // select automáticamente al crear
             updateAll();
         }
 
@@ -377,7 +377,7 @@
         }
 
         function selectCharge(c) {
-            // Deseleccionar Previous
+            // Deselect Previous
             if(selectedCharge && selectedCharge.mesh) {
                 selectedCharge.mesh.material.emissive.setHex(0x000000);
             }
@@ -454,7 +454,7 @@
             draggedCharge = null;
             ctrl.enabled = true;
             
-            // Si el mouse no se movió mucho y tocamos el fondo, deseleccionar
+            // Si el mouse no se movió mucho y tocamos el fondo, deselect
             if (e.target.id === 'canvas-3d') {
                  raycaster.setFromCamera(mouse, cam);
                  const intersects = raycaster.intersectObjects(charges.map(c => c.mesh));
@@ -465,7 +465,7 @@
             }
         });
 
-        // Cambio de Magnitudeee vía UI
+        // Cambio de magnitudeeeee vía UI
         document.getElementById('slider-q').addEventListener('input', (e) => {
             if(selectedCharge) {
                 const newQ = parseFloat(e.target.value);
@@ -489,7 +489,7 @@
         });
 
         // ==========================================
-        // 4. COMPUTACIÓN FÍSICA Y COLISIONES (ANTIOSCILACIÓN)
+        // 4. COMPUTACIÓN Physics Y COLISIONES (ANTIOSCILACIÓN)
         // ==========================================
         function computeForces() {
             charges.forEach(c => {
@@ -668,7 +668,7 @@
                 let html = `<div class="font-bold text-center text-indigo-800 bg-indigo-50 py-1 rounded mb-2">Análisis de Carga ${cTarget.id} (Q = ${cTarget.q.toFixed(1)}C)</div>`;
 
                 if (cTarget.individualForces.length === 0) {
-                     html += `<div class="text-center text-slate-400 mt-2 text-xs">No hay interacción (se requiere otra carga con Magnitudeee $\\neq$ 0).</div>`;
+                     html += `<div class="text-center text-slate-400 mt-2 text-xs">No hay interacción (se requiere otra carga con magnitudeeeee $\\neq$ 0).</div>`;
                 } else {
                     html += `<div class="text-xs font-bold text-slate-500 mb-1">Forces Individuales:</div>`;
                     cTarget.individualForces.forEach(indF => {

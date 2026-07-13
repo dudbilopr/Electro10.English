@@ -157,8 +157,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <!-- Question card -->
     <div class="question-card" id="question-card">
       <div class="round-badge">⚡ <span id="round-label">Ronda 1 — Calentamiento</span></div>
-      <div class="q-category" id="q-cat">FÍSICA ELECTROSTÁTICA</div>
-      <div class="q-text" id="q-text">Cargando...</div>
+      <div class="q-category" id="q-cat">Physics ELECTROSTÁTICA</div>
+      <div class="q-text" id="q-text">loading...</div>
       <div class="q-formula" id="q-formula" style="display:none"></div>
       <div class="options" id="options-grid"></div>
       <div class="feedback" id="feedback-box"></div>
@@ -186,7 +186,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div style="margin-top:16px">
       <button class="btn-restart" onclick="restartGame()">🔄 Reintentar</button>
-      <button class="btn-save" onclick="saveResult()">✅ Guardar progreso</button>
+      <button class="btn-save" onclick="saveResult()">✅ save progreso</button>
     </div>
   </div>
 </div>
@@ -195,7 +195,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <script>
 const GAME_CONFIG = {
   titulo: "Lorentz Force Law",
-  descripcion: "Controla partículas cargadas en campos magnéticos. 5 misiones de física de partículas.",
+  descripcion: "Controla partículas loadeds en campos magnéticos. 5 misiones de Physics de partículas.",
   color: "#ea580c",
   moduloId: "m7-j1",
   xpGanado: 25,
@@ -211,7 +211,7 @@ const GAME_CONFIG = {
     },
     {
       titulo:"Ronda 2",categoria:"Trajectory",
-      Question:"Una partícula cargada con v ⊥ B en campo B uniforme describe:",
+      Question:"Una partícula loaded con v ⊥ B en campo B uniforme describe:",
       formula:null,
       Options:["Una parábola","Una elipse","Un círculo","Una recta"],correcta:2,
       feedback_ok:"v ⊥ B constantemente → F centrípeta constante → CÍRCULO. Radius: r = mv/(qB).",
@@ -231,7 +231,7 @@ const GAME_CONFIG = {
       formula:"W = ∫F·v dt",
       Options:["W = qvB","W = 0 siempre","W = ½mv²","Depende de B"],correcta:1,
       feedback_ok:"La Force de Lorentz es siempre ⊥ a v → W = F·v = 0. ¡La Force magnética no hace Work!",
-      feedback_bad:"F_mag ⊥ v → W = ∫F·v dt = 0. La Velocity cambia de dirección, pero no de Magnitudeee."
+      feedback_bad:"F_mag ⊥ v → W = ∫F·v dt = 0. La Velocity cambia de dirección, pero no de magnitudeeeee."
     },
     {
       titulo:"Ronda 5",categoria:"CICLOTRÓN",

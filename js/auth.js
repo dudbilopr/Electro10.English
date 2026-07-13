@@ -115,7 +115,7 @@ export function inicializarAuthObserver({ progressData, evalData, timeData, glob
                 const keyStorage = `alerta_semana_${globalSettings.currentWeek}_${user.uid}`;
                 if (!localStorage.getItem(keyStorage) && !globalSettings.excludedWeeks.includes(String(globalSettings.currentWeek))) {
                     Swal.fire({
-                        title: '¡Bienvenido de nuevo!',
+                        title: '¡welcome de nuevo!',
                         text: 'Sigue explorando el Universo de Conocimiento a tu propio ritmo.',
                         icon: 'info', confirmButtonText: 'Ver Mapa', confirmButtonColor: 'var(--accent)'
                     }).then(res => { if (res.isConfirmed) window.ShowCalendario(); });

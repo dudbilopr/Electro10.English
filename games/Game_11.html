@@ -157,8 +157,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <!-- Question card -->
     <div class="question-card" id="question-card">
       <div class="round-badge">⚡ <span id="round-label">Ronda 1 — Calentamiento</span></div>
-      <div class="q-category" id="q-cat">FÍSICA ELECTROSTÁTICA</div>
-      <div class="q-text" id="q-text">Cargando...</div>
+      <div class="q-category" id="q-cat">Physics ELECTROSTÁTICA</div>
+      <div class="q-text" id="q-text">loading...</div>
       <div class="q-formula" id="q-formula" style="display:none"></div>
       <div class="options" id="options-grid"></div>
       <div class="feedback" id="feedback-box"></div>
@@ -186,7 +186,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div style="margin-top:16px">
       <button class="btn-restart" onclick="restartGame()">🔄 Reintentar</button>
-      <button class="btn-save" onclick="saveResult()">✅ Guardar progreso</button>
+      <button class="btn-save" onclick="saveResult()">✅ save progreso</button>
     </div>
   </div>
 </div>
@@ -219,7 +219,7 @@ const GAME_CONFIG = {
     },
     {
       titulo:"Ronda 3",categoria:"GAUSS B",
-      Question:"¿Qué implica físicamente que ∮ B·dA = 0?",
+      Question:"¿Qué implica Physicsmente que ∮ B·dA = 0?",
       formula:null,
       Options:["B es siempre cero","No existen monopolos magnéticos (Charges magnéticas aisladas)","Las líneas de B son siempre rectas","B no penetra superficies cerradas"],correcta:1,
       feedback_ok:"¡Exacto! ∮B·dA = 0 significa que las líneas de B son siempre cerradas — no hay 'Charges magnéticas' (monopolos) que las originen o terminen.",

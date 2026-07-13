@@ -20,7 +20,7 @@
             --border-color: #cbd5e1;
             --primary-color: #2563eb;
             
-            /* Paleta Unificada de Física */
+            /* Paleta Unificada de Physics */
             --dist-color: #3b82f6;      
             --dq-color: #d97706;        
             --dq-fill: rgba(217, 119, 6, 0.8);
@@ -349,7 +349,7 @@
             margin-top: 15px;
         }
 
-        /* Interacción física */
+        /* Interacción Physics */
         .draggable { cursor: grab; transition: filter 0.2s; }
         .draggable:hover { filter: brightness(1.1) drop-shadow(0 0 5px rgba(0,0,0,0.3)); }
         .draggable:active { cursor: grabbing; }
@@ -407,8 +407,8 @@
                 Arrastre (o haga clic en) una Formula del banco izquierdo y colóquela en la celda punteada correspondiente. Interactúe con las figuras moviendo $dq$ y $P$ para comprender el comportamiento de $d\vec{E}$.
             </div>
             <div class="panel">
-                <strong>Consejo de Resolución:</strong>
-                Observe el principio de recursividad espacial: La solución de la línea (1D) se convierte en el diferencial del plano (2D). Preste atención a los vectores unitarios ($\hat{i}, \hat{j}, \hat{k}$) y a la cancelación de componentes por simetría.
+                <strong>Consejo de Resolution:</strong>
+                Observe el principio de recursividad espacial: La solution de la línea (1D) se convierte en el diferencial del plano (2D). Preste atención a los vectores unitarios ($\hat{i}, \hat{j}, \hat{k}$) y a la cancelación de componentes por simetría.
             </div>
         </div>
     </header>
@@ -428,9 +428,9 @@
                 <thead>
                     <tr>
                         <th>Paso Conceptual</th>
-                        <th>Línea Cargada (1D)</th>
-                        <th>Plano Cargado (2D)</th>
-                        <th>Volumen Cargado (3D)</th>
+                        <th>Línea loaded (1D)</th>
+                        <th>Plano loaded (2D)</th>
+                        <th>Volumen loaded (3D)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -607,7 +607,7 @@
                         <td class="dropzone" id="dz_v_7"><div class="dropzone-content"></div></td>
                     </tr>
                     <tr>
-                        <td>8. Solución Analítica Final ($\vec{E}$)</td>
+                        <td>8. solution Analítica Final ($\vec{E}$)</td>
                         <td class="dropzone" id="dz_l_8"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_8"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_8"><div class="dropzone-content"></div></td>
@@ -615,7 +615,7 @@
 
                     <!-- FILA 9: ChartS DE CAMPO -->
                     <tr>
-                        <td>9. Comportamiento de Magnitudeee $|\vec{E}|$ vs Distance</td>
+                        <td>9. Comportamiento de magnitudeeeee $|\vec{E}|$ vs Distance</td>
                         <!-- Gráfico E Línea -->
                         <td class="svg-cell" style="height: 140px;">
                             <svg viewBox="0 0 300 150">
@@ -660,7 +660,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Tablero Didáctico de Física y Electromagnetismo. Todos los derechos reservados.
+        &copy; 2026 Tablero Didáctico de Physics y Electromagnetismo. Todos los derechos reservados.
     </footer>
 
     <script>
@@ -847,7 +847,7 @@
             renderG1(); renderG2(); renderG3();
         }
 
-        // === 3. FÍSICA Y SVG ===
+        // === 3. Physics Y SVG ===
         function project3D(cx, cy, x, y, z) { return { x: cx + x - z * 0.5, y: cy - y + z * 0.5 }; }
 
         function setObjPos(id, svgCoord, offsetX = -15, offsetY = -15) {
@@ -1054,7 +1054,7 @@
             setObjPos('g3-lbl-E', ptE, 5, -15);
         }
 
-        // --- MANEJO DE EVENTOS DE FÍSICA ---
+        // --- MANEJO DE EVENTOS DE Physics ---
         function getMousePos(svgId, evt) {
             const svg = document.getElementById(svgId);
             const CTM = svg.getScreenCTM();

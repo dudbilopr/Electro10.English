@@ -16,8 +16,8 @@ export const module8 = {
             { "id":"m8-s3","tipo":"Simulator","recurso":"simulators/Sim_M8_Biot_Savart_Wire.html","titulo":"3.3 Campo de Conductor Recto","descripcion":"Campo magnético de un hilo conductor de longitud finita e infinita.","xp":20 }
           ]
         },
-        { "id":"m8-j1","tipo":"Game","recurso":"games/Game_8.html","titulo":"4. Physics Quest — Biot-Savart","descripcion":"¡Construye el electroimán perfecto! Elige geometría y Current para alcanzar el campo objetivo.","xp":25,"logro":{"id":"logro_m8","nombre":"Arquitecto Magnético","icono":"🧲"} },
-        { "id":"m8-l7","tipo":"ejercicio","recurso":"workshops/Workshop_8_Biot_Savart.html","titulo":"5. Workshop Práctico — Biot-Savart","descripcion":"Calculation del campo magnético de hilos, arcos, espiras y solenoides finitos.","xp":30 },
+        { "id":"m8-j1","tipo":"Game","recurso":"games/Game_8.html","titulo":"4. Physics Quest — Biot-Savart","descripcion":"¡Construye el electroimán perfecto! Elige geometría y Current para alcanzar el campo objective.","xp":25,"logro":{"id":"logro_m8","nombre":"Arquitecto Magnético","icono":"🧲"} },
+        { "id":"m8-l7","tipo":"exercise","recurso":"workshops/Workshop_8_Biot_Savart.html","titulo":"5. Workshop Práctico — Biot-Savart","descripcion":"Calculation del campo magnético de hilos, arcos, espiras y solenoides finitos.","xp":30 },
         { "id":"m8-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_8.html","titulo":"6. Quiz Adaptativo — Module 8","descripcion":"Evalúa desde la dirección de B hasta cálculos integrales de Biot-Savart.","xp":40 },
         { "id":"m8-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 8: Reemplaza "#" con tu link
@@ -30,8 +30,8 @@ export const module8 = {
                 { "url":"https://www.amazon.com/dp/0321971174","titulo":"Griffiths — Electrodynamics Cap. 5.2","descripcion":"Biot-Savart Law con rigor matemático." }
             ]},
             { "tituloSeccion":"🌐 Resources web","links":[
-                { "url":"https://www.fisicalab.com/apartado/ley-de-biot-savart","titulo":"Fisicalab: Biot-Savart","descripcion":"Explanation con ejemplos resueltos." },
-                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-magnetic-forces-and-magnetic-fields/electric-current-ap/v/magnetic-field-created-by-a-current","titulo":"Khan Academy: Campo de Current","descripcion":"Videos y práctica guiada." }
+                { "url":"https://www.fisicalab.com/apartado/ley-de-biot-savart","titulo":"Fisicalab: Biot-Savart","descripcion":"Explanation con examples resueltos." },
+                { "url":"https://www.khanacademy.org/science/ap-physics-2/ap-magnetic-forces-and-magnetic-fields/electric-current-ap/v/magnetic-field-created-by-a-current","titulo":"Khan Academy: Campo de Current","descripcion":"Videos y practice guiada." }
             ]},
             { "tituloSeccion":"🔬 Simulatores externos","links":[
                 { "url":"https://www.geogebra.org/m/mfkHRdKy","titulo":"GeoGebra: Biot-Savart Interactivo","descripcion":"Visualiza el campo de Conductors con forma libre." }

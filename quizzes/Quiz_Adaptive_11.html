@@ -124,7 +124,7 @@
     <div id="result-feedback" style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;font-size:0.88rem;line-height:1.6;color:var(--text-mid);margin-bottom:20px"></div>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <button class="btn btn-secondary" onclick="ResetQuiz()"><span class="material-symbols-outlined" style="font-size:16px">refresh</span> Intentar de nuevo</button>
-      <button class="btn btn-primary" onclick="enviarResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> Guardar Result</button>
+      <button class="btn btn-primary" onclick="submitResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> save Result</button>
     </div>
   </div>
 </div>
@@ -173,7 +173,7 @@ const QUIZ_CONFIG = {
    texto:"El vector de Poynting S representa:",
    formula:"S = (1/μ₀)E × B",
    Options:[{"texto":"Densidad de Energy EM","Correct":false},{"texto":"Flujo de Power EM por área [W/m²]","Correct":true},{"texto":"Force por volumen","Correct":false},{"texto":"Densidad de carga","Correct":false}],
-   feedback_ok:"S = E × H [W/m²]: dirección y Magnitudeee del flujo de Energy EM.",
+   feedback_ok:"S = E × H [W/m²]: dirección y magnitudeeeee del flujo de Energy EM.",
    feedback_bad:"S [W/m²]: Power por área en dirección de propagación.",
    pista:"S indica hacia dónde 'fluye' la Energy EM."
   },
@@ -382,7 +382,7 @@ function showResults() {
   document.getElementById('result-feedback').innerHTML = feedbackText;
 }
 
-function enviarResult() {
+function submitResult() {
   const pct = Math.round((results.correct / results.total) * 100) || 0;
   const xp = Math.round(QUIZ_CONFIG.xpBase * (pct/100) * (results.maxLevel/3));
   window.parent?.postMessage({

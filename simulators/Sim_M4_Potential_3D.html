@@ -347,8 +347,8 @@
                 <i style="color: #666;">Únete a un cuarto para chatear...</i>
             </div>
             <div style="display: flex; gap: 5px;">
-                <input type="text" id="chat-input" placeholder="Escribe un mensaje..." style="flex: 1; background: #2b2b3b; border: 1px solid #555; color: white; padding: 6px; border-radius: 4px; font-size: 0.85rem;" onkeypress="if(event.key === 'Enter') enviarMensajeChat()">
-                <button class="btn-tool btn-action" style="padding: 6px 12px; font-size: 0.85rem;" onclick="enviarMensajeChat()">Submit</button>
+                <input type="text" id="chat-input" placeholder="Escribe un mensaje..." style="flex: 1; background: #2b2b3b; border: 1px solid #555; color: white; padding: 6px; border-radius: 4px; font-size: 0.85rem;" onkeypress="if(event.key === 'Enter') submitMensajeChat()">
+                <button class="btn-tool btn-action" style="padding: 6px 12px; font-size: 0.85rem;" onclick="submitMensajeChat()">Submit</button>
             </div>
         </div>
     </div>
@@ -417,9 +417,9 @@
     
     let lastSyncTime = 0;
     function requestSync(immediate = false) {
-        if (!window.enviarEstadoNube) return;
+        if (!window.submitEstadoNube) return;
         const now = Date.now();
-        if (immediate || now - lastSyncTime > 150) { window.enviarEstadoNube(); lastSyncTime = now; }
+        if (immediate || now - lastSyncTime > 150) { window.submitEstadoNube(); lastSyncTime = now; }
         if (window.registrarInteraccion) window.registrarInteraccion();
     }
 
@@ -1279,7 +1279,7 @@
 
         const container = document.getElementById('ui-logros'); container.innerHTML = '';
         if(d.logros) {
-            const dictLogros = { "Home_sesion": "🎓 Bienvenido", "fisico_experto": "⚡ Physical Experto", "Level_2_alcanzado": "🌟 Graduado Level 1", "Level_3_alcanzado": "🚀 Investigador Level 2", "Level_4_alcanzado": "🧠 Científico Level 3", "Level_5_alcanzado": "👑 Nobel de Física" };
+            const dictLogros = { "Home_sesion": "🎓 welcome", "fisico_experto": "⚡ Physical Experto", "Level_2_alcanzado": "🌟 Graduado Level 1", "Level_3_alcanzado": "🚀 Investigador Level 2", "Level_4_alcanzado": "🧠 Científico Level 3", "Level_5_alcanzado": "👑 Nobel de Physics" };
             Object.keys(d.logros).forEach(key => { if(d.logros[key] && dictLogros[key]) container.innerHTML += `<span style="background: #e67e22; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">${dictLogros[key]}</span>`; });
         }
     }
@@ -1404,14 +1404,14 @@
         });
     }
 
-    window.enviarMensajeChat = function() {
+    window.submitMensajeChat = function() {
         const input = document.getElementById('chat-input'); const text = input.value.trim();
         if (!text || !auth.currentUser || !chatRoomRef) return;
         push(chatRoomRef, { email: auth.currentUser.email, text: text, timestamp: Date.now() });
         input.value = '';
     };
 
-    window.enviarEstadoNube = function() {
+    window.submitEstadoNube = function() {
         if (!currentRoomRef || isReceiving || !auth.currentUser) return;
         window.isSendingData = true;
         set(currentRoomRef, {

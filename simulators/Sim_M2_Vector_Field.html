@@ -312,7 +312,7 @@
             </div>
         </div>
         <div>
-            <div class="section-title">Solución Paso a Paso</div>
+            <div class="section-title">solution Paso a Paso</div>
             <div id="dcl-buttons" style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px;"></div>
             <div class="latex-box" id="latex-result">$$ \text{---} $$</div>
         </div>
@@ -839,7 +839,7 @@
         return { start: p1, end: p2 };
     }
 
-    // --- Física ---
+    // --- Physics ---
     function analizarFisica() {
         const charges = state.objects.filter(o => o.type.startsWith('charge'));
         const testPoints = state.objects.filter(o => o.type === 'test_point');
@@ -921,7 +921,7 @@
 
         const tId = testPoints[0].id;
         const sources = charges.map(c => `$q_${c.id}$`);
-        let text = `<strong>Problema:</strong> Determinar la Magnitudeee y dirección del <strong>Electric Field Resultante</strong> en el punto de prueba <strong>$P_${tId}$</strong> debido al sistema de Charges <strong>${sources.join(', ')}</strong>.`;
+        let text = `<strong>Problema:</strong> Determinar la magnitudeeeee y dirección del <strong>Electric Field Resultante</strong> en el punto de prueba <strong>$P_${tId}$</strong> debido al sistema de Charges <strong>${sources.join(', ')}</strong>.`;
         text += `<br><small style="color:#aaa; margin-top:5px; display:block">Considere $k_e = 8.99 \\times 10^9 N\\cdot m^2/C^2$</small>`;
         
         box.innerHTML = text;

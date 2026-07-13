@@ -123,7 +123,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
                         if (elMethod) {
                             const methodNames = {
                                 'pomodoro': 'Pomodoro', 'feynman': 'Feynman', 'spaced_repetition': 'Repetición Espaciada',
-                                'mind_maps': 'Mapas Mentales', 'summaries': 'Resúmenes', 'practice': 'Práctica Continua',
+                                'mind_maps': 'Mapas Mentales', 'summaries': 'Resúmenes', 'practice': 'practice Continua',
                                 'cornell_notes': 'Cornell (Apuntes)', 'exam_prep': 'Preparación Examen',
                                 'active_questioning': 'Indagación', 'error_analysis': 'Análisis Errores'
                             };
@@ -142,7 +142,7 @@ export async function cargarDirectorioAdminFirebase(curriculoData, totalLessons)
 
 export async function verDetalleStudent(uid, nombre, curriculoData, totalLessons) {
     document.getElementById('modal-u-name').innerText = nombre;
-    document.getElementById('modal-u-inst').innerText = 'Cargando métricas...';
+    document.getElementById('modal-u-inst').innerText = 'loading métricas...';
     document.getElementById('modal-u-presaberes').innerHTML = '';
     document.getElementById('admin-user-modal').style.display = 'flex';
 
@@ -220,7 +220,7 @@ export async function cambiarRolUsuario(uid, nuevoRol) {
     }
 }
 
-export async function guardarAjustesCalendario(globalSettings) {
+export async function saveAjustesCalendario(globalSettings) {
     if (!window.isMasterAdmin) return Swal.fire('Permisos', 'Acceso denegado.', 'error');
 
     const semana     = parseInt(document.getElementById('admin-set-week').value) || 1;

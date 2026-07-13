@@ -16,7 +16,7 @@ export const module11 = {
           ]
         },
         { "id":"m11-j1","tipo":"Game","recurso":"games/Game_11.html","titulo":"4. Physics Quest — Maxwell","descripcion":"Completa las 4 Equations de Maxwell y desbloquea el poder de la onda EM. ¡El desafío final!","xp":25,"logro":{"id":"logro_m11","nombre":"Physical Teórico","icono":"🌌"} },
-        { "id":"m11-l7","tipo":"ejercicio","recurso":"workshops/Workshop_11_Maxwell_Equations.html","titulo":"5. Workshop Práctico — Maxwell","descripcion":"Problemas de Current de desplazamiento, ondas EM y vector de Poynting.","xp":30 },
+        { "id":"m11-l7","tipo":"exercise","recurso":"workshops/Workshop_11_Maxwell_Equations.html","titulo":"5. Workshop Práctico — Maxwell","descripcion":"Problemas de Current de desplazamiento, ondas EM y vector de Poynting.","xp":30 },
         { "id":"m11-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_11.html","titulo":"6. Quiz Adaptativo — Module 11","descripcion":"Evalúa desde la identificación de las Equations hasta el cálculo de Velocity de onda.","xp":40 },
         { "id":"m11-nb1","tipo":"notebooklm",
           // 📓 NOTEBOOKLM Module 11: Reemplaza "#" con tu link

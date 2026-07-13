@@ -6,7 +6,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Física Universitaria: Electric Charge y Coulomb\'s Law</title>
+    <title>Physics Universitaria: Electric Charge y Coulomb\'s Law</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,7 +73,7 @@
                     <i class="ph ph-magnet text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Física Electromagnética</h1>
+                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Physics Electromagnética</h1>
                     <p class="text-xs md:text-sm text-slate-500 font-medium">Assessment: Electric Charge y Coulomb\'s Law</p>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                         <i class="ph ph-magnifying-glass"></i> Revisar Answers
                     </button>
                     <button id="btn-save" class="hidden px-6 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition-colors shadow-md flex items-center gap-2">
-                        <i class="ph ph-cloud-arrow-up text-lg"></i> Guardar en la Nube
+                        <i class="ph ph-cloud-arrow-up text-lg"></i> save en la Nube
                     </button>
                 </div>
             </div>
@@ -219,7 +219,7 @@
         const questions = [
             { 
                 type: 'mcq', 
-                text: "Dos partículas cargadas puntuales ejercen una Force de atracción de $F = 100 \\text{ N}$ entre sí cuando están separadas por una Distance $r$. Si la Distance entre ellas se incrementa a $2r$, ¿cuál será la nueva Force de atracción?", 
+                text: "Dos partículas loadeds puntuales ejercen una Force de atracción de $F = 100 \\text{ N}$ entre sí cuando están separadas por una Distance $r$. Si la Distance entre ellas se incrementa a $2r$, ¿cuál será la nueva Force de atracción?", 
                 options: ["$200 \\text{ N}$", "$50 \\text{ N}$", "$25 \\text{ N}$", "$12.5 \\text{ N}$"], 
                 answer: 2, 
                 tip: "La Coulomb\'s Law establece que la Force es inversamente proporcional al cuadrado de la Distance ($1/r^2$). Si la Distance aumenta por un factor de 2, la Force disminuye por un factor de $2^2 = 4$." 
@@ -233,10 +233,10 @@
             },
             { 
                 type: 'mcq', 
-                text: "La esfera A tiene una carga de $+10 \\; \\mu\\text{C}$ y la esfera B tiene una carga de $+1 \\; \\mu\\text{C}$. Se repelen entre sí con Forces electrostáticas. ¿Cuál es la relación entre la Magnitudeee de la Force que A ejerce sobre B ($F_{AB}$) y la Force que B ejerce sobre A ($F_{BA}$)?", 
+                text: "La esfera A tiene una carga de $+10 \\; \\mu\\text{C}$ y la esfera B tiene una carga de $+1 \\; \\mu\\text{C}$. Se repelen entre sí con Forces electrostáticas. ¿Cuál es la relación entre la magnitudeeeee de la Force que A ejerce sobre B ($F_{AB}$) y la Force que B ejerce sobre A ($F_{BA}$)?", 
                 options: ["$F_{AB} = 10 F_{BA}$", "$F_{BA} = 10 F_{AB}$", "$F_{AB} = F_{BA}$", "$F_{AB} = 100 F_{BA}$"], 
                 answer: 2, 
-                tip: "Recuerda la Tercera Ley de Newton (Acción y Reacción). La Magnitudeee de las Forces de interacción entre dos objetos siempre es idéntica, independientemente de sus Charges." 
+                tip: "Recuerda la Tercera Ley de Newton (Acción y Reacción). La magnitudeeeee de las Forces de interacción entre dos objetos siempre es idéntica, independientemente de sus Charges." 
             },
             { 
                 type: 'mcq', 
@@ -263,17 +263,17 @@
                 text: "Cuatro Charges puntuales idénticas $+Q$ se encuentran fijas en las esquinas de un cuadrado de lado $a$. Si se coloca una carga de prueba $-q$ exactamente en el centro geométrico del cuadrado, la Net Force sobre esta será:", 
                 options: ["Dirigida hacia arriba.", "Proporcional a $1/a^2$.", "Exactamente cero.", "Infinita."], 
                 answer: 2, 
-                tip: "Evalúa la simetría del problema (Superposition Principle). Por cada carga atrayendo a $-q$ en una dirección, existe una carga idéntica en la esquina opuesta atrayéndola con la misma Magnitudeee pero en dirección contraria." 
+                tip: "Evalúa la simetría del problema (Superposition Principle). Por cada carga atrayendo a $-q$ en una dirección, existe una carga idéntica en la esquina opuesta atrayéndola con la misma magnitudeeeee pero en dirección contraria." 
             },
             { 
                 type: 'equation', 
-                text: "Escribe la expresión algebraica para la Magnitudeee de la Force electrostática $F$ entre dos partículas con Charges $q_1$ y $q_2$ separadas por una Distance $r$. (Usa la constante de Coulomb como 'k'. Escribe algo como k*q1*q2/r^2)", 
+                text: "Escribe la expresión algebraica para la magnitudeeeee de la Force electrostática $F$ entre dos partículas con Charges $q_1$ y $q_2$ separadas por una Distance $r$. (Usa la constante de Coulomb como 'k'. Escribe algo como k*q1*q2/r^2)", 
                 answer: "k*q1*q2/r^2", 
                 tip: "Es la famosa Coulomb\'s Law. Multiplica las Charges, divide por la Distance al cuadrado, y todo afectado por la constante." 
             },
             { 
                 type: 'mcq', 
-                text: "Se dispone de una barra cargada negativamente. Se acerca a una esfera metálica neutra aislada (sin tocarla), y mientras está cerca, la esfera se conecta momentáneamente a tierra mediante un cable. Finalmente, se retira la conexión a tierra y se aleja la barra. ¿Cómo queda cargada la esfera?", 
+                text: "Se dispone de una barra loaded negativamente. Se acerca a una esfera metálica neutra aislada (sin tocarla), y mientras está cerca, la esfera se conecta momentáneamente a tierra mediante un cable. Finalmente, se retira la conexión a tierra y se aleja la barra. ¿Cómo queda loaded la esfera?", 
                 options: ["Negativemente.", "Positivemente.", "Vuelve a quedar neutra.", "Se polariza temporalmente."], 
                 answer: 1, 
                 tip: "Este es el proceso de 'Carga por Induction'. La barra repelió a los electrones libres del metal hacia la tierra. Al cortar la tierra, la esfera queda con déficit de electrones." 
@@ -321,7 +321,7 @@
             },
             { 
                 type: 'drag', 
-                text: "Arrastra cada método de carga de materiales hacia la descripción física que mejor lo explica:", 
+                text: "Arrastra cada método de carga de materiales hacia la descripción Physics que mejor lo explica:", 
                 pairs: [
                     { id: 'p1', question: "Fricción (Frotamiento)", answer: "Rotura de enlaces superficiales arrancando electrones de un material a otro." },
                     { id: 'p2', question: "Contacto (Conducción)", answer: "Transferencia directa al tocar un conductor con otro hasta igualar Powerles." },
@@ -338,21 +338,21 @@
             },
             { 
                 type: 'mcq', 
-                text: "Una barra plástica cargada negativamente se acerca a trocitos de papel, que son neutros y Insulators. Los pedacitos saltan hacia la barra. Esto ocurre físicamente por un proceso de:", 
+                text: "Una barra plástica loaded negativamente se acerca a trocitos de papel, que son neutros y Insulators. Los pedacitos saltan hacia la barra. Esto ocurre Physicsmente por un proceso de:", 
                 options: ["Ionización en el aire.", "Induction metálica.", "Polarización atómica del Dielectric.", "Radiación electromagnética."], 
                 answer: 2, 
                 tip: "Aunque el papel es aislante (sin electrones libres), sus nubes electrónicas se deforman levemente (polarización), haciendo que el lado positivo del átomo quede más cerca de la barra negativa." 
             },
             { 
                 type: 'equation', 
-                text: "Usando notación decimal con exponentes, escribe la Magnitudeee (en Coulombs) de la carga elemental de un solo electrón/protón. Ej: usa `1.6*10^-19`", 
+                text: "Usando notación decimal con exponentes, escribe la magnitudeeeee (en Coulombs) de la carga elemental de un solo electrón/protón. Ej: usa `1.6*10^-19`", 
                 answer: "1.6*10^-19", 
-                tip: "Es el valor fundamental $e$. Su Magnitudeee se descubrió históricamente en el experimento de la gota de aceite de Millikan." 
+                tip: "Es el valor fundamental $e$. Su magnitudeeeee se descubrió históricamente en el experimento de la gota de aceite de Millikan." 
             },
             { 
                 type: 'canvas', 
                 text: "Simulator Coulomb\'s Law: Tienes un núcleo fijo positivo (Centro) y un protón móvil (Azul). **Arrastra** la carga azul hacia el anillo central sombreado para experimentar la Force máxima y completar la Question.", 
-                tip: "Observa cómo el vector Force (rojo) y su Magnitudeee varían no linealmente. Al acercar la carga a la mitad de la Distance, la Force no se duplica, se **cuadruplica** ($1/r^2$)." 
+                tip: "Observa cómo el vector Force (rojo) y su magnitudeeeee varían no linealmente. Al acercar la carga a la mitad de la Distance, la Force no se duplica, se **cuadruplica** ($1/r^2$)." 
             }
         ];
 
@@ -482,7 +482,7 @@
                     <div class="w-full max-w-lg mx-auto aspect-video md:aspect-[4/3] bg-slate-50 border-2 border-slate-200 rounded-2xl overflow-hidden mt-6 relative shadow-inner touch-none select-none">
                         <canvas id="simCanvas" class="w-full h-full cursor-pointer touch-none"></canvas>
                         <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-200 font-mono text-sm pointer-events-none flex flex-col gap-1 z-10">
-                            <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">Magnitudeee de Force $F$</span>
+                            <span class="text-xs text-slate-500 uppercase font-bold tracking-wider">magnitudeeeee de Force $F$</span>
                             <span id="canvas-flux" class="font-bold text-slate-600 text-lg">0 N</span>
                         </div>
                         <div class="absolute bottom-4 left-0 right-0 flex justify-center pointer-events-none z-10">
@@ -501,7 +501,7 @@
                             <i class="ph-fill ph-lightbulb text-lg"></i> Show Tip Metodológico
                         </button>
                         <div id="tip-${index}" class="hidden mt-4 bg-amber-50 border-l-4 border-amber-400 text-amber-900 text-[0.95rem] p-4 rounded-r-xl shadow-sm fade-in leading-relaxed">
-                            <strong>Pista de resolución:</strong> ${q.tip}
+                            <strong>Pista de resolution:</strong> ${q.tip}
                         </div>
                     </div>
                 `;
@@ -711,7 +711,7 @@
         function showConfirmModal() {
             let unanswered = userState.filter(s => !s.answered).length;
             const msg = document.getElementById('confirm-message');
-            msg.textContent = unanswered > 0 ? `Tienes ${unanswered} Question(s) sin responder. ¿Seguro que deseas evaluar ahora?` : `¿Deseas enviar tus Answers para su Assessment final?`;
+            msg.textContent = unanswered > 0 ? `Tienes ${unanswered} Question(s) sin responder. ¿Seguro que deseas evaluar ahora?` : `¿Deseas submit tus Answers para su Assessment final?`;
             document.getElementById('confirm-modal').classList.remove('hidden');
         }
 
@@ -738,7 +738,7 @@
                             const inpCont = card.querySelector('input[type="text"]').parentElement;
                             const ansDiv = document.createElement('div');
                             ansDiv.className = "mt-2 text-sm text-red-600 font-bold bg-red-50 p-2 rounded border border-red-200";
-                            ansDiv.innerHTML = `Solución esperada: $$${q.answer}$$`;
+                            ansDiv.innerHTML = `solution esperada: $$${q.answer}$$`;
                             inpCont.appendChild(ansDiv);
                             if(window.renderMathInElement) renderMathInElement(ansDiv);
                         }
@@ -804,9 +804,9 @@
 
         function hideResultsPanel() { document.getElementById('results-panel').classList.add('hidden'); }
 
-        // --- 7. GUARDAR EN REALTIME DATABASE (TU CÓDIGO) ---
+        // --- 7. save EN REALTIME DATABASE (TU CÓDIGO) ---
         async function saveProgress() {
-            if (!currentUser) return showToast("Inicia sesión en la plataforma principal para guardar.", "error");
+            if (!currentUser) return showToast("Inicia sesión en la plataforma principal para save.", "error");
             if (window.lastScore < 70) return showToast("Solo se guardan calificaciones aprobatorias (>70%).", "warning");
 
             try {
@@ -827,7 +827,7 @@
                 btn.disabled = true;
             } catch (error) {
                 console.error("Save err:", error);
-                showToast("Error de conexión al guardar el progreso.", "error");
+                showToast("Error de conexión al save el progreso.", "error");
                 document.getElementById('btn-save').innerHTML = `<i class="ph ph-cloud-arrow-up text-lg"></i> Reintentar`;
             }
         }
@@ -838,7 +838,7 @@
                 const progresoRef = ref(db, 'usuarios/' + currentUser.uid + '/progreso_curso');
                 const snapshot = await get(progresoRef);
                 if (snapshot.exists() && snapshot.val().examen_coulomb_score) {
-                    showToast(`¡Bienvenido de nuevo! Tu récord Previous es: ${snapshot.val().examen_coulomb_score}%`, "success");
+                    showToast(`¡welcome de nuevo! Tu récord Previous es: ${snapshot.val().examen_coulomb_score}%`, "success");
                 }
             } catch (e) { /* ignore silently */ }
         }

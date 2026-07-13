@@ -151,7 +151,7 @@
                 return () => window.removeEventListener('mousemove', moveLaser);
             }, [isLaser]);
 
-            // --- LÓGICA FÍSICA ESTRICTA ---
+            // --- LÓGICA Physics ESTRICTA ---
             const c = useMemo(() => {
                 const out = {};
                 out.r43 = par(v.r4, v.r3);        
@@ -381,10 +381,10 @@
             const stepsData = [
                 {
                     title: "Introduction y Glossary",
-                    desc: "Bienvenido. Aprenderemos a resolver la red mediante el modelo $CircuitReductionResistor10.easy$. Nuestro objetivo es colapsar la topología y validar las Currents por la Ley de Ohm.",
+                    desc: "welcome. Aprenderemos a resolver la red mediante el modelo $CircuitReductionResistor10.easy$. Nuestro objective es colapsar la topología y validar las Currents por la Ley de Ohm.",
                     glossary: [
                         { t: "Current Convencional (Rojo)", d: "Modelo teórico: la Current viaja del polo Positive (+) al Negative (-)." },
-                        { t: "Flujo de Electrones (Amarillo)", d: "Física Real: los electrones viajan del polo Negative (-) hacia el Positive (+)." }
+                        { t: "Flujo de Electrones (Amarillo)", d: "Physics Real: los electrones viajan del polo Negative (-) hacia el Positive (+)." }
                     ],
                     tip: "Activa el Puntero Láser y la Pantalla Completa en la barra superior. Toca el circuito visual para avanzar rápidamente."
                 },
@@ -479,7 +479,7 @@
                         \\text{Nodo Sup}:& \\quad \\textcolor{${C.rab}}{I_{ab}} = \\textcolor{${C.r43}}{I_4 + I_3} \\implies ${fmt(c.iab)}\\text{A} = ${fmt(c.i4)}\\text{A} + ${fmt(c.i3)}\\text{A} \\quad \\textcolor{#10b981}{\\checkmark} \\\\
                         \\text{Puente}:& \\quad \\textcolor{${C.r43}}{I_4} + \\textcolor{#fbbf24}{I_{pte}} = \\textcolor{${C.r67}}{I_6} \\implies ${fmt(c.i4)}\\text{A} + ${fmt(c.i_puente)}\\text{A} = ${fmt(c.i6)}\\text{A} \\quad \\textcolor{#10b981}{\\checkmark}
                     \\end{aligned}`,
-                    tip: "¡El Puente Central Analizado! La Current I4 es insuficiente por sí misma para sostener la demanda de I6 en la rama inferior. Esto provoca que la Resistance R3 se convierta en surtidora, transfiriendo el déficit de electrones transversalmente a través del puente medio. La física es perfecta."
+                    tip: "¡El Puente Central Analizado! La Current I4 es insuficiente por sí misma para sostener la demanda de I6 en la rama inferior. Esto provoca que la Resistance R3 se convierta en surtidora, transfiriendo el déficit de electrones transversalmente a través del puente medio. La Physics es perfecta."
                 }
             ];
 

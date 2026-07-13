@@ -157,8 +157,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <!-- Question card -->
     <div class="question-card" id="question-card">
       <div class="round-badge">⚡ <span id="round-label">Ronda 1 — Calentamiento</span></div>
-      <div class="q-category" id="q-cat">FÍSICA ELECTROSTÁTICA</div>
-      <div class="q-text" id="q-text">Cargando...</div>
+      <div class="q-category" id="q-cat">Physics ELECTROSTÁTICA</div>
+      <div class="q-text" id="q-text">loading...</div>
       <div class="q-formula" id="q-formula" style="display:none"></div>
       <div class="options" id="options-grid"></div>
       <div class="feedback" id="feedback-box"></div>
@@ -186,7 +186,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div style="margin-top:16px">
       <button class="btn-restart" onclick="restartGame()">🔄 Reintentar</button>
-      <button class="btn-save" onclick="saveResult()">✅ Guardar progreso</button>
+      <button class="btn-save" onclick="saveResult()">✅ save progreso</button>
     </div>
   </div>
 </div>
@@ -195,7 +195,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 <script>
 const GAME_CONFIG = {
   titulo: "Electric Field",
-  descripcion: "Navega vectores de campo y calcula Magnitudeeees. 5 rondas de electrostática vectorial.",
+  descripcion: "Navega vectores de campo y calcula magnitudeeeeees. 5 rondas de electrostática vectorial.",
   color: "#7c3aed",
   moduloId: "m2-j1",
   xpGanado: 25,
@@ -223,13 +223,13 @@ const GAME_CONFIG = {
       formula:null,
       Options:["2kq/d² en cualquier dirección","kq/d² hacia una carga","Cero por simetría","kq/2d²"],correcta:2,
       feedback_ok:"Por simetría, los campos de ambas Charges se cancelan exactamente en el punto medio.",
-      feedback_bad:"Las dos Charges iguales crean campos de igual Magnitudeee pero opuesta dirección en el centro."
+      feedback_bad:"Las dos Charges iguales crean campos de igual magnitudeeeee pero opuesta dirección en el centro."
     },
     {
       titulo:"Ronda 4",categoria:"Field Lines",
       Question:"Las líneas de Electric Field NUNCA pueden:",
       formula:null,
-      Options:["Ser curvas","Cruzarse entre sí","Comenzar en Charges positivas","Terminar en Charges negativas"],correcta:1,
+      Options:["Ser curvas","Cruzarse entre sí","start en Charges positivas","Terminar en Charges negativas"],correcta:1,
       feedback_ok:"Las Field Lines no pueden cruzarse. Si se cruzaran, habría dos direcciones de E en ese punto.",
       feedback_bad:"Las líneas de E nunca se cruzan porque en cada punto el campo tiene una sola dirección."
     },

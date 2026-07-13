@@ -124,7 +124,7 @@
     <div id="result-feedback" style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;font-size:0.88rem;line-height:1.6;color:var(--text-mid);margin-bottom:20px"></div>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <button class="btn btn-secondary" onclick="ResetQuiz()"><span class="material-symbols-outlined" style="font-size:16px">refresh</span> Intentar de nuevo</button>
-      <button class="btn btn-primary" onclick="enviarResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> Guardar Result</button>
+      <button class="btn btn-primary" onclick="submitResult()"><span class="material-symbols-outlined" style="font-size:16px">check_circle</span> save Result</button>
     </div>
   </div>
 </div>
@@ -382,7 +382,7 @@ function showResults() {
   document.getElementById('result-feedback').innerHTML = feedbackText;
 }
 
-function enviarResult() {
+function submitResult() {
   const pct = Math.round((results.correct / results.total) * 100) || 0;
   const xp = Math.round(QUIZ_CONFIG.xpBase * (pct/100) * (results.maxLevel/3));
   window.parent?.postMessage({

@@ -164,12 +164,12 @@
                             <div class="space-y-3">
                                 <div class="bg-white border border-violet-100 p-3 rounded-lg shadow-sm">
                                     <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2"><i data-lucide="filter" class="w-4 h-4 text-indigo-500"></i> 1. Espectrómetro de Masas</h3>
-                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Usando campos cruzados ortogonales ($\vec{E} \perp \vec{B}$), la partícula no se desvía solo si $v = E/B$ (Filtro de Velocityes). Luego entra a una zona solo magnética donde $R = mv/qB$. Usado para Calculate masas atómicas, datar fósiles con Carbono-14 y descubrir isótopos exóticos en astrofísica.</p>
+                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Usando campos cruzados ortogonales ($\vec{E} \perp \vec{B}$), la partícula no se desvía solo si $v = E/B$ (Filtro de Velocityes). Luego entra a una zona solo magnética donde $R = mv/qB$. Usado para Calculate masas atómicas, datar fósiles con Carbono-14 y descubrir isótopos exóticos en astroPhysics.</p>
                                 </div>
 
                                 <div class="bg-white border border-violet-100 p-3 rounded-lg shadow-sm">
                                     <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2"><i data-lucide="radiation" class="w-4 h-4 text-amber-500"></i> 2. Reactores de Fusión (Tokamak)</h3>
-                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Para crear una estrella en la Tierra, el plasma alcanza 150 millones de grados Celsius, derritiendo cualquier pared material física. Se utilizan campos magnéticos colosales en forma de "Dona" para generar <strong>confinamiento magnético</strong>; las partículas cargadas quedan levitando en órbitas helicoidales, sin tocar el contenedor.</p>
+                                    <p class="text-[11px] text-slate-600 mt-1 text-justify">Para crear una estrella en la Tierra, el plasma alcanza 150 millones de grados Celsius, derritiendo cualquier pared material Physics. Se utilizan campos magnéticos colosales en forma de "Dona" para generar <strong>confinamiento magnético</strong>; las partículas loadeds quedan levitando en órbitas helicoidales, sin tocar el contenedor.</p>
                                 </div>
                                 
                                 <div class="bg-white border border-violet-100 p-3 rounded-lg shadow-sm">
@@ -209,7 +209,7 @@
                         <!-- AVISO DE USO DE FUNCIONES -->
                         <div class="w-full text-[10px] text-indigo-700 bg-indigo-50 border border-indigo-200 rounded p-1.5 flex items-center gap-2">
                             <i data-lucide="info" class="w-4 h-4"></i>
-                            <span><b>Tip Pro:</b> Puedes ingresar números fijos (ej: <code>5</code>) o funciones que dependan de <code>t</code> (tiempo), <code>x</code>, <code>y</code>, <code>z</code>. Por ejemplo: <code>sin(t)*5</code>, <code>x</code>, <code>cos(y)</code>.</span>
+                            <span><b>Tip Pro:</b> Puedes ingresar números fijos (ej: <code>5</code>) o funciones que dependan de <code>t</code> (tiempo), <code>x</code>, <code>y</code>, <code>z</code>. Por example: <code>sin(t)*5</code>, <code>x</code>, <code>cos(y)</code>.</span>
                         </div>
 
                         <!-- ENTRADAS VECTORIALES (V, B, E) -> AHORA SON STRING (TEXT) -->
@@ -299,7 +299,7 @@
                             <!-- Telemetría Dinámica -->
                             <div class="h-[45%] graph-wrapper p-3 flex flex-col shadow-sm border border-slate-200 bg-slate-50">
                                 <p class="text-xs font-bold text-slate-800 mb-2 text-center flex items-center justify-center gap-2 border-b border-slate-200 pb-1">
-                                    <i data-lucide="gauge" class="w-4 h-4 text-indigo-600"></i> Magnitudeeees Scaleres
+                                    <i data-lucide="gauge" class="w-4 h-4 text-indigo-600"></i> magnitudeeeeees Scaleres
                                 </p>
                                 <div class="text-[11px] font-mono flex flex-col gap-1.5 w-full mt-1">
                                     <div class="flex justify-between bg-white border border-slate-200 p-2 rounded shadow-sm items-center">
@@ -557,7 +557,7 @@
         }
 
 
-        // 4. MOTOR DE FÍSICAS VECTORIAL
+        // 4. MOTOR DE PhysicsS VECTORIAL
         let lastT = performance.now();
         let refVel = new THREE.Vector3(), refB = new THREE.Vector3(), refF = new THREE.Vector3();
 
@@ -698,7 +698,7 @@
                     muArrow.visible = true;
                 } else muArrow.visible = false;
                 
-                // Visualizar Forces opuestas como ejemplo
+                // Visualizar Forces opuestas como example
                 let F_side = I * 5 * B.length(); 
                 f1Arrow.setLength(Math.min(Math.abs(F_side)*0.1+0.1, 7), 1, 0.5); f2Arrow.setLength(Math.min(Math.abs(F_side)*0.1+0.1, 7), 1, 0.5);
                 f1Arrow.setDirection(new THREE.Vector3(0,0, Math.sign(I)).applyAxisAngle(new THREE.Vector3(1,0,0), state.espira.theta));

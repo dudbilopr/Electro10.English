@@ -110,7 +110,7 @@
                     <!-- BASE COMÚN -->
                     <div class="bg-slate-100 p-[1.5vmin] border-l-[0.5vmin] border-blue-600 shadow-sm rounded-r-lg mb-[1vmin]">
                         <p class="mb-1 flex items-start">
-                            <span>La Net Force sobre una partícula cargada ($q$) en presencia de un <strong>Electric Field ($\vec{E}$)</strong> y un campo gravitacional ($\vec{g}$) determina su Trajectory mediante la Segunda Ley de Newton.</span>
+                            <span>La Net Force sobre una partícula loaded ($q$) en presencia de un <strong>Electric Field ($\vec{E}$)</strong> y un campo gravitacional ($\vec{g}$) determina su Trajectory mediante la Segunda Ley de Newton.</span>
                             <span class="relative tip-wrapper inline-block ml-2 z-50">
                                 <span class="tip-btn">💡</span>
                                 <span class="tip-content"><strong>💡 Equation de Movimiento:</strong> A través de métodos numéricos (como Euler), podemos integrar esta Acceleration paso a paso para predecir cualquier Trajectory compleja.</span>
@@ -249,7 +249,7 @@
                             </div>
 
                             <div class="control-group border-r border-slate-300 pr-2">
-                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="Magnitudeee base del Campo">Mag. $\vec{E}$:</label>
+                                <label class="font-bold text-purple-700 text-xs md:text-sm" title="magnitudeeeee base del Campo">Mag. $\vec{E}$:</label>
                                 <input type="range" id="slider-e" min="0" max="10" step="0.5" value="5" class="w-[3.5vw]">
                                 <span id="val-e" class="font-mono font-bold w-[1.5vw] text-right text-purple-600">5.0</span>
                             </div>
@@ -589,7 +589,7 @@
                         let visualLen = Math.min(Math.pow(mag/5, 0.4), spacing * 0.8); 
                         
                         let color = new THREE.Color();
-                        // Scale de color basada en Magnitudeee (Azul-Morado-Rojo)
+                        // Scale de color basada en magnitudeeeee (Azul-Morado-Rojo)
                         color.setHSL(0.6 - Math.min(mag/30, 0.6), 0.8, 0.6); 
                         
                         let arrow = new THREE.ArrowHelper(dir, pos, visualLen, color, visualLen*0.3, visualLen*0.2);
@@ -606,7 +606,7 @@
         }
 
         // ==========================================
-        // 6. MOTOR DE INTEGRACIÓN (FÍSICA DE LA PARTÍCULA)
+        // 6. MOTOR DE INTEGRACIÓN (Physics DE LA PARTÍCULA)
         // ==========================================
         let lastTime = performance.now();
         let graphDataY = []; // Almacena (t, y) para el gráfico
@@ -1016,7 +1016,7 @@
             params.config = e.target.value; 
             updateTeoriaUI(params.config);
             
-            // Lógica especial al seleccionar Placas Paralelas para que la partícula "entre" al campo
+            // Lógica especial al select Placas Paralelas para que la partícula "entre" al campo
             if (params.config === 'placas') {
                 document.getElementById('in-vx').value = 6;
                 document.getElementById('in-vy').value = 0;

@@ -6,7 +6,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Física Universitaria: Electric Potential</title>
+    <title>Physics Universitaria: Electric Potential</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,7 +73,7 @@
                     <i class="ph ph-wave-sine text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Física Electromagnética</h1>
+                    <h1 class="text-xl md:text-2xl font-bold text-slate-800">Physics Electromagnética</h1>
                     <p class="text-xs md:text-sm text-violet-600 font-bold tracking-wide uppercase">Module 3: Electric Potential</p>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                         <i class="ph ph-magnifying-glass"></i> Revisar Answers
                     </button>
                     <button id="btn-save" class="hidden px-6 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition-colors shadow-md flex items-center gap-2">
-                        <i class="ph ph-cloud-arrow-up text-lg"></i> Guardar en la Nube
+                        <i class="ph ph-cloud-arrow-up text-lg"></i> save en la Nube
                     </button>
                 </div>
             </div>
@@ -336,9 +336,9 @@
             },
             { 
                 type: 'fill', 
-                text: "Al sumar Powerles de un sistema de muchas Charges puntuales, se suman los valores directamente sin importar los Angles. Esto ocurre porque el Electric Potential no es un vector, sino una Magnitudeee ______.", 
+                text: "Al sumar Powerles de un sistema de muchas Charges puntuales, se suman los valores directamente sin importar los Angles. Esto ocurre porque el Electric Potential no es un vector, sino una magnitudeeeee ______.", 
                 answer: "escalar", 
-                tip: "Tienen Magnitudeee y signo algebraico, pero no dirección en el espacio. Ejemplos: masa, temperatura, Energy, Voltage." 
+                tip: "Tienen magnitudeeeee y signo algebraico, pero no dirección en el espacio. examples: masa, temperatura, Energy, Voltage." 
             },
             { 
                 type: 'equation', 
@@ -349,7 +349,7 @@
             { 
                 type: 'canvas', 
                 text: "Simulator de Equipotentials: En el centro hay una carga $+Q$ con sus líneas equiPowerles circulares. **Arrastra la carga de prueba azul ($+q$) sobre la línea punteada de 50V**. El Work realizado al moverla a través de *esa misma línea* será cero.", 
-                tip: "Alinea exactamente el centro de la carga azul con la línea orbital punteada central (50V). Observa cómo el indicador cambia a 'Equilibrio Alcanzado' al estar en la equiPowerl objetivo." 
+                tip: "Alinea exactamente el centro de la carga azul con la línea orbital punteada central (50V). Observa cómo el indicador cambia a 'Equilibrio Alcanzado' al estar en la equiPowerl objective." 
             }
         ];
 
@@ -498,7 +498,7 @@
                             <i class="ph-fill ph-lightbulb text-lg"></i> Show Tip Metodológico
                         </button>
                         <div id="tip-${index}" class="hidden mt-4 bg-amber-50 border-l-4 border-amber-400 text-amber-900 text-[0.95rem] p-4 rounded-r-xl shadow-sm fade-in leading-relaxed">
-                            <strong>Pista de resolución:</strong> ${q.tip}
+                            <strong>Pista de resolution:</strong> ${q.tip}
                         </div>
                     </div>
                 `;
@@ -617,7 +617,7 @@
             
             // Constantes simuladas
             const k_sim = 5000; 
-            const targetPot = 50; // V objetivo
+            const targetPot = 50; // V objective
             const targetRadius = k_sim / targetPot; // Radius donde el Powerl es 50V
 
             function draw() {
@@ -715,7 +715,7 @@
         function showConfirmModal() {
             let unanswered = userState.filter(s => !s.answered).length;
             const msg = document.getElementById('confirm-message');
-            msg.textContent = unanswered > 0 ? `Tienes ${unanswered} Question(s) sin responder. ¿Seguro que deseas evaluar ahora?` : `¿Deseas enviar tus Answers para su Assessment final?`;
+            msg.textContent = unanswered > 0 ? `Tienes ${unanswered} Question(s) sin responder. ¿Seguro que deseas evaluar ahora?` : `¿Deseas submit tus Answers para su Assessment final?`;
             document.getElementById('confirm-modal').classList.remove('hidden');
         }
 
@@ -745,7 +745,7 @@
                             const inpCont = card.querySelector('input[type="text"]').parentElement;
                             const ansDiv = document.createElement('div');
                             ansDiv.className = "mt-2 text-sm text-red-600 font-bold bg-red-50 p-2 rounded border border-red-200";
-                            ansDiv.innerHTML = `Solución esperada: $$${q.answer}$$`;
+                            ansDiv.innerHTML = `solution esperada: $$${q.answer}$$`;
                             inpCont.appendChild(ansDiv);
                             if(window.renderMathInElement) renderMathInElement(ansDiv);
                         }
@@ -811,9 +811,9 @@
 
         function hideResultsPanel() { document.getElementById('results-panel').classList.add('hidden'); }
 
-        // --- 7. GUARDAR EN LA BASE DE DATOS (Module 3) ---
+        // --- 7. save EN LA BASE DE DATOS (Module 3) ---
         async function saveProgress() {
-            if (!currentUser) return showToast("Inicia sesión en la plataforma principal para guardar.", "error");
+            if (!currentUser) return showToast("Inicia sesión en la plataforma principal para save.", "error");
             if (window.lastScore < 70) return showToast("Solo se guardan calificaciones aprobatorias (>70%).", "warning");
 
             try {
@@ -834,7 +834,7 @@
                 btn.disabled = true;
             } catch (error) {
                 console.error("Save err:", error);
-                showToast("Error de conexión al guardar el progreso.", "error");
+                showToast("Error de conexión al save el progreso.", "error");
                 document.getElementById('btn-save').innerHTML = `<i class="ph ph-cloud-arrow-up text-lg"></i> Reintentar`;
             }
         }
@@ -845,7 +845,7 @@
                 const progresoRef = ref(db, 'usuarios/' + currentUser.uid + '/progreso_curso');
                 const snapshot = await get(progresoRef);
                 if (snapshot.exists() && snapshot.val().examen_Powerl_score) {
-                    showToast(`¡Bienvenido! Tu récord Previous en Electric Potential es: ${snapshot.val().examen_Powerl_score}%`, "success");
+                    showToast(`¡welcome! Tu récord Previous en Electric Potential es: ${snapshot.val().examen_Powerl_score}%`, "success");
                 }
             } catch (e) { /* ignore silently */ }
         }

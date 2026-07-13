@@ -122,7 +122,7 @@
                                 Vector Relativo $\vec{r} = \vec{r}_P - \vec{r}_{dq}$:
                                 <div class="math-display">$$\vec{r} = (x - R\cos\theta)\hat{i} + (y - R\sin\theta)\hat{j} + z\hat{k}$$</div>
                             </li>
-                            <li><strong>Magnitudeee al cubo ($|\vec{r}|^3$):</strong> Necesaria para la Coulomb's Law:
+                            <li><strong>magnitudeeeee al cubo ($|\vec{r}|^3$):</strong> Necesaria para la Coulomb's Law:
                                 <div class="math-display">$$|\vec{r}|^3 = \left[ (x - R\cos\theta)^2 + (y - R\sin\theta)^2 + z^2 \right]^{3/2}$$</div>
                             </li>
                         </ol>
@@ -137,7 +137,7 @@
 
                     <!-- CASO 1: ARCO / ANILLO -->
                     <div id="teoria-arco" class="bg-orange-50 p-[1.5vmin] border border-orange-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
-                        <p class="font-bold text-orange-800 flex items-center">1. Solución: Arc Paramétrico</p>
+                        <p class="font-bold text-orange-800 flex items-center">1. solution: Arc Paramétrico</p>
                         <p class="text-sm mt-1">Con el vector $\vec{r}$ definido, sustituimos en la ecuación integral $d\vec{E} = k \frac{dq}{|\vec{r}|^3} \vec{r}$ y separamos en componentes. Integramos desde $0$ hasta la <strong>Apertura ($\theta_{max}$)</strong>:</p>
                         <div class="math-display">
                             \begin{aligned}
@@ -151,7 +151,7 @@
 
                     <!-- CASO 2: PAR DE ANILLOS (DIPOLO) -->
                     <div id="teoria-dipolo" class="hidden flex-col bg-rose-50 p-[1.5vmin] border border-rose-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
-                        <p class="font-bold text-rose-800 flex items-center">2. Solución: Dipolo de Rings</p>
+                        <p class="font-bold text-rose-800 flex items-center">2. solution: Dipolo de Rings</p>
                         <p class="text-sm mt-1">Tenemos dos curvas idénticas separadas verticalmente. Ring superior en $z = +d$ con carga $-\lambda$ y anillo inferior en $z = -d$ con carga $+\lambda$.</p>
                         <p class="text-sm mt-1"><strong>Paso a Paso:</strong> El campo es la superPosition $\vec{E}_{tot} = \vec{E}_{inf} + \vec{E}_{sup}$. Evaluando en el eje Z ($x=0, y=0$) para anillos completos, las componentes transversales se cancelan y sumamos las contribuciones en $\hat{k}$:</p>
                         <div class="math-display">
@@ -162,7 +162,7 @@
 
                     <!-- CASO 3: INTERACCIÓN LÍNEA Y ANILLO -->
                     <div id="teoria-linea" class="hidden flex-col bg-teal-50 p-[1.5vmin] border border-teal-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
-                        <p class="font-bold text-teal-800 flex items-center">3. Solución: Línea Infinita vs Ring</p>
+                        <p class="font-bold text-teal-800 flex items-center">3. solution: Línea Infinita vs Ring</p>
                         <p class="text-sm mt-1"><strong>Paso a Paso:</strong> Sumamos dos fuentes de campo con geometrías completamente diferentes.</p>
                         <ol class="text-sm list-decimal pl-5 mt-1">
                             <li><strong>$\vec{E}_1$ (Ring):</strong> Usamos la integral de superPosition polar.</li>
@@ -174,7 +174,7 @@
 
                     <!-- CASO 4: ANILLO VARIABLE -->
                     <div id="teoria-variable" class="hidden flex-col bg-pink-50 p-[1.5vmin] border border-pink-200 shadow-sm rounded-lg relative flex-1 mb-[1vmin]">
-                        <p class="font-bold text-pink-800 flex items-center">4. Solución: Densidad Polar $\lambda(\theta)$</p>
+                        <p class="font-bold text-pink-800 flex items-center">4. solution: Densidad Polar $\lambda(\theta)$</p>
                         <p class="text-sm mt-1">Si $\lambda$ no es constante, no puede salir de la integral. Analizamos el caso de un <strong>dipolo curvo</strong> donde $\lambda(\theta) = \lambda_0 \cos(\theta)$.</p>
                         <p class="text-sm mt-1">Sustituimos en la integral del campo en el centro ($x=0,y=0,z=0$):</p>
                         <div class="math-display">
@@ -740,7 +740,7 @@
         }
 
         // ==========================================
-        // 7. MOTOR DE INTEGRACIÓN FÍSICA Y UI
+        // 7. MOTOR DE INTEGRACIÓN Physics Y UI
         // ==========================================
         let lastTime = performance.now();
         let graphDataY = []; 

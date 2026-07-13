@@ -543,7 +543,7 @@
                     alert("✅ Guardado exitoso en Firebase");
                 } catch (e) { 
                     console.error(e); 
-                    alert("❌ Error al guardar. Verifica permisos o login.");
+                    alert("❌ Error al save. Verifica permisos o login.");
                 }
             };
 
@@ -568,7 +568,7 @@
                         if (data.format) setFormat(data.format);
                         
                         saveStateToHistory(); 
-                        alert("☁️ Proyecto cargado.");
+                        alert("☁️ Proyecto loaded.");
                     } else {
                         alert("ℹ️ No hay proyectos guardados en tu cuenta.");
                     }
@@ -641,7 +641,7 @@
 
                                 {/* Botones Nube */}
                                 <div className="flex bg-[var(--surface-color)] rounded-xl p-1 shadow-inner">
-                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--accent-color)]" onClick={handleCloudSync} title="Guardar a la Nube"><Icons.CloudSave /></button>
+                                    <button className="p-1.5 rounded-lg btn-tool text-[var(--accent-color)]" onClick={handleCloudSync} title="save a la Nube"><Icons.CloudSave /></button>
                                     <button className="p-1.5 rounded-lg btn-tool text-[var(--secondary-color)]" onClick={handleCloudLoad} title="Cargar de la Nube"><Icons.CloudLoad /></button>
                                 </div>
 
@@ -785,7 +785,7 @@
                                 <div className="flex justify-end gap-3 mt-5">
                                     <button className="px-5 py-2.5 rounded-lg hover:bg-white/10 transition font-bold text-[var(--text-color)]" onClick={() => setEditingElement(null)}>Cancelar</button>
                                     <button className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-[var(--accent-color)] to-[var(--secondary-color)] text-white font-bold shadow-[0_0_15px_var(--accent-color)] btn-action"
-                                            onClick={() => { setElements(prev => prev.map(el => el.id === editingElement.id ? editingElement : el)); saveStateToHistory(); setEditingElement(null); }}>Guardar</button>
+                                            onClick={() => { setElements(prev => prev.map(el => el.id === editingElement.id ? editingElement : el)); saveStateToHistory(); setEditingElement(null); }}>save</button>
                                 </div>
                             </div>
                         </div>

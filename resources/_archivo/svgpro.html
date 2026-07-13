@@ -148,7 +148,7 @@
                 <i data-lucide="panel-right" class="w-4 h-4"></i>
             </button>
             <button onclick="window.exportSVG()" class="flex items-center px-4 py-1.5 btn-primary rounded text-xs font-semibold shadow-lg">
-                <i data-lucide="download" class="w-4 h-4 mr-2"></i> Guardar Vector
+                <i data-lucide="download" class="w-4 h-4 mr-2"></i> save Vector
             </button>
         </div>
     </nav>
@@ -254,7 +254,7 @@
                         <p class="text-sm text-[#999999] mb-6">Arrastra una imagen para pintar y vectorizar, o <b>múltiples archivos .SVG</b> para editarlos juntos en el lienzo.</p>
                         <input type="file" id="fileInput" class="hidden" accept="image/png, image/jpeg, image/jpg, image/svg+xml" multiple>
                         <button onclick="document.getElementById('fileInput').click()" class="btn-primary px-6 py-2 rounded font-medium shadow-lg w-full flex justify-center items-center">
-                            <i data-lucide="folder-open" class="w-4 h-4 mr-2"></i> Seleccionar Archivos
+                            <i data-lucide="folder-open" class="w-4 h-4 mr-2"></i> select Archivos
                         </button>
                     </div>
                 </div>
@@ -873,7 +873,7 @@
             }
         });
 
-        // Guardar historial al terminar de mover con flechas
+        // save historial al terminar de mover con flechas
         window.addEventListener('keyup', function(e) {
             if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
                 const activeTag = document.activeElement.tagName.toLowerCase();

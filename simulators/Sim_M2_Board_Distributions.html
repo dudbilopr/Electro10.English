@@ -20,7 +20,7 @@
             --border-color: #cbd5e1;
             --primary-color: #047857; /* Verde académico para diferenciar del Previous */
             
-            /* Paleta Unificada de Física */
+            /* Paleta Unificada de Physics */
             --dist-color: #65a30d;      
             --dq-color: #d97706;        
             --dq-fill: rgba(217, 119, 6, 0.8);
@@ -349,7 +349,7 @@
             margin-top: 15px;
         }
 
-        /* Interacción física */
+        /* Interacción Physics */
         .draggable { cursor: grab; transition: filter 0.2s; }
         .draggable:hover { filter: brightness(1.1) drop-shadow(0 0 5px rgba(0,0,0,0.3)); }
         .draggable:active { cursor: grabbing; }
@@ -407,8 +407,8 @@
                 Arrastre (o haga clic en) una Formula del banco izquierdo y colóquela en la celda punteada correspondiente. Interactúe con las figuras moviendo $dq$ y el punto $P$ para comprender el comportamiento de $d\vec{E}$.
             </div>
             <div class="panel">
-                <strong>Consejo de Resolución (Recursividad):</strong>
-                Observe cómo la solución del Ring (1D) se convierte en el diferencial $d\vec{E}$ para Calculate el Disk (2D). Asimismo, el campo del Disk es el diferencial para el Cylinder (3D). Preste atención a la notación vectorial $d\vec{E}$.
+                <strong>Consejo de Resolution (Recursividad):</strong>
+                Observe cómo la solution del Ring (1D) se convierte en el diferencial $d\vec{E}$ para Calculate el Disk (2D). Asimismo, el campo del Disk es el diferencial para el Cylinder (3D). Preste atención a la notación vectorial $d\vec{E}$.
             </div>
         </div>
     </header>
@@ -428,9 +428,9 @@
                 <thead>
                     <tr>
                         <th>Paso Conceptual</th>
-                        <th>Ring Cargado (1D)</th>
-                        <th>Disk Cargado (2D)</th>
-                        <th>Cylinder Cargado (3D)</th>
+                        <th>Ring loaded (1D)</th>
+                        <th>Disk loaded (2D)</th>
+                        <th>Cylinder loaded (3D)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -611,7 +611,7 @@
                         <td class="dropzone" id="dz_v_7"><div class="dropzone-content"></div></td>
                     </tr>
                     <tr>
-                        <td>8. Solución Analítica Final ($\vec{E}$)</td>
+                        <td>8. solution Analítica Final ($\vec{E}$)</td>
                         <td class="dropzone" id="dz_l_8"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_p_8"><div class="dropzone-content"></div></td>
                         <td class="dropzone" id="dz_v_8"><div class="dropzone-content"></div></td>
@@ -619,7 +619,7 @@
 
                     <!-- FILA 9: ChartS DE CAMPO -->
                     <tr>
-                        <td>9. Comportamiento de Magnitudeee $|\vec{E}|$ vs Distance ($x_0, x_1$)</td>
+                        <td>9. Comportamiento de magnitudeeeee $|\vec{E}|$ vs Distance ($x_0, x_1$)</td>
                         <!-- Gráfico E Ring -->
                         <td class="svg-cell" style="height: 140px;">
                             <svg viewBox="0 0 300 150">
@@ -660,7 +660,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Tablero Didáctico de Física y Electromagnetismo. Todos los derechos reservados.
+        &copy; 2026 Tablero Didáctico de Physics y Electromagnetismo. Todos los derechos reservados.
     </footer>
 
     <script>
@@ -847,7 +847,7 @@
             renderG1(); renderG2(); renderG3();
         }
 
-        // === 3. FÍSICA Y SVG (NUEVOS MODELOS GEOMÉTRICOS) ===
+        // === 3. Physics Y SVG (NUEVOS MODELOS GEOMÉTRICOS) ===
         
         function setObjPos(id, svgCoord, offsetX = -15, offsetY = -15) {
             const el = document.getElementById(id);
@@ -1054,7 +1054,7 @@
             setObjPos('g3-lbl-E', {x: p_x + Emag, y: org.y}, 5, -15);
         }
 
-        // --- MANEJO DE EVENTOS DE FÍSICA ---
+        // --- MANEJO DE EVENTOS DE Physics ---
         function getMousePos(svgId, evt) {
             const svg = document.getElementById(svgId);
             const CTM = svg.getScreenCTM();

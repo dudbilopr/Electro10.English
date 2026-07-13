@@ -6,7 +6,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electric Field: Hilo Rectilíneo Cargado</title>
+    <title>Electric Field: Hilo Rectilíneo loaded</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -97,7 +97,7 @@
             
             <!-- CABECERA -->
             <header class="flex-none bg-slate-900 text-white flex flex-col justify-center px-[3vmin] py-[1.5vmin] border-b-[0.5vmin] border-red-600">
-                <h1 class="font-bold tracking-wide" style="font-size: clamp(20px, 2vw, 40px);">Electric Field: Hilo Rectilíneo Cargado</h1>
+                <h1 class="font-bold tracking-wide" style="font-size: clamp(20px, 2vw, 40px);">Electric Field: Hilo Rectilíneo loaded</h1>
                 <p class="text-red-300" style="font-size: clamp(12px, 1vw, 18px);">Simulation 3D de Simetría Cilíndrica y Gauss\'s Law</p>
             </header>
 
@@ -136,7 +136,7 @@
 
                     <div class="bg-white p-[1.5vmin] border border-slate-200 shadow-sm rounded-lg relative">
                         <p class="flex items-start">
-                            <span><strong>3. Gauss\'s Law:</strong> Dado que el campo es constante en Magnitudeee sobre la superficie lateral de área $2\pi r L$:</span>
+                            <span><strong>3. Gauss\'s Law:</strong> Dado que el campo es constante en magnitudeeeee sobre la superficie lateral de área $2\pi r L$:</span>
                         </p>
                         <div class="math-display">$$ E \cdot (2\pi r L) = \frac{\lambda L}{\varepsilon_0} $$</div>
                         <div class="bg-red-50 text-red-900 p-[1vmin] rounded border border-red-200 font-bold text-center" style="font-size: clamp(16px, 1.6vw, 26px);">
@@ -219,7 +219,7 @@
                                     $d\Phi = E \cdot dS \cdot \cos(0^\circ)$
                                 </div>
                                 <div class="mt-2 text-slate-500 font-semibold" style="font-size: clamp(11px, 0.9vw, 14px);">
-                                    Magnitudeee E local: <span id="val-e-local" class="text-red-600 font-bold">1.20</span> u/m
+                                    magnitudeeeee E local: <span id="val-e-local" class="text-red-600 font-bold">1.20</span> u/m
                                 </div>
                             </div>
 
@@ -256,7 +256,7 @@
         // 2. ELEMENTOS DE LA ESCENA 3D
         // ==========================================
         
-        // Hilo Cargado (Línea roja infinita/larga)
+        // Hilo loaded (Línea roja infinita/larga)
         const wireGeo = new THREE.CylinderGeometry(0.05, 0.05, 30, 16);
         const wireMat = new THREE.MeshBasicMaterial({ color: 0xdc2626 }); // Rojo
         const wireMesh = new THREE.Mesh(wireGeo, wireMat);
@@ -296,7 +296,7 @@
         scene.add(patchGroup);
 
         // ==========================================
-        // 3. ESTADO Y LÓGICA FÍSICA
+        // 3. ESTADO Y LÓGICA Physics
         // ==========================================
         let params = { lambda: 3, r: 2.5, L: 5, theta: 45, yPos: 0 };
         const k_visual = 2; // Constante visual para escalar el campo

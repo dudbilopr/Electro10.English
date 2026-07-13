@@ -15,7 +15,7 @@ window.iniciarDiagnosticoHub = function() {
             title: 'Fase 1: CHAEA',
             text: 'Primero completaremos el test de estilos de aprendizaje CHAEA (80 Questions).',
             icon: 'info',
-            confirmButtonText: 'Comenzar'
+            confirmButtonText: 'start'
         }).then(() => {
             window.iniciarChaea(); // Already exists in chaea.js
             // We need a hook when CHAEA finishes. We will intercept the finalize or poll.
@@ -84,7 +84,7 @@ function startKolbTest() {
         html: html,
         width: '900px',
         showCancelButton: true,
-        confirmButtonText: 'Guardar y Continue',
+        confirmButtonText: 'save y Continue',
         cancelButtonText: 'Cancelar',
         background: 'var(--bg-surface)',
         color: 'var(--text-high)',
@@ -233,7 +233,7 @@ function calculateMI(data) {
     const miResult = { scores, topMI };
     localStorage.setItem('electro10_mi', JSON.stringify(miResult));
     
-    guardarDiagnosticoNube().then(() => {
+    saveDiagnosticoNube().then(() => {
         Swal.fire('¡Diagnóstico Integral Completado!', 'Hemos generado tu mapa cognitivo y tu plan de estudio personalizado.', 'success').then(() => {
             if (window.ShowPerfil) {
                 window.ShowPerfil();
@@ -246,7 +246,7 @@ function calculateMI(data) {
     });
 }
 
-async function guardarDiagnosticoNube() {
+async function saveDiagnosticoNube() {
     if (!window.currentUserUid) return;
     
     const chaea = JSON.parse(localStorage.getItem('electro10_chaea'));

@@ -7,7 +7,7 @@ export const module6 = {
     "descripcionCorta": "Current eléctrica, Resistance, Leyes de Kirchhoff y análisis de redes",
     "subtemas": ["Current eléctrica y densidad de Current","Resistance y resistividad","Ley de Ohm","Circuitos en serie y paralelo","Ley de Kirchhoff de Voltages (LKV)","Ley de Kirchhoff de Currents (LKC)","Análisis de nodos y mallas","Transformación Delta-Estrella","Teorema de Thevenin y Norton","Power eléctrica disipada"],
     "lecciones": [
-        { "id":"m6-l1","tipo":"multivideo","recurso":"Z_XkDlMFXGA|8Fy4-FOgNlA|gxbA_iy4aWM|y5X2AMZVMxM|s7YUiSeMJ0g|cFPjijfVTtU|WUmxkuYVHsQ","titulo":"1. Videos — Circuitos DC","descripcion":"Current, Resistance, Kirchhoff, Thevenin y Norton. Theory completa con ejemplos.","xp":10 },
+        { "id":"m6-l1","tipo":"multivideo","recurso":"Z_XkDlMFXGA|8Fy4-FOgNlA|gxbA_iy4aWM|y5X2AMZVMxM|s7YUiSeMJ0g|cFPjijfVTtU|WUmxkuYVHsQ","titulo":"1. Videos — Circuitos DC","descripcion":"Current, Resistance, Kirchhoff, Thevenin y Norton. Theory completa con examples.","xp":10 },
         { "id":"m6-l2","tipo":"presentacion","recurso":"./player.html?clase=6","titulo":"2. Slides Interactivas","descripcion":"Análisis de circuitos con método de mallas y nodos animado paso a paso.","xp":15 },
         { "id":"m6-g1","tipo":"grupo","titulo":"3. Laboratorio Virtual",
           "sublecciones":[
@@ -18,8 +18,8 @@ export const module6 = {
         { "id":"m6-j1","tipo":"Game","recurso":"games/Game_6.html","titulo":"4. Physics Quest — Circuitos DC","descripcion":"Diseña circuitos para cumplir especificaciones de Voltage y Current. ¡5 retos de ingeniería!","xp":25,"logro":{"id":"logro_m6","nombre":"Arquitecto de Redes","icono":"🔌"} },
         { "id":"m6-t","tipo":"grupo","titulo":"5. Workshops Prácticos",
           "sublecciones":[
-            { "id":"m6-t1","tipo":"ejercicio","recurso":"workshops/Workshop_6_1_Circuit_Reduction.html","titulo":"5.1 Workshop — Reducción de Circuitos","descripcion":"Simplificación de redes resistivas: serie, paralelo y delta-estrella.","xp":25 },
-            { "id":"m6-t2","tipo":"ejercicio","recurso":"workshops/Workshop_6_2_Kirchhoff_Laws.html","titulo":"5.2 Workshop — Leyes de Kirchhoff","descripcion":"Análisis sistemático de redes usando LKV y LKC con 20 problemas.","xp":30 }
+            { "id":"m6-t1","tipo":"exercise","recurso":"workshops/Workshop_6_1_Circuit_Reduction.html","titulo":"5.1 Workshop — Reducción de Circuitos","descripcion":"Simplificación de redes resistivas: serie, paralelo y delta-estrella.","xp":25 },
+            { "id":"m6-t2","tipo":"exercise","recurso":"workshops/Workshop_6_2_Kirchhoff_Laws.html","titulo":"5.2 Workshop — Leyes de Kirchhoff","descripcion":"Análisis sistemático de redes usando LKV y LKC con 20 problemas.","xp":30 }
           ]
         },
         { "id":"m6-q1","tipo":"quiz","recurso":"quizzes/Quiz_Adaptive_6.html","titulo":"6. Quiz Adaptativo — Module 6","descripcion":"Desde Ley de Ohm hasta análisis de redes complejas con Kirchhoff.","xp":40 },

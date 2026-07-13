@@ -91,7 +91,7 @@ window.ShowQuestionChaea = function(index) {
     let txt = q.texto.toLowerCase();
     if (txt.includes('intuir') || txt.includes('intuición') || txt.includes('espontánea')) iconEl.innerText = 'lightbulb';
     else if (txt.includes('lógica') || txt.includes('analizar') || txt.includes('Theory') || txt.includes('razonamiento')) iconEl.innerText = 'account_tree';
-    else if (txt.includes('práctica') || txt.includes('experimentar') || txt.includes('concreto')) iconEl.innerText = 'science';
+    else if (txt.includes('practice') || txt.includes('experimentar') || txt.includes('concreto')) iconEl.innerText = 'science';
     else if (txt.includes('reflexionar') || txt.includes('observar') || txt.includes('escuchar')) iconEl.innerText = 'visibility';
     else if (txt.includes('normas') || txt.includes('orden') || txt.includes('estructuradas')) iconEl.innerText = 'rule';
     else iconEl.innerText = 'psychology';
@@ -198,22 +198,22 @@ function ShowResults(scores, dominante) {
     const desc = {
         activo: "Eres de mente abierta, entusiasta y te lanzas a nuevas experiencias sin prejuicios. Aprendes mejor enfrentándote a retos, participando activamente y trabajando en equipo.",
         reflexivo: "Eres observador, analítico y prudente. Prefieres reunir datos, escuchando a los demás antes de actuar o tomar una decisión. Aprendes mejor cuando tienes tiempo para pensar y asimilar la información.",
-        teorico: "Eres lógico, objetivo y metódico. Te gusta integrar los hechos en Theorys coherentes y complejas. Aprendes mejor con modelos, conceptos teóricos y sistemas lógicos.",
-        pragmatico: "Eres práctico, realista y directo. Te gusta probar ideas, Theorys y técnicas nuevas para comprobar si funcionan en la práctica. Aprendes mejor con actividades directamente relacionadas a tu labor."
+        teorico: "Eres lógico, objective y metódico. Te gusta integrar los hechos en Theorys coherentes y complejas. Aprendes mejor con modelos, conceptos teóricos y sistemas lógicos.",
+        pragmatico: "Eres práctico, realista y directo. Te gusta probar ideas, Theorys y técnicas nuevas para comprobar si funcionan en la practice. Aprendes mejor con actividades directamente relacionadas a tu labor."
     };
     
     const recs = {
-        activo: "<li><b>Experimenta con el Simulator:</b> Interactúa con las Charges en PhET antes de leer la Theory.</li><li><b>Gamificación:</b> Participa activamente en los retos cognitivos y crucigramas.</li><li><b>Evita lecturas muy largas:</b> Divide el estudio en sesiones dinámicas y prácticas.</li>",
+        activo: "<li><b>Experimenta con el Simulator:</b> Interactúa con las Charges en PhET antes de leer la Theory.</li><li><b>Gamificación:</b> Participa activamente en los retos cognitivos y crucigramas.</li><li><b>Evita lecturas muy largas:</b> Divide el estudio en sesiones dinámicas y practices.</li>",
         reflexivo: "<li><b>Bóveda Obsidian:</b> Utiliza y expande tu grafo de conocimiento tomando notas detalladas.</li><li><b>Análisis de Casos:</b> Reflexiona sobre los experimentos históricos como la balanza de Coulomb.</li><li><b>Tómate tu tiempo:</b> Revisa las clases grabadas y Pause para entender cada deducción matemática.</li>",
         teorico: "<li><b>Formulario Matemático:</b> Dedica tiempo a entender las deducciones del Calculation Vectorial aplicadas a Maxwell.</li><li><b>Lecturas rigurosas:</b> Profundiza en las defHomenes exactas del Glossary.</li><li><b>Busca la estructura:</b> Entiende el 'por qué' de cada Formula antes de usarla.</li>",
-        pragmatico: "<li><b>Exercises Aplicados:</b> Enfócate en los problemas reales y el 'Tutor por Cámara' para validar tus soluciones.</li><li><b>Menos Theory, más práctica:</b> Aplica las Equations de inmediato a circuitos o problemas de campo.</li><li><b>Busca utilidades:</b> Relaciona la Theory electromagnética con tecnologías reales (motores, antenas).</li>"
+        pragmatico: "<li><b>Exercises Aplicados:</b> Enfócate en los problemas reales y el 'Tutor por Cámara' para validar tus solutions.</li><li><b>Menos Theory, más practice:</b> Aplica las Equations de inmediato a circuitos o problemas de campo.</li><li><b>Busca utilidades:</b> Relaciona la Theory electromagnética con tecnologías reales (motores, antenas).</li>"
     };
     
     document.getElementById('chaea-res-dom').innerText = dominante.charAt(0).toUpperCase() + dominante.slice(1);
     document.getElementById('chaea-res-desc').innerText = desc[dominante];
     document.getElementById('chaea-res-recs').innerHTML = recs[dominante];
     
-    // Guardar en Perfil Local
+    // save en Perfil Local
     const chaeaProfile = {
         scores: scores,
         dominante: dominante,
@@ -262,10 +262,10 @@ function ShowResults(scores, dominante) {
     }
 };
 
-window.CloseYGuardarChaea = async function() {
+window.CloseYsaveChaea = async function() {
     document.getElementById('chaea-modal').style.display = 'none';
     
-    // Si hay usuario logueado, guardar en la nube
+    // Si hay usuario logueado, save en la nube
     if (window.currentUserUid) {
         try {
             const profileStr = localStorage.getItem('electro10_chaea');

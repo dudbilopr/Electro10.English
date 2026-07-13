@@ -19,7 +19,7 @@ export function getIconForType(tipo) {
         case 'multipresentacion':
         case 'presentacion':    return 'menu_book';
         case 'Simulator':       return 'experiment';
-        case 'ejercicio':       return 'edit_note';
+        case 'exercise':       return 'edit_note';
         case 'quiz':            return 'quiz';
         case 'enlaces':         return 'folder_special';
         default:                return 'description';
@@ -39,16 +39,16 @@ function getYoutubeEmbed(rawCode) {
     return finalUrl;
 }
 
-// ── Guardar progreso en Firestore ────────────────────────────
-export async function guardarProgresoNube(leccionId) {
+// ── save progreso en Firestore ────────────────────────────
+export async function saveProgresoNube(leccionId) {
     if (!window.currentUserUid) return;
     try {
         await setDoc(doc(db, 'artifacts', APP_ID, 'users', window.currentUserUid, 'progress', 'data'), { [leccionId]: true }, { merge: true });
     } catch (e) { /* sin conexión */ }
 }
 
-// ── Guardar Assessment cognitiva ─────────────────────────────
-export async function guardarEval(Level, evalData) {
+// ── save Assessment cognitiva ─────────────────────────────
+export async function saveEval(Level, evalData) {
     document.querySelectorAll('.eval-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById('eval-' + Level)?.classList.add('active');
 
@@ -60,14 +60,14 @@ export async function guardarEval(Level, evalData) {
     } catch (e) { /* sin conexión */ }
 }
 
-// ── Guardar notas locales ────────────────────────────────────
-export function guardarNotas() {
+// ── save notas locales ────────────────────────────────────
+export function saveNotas() {
     if (!currentLeccionId) return;
     localStorage.setItem('notas_' + currentLeccionId, document.getElementById('area-notas').value);
     Swal.fire({ title: 'Apuntes Guardados', text: 'Tus notas se han sincronizado.', icon: 'success', timer: 1500, showConfirmButton: false, toast: true, position: 'top-end' });
 }
 
-// ── Cargador principal de contenido ─────────────────────────
+// ── loadedr principal de contenido ─────────────────────────
 export function loadContent(leccion, modulo, progressData, evalData) {
     const elementLi       = document.getElementById('menu-' + leccion.id);
     resetNav();
@@ -110,7 +110,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     if (modulo && modulo.conceptosClave) {
         detailsHtml += `
         <div style="margin-top: 20px; background: rgba(139, 92, 246, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.2);">
-            <h4 style="margin: 0 0 10px 0; color: var(--accent);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">key</span> Conceptos Clave</h4>
+            <h4 style="margin: 0 0 10px 0; color: var(--accent);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">key</span> Key Concepts</h4>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                 ${modulo.conceptosClave.map(c => `<span style="background: var(--bg-surface-hover); color: var(--text-high); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--border-color);">${c}</span>`).join('')}
             </div>
@@ -207,7 +207,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
                 html += '</div></div>';
             });
         } else {
-            html = '<div style="padding:50px;text-align:center;color:var(--text-medium);"><span class="material-symbols-outlined" style="font-size:40px;opacity:0.5;">link_off</span><br>El Professor aún no ha cargado enlaces.</div>';
+            html = '<div style="padding:50px;text-align:center;color:var(--text-medium);"><span class="material-symbols-outlined" style="font-size:40px;opacity:0.5;">link_off</span><br>El Professor aún no ha loaded enlaces.</div>';
         }
         enlacesContainer.innerHTML = html;
 
@@ -243,7 +243,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         }
 
     } else {
-        // Video simple, Simulator, ejercicio, quiz
+        // Video simple, Simulator, exercise, quiz
         if (leccion.tipo === 'video') {
             iframe.src = getYoutubeEmbed(leccion.recurso);
             iframeWrapper.style.aspectRatio = '16/9'; iframeWrapper.style.height = 'auto';
@@ -261,7 +261,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         } else if (leccion.tipo === 'chaea' || leccion.tipo === 'diagnostico_hub') {
             iframe.style.display = 'none';
             enlacesContainer.style.display = 'block';
-            enlacesContainer.innerHTML = '<div style="padding: 50px; text-align: center;"><span class="material-symbols-outlined" style="font-size:64px; color:var(--primary); margin-bottom: 20px; display:block;">hub</span><h3 style="color:var(--text-high); margin-bottom: 20px;">Diagnóstico Holístico (CHAEA + Kolb + IM)</h3><p style="color:var(--text-medium); margin-bottom: 30px;">Identifica tu perfil neuro-cognitivo para recibir recomendaciones personalizadas de estudio.</p><button class="btn-primary" onclick="window.iniciarDiagnosticoHub()">Comenzar Centro de Diagnóstico Ahora</button></div>';
+            enlacesContainer.innerHTML = '<div style="padding: 50px; text-align: center;"><span class="material-symbols-outlined" style="font-size:64px; color:var(--primary); margin-bottom: 20px; display:block;">hub</span><h3 style="color:var(--text-high); margin-bottom: 20px;">Diagnóstico Holístico (CHAEA + Kolb + IM)</h3><p style="color:var(--text-medium); margin-bottom: 30px;">Identifica tu perfil neuro-cognitivo para recibir recomendaciones personalizadas de estudio.</p><button class="btn-primary" onclick="window.iniciarDiagnosticoHub()">start Centro de Diagnóstico Ahora</button></div>';
         } else {
             iframe.src = leccion.recurso;
             iframeWrapper.style.aspectRatio = 'auto'; iframeWrapper.style.height = '75vh'; iframeWrapper.style.minHeight = '500px';
@@ -343,5 +343,5 @@ function _marcarCompletado(leccion, elementLi, progressData) {
         const icon = elementLi.querySelector('.icon-status');
         if (icon) { icon.innerText = 'check_circle'; icon.classList.add('icon-filled'); }
     }
-    guardarProgresoNube(leccion.id);
+    saveProgresoNube(leccion.id);
 }
