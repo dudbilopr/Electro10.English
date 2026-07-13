@@ -1,0 +1,571 @@
+/**
+ * EMI Microteaching Data: Electric Charges and Fields Workshop
+ * Strictly adheres to AGENTS.md pedagogical schema (19 required fields per dictionary item).
+ */
+
+const MICROTEACHING_VOCABULARY = [
+    // --- NOUNS ---
+    {
+        id: "vocab-1",
+        term: "proton",
+        ipa: "/ˈproʊ.tɑːn/",
+        pos: "Noun",
+        group: "Atomic Structure",
+        definition: "A stable subatomic particle occurring in all atomic nuclei, bearing a positive electric charge equal in magnitude to that of an electron.",
+        quote: "Every atom is made up of protons, neutrons, and electrons. Protons carry a positive charge...",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "In academic physics discussions, 'proton' is frequently used in contrast with 'electron' when describing charge imbalances in matter.",
+        etymology: "From Greek 'proton' meaning 'first', coined by Ernest Rutherford in 1920 from the hydrogen nucleus.",
+        equation: "[Every atom] + [is made up of] + [protons, neutrons, and electrons]",
+        synonyms: ["positive subatomic particle", "hydrogen nucleus"],
+        antonyms: ["electron", "antiproton"],
+        hyponyms: ["free proton", "bound proton"],
+        hypernyms: ["subatomic particle", "nucleon", "hadron"],
+        relatedWords: ["neutron", "nucleus", "atomic number", "positive charge"],
+        wordFamily: ["protonic (Adjective)", "protonate (Verb)", "protonation (Noun)"],
+        ontology: {
+            domain: "Physical Sciences",
+            subDomain: "Particle Physics",
+            parentConcept: "Atomic Nucleus",
+            childConcepts: ["Quarks", "Gluons"]
+        }
+    },
+    {
+        id: "vocab-2",
+        term: "electron",
+        ipa: "/ɪˈlɛk.trɑːn/",
+        pos: "Noun",
+        group: "Atomic Structure",
+        definition: "A stable subatomic particle with a negative fundamental electric charge, found orbiting the nucleus of an atom or moving freely in conductors.",
+        quote: "Protons carry a positive charge, while electrons carry a negative charge...",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Native scientists often refer to 'free electrons' or the 'sea of electrons' when discussing electrical conductivity in metals.",
+        etymology: "Coined in 1891 by George Johnstone Stoney from 'electric' + '-on' (particle suffix); ultimately from Greek 'elektron' (amber).",
+        equation: "[When] + [an object] + [gains or loses] + [electrons], + [it becomes electrically charged]",
+        synonyms: ["negative subatomic particle", "beta particle"],
+        antonyms: ["positron", "proton"],
+        hyponyms: ["valence electron", "conduction electron", "core electron"],
+        hypernyms: ["subatomic particle", "lepton", "fermion"],
+        relatedWords: ["electricity", "orbit", "charge", "current", "amber"],
+        wordFamily: ["electronic (Adjective)", "electronics (Noun)", "electronegativity (Noun)"],
+        ontology: {
+            domain: "Physical Sciences",
+            subDomain: "Electromagnetism & Particle Physics",
+            parentConcept: "Lepton",
+            childConcepts: ["Spin", "Orbital Shells"]
+        }
+    },
+    {
+        id: "vocab-3",
+        term: "neutron",
+        ipa: "/ˈnuː.trɑːn/",
+        pos: "Noun",
+        group: "Atomic Structure",
+        definition: "A subatomic particle of about the same mass as a proton but without an electric charge, present in all atomic nuclei except those of ordinary hydrogen.",
+        quote: "Protons carry a positive charge, while electrons carry a negative charge, and neutrons are neutral.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "The word is a standard fixture in nuclear physics; students should note the pronunciation starts with /nuː/ or /njuː/ depending on American vs. British accent.",
+        etymology: "From Latin 'neuter' (neither) + '-on' particle suffix; discovered and named by James Chadwick in 1932.",
+        equation: "[Neutrons] + [are] + [neutral] + [within the nucleus]",
+        synonyms: ["neutral nucleon"],
+        antonyms: [],
+        hyponyms: ["thermal neutron", "fast neutron"],
+        hypernyms: ["subatomic particle", "nucleon", "baryon"],
+        relatedWords: ["neutral", "nucleus", "isotope", "fission"],
+        wordFamily: ["neutral (Adjective)", "neutralize (Verb)", "neutrality (Noun)"],
+        ontology: {
+            domain: "Physical Sciences",
+            subDomain: "Nuclear Physics",
+            parentConcept: "Nucleon",
+            childConcepts: ["Isotope stability"]
+        }
+    },
+    {
+        id: "vocab-4",
+        term: "charge",
+        ipa: "/tʃɑːrdʒ/",
+        pos: "Noun",
+        group: "Electrostatic Forces",
+        definition: "A fundamental physical property of matter that causes it to experience a force when placed in an electromagnetic field.",
+        quote: "What if I told you the answers lie in something as simple as an electric charge and an electric field?",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "In daily life, 'charge' also refers to battery power or financial cost, but in academic physics it specifically designates electrostatic magnitude measured in Coulombs.",
+        etymology: "From Old French 'charger' (to load), from Late Latin 'carricare' (to load a wagon); adapted to physics in the 18th century.",
+        equation: "[The stronger] + [the charge], + [the stronger] + [the field]",
+        synonyms: ["electric charge", "electrostatic quantity"],
+        antonyms: ["neutrality"],
+        hyponyms: ["positive charge", "negative charge", "point charge", "test charge"],
+        hypernyms: ["physical property", "conserved quantity"],
+        relatedWords: ["Coulomb", "electrostatics", "polarity", "field"],
+        wordFamily: ["charge (Verb)", "charged (Adjective)", "rechargeable (Adjective)"],
+        ontology: {
+            domain: "Electromagnetism",
+            subDomain: "Electrostatics",
+            parentConcept: "Fundamental Property of Matter",
+            childConcepts: ["Coulomb's Law", "Quantization of Charge"]
+        }
+    },
+    {
+        id: "vocab-5",
+        term: "field",
+        ipa: "/fiːld/",
+        pos: "Noun",
+        group: "Electric Field Theory",
+        definition: "A physical quantity associated with every point in space and time, specifically the invisible region of influence surrounding electric charges.",
+        quote: "Imagine an invisible force field around any charged object—this is the electric field.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "In English, Michael Faraday introduced the concept of 'lines of force' which evolved into our modern vector field theory.",
+        etymology: "Old English 'feld' (open land); extended mathematically in the 19th century to denote a spatial distribution of a physical quantity.",
+        equation: "[The electric field] + [tells] + [other charges] + [how to move]",
+        synonyms: ["force field", "vector field", "spatial region of influence"],
+        antonyms: ["fieldless space", "vacuum void"],
+        hyponyms: ["uniform field", "radial field", "dipole field"],
+        hypernyms: ["physical continuum", "spatial vector distribution"],
+        relatedWords: ["vector", "potential", "flux", "Faraday", "lines of force"],
+        wordFamily: ["field (Adjective)", "fieldwork (Noun)"],
+        ontology: {
+            domain: "Electromagnetism",
+            subDomain: "Field Theory",
+            parentConcept: "Spatial Force Distribution",
+            childConcepts: ["Electric Flux", "Gauss's Law"]
+        }
+    },
+    {
+        id: "vocab-6",
+        term: "lightning",
+        ipa: "/ˈlaɪt.nɪŋ/",
+        pos: "Noun",
+        group: "Everyday Phenomena",
+        definition: "A sudden electrostatic discharge during an electrical storm between electrically charged regions of a cloud, between clouds, or between a cloud and the ground.",
+        quote: "Why lightning streaks across the sky during a storm... from how electricity flows through wires to how lightning forms in a storm.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Be careful not to confuse spelling with 'lightening' (making something lighter in weight or color). 'Lightning' is purely the natural electrical discharge.",
+        etymology: "Late Middle English, from Old English 'leohting', derivative of 'leoht' (light).",
+        equation: "[Lightning] + [streaks across] + [the sky] + [during a storm]",
+        synonyms: ["thunderbolt", "lightning bolt", "atmospheric discharge"],
+        antonyms: [],
+        hyponyms: ["cloud-to-ground lightning", "sheet lightning", "ball lightning"],
+        hypernyms: ["electrostatic discharge", "atmospheric phenomenon"],
+        relatedWords: ["thunder", "storm", "spark", "voltage breakdown", "plasma"],
+        wordFamily: ["lightning-fast (Adjective)"],
+        ontology: {
+            domain: "Atmospheric Physics & Electromagnetism",
+            subDomain: "High-Voltage Electrostatics",
+            parentConcept: "Dielectric Breakdown",
+            childConcepts: ["Stepped Leader", "Return Stroke"]
+        }
+    },
+    {
+        id: "vocab-7",
+        term: "pullover",
+        ipa: "/ˈpʊlˌoʊ.vər/",
+        pos: "Noun",
+        group: "Everyday Phenomena",
+        definition: "A knitted garment worn over the upper body, typically put on by pulling it over the head, commonly used in physics demonstrations of triboelectric charging.",
+        quote: "Rub that balloon on your pullover and bam—the balloon steals some electrons from your pullover...",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "In British English, 'jumper' or 'pullover' is used where American English often prefers 'sweater' or 'hoodie'.",
+        etymology: "Compound noun formed in early 20th century from verb phrase 'pull over' (to pull over the head).",
+        equation: "[Rub] + [that balloon] + [on your pullover]",
+        synonyms: ["sweater", "jumper", "cardigan", "wool top"],
+        antonyms: [],
+        hyponyms: ["wool pullover", "fleece pullover"],
+        hypernyms: ["clothing", "garment", "triboelectric material"],
+        relatedWords: ["balloon", "friction", "wool", "static electricity", "triboelectric series"],
+        wordFamily: ["pull (Verb)", "over (Preposition)"],
+        ontology: {
+            domain: "Everyday Materials",
+            subDomain: "Triboelectric Materials",
+            parentConcept: "Textile / Electron Donor",
+            childConcepts: ["Static Cling"]
+        }
+    },
+    {
+        id: "vocab-8",
+        term: "map",
+        ipa: "/mæp/",
+        pos: "Noun",
+        group: "Electric Field Theory",
+        definition: "A visual representation or diagrammatic guide showing the direction and strength of forces or vectors across space.",
+        quote: "Think of it like a map for charges to follow. The direction of the field? Easy: it points away from positive charges...",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Metaphorically used in academic lectures to simplify complex vector fields so learners can intuitively trace force vectors.",
+        etymology: "From Medieval Latin 'mappa mundi' (map of the world), from Latin 'mappa' (napkin/cloth).",
+        equation: "[Think of] + [it] + [like a map] + [for charges to follow]",
+        synonyms: ["chart", "diagram", "vector guide", "layout"],
+        antonyms: [],
+        hyponyms: ["vector map", "contour map", "equipotential map"],
+        hypernyms: ["representation", "visualization"],
+        relatedWords: ["direction", "lines of force", "vector", "compass"],
+        wordFamily: ["map (Verb)", "mapping (Noun)", "mapped (Adjective)"],
+        ontology: {
+            domain: "Mathematical Physics",
+            subDomain: "Vector Visualizations",
+            parentConcept: "Spatial Representation",
+            childConcepts: ["Field Lines", "Streamlines"]
+        }
+    },
+
+    // --- VERBS ---
+    {
+        id: "vocab-9",
+        term: "attract",
+        ipa: "/əˈtrækt/",
+        pos: "Verb",
+        group: "Electrostatic Forces",
+        definition: "To exert a physical pulling force that draws an object with opposite electric charge toward oneself.",
+        quote: "Charged objects can attract or repel each other: Opposites attract and like charges repel.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Often paired with 'repel' as fundamental opposites. The proverb 'opposites attract' originated from electrostatics and magnetism before becoming a common idiom for relationships.",
+        etymology: "From Latin 'attrahere' (to draw toward), from 'ad-' (to) + 'trahere' (to pull/draw).",
+        equation: "[Opposite charges] + [attract] + [each other] + [with a force inversely proportional to distance squared]",
+        synonyms: ["pull toward", "draw closer", "gravitate"],
+        antonyms: ["repel", "push away", "deflect"],
+        hyponyms: ["electrostatically attract", "magnetically attract"],
+        hypernyms: ["exert force", "interact"],
+        relatedWords: ["attraction", "attractive force", "Coulomb's Law", "opposite"],
+        wordFamily: ["attraction (Noun)", "attractive (Adjective)", "attractively (Adverb)"],
+        ontology: {
+            domain: "Electromagnetism",
+            subDomain: "Coulomb Interactions",
+            parentConcept: "Vector Force Action",
+            childConcepts: ["Attractive Electrostatic Vector"]
+        }
+    },
+    {
+        id: "vocab-10",
+        term: "repel",
+        ipa: "/rɪˈpɛl/",
+        pos: "Verb",
+        group: "Electrostatic Forces",
+        definition: "To exert an outward physical force that pushes an object with identical (like) electric charge away from oneself.",
+        quote: "Charged objects can attract or repel each other: Opposites attract and like charges repel.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "In English pronunciation, stress the second syllable (/rɪˈpɛl/). The noun form changes slightly to 'repulsion'.",
+        etymology: "From Latin 'repellere' (to drive back), from 're-' (back) + 'pellere' (to drive).",
+        equation: "[Like charges] + [repel] + [each other] + [along the line joining their centers]",
+        synonyms: ["push away", "drive back", "force outward"],
+        antonyms: ["attract", "draw in"],
+        hyponyms: ["electrostatically repel", "magnetically repel"],
+        hypernyms: ["exert force", "interact"],
+        relatedWords: ["repulsion", "repulsive force", "like charges", "deflection"],
+        wordFamily: ["repulsion (Noun)", "repulsive (Adjective)", "repellency (Noun)"],
+        ontology: {
+            domain: "Electromagnetism",
+            subDomain: "Coulomb Interactions",
+            parentConcept: "Vector Force Action",
+            childConcepts: ["Repulsive Electrostatic Vector"]
+        }
+    },
+    {
+        id: "vocab-11",
+        term: "steal",
+        ipa: "/stiːl/",
+        pos: "Verb",
+        group: "Everyday Phenomena",
+        definition: "To strip or transfer electrons away from another material via friction due to higher electron affinity in triboelectric charging.",
+        quote: "Rub that balloon on your pullover and bam—the balloon steals some electrons from your pullover, giving your pullover a positive charge.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Using 'steal' is a vivid pedagogical personification; technically, electrons are transferred because the balloon's rubber has a stronger electron affinity than wool/cotton.",
+        etymology: "From Old English 'stelan' (to take unlawfully); used metaphorically in science education to make particle transfer memorable.",
+        equation: "[The balloon] + [steals] + [electrons] + [from your pullover]",
+        synonyms: ["strip", "extract", "transfer", "absorb"],
+        antonyms: ["donate", "give", "yield"],
+        hyponyms: ["triboelectrically strip"],
+        hypernyms: ["transfer", "acquire"],
+        relatedWords: ["affinity", "friction", "triboelectric series", "electron transfer"],
+        wordFamily: ["stole (Past)", "stolen (Past Participle)", "stealing (Gerund)"],
+        ontology: {
+            domain: "Electrostatics",
+            subDomain: "Contact Electrification",
+            parentConcept: "Electron Transfer",
+            childConcepts: ["Triboelectric Charging"]
+        }
+    },
+    {
+        id: "vocab-12",
+        term: "govern",
+        ipa: "/ˈɡʌv.ɚn/",
+        pos: "Verb",
+        group: "Electric Field Theory",
+        definition: "To directly control, dictate the behavior of, or serve as the underlying physical law regulating how physical entities interact.",
+        quote: "And here's the cool part: electric fields are everywhere! They govern how charges interact across space.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "In formal scientific discourse, 'govern' and 'dictate' express how fundamental physical laws regulate natural phenomena without exception.",
+        etymology: "From Old French 'governer', from Latin 'gubernare' (to steer a ship), from Greek 'kybernain'.",
+        equation: "[Electric fields] + [govern] + [how charges interact] + [across space]",
+        synonyms: ["rule", "dictate", "regulate", "control", "determine"],
+        antonyms: [],
+        hyponyms: ["mathematically govern", "physically rule"],
+        hypernyms: ["regulate", "influence"],
+        relatedWords: ["governing equation", "physical law", "Maxwell's Equations", "interaction"],
+        wordFamily: ["governing (Adjective)", "governance (Noun)", "governor (Noun)"],
+        ontology: {
+            domain: "Theoretical Physics",
+            subDomain: "Physical Laws & Axioms",
+            parentConcept: "Law of Nature",
+            childConcepts: ["Maxwell's Governing Equations"]
+        }
+    },
+    {
+        id: "vocab-13",
+        term: "flow",
+        ipa: "/floʊ/",
+        pos: "Verb",
+        group: "Everyday Phenomena",
+        definition: "To move in a continuous, steady stream through a conductive medium under the influence of an electric potential difference.",
+        quote: "They power our world, from how electricity flows through wires to how lightning forms in a storm.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "We speak of electric current 'flowing' through a conductor exactly like water flowing through a pipe (the fluid analogy of electricity).",
+        etymology: "From Old English 'flōwan' (to stream/issue); applied to electrical currents since Benjamin Franklin's one-fluid theory.",
+        equation: "[Electricity] + [flows through] + [conductive wires] + [under a voltage difference]",
+        synonyms: ["stream", "circulate", "conduct", "traverse"],
+        antonyms: ["stagnate", "block", "insulate"],
+        hyponyms: ["drift", "surge"],
+        hypernyms: ["move", "propagate"],
+        relatedWords: ["current", "wire", "conductor", "ampere", "drift velocity"],
+        wordFamily: ["flow (Noun)", "flowing (Adjective)"],
+        ontology: {
+            domain: "Electrodynamics",
+            subDomain: "Electric Current",
+            parentConcept: "Charge Transport",
+            childConcepts: ["Ohm's Law", "Drift Current"]
+        }
+    },
+
+    // --- CONNECTORS & DISCOURSE MARKERS ---
+    {
+        id: "vocab-14",
+        term: "while",
+        ipa: "/waɪl/",
+        pos: "Connector",
+        group: "Discourse Markers",
+        definition: "A subordinating conjunction used here to express simultaneous contrast between two different facts or properties.",
+        quote: "Protons carry a positive charge, while electrons carry a negative charge, and neutrons are neutral.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "When comparing technical concepts in CLIL/EMI, 'while' and 'whereas' are the most elegant connectors to show direct contrast in a single sentence.",
+        etymology: "From Old English 'hwīl' (period of time); evolved to indicate simultaneous temporal duration and logical contrast.",
+        equation: "[Clause A: Protons are positive], + [while] + [Clause B: electrons are negative]",
+        synonyms: ["whereas", "on the other hand", "whilst"],
+        antonyms: ["similarly", "likewise"],
+        hyponyms: [],
+        hypernyms: ["conjunction", "contrastive connector"],
+        relatedWords: ["contrast", "comparison", "whereas", "however"],
+        wordFamily: ["meanwhile (Adverb)"],
+        ontology: {
+            domain: "Academic Discourse",
+            subDomain: "Logical Contrast",
+            parentConcept: "Subordinating Conjunction",
+            childConcepts: ["Direct Comparison Structure"]
+        }
+    },
+    {
+        id: "vocab-15",
+        term: "think of it like",
+        ipa: "/θɪŋk əv ɪt laɪk/",
+        pos: "Phrasal Verb / Connector",
+        group: "Discourse Markers",
+        definition: "A pedagogical discourse chunk used to introduce an intuitive analogy or mental model for an abstract scientific concept.",
+        quote: "It tells other charges how to move. Think of it like a map for charges to follow.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Native science communicators rely heavily on 'Think of it like...' or 'Imagine...' to bridge abstract mathematical physics with familiar real-world experiences.",
+        etymology: "Modern conversational idiom combining 'think of' (contemplate/conceptualize) with preposition 'like' (similar to).",
+        equation: "[Abstract Concept: Electric Field] + [->] + [Think of it like] + [Concrete Analogy: A Map]",
+        synonyms: ["imagine it as", "visualize it as", "compare it to", "picture it like"],
+        antonyms: [],
+        hyponyms: [],
+        hypernyms: ["analogical prompt", "pedagogical framing"],
+        relatedWords: ["analogy", "metaphor", "mental model", "visualization"],
+        wordFamily: ["thought of (Past)"],
+        ontology: {
+            domain: "Pedagogical Communication",
+            subDomain: "Analogical Reasoning",
+            parentConcept: "Explanatory Framing",
+            childConcepts: ["Mental Model Bridging"]
+        }
+    },
+    {
+        id: "vocab-16",
+        term: "for example",
+        ipa: "/fər ɪɡˈzæm.pəl/",
+        pos: "Connector",
+        group: "Discourse Markers",
+        definition: "A transitional phrase used to introduce a specific concrete illustration of a general principle just stated.",
+        quote: "When an object gains or loses electrons, it becomes electrically charged. For example, rub that balloon on your pullover and bam...",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "In academic writing, often abbreviated as 'e.g.' (Latin 'exempli gratia'). In oral presentations, saying 'For example' provides a clear cue that a practical demonstration is next.",
+        etymology: "From Latin 'pro exemplum'; 'example' from Latin 'exemplum' (sample/pattern).",
+        equation: "[General Principle] + [.] + [For example,] + [Concrete Demonstration]",
+        synonyms: ["for instance", "to illustrate", "as an illustration", "e.g."],
+        antonyms: [],
+        hyponyms: [],
+        hypernyms: ["exemplifying transition"],
+        relatedWords: ["illustration", "demonstration", "case study"],
+        wordFamily: ["exemplify (Verb)", "exemplary (Adjective)"],
+        ontology: {
+            domain: "Academic Discourse",
+            subDomain: "Exemplification",
+            parentConcept: "Discourse Connector",
+            childConcepts: ["Empirical Illustration"]
+        }
+    },
+
+    // --- ADJECTIVES / OPPOSITES ---
+    {
+        id: "vocab-17",
+        term: "positive",
+        ipa: "/ˈpɑː.zə.tɪv/",
+        pos: "Adjective",
+        group: "Electrostatic Forces",
+        definition: "Possessing an electric charge of the same polarity as a proton, resulting from a deficit of electrons relative to protons.",
+        quote: "Protons carry a positive charge... giving your pullover a positive charge.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Assigned arbitrarily by Benjamin Franklin in the 18th century; by convention, electric field lines point AWAY from positive charges.",
+        etymology: "From Latin 'positivus' (settled by agreement), from 'ponere' (to place). Applied to electricity by Benjamin Franklin in 1747.",
+        equation: "[Field vectors] + [point away from] + [positive charges (+q)]",
+        synonyms: ["plus charge", "anodic (in cells)"],
+        antonyms: ["negative"],
+        hyponyms: ["strongly positive", "net positive"],
+        hypernyms: ["polar", "charged"],
+        relatedWords: ["proton", "cation", "anode", "deficit", "polarity"],
+        wordFamily: ["positively (Adverb)", "positivity (Noun)"],
+        ontology: {
+            domain: "Electromagnetism",
+            subDomain: "Charge Polarity",
+            parentConcept: "Electric Polarity State",
+            childConcepts: ["Proton Polarity", "Cation Polarity"]
+        }
+    },
+    {
+        id: "vocab-18",
+        term: "negative",
+        ipa: "/ˈnɛɡ.ə.tɪv/",
+        pos: "Adjective",
+        group: "Electrostatic Forces",
+        definition: "Possessing an electric charge of the same polarity as an electron, resulting from a surplus of electrons relative to protons.",
+        quote: "While electrons carry a negative charge, and neutrons are neutral.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "By convention, electric field lines point TOWARD negative charges. Electrons are the primary mobile negative charges in everyday electronics.",
+        etymology: "From Latin 'negativus' (that denies), from 'negare' (to deny). Applied to electricity by Benjamin Franklin.",
+        equation: "[Field vectors] + [point toward] + [negative charges (-q)]",
+        synonyms: ["minus charge", "cathodic (in cells)"],
+        antonyms: ["positive"],
+        hyponyms: ["strongly negative", "net negative"],
+        hypernyms: ["polar", "charged"],
+        relatedWords: ["electron", "anion", "cathode", "surplus", "polarity"],
+        wordFamily: ["negatively (Adverb)", "negativity (Noun)"],
+        ontology: {
+            domain: "Electromagnetism",
+            subDomain: "Charge Polarity",
+            parentConcept: "Electric Polarity State",
+            childConcepts: ["Electron Polarity", "Anion Polarity"]
+        }
+    },
+    {
+        id: "vocab-19",
+        term: "invisible",
+        ipa: "/ɪnˈvɪz.ə.bəl/",
+        pos: "Adjective",
+        group: "Electric Field Theory",
+        definition: "Unable to be perceived by the human eye, requiring mathematical vectors or field lines to visualize its physical effects across space.",
+        quote: "Imagine an invisible force field around any charged object—this is the electric field.",
+        character: "Physics Instructor",
+        chapter: "Electric Charges and Fields Workshop",
+        culturalNote: "Because fields (`E` and `B`) are physically real yet invisible, physics relies heavily on interactive simulators with vector grids to make them tangible.",
+        etymology: "From Latin 'invisibilis', from 'in-' (not) + 'visibilis' (visible), from 'videre' (to see).",
+        equation: "[Imagine] + [an invisible force field] + [around any charged object]",
+        synonyms: ["unseen", "imperceptible", "hidden"],
+        antonyms: ["visible", "tangible", "observable"],
+        hyponyms: [],
+        hypernyms: ["imperceptible property"],
+        relatedWords: ["force field", "vector", "visualization", "lines of force"],
+        wordFamily: ["invisibility (Noun)", "invisibly (Adverb)"],
+        ontology: {
+            domain: "Physics Visualization",
+            subDomain: "Sensory Perception in Physics",
+            parentConcept: "Non-Optical Physical Quantity",
+            childConcepts: ["Field Representation"]
+        }
+    }
+];
+
+const MICROTEACHING_TRANSCRIPT = [
+    { time: "0:00", text: "Have you ever wondered why your hair stands up when you rub a balloon on your head, or why lightning streaks across the sky during a storm?", highlightWords: ["hair", "balloon", "lightning", "storm", "rub", "wondered"] },
+    { time: "0:08", text: "What if I told you the answers lie in something as simple as an electric charge and an electric field?", highlightWords: ["electric charge", "electric field"] },
+    { time: "0:13", text: "Stick around, because in the next 2 minutes we're diving into the electrifying world of physics!", highlightWords: ["electrifying", "physics"] },
+    { time: "0:19", text: "Let's start with electric charge. Every atom is made up of protons, neutrons, and electrons.", highlightWords: ["electric charge", "atom", "protons", "neutrons", "electrons"] },
+    { time: "0:27", text: "Protons carry a positive charge, while electrons carry a negative charge, and neutrons are neutral.", highlightWords: ["protons", "positive", "while", "electrons", "negative", "neutrons", "neutral"] },
+    { time: "0:33", text: "When an object gains or loses electrons, it becomes electrically charged.", highlightWords: ["gains", "loses", "electrons", "electrically charged"] },
+    { time: "0:38", text: "For example, rub that balloon on your pullover and bam—the balloon steals some electrons from your pullover, giving your pullover a positive charge.", highlightWords: ["For example", "rub", "balloon", "pullover", "steals", "electrons", "positive charge"] },
+    { time: "0:48", text: "Charged objects can attract or repel each other: Opposites attract and like charges repel. Simple right?", highlightWords: ["attract", "repel", "Opposites", "like charges"] },
+    { time: "0:57", text: "Now let's talk about the electric field.", highlightWords: ["electric field"] },
+    { time: "1:00", text: "Imagine an invisible force field around any charged object—this is the electric field.", highlightWords: ["invisible", "force field", "electric field"] },
+    { time: "1:05", text: "It tells other charges how to move. Think of it like a map for charges to follow.", highlightWords: ["move", "Think of it like", "map"] },
+    { time: "1:10", text: "The direction of the field? Easy: it points away from positive charges and toward negative charges.", highlightWords: ["direction", "points away", "positive", "toward", "negative"] },
+    { time: "1:17", text: "The stronger the charge, the stronger the field.", highlightWords: ["stronger", "charge", "field"] },
+    { time: "1:21", text: "And here's the cool part: electric fields are everywhere! They govern how charges interact across space.", highlightWords: ["govern", "interact", "space"] },
+    { time: "1:28", text: "Electric charges and fields aren't just cool science—they power our world, from how electricity flows through wires to how lightning forms in a storm.", highlightWords: ["power", "electricity", "flows", "wires", "lightning", "storm"] },
+    { time: "1:38", text: "This phenomenon is the spark behind it all.", highlightWords: ["phenomenon", "spark"] },
+    { time: "1:41", text: "So the next time you feel that static zap or see a lightning bolt, you'll know it's all about electric charges and fields at work!", highlightWords: ["static zap", "lightning bolt", "electric charges", "fields"] },
+    { time: "1:48", text: "If you found this shocking (pun intended), like, subscribe, and share. Let's keep the sparks flying! See you next time.", highlightWords: ["shocking", "sparks flying"] }
+];
+
+const MICROTEACHING_QUIZ = [
+    {
+        id: "q1",
+        question: "According to the video, what subatomic particles carry a negative charge and can be 'stolen' when rubbing a balloon on a pullover?",
+        options: ["Protons", "Electrons", "Neutrons", "Photons"],
+        correct: 1,
+        explanation: "Electrons carry a negative charge and reside in atomic orbitals where friction can transfer them between materials (triboelectric charging)."
+    },
+    {
+        id: "q2",
+        question: "What happens when two objects with LIKE (identical) charges are placed close to each other in space?",
+        options: ["They attract each other along a straight line.", "They neutralize instantly into neutrons.", "They repel each other with an electrostatic force.", "They generate no force whatsoever."],
+        correct: 2,
+        explanation: "Coulomb's Law states that like charges repel (`+` and `+` or `-` and `-`), whereas opposite charges attract (`+` and `-`)."
+    },
+    {
+        id: "q3",
+        question: "In what direction do electric field vectors point around point charges?",
+        options: ["In circles around both positive and negative charges.", "Away from positive charges and toward negative charges.", "Toward positive charges and away from negative charges.", "Strictly downward toward the center of the Earth."],
+        correct: 1,
+        explanation: "By universal convention, electric field lines (`E`) point AWAY from positive source charges and TOWARD negative sink charges."
+    },
+    {
+        id: "q4",
+        question: "Which of the following sentences correctly uses the academic connector 'while' to express contrast?",
+        options: ["Protons carry a positive charge, while electrons carry a negative charge.", "While the balloon rubbed, lightning in the sky.", "Lightning forms in a storm while proton electron.", "We study physics while force vector."],
+        correct: 0,
+        explanation: "'While' is used here as a subordinating conjunction comparing two contrasting facts in parallel ('Protons carry positive... while electrons carry negative')."
+    },
+    {
+        id: "q5",
+        question: "What real-world phenomena are directly governed by electric charges and fields according to the workshop conclusion?",
+        options: ["Only laboratory experiments on static cling.", "How electricity flows through wires and how lightning forms during storms.", "The gravitational orbit of planets around the sun.", "The acoustic speed of sound in vacuum."],
+        correct: 1,
+        explanation: "Electric charges and fields govern electromagnetic interactions across space, powering everything from electrical currents in wires to high-voltage lightning discharges."
+    }
+];
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { MICROTEACHING_VOCABULARY, MICROTEACHING_TRANSCRIPT, MICROTEACHING_QUIZ };
+}
