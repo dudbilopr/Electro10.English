@@ -92,7 +92,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
 
     // Aplicar Color Temático (Stitch Design System)
     let newAccent = '#0284c7'; // default
-    if (module && modulo.titulo) {
+    if (modulo && modulo.titulo) {
         const titleLower = modulo.titulo.toLowerCase();
         if (titleLower.includes('eléctric') || titleLower.includes('electricidad') || titleLower.includes('coulomb')) {
             newAccent = 'var(--theme-electric)';
@@ -111,7 +111,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
     // Construir detalles con los nuevos insights
     let detailsHtml = `<p style="color: var(--text-medium); margin-bottom: 15px;">${leccion.descripcion || "Explore this analytical resource."}</p>`;
     
-    if (module && modulo.conceptosClave) {
+    if (modulo && modulo.conceptosClave) {
         detailsHtml += `
         <div style="margin-top: 20px; background: rgba(139, 92, 246, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.2);">
             <h4 style="margin: 0 0 10px 0; color: var(--accent);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">key</span> Key Concepts</h4>
@@ -121,7 +121,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         </div>`;
     }
 
-    if (module && modulo.Equations) {
+    if (modulo && modulo.Equations) {
         detailsHtml += `
         <div style="margin-top: 15px; background: var(--bg-surface-hover); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
             <h4 style="margin: 0 0 10px 0; color: var(--text-high);"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px; color: #10b981;">functions</span> Key Equations</h4>
@@ -131,7 +131,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         </div>`;
     }
 
-    if (module && modulo.historia) {
+    if (modulo && modulo.historia) {
         detailsHtml += `
         <div style="margin-top: 15px; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.2);">
             <h4 style="margin: 0 0 10px 0; color: #3b82f6;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">history_edu</span> Historical Context: ${modulo.historia.experimentoClave}</h4>
@@ -139,7 +139,7 @@ export function loadContent(leccion, modulo, progressData, evalData) {
         </div>`;
     }
 
-    if (module && modulo.bibliografia) {
+    if (modulo && modulo.bibliografia) {
         detailsHtml += `
         <div style="margin-top: 15px;">
             <h4 style="margin: 0 0 5px 0; color: var(--text-high); font-size: 0.9rem;"><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 16px;">menu_book</span> Recommended Bibliography</h4>
