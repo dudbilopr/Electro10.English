@@ -79,13 +79,31 @@ function switchPhase(phaseId) {
 
     // Scroll smoothly to top of content
     window.scrollTo({ top: 120, behavior: "smooth" });
+
+    if (phaseId === 3) {
+        startVideoSyncMonitor();
+    }
 }
 
 // --- PHASE 3: TRANSCRIPT & HIGHLIGHTER ---
+function getFilteredVocabDeck() {
+    if (typeof MICROTEACHING_VOCABULARY === 'undefined') return [];
+    return MICROTEACHING_VOCABULARY.filter(item => {
+        if (!currentVocabFilter || currentVocabFilter === "all") return true;
+        const cat = currentVocabFilter.toLowerCase();
+        const pos = item.pos.toLowerCase();
+        const grp = (item.group || "").toLowerCase();
+        if (cat === "high") return grp.includes("high frequency") || grp.includes("medium frequency");
+        if (cat === "rare" || cat === "low") return grp.includes("low frequency") || grp.includes("rare");
+        if (cat === "connector") return pos.includes("connector") || grp.includes("connector") || grp.includes("discourse");
+        return pos.includes(cat);
+    });
+}
+
 function filterVocabCategory(category) {
     currentVocabFilter = category;
     
-    // Update category button styling across both normal chips and ticker chips
+    // Update category button styling across all chips (ticker chips, table chips, flashcard chips)
     const btns = document.querySelectorAll(".category-chip");
     btns.forEach(b => {
         const isTickerChip = b.classList.contains("ticker-chip");
@@ -111,6 +129,8 @@ function filterVocabCategory(category) {
     const liveTickerEl = document.getElementById("live-ticker-text");
     if (liveTickerEl) liveTickerEl.removeAttribute("data-cache-key");
 
+    currentFlashcardIndex = 0;
+    renderFlashcard();
     renderTranscript();
     renderVocabTables();
     updateTranscriptHighlighting();
@@ -120,10 +140,7 @@ function renderTranscript() {
     const container = document.getElementById("transcript-box");
     if (!container || typeof MICROTEACHING_TRANSCRIPT === 'undefined') return;
 
-    const filteredVocab = MICROTEACHING_VOCABULARY.filter(v => {
-        if (currentVocabFilter === "all") return true;
-        return v.pos.toLowerCase().includes(currentVocabFilter.toLowerCase());
-    });
+    const filteredVocab = getFilteredVocabDeck();
 
     const highlightMap = {};
     filteredVocab.forEach(v => {
@@ -183,6 +200,7 @@ function formatSecondsToTimeString(seconds) {
 function onYouTubeIframeAPIReady() {
     ytPlayer = new YT.Player('youtube-player', {
         events: {
+            'onReady': () => { startVideoSyncMonitor(); },
             'onStateChange': onPlayerStateChange
         }
     });
@@ -197,7 +215,7 @@ function onPlayerStateChange(event) {
             updatePlayTickerButtonState();
         }
         startVideoSyncMonitor();
-    } else {
+    } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
         stopVideoSyncMonitor();
     }
 }
@@ -208,7 +226,7 @@ function startVideoSyncMonitor() {
         if (ytPlayer && ytPlayer.getCurrentTime && typeof ytPlayer.getCurrentTime === 'function') {
             try {
                 const t = ytPlayer.getCurrentTime();
-                if (t >= 0) {
+                if (t >= 0 && Math.abs(currentVideoSeconds - t) > 0.05) {
                     currentVideoSeconds = t;
                     updateTranscriptHighlighting();
                 }
@@ -325,10 +343,7 @@ function updateTranscriptHighlighting() {
         const cacheKey = `${activeIdx}_${currentVocabFilter || 'all'}`;
         if (liveTickerEl.getAttribute("data-cache-key") !== cacheKey) {
             let liveText = currentLine.text;
-            const filteredVocab = typeof MICROTEACHING_VOCABULARY !== 'undefined' ? MICROTEACHING_VOCABULARY.filter(v => {
-                if (!currentVocabFilter || currentVocabFilter === "all") return true;
-                return v.pos.toLowerCase().includes(currentVocabFilter.toLowerCase());
-            }) : [];
+            const filteredVocab = getFilteredVocabDeck();
 
             const highlightMap = {};
             filteredVocab.forEach(v => {
@@ -381,10 +396,7 @@ function renderVocabTables() {
     const container = document.getElementById("vocab-table-body");
     if (!container || typeof MICROTEACHING_VOCABULARY === 'undefined') return;
 
-    const filtered = MICROTEACHING_VOCABULARY.filter(v => {
-        if (currentVocabFilter === "all") return true;
-        return v.pos.toLowerCase().includes(currentVocabFilter.toLowerCase());
-    });
+    const filtered = getFilteredVocabDeck();
 
     container.innerHTML = filtered.map(v => `
         <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
@@ -394,12 +406,14 @@ function renderVocabTables() {
             </td>
             <td class="p-4">
                 <span class="px-2.5 py-1 rounded-full text-xs font-semibold ${getCategoryBadgeClass(v.pos)}">${v.pos}</span>
+                <div class="text-[10px] text-slate-400 font-bold mt-1">${v.group || ''}</div>
             </td>
             <td class="p-4 text-sm text-slate-700 dark:text-slate-300">
                 ${v.definition}
             </td>
-            <td class="p-4 font-mono text-xs text-slate-600 dark:text-slate-400 bg-slate-50/50 dark:bg-slate-900/40 rounded">
-                ${v.equation || 'N/A'}
+            <td class="p-4 bg-slate-50/50 dark:bg-slate-900/40 rounded max-w-xs overflow-x-auto">
+                <div class="latex-render-cell text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-300 py-1">${v.latexEquation || v.equation || 'N/A'}</div>
+                <div class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 mt-1 border-t border-slate-200 dark:border-slate-800 pt-1">${v.equation || ''}</div>
             </td>
             <td class="p-4 text-center">
                 <button onclick="showVocabModal('${v.term}')" class="p-2 rounded-lg bg-blue-50 dark:bg-slate-700 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white transition-all">
@@ -408,6 +422,18 @@ function renderVocabTables() {
             </td>
         </tr>
     `).join('');
+
+    if (typeof renderMathInElement === 'function') {
+        renderMathInElement(container, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });
+    }
 }
 
 function showVocabModal(term) {
@@ -454,9 +480,15 @@ function showVocabModal(term) {
                 </div>
             </div>
 
-            <div class="p-3 bg-slate-900 text-emerald-400 rounded-xl font-mono text-xs overflow-x-auto border border-slate-700">
-                <div class="text-slate-400 text-[10px] uppercase font-bold mb-1">// Grammar Construction & Formula</div>
-                ${item.equation || 'Standard syntactic structure'}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-3.5 bg-slate-900 text-blue-300 rounded-xl border border-slate-700 shadow-inner overflow-x-auto">
+                    <div class="text-blue-400 text-[10px] font-mono uppercase font-bold mb-1.5 flex items-center gap-1">📐 Physical LaTeX Formula</div>
+                    <div class="latex-render-box py-1 text-center font-semibold text-base">${item.latexEquation || item.equation || 'N/A'}</div>
+                </div>
+                <div class="p-3.5 bg-slate-900 text-emerald-400 rounded-xl border border-slate-700 shadow-inner overflow-x-auto">
+                    <div class="text-emerald-400 text-[10px] font-mono uppercase font-bold mb-1.5 flex items-center gap-1">🔤 Grammar Syntax Construction</div>
+                    <div class="font-mono text-xs leading-relaxed py-1">${item.equation || 'Standard syntactic structure'}</div>
+                </div>
             </div>
 
             <div class="grid grid-cols-2 gap-3 pt-2">
@@ -476,6 +508,18 @@ function showVocabModal(term) {
         </div>
     `;
 
+    if (typeof renderMathInElement === 'function') {
+        renderMathInElement(content, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });
+    }
+
     modal.classList.remove("hidden");
     modal.classList.add("flex");
 }
@@ -491,26 +535,65 @@ function closeVocabModal() {
 // --- FLASHCARDS 3D ENGINE ---
 function renderFlashcard() {
     const card = document.getElementById("flashcard-container");
-    if (!card || typeof MICROTEACHING_VOCABULARY === 'undefined') return;
+    const deck = getFilteredVocabDeck();
+    if (!card || !deck || deck.length === 0) return;
 
-    const item = MICROTEACHING_VOCABULARY[currentFlashcardIndex];
+    if (currentFlashcardIndex >= deck.length) currentFlashcardIndex = 0;
+    if (currentFlashcardIndex < 0) currentFlashcardIndex = deck.length - 1;
+    const item = deck[currentFlashcardIndex];
     if (!item) return;
 
     flashcardFlipped = false;
     card.style.transform = "rotateY(0deg)";
 
-    document.getElementById("fc-counter").innerText = `Card ${currentFlashcardIndex + 1} of ${MICROTEACHING_VOCABULARY.length}`;
+    const counterEl = document.getElementById("fc-counter");
+    if (counterEl) {
+        let deckLabel = "All Terms";
+        if (currentVocabFilter === "high") deckLabel = "🔥 High Freq";
+        else if (currentVocabFilter === "rare" || currentVocabFilter === "low") deckLabel = "💎 Rare Terms";
+        else if (currentVocabFilter === "connector") deckLabel = "🟡 Connectors";
+        else if (currentVocabFilter && currentVocabFilter !== "all") deckLabel = currentVocabFilter.toUpperCase();
+        counterEl.innerText = `Card ${currentFlashcardIndex + 1} of ${deck.length} (${deckLabel})`;
+    }
     
     // Front side
-    document.getElementById("fc-front-term").innerText = item.term;
-    document.getElementById("fc-front-ipa").innerText = item.ipa;
-    document.getElementById("fc-front-pos").innerText = item.pos;
-    document.getElementById("fc-front-pos").className = `px-3 py-1 rounded-full text-xs font-bold uppercase ${getCategoryBadgeClass(item.pos)}`;
+    const termEl = document.getElementById("fc-front-term");
+    if (termEl) termEl.innerText = item.term;
+    const ipaEl = document.getElementById("fc-front-ipa");
+    if (ipaEl) ipaEl.innerText = item.ipa;
+    const posEl = document.getElementById("fc-front-pos");
+    if (posEl) {
+        posEl.innerText = item.pos;
+        posEl.className = `px-3 py-1 rounded-full text-xs font-bold uppercase ${getCategoryBadgeClass(item.pos)}`;
+    }
+    const grpEl = document.getElementById("fc-front-group");
+    if (grpEl) grpEl.innerText = item.group || "Core Vocabulary";
 
     // Back side
-    document.getElementById("fc-back-def").innerText = item.definition;
-    document.getElementById("fc-back-quote").innerText = `"${item.quote}"`;
-    document.getElementById("fc-back-equation").innerText = item.equation || 'N/A';
+    const defEl = document.getElementById("fc-back-def");
+    if (defEl) defEl.innerText = item.definition;
+    const posBackEl = document.getElementById("fc-back-pos");
+    if (posBackEl) posBackEl.innerText = `${item.pos} • ${item.group || ''}`;
+    const quoteEl = document.getElementById("fc-back-quote");
+    if (quoteEl) quoteEl.innerText = `"${item.quote}"`;
+    const eqEl = document.getElementById("fc-back-equation");
+    if (eqEl) eqEl.innerText = item.equation || 'N/A';
+    
+    const latexEl = document.getElementById("fc-back-latex");
+    if (latexEl) {
+        latexEl.innerHTML = item.latexEquation || item.equation || 'N/A';
+        if (typeof renderMathInElement === 'function') {
+            renderMathInElement(latexEl, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+        }
+    }
 }
 
 function flipCard() {
@@ -521,12 +604,16 @@ function flipCard() {
 }
 
 function nextCard() {
-    currentFlashcardIndex = (currentFlashcardIndex + 1) % MICROTEACHING_VOCABULARY.length;
+    const deck = getFilteredVocabDeck();
+    if (!deck || deck.length === 0) return;
+    currentFlashcardIndex = (currentFlashcardIndex + 1) % deck.length;
     renderFlashcard();
 }
 
 function prevCard() {
-    currentFlashcardIndex = (currentFlashcardIndex - 1 + MICROTEACHING_VOCABULARY.length) % MICROTEACHING_VOCABULARY.length;
+    const deck = getFilteredVocabDeck();
+    if (!deck || deck.length === 0) return;
+    currentFlashcardIndex = (currentFlashcardIndex - 1 + deck.length) % deck.length;
     renderFlashcard();
 }
 

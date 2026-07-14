@@ -35,7 +35,10 @@
     
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- KaTeX for high-precision mathematical & physical LaTeX equation rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
     
     <style>
         body {
@@ -304,7 +307,7 @@
 
                         <!-- YouTube Iframe Wrapper -->
                         <div class="relative w-full overflow-hidden rounded-2xl shadow-inner bg-black" style="padding-top: 52%;">
-                            <iframe id="youtube-player" class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/4UxSIcGrVyY?enablejsapi=1&rel=0&origin=https://dudbilopr.github.io" title="Electric Charges and Fields Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe id="youtube-player" class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/4UxSIcGrVyY?enablejsapi=1&rel=0" title="Electric Charges and Fields Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
 
                         <!-- TRANSPARENT SYNCHRONIZED FOOT OVERLAY (`EN PIE DEL VIDEO EN FORMATO TRANSPARENTE`) -->
@@ -319,12 +322,14 @@
                                 </div>
                                 <!-- Category Filter Chips inside Transparent Foot -->
                                 <div class="flex flex-wrap items-center gap-1.5">
-                                    <span class="text-[11px] text-slate-300 font-bold mr-1 hidden sm:inline">Highlight POS:</span>
-                                    <button onclick="filterVocabCategory('all')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-blue-600 text-white shadow" data-category="all">All (19)</button>
-                                    <button onclick="filterVocabCategory('noun')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="noun">Nouns (8)</button>
-                                    <button onclick="filterVocabCategory('verb')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="verb">Verbs (5)</button>
-                                    <button onclick="filterVocabCategory('connector')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="connector">Connectors (3)</button>
-                                    <button onclick="filterVocabCategory('adjective')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="adjective">Adjectives (3)</button>
+                                    <span class="text-[11px] text-slate-300 font-bold mr-1 hidden sm:inline">Highlight Deck:</span>
+                                    <button onclick="filterVocabCategory('all')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-blue-600 text-white shadow" data-category="all">All (35)</button>
+                                    <button onclick="filterVocabCategory('high')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-amber-500 text-slate-950 shadow hover:bg-amber-400" data-category="high">🔥 Top High Freq (15)</button>
+                                    <button onclick="filterVocabCategory('connector')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-emerald-600 text-white hover:bg-emerald-500" data-category="connector">🟡 Connectors (8)</button>
+                                    <button onclick="filterVocabCategory('rare')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-purple-600 text-white hover:bg-purple-500" data-category="rare">💎 Rare Academic (12)</button>
+                                    <button onclick="filterVocabCategory('noun')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="noun">Nouns (15)</button>
+                                    <button onclick="filterVocabCategory('verb')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="verb">Verbs (9)</button>
+                                    <button onclick="filterVocabCategory('adjective')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="adjective">Adjectives (4)</button>
                                 </div>
                             </div>
 
@@ -335,52 +340,76 @@
                                 </p>
                             </div>
 
-                            <div class="flex flex-wrap items-center justify-between text-[11px] text-slate-400 pt-3 border-t border-white/10 mt-2 gap-2">
+                            <div class="flex items-center justify-between text-[11px] text-slate-400 pt-3 border-t border-white/10 mt-2">
                                 <div class="flex items-center gap-2">
                                     <span id="live-ticker-time-badge" class="font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">⏱️ 0:00</span>
                                     <span class="text-slate-300">💡 Click any highlighted badge above right as the video plays to inspect the word analysis!</span>
                                 </div>
-                                <label class="flex items-center gap-1.5 cursor-pointer select-none text-slate-300 hover:text-white">
-                                    <input type="checkbox" id="chk-autoscroll" checked onchange="setAutoScrollState(this.checked)" class="rounded text-blue-600 focus:ring-blue-500 w-3.5 h-3.5 bg-slate-800 border-slate-600">
-                                    <span>Auto-Scroll Full List Below</span>
-                                </label>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- BOTTOM LEFT: 3D Flashcards Box (`lg:col-span-6`) -->
-                <div class="lg:col-span-6 space-y-4">
-                    <div class="p-6 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+                <!-- BOTTOM: 3D Flashcards Box (`lg:col-span-12`) -->
+                <div class="lg:col-span-12 space-y-4">
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4 max-w-4xl mx-auto">
                         <div class="flex items-center justify-between">
                             <h3 class="font-bold text-lg text-slate-800 dark:text-white flex items-center gap-2">
                                 <span class="material-symbols-outlined text-blue-600">style</span>
                                 <span>3D Vocabulary Flashcards Practice</span>
                             </h3>
-                            <span id="fc-counter" class="text-xs font-bold font-mono px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Card 1 of 19</span>
+                            <span id="fc-counter" class="text-xs font-bold font-mono px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Card 1 of 35</span>
+                        </div>
+
+                        <!-- Quick Deck Select Bar inside Flashcard Box -->
+                        <div class="flex flex-wrap items-center gap-1.5 pb-2 border-b border-slate-100 dark:border-slate-700">
+                            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 mr-1">Deck Mode:</span>
+                            <button onclick="filterVocabCategory('all')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-blue-600 text-white" data-category="all">📚 All 35</button>
+                            <button onclick="filterVocabCategory('high')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-amber-500 hover:text-slate-950" data-category="high">🔥 Top High Freq</button>
+                            <button onclick="filterVocabCategory('connector')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-emerald-600 hover:text-white" data-category="connector">🟡 Connectors</button>
+                            <button onclick="filterVocabCategory('rare')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-purple-600 hover:text-white" data-category="rare">💎 Rare Terms</button>
                         </div>
 
                         <!-- 3D Card Engine -->
-                        <div class="w-full h-64 flip-card cursor-pointer" onclick="flipCard()">
+                        <div class="w-full h-[280px] sm:h-64 flip-card cursor-pointer" onclick="flipCard()">
                             <div id="flashcard-container" class="flip-card-inner">
                                 <!-- Front Side -->
-                                <div class="flip-card-front bg-gradient-to-br from-blue-600 to-indigo-800 text-white space-y-3">
-                                    <span id="fc-front-pos" class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-white/20 text-white">Noun</span>
-                                    <h4 id="fc-front-term" class="text-4xl font-black">proton</h4>
-                                    <span id="fc-front-ipa" class="font-mono text-base opacity-80">/ˈproʊ.tɑːn/</span>
+                                <div class="flip-card-front bg-gradient-to-br from-blue-600 to-indigo-800 text-white space-y-3 p-5 flex flex-col justify-center items-center">
+                                    <div class="flex flex-wrap items-center gap-2 justify-center">
+                                        <span id="fc-front-pos" class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-white/20 text-white">Noun</span>
+                                        <span id="fc-front-group" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-200 border border-amber-300/30">🔥 Top High Frequency</span>
+                                    </div>
+                                    <h4 id="fc-front-term" class="text-4xl font-black">charge</h4>
+                                    <span id="fc-front-ipa" class="font-mono text-base opacity-80">/tʃɑːrdʒ/</span>
                                     <div class="pt-4 text-xs opacity-75 flex items-center gap-1">
                                         <span class="material-symbols-outlined text-sm">360</span>
-                                        <span>Click card to flip definition & formula</span>
+                                        <span>Click card to flip definition & LaTeX formula</span>
                                     </div>
                                 </div>
                                 <!-- Back Side -->
-                                <div class="flip-card-back bg-white dark:bg-slate-900 text-slate-800 dark:text-white border-2 border-blue-600 space-y-3 text-left">
-                                    <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">// Academic Definition</span>
-                                    <p id="fc-back-def" class="text-sm leading-relaxed font-medium">A stable subatomic particle occurring in all atomic nuclei, bearing a positive electric charge.</p>
-                                    <div class="w-full p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-emerald-600 dark:text-emerald-400">
-                                        <strong>Formula:</strong> <span id="fc-back-equation">[Every atom] + [is made up of] + [protons, neutrons, and electrons]</span>
+                                <div class="flip-card-back bg-white dark:bg-slate-900 text-slate-800 dark:text-white border-2 border-blue-600 p-4 flex flex-col justify-between text-left overflow-y-auto">
+                                    <div>
+                                        <div class="flex items-center justify-between pb-1 border-b border-slate-100 dark:border-slate-800 mb-2">
+                                            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">// Academic Definition</span>
+                                            <span id="fc-back-pos" class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-300"></span>
+                                        </div>
+                                        <p id="fc-back-def" class="text-xs sm:text-sm leading-relaxed font-medium mb-2.5"></p>
                                     </div>
-                                    <p id="fc-back-quote" class="text-xs italic text-slate-500 max-h-12 overflow-hidden">"Every atom is made up of protons, neutrons, and electrons."</p>
+                                    
+                                    <div class="space-y-2 my-auto">
+                                        <!-- LaTeX Mathematical / Physical Formula Container -->
+                                        <div class="w-full p-2.5 rounded-xl bg-slate-900 text-blue-300 border border-slate-700 shadow-inner">
+                                            <div class="text-[10px] font-mono font-bold uppercase text-blue-400 tracking-wider mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-xs">functions</span> Physical LaTeX Formula:</div>
+                                            <div id="fc-back-latex" class="text-center font-bold text-sm sm:text-base overflow-x-auto py-1"></div>
+                                        </div>
+
+                                        <!-- Syntactic Grammar Construction Container -->
+                                        <div class="w-full p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 border border-slate-200 dark:border-slate-700">
+                                            <strong class="text-slate-600 dark:text-slate-300 font-sans text-xs">Grammar Syntax:</strong> <span id="fc-back-equation"></span>
+                                        </div>
+                                    </div>
+
+                                    <p id="fc-back-quote" class="text-[11px] italic text-slate-500 max-h-12 overflow-hidden border-t border-slate-100 dark:border-slate-800 pt-1.5 mt-2"></p>
                                 </div>
                             </div>
                         </div>
@@ -400,37 +429,8 @@
                             </button>
                         </div>
                     </div>
-                </div>
 
-                <!-- BOTTOM RIGHT: Full Scrollable Transcript List (`lg:col-span-6`) -->
-                <div class="lg:col-span-6 space-y-4">
-                    <div class="p-6 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h3 class="font-bold text-lg text-slate-800 dark:text-white flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-blue-600">subtitles</span>
-                                    <span>Full Video Transcript & Timeline Overview</span>
-                                </h3>
-                                <p class="text-xs text-slate-500">Click any row below to jump the video right to that moment</p>
-                            </div>
-                        </div>
-
-                        <!-- Category Filter Chips for full list -->
-                        <div class="flex flex-wrap gap-2 pb-2 border-b border-slate-100 dark:border-slate-700">
-                            <button onclick="filterVocabCategory('all')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-blue-600 text-white shadow-md flex items-center gap-1.5" data-category="all"><i data-lucide="layers" class="w-3.5 h-3.5 inline"></i> All Terms (19)</button>
-                            <button onclick="filterVocabCategory('noun')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 flex items-center gap-1.5" data-category="noun"><i data-lucide="circle" class="w-3.5 h-3.5 inline text-emerald-500 fill-emerald-500"></i> Nouns (8)</button>
-                            <button onclick="filterVocabCategory('verb')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 flex items-center gap-1.5" data-category="verb"><i data-lucide="circle" class="w-3.5 h-3.5 inline text-purple-500 fill-purple-500"></i> Verbs (5)</button>
-                            <button onclick="filterVocabCategory('connector')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 flex items-center gap-1.5" data-category="connector"><i data-lucide="circle" class="w-3.5 h-3.5 inline text-amber-500 fill-amber-500"></i> Connectors (3)</button>
-                            <button onclick="filterVocabCategory('adjective')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 flex items-center gap-1.5" data-category="adjective"><i data-lucide="circle" class="w-3.5 h-3.5 inline text-sky-500 fill-sky-500"></i> Adjectives (3)</button>
-                        </div>
-
-                        <!-- Scrollable Transcript Box -->
-                        <div id="transcript-box" class="space-y-2.5 max-h-[295px] overflow-y-auto pr-2 custom-scrollbar">
-                            <!-- Populated by microteaching_workshop.js -->
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center bg-slate-100 dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <div class="flex justify-between items-center bg-slate-100 dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 max-w-4xl mx-auto">
                         <span class="text-xs font-medium text-slate-600 dark:text-slate-400">Ready to test the physics with drawing & Coulomb interactions?</span>
                         <button onclick="switchPhase(4)" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-md hover:bg-blue-700 transition-all flex items-center gap-1.5">
                             <span>Start Simulator Activity</span>
@@ -668,20 +668,9 @@
         </div>
     </div>
 
-    <!-- Load Data & Controller Scripts -->
+    <!-- Load YouTube Iframe API & Controller Scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="js/microteaching_data.js"></script>
     <script src="js/microteaching_workshop.js"></script>
-
-    <!-- Helper script to jump video -->
-    <script>
-        function jumpToVideo(timeStr) {
-            const parts = timeStr.split(':');
-            const seconds = parseInt(parts[0]) * 60 + parseInt(parts[1]);
-            const iframe = document.querySelector("iframe");
-            if (iframe) {
-                iframe.src = `https://www.youtube.com/embed/4UxSIcGrVyY?start=${seconds}&autoplay=1`;
-            }
-        }
-    </script>
 </body>
 </html>
