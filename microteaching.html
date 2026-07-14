@@ -282,27 +282,80 @@
         <section id="phase-pane-3" class="phase-pane hidden space-y-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- Left: YouTube Video Embed -->
-                <div class="lg:col-span-6 space-y-4">
-                    <div class="p-4 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono"><span class="inline-flex items-center text-slate-400 mr-1"><i data-lucide="timer" class="w-4 h-4 inline"></i></span> Phase 3 • 2 Minutes</span>
-                            <span class="text-xs font-bold text-slate-500">Source: Physics 2-Min Workshop</span>
+                <!-- TOP FULL-WIDTH: YouTube Video Embed + Synchronized Transparent Foot Ticker (`EN PIE DEL VIDEO`) -->
+                <div class="lg:col-span-12 space-y-3">
+                    <div class="p-4 md:p-6 bg-slate-900 dark:bg-slate-950 rounded-3xl border border-slate-700 shadow-2xl space-y-4 relative">
+                        <div class="flex flex-wrap items-center justify-between gap-3 text-white border-b border-slate-800 pb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-600/30 text-blue-400 font-mono border border-blue-500/30 flex items-center gap-1.5"><i data-lucide="timer" class="w-3.5 h-3.5"></i> Phase 3 • 2 Minutes</span>
+                                <span class="text-xs font-bold text-slate-300 hidden sm:inline">Physics 2-Min Workshop Video</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span id="sync-status-badge" class="px-2.5 py-1 rounded text-[11px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/40">TIME: 0:00</span>
+                                <button onclick="toggleSimulatedVideoSync()" id="btn-sync-play" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all" title="Run real-time ticker if video autoplay is paused">
+                                    <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                                    <span id="sync-play-label">Play Ticker</span>
+                                </button>
+                                <button onclick="resetTranscriptTimeline()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" title="Reset Timeline to 0:00">
+                                    <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="relative w-full overflow-hidden rounded-2xl shadow-inner bg-black" style="padding-top: 56.25%;">
+
+                        <!-- YouTube Iframe Wrapper -->
+                        <div class="relative w-full overflow-hidden rounded-2xl shadow-inner bg-black" style="padding-top: 52%;">
                             <iframe id="youtube-player" class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/4UxSIcGrVyY?enablejsapi=1&rel=0&origin=https://dudbilopr.github.io" title="Electric Charges and Fields Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-xs text-slate-500 italic text-center">
-                            <span class="inline-flex items-center text-amber-300 mr-1"><i data-lucide="lightbulb" class="w-4 h-4 inline"></i></span> Tip: Click any sentence in the synchronized transcript on the right to jump right to that video timestamp and inspect vocabulary!
-                        </p>
-                    </div>
 
-                    <!-- 3D Flashcards Box -->
+                        <!-- TRANSPARENT SYNCHRONIZED FOOT OVERLAY (`EN PIE DEL VIDEO EN FORMATO TRANSPARENTE`) -->
+                        <div id="live-video-ticker-container" class="relative rounded-2xl bg-black/75 backdrop-blur-md border border-white/20 p-4 md:p-5 text-white shadow-2xl transition-all duration-300 -mt-3 z-10">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-white/10 mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span class="flex h-2.5 w-2.5 relative">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+                                    </span>
+                                    <span class="text-xs font-black tracking-wider uppercase text-blue-300 font-mono">Live Interactive Transcript Foot • Word Analysis</span>
+                                </div>
+                                <!-- Category Filter Chips inside Transparent Foot -->
+                                <div class="flex flex-wrap items-center gap-1.5">
+                                    <span class="text-[11px] text-slate-300 font-bold mr-1 hidden sm:inline">Highlight POS:</span>
+                                    <button onclick="filterVocabCategory('all')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-blue-600 text-white shadow" data-category="all">All (19)</button>
+                                    <button onclick="filterVocabCategory('noun')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="noun">Nouns (8)</button>
+                                    <button onclick="filterVocabCategory('verb')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="verb">Verbs (5)</button>
+                                    <button onclick="filterVocabCategory('connector')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="connector">Connectors (3)</button>
+                                    <button onclick="filterVocabCategory('adjective')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="adjective">Adjectives (3)</button>
+                                </div>
+                            </div>
+
+                            <!-- Live Active Sentence Display with Word Analysis -->
+                            <div class="min-h-[72px] flex items-center justify-center text-center px-2 py-1.5">
+                                <p id="live-ticker-text" class="text-base sm:text-lg md:text-xl font-medium leading-relaxed tracking-wide text-white drop-shadow-md transition-all duration-300">
+                                    <span class="italic text-slate-400 text-sm">Synchronizing with video playback... Click Play Ticker right above to start or play the video!</span>
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap items-center justify-between text-[11px] text-slate-400 pt-3 border-t border-white/10 mt-2 gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span id="live-ticker-time-badge" class="font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">⏱️ 0:00</span>
+                                    <span class="text-slate-300">💡 Click any highlighted badge above right as the video plays to inspect the word analysis!</span>
+                                </div>
+                                <label class="flex items-center gap-1.5 cursor-pointer select-none text-slate-300 hover:text-white">
+                                    <input type="checkbox" id="chk-autoscroll" checked onchange="setAutoScrollState(this.checked)" class="rounded text-blue-600 focus:ring-blue-500 w-3.5 h-3.5 bg-slate-800 border-slate-600">
+                                    <span>Auto-Scroll Full List Below</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM LEFT: 3D Flashcards Box (`lg:col-span-6`) -->
+                <div class="lg:col-span-6 space-y-4">
                     <div class="p-6 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
                         <div class="flex items-center justify-between">
                             <h3 class="font-bold text-lg text-slate-800 dark:text-white flex items-center gap-2">
                                 <span class="material-symbols-outlined text-blue-600">style</span>
-                                <span>3D Interactive Vocabulary Flashcards</span>
+                                <span>3D Vocabulary Flashcards Practice</span>
                             </h3>
                             <span id="fc-counter" class="text-xs font-bold font-mono px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Card 1 of 19</span>
                         </div>
@@ -349,20 +402,20 @@
                     </div>
                 </div>
 
-                <!-- Right: Synchronized Interactive Transcript & Vocabulary Filters -->
+                <!-- BOTTOM RIGHT: Full Scrollable Transcript List (`lg:col-span-6`) -->
                 <div class="lg:col-span-6 space-y-4">
                     <div class="p-6 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
                         <div class="flex items-center justify-between">
                             <div>
                                 <h3 class="font-bold text-lg text-slate-800 dark:text-white flex items-center gap-2">
                                     <span class="material-symbols-outlined text-blue-600">subtitles</span>
-                                    <span>Interactive Transcript & Word Analysis</span>
+                                    <span>Full Video Transcript & Timeline Overview</span>
                                 </h3>
-                                <p class="text-xs text-slate-500">Highlighted terms link directly to our 19-field pedagogical schema</p>
+                                <p class="text-xs text-slate-500">Click any row below to jump the video right to that moment</p>
                             </div>
                         </div>
 
-                        <!-- Category Filter Chips -->
+                        <!-- Category Filter Chips for full list -->
                         <div class="flex flex-wrap gap-2 pb-2 border-b border-slate-100 dark:border-slate-700">
                             <button onclick="filterVocabCategory('all')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-blue-600 text-white shadow-md flex items-center gap-1.5" data-category="all"><i data-lucide="layers" class="w-3.5 h-3.5 inline"></i> All Terms (19)</button>
                             <button onclick="filterVocabCategory('noun')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 flex items-center gap-1.5" data-category="noun"><i data-lucide="circle" class="w-3.5 h-3.5 inline text-emerald-500 fill-emerald-500"></i> Nouns (8)</button>
@@ -371,28 +424,8 @@
                             <button onclick="filterVocabCategory('adjective')" class="category-chip px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 flex items-center gap-1.5" data-category="adjective"><i data-lucide="circle" class="w-3.5 h-3.5 inline text-sky-500 fill-sky-500"></i> Adjectives (3)</button>
                         </div>
 
-                        <!-- Real-Time Sync Control Bar -->
-                        <div class="flex flex-wrap items-center justify-between gap-3 p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-700">
-                            <div class="flex items-center gap-2">
-                                <button onclick="toggleSimulatedVideoSync()" id="btn-sync-play" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all" title="Run real-time ticker if video autoplay is paused">
-                                    <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                                    <span id="sync-play-label">Play Ticker</span>
-                                </button>
-                                <button onclick="resetTranscriptTimeline()" class="p-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 text-slate-600 dark:text-slate-300 transition-colors" title="Reset Timeline to 0:00">
-                                    <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
-                                </button>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <label class="flex items-center gap-1.5 cursor-pointer select-none text-xs font-bold text-slate-600 dark:text-slate-300">
-                                    <input type="checkbox" id="chk-autoscroll" checked onchange="setAutoScrollState(this.checked)" class="rounded text-blue-600 focus:ring-blue-500 w-4 h-4">
-                                    <span>Auto-Scroll</span>
-                                </label>
-                                <span id="sync-status-badge" class="px-2.5 py-1 rounded text-[11px] font-bold font-mono bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30">TIME: 0:00</span>
-                            </div>
-                        </div>
-
                         <!-- Scrollable Transcript Box -->
-                        <div id="transcript-box" class="space-y-2.5 max-h-[460px] overflow-y-auto pr-2 custom-scrollbar">
+                        <div id="transcript-box" class="space-y-2.5 max-h-[295px] overflow-y-auto pr-2 custom-scrollbar">
                             <!-- Populated by microteaching_workshop.js -->
                         </div>
                     </div>

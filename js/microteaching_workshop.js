@@ -85,20 +85,35 @@ function switchPhase(phaseId) {
 function filterVocabCategory(category) {
     currentVocabFilter = category;
     
-    // Update category button styling
+    // Update category button styling across both normal chips and ticker chips
     const btns = document.querySelectorAll(".category-chip");
     btns.forEach(b => {
+        const isTickerChip = b.classList.contains("ticker-chip");
         if (b.dataset.category === category) {
             b.classList.add("bg-blue-600", "text-white", "shadow-md");
-            b.classList.remove("bg-slate-100", "dark:bg-slate-700", "text-slate-700", "dark:text-slate-300");
+            if (isTickerChip) {
+                b.classList.remove("bg-white/10", "text-slate-200", "hover:bg-white/20");
+            } else {
+                b.classList.remove("bg-slate-100", "dark:bg-slate-700", "text-slate-700", "dark:text-slate-300");
+            }
         } else {
             b.classList.remove("bg-blue-600", "text-white", "shadow-md");
-            b.classList.add("bg-slate-100", "dark:bg-slate-700", "text-slate-700", "dark:text-slate-300");
+            if (isTickerChip) {
+                b.classList.add("bg-white/10", "text-slate-200", "hover:bg-white/20");
+                b.classList.remove("bg-slate-100", "dark:bg-slate-700", "text-slate-700", "dark:text-slate-300");
+            } else {
+                b.classList.add("bg-slate-100", "dark:bg-slate-700", "text-slate-700", "dark:text-slate-300");
+                b.classList.remove("bg-white/10", "text-slate-200", "hover:bg-white/20");
+            }
         }
     });
 
+    const liveTickerEl = document.getElementById("live-ticker-text");
+    if (liveTickerEl) liveTickerEl.removeAttribute("data-cache-key");
+
     renderTranscript();
     renderVocabTables();
+    updateTranscriptHighlighting();
 }
 
 function renderTranscript() {
@@ -300,7 +315,41 @@ function updateTranscriptHighlighting() {
         }
     }
 
-    // Highlight active line
+    // Update live foot ticker (`en pie del video en formato transparente bien sincronizado`)
+    const liveTickerEl = document.getElementById("live-ticker-text");
+    const liveTimeBadgeEl = document.getElementById("live-ticker-time-badge");
+    if (liveTickerEl && MICROTEACHING_TRANSCRIPT[activeIdx]) {
+        const currentLine = MICROTEACHING_TRANSCRIPT[activeIdx];
+        if (liveTimeBadgeEl) liveTimeBadgeEl.innerText = `⏱️ ${currentLine.time}`;
+        
+        const cacheKey = `${activeIdx}_${currentVocabFilter || 'all'}`;
+        if (liveTickerEl.getAttribute("data-cache-key") !== cacheKey) {
+            let liveText = currentLine.text;
+            const filteredVocab = typeof MICROTEACHING_VOCABULARY !== 'undefined' ? MICROTEACHING_VOCABULARY.filter(v => {
+                if (!currentVocabFilter || currentVocabFilter === "all") return true;
+                return v.pos.toLowerCase().includes(currentVocabFilter.toLowerCase());
+            }) : [];
+
+            const highlightMap = {};
+            filteredVocab.forEach(v => {
+                highlightMap[v.term.toLowerCase()] = {
+                    term: v.term,
+                    pos: v.pos,
+                    colorClass: getCategoryBadgeClass(v.pos)
+                };
+            });
+
+            Object.keys(highlightMap).forEach(key => {
+                const regex = new RegExp(`\\b(${key})\\b`, 'gi');
+                liveText = liveText.replace(regex, `<mark class="px-2 py-0.5 mx-0.5 rounded text-sm sm:text-base font-black cursor-pointer transition-all hover:scale-105 inline-block shadow-md ${highlightMap[key].colorClass}" onclick="event.stopPropagation(); showVocabModal('${key}')">$1</mark>`);
+            });
+
+            liveTickerEl.innerHTML = liveText;
+            liveTickerEl.setAttribute("data-cache-key", cacheKey);
+        }
+    }
+
+    // Highlight active line in full list
     MICROTEACHING_TRANSCRIPT.forEach((_, idx) => {
         const row = document.getElementById(`transcript-row-${idx}`);
         const badgeSpan = document.getElementById(`transcript-time-${idx}`);
