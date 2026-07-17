@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTranscript();
     renderVocabTables();
     renderFlashcard();
+    renderEMIQuestions();
     renderQuiz();
     setupSimulatorInquiry();
 });
@@ -347,16 +348,44 @@ function updateTranscriptHighlighting() {
 
             const highlightMap = {};
             filteredVocab.forEach(v => {
-                highlightMap[v.term.toLowerCase()] = {
-                    term: v.term,
-                    pos: v.pos,
-                    colorClass: getCategoryBadgeClass(v.pos)
-                };
+                const termLower = v.term.toLowerCase();
+                if (!highlightMap[termLower]) {
+                    let posAbbr = v.pos.split(' ')[0].toUpperCase();
+                    const p = v.pos.toLowerCase();
+                    if (p.includes("noun")) posAbbr = "NOUN";
+                    else if (p.includes("verb")) posAbbr = "VERB";
+                    else if (p.includes("connector") || p.includes("marker")) posAbbr = "CONN";
+                    else if (p.includes("adjective")) posAbbr = "ADJ";
+                    else if (p.includes("idiom") || p.includes("phrase")) posAbbr = "PHRASE";
+
+                    highlightMap[termLower] = {
+                        term: v.term,
+                        pos: v.pos,
+                        posAbbr: posAbbr,
+                        colorClass: getCategoryBadgeClass(v.pos)
+                    };
+                }
             });
 
-            Object.keys(highlightMap).forEach(key => {
-                const regex = new RegExp(`\\b(${key})\\b`, 'gi');
-                liveText = liveText.replace(regex, `<mark class="px-2 py-0.5 mx-0.5 rounded text-sm sm:text-base font-black cursor-pointer transition-all hover:scale-105 inline-block shadow-md ${highlightMap[key].colorClass}" onclick="event.stopPropagation(); showVocabModal('${key}')">$1</mark>`);
+            const replacements = [];
+            const sortedKeys = Object.keys(highlightMap).sort((a, b) => b.length - a.length);
+            sortedKeys.forEach(key => {
+                const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const regex = new RegExp(`\\b(${escapedKey})\\b`, 'gi');
+                liveText = liveText.replace(regex, (match) => {
+                    const token = `__VOCAB_MATCH_${replacements.length}__`;
+                    const item = highlightMap[key];
+                    const safeTerm = item.term.replace(/'/g, "\\'");
+                    replacements.push({
+                        token,
+                        html: `<span class="inline-flex flex-col items-center justify-center align-middle mx-1 px-2 py-0.5 rounded border shadow-sm cursor-pointer hover:scale-105 hover:shadow transition-all ${item.colorClass}" onclick="event.stopPropagation(); showVocabModal('${safeTerm}')" title="${item.pos}: Click for definition &amp; formula"><span class="text-[9px] sm:text-[10px] font-mono font-black tracking-wider uppercase opacity-95 leading-none pb-0.5 border-b border-current/30">${item.posAbbr}</span><span class="text-xs sm:text-sm font-black leading-tight pt-0.5">${match}</span></span>`
+                    });
+                    return token;
+                });
+            });
+
+            replacements.forEach(r => {
+                liveText = liveText.split(r.token).join(r.html);
             });
 
             liveTickerEl.innerHTML = liveText;
@@ -434,6 +463,52 @@ function renderVocabTables() {
             throwOnError: false
         });
     }
+}
+
+function renderEMIQuestions() {
+    const grid = document.getElementById("emi-questions-grid");
+    if (!grid || typeof STUDENT_EMI_QUESTIONS === 'undefined') return;
+
+    grid.innerHTML = STUDENT_EMI_QUESTIONS.map(q => {
+        let badgeColor = "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300 border-blue-300";
+        if (q.category.includes("Math") || q.category.includes("Formula")) badgeColor = "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-300 border-purple-300";
+        else if (q.category.includes("Real") || q.category.includes("Application")) badgeColor = "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 border-emerald-300";
+        else if (q.category.includes("Hypothesis") || q.category.includes("Inquiry")) badgeColor = "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 border-amber-300";
+
+        const safeQuestion = q.question.replace(/'/g, "\\'");
+        return `
+        <div class="p-5 bg-white dark:bg-slate-800 rounded-2xl border border-indigo-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-indigo-400 transition-all flex flex-col justify-between space-y-3 group">
+            <div class="space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase border ${badgeColor}">${q.category}</span>
+                    <span class="text-[10px] font-mono text-slate-400 font-semibold">${q.id.toUpperCase()}</span>
+                </div>
+                <h4 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    "${q.question}"
+                </h4>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-700/60 space-y-1.5 text-xs">
+                <div>
+                    <span class="font-bold text-[10px] text-indigo-600 dark:text-indigo-400 uppercase tracking-wider font-mono">// Syntactic Formula:</span>
+                    <div class="font-mono text-[11px] text-slate-700 dark:text-slate-300 break-words mt-0.5">${q.formula}</div>
+                </div>
+                <div class="pt-1 border-t border-slate-200/50 dark:border-slate-700/50">
+                    <span class="font-bold text-[10px] text-slate-500 uppercase tracking-wider font-mono">// Pragmatic Context:</span>
+                    <p class="text-[11px] text-slate-600 dark:text-slate-400 mt-0.5">${q.pragmaticTip}</p>
+                </div>
+            </div>
+            <div class="pt-2 flex items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-700/60">
+                <button onclick="Swal.fire({title: '🔊 Practice Speaking', html: '<div class=\\'space-y-3 text-left\\'><p class=\\'font-bold text-indigo-600 dark:text-indigo-400 text-base\\'>\\\"${safeQuestion}\\\"</p><p class=\\'text-xs text-slate-500\\'><b>Pronunciation Tip:</b> Maintain polite rising intonation on modal openers (<i>Could you... / Would you mind...</i>) and clear sentence stress on key physics terms (<b>electric field</b>, <b>Coulomb\\'s Law</b>).</p></div>', icon: 'info'})" class="px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/40 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 font-bold text-xs flex items-center gap-1.5 transition-colors">
+                    <span class="material-symbols-outlined text-sm">record_voice_over</span>
+                    <span>Speak &amp; Intonate</span>
+                </button>
+                <button onclick="navigator.clipboard.writeText('${safeQuestion}'); Swal.fire({title: 'Copied!', text: 'Question copied to clipboard. Paste it in your study notes or class forum!', icon: 'success', timer: 1500, showConfirmButton: false});" class="p-1.5 rounded-lg text-slate-400 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" title="Copy Question to Clipboard">
+                    <span class="material-symbols-outlined text-sm">content_copy</span>
+                </button>
+            </div>
+        </div>`;
+    }).join("");
+    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
 }
 
 function showVocabModal(term) {
@@ -568,6 +643,15 @@ function renderFlashcard() {
     }
     const grpEl = document.getElementById("fc-front-group");
     if (grpEl) grpEl.innerText = item.group || "Core Vocabulary";
+
+    const iconEl = document.getElementById("fc-front-icon");
+    if (iconEl) {
+        const iconName = item.icon || "zap";
+        iconEl.innerHTML = `<i data-lucide="${iconName}" class="w-8 h-8 md:w-10 md:h-10 inline"></i>`;
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+            lucide.createIcons();
+        }
+    }
 
     // Back side
     const defEl = document.getElementById("fc-back-def");

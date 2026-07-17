@@ -160,10 +160,88 @@
                 </div>
             </div>
 
+            <!-- ⚡ WARM-UP: THE BALLOON CHALLENGE! 🎈 (Requested by User) -->
+            <div class="p-8 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 rounded-3xl border-2 border-amber-300 dark:border-amber-500/40 shadow-xl space-y-6 relative overflow-hidden">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-amber-200 dark:border-slate-700 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="p-3 bg-amber-500 text-slate-950 rounded-2xl font-black text-2xl shadow-md">⚡</span>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+                                <span>Warm-Up: The Balloon Challenge! 🎈</span>
+                            </h3>
+                            <p class="text-sm font-semibold text-amber-800 dark:text-amber-300 mt-0.5">
+                                Instructions: Rub a balloon against your clothes (like a pullover) to charge it up, and test your physics intuition!
+                            </p>
+                        </div>
+                    </div>
+                    <span class="px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-500 text-amber-900 dark:text-amber-200 font-bold text-xs font-mono uppercase tracking-wider self-start md:self-center">
+                        // Experimental Observation
+                    </span>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base md:text-lg text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                        <span>🔍 Observe &amp; Predict (Click each experiment below to reveal the physics explanation):</span>
+                    </h4>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+                        <!-- Experiment 1 -->
+                        <div onclick="Swal.fire({title: '1️⃣ Paper on Needle Tip', html: '<div class=\'text-left space-y-2\'><p class=\'font-bold text-blue-600\'>Result: The paper rotates and spins toward the charged balloon!</p><p class=\'text-sm text-slate-600 dark:text-slate-300\'><b>Why?</b> The charged balloon creates an electric field (`\\vec{E}`) that induces dipole charges (`polarization`) across the balanced paper, pulling the nearer opposite charges closer and spinning the paper on its low-friction needle pivot!</p></div>', icon: 'info'})" class="p-5 bg-white dark:bg-slate-800 rounded-2xl border border-amber-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-amber-500 cursor-pointer transition-all flex flex-col justify-between group">
+                            <div class="space-y-2">
+                                <span class="px-2.5 py-1 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-800 dark:text-blue-300 font-bold text-xs inline-block">Experiment 1</span>
+                                <h5 class="font-bold text-slate-800 dark:text-white text-base group-hover:text-amber-600 transition-colors">1️⃣ Bring the balloon close to the paper on the tip of the needle.</h5>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs font-bold text-amber-700 dark:text-amber-400">
+                                <span>👉 What do you think will happen?</span>
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </div>
+                        </div>
+
+                        <!-- Experiment 2 -->
+                        <div onclick="Swal.fire({title: '2️⃣ Hanging Thread', html: '<div class=\'text-left space-y-2\'><p class=\'font-bold text-emerald-600\'>Result: The hanging thread bends and swings toward the balloon!</p><p class=\'text-sm text-slate-600 dark:text-slate-300\'><b>Why?</b> Even though the thread is electrically neutral ($Q_{net}=0$), the balloon\\'s electric field attracts the opposite charges inside the fibers toward the near side (`electrostatic induction`), creating a net attractive pull across space!</p></div>', icon: 'info'})" class="p-5 bg-white dark:bg-slate-800 rounded-2xl border border-amber-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-amber-500 cursor-pointer transition-all flex flex-col justify-between group">
+                            <div class="space-y-2">
+                                <span class="px-2.5 py-1 rounded bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 font-bold text-xs inline-block">Experiment 2</span>
+                                <h5 class="font-bold text-slate-800 dark:text-white text-base group-hover:text-amber-600 transition-colors">2️⃣ Bring the balloon close to the hanging thread.</h5>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs font-bold text-amber-700 dark:text-amber-400">
+                                <span>👉 What do you think will happen?</span>
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </div>
+                        </div>
+
+                        <!-- Experiment 3 -->
+                        <div onclick="Swal.fire({title: '3️⃣ Paper Strips', html: '<div class=\'text-left space-y-2\'><p class=\'font-bold text-purple-600\'>Result: The paper strips leap up and stick to the balloon (`static cling`), then suddenly shoot away!</p><p class=\'text-sm text-slate-600 dark:text-slate-300\'><b>Why?</b> First, opposite induced charges pull the neutral paper strips UP onto the balloon. Once they touch, negative electrons transfer to the paper strips. Now both balloon and strips share the SAME negative charge (`like charges repel`), making the strips leap off!</p></div>', icon: 'info'})" class="p-5 bg-white dark:bg-slate-800 rounded-2xl border border-amber-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-amber-500 cursor-pointer transition-all flex flex-col justify-between group">
+                            <div class="space-y-2">
+                                <span class="px-2.5 py-1 rounded bg-purple-100 dark:bg-purple-900/60 text-purple-800 dark:text-purple-300 font-bold text-xs inline-block">Experiment 3</span>
+                                <h5 class="font-bold text-slate-800 dark:text-white text-base group-hover:text-amber-600 transition-colors">3️⃣ Bring the balloon close to the paper strips.</h5>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs font-bold text-amber-700 dark:text-amber-400">
+                                <span>👉 What do you think will happen?</span>
+                                <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 💡 Think deeper banner inside Warm-up -->
+                <div class="p-5 rounded-2xl bg-slate-900 text-white border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-inner">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">💡</span>
+                        <div>
+                            <h5 class="font-bold text-amber-300 text-base">Think deeper: What invisible force is causing this reaction?</h5>
+                            <p class="text-xs text-slate-300">How can a charged balloon pull on paper or thread across open space without physically touching it?</p>
+                        </div>
+                    </div>
+                    <button onclick="Swal.fire({title: '💡 The Invisible Force: Electric Field (`\\\\vec{E}`)', html: '<div class=\'text-left space-y-3\'><p class=\'text-sm leading-relaxed\'>The invisible force is the <b>Electric Field (`\\\\vec{E}`)</b> surrounding any charged object (`q`) according to Coulomb\\'s Law!</p><div class=\'p-3 bg-slate-100 dark:bg-slate-800 rounded-lg font-mono text-center text-blue-600 font-bold\'>\\\\vec{F} = q_0 \\\\vec{E} = k \\\\frac{q_1 q_2}{r^2} \\\\hat{r}</div><p class=\'text-xs text-slate-500\'>This vector field reaches out through empty air and exerts mechanical attraction or repulsion before actual physical contact occurs.</p></div>', icon: 'success'})" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow shrink-0">
+                        Reveal Invisible Force
+                    </button>
+                </div>
+            </div>
+
             <!-- Interactive Hook Challenge -->
             <div class="p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-4">
-                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">// Classroom Interactive Hook</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">// Classroom Hypothesis Test</span>
                     <h3 class="text-2xl font-bold text-slate-800 dark:text-white">What actually causes that static shock or balloon cling?</h3>
                     <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                         Click your hypothesis below to test your pre-existing physics intuition before we dive into the video investigation!
@@ -323,13 +401,13 @@
                                 <!-- Category Filter Chips inside Transparent Foot -->
                                 <div class="flex flex-wrap items-center gap-1.5">
                                     <span class="text-[11px] text-slate-300 font-bold mr-1 hidden sm:inline">Highlight Deck:</span>
-                                    <button onclick="filterVocabCategory('all')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-blue-600 text-white shadow" data-category="all">All (35)</button>
-                                    <button onclick="filterVocabCategory('high')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-amber-500 text-slate-950 shadow hover:bg-amber-400" data-category="high">🔥 Top High Freq (15)</button>
-                                    <button onclick="filterVocabCategory('connector')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-emerald-600 text-white hover:bg-emerald-500" data-category="connector">🟡 Connectors (8)</button>
-                                    <button onclick="filterVocabCategory('rare')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-purple-600 text-white hover:bg-purple-500" data-category="rare">💎 Rare Academic (12)</button>
-                                    <button onclick="filterVocabCategory('noun')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="noun">Nouns (15)</button>
-                                    <button onclick="filterVocabCategory('verb')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="verb">Verbs (9)</button>
-                                    <button onclick="filterVocabCategory('adjective')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="adjective">Adjectives (4)</button>
+                                    <button onclick="filterVocabCategory('all')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-blue-600 text-white shadow" data-category="all">📚 All Terms</button>
+                                    <button onclick="filterVocabCategory('high')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-amber-500 text-slate-950 shadow hover:bg-amber-400" data-category="high">🔥 High Freq</button>
+                                    <button onclick="filterVocabCategory('connector')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-emerald-600 text-white hover:bg-emerald-500" data-category="connector">🟡 Connectors</button>
+                                    <button onclick="filterVocabCategory('rare')" class="category-chip ticker-chip px-2.5 py-1 rounded-full text-[11px] font-bold transition-all bg-purple-600 text-white hover:bg-purple-500" data-category="rare">💎 Rare Academic</button>
+                                    <button onclick="filterVocabCategory('noun')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="noun">Nouns</button>
+                                    <button onclick="filterVocabCategory('verb')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="verb">Verbs</button>
+                                    <button onclick="filterVocabCategory('adjective')" class="category-chip ticker-chip px-2 py-1 rounded-full text-[10px] font-semibold transition-all bg-white/10 text-slate-200 hover:bg-white/20" data-category="adjective">Adjectives</button>
                                 </div>
                             </div>
 
@@ -364,7 +442,7 @@
                         <!-- Quick Deck Select Bar inside Flashcard Box -->
                         <div class="flex flex-wrap items-center gap-1.5 pb-2 border-b border-slate-100 dark:border-slate-700">
                             <span class="text-xs font-bold text-slate-500 dark:text-slate-400 mr-1">Deck Mode:</span>
-                            <button onclick="filterVocabCategory('all')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-blue-600 text-white" data-category="all">📚 All 35</button>
+                            <button onclick="filterVocabCategory('all')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-blue-600 text-white" data-category="all">📚 All Terms</button>
                             <button onclick="filterVocabCategory('high')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-amber-500 hover:text-slate-950" data-category="high">🔥 Top High Freq</button>
                             <button onclick="filterVocabCategory('connector')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-emerald-600 hover:text-white" data-category="connector">🟡 Connectors</button>
                             <button onclick="filterVocabCategory('rare')" class="category-chip px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-purple-600 hover:text-white" data-category="rare">💎 Rare Terms</button>
@@ -379,11 +457,12 @@
                                         <span id="fc-front-pos" class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-white/20 text-white">Noun</span>
                                         <span id="fc-front-group" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-200 border border-amber-300/30">🔥 Top High Frequency</span>
                                     </div>
-                                    <h4 id="fc-front-term" class="text-4xl font-black">charge</h4>
+                                    <div id="fc-front-icon" class="text-3xl sm:text-4xl mb-0.5 flex items-center justify-center text-amber-300 drop-shadow"><i data-lucide="zap" class="w-8 h-8 inline"></i></div>
+                                    <h4 id="fc-front-term" class="text-3xl sm:text-4xl font-black text-center px-2">charge</h4>
                                     <span id="fc-front-ipa" class="font-mono text-base opacity-80">/tʃɑːrdʒ/</span>
-                                    <div class="pt-4 text-xs opacity-75 flex items-center gap-1">
+                                    <div class="pt-2 text-xs opacity-75 flex items-center gap-1">
                                         <span class="material-symbols-outlined text-sm">360</span>
-                                        <span>Click card to flip definition & LaTeX formula</span>
+                                        <span>Click card to flip definition &amp; LaTeX formula</span>
                                     </div>
                                 </div>
                                 <!-- Back Side -->
@@ -465,6 +544,30 @@
                             <!-- Populated by JS -->
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <!-- ENGLISH EMI STUDENT QUESTIONS COMPENDIUM (Lista de preguntas formuladas por estudiantes en clase de física) -->
+            <div class="p-6 bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 dark:from-slate-800 dark:via-indigo-950/40 dark:to-slate-900 rounded-3xl border border-indigo-200 dark:border-indigo-800/60 shadow-lg space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-indigo-200/80 dark:border-slate-700 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="p-3 bg-indigo-600 text-white rounded-2xl font-black text-xl shadow-md flex items-center justify-center"><i data-lucide="help-circle" class="w-6 h-6 inline"></i></span>
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white flex items-center gap-2">
+                                <span>English EMI Classroom Question Bank &amp; Pragmatics</span>
+                            </h3>
+                            <p class="text-xs text-indigo-900 dark:text-indigo-200 font-medium">
+                                Essential formulas &amp; templates for students to formulate rigorous physics questions in English (`lista de preguntas que un estudiante puede formular en clase de física`).
+                            </p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-indigo-600/10 dark:bg-indigo-400/20 text-indigo-700 dark:text-indigo-300 font-mono text-xs font-bold border border-indigo-300 dark:border-indigo-700 shrink-0">
+                        // Student Question Formulas
+                    </span>
+                </div>
+
+                <div id="emi-questions-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Populated dynamically by js/microteaching_workshop.js -->
                 </div>
             </div>
         </section>
