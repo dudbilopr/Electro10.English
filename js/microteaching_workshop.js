@@ -624,9 +624,9 @@ function renderFlashcard() {
     const counterEl = document.getElementById("fc-counter");
     if (counterEl) {
         let deckLabel = "All Terms";
-        if (currentVocabFilter === "high") deckLabel = "🔥 High Freq";
-        else if (currentVocabFilter === "rare" || currentVocabFilter === "low") deckLabel = "💎 Rare Terms";
-        else if (currentVocabFilter === "connector") deckLabel = "🟡 Connectors";
+        if (currentVocabFilter === "high") deckLabel = "High Frequency";
+        else if (currentVocabFilter === "rare" || currentVocabFilter === "low") deckLabel = "Rare Academic";
+        else if (currentVocabFilter === "connector") deckLabel = "Connectors";
         else if (currentVocabFilter && currentVocabFilter !== "all") deckLabel = currentVocabFilter.toUpperCase();
         counterEl.innerText = `Card ${currentFlashcardIndex + 1} of ${deck.length} (${deckLabel})`;
     }
