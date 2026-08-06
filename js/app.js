@@ -163,6 +163,8 @@ window.renderAdminCharts         = (t, s, sc) => renderAdminCharts(t, s, sc);
 
 window._loadContent = (leccion, modTitulo) => {
     // ── Lógica de Bloqueo por Pre-Assessment ──
+    // Se ha desactivado el bloqueo por solicitud del usuario para que el diagnóstico sea opcional.
+    /*
     const examId = 'm0_l1';
     const isAdmin = window.currentUserEmail === 'dudbilopr@gmail.com' || window.currentUserRole === 'admin';
     if (!isAdmin && leccion.id !== examId && (!evalData[examId] || evalData[examId] < 65)) {
@@ -178,6 +180,7 @@ window._loadContent = (leccion, modTitulo) => {
         });
         return;
     }
+    */
 
     window._currentLeccionId = leccion.id;
     loadContent(leccion, modTitulo, progressData, evalData);
